@@ -1,0 +1,23 @@
+{
+  "name": "emites",
+  "version": "0.0.0",
+  "description": "Emites",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myfreecomm/emites.git"
+  },
+  "keywords": [
+    "emites"
+  ],
+  "author": "Carlos Henrique",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compass": "~1.0.1"
+  }
+}
