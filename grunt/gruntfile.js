@@ -25,10 +25,25 @@ module.exports = function(grunt) {
           '../src/assets/css/application.css': ['../src/index.html']
         }
       }
+    },
+
+    php: {
+      dist: {
+        options: {
+          port: 5000,
+          base: '../src',
+          keepalive: true
+        }
+      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-uncss');
+  grunt.loadNpmTasks('grunt-php');
+
+  grunt.registerTask('start', ['php', 'watch']);
+
 };
