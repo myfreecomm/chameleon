@@ -16,8 +16,9 @@
   "author": "Carlos Henrique",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "grunt": "~0.4.2",
+    "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-compass": "~1.0.1"
+    "grunt-contrib-compass": "~1.0.1",
+    "grunt-uncss": "~0.4.0"
   }
 }

@@ -3,11 +3,11 @@ require 'sass-globbing'
 
 # Set this to the root of your project when deployed:
 http_path = ""
-css_dir = "../src/app/core/static/css"
-sass_dir = "../src/app/core/static/sass"
-images_dir = "../src/app/core/static/images"
-fonts_dir = "../src/app/core/static/fonts"
-javascripts_dir = "../src/app/core/static/js"
+css_dir = "../src/assets/css"
+sass_dir = "../src/assets/sass"
+images_dir = "../src/assets/images"
+fonts_dir = "../src/assets/fonts"
+javascripts_dir = "../src/assets/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

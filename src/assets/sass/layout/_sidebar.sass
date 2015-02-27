@@ -1,0 +1,130 @@
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+
+
+.sidebar
+  //float: right
+  //display: inline
+  margin: 0
+  padding: 0 0 0 20px
+  //width: 212px  
+  h4
+    color: darken($color-secundary-dark-more, 45%)
+    font-size: 13px
+  .attention, .attention-trial .plan-details .attention
+    margin: 0
+    padding: 6px 10px 6px 20px
+    background-position: 10px 8px
+  .attention p
+    font-size: 12px  
+  .feature
+    //width: 210px
+    margin-bottom: 15px
+    border: 1px solid $color-extra
+    @include border-radius(3px)
+
+.sidebar-header
+  background-color: $color-extra
+  padding: 8px 0px 8px 10px
+  .sidebar-header-link
+    font-weight: normal
+    float: right
+    padding-right: 10px
+
+.warning-center .sidebar-header
+  background-color: $color-sidebar-warning
+  padding: 8px 0px 8px 10px
+
+.warning-center .sidebar-content
+  background-color: #f9f2c1
+  padding: 10px
+  overflow: hidden
+  textarea
+    width: 100%
+    height: 80px
+
+.feature.warning-center
+  border: 1px solid $color-sidebar-warning !important
+
+.sidebar-content
+  background-color: $color-secundary-light-more
+  padding: 10px
+  overflow: hidden
+  textarea
+    width: 100%
+    height: 80px
+
+.help-center
+  //width: 230px
+  margin-bottom: 15px
+  .sidebar-content
+    padding: 5px 10px 10px
+  span.ico-help-big
+    +larger-images-sprite(ico-help-big)
+    width: 48px
+    height: 48px
+    float: left
+    margin: 10px 10px 20px 0px
+  p
+    margin: 9px 0 10px 0
+    font-size: 1em
+
+.attention-trial 
+  color: $font-color-menu
+  margin: 0 0px 6px 0px
+  padding: 6px 10px 6px 40px
+  background: $color-sidebar-warning
+  border: 3px solid lighten($color-sidebar-warning, 15%)
+  p
+    font-size: 14px
+    line-height: 1.4em
+    background-image: none
+    margin-bottom: 10px
+
+
+.js-css-sidebar-error
+  background: $color-danger
+  color: white
+  padding: 10px
+  margin: 10px 0
+  +border-radius(5px)
+
+
+.help-box
+  +border-radius(10px)
+  border: 1px solid #cfcfcf
+  padding: 10px
+  color: #666666
+  margin: 20px 0
+  h4
+    display: block
+    font-size: 1.2em
+    float: left
+    padding-top: 5px
+    letter-spacing: -1px
+  p
+    color: #918e8e
+    font-weight: normal
+    line-height: 16px
+  .help-box-content
+    margin-top: 10px
+  .help-box-header
+    margin-bottom: 5px
+    height: 20px
+    span
+      +larger-images-sprite(ico-helpbox)
+      display: inline-block
+      width: 25px
+      height: 25px
+      padding: 6px 9px
+      margin-right: 5px
+      float: left
+
+.js-css-sidebar-error
+  background: $color-danger
+  color: white
+  padding: 10px
+  margin: 10px 0
+  +border-radius(5px)

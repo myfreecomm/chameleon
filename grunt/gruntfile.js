@@ -18,8 +18,17 @@ module.exports = function(grunt) {
         livereload: true
       }
     },
+
+    uncss: {
+      dist: {
+        files: {
+          '../src/assets/css/application.css': ['../src/index.html']
+        }
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-uncss');
 };
