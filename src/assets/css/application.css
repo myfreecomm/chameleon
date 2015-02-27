@@ -8,13 +8,21 @@
 /* ==========================================================================
  * GENERAL
  * ========================================================================== */
+body {
+  background-color: white;
+}
+
+ul {
+  margin: 0;
+}
+
 /* ==========================================================================
  * HEADER
  * ========================================================================== */
 .header {
-  background: #72bb53;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 300;
   letter-spacing: 1px;
   color: #fff;
   line-height: 40px;
@@ -23,6 +31,11 @@
   width: 100%;
   height: 55px;
   padding: 0 50px;
+  background-image: -o-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%);
+  background-image: -moz-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%);
+  background-image: -webkit-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%);
+  background-image: -ms-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%);
+  background-image: linear-gradient(to right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%);
 }
 .header a {
   background: center center no-repeat transparent;
@@ -56,7 +69,6 @@ li.header-breadcrumb-list {
   list-style: none;
   display: inline-block;
   font-size: 1.3em;
-  font-weight: lighter;
 }
 
 .nav-link:hover {
@@ -71,7 +83,7 @@ nav:not(.mm-menu) {
  * SIDEBAR
  * ========================================================================== */
 /* ==========================================================================
- * APPLICATION
+ * PLUGINS
  * ========================================================================== */
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome

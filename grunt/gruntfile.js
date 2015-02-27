@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         files: {
-          '../src/assets/css/application.css': ['../src/index.html']
+          '../src/assets/css/application.css': ['../src/index.php']
         }
       }
     },
