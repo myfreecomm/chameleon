@@ -3,12 +3,12 @@
    ========================================================================== */
 
 
-
+  
 .header
-  font-family: 'Open Sans', sans-serif
+  font-family: 'Helvetica Neue', sans-serif
+  -webkit-font-smoothing: antialiased
   font-size: 16px
   font-weight: 300
-  letter-spacing: 1px
   color: #fff
   line-height: 40px
   -moz-box-sizing: border-box
@@ -21,7 +21,7 @@
   background-image: -webkit-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
   background-image: -ms-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
   background-image: linear-gradient(to right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
-  a
+  .header-button-menu
     background: center center no-repeat transparent
     background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC )
     display: block
@@ -35,17 +35,35 @@
     top: 0
     left: 0
 
+i.fa
+  font-size: 18px
+  font-weight: 700
+  color: white
+
 .header-breadcrumb 
   text-align: left
   padding-top: 7px
-  i.fa
-    font-size: 18px
+  i.fa-angle-right
     padding: 0 12px
     vertical-align: bottom
     line-height: 41px
-    font-weight: 700
+  .header-breadcrumb-link
+    color: white
+    text-decoration: none
 
 li.header-breadcrumb-list
   list-style: none
   display: inline-block
   font-size: 1.3em
+  position: relative
+  i.fa-angle-down
+    position: absolute
+    width: 100%
+    text-align: center
+    bottom: 0
+    left: 0
+    opacity: 0
+    @extend %transition
+  &:hover i.fa-angle-down
+    bottom: -17%
+    opacity: 1
