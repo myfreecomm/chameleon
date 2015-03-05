@@ -69,6 +69,11 @@ i.fa {
 .header-breadcrumb {
   text-align: left;
   padding-top: 7px;
+  display: inline-block;
+  width: 90%;
+}
+.header-breadcrumb i.fa-search {
+  padding: 0 15px;
 }
 .header-breadcrumb i.fa-angle-right {
   padding: 0 12px;
