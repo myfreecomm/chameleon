@@ -6,13 +6,14 @@
         <title>Chameleon Framework</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="assets/css/application.css">
     </head>
 
     <body>
+      
         <?php include("common/_nav.php"); ?>
 
         <div id="page">
@@ -22,6 +23,8 @@
 
             <?php include("common/_footer.php"); ?>
         </div>
+
+        <?php include("common/_lightbox.php"); ?>
 
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.mmenu.min.all.js"></script>

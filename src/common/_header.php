@@ -14,4 +14,5 @@
   <i class="fa fa-search right"></i>
   &nbsp;
   <i class="fa fa-info-circle right"></i>
+  <a href="#lightbox" class="header-button-lightbox"></a>
 </header>
