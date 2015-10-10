@@ -1,19 +1,37 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Chameleon Framework</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600' rel='stylesheet' type='text/css'>
 
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "The Middleman" %></title>
+        <%= stylesheet_link_tag 'application' %>
 
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
-  </head>
+  
+    </head>
 
-  <body class="<%= page_classes %>">
-    <%= yield %>
-  </body>
+    <body>
+      
+        <%= partial 'nav' %>
+
+        <div id="page">
+            <%= partial 'header' %>
+
+            <%= partial 'content' %>
+
+            <%= partial 'footer' %>
+        </div>
+
+        <%= partial 'lightbox' %>
+        
+        <%= javascript_include_tag 'jquery.min' %>
+        <%= javascript_include_tag 'jquery.mmenu.min.all' %>
+        <%= javascript_include_tag 'jquery.mmenu.labels' %>
+        <%= javascript_include_tag 'main' %>
+
+    </body>
 </html>
