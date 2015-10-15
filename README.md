@@ -3,6 +3,13 @@ Framework de interface para os projetos da Myfreecomm
 ___
 
 ## Conceito
+O Framework é baseado em uma estrutura totalmente modular, com todos os seus atributos armazenados no CSS, tornando o HTML mais enxuto e semântico.
+
+### Header
+
+### Navegação
+
+### Modal 
 ___
 
 ## Componentes
