@@ -7,6 +7,9 @@ gem "middleman", "~>3.4.0"
 # Bourbon
 gem 'bourbon'
 
+# Jquery
+gem "jquery-middleman"
+
 # Deploy
 gem 'middleman-deploy', '~> 1.0'
 
