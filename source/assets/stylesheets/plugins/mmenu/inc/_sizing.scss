@@ -65,3 +65,22 @@
 		}
 	}
 }
+
+//	Sizing z-position
+@mixin mm_sizing_zposition( $cls: "",
+	$height: $mm_height, $minHeight: $mm_minHeight, $maxHeight: $mm_maxHeight
+) {
+
+	// top
+	// bottom
+	.mm-menu.mm-front#{$cls}
+	{
+		&.mm-top,
+		&.mm-bottom
+		{
+			height: percentage( $height );
+			min-height: $minHeight;
+			max-height: $maxHeight;
+		}
+	}
+}

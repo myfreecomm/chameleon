@@ -5,13 +5,12 @@ source 'https://rubygems.org'
 gem "middleman", "~>3.4.0"
 
 # Bourbon
-gem 'bourbon'
+gem "bourbon"
+
+gem 'font-awesome-sass', '~> 4.4.0'
 
 # Jquery
 gem "jquery-middleman"
-
-# Deploy
-gem 'middleman-deploy', '~> 1.0'
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"

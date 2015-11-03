@@ -1,0 +1,33 @@
+/* ==========================================================================
+   MOBILE SCREENS
+   ========================================================================== */
+
+@mixin mobile-portrait {
+  @media only screen and (min-width : 200px) and (max-width : 600px) {
+    @content;
+  }
+}
+
+@mixin ipad1-and-ipad2 {
+  @media only screen and (min-width : 601px) and (max-width : 768px) {
+    @content;
+  }
+}
+
+@mixin split-screen {
+  @media only screen and (min-width : 769px) and (max-width : 960px) {
+    @content;
+  }
+}
+
+@mixin full-screen {
+  @media only screen and (min-width : 961px) and (max-width : 1823px) {
+    @content;
+  }
+}
+
+@mixin huge-screen {
+  @media only screen and (min-width : 1824px) {
+    @content;
+  }
+}
