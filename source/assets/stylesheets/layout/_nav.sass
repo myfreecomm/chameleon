@@ -10,11 +10,10 @@ nav:not(.mm-menu)
 
 .menu
   background-color: $color-menu-bg !important
-  margin-top: 32px
 
   .account-box
-    @include size(100% auto)
-    background: $color-menu-box
+    +size(100% auto)
+    background: $color-menu-box 
     display: inline-block
     padding: 1em 0 !important
 
@@ -69,7 +68,7 @@ nav:not(.mm-menu)
 
     &:hover
       background-color: darken($color-menu-bg, 3%)
-      @include transition(all 0.10s ease-in-out)
+      +transition(all 0.10s ease-in-out)
 
   .menu-list
     @extend .menu-link
@@ -82,8 +81,8 @@ nav:not(.mm-menu)
       top: 10px
       right: 15px
       font-size: em(12)
-      @include transform(rotate(0))
-      @include transition(all 0.10s ease-in-out)
+      +transform(rotate(0))
+      +transition(all 0.10s ease-in-out)
 
     &.mm-opened
       border-bottom: 1px solid transparent
@@ -91,8 +90,8 @@ nav:not(.mm-menu)
 
       &:after, &:before
         color: $color-menu-icon
-        @include transform(rotate(90deg))
-        @include transition(all 0.10s ease-in-out)
+        +transform(rotate(90deg))
+        +transition(all 0.10s ease-in-out)
 
   .menu-list-opened
     color: $color-menu-link
@@ -103,7 +102,7 @@ nav:not(.mm-menu)
     overflow: hidden
     line-height: 23px
     display: block
-    @include padding(5px 15px 5px 50px)
+    +padding(5px 15px 5px 50px)
     margin: 0
     border-bottom: 0
 
@@ -116,12 +115,12 @@ nav:not(.mm-menu)
 
   .menu-box
     background-color: $color-clouds
-    @include size(100% auto)
-    @include position(absolute, null null 2em null)
+    +size(100% auto)
+    +position(absolute, null null 2em null)
 
-    @include border-width(1px null null null)
-    @include border-color($color-silver null null null)
-    @include border-style(solid null null)
+    +border-width(1px null null null)
+    +border-color($color-silver null null null)
+    +border-style(solid null null)
 
     .menu-link
       border: 0
@@ -130,10 +129,10 @@ nav:not(.mm-menu)
     color: $color-menu-icon
     font-size: em(20)
     font-weight: normal
-    @include margin(null 0.8em null null)
+    +margin(null 0.8em null null)
 
 // Mobile
-@include mobile-portrait
++mobile-portrait
   .menu
     .menu-box 
       position: relative
@@ -143,4 +142,4 @@ nav:not(.mm-menu)
 
     .account-info
       width: auto
-      @include padding(null null null 0.5em)
+      +padding(null null null 0.5em)

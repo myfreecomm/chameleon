@@ -7,6 +7,9 @@ gem "middleman", "~>3.4.0"
 # Bourbon
 gem "bourbon"
 
+# Neat Library
+gem 'neat', '1.7.2'
+
 gem 'font-awesome-sass', '~> 4.4.0'
 
 # Jquery

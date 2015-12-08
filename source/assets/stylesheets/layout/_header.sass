@@ -3,7 +3,6 @@
    ========================================================================== */
   
 .header
-  font-family: 'Lato', sans-serif
   -webkit-font-smoothing: antialiased
   font-weight: 300
   color: #fff
@@ -13,6 +12,7 @@
   width: 100%
   height: 65px
   background: $color-primary
+  +box-shadow(0px, 3px, 10px, rgba(0, 0, 0, 0.2))
 
   .header-button-menu
     background: center center no-repeat transparent
@@ -35,25 +35,24 @@
     display: none
     position: absolute
     background: #F5F5F5
-    padding: 0.5em 0.3em 0.5em 0.3em
+    +padding(0.5em 0.3em 0.5em 0.3em)
     margin: 0
-    top: 34px
+    top: 45px
     left: -22px
-    border-radius: 5px
     z-index: 999 
-    -webkit-box-shadow: 0px 2px 10px #B1B1B1
-    -moz-box-shadow:    0px 2px 10px #B1B1B1
-    box-shadow:         0px 2px 10px #B1B1B1
+    line-height: 20px
+    +box-shadow(0px, 2px, 10px, #B1B1B1)
 
     &:after
       content: ""
       position: absolute
       top: -9px
       left: 80px
-      @include triangle(18px, #F5F5F5, up)
+      +triangle(18px, #F5F5F5, up)
 
     ul
-      margin: 0
+      +margin(0 0 0 0)
+      +padding(0 0 0 0)
       list-style: none
 
     li
@@ -62,17 +61,18 @@
       white-space: nowrap
       font-size: em(11)
       font-weight: 400
-      @include transition(all 0.10s ease-in-out)
+      +transition(all 0.10s ease-in-out)
 
       &:hover  
         background: #DEDEDE
-        @include border-top-radius(5px)
-        @include border-right-radius(5px)
-        @include border-bottom-radius(5px)
-        @include border-left-radius(5px)
+        +border-top-radius(5px)
+        +border-right-radius(5px)
+        +border-bottom-radius(5px)
+        +border-left-radius(5px)
 
     a
-      color: $color-midnight-blue
+      color: tint($color-midnight-blue, 30%)
+      text-decoration: none
 
 
 i.fa
@@ -85,7 +85,8 @@ i.fa
   padding-top: 13px
   display: inline-block
   width: 85%
-  @include margin(null null 10px 15px)
+  +padding(0 0 0 15px)
+  +margin(0 null 10px 15px)
 
   i.fa-search
     padding: 0 15px
@@ -94,22 +95,27 @@ i.fa
     padding: 0 12px
     vertical-align: bottom
     line-height: 41px
+  
+  // Breadcrumb itens
+  .header-breadcrumb-list
+    list-style: none
+    display: inline-block
+    font-size: em(23)
+    position: relative
+    font-weight: 400
+  
+    &:last-child
+      font-weight: 500
+
+    &:hover
+      text-decoration: underline
 
   .header-breadcrumb-link
-    color: white
-    
-li.header-breadcrumb-list
-  list-style: none
-  display: inline-block
-  font-size: em(23)
-  position: relative
-  font-weight: 500
-
-  &:hover
-    text-decoration: underline
+    color: rgba(255, 255, 255, 0.81)
+    text-decoration: none
 
 // Mobile
-@include mobile-portrait
++mobile-portrait
   .header-breadcrumb
     width: 78% 
 
