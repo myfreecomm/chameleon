@@ -53,12 +53,12 @@
       left: 80px
       +triangle(18px, #F5F5F5, up)
 
-    ul
+    .breadcrumb-submenu-list
       +margin(0 0 0 0)
       +padding(0 0 0 0)
       list-style: none
 
-    li
+    .breadcrumb-submenu-item
       display: block
       padding: 5px
       white-space: nowrap
@@ -67,11 +67,24 @@
 
       &:hover  
         background: #DEDEDE
-    a
-      color: tint($color-midnight-blue, 30%)
-      text-decoration: none
-      font-size: em(16)
+      a
+        color: tint($color-midnight-blue, 30%)
+        text-decoration: none
+        font-size: em(16)
+        +padding(null 1.3em null 1.3em)
+        display: block
 
+        &.active
+          font-weight: 700
+          position: relative
+
+          &:before
+            font-family: FontAwesome
+            content: "\f00c"
+            position: absolute
+            top: 0
+            left: 3px
+            font-size: em(12)
 
 i.fa
   font-size: 18px
