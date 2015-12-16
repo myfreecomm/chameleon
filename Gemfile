@@ -5,10 +5,15 @@ source 'https://rubygems.org'
 gem "middleman", "~>3.4.0"
 
 # Bourbon
-gem 'bourbon'
+gem "bourbon"
 
-# Deploy
-gem 'middleman-deploy', '~> 1.0'
+# Neat Library
+gem 'neat', '1.7.2'
+
+gem 'font-awesome-sass', '~> 4.4.0'
+
+# Jquery
+gem "jquery-middleman"
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"

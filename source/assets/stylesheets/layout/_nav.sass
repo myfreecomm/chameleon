@@ -1,5 +1,145 @@
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+
 .nav-link:hover
   background-color: rgba(0, 0, 0, 0.02)
 
 nav:not(.mm-menu)
   display: none
+
+.menu
+  background-color: $color-menu-bg !important
+
+  .account-box
+    +size(100% auto)
+    background: $color-menu-box 
+    display: inline-block
+    padding: 1em 0 !important
+
+    h1
+      font-size: em(16)
+      color: $color-white
+    p
+      font-size: em(14)
+      color: $color-white
+
+  .account-avatar
+    display: block
+    position: relative
+    width: 30%
+    float: left
+
+    i.fa
+      color: $color-menu-icon
+      font-size: 2.5em
+      padding: 0.5em 0.5em
+      margin: 0
+
+  .account-info
+    display: block
+    position: relative
+    width: 70%
+    float: left
+    
+    h1
+      font-weight: 700
+      line-height: 25px
+      margin: 0.3em 0
+    a 
+      color: $color-white
+      text-decoration: underline !important
+      font-size: em(12)
+
+    .select
+      width: 90%
+
+  .menu-link
+    color: $color-menu-link
+    font-size: em(14)
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+    line-height: 23px
+    display: block
+    padding: 10px 15px 10px 15px
+    margin: 0
+    border-bottom: 1px solid #3D515A
+
+    &:hover
+      background-color: darken($color-menu-bg, 3%)
+      +transition(all 0.10s ease-in-out)
+
+  .menu-list
+    @extend .menu-link
+
+    &:after, &:before
+      font-family: FontAwesome
+      content: "\f054"
+      color: $color-silver
+      position: absolute
+      top: 10px
+      right: 15px
+      font-size: em(12)
+      +transform(rotate(0))
+      +transition(all 0.10s ease-in-out)
+
+    &.mm-opened
+      border-bottom: 1px solid transparent
+      background-color: darken($color-menu-bg, 2%)
+
+      &:after, &:before
+        color: $color-menu-icon
+        +transform(rotate(90deg))
+        +transition(all 0.10s ease-in-out)
+
+  .menu-list-opened
+    color: $color-menu-link
+    background-color: darken($color-menu-bg, 2%)
+    font-size: em(14)
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+    line-height: 23px
+    display: block
+    +padding(5px 15px 5px 50px)
+    margin: 0
+    border-bottom: 0
+
+    &:last-child
+      border-bottom: 1px solid $color-silver
+
+    &:hover
+      color: $color-white
+      background-color: darken($color-menu-bg, 3%)
+
+  .menu-box
+    background-color: $color-clouds
+    +size(100% auto)
+    +position(absolute, null null 2em null)
+
+    +border-width(1px null null null)
+    +border-color($color-silver null null null)
+    +border-style(solid null null)
+
+    .menu-link
+      border: 0
+
+  i.fa
+    color: $color-menu-icon
+    font-size: em(20)
+    font-weight: normal
+    +margin(null 0.8em null null)
+
+// Mobile
++mobile-portrait
+  .menu
+    .menu-box 
+      position: relative
+
+    .account-avatar
+      display: none
+
+    .account-info
+      width: auto
+      +padding(null null null 0.5em)

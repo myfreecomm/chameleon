@@ -1,44 +1,31 @@
 /* ==========================================================================
    HEADER
    ========================================================================== */
-
-
-
+  
 .header
-  font-family: 'Helvetica Neue', sans-serif
   -webkit-font-smoothing: antialiased
-  font-size: 16px
   font-weight: 300
   color: #fff
   line-height: 40px
   -moz-box-sizing: border-box
   box-sizing: border-box
   width: 100%
-  height: 55px
-  padding: 0 50px
-  background-image: -o-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
-  background-image: -moz-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
-  background-image: -webkit-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
-  background-image: -ms-linear-gradient(right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
-  background-image: linear-gradient(to right, #72BB4D 0%, #832664 56%, #215AA9 100%, #1CAF99 100%)
+  height: 65px
+  background: $color-primary
+  +box-shadow(0px, 3px, 10px, rgba(0, 0, 0, 0.2))
+
   .header-button-menu
     background: center center no-repeat transparent
-    background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC )
-    display: block
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAAAXNSR0IArs4c6QAAACFJREFUKBVjYKASYPwPBNQwi4kahgxzM0YDm44RPIwDGwA/Iwv+wQBipwAAAABJRU5ErkJggg==)
+
+
+    display: inline-block
     width: 40px
     height: 40px
-    position: absolute
-    top: 7px
+    position: relative
+    top: 13px
     left: 10px
-  .header-button-lightbox
-    background: center center no-repeat transparent
-    background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC )
-    display: block
-    width: 40px
-    height: 40px
-    position: absolute
-    top: 7px
-    right: 10px
+
   &.fixed
     position: fixed
     top: 0
@@ -49,34 +36,106 @@ i.fa
   font-weight: 700
   color: white
 
-.header-breadcrumb
+.header-breadcrumb 
   text-align: left
-  padding-top: 7px
+  padding-top: 13px
   display: inline-block
-  width: 90%
+  width: 85%
+  +padding(0 0 0 15px)
+  +margin(0 null 10px 15px)
+
   i.fa-search
     padding: 0 15px
+
   i.fa-angle-right
     padding: 0 12px
     vertical-align: bottom
     line-height: 41px
-  .header-breadcrumb-link
-    color: white
-    text-decoration: none
+  
+  // Breadcrumb itens
+  .header-breadcrumb-list
+    list-style: none
+    display: inline-block    
+    position: relative
 
-li.header-breadcrumb-list
-  list-style: none
-  display: inline-block
-  font-size: 1.3em
-  position: relative
-  i.fa-angle-down
+  .header-breadcrumb-link
+    color: rgba(255, 255, 255, 0.81)
+    text-decoration: none
+    font-size: em(23)
+    font-weight: 400
+
+    &:hover
+      text-decoration: underline
+
+.breadcrumb-mobile-title
+  color: rgba(255, 255, 255, 0.81)
+  text-decoration: none
+  font-size: em(23)
+  font-weight: 400
+  display: none
+  +padding(null null null 1em)
+
+.breadcrumb-submenu
+  display: none
+  position: absolute
+  background: #F5F5F5
+  +padding(0.5em 0.5em 0.5em 0.5em)
+  margin: 0
+  top: 45px
+  left: -22px
+  z-index: 999 
+  line-height: 20px
+  +box-shadow(0px, 2px, 10px, #B1B1B1)
+
+  &.active 
+    display: block
+
+  &:after
+    content: ""
     position: absolute
-    width: 100%
-    text-align: center
-    bottom: 0
-    left: 0
-    opacity: 0
-    @extend %transition
-  &:hover i.fa-angle-down
-    bottom: -17%
-    opacity: 1
+    top: -9px
+    left: 80px
+    +triangle(18px, #F5F5F5, up)
+
+  .breadcrumb-submenu-list
+    +margin(0 0 0 0)
+    +padding(0 0 0 0)
+    list-style: none
+
+  .breadcrumb-submenu-item
+    display: block
+    padding: 5px
+    white-space: nowrap
+    font-weight: 400
+    +transition(all 0.10s ease-in-out)
+
+    &:hover  
+      background: #DEDEDE
+    a
+      color: tint($color-midnight-blue, 30%)
+      text-decoration: none
+      font-size: em(16)
+      +padding(null 1.3em null 1.3em)
+      display: block
+
+      &.active
+        font-weight: 700
+        position: relative
+
+        &:before
+          font-family: FontAwesome
+          content: "\f00c"
+          position: absolute
+          top: 0
+          left: 3px
+          font-size: em(12)      
+
+// Mobile
++mobile-portrait
+  .header-breadcrumb
+    display: none
+    i.fa
+      display: none
+
+  .breadcrumb-mobile-title
+    display: inline-block

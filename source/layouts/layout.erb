@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Chameleon Framework</title>
+        <title>Chameleon - O framework de interface da Myfreecomm</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600' rel='stylesheet' type='text/css'>
 
-        <%= stylesheet_link_tag 'application' %>
+        <%= stylesheet_link_tag 'chameleon' %>
 
   
     </head>
@@ -21,17 +21,12 @@
         <div id="page">
             <%= partial 'common/header' %>
 
-            <%= partial 'common/content' %>
+            <%= yield %>
 
             <%= partial 'common/footer' %>
         </div>
-
-        <%= partial 'common/modal' %>
         
-        <%= javascript_include_tag 'jquery.min' %>
-        <%= javascript_include_tag 'jquery.mmenu.min.all' %>
-        <%= javascript_include_tag 'jquery.mmenu.labels' %>
-        <%= javascript_include_tag 'main' %>
-
+        <%= javascript_include_tag 'application' %>
+        
     </body>
 </html>

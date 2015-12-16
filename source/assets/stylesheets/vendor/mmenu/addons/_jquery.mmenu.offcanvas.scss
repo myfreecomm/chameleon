@@ -1,0 +1,69 @@
+/*
+	jQuery.mmenu offcanvas addon CSS
+*/
+
+
+//	Animations
+.mm-page
+{
+	box-sizing: border-box;
+	position: relative;
+}
+.mm-slideout
+{
+	-webkit-transition: -webkit-transform 0.4s ease;
+	-ms-transition: -ms-transform 0.4s ease;
+	transition: transform 0.4s ease;
+}
+
+//	Container, Page, Blocker
+html.mm-opened
+{
+	overflow: hidden;
+	position: relative;
+	
+	body
+	{
+		overflow: hidden;
+	}
+}
+
+html.mm-background .mm-page
+{
+	background: inherit;
+}
+#mm-blocker
+{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+}
+html.mm-opened,
+html.mm-blocking
+{
+	#mm-blocker
+	{
+		display: block;
+	}
+}
+
+//	Menu
+.mm-menu
+{
+	&.mm-offcanvas
+	{
+		display: none;
+		position: fixed;
+	}
+	&.mm-current
+	{
+		display: block;
+	}
+}
+
+
+@include mm_sizing;

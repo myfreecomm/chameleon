@@ -1,0 +1,211 @@
+/*
+	jQuery.mmenu panels CSS
+*/
+@import "inc/variables";
+
+
+//	Animations
+.mm-menu.mm-horizontal > .mm-panel
+{
+	-webkit-transition: -webkit-transform 0.4s ease;
+	transition: transform 0.4s ease;
+}
+
+
+//	Generic classes
+.mm-menu .mm-hidden
+{
+	display: none;
+}
+
+
+//	Container
+.mm-wrapper
+{
+	overflow-x: hidden;
+	position: relative;
+}
+
+//	Menu
+.mm-menu,
+.mm-menu > .mm-panel
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+}
+.mm-menu
+{
+	background: inherit;
+	display: block;
+	overflow: hidden;
+	padding: 0;
+
+	> .mm-panel
+	{
+		background: inherit;
+
+		-webkit-overflow-scrolling: touch;
+		overflow: scroll;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		box-sizing: border-box;	
+
+		@include mm_webkit-prefix( 'transform', translate( 100%, 0 ) );
+		
+		&.mm-opened
+		{
+			@include mm_webkit-prefix( 'transform', translate( 0%, 0 ) );
+		}
+		&.mm-subopened
+		{
+			@include mm_webkit-prefix( 'transform', translate( -$mm_subpanelOffset, 0 ) );
+		}
+		&.mm-highest
+		{
+			z-index: 1;
+		}
+	}
+
+	//	Lists
+	.mm-list
+	> .mm-list
+	{
+		padding-bottom: 0;
+
+		&:after
+		{
+			content: '';
+			display: block;
+		}
+	}
+}
+.mm-panel > .mm-list
+{	
+	&:first-child
+	{
+		padding-top: 0;
+	}
+}
+
+.mm-list,
+.mm-list > li
+{
+	list-style: none;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+.mm-list
+{
+	font: inherit;
+
+	a,
+	a:hover
+	{
+		text-decoration: none;
+	}
+
+	> li
+	{
+		position: relative;
+
+		> a,
+		> span
+		{
+			@include mm_ellipsis;
+
+			color: inherit;
+			display: block;
+			margin: 0;
+		}
+	}
+
+	> li:not(.mm-subtitle):not(.mm-label):not(.mm-search):not(.mm-noresults)
+	{
+
+		&:after
+		{
+			width: auto;
+			position: relative;
+			left: auto;
+		}
+	}
+
+	// subopen/close
+	a.mm-subopen
+	{
+		height: 100%;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 2;
+
+		&.mm-fullsubopen
+		{
+			width: 100%;
+			
+			&:before
+			{
+				border-left: none;
+			}
+		}
+	}
+
+	> li.mm-selected
+	{
+		> a.mm-subopen
+		{
+			background: transparent;
+		}
+		> a.mm-fullsubopen
+		{
+			+ a,
+			+ span
+			{
+				margin-right: 0;
+			}
+		}
+	}
+	
+}
+
+// vertical submenu
+.mm-menu.mm-vertical .mm-list
+{
+	.mm-panel
+	{
+		display: none;
+		
+		li:last-child:after
+		{
+			border-color: transparent;
+		}
+	}
+	li.mm-opened > .mm-panel
+	{
+		display: block;
+	}
+	> li
+	{
+		> a.mm-subopen
+		{
+			&:after
+			{
+				bottom: auto;
+			}
+		}
+		&.mm-opened
+		{
+			> a.mm-subopen:after
+			{
+				@include mm_webkit-prefix( "transform", rotate( 45deg ) );
+			}
+		}
+	}
+}

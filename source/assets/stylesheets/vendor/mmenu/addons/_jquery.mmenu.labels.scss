@@ -1,0 +1,18 @@
+/*
+	jQuery.mmenu labels addon CSS
+*/
+
+.mm-list
+{
+	li.mm-label
+	{
+		> span
+		{
+			padding: 0;
+		}
+	}
+	li.mm-collapsed:not( .mm-uncollapsed )
+	{
+		display: none;
+	}
+}
