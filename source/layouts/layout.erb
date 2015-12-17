@@ -1,32 +1,23 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Chameleon - O framework de interface da Myfreecomm</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chameleon - O framework de interface da Myfreecomm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag 'chameleon' %>
+  </head>
+  <body class="<%= page_classes %>">
+    <%= partial 'common/nav' %>
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600' rel='stylesheet' type='text/css'>
-
-        <%= stylesheet_link_tag 'chameleon' %>
-
-  
-    </head>
-
-    <body class="<%= page_classes %>">
-      
-        <%= partial 'common/nav' %>
-
-        <div id="page">
-            <%= partial 'common/header' %>
-
-            <%= yield %>
-
-            <%= partial 'common/footer' %>
-        </div>
-        
-        <%= javascript_include_tag 'application' %>
-        
-    </body>
+    <div id="page">
+      <%= partial 'common/header' %>
+        <%= yield %>
+      <%= partial 'common/footer' %>
+    </div>
+    
+    <%= javascript_include_tag 'application' %>
+  </body>
 </html>
