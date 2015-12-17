@@ -11,3 +11,26 @@ body
   +box-shadow(0, 2px, 5px, rgba(0, 0, 0, 0.25))
   background: $color-white
   min-height: 300px
+
+  +medium-screens
+    margin: 0 1em
+
+  +mobile-portrait
+    margin: 0 1em
+
+.header_actions
+  background: #ffffff
+  padding: 0
+  +box-shadow(0, 2px, 5px, rgba(0, 0, 0, 0.25))
+
+  &-content
+    +outer-container
+
+  &-title
+    +span-columns(12)
+    margin: 0
+
+
+
+
+
