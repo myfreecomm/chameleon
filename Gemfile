@@ -15,6 +15,9 @@ gem 'font-awesome-sass', '~> 4.4.0'
 # Jquery
 gem "jquery-middleman"
 
+# Deploy to gh-pages
+gem "middleman-gh-pages", "~> 0.0.3"
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
