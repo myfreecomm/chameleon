@@ -2,13 +2,13 @@
 # the following line to use 'http://' instead
 source 'https://rubygems.org'
 
-gem 'middleman', '~>3.4.0'
+gem 'middleman', '~> 3.3.12'
 
 # Bourbon
-gem 'bourbon', '~>4.2.6'
+gem 'bourbon', '~> 4.2.6'
 
 # Neat Library
-gem 'neat', '1.7.2'
+gem 'neat', '~> 1.7.2'
 
 gem 'font-awesome-sass', '~> 4.4.0'
 
