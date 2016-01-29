@@ -88,7 +88,7 @@ $button-disabled-color: #BDC3C7
     pointer-events: none
     opacity: $button-opacity-disabled
 
-  // Types    
+  // Types
   &.radius
     border-radius: $button-radius
 
@@ -105,6 +105,12 @@ $button-disabled-color: #BDC3C7
     // States for hallow style
     &.button
       color: $button-primary-color
+      
+      &:hover,
+      &:focus
+        text-decoration: underline
+        background: transparent
+
 
     &.success
       color: $button-success-color
