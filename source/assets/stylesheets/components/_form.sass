@@ -1,3 +1,150 @@
 /* ==========================================================================
   FORMS
    ========================================================================== */
+
+
+// Checkbox
+.checkbox
+  position: relative
+  display: inline-block
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  outline: none
+  vertical-align: baseline
+  font-style: normal
+  line-height: 1em
+
+  /* HTML Checkbox */
+  input[type="checkbox"],
+  input[type="radio"]
+    cursor: pointer
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 1em
+    height: 1em
+    opacity: 0 !important
+    outline: none
+    z-index: 3
+
+    // Focus
+    &:focus 
+      ~ label
+        color: rgba(0, 0, 0, 0.95)
+
+      ~ label:before
+        background: #ffffff
+        border-color: #96c8da
+
+      ~ label:after
+        color: rgba(0, 0, 0, 0.95)
+
+    // Active
+    &:checked 
+      ~ label:before
+        background: #ffffff
+
+      ~ label:after
+        opacity: 1 
+
+    // Indeterminate
+    &:indeterminate   
+      ~ label:before
+        background: #ffffff
+
+      ~ label:after
+        opacity: 1
+        color: #00A7F1
+
+    // Active and Focus
+    &:indeterminate:focus ~ label:before,
+    &:checked:focus ~ label:before
+      background: #ffffff
+      border-color: #00A7F1
+
+    &:indeterminate:focus ~ label:after,
+    &:checked:focus ~ label:after
+      color: #00A7F1
+     
+  // Box
+  label
+    cursor: default
+    position: relative
+    display: block
+    padding: 0 1.5em
+    outline: none
+
+    &:before
+      position: absolute
+      top: 0px
+      left: 0px
+      width: 1em
+      height: 1em
+      content: ''
+      background: #ffffff
+      border-radius: 0.21428571rem
+      border: 1px solid #00A7F1
+
+    // Checkmark
+    &:after
+      position: absolute
+      top: 0px
+      left: 0px
+      width: 1em
+      height: 1em
+      text-align: center
+      opacity: 0
+      color: #00A7F1
+
+    //Hover
+    &:hover::before
+      background: #ffffff
+      border-color: #00A7F1  
+
+    //Down
+    &:active::before
+      background: #f9fafb
+      border-color: rgba(34, 36, 38, 0.35)
+
+    // Hidden
+    &.hidden
+      z-index: -1
+
+      // Selectable Label
+      + label
+        cursor: pointer
+        -webkit-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+
+  // Inside
+  label,
+  + label
+    color: #6C6C6C
+    -webkit-transition: color 0.1s ease
+    transition: color 0.1s ease
+
+  // Outside
+  + label
+    vertical-align: middle
+
+  // Display list
+  &.list
+    display: block
+    margin: 1em 0
+
+// Checkmark
+@font-face
+  font-family: 'Checkbox'
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBD8AAAC8AAAAYGNtYXAYVtCJAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zn4huwUAAAF4AAABYGhlYWQGPe1ZAAAC2AAAADZoaGVhB30DyAAAAxAAAAAkaG10eBBKAEUAAAM0AAAAHGxvY2EAmgESAAADUAAAABBtYXhwAAkALwAAA2AAAAAgbmFtZSC8IugAAAOAAAABknBvc3QAAwAAAAAFFAAAACAAAwMTAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADoAgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6AL//f//AAAAAAAg6AD//f//AAH/4xgEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAEUAUQO7AvgAGgAAARQHAQYjIicBJjU0PwE2MzIfAQE2MzIfARYVA7sQ/hQQFhcQ/uMQEE4QFxcQqAF2EBcXEE4QAnMWEP4UEBABHRAXFhBOEBCoAXcQEE4QFwAAAAABAAABbgMlAkkAFAAAARUUBwYjISInJj0BNDc2MyEyFxYVAyUQEBf9SRcQEBAQFwK3FxAQAhJtFxAQEBAXbRcQEBAQFwAAAAABAAAASQMlA24ALAAAARUUBwYrARUUBwYrASInJj0BIyInJj0BNDc2OwE1NDc2OwEyFxYdATMyFxYVAyUQEBfuEBAXbhYQEO4XEBAQEBfuEBAWbhcQEO4XEBACEm0XEBDuFxAQEBAX7hAQF20XEBDuFxAQEBAX7hAQFwAAAQAAAAIAAHRSzT9fDzz1AAsEAAAAAADRsdR3AAAAANGx1HcAAAAAA7sDbgAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADuwABAAAAAAAAAAAAAAAAAAAABwQAAAAAAAAAAAAAAAIAAAAEAABFAyUAAAMlAAAAAAAAAAoAFAAeAE4AcgCwAAEAAAAHAC0AAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAIAAAAAQAAAAAAAgAHAGkAAQAAAAAAAwAIADkAAQAAAAAABAAIAH4AAQAAAAAABQALABgAAQAAAAAABgAIAFEAAQAAAAAACgAaAJYAAwABBAkAAQAQAAgAAwABBAkAAgAOAHAAAwABBAkAAwAQAEEAAwABBAkABAAQAIYAAwABBAkABQAWACMAAwABBAkABgAQAFkAAwABBAkACgA0ALBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhWZXJzaW9uIDIuMABWAGUAcgBzAGkAbwBuACAAMgAuADBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhDaGVja2JveABDAGgAZQBjAGsAYgBvAHhSZWd1bGFyAFIAZQBnAHUAbABhAHJDaGVja2JveABDAGgAZQBjAGsAYgBvAHhGb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format('truetype')
+
+.checkbox label:after,
+  font-family: 'Checkbox'
+
+.checkbox input:checked ~ label:after
+  content: '\e800'
+
+.checkbox input:indeterminate ~ label:after
+  font-size: 1em
+  content: '\e801'
