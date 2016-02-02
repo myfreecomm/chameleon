@@ -45,6 +45,7 @@ $button-disabled-color: #BDC3C7
   margin: $button-margin
   text-decoration: none
   min-width: 10em
+  +transition(all 0.10s ease-in-out)
 
   &:hover,
   &:focus
@@ -108,8 +109,8 @@ $button-disabled-color: #BDC3C7
       
       &:hover,
       &:focus
-        text-decoration: underline
-        background: transparent
+        color: white
+        background: $button-primary-color
 
 
     &.success
@@ -117,32 +118,32 @@ $button-disabled-color: #BDC3C7
 
       &:hover,
       &:focus
-        text-decoration: underline
-        background: transparent
+        color: white
+        background: $button-success-color
 
     &.secondary
       color: $button-secondary-color
 
       &:hover,
       &:focus
-        text-decoration: underline
-        background: transparent
+        color: white
+        background: $button-secondary-color
 
     &.alert
       color: $button-alert-color
 
       &:hover,
       &:focus
-        text-decoration: underline
-        background: transparent
+        color: white
+        background: $button-alert-color
 
     &.warning
       color: $button-warning-color
 
       &:hover,
       &:focus
-        text-decoration: underline
-        background: transparent
+        color: white
+        background: $button-warning-color
 
   // Sizing
   &.tiny
@@ -151,7 +152,7 @@ $button-disabled-color: #BDC3C7
   &.small
     font-size: 0.75rem
 
-  &.Large
+  &.large
     font-size: 1.25rem
 
   &.expanded
