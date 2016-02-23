@@ -2,44 +2,68 @@
   FORMS
    ========================================================================== */
 
+// Input
+input[type=text], textarea
+  width: 100%
+  line-height: 2em
+  padding-left: 0.5rem
+  border: 1px solid #C6C6C6
+  appearance: none
+  -webkit-appearance: none
+  box-shadow: none
+  border-radius: none
+  +transition(all 0.25s ease-in-out)
 
-// Checkboc e Radio
+  &:focus, &:active
+    outline: none
+    border: 1px solid $color-petter-river
+
+  &.disabled, &:disabled
+    border: none
+    background-color: #EAEAEA
+    opacity: 0.8
+
+  &.error
+    color: $color-alizarin
+    border: 1px solid $color-alizarin
+
+    + .error-mensage
+      display: block
+      margin: 0.5em 0 0 
+      color: $color-alizarin
+      float: right
+      font-size: 0.85rem
 
 label
-  display: inline-block
-  cursor: pointer
-  position: relative
-  padding-left: 1.5em
-  margin-right: 1em
+  display: block
   color: #6C6C6C
+  margin: 0 0 0.5em
 
-  &:before
-    content: ""
+
+
+// Checkboc e Radio
+input[type=radio], input[type=checkbox]
+  display: none
+
+  + label
     display: inline-block
-    width: 1em
-    height: 1em
-    margin-right: 10px
-    position: absolute
-    left: 0
-    bottom: 1px
-    background-color: #FFFFFF
-    border: 1px solid #00A7F1
+    cursor: pointer
+    position: relative
+    padding-left: 1.5em
+    margin-right: 1em
+    color: #6C6C6C
 
-input
-  &[type=radio], &[type=checkbox]
-    display: none
-
-  &[type=radio]:checked + label:before
-    content: "\2022"
-    color: #00A7F1
-    text-align: center
-    line-height: 0.8em
-
-  &[type=checkbox]:checked + label:before
-    content: "\2713"
-    color: #00A7F1
-    text-align: center
-    line-height: 1em 
+    &:before
+      content: ""
+      display: inline-block
+      width: 1em
+      height: 1em
+      margin-right: 10px
+      position: absolute
+      left: 0
+      bottom: 1px
+      background-color: #FFFFFF
+      border: 1px solid #00A7F1
 
   &[type=radio] + label
     margin-bottom: 0.3em
@@ -47,8 +71,27 @@ input
     &:before
       border-radius: 5em
 
+  &[type=radio]:checked + label:before
+    content: "\2022"
+    color: #00A7F1
+    text-align: center
+    line-height: 0.8em
+
+
   &[type=checkbox] + label
     margin-bottom: 0.3em
 
     &:before
       border-radius: 0.2em
+
+  &[type=checkbox]:checked + label:before
+    content: "\2713"
+    color: #00A7F1
+    text-align: center
+    line-height: 1em
+
+
+
+// Class for better display in form field 
+.form-field
+  margin: 0 0 1.5em
