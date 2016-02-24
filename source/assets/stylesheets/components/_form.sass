@@ -7,6 +7,7 @@ input[type=text], textarea
   width: 100%
   line-height: 2em
   padding-left: 0.5rem
+  margin: 0 0 1.5em
   border: 1px solid #C6C6C6
   appearance: none
   -webkit-appearance: none
@@ -15,7 +16,7 @@ input[type=text], textarea
   +transition(all 0.25s ease-in-out)
 
   &:focus, &:active
-    outline: none
+    outline: 0
     border: 1px solid $color-petter-river
 
   &.disabled, &:disabled
@@ -28,12 +29,12 @@ input[type=text], textarea
   &.error
     color: $color-alizarin
     border: 1px solid $color-alizarin
+    margin: 0
 
     + .error-mensage
       display: block
-      margin: 0.5em 0 0 
+      margin: 0.5em 0 1em 0 
       color: $color-alizarin
-      float: right
       font-size: 0.85rem
 
 label
@@ -97,3 +98,6 @@ input[type=radio], input[type=checkbox]
 // Class for better display in form field 
 .form-field
   margin: 0 0 1.5em
+
+  input[type=text], textarea
+    margin: 0
