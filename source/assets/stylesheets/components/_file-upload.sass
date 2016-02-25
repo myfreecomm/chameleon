@@ -1,0 +1,61 @@
+/* ==========================================================================
+   ATTACHMENT
+   ========================================================================== */
+
+.file_upload
+  margin: 0 0 1.5em
+
+  .file_upload-input
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    overflow: hidden
+    position: absolute
+    z-index: -1
+
+    + .file_upload-label
+      width: 100%
+      text-overflow: ellipsis
+      white-space: nowrap
+      cursor: pointer
+      display: inline-block
+      overflow: hidden
+      color: #6C6C6C
+      border: 1px solid #C6C6C6
+      background-color: #ffffff
+      padding: 0
+      margin: 0
+
+      span,
+      strong 
+        padding: 0.4rem 1.25rem
+
+      span
+        width: calc(100% - 190px)
+        min-height: 2em
+        display: inline-block
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+        vertical-align: top
+        padding-left: 0.5rem
+
+      strong
+        height: 100%
+        color: #ffffff
+        background-color: $color-belize-hole
+        display: inline-block
+        font-weight: normal
+
+      svg
+        width: 1em
+        height: 1em
+        vertical-align: middle
+        fill: currentColor
+        margin-top: -0.25em
+        margin-right: 0.25em
+
+    &:focus + label strong,
+    &.has-focus + label strong,
+    + label:hover strong
+      background-color: scale-color($color-belize-hole, $lightness: -15%)
