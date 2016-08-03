@@ -1,0 +1,163 @@
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+// Padding inside buttons.
+$button-padding: 0.8em 1em !default
+
+// Margin around buttons.
+$button-margin: 0 0 1rem 0 !default
+
+// Default background color for buttons.
+$button-background: $color-primary !default
+
+// Background color on hover for buttons.
+$button-background-hover: scale-color($button-background, $lightness: -15%) !default
+
+// Font color for buttons.
+$button-color: #fff !default
+
+// Font color for buttons, if the background is light.
+$button-color-alt: #000 !default
+
+// Border radius for buttons, defaulted to global-radius.
+$button-radius: 0.5em !default
+
+// Opacity for a disabled button.
+$button-opacity-disabled: 0.25 !default
+
+// Color for states
+$button-primary-color: $color-primary
+$button-success-color: #43AA8B
+$button-secondary-color: #4E6F93
+$button-alert-color: #E74C3C
+$button-warning-color: #F1C40E
+$button-disabled-color: #BDC3C7
+
+.button
+  color: white
+  background: $button-primary-color
+  border: 1px solid $button-primary-color
+  display: inline-block
+  font-size: 0.9rem 
+  font-weight: 400
+  padding: $button-padding
+  margin: $button-margin
+  text-decoration: none
+  min-width: 10em
+  outline: 0
+  +transition(all 0.10s ease-in-out)
+
+  &:hover,
+  &:focus
+    background: $button-background-hover
+  
+  // States
+  &.success
+    background: $button-success-color
+    border: 1px solid $button-success-color
+
+    &:hover,
+    &:focus
+      background: shade($button-success-color, 10%)
+
+  &.secondary
+    background: $button-secondary-color
+    border: 1px solid $button-secondary-color
+
+    &:hover,
+    &:focus
+      background: shade($button-secondary-color, 10%)
+
+  &.alert
+    background: $button-alert-color
+    border: 1px solid $button-alert-color
+
+    &:hover,
+    &:focus
+      background: shade($button-alert-color, 10%)
+
+  &.warning
+    background: $button-warning-color
+    border: 1px solid $button-warning-color
+
+    &:hover,
+    &:focus
+      background: shade($button-warning-color, 10%)
+
+  &.disabled
+    cursor: not-allowed
+    pointer-events: none
+    opacity: $button-opacity-disabled
+
+  // Types
+  &.radius
+    border-radius: $button-radius
+
+  &.rounded
+    border-radius: ($button-radius +4.5em)
+
+  &.with-shadow
+    +box-shadow(0, 1px, 3px, rgba(0, 0, 0, 0.50))
+
+  &.hollow
+    background: transparent
+    border-width: 2px
+    
+    // States for hallow style
+    &.button
+      color: $button-primary-color
+      
+      &:hover,
+      &:focus
+        color: white
+        background: $button-primary-color
+
+
+    &.success
+      color: $button-success-color
+
+      &:hover,
+      &:focus
+        color: white
+        background: $button-success-color
+
+    &.secondary
+      color: $button-secondary-color
+
+      &:hover,
+      &:focus
+        color: white
+        background: $button-secondary-color
+
+    &.alert
+      color: $button-alert-color
+
+      &:hover,
+      &:focus
+        color: white
+        background: $button-alert-color
+
+    &.warning
+      color: $button-warning-color
+
+      &:hover,
+      &:focus
+        color: white
+        background: $button-warning-color
+
+  // Sizing
+  &.tiny
+    font-size: 0.6rem
+
+  &.small
+    font-size: 0.75rem
+
+  &.large
+    font-size: 1.25rem
+
+  &.expanded
+    display: block
+    width: 100%
+    margin-left: 0
+    margin-right: 0

@@ -1,0 +1,59 @@
+/* ==========================================================================
+   GLOBAL
+   ========================================================================== */
+   
+body
+  background-color: #F0F0F0
+  font-family: 'Lato', sans-serif
+
+.container
+  +outer-container
+  +padding(1rem 1rem 1em 1em)
+  +margin(1.5rem null null null)
+  +box-shadow(0, 2px, 5px, rgba(0, 0, 0, 0.25))
+  background: $color-white
+  min-height: 300px
+
+  +medium-screens
+    margin: 1.5rem 1rem
+
+  +mobile-portrait
+    margin: 1.5rem 1rem
+
+.header_actions
+  background: #ffffff
+  padding: 0
+  +box-shadow(0, 2px, 5px, rgba(0, 0, 0, 0.25))
+
+  &-content
+    +outer-container
+    line-height: 70px
+
+  &-title
+    +span-columns(12)
+    margin: 0
+    font-weight: 400
+    font-size: rem(20)
+    color: #7F7F7F
+
+    +medium-screens
+      +span-columns(24)
+      margin: 0 0.5rem
+
+    +mobile-portrait
+      +span-columns(24)
+      margin: 0 0.5rem
+      
+.title-float
+  +outer-container
+  +padding(null null null 0.5em)
+  color: darken($color-secondary, 50%)
+  font-size: em(18)
+  font-weight: 400
+  text-transform: uppercase  
+
+
+
+
+
+

@@ -1,3 +1,119 @@
 /* ==========================================================================
   FORMS
    ========================================================================== */
+
+// Input
+input[type=text],
+textarea
+  width: 100%
+  line-height: 2em
+  padding: 0 0.5em
+  margin: 0 0 1.5em
+  border: 1px solid #C6C6C6
+  appearance: none
+  -webkit-appearance: none
+  box-shadow: none
+  border-radius: none
+  +transition(all 0.25s ease-in-out)
+
+  &:focus, &:active
+    outline: 0
+    border: 1px solid $color-petter-river
+
+  &.disabled, &:disabled
+    border: none
+    background-color: #EAEAEA
+    color: #C4C4C4
+    opacity: 0.8
+    cursor: not-allowed
+    pointer-events: none
+
+  &.error
+    color: $color-alizarin
+    border: 1px solid $color-alizarin
+    margin: 0
+
+    + .error-mensage
+      display: block
+      margin: 0.5em 0 1em 0 
+      color: $color-alizarin
+      font-size: 0.85rem
+
+label
+  display: block
+  color: #6C6C6C
+  margin: 0 0 0.5em
+
+
+
+// Checkboc e Radio
+input[type=radio], input[type=checkbox]
+  display: none
+
+  + label
+    display: inline-block
+    cursor: pointer
+    position: relative
+    padding-left: 1.5em
+    margin-right: 1em
+    color: #6C6C6C
+
+    &:before
+      content: ""
+      display: inline-block
+      width: 1em
+      height: 1em
+      margin-right: 10px
+      position: absolute
+      left: 0
+      bottom: 1px
+      background-color: #FFFFFF
+      border: 1px solid #00A7F1
+
+  &[type=radio] + label
+    margin-bottom: 0.3em
+    
+    &:before
+      border-radius: 5em
+
+  &[type=radio]:checked + label:before
+    content: "\2022"
+    color: #00A7F1
+    text-align: center
+    line-height: 0.8em
+
+
+  &[type=checkbox] + label
+    margin-bottom: 0.3em
+
+    &:before
+      border-radius: 0.2em
+
+  &[type=checkbox]:checked + label:before
+    content: "\2713"
+    color: #00A7F1
+    text-align: center
+    line-height: 1em
+
+// Fieldset default
+.fieldset
+  border: 1px solid #c0c0c0
+  margin: 2em 0 0
+  padding: 2em 0.625em 0.75em
+  position: relative
+
+  .fieldset-title
+    background: #ffffff
+    font-weight: 400
+    padding: 0.5em
+    font-size: 1.125em
+    position: absolute
+    top: -2.1em
+    left: 1.5em
+
+// Class for better display in form field 
+.form-field
+  margin: 0 0 1.5em
+
+  input[type=text], textarea
+    margin: 0
