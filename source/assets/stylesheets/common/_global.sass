@@ -1,8 +1,10 @@
 /* ==========================================================================
-   GENERAL
+   GLOBAL
    ========================================================================== */
+   
 body
   background-color: #F0F0F0
+  font-family: 'Lato', sans-serif
 
 .container
   +outer-container
@@ -41,6 +43,15 @@ body
     +mobile-portrait
       +span-columns(24)
       margin: 0 0.5rem
+      
+.title-float
+  +outer-container
+  +padding(null null null 0.5em)
+  color: darken($color-secondary, 50%)
+  font-size: em(18)
+  font-weight: 400
+  text-transform: uppercase  
+
 
 
 
