@@ -46,13 +46,17 @@ body {
       }
 
       >.icon:not(.dropdown) {
-        margin-bottom: 2px !important;
+        margin-bottom: 2px !important; /*Overrides Semanti UI element declared with important */
       }
 
       .text {
         margin-bottom: 2px !important; /*Overrides Semanti UI element declared with important */
         font-size: 9px;
         text-transform: uppercase;
+      }
+
+      @media screen and (max-width: 768px) {
+        min-width: auto;
       }
     }
 
@@ -61,7 +65,12 @@ body {
       display: none;
 
       >.icon {
-        margin: 0!important;
+        margin: 0!important; /*Overrides Semanti UI element declared with important */
+      }
+
+      &.open {
+        text-align: right;
+        opacity: 1;
       }
 
       @media screen and (max-width: 768px) {
@@ -75,6 +84,7 @@ body {
 
       @media screen and (max-width: 768px) {
         display: none;
+        position: static;
       }
     }
 
@@ -87,6 +97,24 @@ body {
       min-height: auto;
       display: flex;
       flex-direction: row;
+      justify-content: center;
+
+      &.stackable {
+        flex-direction: column;
+
+        .item {
+          padding: 15px;
+        }
+
+        .helpers {
+          border-top: 1px solid rgba(255,255,255,.2);
+          border-bottom:1px solid rgba(255,255,255,.2);
+        }
+
+        .item.help-menu {
+          display: block;
+        }
+      }
     }
   }
 }
