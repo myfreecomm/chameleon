@@ -1,0 +1,55 @@
+@navigationSize: 85px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #eee;
+}
+
+.chameleon-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 65px;
+  padding: 10px;
+  color: #fff;
+  background-color: rgba(255,255,255,.2);
+
+  &:hover, &:active {
+    color: #fff;
+  }
+
+  img {
+    margin: auto;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+}
+
+.main-content {
+  margin-left: @navigationSize;
+  min-height: 100%;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+  }
+}
+
+
