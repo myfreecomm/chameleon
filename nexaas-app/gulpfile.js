@@ -5,7 +5,7 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 
 gulp.task('css', function(){
-  return gulp.src('app/assets/less/**/*.less')
+  return gulp.src('app/assets/less/style.less')
     .pipe(less())
     .pipe(minifyCSS())
     .pipe(gulp.dest('app/assets/css'))

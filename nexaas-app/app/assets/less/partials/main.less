@@ -1,4 +1,4 @@
-@navigationSize: 85px;
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i');
 
 * {
   margin: 0;
@@ -39,6 +39,14 @@ body {
   display: none;
 
   @media screen and (max-width: 767px) {
+    display: block;
+  }
+}
+
+.computer-only {
+  display: none;
+
+  @media screen and (min-width: 767px) {
     display: block;
   }
 }

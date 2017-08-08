@@ -6,51 +6,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Nexaas - Chameleon</title>
   <link rel="stylesheet" href="assets/css/semantic.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
   <nav class="chameleon-nav">
-    <div class="ui vertical labeled icon inverted sticky menu fixed">
-      <a href="#" class="chameleon-logo">
-        <img src="assets/img/chameleon-logo.png" />
-        <span class="text">Chameleon</span>
-      </a>
-      <div class="ui left pointing dropdown item">
-        <i class="dashboard icon"></i>
-        <span class="text">Painel</span>
-        <div class="menu">
-          <div class="ui header">Painel Principal</div>
-          <a class="item">Painel de exemplo</a>
-          <a class="item">Painel Modelo 3</a>
-          <a class="item">Painel Modelo 4</a>
+
+    <a href="#" class="chameleon-logo">
+      <img src="assets/img/chameleon-logo.png" />
+      <span class="text">Chameleon</span>
+    </a>
+
+    <ul class="chameleon-menu">
+      <li class="chameleon-menu-item active">
+        <a href="#" class="dropdown-hover">
+          <i class="dashboard large icon"></i>
+          <span class="chameleon-menu-label">Painel</span>
+        </a>
+        <div class="chameleon-dropdown">
+          <span class="chameleon-dropdown-header">Painel Principal</span>
+          <ul class="chameleon-dropdown-menu">
+            <li class="chameleon-dropdown-menu-item"><a href="#">Painel de Exemplo</a></li>
+            <li class="chameleon-dropdown-menu-item"><a href="#">Painel Modelo 1</a></li>
+            <li class="chameleon-dropdown-menu-item"><a href="#">Painel Modelo 2</a></li>
+          </ul>
         </div>
-      </div>
-      <a class="item">
-        <i class="sidebar icon"></i>
-        <span class="text">Formulários</span>
-      </a>
-      <a class="item">
-        <i class="user icon"></i>
-        <span class="text">Área do Cliente</span>
-      </a>
-      <a class="item">
-        <i class="money icon"></i>
-        <span class="text">Cobrança</span>
-      </a>
-      <div class="helpers">
-        <a class="item help-menu">
-          <i class="help circle outline icon"></i>
-          <span class="text">Ajuda</span>
+      </li>
+      <li class="chameleon-menu-item">
+        <a href="#">
+          <i class="sidebar large icon"></i>
+          <span class="chameleon-menu-label">Formulários</span>
+        </a>
+      </li>
+      <li class="chameleon-menu-item">
+        <a href="#">
+          <i class="user large icon"></i>
+          <span class="chameleon-menu-label">Área do Cliente</span>
+        </a>
+      </li>
+      <li class="chameleon-menu-item">
+        <a href="#">
+          <i class="money large icon"></i>
+          <span class="chameleon-menu-label">Cobranças</span>
+        </a>
+      </li>
+      <li class="chameleon-menu-item btn-show-menu">
+        <a href="#">
+          <i class="ellipsis large horizontal icon"></i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="chameleon-menu--helpers">
+      <div class="chameleon-menu-item mobile-only">
+        <a href="#" class="">
+          <i class="large university icon"></i>
+          <span class="chameleon-menu-label">Trocar Conta</span>
         </a>
       </div>
-      <a class="item show-menu">
-        <i class="ellipsis horizontal icon"></i>
-      </a>
+      <div class="chameleon-menu-item">
+        <a href="#" class="">
+          <i class="large help circle outline icon"></i>
+          <span class="chameleon-menu-label">Ajuda</span>
+        </a>
+      </div>
+    </div>
 
+    <div class="btn-close-menu">
+      <i class="large close icon"></i>
     </div>
   </nav>
 
+  <div class="main-content">
+
+    <header class="chameleon-header">
+
+      <div class="chameleon-header-breadcrumb ">
+
+        <div class="chameleon-header-breadcrumb-section">
+          <a href="#" class="dropdown-toggle">Nome da organização</a>
+          <div class="chameleon-dropdown bottom left" tabindex="-1">
+            <ul class="chameleon-dropdown-menu">
+              <li class="chameleon-dropdown-menu-item"><a href="#">Organização 1</a></li>
+              <li class="chameleon-dropdown-menu-item"><a href="#">Organização 2</a></li>
+              <li class="chameleon-dropdown-menu-item"><a href="#">Organização 3</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <i class="right chevron icon divider"></i>
+
+        <div class="chameleon-header-breadcrumb-section active">
+          <a href="#" class="dropdown-toggle">Painel</a>
+          <div class="chameleon-dropdown bottom left" tabindex="-1">
+            <ul class="chameleon-dropdown-menu">
+              <li class="chameleon-dropdown-menu-item"><a href="#">Formulários</a></li>
+              <li class="chameleon-dropdown-menu-item"><a href="#">Área do Cliente</a></li>
+              <li class="chameleon-dropdown-menu-item"><a href="#">Cobranças</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="chameleon-header-nav">
+        <a href="#" class="chameleon-header-nav-buttons"><i class="search large icon"></i></a>
+        <a href="#" class="chameleon-header-nav-buttons"><i class="bell outline large icon"></i></a>
+        <div class="chameleon-dropdown-container computer-only">
+          <a href="#" class="chameleon-header-nav-buttons dropdown-toggle">
+            <i class="university large icon"></i>
+          </a>
+          <div class="chameleon-dropdown bottom right" tabindex="-1">
+            <span class="chameleon-dropdown-header">Contas</span>
+            <ul class="chameleon-dropdown-menu">
+              <li class="chameleon-dropdown-menu-item"><a href="#">Conta Nexaas 1</a></li>
+              <li class="chameleon-dropdown-menu-item"><a href="#">Conta Nexaas 2</a></li>
+              <li class="chameleon-dropdown-menu-item"><a href="#">Conta Nexaas 3</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+  </div>
 
   <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="assets/js/semantic.min.js"></script>

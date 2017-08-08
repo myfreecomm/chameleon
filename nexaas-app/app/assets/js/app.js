@@ -1,35 +1,52 @@
-var chameleonNavMenu = $('.chameleon-nav > .menu');
-
 $(document).ready(function() {
 
-  $('.ui.dropdown').dropdown();
+  $('.btn-show-menu').on('click', openMenu);
 
-  $('.show-menu').on('click', function(e){
-    e.preventDefault();
+  $('.btn-close-menu').on('click', closeMenu);
 
-    if (chameleonNavMenu.hasClass('open')){
-      $(this).removeClass('open');
-      $(this).find('.icon').addClass('ellipsis horizontal');
-      $(this).find('.icon').removeClass('close');
-      closeMenu();
-    } else {
-      $(this).addClass('open');
-      $(this).find('.icon').removeClass('ellipsis horizontal');
-      $(this).find('.icon').addClass('close');
-      openMenu();
+  $('.dropdown-hover').on('click', function() {
+    if ( $('.chameleon-menu').hasClass('open') ) {
+      $(this).siblings().addClass('collapse');
+    }
+  });
+
+  $('.chameleon-dropdown').on({
+    focusout: function () {
+      $(this).data('timer', setTimeout(function () {
+        $(this).removeClass('visible');
+      }.bind(this), 0));
+    },
+    focusin: function () {
+      clearTimeout($(this).data('timer'));
+    }
+  });
+
+  $('.dropdown-toggle').on({
+    click: function (e) {
+      e.preventDefault();
+      $(this.hash).toggleClass('active').focus();
+      $(this).siblings().toggleClass('visible').focus();
+    },
+    focusout: function () {
+      $(this).siblings().data('timer', setTimeout(function () {
+        $(this).siblings().removeClass('visible');
+      }.bind(this), 0));
+    },
+    focusin: function () {
+      clearTimeout($(this).siblings().data('timer'));
     }
   });
 
 });
 
-var openMenu = function() {
-  chameleonNavMenu.removeClass('vertical labeled icon');
-  chameleonNavMenu.addClass('open stackable');
+var openMenu = function(e) {
+  e.preventDefault();
+  $('.chameleon-nav, .chameleon-menu, .chameleon-menu--helpers').addClass('open');
 }
 
 var closeMenu = function() {
-  chameleonNavMenu.addClass('vertical labeled icon');
-  chameleonNavMenu.removeClass('open stackable');
+  $('.chameleon-nav, .chameleon-menu, .chameleon-menu--helpers').removeClass('open');
+  $('.chameleon-dropdown').removeClass('collapse');
 }
 
 $(window).resize(function() {

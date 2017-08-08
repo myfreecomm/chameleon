@@ -18,5 +18,8 @@
 .DS_Store
 
 # Ignore node_modules folder
-
 /nexaas-app/node_modules
+
+# Ignore Ruby ENV dependencies
+/vendor
+.ruby-version
