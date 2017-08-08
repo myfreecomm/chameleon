@@ -1,0 +1,76 @@
+.chameleon-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background-color: #fff;
+
+  .chameleon-dropdown {
+    min-width: 200px;
+  }
+}
+
+.chameleon-header-breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: #4b4b4b;
+
+  &-section {
+    position: relative;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    color: inherit;
+    border-radius: 3px;
+
+    &:hover {
+      color: #4b4b4b;
+      background-color: #eee;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    &.active {
+      font-weight: 400;
+    }
+  }
+
+  .divider {
+    margin: 0 5px;
+    font-size: 14px;
+    opacity: .5;
+  }
+
+  @media screen and (max-width: 767px) {
+    &-section, .divider {
+      display: none;
+    }
+
+    &-section.active {
+      display: block;
+    }
+  }
+}
+
+.chameleon-header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-buttons {
+    display: block;
+    padding: 5px;
+    color: #666;
+
+    &:hover, &.active {
+      color: #4b4b4b;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+    }
+  }
+}
