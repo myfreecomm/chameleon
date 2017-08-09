@@ -45,7 +45,7 @@ $(document).ready(function() {
     $('.chameleon-search').hide(300);
   });
 
-  $('.chameleon-search-container').on('click', function(e) {
+  $('.chameleon-search-content').on('click', function(e) {
     e.stopPropagation();
   });
 
@@ -64,7 +64,7 @@ var closeMenu = function() {
 var showSearch = function(e) {
   e.preventDefault();
   $('.chameleon-search').show();
-  $('.chameleon-search-input input:text').val('').focus();
+  $('.chameleon-search-form-input').val('').focus();
 }
 
 $(window).resize(function() {
