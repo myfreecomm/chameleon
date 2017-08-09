@@ -37,6 +37,18 @@ $(document).ready(function() {
     }
   });
 
+  $('.btn-search').on('click', showSearch);
+
+  //Find another solution to this
+
+  $('.chameleon-search-overlay').on('click', function() {
+    $('.chameleon-search').hide(300);
+  });
+
+  $('.chameleon-search-container').on('click', function(e) {
+    e.stopPropagation();
+  });
+
 });
 
 var openMenu = function(e) {
@@ -47,6 +59,12 @@ var openMenu = function(e) {
 var closeMenu = function() {
   $('.chameleon-nav, .chameleon-menu, .chameleon-menu--helpers').removeClass('open');
   $('.chameleon-dropdown').removeClass('collapse');
+}
+
+var showSearch = function(e) {
+  e.preventDefault();
+  $('.chameleon-search').show();
+  $('.chameleon-search-input input:text').focus();
 }
 
 $(window).resize(function() {
