@@ -39,14 +39,20 @@ $(document).ready(function() {
 
   $('.btn-search').on('click', showSearch);
 
-  //Find another solution to this
-
-  $('.chameleon-search-overlay').on('click', function() {
+  $('.chameleon-search-overlay, .btn-close-search').on('click', function() {
     $('.chameleon-search').hide(300);
   });
 
   $('.chameleon-search-content').on('click', function(e) {
     e.stopPropagation();
+  });
+
+  $('.chameleon-search-form-input').on('input', function() {
+    if ( $(this).val() === '') {
+      $('.chameleon-search-results').slideUp(300);
+    } else {
+      $('.chameleon-search-results').slideDown(300);
+    }
   });
 
 });
