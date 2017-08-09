@@ -64,7 +64,7 @@ var closeMenu = function() {
 var showSearch = function(e) {
   e.preventDefault();
   $('.chameleon-search').show();
-  $('.chameleon-search-input input:text').focus();
+  $('.chameleon-search-input input:text').val('').focus();
 }
 
 $(window).resize(function() {
