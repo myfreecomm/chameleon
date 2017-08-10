@@ -42,14 +42,7 @@
   &-item {
     position: relative;
     opacity: 0.7;
-
-    &:hover {
-      > .chameleon-dropdown {
-        display: block;
-        -webkit-animation: fadeIn 0.5s;
-        animation: fadeIn 0.5s;
-      }
-    }
+    cursor: pointer;
 
     &:after {
       content: "";
@@ -171,6 +164,16 @@
         margin-bottom: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px ) {
+    &-item:hover {
+      > .chameleon-dropdown {
+        display: block;
+        -webkit-animation: fadeIn 0.5s;
+        animation: fadeIn 0.5s;
       }
     }
   }
