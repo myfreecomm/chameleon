@@ -4,73 +4,24 @@ $(document).ready(function() {
 
   $('.btn-close-menu').on('click', closeMenu);
 
-  $('.dropdown-toggle').on({
-    click: function (e) {
-      e.preventDefault();
-      $(this).next('.chameleon-dropdown').toggleClass('visible').focus();
-    },
-    focusout: function () {
-      $(this).next('.chameleon-dropdown').data('timer', setTimeout(function () {
-        $(this).next('.chameleon-dropdown').removeClass('visible');
-      }.bind(this), 0));
-    },
-    focusin: function () {
-      clearTimeout($(this).next('.chameleon-dropdown').data('timer'));
-    }
-  });
-
-  $('.dropdown-toggle').next('.chameleon-dropdown').on({
-    focusout: function () {
-      $(this).data('timer', setTimeout(function () {
-        $(this).removeClass('visible');
-      }.bind(this), 0));
-    },
-    focusin: function () {
-      clearTimeout($(this).data('timer'));
-    }
-  });
+  $('.dropdown-toggle, .dropdown-hover').on('click', showDropdown);
 
   $('.btn-search').on('click', showSearch);
 
-  $('.chameleon-search-overlay, .btn-close-search').on('click', function() {
-    $('.chameleon-search').hide(300);
-  });
+  $('.chameleon-search-overlay, .btn-close-search').on('click', hideSearch);
 
-  $('.chameleon-search-content').on('click', function(e) {
-    e.stopPropagation();
-  });
+  $('.chameleon-search-content').on('click', function(e) { e.stopPropagation(); });
 
-  $('.chameleon-search-form-input').on('input', function() {
-    if ( $(this).val() === '') {
-      $('.chameleon-search-results').slideUp(300);
-    } else {
-      $('.chameleon-search-results').slideDown(300);
-    }
-  });
+  $('.chameleon-search-form-input').on('input', toggleSearchResults);
 
-  $('.btn-remove-context').on('click', function() {
-    $('.chameleon-search-context').fadeOut(300);
-    $('.chameleon-search-form-input').focus();
-  });
+  $('.btn-remove-context').on('click', removeSearchContext);
 
-  //MOBILE ONLY
-
-  $('.dropdown-hover').on('click', function(e) {
-    if ( $(window).width() <= 768 ) {
-      e.preventDefault();
-      $(this).next('.chameleon-dropdown').toggleClass('visible');
-      $(this).toggleClass('open');
-    }
-  });
-
-  $(document).mouseup(function(e) {
-    if ( $(window).width() <= 768 ) {
-      var container = $(".chameleon-nav");
-
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        closeMenu();
-        container.unbind('mouseup');
-      }
+  $(document).on({
+    mouseup: function(e) {
+      hideDropdown(e);
+    },
+    keydown: function(e) {
+      hideSearchOnEscape(e);
     }
   });
 
@@ -92,6 +43,62 @@ var showSearch = function(e) {
   $('.chameleon-search').show();
   $('.chameleon-search-results').hide();
   $('.chameleon-search-form-input').val('').focus();
+}
+
+var hideSearch = function() {
+  $('.chameleon-search').hide(300);
+}
+
+var showDropdown = function(e) {
+  e.preventDefault();
+  if ( $(this).siblings().hasClass('visible') ) {
+    $('.chameleon-dropdown').removeClass('visible');
+  } else {
+    $('.chameleon-dropdown').removeClass('visible');
+    $(this).siblings().addClass('visible')
+  }
+}
+
+var hideDropdown = function(e) {
+  var container = "";
+  if ( $(window).width() <= 768 ) {
+    container = $('.chameleon-nav');
+
+    if (!container.is(e.target) && container.has(e.target).length === 0 ) {
+      closeMenu();
+      container.unbind('mouseup');
+    }
+  } else {
+    container = $('.chameleon-dropdown');
+
+    if (!container.is(e.target) &&
+      container.has(e.target).length === 0 &&
+      !container.siblings().is(e.target))
+    {
+      container.removeClass('visible');
+      container.unbind('mouseup');
+    }
+  }
+}
+
+var toggleSearchResults = function() {
+  if ( $(this).val() === '') {
+    $('.chameleon-search-results').slideUp(300);
+  } else {
+    $('.chameleon-search-results').slideDown(300);
+  }
+}
+
+var removeSearchContext = function() {
+  $('.chameleon-search-context').fadeOut(300);
+  $('.chameleon-search-form-input').focus();
+}
+
+var hideSearchOnEscape = function(e) {
+  var code = e.keyCode || e.which;
+  if ( code === 27 && $('.chameleon-search').is(':visible')) {
+    hideSearch();
+  }
 }
 
 $(window).resize(function() {
