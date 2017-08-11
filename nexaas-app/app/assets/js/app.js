@@ -61,6 +61,7 @@ var showDropdown = function(e) {
 
 var hideDropdown = function(e) {
   var container = "";
+
   if ( $(window).width() <= 768 ) {
     container = $('.chameleon-nav');
 
@@ -73,7 +74,7 @@ var hideDropdown = function(e) {
 
     if (!container.is(e.target) &&
       container.has(e.target).length === 0 &&
-      !container.siblings().is(e.target))
+      container.parent().has(e.target).length === 0)
     {
       container.removeClass('visible');
       container.unbind('mouseup');
@@ -82,11 +83,7 @@ var hideDropdown = function(e) {
 }
 
 var toggleSearchResults = function() {
-  if ( $(this).val() === '') {
-    $('.chameleon-search-results').slideUp(300);
-  } else {
-    $('.chameleon-search-results').slideDown(300);
-  }
+  $(this).val() === '' ? $('.chameleon-search-results').slideUp(300) : $('.chameleon-search-results').slideDown(300);
 }
 
 var removeSearchContext = function() {

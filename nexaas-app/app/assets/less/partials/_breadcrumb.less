@@ -1,0 +1,50 @@
+.chameleon-breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: #4b4b4b;
+
+  &-section {
+    position: relative;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    color: inherit;
+    border-radius: 3px;
+
+    &:hover {
+      color: @fontColor;
+      background-color: #eee;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    &.active {
+      font-weight: 400;
+    }
+  }
+
+  .divider {
+    margin: 0 5px;
+    font-size: 14px;
+    opacity: .5;
+  }
+
+  @media screen and (max-width: 767px) {
+
+    &-section, .divider {
+      display: none;
+    }
+
+    &-section.active {
+      display: block;
+    }
+
+    .dropdown-toggle {
+      pointer-events: none;
+    }
+  }
+}
