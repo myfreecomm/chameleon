@@ -1,17 +1,17 @@
-.chameleon-header {
-  padding: 20px 8px 20px 20px;
+.ch-header {
+  padding: 20px 8px 20px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 65px;
   background-color: #fff;
 
-  .chameleon-dropdown {
+  .ch-dropdown {
     min-width: 200px;
   }
 }
 
-.chameleon-header-nav {
+.ch-header-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@
   }
 }
 
-.chameleon-notification-label {
+.ch-notification-label {
   position: relative;
 
   &:after {
@@ -42,5 +42,22 @@
     height: 7px;
     background-color: #bb0c0c;
     border-radius: 100%;
+  }
+}
+
+.ch-content {
+
+  &-hgroup {
+    display: flex;
+    margin: 0;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+
+    .ui.header {
+      margin-right: 5px;
+      margin-bottom: 0;
+    }
   }
 }

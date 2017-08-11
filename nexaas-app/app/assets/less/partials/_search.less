@@ -1,8 +1,9 @@
-.chameleon-search {
+.ch-search {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
 
   &-overlay {
     position: fixed;
@@ -106,21 +107,31 @@
   }
 }
 
-.chameleon-search-results {
+.ch-search-results {
   display: none;
-  padding: 10px 15px;
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 3px 3px;
 
+  &-count, &-item {
+    padding: 10px 15px;
+  }
+
   &-count {
     display: block;
-    padding: 10px 0;
     font-size: 12px;
     color: #999;
   }
 
   &-item {
-    padding: calc(15px / 2px) 0;
+    display: block;
+    transition: all .3s;
+    color: @fontColor;
+
+    &:hover {
+      cursor: pointer;
+      color: inherit;
+      background-color: #eee;
+    }
   }
 }
