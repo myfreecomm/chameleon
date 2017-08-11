@@ -113,6 +113,7 @@
     }
 
     &-item {
+
       > a {
         padding: 5px 10px;
       }
@@ -127,6 +128,16 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    &:not(.open) {
+      .ch-menu-item {
+        display: none;
+
+        &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:last-child {
+          display: block;
+        }
+      }
     }
 
     .btn-show-menu {
