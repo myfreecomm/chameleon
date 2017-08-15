@@ -1,0 +1,49 @@
+.ch-notifications {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  &-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    animation: fadeIn .3s;
+  }
+
+  &-content {
+    width: 400px;
+    min-height: 100%;
+    margin-left: auto;
+    background-color: #fff;
+    animation: slide .3s;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: @mainColor;
+
+    .icon {
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &-content {
+      width: 100%;
+      animation: fadeIn .3s;
+    }
+  }
+}
+
+.btn-close-notifications {
+  cursor: pointer;
+}

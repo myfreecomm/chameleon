@@ -64,9 +64,21 @@ body {
 }
 
 .ch-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(~"100vh - 65px");
+
   .row.white {
     background-color: #fff;
   }
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 50px;
+  }
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 

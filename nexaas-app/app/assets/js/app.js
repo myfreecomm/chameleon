@@ -10,7 +10,11 @@ $(document).ready(function() {
 
   $('.ch-search-overlay, .btn-close-search').on('click', hideSearch);
 
-  $('.ch-search-content').on('click', function(e) { e.stopPropagation(); });
+  $('.btn-notifications').on('click', showNotifications);
+
+  $('.ch-notifications-overlay, .btn-close-notifications').on('click', hideNotifications);
+
+  $('.ch-search-content, .ch-notifications-content').on('click', function(e) { e.stopPropagation(); });
 
   $('.ch-search-form-input').on('input', toggleSearchResults);
 
@@ -47,6 +51,15 @@ var showSearch = function(e) {
 
 var hideSearch = function() {
   $('.ch-search').hide(300);
+}
+
+var showNotifications = function(e) {
+  e.preventDefault();
+  $('.ch-notifications').show();
+}
+
+var hideNotifications = function() {
+  $('.ch-notifications').hide(300);
 }
 
 var showDropdown = function(e) {

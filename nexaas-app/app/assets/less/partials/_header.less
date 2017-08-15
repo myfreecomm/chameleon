@@ -49,6 +49,7 @@
 
   &-hgroup {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 15px 20px;
     align-items: center;
@@ -58,6 +59,15 @@
     .ui.header {
       margin-right: 5px;
       margin-bottom: 0;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &-hgroup {
+      .ui.button {
+        width: 100%;
+        margin: 10px 0 0;
+      }
     }
   }
 }
