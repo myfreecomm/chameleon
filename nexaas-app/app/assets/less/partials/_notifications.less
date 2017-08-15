@@ -18,7 +18,13 @@
     min-height: 100%;
     margin-left: auto;
     background-color: #fff;
-    animation: slide .3s;
+    transform: translate(100%);
+    transition: all .3s;
+
+    &.active {
+      transform: translate(0);
+      transition: all .3s;
+    }
   }
 
   &-header {
@@ -28,11 +34,31 @@
     height: 65px;
     padding: 20px;
     font-size: 20px;
-    color: #fff;
-    background-color: @mainColor;
+    color: #4b4b4b;
+    border-bottom: 1px solid #ddd;
 
     .icon {
       margin: 0;
+    }
+  }
+
+  &-message {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ui.items {
+    margin-top: 0;
+  }
+
+  .ui.items>.item {
+    margin: 0;
+    padding: 1em;
+    flex-direction: row;
+    border-bottom: 1px solid #eee;
+
+    >.content {
+      padding: 10px;
     }
   }
 

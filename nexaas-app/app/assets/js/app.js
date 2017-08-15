@@ -55,10 +55,12 @@ var hideSearch = function() {
 
 var showNotifications = function(e) {
   e.preventDefault();
-  $('.ch-notifications').show();
+  $('.ch-notifications').show(300);
+  $('.ch-notifications-content').addClass('active');
 }
 
 var hideNotifications = function() {
+  $('.ch-notifications-content').removeClass('active');
   $('.ch-notifications').hide(300);
 }
 
