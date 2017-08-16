@@ -14,10 +14,15 @@
   }
 
   &-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 400px;
     min-height: 100%;
     margin-left: auto;
     background-color: #fff;
+    overflow-y: auto;
     transform: translate(100%);
     transition: all .3s;
 
@@ -32,7 +37,8 @@
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    padding: 20px;
+    padding: 15px;
+    padding-right: 5px;
     font-size: 20px;
     color: #4b4b4b;
     border-bottom: 1px solid #ddd;
@@ -44,7 +50,6 @@
 
   &-message {
     justify-content: center;
-    align-items: center;
   }
 
   .ui.items {
@@ -53,12 +58,39 @@
 
   .ui.items>.item {
     margin: 0;
-    padding: 1em;
     flex-direction: row;
-    border-bottom: 1px solid #eee;
+
+    &.unread {
+      background-color: #f0f0f0;
+    }
+
+    >.image  {
+      padding: 10px 0 10px 20px;
+
+      img {
+        border-radius: 100%;
+      }
+    }
 
     >.content {
-      padding: 10px;
+      padding: 10px 20px;
+
+      .header, .description {
+        color: inherit;
+      }
+
+      .header {
+        font-size: 16px;
+      }
+
+      .description {
+        margin: 5px 0;
+      }
+
+      .time {
+        font-style: italic;
+        color: lighten(@fontColor, 10%)
+      }
     }
   }
 
@@ -67,9 +99,34 @@
       width: 100%;
       animation: fadeIn .3s;
     }
+
+    .ui.items:not(.unstackable)>.item>.image+.content {
+      padding: 10px;
+    }
   }
 }
 
 .btn-close-notifications {
   cursor: pointer;
+}
+
+.btn-show-all {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  transform: translate(100%);
+  transition: all .3s;
+
+  &.active {
+    transform: translate(0);
+    transition: all .3s;
+  }
 }
