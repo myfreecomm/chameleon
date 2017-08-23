@@ -36,3 +36,42 @@
     font-style: italic;
   }
 }
+
+.ch-list {
+  .icon {
+    color: lighten(@fontColor, 40%);
+    transition: color .4s;
+
+    &:hover {
+      color: lighten(@fontColor, 15%)
+    }
+  }
+}
+
+.ch-segment-header {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    font-size: 16px;
+    color: #000;
+  }
+
+  .actions {
+    // float: right
+  }
+}
+
+/*Find a better class name*/
+
+.fixed-position {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.unstackable.items>.item>.image,
+  .ui.unstackable.items>.item>.image>img {
+    width: auto !important; //Overrides Semantic UI rule
+  }
+}

@@ -118,3 +118,10 @@ $(window).resize(function() {
     closeMenu();
   }
 });
+
+$('.ui.dropdown')
+  .dropdown({
+    showOnFocus: false
+  })
+;
+
