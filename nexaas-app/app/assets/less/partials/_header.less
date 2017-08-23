@@ -9,6 +9,14 @@
   .ch-dropdown {
     min-width: 200px;
   }
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(~'100% - 85px');
+    box-shadow: 0px 1px 3px rgba(160, 160, 160, 0.2)
+    z-index: 99;
+  }
 }
 
 .ch-header-nav {
@@ -68,6 +76,10 @@
       margin-right: 5px;
       margin-bottom: 0;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 65px;
   }
 
   @media screen and (max-width: 767px) {
