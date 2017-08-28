@@ -8,13 +8,14 @@ gulp.task('build', ['build-config', 'build-semantic-ui'], function() {
   console.log('build');
 });
 
-gulp.task('build-config', function(filename) {
-  fs.readFile(filename, 'utf8', function (err, data) {
+gulp.task('build-config', function() {
+  fs.readFile('../nexaas-app/chameleon.json', 'utf8', function (err, data) {
     if (err) throw err;
-    var chamelion = JSON.parse(data);
+    var chameleon = JSON.parse(data);
+
     fs.readFile('semantic-default.json', 'utf8', function (err, data) {
       var semanticDefault = JSON.parse(data);
-      var config = Object.assign(semanticDefault, chamelion);
+      var config = Object.assign(semanticDefault, chameleon);
       fs.writeFile('semantic.json', JSON.stringify(config, null, 2), function() {
         console.log("DONE!");
       });
