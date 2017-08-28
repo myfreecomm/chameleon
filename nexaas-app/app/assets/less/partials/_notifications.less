@@ -94,7 +94,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     &-content {
       width: 100%;
       animation: fadeIn .3s;
@@ -129,5 +129,9 @@
   &.active {
     transform: translate(0);
     transition: all .3s;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
   }
 }
