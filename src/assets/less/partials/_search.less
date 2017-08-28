@@ -1,0 +1,137 @@
+.ch-search {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  &-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    animation: fadeIn .3s;
+  }
+
+  &-content {
+    margin-left: 85px;
+    width: calc(~"100% - 170px"); // Used to escape string on Less
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+  }
+
+  &-input-group {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background-color: #fff;
+    animation: fadeIn .1s;
+  }
+
+  &-context {
+    display: flex;
+    max-width: 240px;
+    height: 100%;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+
+    .btn-remove-context {
+      margin-left: 15px;
+      cursor: pointer;
+    }
+  }
+
+  &-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 15px 5px 15px 15px;
+
+    &-input {
+      flex-grow: 1;
+      font-family: inherit;
+      font-size: 18px;
+      color: @fontColor;
+      border: 0;
+
+      &::placeholder {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &-icon {
+      color: @fontColor;
+      order: 1;
+    }
+
+    &:after {
+      content: "Pressione ESC para sair";
+      font-style: italic;
+      margin: 0 5px;
+      opacity: 0.4;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &-content {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      flex-wrap: wrap;
+      box-shadow: none;
+    }
+
+    &-context {
+      display: none;
+    }
+
+    &-form {
+      &:after {
+        content: "";
+      }
+    }
+
+    &-overlay {
+      background-color: #fff;
+    }
+
+    &-input-group {
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
+}
+
+.ch-search-results {
+  display: none;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+  border-radius: 0 0 3px 3px;
+
+  &-count, &-item {
+    padding: 10px 15px;
+  }
+
+  &-count {
+    display: block;
+    font-size: 12px;
+    color: #999;
+  }
+
+  &-item {
+    display: block;
+    transition: all .3s;
+    color: @fontColor;
+
+    &:hover {
+      cursor: pointer;
+      color: inherit;
+      background-color: #eee;
+    }
+  }
+}
