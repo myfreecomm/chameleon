@@ -1,0 +1,16 @@
+{
+  "name": "Chameleon",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn run gulp build"
+  },
+  "dependencies": {
+    "semantic-ui": "^2.2.13"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

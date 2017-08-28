@@ -1,0 +1,75 @@
+#users-chart, #pie-chart {
+  height: 300px;
+}
+
+.ui.segment.borderless {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ch-metric {
+
+  &-label {
+    color: #000;
+    font-size: 16px;
+  }
+
+  &-value {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 26px;
+    font-weight: 900;
+
+    &.blue {
+      color: #2987CD;
+    }
+
+    &.red {
+      color: #D92B2F;
+    }
+  }
+
+  &-date {
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
+.ch-list {
+  .icon {
+    color: lighten(@fontColor, 40%);
+    transition: color .4s;
+
+    &:hover {
+      color: lighten(@fontColor, 15%)
+    }
+  }
+}
+
+/*Find a better class name*/
+
+.ch-segment-header {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    font-size: 16px;
+    color: #000;
+  }
+}
+
+/*Find a better class name*/
+
+.fixed-position {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.unstackable.items>.item>.image,
+  .ui.unstackable.items>.item>.image>img {
+    width: auto !important; //Overrides Semantic UI rule
+  }
+}

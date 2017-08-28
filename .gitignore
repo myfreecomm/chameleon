@@ -18,8 +18,10 @@
 .DS_Store
 
 # Ignore node_modules folder
-/nexaas-app/node_modules
+node_modules
+dist
 
 # Ignore Ruby ENV dependencies
 /vendor
 .ruby-version
+yarn.lock
