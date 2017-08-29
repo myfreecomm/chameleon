@@ -9,7 +9,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(#000, 0.65);
     animation: fadeIn .3s;
   }
 
@@ -40,7 +40,7 @@
     padding: 15px;
     padding-right: 5px;
     font-size: 20px;
-    color: #4b4b4b;
+    color: $fontColor;
     border-bottom: 1px solid #ddd;
 
     .icon {
@@ -89,7 +89,7 @@
 
       .time {
         font-style: italic;
-        color: lighten(@fontColor, 10%)
+        color: lighten($fontColor, 10%)
       }
     }
   }

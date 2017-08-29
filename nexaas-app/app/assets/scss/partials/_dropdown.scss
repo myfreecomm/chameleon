@@ -7,7 +7,7 @@
   font-weight: 400;
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(#000, 0.15);
   outline: 0;
   z-index:1;
   animation: fadeIn 0.3s;
@@ -22,7 +22,7 @@
     top: 25px;
     left: -5px;
     transform: rotate(45deg);
-    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: -2px 2px 2px rgba(#000, 0.15);
     z-index: -1;
   }
 
@@ -41,7 +41,7 @@
     font-size: inherit;
     text-transform: uppercase;
     white-space: nowrap;
-    color: @fontColor;
+    color: $fontColor;
   }
 
   &-header {
@@ -50,7 +50,7 @@
 
   &-menu-item {
     a:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(#000, 0.05);
     }
   }
 
@@ -82,11 +82,11 @@
     top: auto;
     bottom: 50px;
     left: 0;
-    background-color: @mainColorDark;
+    background-color: $mainColorDark;
     border-radius: 0;
 
     &-header {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(#fff, 0.2);
     }
 
     &-header, &-menu-item a {

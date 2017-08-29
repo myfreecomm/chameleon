@@ -39,11 +39,11 @@
 
 .ch-list {
   .icon {
-    color: lighten(@fontColor, 40%);
+    color: lighten($fontColor, 40%);
     transition: color .4s;
 
     &:hover {
-      color: lighten(@fontColor, 15%)
+      color: lighten($fontColor, 15%)
     }
   }
 }

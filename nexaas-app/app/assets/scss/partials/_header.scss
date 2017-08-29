@@ -13,8 +13,8 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: calc(~'100% - 85px');
-    box-shadow: 0px 1px 3px rgba(160, 160, 160, 0.2);
+    width: calc(100% - 85px);
+    box-shadow: 0px 1px 3px rgba(#aaa, 0.2);
     z-index: 2;
   }
 }
@@ -30,7 +30,7 @@
     color: #666;
 
     &:hover, &.active {
-      color: @fontColor;
+      color: $fontColor;
       background-color: #f0f0f0;
       border-radius: 3px;
     }
