@@ -49,7 +49,7 @@
   }
 
   &-menu-item {
-    a:hover {
+    a:hover, &.active {
       background-color: rgba(#000, 0.05);
     }
   }
