@@ -1,3 +1,29 @@
+.ch-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 65px;
+  padding: 10px;
+  color: #fff;
+  background-color: $mainColorLight;
+
+  &:hover, &:active {
+    color: #fff;
+  }
+
+  img {
+    margin: auto;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
 .ch-nav {
   position: fixed;
   top: 0;
@@ -8,10 +34,6 @@
   flex-direction: column;
   background-color: $mainColor;
   z-index:1;
-
-  a {
-    color: #fff,
-  }
 
   ol, li {
     list-style: none;
@@ -44,6 +66,10 @@
     position: relative;
     opacity: 0.7;
     cursor: pointer;
+
+    > a {
+      color: #fff,
+    }
 
     &:after {
       content: "";
@@ -91,8 +117,10 @@
   }
 
   &--helpers {
-    margin-top: auto;
-    margin-bottom: 10px;
+    margin: {
+      top: auto;
+      bottom: 10px;
+    }
   }
 
   .btn-show-menu {
@@ -134,7 +162,12 @@
       .ch-menu-item {
         display: none;
 
-        &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:last-child {
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:last-child
+        {
           display: block;
         }
       }
@@ -174,8 +207,10 @@
         display: block;
         width: 100%;
         margin-bottom: 0;
-        border-top: 1px solid rgba(#fff, 0.3);
-        border-bottom: 1px solid rgba(#fff, 0.3);
+        border: {
+          top: 1px solid rgba(#fff, 0.3);
+          bottom: 1px solid rgba(#fff, 0.3);
+        }
       }
     }
   }

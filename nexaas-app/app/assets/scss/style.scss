@@ -1,19 +1,29 @@
-@import 'partials/_variables';
+//HELPERS
 
-@import 'partials/_animations';
+@import 'helpers/_variables';
+@import 'helpers/_utils';
+@import 'helpers/_animations';
 
-@import 'partials/main';
 
-@import 'partials/_menu';
+//BASE
 
-@import 'partials/_dropdown';
+@import 'base/_reset';
+@import 'base/_overrides';
 
-@import 'partials/_header';
+//COMPONENTS
 
-@import 'partials/_breadcrumb';
+@import 'components/_breadcrumb';
+@import 'components/_dropdown';
+@import 'components/_notifications';
+@import 'components/_search';
 
-@import 'partials/_search';
+//LAYOUT
 
-@import 'partials/_notifications';
+@import 'layout/_content';
+@import 'layout/_dashboard';
+@import 'layout/_header';
+@import 'layout/_menu';
 
-@import 'partials/dashboard';
+
+
+

@@ -73,16 +73,18 @@
     justify-content: space-between;
 
     .ui.header {
-      margin-right: 5px;
-      margin-bottom: 0;
+      margin: {
+        right: 5px;
+        bottom: 0;
+      }
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     padding-top: 65px;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     &-hgroup {
       .ui.button {
         width: 100%;

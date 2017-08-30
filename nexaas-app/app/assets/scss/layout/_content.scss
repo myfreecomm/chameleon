@@ -1,0 +1,26 @@
+.main-content {
+  margin-left: $navigationSize;
+  min-height: 100%;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.ch-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &.padded {
+    padding: 10px;
+  }
+
+  .row.white {
+    background-color: #fff;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 50px;
+  }
+}

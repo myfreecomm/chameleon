@@ -1,0 +1,20 @@
+.mobile-only {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.computer-only {
+  display: none;
+
+  @media screen and (min-width: 769px) {
+    display: block;
+  }
+}
+
+.grow {
+  flex-grow: 1;
+}
+
