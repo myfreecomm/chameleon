@@ -18,3 +18,8 @@
   flex-grow: 1;
 }
 
+.row-link {
+  &:hover {
+    cursor: pointer;
+  }
+}

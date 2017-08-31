@@ -72,6 +72,10 @@
     align-items: center;
     justify-content: space-between;
 
+    ~ .ui.padded.grid>.row {
+      padding-top: 0;
+    }
+
     .ui.header {
       margin: {
         right: 5px;

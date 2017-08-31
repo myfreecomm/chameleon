@@ -31,13 +31,13 @@
           </ul>
         </div>
       </li>
-      <li class="ch-menu-item active">
+      <li class="ch-menu-item">
         <a href="list.html">
           <i class="sidebar large icon"></i>
           <span class="ch-menu-label">Tarefas</span>
         </a>
       </li>
-      <li class="ch-menu-item">
+      <li class="ch-menu-item active">
         <a href="colaboradores.html">
           <i class="user large icon"></i>
           <span class="ch-menu-label">Colaboradores</span>
@@ -104,7 +104,7 @@
         </div>
         <i class="right chevron icon divider"></i>
         <div class="ch-breadcrumb-section active">
-          <a href="#" class="dropdown-toggle">Lista</a>
+          <a href="#" class="dropdown-toggle">Colaboradores</a>
         </div>
       </div>
 
@@ -134,262 +134,92 @@
     <div class="ch-content">
       <div class="ch-content-hgroup">
         <h2 class="ui medium header">
-          Bem-vindo
-          <div class="sub header">Manage your account settings and set e-mail preferences.</div>
+          Lista de Colaboradores
+          <div class="sub header">Listagem de todos os colaboradores cadastrados no sistema.</div>
         </h2>
-        <button class="ui positive button js-new-billet">Novo</button>
+        <button class="ui positive button js-new-billet">Novo colaborador</button>
       </div>
-      <div class="ui stackable internally celled grid grow">
-        <div class="row white">
+      <div class="ui stackable padded grid">
+        <div class="row">
           <div class="sixteen wide column">
 
-            <div class="ui clearing segment basic">
-              <div class="ui header left floated">Lista de clientes</div>
-              <div class="ui tiny basic buttons right floated">
-                <div class="ui button active">Dia</div>
-                <div class="ui button">Semana</div>
-                <div class="ui button">Mês</div>
-              </div>
-            </div>
-
-            <div class="ui fitted divider"></div>
-
-            <div class="ui segment borderless">
+            <div class="ui segment">
               <table class="ui very basic selectable table">
               <thead>
                 <tr>
-                  <th class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
-                  </th>
-                  <th>Name</th>
-                  <th>Date Joined</th>
-                  <th>E-mail</th>
-                  <th>Status</th>
-                  <th>Called</th>
-                  <th>&nbsp;</th>
+                  <th class="center aligned">&nbsp;</th>
+                  <th>Nome</th>
+                  <th>Cargo</th>
+                  <th>Nº de Registro</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class='row-link' data-href='list.html'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar small" src="http://i.pravatar.cc/50?img=1">
                   </td>
-                  <td>John Lilki</td>
-                  <td>September 14, 2013</td>
-                  <td>jhlilk22@yahoo.com</td>
-                  <td><div class="ui red horizontal label">Em atraso</div></td>
-                  <td>No</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>Rachel Lilki</td>
+                  <td>Aux. Administrativo</td>
+                  <td>32133</td>
                 </tr>
-                <tr>
+                <tr class='row-link' data-href='#'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar" src="http://i.pravatar.cc/50?img=2">
                   </td>
                   <td>Jamie Harington</td>
-                  <td>January 11, 2014</td>
-                  <td>jamieharingonton@yahoo.com</td>
-
-                  <td><div class="ui red basic horizontal label">Em atraso</div></td>
-                  <td>Yes</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>Designer Jr.</td>
+                  <td>76914</td>
                 </tr>
-                <tr>
+                <tr class='row-link' data-href='#'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar" src="http://i.pravatar.cc/50?img=3">
                   </td>
-                  <td>Jill Lewis</td>
-                  <td>May 11, 2014</td>
-                  <td>jilsewris22@yahoo.com</td>
-                  <td><div class="ui green horizontal label">Pago</div></td>
-                  <td>Yes</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>John Lewis</td>
+                  <td>UX Designer</td>
+                  <td>96610</td>
                 </tr>
-                <tr>
+                <tr class='row-link' data-href='#'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar" src="http://i.pravatar.cc/50?img=4">
                   </td>
-                  <td>John Lilki</td>
-                  <td>September 14, 2013</td>
-                  <td>jhlilk22@yahoo.com</td>
-                  <td><div class="ui green basic horizontal label">Pago</div></td>
-                  <td>No</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>Lena Lilki</td>
+                  <td>Front-end Developer</td>
+                  <td>36069</td>
                 </tr>
-                <tr>
+                <tr class='row-link' data-href='#'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar" src="http://i.pravatar.cc/50?img=5">
                   </td>
-                  <td>John Lilki</td>
-                  <td>September 14, 2013</td>
-                  <td>jhlilk22@yahoo.com</td>
-                  <td><div class="ui orange horizontal label">Pendente</div></td>
-                  <td>No</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>Susan Palmer</td>
+                  <td>Desenvolvedor Web</td>
+                  <td>95562</td>
                 </tr>
-                <tr>
+                <tr class='row-link' data-href='#'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar" src="http://i.pravatar.cc/50?img=6">
                   </td>
                   <td>Jamie Harington</td>
-                  <td>January 11, 2014</td>
-                  <td>jamieharingonton@yahoo.com</td>
-                  <td><div class="ui orange basic horizontal label">Pendente</div></td>
-                  <td>Yes</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>Desenvolvedor Web</td>
+                  <td>14548</td>
                 </tr>
-                <tr>
+                <tr class='row-link' data-href='#'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar" src="http://i.pravatar.cc/50?img=7">
                   </td>
-                  <td>Jill Lewis</td>
-                  <td>May 11, 2014</td>
-                  <td>jilsewris22@yahoo.com</td>
-                  <td><div class="ui blue horizontal label">Novo</div></td>
-                  <td>Yes</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>Jeff Lewis</td>
+                  <td>Designer Jr.</td>
+                  <td>68627</td>
                 </tr>
-                <tr>
+                <tr class='row-link' data-href='#'>
                   <td class="center aligned">
-                    <div class="ui checkbox">
-                      <input type="checkbox">
-                      <label>&nbsp;</label>
-                    </div>
+                    <img class="ch-avatar" src="http://i.pravatar.cc/50?img=8">
                   </td>
-                  <td>John Lilki</td>
-                  <td>September 14, 2013</td>
-                  <td>jhlilk22@yahoo.com</td>
-                  <td><div class="ui blue basic horizontal label">Novo</div></td>
-                  <td>No</td>
-                  <td class="table-actions">
-                    <div class="ui icon top right pointing dropdown tiny basic button circular">
-                      <i class="ellipsis horizontal icon"></i>
-                      <div class="menu">
-                        <div class="item"><i class="download icon"></i>Download</div>
-                        <div class="item"><i class="pencil icon"></i>Editar</div>
-                        <div class="item"><i class="trash icon"></i>Excluir</div>
-                      </div>
-                    </div>
-                  </td>
+                  <td>Joel Simmons</td>
+                  <td>UX Designer Jr.</td>
+                  <td>42637</td>
                 </tr>
               </tbody>
               </table>
-            </div>
-
-            <div class="ui segment center aligned basic">
-              <div class="row">
-                <div class="sixteen wide right aligned column">
-                  <div class="ui pagination menu">
-                    <a class="disabled item">
-                      Anterior
-                    </a>
-                    <a class="active item">
-                      1
-                    </a>
-                    <div class="disabled item">
-                      ...
-                    </div>
-                    <a class="item">
-                      10
-                    </a>
-                    <a class="item">
-                      11
-                    </a>
-                    <a class="item">
-                      12
-                    </a>
-                    <a class="item">
-                      Próxima
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

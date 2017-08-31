@@ -20,6 +20,8 @@ $(document).ready(function() {
 
   $('.btn-remove-context').on('click', removeSearchContext);
 
+  $('.row-link').on('click', clickableRow);
+
   $(document).on({
     mouseup: function(e) {
       hideDropdown(e);
@@ -111,6 +113,10 @@ var hideSearchOnEscape = function(e) {
   if ( code === 27 && $('.ch-search').is(':visible')) {
     hideSearch();
   }
+}
+
+var clickableRow = function() {
+  window.location = $(this).data("href");
 }
 
 $(window).resize(function() {
