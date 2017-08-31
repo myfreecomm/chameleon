@@ -23,3 +23,17 @@
     cursor: pointer;
   }
 }
+
+.ch-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000, 0.65);
+  animation: fadeIn .3s;
+
+  @media screen and (max-width: 768px) {
+    background-color: #fff;
+  }
+
+}
+

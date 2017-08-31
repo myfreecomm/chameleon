@@ -8,11 +8,9 @@ $(document).ready(function() {
 
   $('.btn-search').on('click', showSearch);
 
-  $('.ch-search-overlay, .btn-close-search').on('click', hideSearch);
-
   $('.btn-notifications').on('click', showNotifications);
 
-  $('.ch-notifications-overlay, .btn-close-notifications').on('click', hideNotifications);
+  $('.ch-overlay, .btn-close').on('click', hideChameleonModal);
 
   $('.ch-search-content, .ch-notifications-content').on('click', function(e) { e.stopPropagation(); });
 
@@ -97,6 +95,12 @@ var hideDropdown = function(e) {
       container.unbind('mouseup');
     }
   }
+}
+
+var hideChameleonModal = function() {
+  if ($('.ch-search').is(':visible')) { hideSearch() }
+
+  if ($('.ch-notifications').is(':visible')) { hideNotifications() }
 }
 
 var toggleSearchResults = function() {
