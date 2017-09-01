@@ -4,6 +4,7 @@ var minifyCSS = require('gulp-csso');
 var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 var browserSync = require('browser-sync').create();
+var pug = require('gulp-pug');
 
 gulp.task('css', function(){
   return gulp.src('app/assets/scss/style.scss')
@@ -18,6 +19,14 @@ gulp.task('concat', function() {
     .pipe(concatCss('main.css'))
     .pipe(minifyCSS())
     .pipe(gulp.dest('app/assets/css'));
+});
+
+gulp.task('views', function buildHTML() {
+  return gulp.src('app/assets/pug/*.pug')
+  .pipe(pug({
+    pretty: true,
+  }))
+  .pipe(gulp.dest('./app'));
 });
 
 // Static Server + watching scss/html files

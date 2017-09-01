@@ -1,0 +1,123 @@
+-
+  var people = [
+    { name: "Rachel", photo_id: "1" },
+    { name: "Lindsay", photo_id: "2" },
+    { name: "Matthew", photo_id: "3" },
+    { name: "Jenny Hess", photo_id: "4" },
+    { name: "Veronika Ossi", photo_id: "5" }
+  ];
+
+  var groups = [
+    { name: "Marketing", photo_id: "6" },
+    { name: "Comercial", photo_id: "7" },
+    { name: "Desenvolvimento", photo_id: "8" },
+    { name: "Contabilidade", photo_id: "9" },
+    { name: "Suporte", photo_id: "9" }
+  ];
+
+  var workers = [
+    { name: "John Lilki", admission_date: "September 14, 2013", email: "jhlilk22@yahoo.com" },
+    { name: "Jamie Harington", admission_date: "January 11, 2014", email: "jamieharingonton@yahoo.com" },
+    { name: "Jill Lewis", admission_date: "May 11, 2014", email: "jilsewris22@yahoo.com" },
+    { name: "Veronika Ossi", admission_date: "September 14, 2013", email: "verossi@yahoo.com" },
+  ];
+
+mixin smallCard(name, value, date, type)
+  .four.wide.computer.eight.wide.tablet.column
+    .ui.segment
+      .ui.equal.width.grid.ch-metric
+        .middle.aligned.column
+          .ch-metric-label=name
+        .column.right.aligned
+          .ch-metric-value(class=type)
+            i.icon.small.up.arrow
+            span=value
+          span.ch-metric-date=date
+
+mixin listSegment(title, items)
+  .ui.attached.segment.middle.aligned.ch-segment-header
+    span.ui.title= title
+    .ui.icon.dropdown.actions
+      i.icon.ellipsis.vertical
+      .menu.fixed-position
+        for item in ["Option 1", "Option 2", "Option 3"]
+          .item=item
+
+  .ui.attached.segment
+    .ui.unstackable.divided.items.ch-list
+      each item in items
+        .item
+          img.ui.avatar.image(src="http://i.pravatar.cc/50?img=" + item.photo_id)
+          .middle.aligned.content
+            span= item.name
+            a.right.floated(href="#")
+              i.icon.pencil
+
+doctype html
+html
+  include includes/head.pug
+
+  body
+    include includes/nav.pug
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ui.stackable.doubling.padded.grid
+
+          .row
+            +smallCard("Total de colaboradores", "800", "Jan  - Ago 2017", "blue")
+            +smallCard("Total de grupos", "10", "Jan  - Ago 2017", "blue")
+            +smallCard("Tarefas pendentes", "27", "Jan  - Ago 2017", "blue")
+            +smallCard("Eventos", "14", "Jan  - Ago 2017", "red")
+
+          .row.equal.width
+
+            .column
+              .ui.segments
+                +listSegment("Colaboradores", people)
+
+            .column
+              .ui.segments
+                +listSegment("Grupos", groups)
+
+          .row
+            .ten.wide.column
+              .ui.segments
+                .ui.attached.segment.middle.aligned.ch-segment-header
+                  span.ui.title Gráficos em linha
+
+                .ui.attached.segment
+                  #users-chart
+
+            .six.wide.column
+              .ui.segments
+                .ui.attached.segment.middle.aligned.ch-segment-header
+                  span.ui.title Gráficos em pizza
+
+                .ui.attached.segment
+                  #pie-chart
+
+          .row
+            .sixteen.wide.column
+              .ui.segments
+                .ui.attached.segment.middle.aligned.ch-segment-header
+                  span.ui.title Lista de colaboradores
+                .ui.attached.segment
+                  table.ui.very.basic.table
+                    thead
+                      tr
+                        th Name
+                        th Date Joined
+                        th E-mail
+                    tbody
+                      each worker in workers
+                        tr
+                          td= worker.name
+                          td= worker.admission_date
+                          td= worker.email
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug

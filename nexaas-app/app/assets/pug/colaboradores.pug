@@ -1,0 +1,209 @@
+-
+  var workers = [
+    { id: "32133", name: "Rachel Lilki", post: "Aux. Administrativo", avatar_src: "http://i.pravatar.cc/50?img=1", href: "#" },
+    { id: "76914", name: "Jamie Harington", post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=2", href: "#" },
+    { id: "96610", name: "John Lewis", post: "UX Designer", avatar_src: "http://i.pravatar.cc/50?img=3", href: "#" },
+    { id: "36069", name: "Lena Lilki", post: "Front-end Developer", avatar_src: "http://i.pravatar.cc/50?img=4", href: "#" },
+    { id: "95562", name: "Susan Palmer", post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=5", href: "#" },
+    { id: "14548", name: "Jamie Harington", post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=6", href: "#" },
+    { id: "68627", name: "Jeff Lewis", post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=7", href: "#" },
+    { id: "68627", name: "Ben Saric", post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=7", href: "#" },
+    { id: "42637", name: "Joel Simmons", post: "UX Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=8", href: "#" }
+  ];
+
+doctype html
+html
+  include includes/head.pug
+
+  body
+    include includes/nav.pug
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+          h2.ui.medium.header Lista de Colaboradores
+            .sub.header Listagem de todos os colaboradores cadastrados no sistema.
+
+          button.ui.positive.button.js-new-billet Novo colaborador
+
+        .ui.stackable.padded.grid
+          .row
+            .sixteen.wide.column
+              .ui.segment
+                table.ui.very.basic.selectable.table
+                  thead
+                    tr
+                      th.center.aligned &nbsp;
+                      th Nome
+                      th Cargo
+                      th Nº de Registro
+                  tbody
+                    each worker in workers
+                      tr.row-link(data-href= worker.href)
+                        td.center.aligned
+                          img.ch-avatar.small(src= worker.avatar_src)
+                        td= worker.name
+                        td= worker.post
+                        td= worker.id
+
+              .ui.segment.center.aligned.basic
+                .row
+                  .sixteen.wide.right.aligned.column
+                    .ui.pagination.menu
+                      a.disabled.item.
+                        Anterior
+                      a.active.item.
+                        1
+                      .disabled.item.
+                        ...
+                      a.item.
+                        10
+                      a.item.
+                        11
+                      a.item.
+                        12
+                      a.item.
+                        Próxima
+
+    .ui.ch-modal.long.modal
+      i.close.icon
+      .header.
+        Nova Cobrança
+      .content
+        form.ui.form
+          .ui.basic.segment
+            h4.ui.dividing.header Informações de Cobrança
+
+            .two.fields
+              .field.required
+                label(for="") Configuração de cobrança
+                select.ui.dropdown.selection(name="")
+                  option(value="") Selecione a Configuração
+                  each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    option(value= option)= option
+
+              .field.required
+                label(for="") Modelo de Cobrança
+                select.ui.dropdown.selection(name="")
+                  option(value="") Selecione um modelo
+                  each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    option(value= option)= option
+
+            .four.fields
+              .field
+                label(for="") Cobrança registrável ?
+                select.ui.dropdown.selection(disabled)
+                  each option in ["Option 1", "Option 2"]
+                    option(value= option)= option
+
+              .field
+                label(for="") Espécie do documento
+                select.ui.dropdown(name="")
+                  option(value="") Selecione espécie
+                  each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    option(value= option)= option
+
+              .field
+                label(for="") Número do documento
+                input(type="text")
+              .field
+                label(for="") Data do documento
+                input(type="text" placeholder="dd/mm/aaaa")
+
+            .fields
+              .eight.wide.field
+                label(for="") Tipo de multa
+                select.ui.dropdown(name="" disabled)
+                    each option in ["Sem Multa", "Option 2"]
+                      option(value= option)= option
+              .field
+                label Valor da multa
+                .ui.labeled.input
+                  label.ui.label(for="amount") $
+                  input(type="text" placeholder="0,00" disabled)
+
+              .field
+                label Porcentagem Juros por Mês
+                div.ui.right.labeled.input
+                  input(type="text" placeholder="0" disabled)
+                  label.ui.label(for="amount") %
+
+            .two.fields
+              .field
+                label(for="") Instruções
+                textarea(rows="2")
+                span.text Você pode adicionar 9 linhas de 65 caracteres
+
+              .field
+                label(for="") Demonstrativo
+                textarea(rows="2")
+                span.text Você pode adicionar 9 linhas de 65 caracteres
+
+          .ui.basic.segment
+            h4.ui.dividing.header Informações do Cliente
+
+            .field.required
+              label(for="") CPF / CNPJ
+              .ui.right.labeled.input
+                input(type="text" placeholder="000.000.000-00")
+                .ui.dropdown.label
+                  .text CPF
+                  i.dropdown.icon
+                  .menu
+                    .item CPF
+                    .item CNPJ
+
+            .field.required
+              label(for="") Nome
+              input(type="text" placeholder="Insira seu nome")
+
+            .four.fields
+              .field
+                label(for="") CEP
+                input(type="text")
+
+              .field
+                label(for="") Estado
+                select.ui.dropdown(name="")
+                  option(value="") Selecione um Estado
+                  each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    option(value= option)= option
+
+              .field
+                label(for="") Cidade
+                select.ui.dropdown(name="")
+                  option(value="") Selecione uma Cidade
+                  each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    option(value= option)= option
+
+              .field
+                label(for="") Bairro
+                input(type="text")
+
+            .fields
+              .eight.wide.field
+                label(for="") Complemento
+                input(type="text")
+
+              .field
+                label(for="") Número
+                input(type="text")
+
+              .field
+                label(for="") Complemento
+                input(type="text")
+
+      .actions
+        .ui.negative.basic.button Cancel
+        .ui.submit.positive.button OK
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
+    script(type="text/javascript").
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });
