@@ -12,7 +12,7 @@
     { name: "Comercial", photo_id: "7" },
     { name: "Desenvolvimento", photo_id: "8" },
     { name: "Contabilidade", photo_id: "9" },
-    { name: "Suporte", photo_id: "9" }
+    { name: "Suporte", photo_id: "10" }
   ];
 
   var workers = [
@@ -58,7 +58,7 @@ html
   include includes/head.pug
 
   body
-    include includes/nav.pug
+    +nav('index.html')
 
     .main-content
       include includes/header.pug
