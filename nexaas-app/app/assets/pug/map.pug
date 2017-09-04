@@ -1,0 +1,28 @@
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('map.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        #map
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
+    script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlHYJLboGs7xpvK0it2w4S8SjqLMUvZWs&callback=initMap"
+    async defer)
+    script(type="text/javascript").
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -22.8048372, lng: -43.2458182},
+          scrollwheel: false,
+          zoom: 12,
+          mapTypeControl: false,
+        });
+      }

@@ -8,6 +8,7 @@
 }
 
 .ch-content {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,6 +22,7 @@
   }
 
   @media screen and (max-width: 768px) {
+    min-height: calc(100vh - 65px - 50px);
     padding-bottom: 50px;
   }
 }
