@@ -30,5 +30,34 @@
 .ch-avatar {
   width: 40px;
   height: 40px;
-  border-radius: 100%;
+
+  &.big {
+    width: 120px;
+    height: 120px;
+  }
+
+  &.rounded {
+    border-radius: 100%;
+  }
+}
+
+.ch-avatar-upload {
+  display: flex;
+  align-items: center;
+
+  .info {
+    margin: 0 1.5em;
+
+    .ui.header {
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .ui.button {
+      margin: 10px 0 0;
+    }
+  }
 }
