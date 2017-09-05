@@ -78,7 +78,7 @@ html
             .ch-avatar-upload
               img.ch-avatar.big(src="http://via.placeholder.com/120x120")
               .info
-                .ui.header Foto de perfil
+                h3.ui.header Foto de perfil
                 p Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff
                 p Limite de tamanho de arquivo: 10MB
                 .ch-input-file
@@ -90,7 +90,9 @@ html
 
         .content
           .ui.basic.padded.segment
-            h4.ui.dividing.header Informações Pessoais
+            h3.ui.header Informações Pessoais
+
+            .ui.divider.hidden
 
             .fields
               .eight.wide.field.required
@@ -148,8 +150,13 @@ html
                       .item BRL
                       .item EUR
 
+        .ui.divider.fitted
+
+        .content
           .ui.basic.padded.segment
-            h4.ui.dividing.header Informações de Endereço
+            h3.ui.header Informações de Endereço
+
+            .ui.divider.hidden
 
             .fields
               .four.wide.field.required
