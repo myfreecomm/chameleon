@@ -1,0 +1,13 @@
+.ui.pagination.menu {
+  @media screen and (max-width: 480px) {
+    .item {
+      display: none;
+
+      &:first-child, &:last-child {
+        display: flex;
+      }
+    }
+  }
+}
+
+
