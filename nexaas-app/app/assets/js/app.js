@@ -1,24 +1,24 @@
 $(document).ready(function() {
 
-  $('.btn-show-menu').on('click', openMenu);
+  $(document).on('click', '.btn-show-menu', openMenu);
 
-  $('.btn-close-menu').on('click', closeMenu);
+  $(document).on('click', '.btn-close-menu', closeMenu);
 
-  $('.dropdown-toggle, .dropdown-hover').on('click', showDropdown);
+  $(document).on('click', '.dropdown-toggle, .dropdown-hover', showDropdown);
 
-  $('.btn-search').on('click', showSearch);
+  $(document).on('click', '.btn-search', showSearch);
 
-  $('.btn-notifications').on('click', showNotifications);
+  $(document).on('click', '.btn-notifications', showNotifications);
 
-  $('.ch-overlay, .btn-close').on('click', hideChameleonModal);
+  $(document).on('click', '.ch-overlay, .btn-close', hideChameleonModal);
 
-  $('.ch-search-content, .ch-notifications-content').on('click', function(e) { e.stopPropagation(); });
+  $(document).on('click', '.ch-search-content, .ch-notifications-content', function(e) { e.stopPropagation(); });
 
-  $('.ch-search-form-input').on('input', toggleSearchResults);
+  $(document).on('input', '.ch-search-form-input', toggleSearchResults);
 
-  $('.btn-remove-context').on('click', removeSearchContext);
+  $(document).on('click', '.btn-remove-context', removeSearchContext);
 
-  $('.row-link').on('click', clickableRow);
+  $(document).on('click', '.row-link', clickableRow);
 
   $(document).on({
     mouseup: function(e) {
