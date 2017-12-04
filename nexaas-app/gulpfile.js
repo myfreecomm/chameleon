@@ -1,24 +1,17 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-csso');
-var concat = require('gulp-concat');
-var concatCss = require('gulp-concat-css');
 var browserSync = require('browser-sync').create();
 var pug = require('gulp-pug');
+var rename = require('gulp-rename');
 
 gulp.task('css', function(){
   return gulp.src('app/assets/scss/style.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(minifyCSS())
+    .pipe(rename('chameleon.min.css'))
     .pipe(gulp.dest('app/assets/css'))
     .pipe(browserSync.stream());
-});
-
-gulp.task('concat', function() {
-  return gulp.src(['app/assets/css/semantic.min.css', 'app/assets/css/style.css'])
-    .pipe(concatCss('main.css'))
-    .pipe(minifyCSS())
-    .pipe(gulp.dest('app/assets/css'));
 });
 
 gulp.task('views', function buildHTML() {
@@ -30,7 +23,7 @@ gulp.task('views', function buildHTML() {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['css', 'concat', 'views'], function() {
+gulp.task('serve', ['css', 'views'], function() {
   browserSync.init({
     server: "./app",
     notify: false
