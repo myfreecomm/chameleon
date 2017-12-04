@@ -35,6 +35,11 @@
   background-color: $mainColor;
   z-index:1;
 
+  a {
+    text-decoration: none;
+  }
+
+
   ol, li {
     list-style: none;
   }
