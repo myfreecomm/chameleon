@@ -135,3 +135,10 @@ $('.ui.dropdown')
   })
 ;
 
+$('.bind-popup')
+  .popup({
+    inline: true
+  });
+;
+
+

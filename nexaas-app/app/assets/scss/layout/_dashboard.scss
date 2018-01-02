@@ -8,6 +8,23 @@
   box-shadow: none;
 }
 
+.ui.segment.paddingless {
+  padding: 0;
+
+  .ui.table td {
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+
+    &:first-child {
+      padding-left: 1.2em;
+    }
+
+    &:last-child {
+      padding-right: 1.2em;
+    }
+  }
+}
+
 .ch-metric {
 
   &-label {

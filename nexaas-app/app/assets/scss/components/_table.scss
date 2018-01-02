@@ -1,0 +1,16 @@
+.ch-table-buttons {
+  .ui.icon.button {
+    padding: 0.5em;
+    background-color: transparent;
+  }
+}
+
+.bind-popup + .ui.popup {
+  width: auto;
+  max-width: 300px;
+
+  .ui.label {
+    margin: 0.25em;
+    white-space: nowrap;
+  }
+}

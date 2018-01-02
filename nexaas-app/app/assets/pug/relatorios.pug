@@ -1,0 +1,43 @@
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('relatorios.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+          h2.ui.medium.header Lorem Ipsum
+            .sub.header Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos.
+
+          button.ui.positive.button.js-new-billet Criar relatório
+
+        .ui.stackable.padded.grid
+          .row
+            .sixteen.wide.column
+              .ui.segments
+                .ui.attached.segment.ch-segment-header
+                  .ui.title Modelos de Relatório
+                .ui.attached.segment.paddingless
+                  table.ui.very.basic.table
+                    - for (var i=0; i<5; i++)
+                      tr
+                        td
+                          h4.ui.header Relatório sintético agrupado por Projetos
+                            .sub.header Com #[strong #[a(class="bind-popup" data-position="right center" href="#" data-html="<div class='ui label'>Ocorrido em: 01/03/2017 á 10/04/2017</div><div class='ui label'>Contém comentários</div><div class='ui label'>Contém etiquetas</div>") 3] ]filtros selecionados
+
+                        td.right.aligned Criado em: 27/12/2017 14:39:54
+                        td.right.aligned.ch-table-buttons
+                          button.ui.icon.button
+                            i.edit.icon
+                          button.ui.icon.button
+                            i.file.text.icon
+                          button.ui.icon.button
+                            i.remove.icon
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
