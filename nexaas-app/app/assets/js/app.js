@@ -129,16 +129,28 @@ $(window).resize(function() {
   }
 });
 
+/*** SEMANTIC UI **/
+
 $('.ui.dropdown')
   .dropdown({
     showOnFocus: false
   })
 ;
 
+$('.ui.checkbox')
+  .checkbox()
+;
+
 $('.bind-popup')
   .popup({
     inline: true
   });
+;
+
+$('.ui.sticky')
+  .sticky({
+    context: '#report-form'
+  })
 ;
 
 

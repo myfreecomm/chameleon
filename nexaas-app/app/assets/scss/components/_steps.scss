@@ -1,0 +1,53 @@
+.steps {
+  .step {
+
+    opacity: 0.3;
+
+    &-header {
+      display: flex;
+
+      .ui.header {
+        margin-top: 0;
+      }
+
+      .number {
+        margin-right: 1em;
+        align-self: flex-start;
+      }
+    }
+
+    &-content {
+      padding: 2em;
+      margin: 0.5em 1.2em;
+    }
+
+    .options {
+      padding: 0.8em;
+      min-width: 120px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+
+      &.checked {
+        background-color: #e5e5e5;
+        font-weight: 600;
+      }
+    }
+
+    &.active {
+
+      opacity: 1;
+
+      .step-content {
+        border-left: 2px dashed #999;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.ch-rail {
+  .ui.sticky.fixed.top {
+    top: calc(65px + 20px)
+  }
+}

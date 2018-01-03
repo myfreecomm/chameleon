@@ -23,8 +23,8 @@
           </li>
           <li class="ch-menu-item"><a href="#"><i class="sidebar large icon"></i><span class="ch-menu-label">Tarefas</span></a></li>
           <li class="ch-menu-item"><a href="employees.html"><i class="user large icon"></i><span class="ch-menu-label">Colaboradores</span></a></li>
-          <li class="ch-menu-item active"><a href="map.html"><i class="marker large icon"></i><span class="ch-menu-label">Mapas</span></a></li>
-          <li class="ch-menu-item"><a href="reports.html"><i class="browser large icon"></i><span class="ch-menu-label">Relatórios</span></a></li>
+          <li class="ch-menu-item"><a href="map.html"><i class="marker large icon"></i><span class="ch-menu-label">Mapas</span></a></li>
+          <li class="ch-menu-item active"><a href="reports.html"><i class="browser large icon"></i><span class="ch-menu-label">Relatórios</span></a></li>
           <li class="ch-menu-item btn-show-menu"><a href="#"><i class="ellipsis large horizontal icon"></i></a></li>
         </ul>
         <div class="ch-menu--helpers">
@@ -76,7 +76,126 @@
         </div>
       </header>
       <div class="ch-content">
-        <div id="map"></div>
+        <div class="ch-content-hgroup">
+          <h2 class="ui medium header">Criar Relatório
+            <div class="sub header">Siga os passos abaixo e defina os critérios para gerar seu relatório</div>
+          </h2>
+        </div>
+        <div class="ui stackable padded grid">
+          <div class="row">
+            <div class="thirteen wide column"><br><br>
+              <form id="report-form">
+                <div class="ui form">
+                  <section class="steps">
+                    <div class="step active">
+                      <div class="step-header"><a class="ui grey circular big label number">1</a>
+                        <h4 class="ui medium header">Selecione o agrupador
+                          <div class="sub header">Agrupadores servem para organizar a informação de uma forma mais eficiente.</div>
+                        </h4>
+                      </div>
+                      <div class="step-content">
+                        <div class="inline fields">
+                          <div class="field">
+                            <div class="ui radio checkbox options">
+                              <input class="hidden" type="radio" tabindex="0" name="agrupador" id="projects">
+                              <label for="projects">Projetos</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui radio checkbox options">
+                              <input class="hidden" type="radio" tabindex="0" name="agrupador" id="activities">
+                              <label for="activities">Atividades</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui radio checkbox options">
+                              <input class="hidden" type="radio" tabindex="0" name="agrupador" id="employees">
+                              <label for="employees">Colaboradores</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="step-header"><a class="ui grey circular big label number basic">2</a>
+                        <h4 class="ui medium header">Qual tipo ?
+                          <div class="sub header">Defina o tipo do seu relatório.</div>
+                        </h4>
+                      </div>
+                      <div class="step-content">
+                        <div class="inline fields">
+                          <div class="field">
+                            <div class="ui radio checkbox options">
+                              <input class="hidden" type="radio" tabindex="0" name="tipo" id="synthetic">
+                              <label for="synthetic">Sintético</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui radio checkbox options">
+                              <input class="hidden" type="radio" tabindex="0" name="tipo" id="analytic">
+                              <label for="analytic">Analítico</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="step-header"><a class="ui grey circular big label number basic">3</a>
+                        <h4 class="ui medium header">Gostaria de mais opções ?
+                          <div class="sub header">Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!</div>
+                        </h4>
+                      </div>
+                      <div class="step-content">
+                        <div class="inline fields">
+                          <div class="field">
+                            <div class="ui checkbox options">
+                              <input class="hidden" type="checkbox" tabindex="0" name="add-graphs" id="add-graphs">
+                              <label for="add-graphs">Adicionar Gráfico</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox options">
+                              <input class="hidden" type="checkbox" tabindex="0" name="add-stats" id="add-stats">
+                              <label for="add-stats">Adicionar Estatísticas</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="step-header"><a class="ui grey circular big label number basic">4</a>
+                        <h4 class="ui medium header">Quer aplicar filtros ?
+                          <div class="sub header">Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!</div>
+                        </h4>
+                      </div>
+                      <div class="step-content">
+                        <div class="inline fields">
+                          <div class="field">
+                            <div class="ui radio checkbox options">
+                              <input class="hidden" type="radio" tabindex="0" name="filters" id="filter-yes">
+                              <label>Sim</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui radio checkbox options">
+                              <input class="hidden" type="radio" tabindex="0" name="filters" id="filter-no">
+                              <label>Não</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </form>
+            </div>
+            <div class="three wide column">
+              <div class="ui rail ch-rail">
+                <div class="ui sticky"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="ch-notifications">
@@ -148,17 +267,5 @@
     <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/js/semantic.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlHYJLboGs7xpvK0it2w4S8SjqLMUvZWs&amp;callback=initMap" async defer></script>
-    <script type="text/javascript">
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -22.8048372, lng: -43.2458182},
-          scrollwheel: false,
-          zoom: 12,
-          mapTypeControl: false,
-        });
-      }
-    </script>
   </body>
 </html>

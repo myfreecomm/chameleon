@@ -1,0 +1,97 @@
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('reports.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+          h2.ui.medium.header Criar Relatório
+            .sub.header Siga os passos abaixo e defina os critérios para gerar seu relatório
+
+        .ui.stackable.padded.grid
+          .row
+            .thirteen.wide.column
+              br
+              br
+              form#report-form
+                .ui.form
+                  section.steps
+                    .step.active
+                      .step-header
+                        a.ui.grey.circular.big.label.number 1
+                        h4.ui.medium.header Selecione o agrupador
+                          .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
+                      .step-content
+                        .inline.fields
+                          .field
+                            .ui.radio.checkbox.options
+                              input.hidden(type="radio" tabindex="0" name="agrupador" id="projects")
+                              label(for="projects") Projetos
+                          .field
+                            .ui.radio.checkbox.options
+                              input.hidden(type="radio" tabindex="0" name="agrupador" id="activities")
+                              label(for="activities") Atividades
+                          .field
+                            .ui.radio.checkbox.options
+                              input.hidden(type="radio" tabindex="0" name="agrupador" id="employees")
+                              label(for="employees") Colaboradores
+                    .step
+                      .step-header
+                        a.ui.grey.circular.big.label.number.basic 2
+                        h4.ui.medium.header Qual tipo ?
+                          .sub.header Defina o tipo do seu relatório.
+                      .step-content
+                        .inline.fields
+                          .field
+                            .ui.radio.checkbox.options
+                              input.hidden(type="radio" tabindex="0" name="tipo" id="synthetic")
+                              label(for="synthetic") Sintético
+                          .field
+                            .ui.radio.checkbox.options
+                              input.hidden(type="radio" tabindex="0" name="tipo" id="analytic")
+                              label(for="analytic") Analítico
+
+                    .step
+                      .step-header
+                        a.ui.grey.circular.big.label.number.basic 3
+                        h4.ui.medium.header Gostaria de mais opções ?
+                          .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
+                      .step-content
+                        .inline.fields
+                          .field
+                            .ui.checkbox.options
+                              input.hidden(type="checkbox" tabindex="0" name="add-graphs" id="add-graphs")
+                              label(for="add-graphs") Adicionar Gráfico
+                          .field
+                            .ui.checkbox.options
+                              input.hidden(type="checkbox" tabindex="0" name="add-stats" id="add-stats")
+                              label(for="add-stats") Adicionar Estatísticas
+
+                    .step
+                      .step-header
+                        a.ui.grey.circular.big.label.number.basic 4
+                        h4.ui.medium.header Quer aplicar filtros ?
+                          .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
+                      .step-content
+                        .inline.fields
+                          .field
+                            .ui.radio.checkbox.options
+                              input.hidden(type="radio" tabindex="0" name="filters" id="filter-yes")
+                              label Sim
+                          .field
+                            .ui.radio.checkbox.options
+                              input.hidden(type="radio" tabindex="0" name="filters" id="filter-no")
+                              label Não
+
+            .three.wide.column
+              .ui.rail.ch-rail
+                .ui.sticky
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
