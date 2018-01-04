@@ -71,6 +71,10 @@
   display: flex;
   justify-content: space-between;
 
+  &.center.aligned {
+    justify-content: center;
+  }
+
   .title {
     font-size: 16px;
     color: #000;

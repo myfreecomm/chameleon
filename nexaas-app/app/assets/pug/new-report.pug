@@ -89,9 +89,18 @@ html
                               label Não
 
             .three.wide.column
-              .ui.rail.ch-rail
+              .ui.rail.ch-rail.report-resume
                 .ui.sticky
-
+                  .ui.segments
+                    .ui.segment.attached.ch-segment-header.center.aligned
+                      div.ui.header.small Pré-Visualização do relatório
+                    .ui.segment.padded.attached.center.aligned
+                      .preview-report
+                        .header Relatório
+                        .content
+                      p.
+                        Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.
+                      input.ui.button.blue(type="submit" value="Criar Relatório")
     include includes/notifications.pug
     include includes/search.pug
     include includes/foot.pug

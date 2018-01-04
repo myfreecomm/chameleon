@@ -51,3 +51,22 @@
     top: calc(65px + 20px)
   }
 }
+
+.report-resume {
+  .preview-report {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+
+    .header {
+      padding: .5rem;
+      text-align: left;
+      background-color: #ebebeb;
+    }
+
+    .content {
+      min-height: 300px;
+      padding: .5rem;
+      box-shadow: 0px 5px 5px #dcdcdc;
+    }
+  }
+}
