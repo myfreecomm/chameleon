@@ -1,14 +1,14 @@
 -
   var workers = [
-    { id: "32133", name: "Rachel Lilki", post: "Aux. Administrativo", avatar_src: "http://i.pravatar.cc/50?img=1", href: "#" },
-    { id: "76914", name: "Jamie Harington", post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=2", href: "#" },
-    { id: "96610", name: "John Lewis", post: "UX Designer", avatar_src: "http://i.pravatar.cc/50?img=3", href: "#" },
-    { id: "36069", name: "Lena Lilki", post: "Front-end Developer", avatar_src: "http://i.pravatar.cc/50?img=4", href: "#" },
-    { id: "95562", name: "Susan Palmer", post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=5", href: "#" },
-    { id: "14548", name: "Jamie Harington", post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=6", href: "#" },
-    { id: "68627", name: "Jeff Lewis", post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=7", href: "#" },
-    { id: "68627", name: "Ben Saric", post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=8", href: "#" },
-    { id: "42637", name: "Joel Simmons", post: "UX Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=9", href: "#" }
+    { id: "32133", name: "Rachel Lilki", email: "rachel@email.com",  post: "Aux. Administrativo", avatar_src: "http://i.pravatar.cc/50?img=1", href: "employee-detail.html" },
+    { id: "76914", name: "Jamie Harington", email: "jamie@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=2", href: "#" },
+    { id: "96610", name: "John Lewis", email: "john@email.com",  post: "UX Designer", avatar_src: "http://i.pravatar.cc/50?img=3", href: "#" },
+    { id: "36069", name: "Lena Lilki", email: "lena@email.com",  post: "Front-end Developer", avatar_src: "http://i.pravatar.cc/50?img=4", href: "#" },
+    { id: "95562", name: "Susan Palmer", email: "susan@email.com",  post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=5", href: "#" },
+    { id: "14548", name: "Jamie Harington", email: "jamie@email.com",  post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=6", href: "#" },
+    { id: "68627", name: "Jeff Lewis", email: "jeff@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=7", href: "#" },
+    { id: "68627", name: "Ben Saric", email: "ben@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=8", href: "#" },
+    { id: "42637", name: "Joel Simmons", email: "joel@email.com",  post: "UX Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=9", href: "#" }
   ];
 
 doctype html
@@ -31,22 +31,37 @@ html
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
-              .ui.segment
-                table.ui.very.basic.selectable.table
-                  thead
-                    tr
-                      th.center.aligned &nbsp;
-                      th Nome
-                      th Cargo
-                      th Nº de Registro
-                  tbody
-                    each worker in workers
-                      tr.row-link(data-href= worker.href)
-                        td.center.aligned
-                          img.ch-avatar.small.rounded(src= worker.avatar_src)
-                        td= worker.name
-                        td= worker.post
-                        td= worker.id
+              .ui.segments
+                .ui.segment.attached.paddingless
+                  table.ui.basic.selectable.table
+                    thead
+                      tr
+                        th(colspan="2") Nome
+                        th E-mail
+                        th Cargo
+                        th Nº de Registro
+                        th &nbsp;
+                        th &nbsp;
+                    tbody
+                      each worker in workers
+                        tr.row-link(data-href= worker.href)
+                          td.center.aligned.ch-avatar-container
+                            img.ch-avatar.small.rounded(src= worker.avatar_src)
+                          td= worker.name
+                          td= worker.email
+                          td= worker.post
+                          td= worker.id
+                          td.right.aligned.ch-table-buttons
+                            button.ui.icon.button(data-tooltip="Editar" data-inverted)
+                              i.edit.icon
+                            button.ui.icon.button(data-tooltip="Excluir" data-inverted)
+                              i.remove.icon
+                          td.right.aligned.ch-table-buttons
+                            button.ui.icon.button
+                              i.chevron.down.icon
+                        tr.invisible
+                          td(colspan="7").
+                            lorem Ipsum
 
               .ui.segment.center.aligned.basic
                 .row

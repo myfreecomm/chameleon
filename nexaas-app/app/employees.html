@@ -85,73 +85,203 @@
         <div class="ui stackable padded grid">
           <div class="row">
             <div class="sixteen wide column">
-              <div class="ui segment">
-                <table class="ui very basic selectable table">
-                  <thead>
-                    <tr>
-                      <th class="center aligned">&nbsp;</th>
-                      <th>Nome</th>
-                      <th>Cargo</th>
-                      <th>Nº de Registro</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=1"></td>
-                      <td>Rachel Lilki</td>
-                      <td>Aux. Administrativo</td>
-                      <td>32133</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=2"></td>
-                      <td>Jamie Harington</td>
-                      <td>Designer Jr.</td>
-                      <td>76914</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=3"></td>
-                      <td>John Lewis</td>
-                      <td>UX Designer</td>
-                      <td>96610</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=4"></td>
-                      <td>Lena Lilki</td>
-                      <td>Front-end Developer</td>
-                      <td>36069</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=5"></td>
-                      <td>Susan Palmer</td>
-                      <td>Desenvolvedor Web</td>
-                      <td>95562</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=6"></td>
-                      <td>Jamie Harington</td>
-                      <td>Desenvolvedor Web</td>
-                      <td>14548</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=7"></td>
-                      <td>Jeff Lewis</td>
-                      <td>Designer Jr.</td>
-                      <td>68627</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=8"></td>
-                      <td>Ben Saric</td>
-                      <td>Designer Jr.</td>
-                      <td>68627</td>
-                    </tr>
-                    <tr class="row-link" data-href="#">
-                      <td class="center aligned"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=9"></td>
-                      <td>Joel Simmons</td>
-                      <td>UX Designer Jr.</td>
-                      <td>42637</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="ui segments">
+                <div class="ui segment attached paddingless">
+                  <table class="ui basic selectable table">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Nome</th>
+                        <th>E-mail</th>
+                        <th>Cargo</th>
+                        <th>Nº de Registro</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="row-link" data-href="employee-detail.html">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=1"></td>
+                        <td>Rachel Lilki</td>
+                        <td>rachel@email.com</td>
+                        <td>Aux. Administrativo</td>
+                        <td>32133</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=2"></td>
+                        <td>Jamie Harington</td>
+                        <td>jamie@email.com</td>
+                        <td>Designer Jr.</td>
+                        <td>76914</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=3"></td>
+                        <td>John Lewis</td>
+                        <td>john@email.com</td>
+                        <td>UX Designer</td>
+                        <td>96610</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=4"></td>
+                        <td>Lena Lilki</td>
+                        <td>lena@email.com</td>
+                        <td>Front-end Developer</td>
+                        <td>36069</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=5"></td>
+                        <td>Susan Palmer</td>
+                        <td>susan@email.com</td>
+                        <td>Desenvolvedor Web</td>
+                        <td>95562</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=6"></td>
+                        <td>Jamie Harington</td>
+                        <td>jamie@email.com</td>
+                        <td>Desenvolvedor Web</td>
+                        <td>14548</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=7"></td>
+                        <td>Jeff Lewis</td>
+                        <td>jeff@email.com</td>
+                        <td>Designer Jr.</td>
+                        <td>68627</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=8"></td>
+                        <td>Ben Saric</td>
+                        <td>ben@email.com</td>
+                        <td>Designer Jr.</td>
+                        <td>68627</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                      <tr class="row-link" data-href="#">
+                        <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=9"></td>
+                        <td>Joel Simmons</td>
+                        <td>joel@email.com</td>
+                        <td>UX Designer Jr.</td>
+                        <td>42637</td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                          <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                        </td>
+                        <td class="right aligned ch-table-buttons">
+                          <button class="ui icon button"><i class="chevron down icon"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="invisible">
+                        <td colspan="7">
+                          lorem Ipsum
+                          
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <div class="ui segment center aligned basic">
                 <div class="row">

@@ -13,3 +13,17 @@
     white-space: nowrap;
   }
 }
+
+.paddingless {
+  .ui.table {
+    border: none;
+  }
+}
+
+.ui.table {
+  thead th {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}

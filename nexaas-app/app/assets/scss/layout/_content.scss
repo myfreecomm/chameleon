@@ -27,9 +27,13 @@
   }
 }
 
+.ch-avatar-container {
+  width: 35px;
+}
+
 .ch-avatar {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 
   &.big {
     width: 120px;
