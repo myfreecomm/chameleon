@@ -18,6 +18,8 @@ $(document).ready(function() {
 
   $(document).on('click', '.btn-remove-context', removeSearchContext);
 
+  $(document).on('click', '.js-show-detail', toggleDetailView);
+
   $(document).on('click', '.row-link', clickableRow);
 
   $(document).on({
@@ -121,6 +123,25 @@ var hideSearchOnEscape = function(e) {
 
 var clickableRow = function() {
   window.location = $(this).data("href");
+}
+
+var toggleDetailView = function(e) {
+  e.stopPropagation();
+  var detailRow = $(this).parents('tr').next('tr');
+  var buttonIcon = $(this).find('.icon');
+
+  detailRow.toggle();
+  toggleClass(buttonIcon, 'down', 'up');
+}
+
+var toggleClass = function(elem, class1, class2) {
+  if ( $(elem).hasClass(class1) ) {
+    $(elem).removeClass(class1);
+    $(elem).addClass(class2);
+  } else {
+    $(elem).removeClass(class2);
+    $(elem).addClass(class1);
+  }
 }
 
 $(window).resize(function() {

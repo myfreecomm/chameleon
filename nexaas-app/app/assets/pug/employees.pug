@@ -41,7 +41,6 @@ html
                         th Cargo
                         th Nº de Registro
                         th &nbsp;
-                        th &nbsp;
                     tbody
                       each worker in workers
                         tr.row-link(data-href= worker.href)
@@ -52,16 +51,11 @@ html
                           td= worker.post
                           td= worker.id
                           td.right.aligned.ch-table-buttons
-                            button.ui.icon.button(data-tooltip="Editar" data-inverted)
-                              i.edit.icon
-                            button.ui.icon.button(data-tooltip="Excluir" data-inverted)
-                              i.remove.icon
-                          td.right.aligned.ch-table-buttons
-                            button.ui.icon.button
+                            button.ui.icon.button.js-show-detail
                               i.chevron.down.icon
                         tr.invisible
-                          td(colspan="7").
-                            lorem Ipsum
+                          td(colspan="7")
+                            .details.hidden lorem ipsum
 
               .ui.segment.center.aligned.basic
                 .row
@@ -210,7 +204,7 @@ html
                     option(value= option)= option
 
       .actions
-        .ui.button Cancelar
+        .ui.button.close Cancelar
         .ui.submit.positive.button Salvar
 
     include includes/notifications.pug
