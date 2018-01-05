@@ -29,15 +29,19 @@
 
 .ch-avatar-container {
   width: 35px;
+
+  &.big {
+    width: 120px;
+  }
 }
 
 .ch-avatar {
   width: 35px;
   height: 35px;
 
-  &.big {
-    width: 120px;
-    height: 120px;
+  .big & {
+    width: 105px;
+    height: 105px;
   }
 
   &.rounded {
@@ -69,5 +73,18 @@
 .ch-input-file {
   input[type="file"] {
     display: none;
+  }
+}
+
+.ch-detail-header {
+  .info {
+    display: flex;
+    vertical-align: middle;
+
+    .ui.header {
+      margin-top: 0;
+      margin-left: 10px;
+      align-self: center;
+    }
   }
 }

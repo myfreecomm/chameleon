@@ -9,9 +9,55 @@ html
       include includes/header.pug
 
       .ch-content
-        .ui.stackable.padded.grid
+        .ch-content-hgroup.colored
+          .ch-detail-header
+            .info
+              .ch-avatar-container.big
+                img.ch-avatar.rounded(src="http://i.pravatar.cc/105?img=1")
+              .ui.large.header Rachel Lilki
+                .sub.header rachel@email.com
+          .ch-group-buttons
+            button.ui.negative.button.basic Excluir
+            button.ui.positive.button Editar
+        br
+        br
+        .ui.stackable.padded.grid.centered
           .row
-            .thirteen.wide.column
+            .fourteen.wide.column
+              .ui.segments
+                .ui.attached.segment.ch-segment-header
+                  .ui.title Dados Pessoais
+                .ui.attached.segment
+                  .ui.grid
+                    .four.wide.column
+                      span CPF
+                      p
+                        strong 123.456.789-10
+                    .four.wide.column
+                      span Data de Nascimento
+                      p
+                        strong 20/05/1985
+                    .four.wide.column
+                      span Nacionalidade
+                      p
+                        strong Brasileira
+                    .four.wide.column
+                      span Naturalidade
+                      p
+                        strong São Paulo, SP
+                    .four.wide.column
+                      span Sexo
+                      p
+                        strong Feminino
+                    .four.wide.column
+                      span Estado Civil
+                      p
+                        strong Casada
+                    .four.wide.column
+                      span Endereço
+                      p
+                        strong Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ
+
 
 
     include includes/notifications.pug

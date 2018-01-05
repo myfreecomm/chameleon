@@ -72,6 +72,12 @@
     align-items: center;
     justify-content: space-between;
 
+    &.colored {
+      padding: 25px 40px;
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(170,170,170,.2);
+    }
+
     ~ .ui.padded.grid>.row {
       padding-top: 0;
     }
