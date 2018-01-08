@@ -27,3 +27,31 @@
     letter-spacing: 0.1em;
   }
 }
+
+.ui.selectable.table {
+  tbody tr.invisible {
+
+
+    &:hover {
+     background-color: transparent !important;
+    }
+
+    .details {
+      position: relative;
+    }
+
+    .details:after {
+      content: "";
+      position: absolute;
+      top: -24px;
+      left: 10px;
+      display: block;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border-top: 1px solid rgba(#000,.1);
+      border-left: 1px solid rgba(#000,.1);
+      transform: rotate(45deg);
+    }
+  }
+}
