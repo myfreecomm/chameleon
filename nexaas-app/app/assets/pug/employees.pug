@@ -1,14 +1,32 @@
 -
   var workers = [
-    { id: "32133", name: "Rachel Lilki", email: "rachel@email.com",  post: "Aux. Administrativo", avatar_src: "http://i.pravatar.cc/50?img=1", href: "employee-detail.html" },
-    { id: "76914", name: "Jamie Harington", email: "jamie@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=2", href: "#" },
-    { id: "96610", name: "John Lewis", email: "john@email.com",  post: "UX Designer", avatar_src: "http://i.pravatar.cc/50?img=3", href: "#" },
-    { id: "36069", name: "Lena Lilki", email: "lena@email.com",  post: "Front-end Developer", avatar_src: "http://i.pravatar.cc/50?img=4", href: "#" },
-    { id: "95562", name: "Susan Palmer", email: "susan@email.com",  post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=5", href: "#" },
-    { id: "14548", name: "Jamie Harington", email: "jamie@email.com",  post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=6", href: "#" },
-    { id: "68627", name: "Jeff Lewis", email: "jeff@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=7", href: "#" },
-    { id: "68627", name: "Ben Saric", email: "ben@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=8", href: "#" },
-    { id: "42637", name: "Joel Simmons", email: "joel@email.com",  post: "UX Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=9", href: "#" }
+    { id: "32133", name: "Rachel Lilki", email: "rachel@email.com",  post: "Aux. Administrativo", avatar_src: "http://i.pravatar.cc/50?img=1", href: "employee-detail.html",
+      cpf: "123.456.789-10", salary: "5.000,00", birthday: "25/03/1988", adress: "Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ"
+    },
+    { id: "76914", name: "Jamie Harington", email: "jamie@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=2", href: "#" ,
+      cpf: "123.456.789-11", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ"
+    },
+    { id: "96610", name: "John Lewis", email: "john@email.com",  post: "UX Designer", avatar_src: "http://i.pravatar.cc/50?img=3", href: "#",
+      cpf: "123.456.789-12", salary: "5.000,00", birthday: "25/03/1988", adress: "Rua Lorem Ipsum, 00 - Morumbi, São Paulo - SP"
+    },
+    { id: "36069", name: "Lena Lilki", email: "lena@email.com",  post: "Front-end Developer", avatar_src: "http://i.pravatar.cc/50?img=4", href: "#",
+      cpf: "123.456.789-13", salary: "5.000,00", birthday: "25/03/1988", adress: "Rua Lorem Ipsum, 00 - Morumbi, São Paulo - SP"
+    },
+    { id: "95562", name: "Susan Palmer", email: "susan@email.com",  post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=5", href: "#",
+      cpf: "123.456.789-14", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ"
+    },
+    { id: "14548", name: "Jamie Harington", email: "jamie@email.com",  post: "Desenvolvedor Web", avatar_src: "http://i.pravatar.cc/50?img=6", href: "#",
+      cpf: "123.456.789-15", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Belo Horizonte, Minas Gerais - MG"
+    },
+    { id: "68627", name: "Jeff Lewis", email: "jeff@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=7", href: "#",
+      cpf: "123.456.789-16", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Belo Horizonte, Minas Gerais - MG"
+    },
+    { id: "68627", name: "Ben Saric", email: "ben@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=8", href: "#",
+      cpf: "123.456.789-17", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Salvador, Bahia - BA"
+    },
+    { id: "42637", name: "Joel Simmons", email: "joel@email.com",  post: "UX Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=9", href: "#",
+      cpf: "123.456.789-18", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Manaus, Amazonas - AM"
+    }
   ];
 
 doctype html
@@ -55,7 +73,27 @@ html
                               i.chevron.down.icon
                         tr.invisible
                           td(colspan="7")
-                            .details.hidden lorem ipsum
+                            .details.hidden
+                              .ui.grid.padded
+                                .sixteen.wide.column
+                                  h3.ui.small.header Outras informações
+
+                                .four.wide.computer.sixteen.wide.mobile.column
+                                  span CPF
+                                  p
+                                    strong= worker.cpf
+                                .four.wide.computer.sixteen.wide.mobile.column
+                                  span Salário
+                                  p
+                                    strong= worker.salary
+                                .four.wide.computer.sixteen.wide.mobile.column
+                                  span Data de Nascimento
+                                  p
+                                    strong= worker.birthday
+                                .four.wide.computer.sixteen.wide.mobile.column
+                                  span Endereço
+                                  p
+                                    strong= worker.adress
 
               .ui.segment.center.aligned.basic
                 .row
