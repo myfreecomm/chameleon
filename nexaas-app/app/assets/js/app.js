@@ -122,7 +122,11 @@ var hideSearchOnEscape = function(e) {
 }
 
 var clickableRow = function() {
-  window.location = $(this).data("href");
+  var sel = getSelection().toString();
+
+  if(!sel){
+    window.location = $(this).data("href");
+  }
 }
 
 var toggleDetailView = function(e) {

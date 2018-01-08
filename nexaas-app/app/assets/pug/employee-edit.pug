@@ -1,0 +1,25 @@
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('employees.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+
+        .ui.stackable.padded.grid.centered
+          .row
+            .sixteen.wide.column
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
+    script(type="text/javascript").
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });

@@ -18,7 +18,7 @@ html
                 .sub.header rachel@email.com
           .ch-group-buttons
             button.ui.negative.button.basic Excluir
-            button.ui.positive.button Editar
+            a(href="employee-edit.html").ui.positive.button Editar
         br
         br
         .ui.stackable.padded.grid.centered
@@ -26,39 +26,59 @@ html
             .fourteen.wide.column
               .ui.segments
                 .ui.attached.segment.ch-segment-header
+                  .ui.title Sobre o Colaborador
+                .ui.attached.segment
+                  .ui.grid
+                    .four.wide.computer.sixteen.wide.mobile.column
+                      span Nº de Registro
+                      p
+                        strong 32133
+                    .four.wide.computer.sixteen.wide.mobile.column
+                      span Cargo
+                      p
+                        strong Aux. Administrativo
+                    .four.wide.computer.sixteen.wide.mobile.column
+                      span Salário
+                      p
+                        strong R$ 5.000,00
+
+              .ui.segments
+                .ui.attached.segment.ch-segment-header
                   .ui.title Dados Pessoais
                 .ui.attached.segment
                   .ui.grid
-                    .four.wide.column
+                    .four.wide.computer.sixteen.wide.mobile.column
                       span CPF
                       p
                         strong 123.456.789-10
-                    .four.wide.column
+                    .four.wide.computer.sixteen.wide.mobile.column
                       span Data de Nascimento
                       p
                         strong 20/05/1985
-                    .four.wide.column
+                    .four.wide.computer.sixteen.wide.mobile.column
                       span Nacionalidade
                       p
                         strong Brasileira
-                    .four.wide.column
+                    .four.wide.computer.sixteen.wide.mobile.column
                       span Naturalidade
                       p
                         strong São Paulo, SP
-                    .four.wide.column
+                    .four.wide.computer.sixteen.wide.mobile.column
                       span Sexo
                       p
                         strong Feminino
-                    .four.wide.column
+                    .four.wide.computer.sixteen.wide.mobile.column
                       span Estado Civil
                       p
                         strong Casada
-                    .four.wide.column
+                    .four.wide.computer.sixteen.wide.mobile.column
+                      span Escolaridade
+                      p
+                        strong Superior Completo
+                    .four.wide.computer.sixteen.wide.mobile.column
                       span Endereço
                       p
                         strong Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ
-
-
 
     include includes/notifications.pug
     include includes/search.pug
