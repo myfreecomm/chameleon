@@ -70,3 +70,71 @@
     }
   }
 }
+
+.ch-horizontal-steps {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+
+  .ch-step {
+    position: relative;
+    margin: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 17px;
+      left: 50%;
+      width: calc(100% + 40px);
+      height: 2px;
+      background-color: #d6d6d6;
+      z-index: -1;
+    }
+
+    &:last-child {
+      &:after {
+       content: none;
+      }
+    }
+
+    &-number {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      color: #d6d6d6;
+      background-color: #fff;
+      border: 2px solid #d6d6d6;
+      border-radius: 100%;
+    }
+
+    &-label {
+      margin-top: 5px;
+      font-weight: 700;
+      font-size: 0.8em;
+      line-height: normal;
+      color: #d6d6d6;
+    }
+
+    &.active {
+      .ch-step-number {
+        color: #fff;
+        background-color: #000;
+        border-color: #000;
+      }
+
+      .ch-step-label {
+        color: #000;
+      }
+    }
+  }
+}
