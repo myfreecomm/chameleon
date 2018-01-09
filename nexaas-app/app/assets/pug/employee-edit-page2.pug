@@ -1,0 +1,85 @@
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('employees.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+          h2.ui.medium.header Alterar Colaborador
+            .sub.header Utilize o passa a passo para alterar as informações do colaborador
+
+          ol.ch-horizontal-wizard
+            li.ch-step.done.
+              Informações Pessoais
+            li.ch-step.current.
+              Informações de Endereço
+            li.ch-step.
+              Foto de Perfil
+            li.ch-step.
+              Final
+
+        .ui.stackable.padded.grid.centered
+          .row
+            .sixteen.wide.column
+              form.ui.form
+                .ui.segments
+                  .ui.attached.segment.ch-segment-header
+                    .ui.title Informações de Endereço
+                  .ui.attached.segment.padded
+                    .fields
+                      .four.wide.field.required
+                        label(for="") CEP
+                        input(type="text" placeholder="00.000-00" value="21.000-00")
+
+                      .ten.wide.field.required
+                        label(for="") Endereço
+                        input(type="text" placeholder="Endereço" value="Rua Lorem Ipsum")
+
+                      .two.wide.field.required
+                        label(for="") Número
+                        input(type="text" placeholder="Número" value="00")
+
+                    .four.fields
+                      .field
+                        label(for="") Complemento
+                        input(type="text")
+
+                      .field
+                        label(for="") Bairro
+                        input(type="text" value="Flamengo")
+
+                      .field
+                        label(for="") Estado
+                        select.ui.dropdown(name="")
+                          option(value="RJ") RJ
+                          each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                            option(value= option)= option
+
+                      .field
+                        label(for="") Cidade
+                        select.ui.dropdown(name="")
+                          option(value="Rio de Janeiro") Rio de Janeiro
+                          each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                            option(value= option)= option
+
+                .ch-buttons-container
+                  .cancel-container
+                    .ui.button.basic Cancelar
+                  .submit-container
+                    input(type="submit" value="Salvar").ui.button.grey
+                    a(href="employee-edit-page2.html").ui.positive.button Salvar e continuar
+
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
+    script(type="text/javascript").
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });

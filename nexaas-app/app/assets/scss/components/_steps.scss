@@ -71,7 +71,7 @@
   }
 }
 
-.ch-horizontal-steps {
+.ch-horizontal-wizard {
   display: flex;
   align-items: flex-start;
   counter-reset: steps;
@@ -136,6 +136,18 @@
         color: #fff;
         background-color: #000;
         border-color: #000;
+      }
+    }
+
+    &.done {
+      color: #2b4;
+
+      &:before {
+        content: "\f00c";
+        font-family: "Icons";
+        color: #fff;
+        background-color: #2b4;
+        border-color: #2b4;
       }
     }
   }

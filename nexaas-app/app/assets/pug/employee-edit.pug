@@ -13,7 +13,7 @@ html
           h2.ui.medium.header Alterar Colaborador
             .sub.header Utilize o passa a passo para alterar as informações do colaborador
 
-          ol.ch-horizontal-steps
+          ol.ch-horizontal-wizard
             li.ch-step.current.
               Informações Pessoais
             li.ch-step.
@@ -91,8 +91,8 @@ html
                   .cancel-container
                     .ui.button.basic Cancelar
                   .submit-container
-                    button.ui.button.grey Salvar
-                    input(type="submit" value="Salvar e continuar").ui.positive.button
+                    input(type="submit" value="Salvar").ui.button.grey
+                    a(href="employee-edit-page2.html").ui.positive.button Salvar e continuar
 
 
     include includes/notifications.pug
