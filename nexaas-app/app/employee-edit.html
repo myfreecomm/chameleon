@@ -101,7 +101,91 @@
         </div>
         <div class="ui stackable padded grid centered">
           <div class="row">
-            <div class="sixteen wide column"></div>
+            <div class="sixteen wide column">
+              <form class="ui form">
+                <div class="ui segments">
+                  <div class="ui attached segment ch-segment-header">
+                    <div class="ui title">Informações Pessoais</div>
+                  </div>
+                  <div class="ui attached segment padded">
+                    <div class="fields">
+                      <div class="eight wide field required">
+                        <label for="">Nome Completo</label>
+                        <input type="text" placeholder="Nome" value="Rachel Lilki">
+                      </div>
+                      <div class="field required">
+                        <label for="">Nº de Registro</label>
+                        <input type="text" value="32133">
+                      </div>
+                    </div>
+                    <div class="four fields">
+                      <div class="field">
+                        <label for="">Data de Nascimento</label>
+                        <div class="ui left icon input">
+                          <input type="date" placeholder="dd/mm/aaaa" value="1985-05-20"><i class="calendar icon"></i>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label for="">Nacionalidade</label>
+                        <input type="text" placeholder="Nacionalidade" value="Brasileira">
+                      </div>
+                      <div class="field">
+                        <label for="">Naturalidade</label>
+                        <input type="text" placeholder="Naturalidade" value="São Paulo, SP">
+                      </div>
+                      <div class="field">
+                        <label for="">Sexo</label>
+                        <input type="text" placeholder="" value="Feminino">
+                      </div>
+                    </div>
+                    <div class="two fields">
+                      <div class="field">
+                        <label for="">Estado Civil</label>
+                        <select class="ui dropdown" name="">
+                          <option value="Opção 1">Opção 1</option>
+                          <option value="Opção 2">Opção 2</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <label>Escolaridade</label>
+                        <select class="ui dropdown" name="">
+                          <option value="Opção 1">Opção 1</option>
+                          <option value="Opção 2">Opção 2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="two fields">
+                      <div class="field">
+                        <label for="">Cargo</label>
+                        <input type="text" value="Aux. Administrativo">
+                      </div>
+                      <div class="field">
+                        <label for="">Salário</label>
+                        <div class="ui right labeled input">
+                          <input type="text" placeholder="0,00" value="5.000,00">
+                          <div class="ui dropdown label">
+                            <div class="text">BRL</div><i class="dropdown icon"></i>
+                            <div class="menu">
+                              <div class="item">BRL</div>
+                              <div class="item">EUR</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ch-buttons-container">
+                  <div class="cancel-container">
+                    <div class="ui button basic">Cancelar</div>
+                  </div>
+                  <div class="submit-container">
+                    <button class="ui button grey">Salvar</button>
+                    <input class="ui positive button" type="submit" value="Salvar e continuar">
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

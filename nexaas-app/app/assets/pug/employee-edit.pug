@@ -30,6 +30,74 @@ html
         .ui.stackable.padded.grid.centered
           .row
             .sixteen.wide.column
+              form.ui.form
+                .ui.segments
+                  .ui.attached.segment.ch-segment-header
+                    .ui.title Informações Pessoais
+                  .ui.attached.segment.padded
+                    .fields
+                      .eight.wide.field.required
+                        label(for="") Nome Completo
+                        input(type="text" placeholder="Nome" value="Rachel Lilki")
+
+                      .field.required
+                        label(for="") Nº de Registro
+                        input(type="text" value="32133")
+
+                    .four.fields
+                      .field
+                        label(for="") Data de Nascimento
+                        .ui.left.icon.input
+                          input(type="date" placeholder="dd/mm/aaaa" value="1985-05-20")
+                          i.calendar.icon
+
+                      .field
+                        label(for="") Nacionalidade
+                        input(type="text" placeholder="Nacionalidade" value="Brasileira")
+
+                      .field
+                        label(for="") Naturalidade
+                        input(type="text" placeholder="Naturalidade" value="São Paulo, SP")
+
+                      .field
+                        label(for="") Sexo
+                        input(type="text" placeholder="" value="Feminino")
+
+                    .two.fields
+                      .field
+                        label(for="") Estado Civil
+                        select.ui.dropdown(name="")
+                            each option in ["Opção 1", "Opção 2"]
+                              option(value= option)= option
+                      .field
+                        label Escolaridade
+                        select.ui.dropdown(name="")
+                            each option in ["Opção 1", "Opção 2"]
+                              option(value= option)= option
+
+                    .two.fields
+                      .field
+                        label(for="") Cargo
+                        input(type="text" value="Aux. Administrativo")
+
+                      .field
+                        label(for="") Salário
+                        .ui.right.labeled.input
+                          input(type="text" placeholder="0,00" value="5.000,00")
+                          .ui.dropdown.label
+                            .text BRL
+                            i.dropdown.icon
+                            .menu
+                              .item BRL
+                              .item EUR
+
+                .ch-buttons-container
+                  .cancel-container
+                    .ui.button.basic Cancelar
+                  .submit-container
+                    button.ui.button.grey Salvar
+                    input(type="submit" value="Salvar e continuar").ui.positive.button
+
 
     include includes/notifications.pug
     include includes/search.pug
