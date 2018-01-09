@@ -1,0 +1,17 @@
+.ui.segments {
+  box-shadow: 0 3px 5px 0 rgba(#000,.1);
+  border-color: #dbdbdb;
+
+  > .segment {
+    border-color: #dbdbdb;
+    border-radius: 0 !important;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.ui.segment {
+  border-radius: 0;
+}
