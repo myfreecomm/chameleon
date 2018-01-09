@@ -72,20 +72,43 @@
 }
 
 .ch-horizontal-steps {
-  position: relative;
   display: flex;
   align-items: flex-start;
+  counter-reset: steps;
 
-  .ch-step {
+  > .ch-step {
     position: relative;
     margin: 5px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    flex-basis: 0;
-    flex-grow: 1;
+    flex: {
+      direction: column;
+      basis: 0;
+      grow: 1;
+    }
     text-align: center;
+    font-weight: 700;
+    font-size: 0.8em;
+    line-height: normal;
+    color: #d6d6d6;
+
+    &:before {
+      counter-increment: steps;
+      content: counter(steps);
+      width: 35px;
+      height: 35px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
+      font-weight: 800;
+      color: #d6d6d6;
+      background-color: #fff;
+      border: 2px solid #d6d6d6;
+      border-radius: 100%;
+    }
 
     &:after {
       content: "";
@@ -99,41 +122,20 @@
     }
 
     &:last-child {
+      margin-right: 0;
+
       &:after {
        content: none;
       }
     }
 
-    &-number {
-      width: 35px;
-      height: 35px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 800;
-      color: #d6d6d6;
-      background-color: #fff;
-      border: 2px solid #d6d6d6;
-      border-radius: 100%;
-    }
+    &.current {
+      color: #000;
 
-    &-label {
-      margin-top: 5px;
-      font-weight: 700;
-      font-size: 0.8em;
-      line-height: normal;
-      color: #d6d6d6;
-    }
-
-    &.active {
-      .ch-step-number {
+      &:before {
         color: #fff;
         background-color: #000;
         border-color: #000;
-      }
-
-      .ch-step-label {
-        color: #000;
       }
     }
   }
