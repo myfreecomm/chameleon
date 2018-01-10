@@ -1,4 +1,4 @@
-mixin nav(active)
+mixin nav(activeUrl)
   nav.ch-nav
 
     a.ch-logo(href="index.html")
@@ -6,51 +6,30 @@ mixin nav(active)
       span.text Chameleon
 
     ul.ch-menu
-
-      if active === "index.html"
-        li.ch-menu-item.active
-          a.dropdown-hover(href="index.html")
-            i.dashboard.large.icon
-            span.ch-menu-label Painel
-          .ch-dropdown
-            ul.ch-dropdown-menu
+      - var currentUrl = activeUrl
+      li.ch-menu-item(class={active: currentUrl === 'index.html'})
+        a.dropdown-hover(href="index.html")
+          i.dashboard.large.icon
+          span.ch-menu-label Painel
+        .ch-dropdown
+          ul.ch-dropdown-menu
+            li.ch-dropdown-menu-item
+              a(href="index.html") Painel Principal
+            each option in ["Painel de Exemplo", "Painel Modelo 1", "Painel Modelo 2"]
               li.ch-dropdown-menu-item
-                a(href="index.html") Painel Principal
-              each option in ["Painel de Exemplo", "Painel Modelo 1", "Painel Modelo 2"]
-                li.ch-dropdown-menu-item
-                  a(href="index.html")=option
-      else
-        li.ch-menu-item
-          a.dropdown-hover(href="index.html")
-            i.dashboard.large.icon
-            span.ch-menu-label Painel
-          .ch-dropdown
-            ul.ch-dropdown-menu
-              li.ch-dropdown-menu-item
-                a(href="index.html") Painel Principal
-              each option in ["Painel de Exemplo", "Painel Modelo 1", "Painel Modelo 2"]
-                li.ch-dropdown-menu-item
-                  a(href="index.html")=option
-
+                a(href="index.html")=option
       -
         var menuItems = [
-          { name: "Tarefas", icon: "sidebar", href: "#" },
           { name: "Colaboradores", icon: "user", href: "employees.html" },
-          { name: "Mapas", icon: "marker", href: "map.html" },
           { name: "Relatórios", icon: "browser", href: "reports.html" },
+          { name: "Mapas", icon: "marker", href: "map.html" },
         ]
 
       each option in menuItems
-        if option.href === active
-          li.ch-menu-item.active
-            a(href=option.href)
-              i(class= option.icon + " large icon")
-              span(class="ch-menu-label")= option.name
-        else
-          li.ch-menu-item
-            a(href=option.href)
-              i(class= option.icon + " large icon")
-              span(class="ch-menu-label")= option.name
+        li.ch-menu-item(class={active: currentUrl === option.href})
+          a(href=option.href)
+            i(class= option.icon + " large icon")
+            span(class="ch-menu-label")= option.name
 
       li.ch-menu-item.btn-show-menu
         a(href="#")
