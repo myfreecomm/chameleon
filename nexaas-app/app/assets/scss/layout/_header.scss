@@ -19,6 +19,16 @@
   }
 }
 
+.ch-header-tabs {
+
+  &.ui.menu {
+    margin-top: 0;
+    padding: 5px 5px 0;
+    background-color: #fff;
+  }
+
+}
+
 .ch-header-nav {
   display: flex;
   justify-content: center;
@@ -73,9 +83,13 @@
     justify-content: space-between;
 
     &.colored {
-      padding: 25px 40px;
+
       background-color: white;
       box-shadow: 0 1px 3px rgba(170,170,170,.2);
+
+      &.padded {
+        padding: 25px 40px;
+      }
 
       @media screen and (max-width: 768px) {
         border-top: 1px solid #eee;

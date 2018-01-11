@@ -15,3 +15,13 @@
 .ui.segment {
   border-radius: 0;
 }
+
+.ch-filters {
+  color: $fontColor;
+  font-size: 0.9em;
+  text-transform: uppercase;
+
+  &:hover {
+    color: lighten($fontColor, 20%);
+  }
+}

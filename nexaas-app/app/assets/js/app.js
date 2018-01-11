@@ -178,4 +178,8 @@ $('.ui.sticky')
   })
 ;
 
+$('.menu .item')
+  .tab()
+;
+
 

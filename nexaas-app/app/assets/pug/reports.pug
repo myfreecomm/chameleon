@@ -9,34 +9,52 @@ html
       include includes/header.pug
 
       .ch-content
-        .ch-content-hgroup
-          h2.ui.medium.header Lorem Ipsum
+        .ch-content-hgroup.colored
+          h2.ui.medium.header Relatórios
             .sub.header Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos.
 
-          a.ui.positive.button.js-new-billet(href="new-report.html") Criar relatório
-
+          .ui.positive.buttons
+            .ui.button Criar Relatório
+            .ui.floating.top.right.pointing.dropdown.icon.button
+              i.dropdown.icon
+              .menu
+                a(href="new-report.html").item Relatório Simples
+                a(href="#").item Relatório Dinâmico
+        .ui.pointing.secondary.menu.ch-header-tabs
+          a.item(data-tab="rs") Relatório Simples
+          a.item(data-tab="rd") Relatório Dinâmico
+          a.item.active(data-tab="mr") Modelos de Relatório
+        br
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
-              .ui.segments
-                .ui.attached.segment.ch-segment-header
-                  .ui.title Modelos de Relatório
-                .ui.attached.segment.paddingless
-                  table.ui.very.basic.table
-                    - for (var i=0; i<5; i++)
-                      tr
-                        td
-                          h4.ui.header Relatório sintético agrupado por Projetos
-                            .sub.header Com #[strong #[a(class="bind-popup" data-position="right center" href="#" data-html="<div class='ui small label'>Ocorrido em: 01/03/2017 á 10/04/2017</div><div class='ui small label'>Contém comentários</div><div class='ui small label'>Contém etiquetas</div>") 3] ]filtros selecionados
+              .ui.tab(data-tab="rs").
+                Relatório Simples
+              .ui.bottom.tab(data-tab="rd").
+                Relatório Dinâmico
+              .ui.tab.active(data-tab="mr")
+                .ui.segments
+                  .ui.attached.segment.ch-segment-header
+                    .ui.title Modelos de Relatório
+                    a(href="#").ch-filters
+                      i.filter.icon
+                      span.text Filtros
+                  .ui.attached.segment.paddingless
+                    table.ui.very.basic.table
+                      - for (var i=0; i<5; i++)
+                        tr
+                          td
+                            h4.ui.header Relatório sintético agrupado por Projetos
+                              .sub.header Com #[strong #[a(class="bind-popup" data-position="right center" href="#" data-html="<div class='ui small label'>Ocorrido em: 01/03/2017 á 10/04/2017</div><div class='ui small label'>Contém comentários</div><div class='ui small label'>Contém etiquetas</div>") 3] ]filtros selecionados
 
-                        td.right.aligned Criado em: 27/12/2017 14:39:54
-                        td.right.aligned.ch-table-buttons
-                          button.ui.icon.button(data-tooltip="Editar" data-inverted)
-                            i.edit.icon
-                          button.ui.icon.button(data-tooltip="Gerar Relatório" data-inverted)
-                            i.file.text.icon
-                          button.ui.icon.button(data-tooltip="Excluir" data-inverted)
-                            i.remove.icon
+                          td.right.aligned Criado em: 27/12/2017 14:39:54
+                          td.right.aligned.ch-table-buttons
+                            button.ui.icon.button(data-tooltip="Editar" data-inverted)
+                              i.edit.icon
+                            button.ui.icon.button(data-tooltip="Gerar Relatório" data-inverted)
+                              i.file.text.icon
+                            button.ui.icon.button(data-tooltip="Excluir" data-inverted)
+                              i.remove.icon
 
     include includes/notifications.pug
     include includes/search.pug
