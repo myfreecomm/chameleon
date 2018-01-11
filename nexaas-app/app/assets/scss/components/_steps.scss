@@ -13,6 +13,10 @@
       .number {
         margin-right: 1em;
         align-self: flex-start;
+
+        .icon {
+          margin: 0;
+        }
       }
     }
 
@@ -34,7 +38,7 @@
       }
     }
 
-    &.active {
+    &.active, &.done {
 
       opacity: 1;
 
@@ -134,8 +138,8 @@
 
       &:before {
         color: #fff;
-        background-color: #000;
-        border-color: #000;
+        background-color: #838383;
+        border-color: #838383;
       }
     }
 

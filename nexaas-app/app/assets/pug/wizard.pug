@@ -1,0 +1,79 @@
+-
+  var workers = [
+    { id: "32133", name: "Rachel Lilki", email: "rachel@email.com",  post: "Aux. Administrativo", avatar_src: "http://i.pravatar.cc/50?img=1", href: "employee-detail.html",
+      cpf: "123.456.789-10", salary: "5.000,00", birthday: "25/03/1988", adress: "Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ"
+    },
+    { id: "76914", name: "Jamie Harington", email: "jamie@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=2", href: "#" ,
+      cpf: "123.456.789-11", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ"
+    },
+    { id: "96610", name: "John Lewis", email: "john@email.com",  post: "UX Designer", avatar_src: "http://i.pravatar.cc/50?img=3", href: "#",
+      cpf: "123.456.789-12", salary: "5.000,00", birthday: "25/03/1988", adress: "Rua Lorem Ipsum, 00 - Morumbi, São Paulo - SP"
+    },
+  ];
+
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('table.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup.padded
+          h1.ui.header Wizard
+            .sub.header Exemplos de passa a passo na vertical e na horizontal
+
+        br
+        .ui.stackable.padded.grid
+          .row
+            .sixteen.wide.column
+              .ui.medium.dividing.header Horizontal
+
+              ol.ch-horizontal-wizard
+                li.ch-step.done.
+                  Informações Pessoais
+                li.ch-step.current.
+                  Informações de Endereço
+                li.ch-step.
+                  Foto de Perfil
+                li.ch-step.
+                  Final
+
+              .ui.divider.hidden
+
+              .ui.medium.dividing.header Vertical
+              br
+
+              form#report-form
+                .ui.form
+                  section.steps
+                    .step.done
+                      .step-header
+                        a.ui.green.circular.big.label.number
+                          i.checkmark.icon
+                        h4.ui.medium.header Selecione o agrupador
+                          .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
+                      .step-content
+
+                    .step.active
+                      .step-header
+                        a.ui.grey.circular.big.label.number 2
+                        h4.ui.medium.header Qual tipo ?
+                          .sub.header Defina o tipo do seu relatório.
+                      .step-content
+
+                    .step
+                      .step-header
+                        a.ui.grey.circular.big.label.number.basic 3
+                        h4.ui.medium.header Gostaria de mais opções ?
+                          .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
+                      .step-content
+
+
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
