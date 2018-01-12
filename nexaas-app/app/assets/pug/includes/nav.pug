@@ -6,24 +6,12 @@ mixin nav(activeUrl)
       span.text Chameleon
 
     ul.ch-menu
-      //- li.ch-menu-item(class={active: currentUrl === 'index.html'})
-      //-   a.dropdown-hover(href="index.html")
-      //-     i.dashboard.large.icon
-      //-     span.ch-menu-label Painel
-      //-   .ch-dropdown
-      //-     ul.ch-dropdown-menu
-      //-       li.ch-dropdown-menu-item
-      //-         a(href="index.html") Painel Principal
-      //-       each option in ["Painel de Exemplo", "Painel Modelo 1", "Painel Modelo 2"]
-      //-         li.ch-dropdown-menu-item
-      //-           a(href="index.html")=option
       -
         var currentUrl = activeUrl
         var menuItems = [
           { name: "Painel", icon: "dashboard", href: "index.html" },
           { name: "Formulários", icon: "clipboard", href: "form.html" },
-          { name: "Colaboradores", icon: "user", href: "employees.html" },
-          { name: "Relatórios", icon: "browser", href: "reports.html" },
+          { name: "Tabelas", icon: "table", href: "table.html" },
           { name: "Mapas", icon: "marker", href: "map.html" },
         ]
 
@@ -32,6 +20,22 @@ mixin nav(activeUrl)
           a(href=option.href)
             i(class= option.icon + " large icon")
             span(class="ch-menu-label")= option.name
+
+      -
+        var pages = [
+          { name: "Colaboradores", href: "employees.html" },
+          { name: "Relatórios", href: "reports.html" },
+        ]
+
+      li.ch-menu-item(class={active: currentUrl === 'pages.html'})
+        a.dropdown-hover(href="index.html")
+          i.puzzle.large.icon
+          span.ch-menu-label Páginas
+        .ch-dropdown
+          ul.ch-dropdown-menu
+            each page in pages
+              li.ch-dropdown-menu-item
+                a(href=page.href)=page.name
 
       li.ch-menu-item.btn-show-menu
         a(href="#")
