@@ -13,7 +13,7 @@
         <ul class="ch-menu">
           <li class="ch-menu-item"><a href="index.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
           <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
-          <li class="ch-menu-item active"><a href="employees.html"><i class="user large icon"></i><span class="ch-menu-label">Colaboradores</span></a></li>
+          <li class="ch-menu-item"><a href="employees.html"><i class="user large icon"></i><span class="ch-menu-label">Colaboradores</span></a></li>
           <li class="ch-menu-item"><a href="reports.html"><i class="browser large icon"></i><span class="ch-menu-label">Relatórios</span></a></li>
           <li class="ch-menu-item"><a href="map.html"><i class="marker large icon"></i><span class="ch-menu-label">Mapas</span></a></li>
           <li class="ch-menu-item btn-show-menu"><a href="#"><i class="ellipsis large horizontal icon"></i></a></li>
@@ -67,27 +67,18 @@
         </div>
       </header>
       <div class="ch-content">
-        <div class="ch-content-hgroup">
-          <h2 class="ui medium header">Alterar Colaborador
-            <div class="sub header">Utilize o passa a passo para alterar as informações do colaborador</div>
-          </h2>
-          <ol class="ch-horizontal-wizard">
-            <li class="ch-step current">Informações Pessoais</li>
-            <li class="ch-step">Informações de Endereço</li>
-            <li class="ch-step">Foto de Perfil</li>
-            <li class="ch-step">
-              Final
-              
-            </li>
-          </ol>
+        <div class="ch-content-hgroup padded">
+          <h1 class="ui header">Formulários
+            <div class="sub header">Exemplos de formulários</div>
+          </h1>
         </div>
-        <div class="ui stackable padded grid centered">
+        <div class="ui stackable padded grid">
           <div class="row">
-            <div class="sixteen wide column">
+            <div class="eight wide column">
               <form class="ui form">
                 <div class="ui segments">
                   <div class="ui attached segment ch-segment-header">
-                    <div class="ui title">Informações Pessoais</div>
+                    <div class="ui title">Inputs</div>
                   </div>
                   <div class="ui attached segment padded">
                     <div class="fields">
@@ -97,7 +88,7 @@
                       </div>
                       <div class="field required">
                         <label for="">Nº de Registro</label>
-                        <input type="text" value="32133">
+                        <input type="text" value="32133" disabled>
                       </div>
                     </div>
                     <div class="four fields">
@@ -139,7 +130,7 @@
                     <div class="two fields">
                       <div class="field">
                         <label for="">Cargo</label>
-                        <input type="text" value="Aux. Administrativo">
+                        <input type="text" value="" placeholder="Função">
                       </div>
                       <div class="field">
                         <label for="">Salário</label>
@@ -155,12 +146,64 @@
                         </div>
                       </div>
                     </div>
+                    <div class="ch-buttons-container">
+                      <div class="cancel-container">
+                        <button class="ui button basic">Cancelar</button>
+                      </div>
+                      <div class="submit-container">
+                        <input class="ui button positive" type="submit" value="Enviar">
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="ch-buttons-container">
-                  <div class="cancel-container"><a class="ui button basic" href="employee-detail.html">Cancelar</a></div>
-                  <div class="submit-container">
-                    <input class="ui button grey" type="submit" value="Salvar"><a class="ui positive button" href="employee-edit-page2.html">Salvar e continuar</a>
+              </form>
+            </div>
+            <div class="eight wide column">
+              <form class="ui form">
+                <div class="ui segments">
+                  <div class="ui attached segment ch-segment-header">
+                    <div class="ui title">Outros Exemplos de Inputs</div>
+                  </div>
+                  <div class="ui attached segment padded">
+                    <div class="field">
+                      <label>Multiple Select</label>
+                      <select class="ui dropdown" name="" multiple>
+                        <option value="Opção 1">Opção 1</option>
+                        <option value="Opção 2">Opção 2</option>
+                        <option value="Opção 3">Opção 3</option>
+                        <option value="Opção 4">Opção 4</option>
+                        <option value="Opção 5">Opção 5</option>
+                      </select>
+                    </div>
+                    <div class="field error required">
+                      <label>E-mail</label>
+                      <input type="text" placeholder="E-mail" value="email@email.com">
+                    </div>
+                    <div class="inline fields">
+                      <label>Boolean</label>
+                      <div class="field">
+                        <div class="ui radio checkbox">
+                          <input type="radio" name="boolean" value="yes">
+                          <label>Sim</label>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="ui radio checkbox">
+                          <input type="radio" name="boolean" value="no">
+                          <label>Não</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Observações</label>
+                      <textarea rows="2" placeholder="Insira aqui suas observações"></textarea>
+                    </div>
+                    <div class="inline field required">
+                      <div class="ui checkbox">
+                        <input type="checkbox">
+                        <label>Trabalha Remotamente</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -238,11 +281,5 @@
     <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/js/semantic.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript">
-      $('.js-new-billet').on('click', function() {
-        $('.long.modal').modal('show');
-        $(this).removeClass('.active.selected');
-      });
-    </script>
   </body>
 </html>

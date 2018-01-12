@@ -36,7 +36,7 @@
         background-color: transparent !important;
       }
 
-      .ch-table-details {
+      .ch-details-row-content {
         position: relative;
       }
     }
@@ -47,6 +47,22 @@
       padding-top: 1.2em;
     }
   }
+
+  @media only screen and (max-width: 767px) {
+    &:not(.unstackable) td:first-child, &:not(.unstackable) th:first-child {
+      font-weight: normal;
+    }
+
+    &.actions {
+      &:not(.unstackable) tr>td,
+      &:not(.unstackable) tr>th {
+        padding: 0.5em 1em !important;
+        text-align: left;
+      }
+    }
+  }
+
+
 }
 
 

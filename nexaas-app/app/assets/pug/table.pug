@@ -32,69 +32,84 @@ html
             .sixteen.wide.column
               .ui.medium.dividing.header Linhas Expansíveis
               .ui.segment.paddingless
-                  table.ui.basic.selectable.expandable.table
-                    thead
-                      tr
-                        th(colspan="2") Nome
-                        th E-mail
-                        th Cargo
-                        th Nº de Registro
-                        th &nbsp;
-                    tbody
-                      each worker in workers
-                        tr.row-link(data-href= worker.href)
-                          td.center.aligned.ch-avatar-container
-                            img.ch-avatar.small.rounded(src= worker.avatar_src)
-                          td= worker.name
-                          td= worker.email
-                          td= worker.post
-                          td= worker.id
-                          td.right.aligned.ch-table-buttons
-                            button.ui.icon.button.js-show-detail
-                              i.chevron.down.icon
-                        tr.invisible
-                          td(colspan="7")
-                            .ch-table-details.hidden
-                              .ui.grid.padded
-                                .sixteen.wide.column
-                                  h3.ui.small.header Outras informações
+                table.ui.basic.selectable.expandable.table
+                  thead
+                    tr
+                      th(colspan="2") Nome
+                      th E-mail
+                      th Cargo
+                      th Nº de Registro
+                      th &nbsp;
+                  tbody
+                    each worker in workers
+                      tr.row-link(data-href= worker.href)
+                        td.center.aligned.ch-avatar-container
+                          img.ch-avatar.small.rounded(src= worker.avatar_src)
+                        td= worker.name
+                        td= worker.email
+                        td= worker.post
+                        td= worker.id
+                        td.right.aligned.ch-table-buttons
+                          button.ui.icon.button.js-show-detail.hidden-mobile
+                            i.chevron.down.icon
+                      tr.ch-details-row.hidden
+                        td(colspan="7")
+                          .ch-details-row-content
+                            .ui.grid.padded
+                              .sixteen.wide.column
+                                h3.ui.small.header Outras informações
 
-                                .four.wide.computer.sixteen.wide.mobile.column
-                                  span CPF
-                                  p
-                                    strong= worker.cpf
-                                .four.wide.computer.sixteen.wide.mobile.column
-                                  span Salário
-                                  p
-                                    strong= worker.salary
-                                .four.wide.computer.sixteen.wide.mobile.column
-                                  span Data de Nascimento
-                                  p
-                                    strong= worker.birthday
-                                .four.wide.computer.sixteen.wide.mobile.column
-                                  span Endereço
-                                  p
-                                    strong= worker.adress
+                              .four.wide.computer.sixteen.wide.mobile.column
+                                span CPF
+                                p
+                                  strong= worker.cpf
+                              .four.wide.computer.sixteen.wide.mobile.column
+                                span Salário
+                                p
+                                  strong= worker.salary
+                              .four.wide.computer.sixteen.wide.mobile.column
+                                span Data de Nascimento
+                                p
+                                  strong= worker.birthday
+                              .four.wide.computer.sixteen.wide.mobile.column
+                                span Endereço
+                                p
+                                  strong= worker.adress
 
               .ui.divider.hidden
 
               .ui.medium.dividing.header Com Ações
               .ui.segment.paddingless
-                table.ui.very.basic.table
-                  - for (var i=0; i<5; i++)
+                table.ui.basic.selectable.expandable.table
+                  thead
                     tr
-                      td
-                        h4.ui.header Relatório sintético agrupado por Projetos
-                          .sub.header Com #[strong 3] filtros selecionados
+                      th.center.aligned
+                        input(type="checkbox")
+                      th(colspan="2") Nome
+                      th E-mail
+                      th Cargo
+                      th Nº de Registro
+                      th &nbsp;
+                  tbody
+                    each worker in workers
+                      tr
+                        td.center.aligned
+                          input(type="checkbox")
+                        td.center.aligned.ch-avatar-container
+                          img.ch-avatar.small.rounded(src= worker.avatar_src)
+                        td= worker.name
+                        td= worker.email
+                        td= worker.post
+                        td= worker.id
+                        td.right.aligned.ch-table-buttons
+                          button.ui.icon.button(data-tooltip="Editar" data-inverted)
+                            i.edit.icon
+                          button.ui.icon.button(data-tooltip="Gerar Relatório" data-inverted)
+                            i.file.text.icon
+                          button.ui.icon.button(data-tooltip="Excluir" data-inverted)
+                            i.remove.icon
 
-                      td.right.aligned Criado em: 27/12/2017 14:39:54
-                      td.right.aligned.ch-table-buttons
-                        button.ui.icon.button(data-tooltip="Editar" data-inverted)
-                          i.edit.icon
-                        button.ui.icon.button(data-tooltip="Gerar Relatório" data-inverted)
-                          i.file.text.icon
-                        button.ui.icon.button(data-tooltip="Excluir" data-inverted)
-                          i.remove.icon
+
 
     include includes/notifications.pug
     include includes/search.pug

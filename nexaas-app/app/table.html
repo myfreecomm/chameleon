@@ -11,16 +11,8 @@
   <body>
       <nav class="ch-nav"><a class="ch-logo" href="index.html"><img src="assets/img/chameleon-logo.png"><span class="text">Chameleon</span></a>
         <ul class="ch-menu">
-          <li class="ch-menu-item"><a class="dropdown-hover" href="index.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a>
-            <div class="ch-dropdown">
-              <ul class="ch-dropdown-menu">
-                <li class="ch-dropdown-menu-item"><a href="index.html">Painel Principal</a></li>
-                <li class="ch-dropdown-menu-item"><a href="index.html">Painel de Exemplo</a></li>
-                <li class="ch-dropdown-menu-item"><a href="index.html">Painel Modelo 1</a></li>
-                <li class="ch-dropdown-menu-item"><a href="index.html">Painel Modelo 2</a></li>
-              </ul>
-            </div>
-          </li>
+          <li class="ch-menu-item"><a href="index.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
+          <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="employees.html"><i class="user large icon"></i><span class="ch-menu-label">Colaboradores</span></a></li>
           <li class="ch-menu-item"><a href="reports.html"><i class="browser large icon"></i><span class="ch-menu-label">Relatórios</span></a></li>
           <li class="ch-menu-item"><a href="map.html"><i class="marker large icon"></i><span class="ch-menu-label">Mapas</span></a></li>
@@ -103,12 +95,12 @@
                       <td>Aux. Administrativo</td>
                       <td>32133</td>
                       <td class="right aligned ch-table-buttons">
-                        <button class="ui icon button js-show-detail"><i class="chevron down icon"></i></button>
+                        <button class="ui icon button js-show-detail hidden-mobile"><i class="chevron down icon"></i></button>
                       </td>
                     </tr>
-                    <tr class="invisible">
+                    <tr class="ch-details-row hidden">
                       <td colspan="7">
-                        <div class="ch-table-details hidden">
+                        <div class="ch-details-row-content">
                           <div class="ui grid padded">
                             <div class="sixteen wide column">
                               <h3 class="ui small header">Outras informações</h3>
@@ -136,12 +128,12 @@
                       <td>Designer Jr.</td>
                       <td>76914</td>
                       <td class="right aligned ch-table-buttons">
-                        <button class="ui icon button js-show-detail"><i class="chevron down icon"></i></button>
+                        <button class="ui icon button js-show-detail hidden-mobile"><i class="chevron down icon"></i></button>
                       </td>
                     </tr>
-                    <tr class="invisible">
+                    <tr class="ch-details-row hidden">
                       <td colspan="7">
-                        <div class="ch-table-details hidden">
+                        <div class="ch-details-row-content">
                           <div class="ui grid padded">
                             <div class="sixteen wide column">
                               <h3 class="ui small header">Outras informações</h3>
@@ -169,12 +161,12 @@
                       <td>UX Designer</td>
                       <td>96610</td>
                       <td class="right aligned ch-table-buttons">
-                        <button class="ui icon button js-show-detail"><i class="chevron down icon"></i></button>
+                        <button class="ui icon button js-show-detail hidden-mobile"><i class="chevron down icon"></i></button>
                       </td>
                     </tr>
-                    <tr class="invisible">
+                    <tr class="ch-details-row hidden">
                       <td colspan="7">
-                        <div class="ch-table-details hidden">
+                        <div class="ch-details-row-content">
                           <div class="ui grid padded">
                             <div class="sixteen wide column">
                               <h3 class="ui small header">Outras informações</h3>
@@ -201,72 +193,66 @@
               <div class="ui divider hidden"></div>
               <div class="ui medium dividing header">Com Ações</div>
               <div class="ui segment paddingless">
-                <table class="ui very basic table">
-                  <tr>
-                    <td>
-                      <h4 class="ui header">Relatório sintético agrupado por Projetos
-                        <div class="sub header">Com <strong>3</strong> filtros selecionados</div>
-                      </h4>
-                    </td>
-                    <td class="right aligned">Criado em: 27/12/2017 14:39:54</td>
-                    <td class="right aligned ch-table-buttons">
-                      <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <h4 class="ui header">Relatório sintético agrupado por Projetos
-                        <div class="sub header">Com <strong>3</strong> filtros selecionados</div>
-                      </h4>
-                    </td>
-                    <td class="right aligned">Criado em: 27/12/2017 14:39:54</td>
-                    <td class="right aligned ch-table-buttons">
-                      <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <h4 class="ui header">Relatório sintético agrupado por Projetos
-                        <div class="sub header">Com <strong>3</strong> filtros selecionados</div>
-                      </h4>
-                    </td>
-                    <td class="right aligned">Criado em: 27/12/2017 14:39:54</td>
-                    <td class="right aligned ch-table-buttons">
-                      <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <h4 class="ui header">Relatório sintético agrupado por Projetos
-                        <div class="sub header">Com <strong>3</strong> filtros selecionados</div>
-                      </h4>
-                    </td>
-                    <td class="right aligned">Criado em: 27/12/2017 14:39:54</td>
-                    <td class="right aligned ch-table-buttons">
-                      <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <h4 class="ui header">Relatório sintético agrupado por Projetos
-                        <div class="sub header">Com <strong>3</strong> filtros selecionados</div>
-                      </h4>
-                    </td>
-                    <td class="right aligned">Criado em: 27/12/2017 14:39:54</td>
-                    <td class="right aligned ch-table-buttons">
-                      <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
-                      <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
-                    </td>
-                  </tr>
+                <table class="ui basic selectable expandable table">
+                  <thead>
+                    <tr>
+                      <th class="center aligned">
+                        <input type="checkbox">
+                      </th>
+                      <th colspan="2">Nome</th>
+                      <th>E-mail</th>
+                      <th>Cargo</th>
+                      <th>Nº de Registro</th>
+                      <th>&nbsp;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="center aligned">
+                        <input type="checkbox">
+                      </td>
+                      <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=1"></td>
+                      <td>Rachel Lilki</td>
+                      <td>rachel@email.com</td>
+                      <td>Aux. Administrativo</td>
+                      <td>32133</td>
+                      <td class="right aligned ch-table-buttons">
+                        <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                        <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
+                        <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="center aligned">
+                        <input type="checkbox">
+                      </td>
+                      <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=2"></td>
+                      <td>Jamie Harington</td>
+                      <td>jamie@email.com</td>
+                      <td>Designer Jr.</td>
+                      <td>76914</td>
+                      <td class="right aligned ch-table-buttons">
+                        <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                        <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
+                        <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="center aligned">
+                        <input type="checkbox">
+                      </td>
+                      <td class="center aligned ch-avatar-container"><img class="ch-avatar small rounded" src="http://i.pravatar.cc/50?img=3"></td>
+                      <td>John Lewis</td>
+                      <td>john@email.com</td>
+                      <td>UX Designer</td>
+                      <td>96610</td>
+                      <td class="right aligned ch-table-buttons">
+                        <button class="ui icon button" data-tooltip="Editar" data-inverted><i class="edit icon"></i></button>
+                        <button class="ui icon button" data-tooltip="Gerar Relatório" data-inverted><i class="file text icon"></i></button>
+                        <button class="ui icon button" data-tooltip="Excluir" data-inverted><i class="remove icon"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>

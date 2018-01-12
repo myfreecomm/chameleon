@@ -134,7 +134,7 @@ var toggleDetailView = function(e) {
   var detailRow = $(this).parents('tr').next('tr');
   var buttonIcon = $(this).find('.icon');
 
-  detailRow.toggle();
+  detailRow.toggleClass('hidden');
   toggleClass(buttonIcon, 'down', 'up');
 }
 

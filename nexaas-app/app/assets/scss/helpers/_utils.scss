@@ -31,12 +31,18 @@
   background-color: rgba(#000, 0.65);
   animation: fadeIn .3s;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     background-color: #fff;
   }
 
 }
 
-.invisible {
-  display: none;
+.hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
 }
