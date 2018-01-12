@@ -16,7 +16,7 @@ html
   include includes/head.pug
 
   body
-    +nav('table.html')
+    +nav('wizard.html')
 
     .main-content
       include includes/header.pug
@@ -32,15 +32,20 @@ html
             .sixteen.wide.column
               .ui.medium.dividing.header Horizontal
 
-              ol.ch-horizontal-wizard
-                li.ch-step.done.
-                  Informações Pessoais
-                li.ch-step.current.
-                  Informações de Endereço
-                li.ch-step.
-                  Foto de Perfil
-                li.ch-step.
-                  Final
+              br
+
+              .ui.grid
+                .eight.wide.computer.sixteen.wide.mobile.column
+                  .ch-wizard-container
+                    ol.ch-horizontal-wizard
+                      li.ch-step.done.
+                        Informações Pessoais
+                      li.ch-step.current.
+                        Informações de Endereço
+                      li.ch-step.
+                        Foto de Perfil
+                      li.ch-step.
+                        Final
 
               .ui.divider.hidden
 
@@ -48,26 +53,25 @@ html
 
               br
 
-              form#report-form
-                .ui.form
-                  ol.ch-vertical-wizard
-                    li.ch-step.done
-                      .step-header
-                        h4.ui.medium.header Selecione o agrupador
-                          .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
-                      .step-content
+              .ch-wizard-container
+                ol.ch-vertical-wizard
+                  li.ch-step.done
+                    .step-header
+                      h4.ui.medium.header Selecione o agrupador
+                        .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
+                    .step-content
 
-                    li.ch-step.current
-                      .step-header
-                        h4.ui.medium.header Qual tipo ?
-                          .sub.header Defina o tipo do seu relatório.
-                      .step-content
+                  li.ch-step.current
+                    .step-header
+                      h4.ui.medium.header Qual tipo ?
+                        .sub.header Defina o tipo do seu relatório.
+                    .step-content
 
-                    li.ch-step
-                      .step-header
-                        h4.ui.medium.header Gostaria de mais opções ?
-                          .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
-                      .step-content
+                  li.ch-step
+                    .step-header
+                      h4.ui.medium.header Gostaria de mais opções ?
+                        .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
+                    .step-content
 
     include includes/notifications.pug
     include includes/search.pug
