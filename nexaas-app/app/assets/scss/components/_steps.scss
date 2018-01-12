@@ -1,77 +1,80 @@
-.steps {
-  .step {
+.ch-vertical-wizard {
+  counter-reset: steps;
+  list-style: none;
 
+  > .ch-step {
     opacity: 0.3;
 
-    &-header {
+    > .step-header {
+      position: relative;
       display: flex;
+      color: #d6d6d6;
 
-      .ui.header {
-        margin-top: 0;
-      }
-
-      .number {
+      &:before {
+        counter-increment: steps;
+        content: counter(steps);
+        min-width: 35px;
+        height: 35px;
         margin-right: 1em;
-        align-self: flex-start;
-
-        .icon {
-          margin: 0;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: 800;
+        color: #d6d6d6;
+        background-color: #fff;
+        border: 2px solid #d6d6d6;
+        border-radius: 100%;
       }
     }
 
-    &-content {
+    > .step-content {
       padding: 2em;
       margin: 0.5em 1.2em;
     }
 
-    .options {
-      padding: 0.8em;
-      min-width: 120px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-
-      &.checked {
-        background-color: #e5e5e5;
-        font-weight: 600;
-      }
-    }
-
-    &.active, &.done {
-
+    &.current, &.done {
       opacity: 1;
 
-      .step-content {
+      > .step-content {
         border-left: 2px dashed #999;
         visibility: visible;
       }
     }
-  }
-}
 
-.ch-rail {
-  .ui.sticky.fixed.top {
-    top: calc(65px + 20px)
-  }
-}
+    &.current {
+      color: #000;
 
-.report-resume {
-  .preview-report {
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-
-    .header {
-      padding: .5rem;
-      text-align: left;
-      background-color: #ebebeb;
+      > .step-header:before {
+        color: #fff;
+        background-color: #838383;
+        border-color: #838383;
+      }
     }
 
-    .content {
-      min-height: 300px;
-      padding: .5rem;
-      box-shadow: 0px 5px 5px #dcdcdc;
+    &.done {
+      color: #2b4;
+
+      > .step-header:before {
+        content: "\f00c";
+        font-family: "Icons";
+        color: #fff;
+        background-color: #2b4;
+        border-color: #2b4;
+      }
     }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    > .ch-step.done,
+    > .ch-step.current
+    {
+      > .step-content {
+        border: none;
+      }
+    }
+
   }
 }
 
@@ -159,5 +162,30 @@
   @media screen and (max-width: 1120px) {
     width: 100%;
     margin-top: 30px;
+  }
+}
+
+.ch-rail {
+  .ui.sticky.fixed.top {
+    top: calc(65px + 20px)
+  }
+}
+
+.report-resume {
+  .preview-report {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+
+    .header {
+      padding: .5rem;
+      text-align: left;
+      background-color: #ebebeb;
+    }
+
+    .content {
+      min-height: 300px;
+      padding: .5rem;
+      box-shadow: 0px 5px 5px #dcdcdc;
+    }
   }
 }

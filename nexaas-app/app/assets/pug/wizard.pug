@@ -45,34 +45,29 @@ html
               .ui.divider.hidden
 
               .ui.medium.dividing.header Vertical
+
               br
 
               form#report-form
                 .ui.form
-                  section.steps
-                    .step.done
+                  ol.ch-vertical-wizard
+                    li.ch-step.done
                       .step-header
-                        a.ui.green.circular.big.label.number
-                          i.checkmark.icon
                         h4.ui.medium.header Selecione o agrupador
                           .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
                       .step-content
 
-                    .step.active
+                    li.ch-step.current
                       .step-header
-                        a.ui.grey.circular.big.label.number 2
                         h4.ui.medium.header Qual tipo ?
                           .sub.header Defina o tipo do seu relatório.
                       .step-content
 
-                    .step
+                    li.ch-step
                       .step-header
-                        a.ui.grey.circular.big.label.number.basic 3
                         h4.ui.medium.header Gostaria de mais opções ?
                           .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
                       .step-content
-
-
 
     include includes/notifications.pug
     include includes/search.pug
