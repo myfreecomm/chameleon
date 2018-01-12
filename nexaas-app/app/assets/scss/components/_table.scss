@@ -48,6 +48,10 @@
     }
   }
 
+  .checkbox-column {
+    width: 20px;
+  }
+
   @media only screen and (max-width: 767px) {
     &:not(.unstackable) td:first-child, &:not(.unstackable) th:first-child {
       font-weight: normal;
