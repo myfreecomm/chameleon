@@ -79,19 +79,141 @@
           <h2 class="ui medium header">Relatórios
             <div class="sub header">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos.</div>
           </h2>
-          <div class="ui positive buttons">
-            <div class="ui button">Criar Relatório</div>
-            <div class="ui floating top right pointing dropdown icon button"><i class="dropdown icon"></i>
-              <div class="menu"><a class="item" href="new-report.html">Relatório Simples</a><a class="item" href="#">Relatório Dinâmico</a></div>
-            </div>
-          </div>
         </div>
         <div class="ui pointing secondary menu ch-header-tabs"><a class="item" data-tab="rs">Relatório Simples</a><a class="item" data-tab="rd">Relatório Dinâmico</a><a class="item active" data-tab="mr">Modelos de Relatório</a></div><br>
         <div class="ui stackable padded grid">
           <div class="row">
             <div class="sixteen wide column">
               <div class="ui tab" data-tab="rs">Relatório Simples</div>
-              <div class="ui bottom tab" data-tab="rd">Relatório Dinâmico</div>
+              <div class="ui bottom tab" data-tab="rd">
+                <div class="ui stackable padded grid">
+                  <div class="row">
+                    <div class="thirteen wide column">
+                      <div class="ch-wizard-container">
+                        <form class="ui form">
+                          <ol class="ch-vertical-wizard">
+                            <li class="ch-step current">
+                              <div class="step-header">
+                                <h4 class="ui medium header">Selecione o agrupador
+                                  <div class="sub header">Agrupadores servem para organizar a informação de uma forma mais eficiente.</div>
+                                </h4>
+                              </div>
+                              <div class="step-content">
+                                <div class="inline fields">
+                                  <div class="field">
+                                    <div class="ui radio checkbox options">
+                                      <input class="hidden" type="radio" tabindex="0" name="agrupador" id="projects">
+                                      <label for="projects">Projetos</label>
+                                    </div>
+                                  </div>
+                                  <div class="field">
+                                    <div class="ui radio checkbox options">
+                                      <input class="hidden" type="radio" tabindex="0" name="agrupador" id="activities">
+                                      <label for="activities">Atividades</label>
+                                    </div>
+                                  </div>
+                                  <div class="field">
+                                    <div class="ui radio checkbox options">
+                                      <input class="hidden" type="radio" tabindex="0" name="agrupador" id="employees">
+                                      <label for="employees">Colaboradores</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="ch-step">
+                              <div class="step-header">
+                                <h4 class="ui medium header">Qual tipo ?
+                                  <div class="sub header">Defina o tipo do seu relatório.</div>
+                                </h4>
+                              </div>
+                              <div class="step-content">
+                                <div class="inline fields">
+                                  <div class="field">
+                                    <div class="ui radio checkbox options">
+                                      <input class="hidden" type="radio" tabindex="0" name="tipo" id="synthetic">
+                                      <label for="synthetic">Sintético</label>
+                                    </div>
+                                  </div>
+                                  <div class="field">
+                                    <div class="ui radio checkbox options">
+                                      <input class="hidden" type="radio" tabindex="0" name="tipo" id="analytic">
+                                      <label for="analytic">Analítico</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="ch-step">
+                              <div class="step-header">
+                                <h4 class="ui medium header">Gostaria de mais opções ?
+                                  <div class="sub header">Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!</div>
+                                </h4>
+                              </div>
+                              <div class="step-content">
+                                <div class="inline fields">
+                                  <div class="field">
+                                    <div class="ui checkbox options">
+                                      <input class="hidden" type="checkbox" tabindex="0" name="add-graphs" id="add-graphs">
+                                      <label for="add-graphs">Adicionar Gráfico</label>
+                                    </div>
+                                  </div>
+                                  <div class="field">
+                                    <div class="ui checkbox options">
+                                      <input class="hidden" type="checkbox" tabindex="0" name="add-stats" id="add-stats">
+                                      <label for="add-stats">Adicionar Estatísticas</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="ch-step">
+                              <div class="step-header">
+                                <h4 class="ui medium header">Gostaria de mais opções ?
+                                  <div class="sub header">Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!</div>
+                                </h4>
+                              </div>
+                              <div class="step-content">
+                                <div class="inline fields">
+                                  <div class="field">
+                                    <div class="ui radio checkbox options">
+                                      <input class="hidden" type="radio" tabindex="0" name="filters" id="filter-yes">
+                                      <label>Sim</label>
+                                    </div>
+                                  </div>
+                                  <div class="field">
+                                    <div class="ui radio checkbox options">
+                                      <input class="hidden" type="radio" tabindex="0" name="filters" id="filter-no">
+                                      <label>Não</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ol>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="three wide column">
+                      <div class="ch-rail report-resume">
+                        <div class="ui segments">
+                          <div class="ui segment attached ch-segment-header center aligned">
+                            <div class="ui header small">Pré-Visualização do relatório</div>
+                          </div>
+                          <div class="ui segment padded attached center aligned">
+                            <div class="preview-report">
+                              <div class="header">Relatório</div>
+                              <div class="content"></div>
+                            </div>
+                            <p>Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.</p>
+                            <input class="ui button blue" type="submit" value="Criar Relatório">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="ui tab active" data-tab="mr">
                 <div class="ui segments">
                   <div class="ui attached segment ch-segment-header">

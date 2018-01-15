@@ -36,6 +36,7 @@
     > .step-content {
       padding: 2em;
       margin: 0.5em 1.2em;
+      visibility: hidden;
     }
 
     &.current, &.done {
@@ -172,6 +173,23 @@
   @media screen and (max-width: 1120px) {
     width: 100%;
     margin-top: 30px;
+  }
+}
+
+.ch-step {
+  .options {
+    min-width: 120px;
+    padding: 0.6rem 1rem;
+    background-color: #e8e8e8;
+    border: 1px solid;
+    border-color: #ccc;
+    border-radius: 5px;
+
+    &.checked {
+      font-weight: 600;
+      background-color: #fff;
+      border-color: #ccc;
+    }
   }
 }
 

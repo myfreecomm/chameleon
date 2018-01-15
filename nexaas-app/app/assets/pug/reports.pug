@@ -13,13 +13,6 @@ html
           h2.ui.medium.header Relatórios
             .sub.header Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos.
 
-          .ui.positive.buttons
-            .ui.button Criar Relatório
-            .ui.floating.top.right.pointing.dropdown.icon.button
-              i.dropdown.icon
-              .menu
-                a(href="new-report.html").item Relatório Simples
-                a(href="#").item Relatório Dinâmico
         .ui.pointing.secondary.menu.ch-header-tabs
           a.item(data-tab="rs") Relatório Simples
           a.item(data-tab="rd") Relatório Dinâmico
@@ -30,8 +23,90 @@ html
             .sixteen.wide.column
               .ui.tab(data-tab="rs").
                 Relatório Simples
-              .ui.bottom.tab(data-tab="rd").
-                Relatório Dinâmico
+              .ui.bottom.tab(data-tab="rd")
+                .ui.stackable.padded.grid
+                  .row
+                    .thirteen.wide.column
+                      .ch-wizard-container
+                        form.ui.form
+                          ol.ch-vertical-wizard
+                            li.ch-step.current
+                              .step-header
+                                h4.ui.medium.header Selecione o agrupador
+                                  .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
+                              .step-content
+                                .inline.fields
+                                  .field
+                                    .ui.radio.checkbox.options
+                                      input.hidden(type="radio" tabindex="0" name="agrupador" id="projects")
+                                      label(for="projects") Projetos
+                                  .field
+                                    .ui.radio.checkbox.options
+                                      input.hidden(type="radio" tabindex="0" name="agrupador" id="activities")
+                                      label(for="activities") Atividades
+                                  .field
+                                    .ui.radio.checkbox.options
+                                      input.hidden(type="radio" tabindex="0" name="agrupador" id="employees")
+                                      label(for="employees") Colaboradores
+
+                            li.ch-step
+                              .step-header
+                                h4.ui.medium.header Qual tipo ?
+                                  .sub.header Defina o tipo do seu relatório.
+                              .step-content
+                                .inline.fields
+                                  .field
+                                    .ui.radio.checkbox.options
+                                      input.hidden(type="radio" tabindex="0" name="tipo" id="synthetic")
+                                      label(for="synthetic") Sintético
+                                  .field
+                                    .ui.radio.checkbox.options
+                                      input.hidden(type="radio" tabindex="0" name="tipo" id="analytic")
+                                      label(for="analytic") Analítico
+
+                            li.ch-step
+                              .step-header
+                                h4.ui.medium.header Gostaria de mais opções ?
+                                  .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
+                              .step-content
+                                .inline.fields
+                                  .field
+                                    .ui.checkbox.options
+                                      input.hidden(type="checkbox" tabindex="0" name="add-graphs" id="add-graphs")
+                                      label(for="add-graphs") Adicionar Gráfico
+                                  .field
+                                    .ui.checkbox.options
+                                      input.hidden(type="checkbox" tabindex="0" name="add-stats" id="add-stats")
+                                      label(for="add-stats") Adicionar Estatísticas
+
+                            li.ch-step
+                              .step-header
+                                h4.ui.medium.header Gostaria de mais opções ?
+                                  .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
+                              .step-content
+                                .inline.fields
+                                  .field
+                                    .ui.radio.checkbox.options
+                                      input.hidden(type="radio" tabindex="0" name="filters" id="filter-yes")
+                                      label Sim
+                                  .field
+                                    .ui.radio.checkbox.options
+                                      input.hidden(type="radio" tabindex="0" name="filters" id="filter-no")
+                                      label Não
+
+                    .three.wide.column
+                      .ch-rail.report-resume
+                        .ui.segments
+                          .ui.segment.attached.ch-segment-header.center.aligned
+                            div.ui.header.small Pré-Visualização do relatório
+                          .ui.segment.padded.attached.center.aligned
+                            .preview-report
+                              .header Relatório
+                              .content
+                            p.
+                              Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.
+                            input.ui.button.blue(type="submit" value="Criar Relatório")
+
               .ui.tab.active(data-tab="mr")
                 .ui.segments
                   .ui.attached.segment.ch-segment-header
