@@ -14,15 +14,90 @@ html
             .sub.header Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos.
 
         .ui.pointing.secondary.menu.ch-header-tabs
-          a.item(data-tab="rs") Relatório Simples
+          a.item.active(data-tab="rs") Relatório Simples
           a.item(data-tab="rd") Relatório Dinâmico
-          a.item.active(data-tab="mr") Modelos de Relatório
+          a.item(data-tab="mr") Modelos de Relatório
         br
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
-              .ui.tab(data-tab="rs").
-                Relatório Simples
+              .ui.tab.active(data-tab="rs")
+                form.ui.form
+                  .ui.segments
+                    .ui.segment.attached.ch-segment-header
+                      .ui.title Relatório Simples
+                    .ui.segment.attached
+                      .fields
+                        .four.wide.field
+                          label(for="") Agrupar por
+                          select.ui.dropdown(name="")
+                            each option in ["Opção 1", "Opção 2"]
+                              option(value= option)= option
+
+                      .four.fields
+                        .grouped.fields.field
+                          label Vencimento
+                          each option in [{label: "Vencidas", name: "vencidas"},{label: "À Receber", name: "receber"},{label: "Recebidas", name: "recebidas"}]
+                            .field
+                              .ui.checkbox
+                                input(type="checkbox" name=option.name)
+                                label=option.label
+
+                        .grouped.fields.field
+                          label Tipo
+                          each option in [{label: "Normais", name: "normais"},{label: "Recorrentes", name: "recorrentes"},{label: "Parceladas", name: "parceladas"}]
+                            .field
+                              .ui.checkbox
+                                input(type="checkbox" name=option.name)
+                                label=option.label
+
+                        .grouped.fields.field
+                          label Recibos
+                          each option in [{label: "Com recibos", name: "com_recibos"},{label: "Sem Recibos", name: "sem_recibos"}]
+                            .field
+                              .ui.checkbox
+                                input(type="checkbox" name=option.name)
+                                label=option.label
+
+                        .grouped.fields.field
+                          label Imposto de Renda
+                          each option in [{label: "Relevante para IR", name: "relevantes_ir"},{label: "Não revelante para IR", name: "nao_relevante"}]
+                            .field
+                              .ui.checkbox
+                                input(type="checkbox" name=option.name)
+                                label=option.label
+
+                      .four.fields
+                        .grouped.fields.field
+                          label Conciliação
+                          each option in [{label: "Conciliadas", name: "conciliadas"},{label: "Não conciliadas", name: "nao_conciliadas"}]
+                            .field
+                              .ui.checkbox
+                                input(type="checkbox" name=option.name)
+                                label=option.label
+
+                        .grouped.fields.field
+                          label Anexos
+                          each option in [{label: "Com anexos", name: "com_anexos"},{label: "Sem anexos", name: "sem_anexos"}]
+                            .field
+                              .ui.checkbox
+                                input(type="checkbox" name=option.name)
+                                label=option.label
+                      .six.wide.field
+                        label Criado em
+                        .two.fields
+                          .field
+                            .ui.left.icon.input
+                              input(type="text" placeholder="De")
+                              i.calendar.icon
+                          .field
+                            .ui.left.icon.input
+                              input(type="text" placeholder="Até")
+                              i.calendar.icon
+
+                    .ui.segment.attached.right.aligned
+                      .ui.button.blue Gerar Relatório
+
               .ui.bottom.tab(data-tab="rd")
                 .ui.stackable.padded.grid
                   .row
@@ -94,7 +169,7 @@ html
                                       input.hidden(type="radio" tabindex="0" name="filters" id="filter-no")
                                       label Não
 
-                    .three.wide.column
+                    .three.wide.column.hidden-mobile
                       .ch-rail.report-resume
                         .ui.segments
                           .ui.segment.attached.ch-segment-header.center.aligned
@@ -105,15 +180,16 @@ html
                               .content
                             p.
                               Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.
-                            input.ui.button.blue(type="submit" value="Criar Relatório")
 
-              .ui.tab.active(data-tab="mr")
+                    .sixteen.wide.column
+                      .ui.divider
+                      input.ui.button.blue(type="submit" value="Gerar Relatório")
+
+              .ui.tab(data-tab="mr")
                 .ui.segments
                   .ui.attached.segment.ch-segment-header
                     .ui.title Modelos de Relatório
-                    a(href="#").ch-filters
-                      i.filter.icon
-                      span.text Filtros
+
                   .ui.attached.segment.paddingless
                     table.ui.very.basic.table
                       - for (var i=0; i<5; i++)

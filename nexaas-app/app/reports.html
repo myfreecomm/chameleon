@@ -80,11 +80,154 @@
             <div class="sub header">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos.</div>
           </h2>
         </div>
-        <div class="ui pointing secondary menu ch-header-tabs"><a class="item" data-tab="rs">Relatório Simples</a><a class="item" data-tab="rd">Relatório Dinâmico</a><a class="item active" data-tab="mr">Modelos de Relatório</a></div><br>
+        <div class="ui pointing secondary menu ch-header-tabs"><a class="item active" data-tab="rs">Relatório Simples</a><a class="item" data-tab="rd">Relatório Dinâmico</a><a class="item" data-tab="mr">Modelos de Relatório</a></div><br>
         <div class="ui stackable padded grid">
           <div class="row">
             <div class="sixteen wide column">
-              <div class="ui tab" data-tab="rs">Relatório Simples</div>
+              <div class="ui tab active" data-tab="rs">
+                <form class="ui form">
+                  <div class="ui segments">
+                    <div class="ui segment attached ch-segment-header">
+                      <div class="ui title">Relatório Simples</div>
+                    </div>
+                    <div class="ui segment attached">
+                      <div class="fields">
+                        <div class="four wide field">
+                          <label for="">Agrupar por</label>
+                          <select class="ui dropdown" name="">
+                            <option value="Opção 1">Opção 1</option>
+                            <option value="Opção 2">Opção 2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="four fields">
+                        <div class="grouped fields field">
+                          <label>Vencimento</label>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="vencidas">
+                              <label>Vencidas</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="receber">
+                              <label>À Receber</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="recebidas">
+                              <label>Recebidas</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grouped fields field">
+                          <label>Tipo</label>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="normais">
+                              <label>Normais</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="recorrentes">
+                              <label>Recorrentes</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="parceladas">
+                              <label>Parceladas</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grouped fields field">
+                          <label>Recibos</label>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="com_recibos">
+                              <label>Com recibos</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="sem_recibos">
+                              <label>Sem Recibos</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grouped fields field">
+                          <label>Imposto de Renda</label>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="relevantes_ir">
+                              <label>Relevante para IR</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="nao_relevante">
+                              <label>Não revelante para IR</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="four fields">
+                        <div class="grouped fields field">
+                          <label>Conciliação</label>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="conciliadas">
+                              <label>Conciliadas</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="nao_conciliadas">
+                              <label>Não conciliadas</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grouped fields field">
+                          <label>Anexos</label>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="com_anexos">
+                              <label>Com anexos</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui checkbox">
+                              <input type="checkbox" name="sem_anexos">
+                              <label>Sem anexos</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="six wide field">
+                        <label>Criado em</label>
+                        <div class="two fields">
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <input type="text" placeholder="De"><i class="calendar icon"></i>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <input type="text" placeholder="Até"><i class="calendar icon"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ui segment attached right aligned">
+                      <div class="ui button blue">Gerar Relatório</div>
+                    </div>
+                  </div>
+                </form>
+              </div>
               <div class="ui bottom tab" data-tab="rd">
                 <div class="ui stackable padded grid">
                   <div class="row">
@@ -194,7 +337,7 @@
                         </form>
                       </div>
                     </div>
-                    <div class="three wide column">
+                    <div class="three wide column hidden-mobile">
                       <div class="ch-rail report-resume">
                         <div class="ui segments">
                           <div class="ui segment attached ch-segment-header center aligned">
@@ -205,19 +348,25 @@
                               <div class="header">Relatório</div>
                               <div class="content"></div>
                             </div>
-                            <p>Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.</p>
-                            <input class="ui button blue" type="submit" value="Criar Relatório">
+                            <p>
+                              Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.
+                              
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <div class="sixteen wide column">
+                      <div class="ui divider"></div>
+                      <input class="ui button blue" type="submit" value="Gerar Relatório">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="ui tab active" data-tab="mr">
+              <div class="ui tab" data-tab="mr">
                 <div class="ui segments">
                   <div class="ui attached segment ch-segment-header">
-                    <div class="ui title">Modelos de Relatório</div><a class="ch-filters" href="#"><i class="filter icon"></i><span class="text">Filtros</span></a>
+                    <div class="ui title">Modelos de Relatório</div>
                   </div>
                   <div class="ui attached segment paddingless">
                     <table class="ui very basic table">
