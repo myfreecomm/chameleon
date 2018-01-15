@@ -37,7 +37,7 @@
 
 }
 
-.hidden {
+.hidden:not(.ui.divider) {
   display: none !important;
 }
 

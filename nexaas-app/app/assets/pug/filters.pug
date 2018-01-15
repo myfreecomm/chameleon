@@ -1,0 +1,223 @@
+-
+  var cobrancas = [
+    { id: "Myfinance Development - Boleto Bradesco 09", type: "payment", payer: "John Doe", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "R$ 15,00", status_msg: "Capturado", status_color: "blue", status_icon: "checkmark"
+    },
+    { id: "Myfinance DEVELOPMENT Cielo", type: "barcode", payer: "Doe Company", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "---", status_msg: "Cobrança sem registro", status_color: "red", status_icon: "minus"
+    },
+    { id: "Myfinance DEVELOPMENT Cielo", type: "payment", payer: "Doe Company", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "---", status_msg: "Cancelado", status_color: "yellow", status_icon: "minus"
+    },
+    { id: "Myfinance Development - Boleto Bradesco 09", type: "payment", payer: "John Doe", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "---", status_msg: "Erro na autorização", status_color: "red", status_icon: "exclamation"
+    },
+    { id: "Myfinance Development - Boleto Bradesco 09", type: "barcode", payer: "John Doe", date: "11/03/2017",
+      cost: "R$ 49,90", paid: "R$ 49,90", status_msg: "Cobrança sem registro", status_color: "blue", status_icon: "minus"
+    },
+  ];
+
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('employees.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+          h2.ui.medium.header Cobranças
+
+          button.ui.positive.button.js-new-billet Nova Cobrança
+
+        .ui.stackable.padded.grid
+          .row
+            .sixteen.wide.column
+              .ui.segments
+                .ui.attached.segment.ch-segment-header
+                  span Mostrando 5 de 5 resultados
+                  a(href="#").ch-filters-btn.btn-filters
+                    i.filter.icon
+                    span.text Filtros
+                .ui.segment.attached.paddingless
+                  table.ui.basic.selectable.table
+                    thead
+                      tr
+                        th Config. de Cobrança
+                        th Tipo
+                        th Pagador
+                        th Vencimento
+                        th Cobrado
+                        th Pago
+                        th &nbsp;
+                        th &nbsp;
+                        th &nbsp;
+                    tbody
+                      each cobranca in cobrancas
+                        tr
+                          td= cobranca.id
+                          td
+                            i.ui.icon(class=cobranca.type)
+                          td= cobranca.payer
+                          td= cobranca.date
+                          td= cobranca.cost
+                          td= cobranca.paid
+                          td
+                            span.ui.label(class=cobranca.status_color)
+                              i.ui.icon(class=cobranca.status_icon)
+                              =cobranca.status_msg
+                          td.center.aligned
+                            .ui.info
+                              i.ui.icon.circle.info(data-html="<strong>Título</strong><br><p>Conteúdo HTML</p>")
+                          td.right.aligned
+                            .ui.icon.dropdown.actions
+                              i.icon.ellipsis.vertical
+                              .menu.fixed-position
+                                for item in ["Option 1", "Option 2", "Option 3"]
+                                  .item=item
+
+
+    .ui.ch-modal.long.modal
+      i.close.icon
+      .header.
+        Novo colaborador
+
+      form.ui.form
+        .content
+          .ui.basic.padded.segment
+            .ch-avatar-upload
+              .ch-avatar-container.big
+                img.ch-avatar.rounded(src="http://via.placeholder.com/105x105")
+              .info
+                h3.ui.header Foto de perfil
+                p Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff
+                p Limite de tamanho de arquivo: 10MB
+                .ch-input-file
+                  label.ui.tiny.button.primary(for="file").
+                      Adicionar foto
+                  input(type="file" id="file")
+
+        .ui.divider.fitted
+
+        .content
+          .ui.basic.padded.segment
+            h3.ui.header Informações Pessoais
+
+            .ui.divider.hidden
+
+            .fields
+              .eight.wide.field.required
+                label(for="") Nome Completo
+                input(type="text" placeholder="Nome")
+
+              .field.required
+                label(for="") Nº de Registro
+                input(type="text")
+
+            .four.fields
+              .field
+                label(for="") Data de Nascimento
+                .ui.left.icon.input
+                  input(type="text" placeholder="dd/mm/aaaa")
+                  i.calendar.icon
+
+              .field
+                label(for="") Nacionalidade
+                input(type="text" placeholder="Nacionalidade")
+
+              .field
+                label(for="") Naturalidade
+                input(type="text" placeholder="Naturalidade")
+
+              .field
+                label(for="") Sexo
+                input(type="text" placeholder="")
+
+            .two.fields
+              .field
+                label(for="") Estado Civil
+                select.ui.dropdown(name="")
+                    each option in ["Opção 1", "Opção 2"]
+                      option(value= option)= option
+              .field
+                label Escolaridade
+                select.ui.dropdown(name="")
+                    each option in ["Opção 1", "Opção 2"]
+                      option(value= option)= option
+
+            .two.fields
+              .field
+                label(for="") Cargo
+                input(type="text")
+
+              .field
+                label(for="") Salário
+                .ui.right.labeled.input
+                  input(type="text" placeholder="0,00")
+                  .ui.dropdown.label
+                    .text BRL
+                    i.dropdown.icon
+                    .menu
+                      .item BRL
+                      .item EUR
+
+        .ui.divider.fitted
+
+        .content
+          .ui.basic.padded.segment
+            h3.ui.header Informações de Endereço
+
+            .ui.divider.hidden
+
+            .fields
+              .four.wide.field.required
+                label(for="") CEP
+                input(type="text" placeholder="00.000-00")
+
+              .ten.wide.field.required
+                label(for="") Endereço
+                input(type="text" placeholder="Endereço")
+
+              .two.wide.field.required
+                label(for="") Número
+                input(type="text" placeholder="Número")
+
+            .four.fields
+              .field
+                label(for="") Complemento
+                input(type="text")
+
+              .field
+                label(for="") Bairro
+                input(type="text")
+
+              .field
+                label(for="") Estado
+                select.ui.dropdown(name="")
+                  option(value="") UF
+                  each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    option(value= option)= option
+
+              .field
+                label(for="") Cidade
+                select.ui.dropdown(name="")
+                  option(value="") Selecione uma Cidade
+                  each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
+                    option(value= option)= option
+
+      .actions
+        .ui.button.close Cancelar
+        .ui.submit.positive.button Salvar
+
+    include includes/filters.pug
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
+    script(type="text/javascript").
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });

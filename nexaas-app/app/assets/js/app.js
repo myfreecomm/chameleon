@@ -10,9 +10,11 @@ $(document).ready(function() {
 
   $(document).on('click', '.btn-notifications', showNotifications);
 
+  $(document).on('click', '.btn-filters', showFilters);
+
   $(document).on('click', '.ch-overlay, .btn-close', hideChameleonModal);
 
-  $(document).on('click', '.ch-search-content, .ch-notifications-content', function(e) { e.stopPropagation(); });
+  $(document).on('click', '.ch-search-content, .ch-notifications-content, .ch-filters-content', function(e) { e.stopPropagation(); });
 
   $(document).on('input', '.ch-search-form-input', toggleSearchResults);
 
@@ -66,6 +68,17 @@ var hideNotifications = function() {
   $('.ch-notifications').hide(300);
 }
 
+var showFilters = function(e) {
+  e.preventDefault();
+  $('.ch-filters').show(300);
+  $('.ch-filters-content, .btn-show-all').addClass('active');
+}
+
+var hideFilters = function() {
+  $('.ch-filters-content, .btn-show-all').removeClass('active');
+  $('.ch-filters').hide(300);
+}
+
 var showDropdown = function(e) {
   e.preventDefault();
   if ( $(this).siblings().hasClass('visible') ) {
@@ -103,6 +116,8 @@ var hideChameleonModal = function() {
   if ($('.ch-search').is(':visible')) { hideSearch() }
 
   if ($('.ch-notifications').is(':visible')) { hideNotifications() }
+
+  if ($('.ch-filters').is(':visible')) { hideFilters() }
 }
 
 var toggleSearchResults = function() {
@@ -170,6 +185,10 @@ $('.bind-popup')
   .popup({
     inline: true
   });
+;
+
+$('.ui.info')
+  .popup('click')
 ;
 
 $('.ui.sticky')
