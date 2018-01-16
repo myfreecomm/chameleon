@@ -7,6 +7,7 @@
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
     <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
@@ -110,7 +111,7 @@
                         <td>R$ 15,00</td>
                         <td>R$ 15,00</td>
                         <td><span class="ui label blue"><i class="ui icon checkmark"></i>Capturado</span></td>
-                        <td class="center aligned">
+                        <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
                         <td class="right aligned">
@@ -131,7 +132,7 @@
                         <td>R$ 15,00</td>
                         <td>---</td>
                         <td><span class="ui label red"><i class="ui icon minus"></i>Cobrança sem registro</span></td>
-                        <td class="center aligned">
+                        <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
                         <td class="right aligned">
@@ -152,7 +153,7 @@
                         <td>R$ 15,00</td>
                         <td>---</td>
                         <td><span class="ui label yellow"><i class="ui icon minus"></i>Cancelado</span></td>
-                        <td class="center aligned">
+                        <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
                         <td class="right aligned">
@@ -173,7 +174,7 @@
                         <td>R$ 15,00</td>
                         <td>---</td>
                         <td><span class="ui label red"><i class="ui icon exclamation"></i>Erro na autorização</span></td>
-                        <td class="center aligned">
+                        <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
                         <td class="right aligned">
@@ -194,7 +195,7 @@
                         <td>R$ 49,90</td>
                         <td>R$ 49,90</td>
                         <td><span class="ui label blue"><i class="ui icon minus"></i>Cobrança sem registro</span></td>
-                        <td class="center aligned">
+                        <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
                         <td class="right aligned">
@@ -372,7 +373,7 @@
         <div class="ch-filters-content">
           <div class="ch-filters-header">Filtros<span class="btn-close"><i class="close icon"></i></span></div>
           <div class="ch-filters-container">
-            <div class="ui segment basic">
+            <div class="ui segment basic padded">
               <form class="ui form">
                 <div class="field">
                   <label>Vencimento em</label>
@@ -404,6 +405,7 @@
                       </div>
                     </div>
                   </div>
+                  <div class="slider" id="slider"></div>
                 </div>
                 <div class="ui divider hidden"></div>
                 <div class="field">
@@ -513,6 +515,7 @@
     <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/js/semantic.min.js"></script>
     <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/nouislider/nouislider.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript">
       $('.js-new-billet').on('click', function() {

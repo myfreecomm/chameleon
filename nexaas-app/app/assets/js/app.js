@@ -169,6 +169,21 @@ $(window).resize(function() {
   }
 });
 
+var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+  start: [20, 80],
+  connect: true,
+  range: {
+    'min': 0,
+    'max': 100
+  }
+});
+
+slider.noUiSlider.on('update', function( values, handle ) {
+  console.log(values, handle, values[handle])
+});
+
 /*** SEMANTIC UI **/
 
 $('.ui.dropdown')
@@ -188,7 +203,10 @@ $('.bind-popup')
 ;
 
 $('.ui.info')
-  .popup('click')
+  .popup({
+    inline: true,
+    on: 'hover'
+  })
 ;
 
 $('.ui.sticky')
