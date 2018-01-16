@@ -180,10 +180,6 @@ noUiSlider.create(slider, {
   }
 });
 
-slider.noUiSlider.on('update', function( values, handle ) {
-  console.log(values, handle, values[handle])
-});
-
 /*** SEMANTIC UI **/
 
 $('.ui.dropdown')
