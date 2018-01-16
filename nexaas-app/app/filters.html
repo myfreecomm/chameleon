@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
+    <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
@@ -376,28 +377,12 @@
                 <div class="field">
                   <label>Vencimento em</label>
                   <div class="two fields">
-                    <div class="field">
+                    <div class="field ui calendar" id="rangestart">
                       <div class="ui left icon input">
                         <input type="text" placeholder="De"><i class="calendar icon"></i>
                       </div>
                     </div>
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Pago em</label>
-                  <div class="two fields">
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field">
+                    <div class="field ui calendar" id="rangeend">
                       <div class="ui left icon input">
                         <input type="text" placeholder="Até"><i class="calendar icon"></i>
                       </div>
@@ -435,22 +420,6 @@
                     <option value="John Doe">John Doe</option>
                     <option value="Doe Company">Doe Company</option>
                   </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Emitido em</label>
-                  <div class="two fields">
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <div class="ui divider hidden"></div>
                 <div class="field">
@@ -543,6 +512,7 @@
     </div>
     <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/js/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript">
       $('.js-new-billet').on('click', function() {

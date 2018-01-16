@@ -37,8 +37,12 @@
 
 }
 
-.hidden:not(.ui.divider) {
+.hidden {
   display: none !important;
+
+  &.ui.divider {
+    display: block !important;
+  }
 }
 
 @media screen and (max-width: 767px) {

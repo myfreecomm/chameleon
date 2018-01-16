@@ -43,7 +43,6 @@
   &-message {
     justify-content: center;
   }
-
   .ui.items {
     margin-top: 0;
   }
@@ -83,6 +82,16 @@
         font-style: italic;
         color: lighten($fontColor, 10%)
       }
+    }
+
+  }
+
+  @media screen and(min-width: 769px) {
+    .ui.calendar {
+      margin: 0;
+      top: 38px !important;
+      right: 0 !important;
+      margin-top: .7em;
     }
   }
 

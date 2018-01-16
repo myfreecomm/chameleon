@@ -11,25 +11,11 @@
             .field
               label Vencimento em
               .two.fields
-                .field
+                .field.ui.calendar#rangestart
                   .ui.left.icon.input
                     input(type="text" placeholder="De")
                     i.calendar.icon
-                .field
-                  .ui.left.icon.input
-                    input(type="text" placeholder="Até")
-                    i.calendar.icon
-
-            .ui.divider.hidden
-
-            .field
-              label Pago em
-              .two.fields
-                .field
-                  .ui.left.icon.input
-                    input(type="text" placeholder="De")
-                    i.calendar.icon
-                .field
+                .field.ui.calendar#rangeend
                   .ui.left.icon.input
                     input(type="text" placeholder="Até")
                     i.calendar.icon
@@ -63,20 +49,6 @@
               select.ui.dropdown(name="")
                 each option in ["John Doe", "Doe Company"]
                   option(value= option)= option
-
-            .ui.divider.hidden
-
-            .field
-              label Emitido em
-              .two.fields
-                .field
-                  .ui.left.icon.input
-                    input(type="text" placeholder="De")
-                    i.calendar.icon
-                .field
-                  .ui.left.icon.input
-                    input(type="text" placeholder="Até")
-                    i.calendar.icon
 
             .ui.divider.hidden
 
