@@ -109,7 +109,36 @@ html
                           button.ui.icon.button(data-tooltip="Excluir" data-inverted)
                             i.remove.icon
 
+              .ui.divider.hidden
 
+              .ui.segment.paddingless
+                table.ui.basic.selectable.expandable.table
+                  thead
+                    tr
+                      th.center.aligned.checkbox-column
+                        input(type="checkbox")
+                      th(colspan="2") Nome
+                      th E-mail
+                      th Cargo
+                      th Nº de Registro
+                      th &nbsp;
+                  tbody
+                    each worker in workers
+                      tr
+                        td.center.aligned
+                          input(type="checkbox")
+                        td.center.aligned.ch-avatar-container
+                          img.ch-avatar.small.rounded(src= worker.avatar_src)
+                        td= worker.name
+                        td= worker.email
+                        td= worker.post
+                        td= worker.id
+                        td.right.aligned
+                          .ui.icon.dropdown.actions
+                            i.icon.ellipsis.vertical
+                            .menu.fixed-position
+                              for item in ["Editar", "Gerar Relatório", "Excluir"]
+                                .item=item
 
     include includes/notifications.pug
     include includes/search.pug
