@@ -1,0 +1,158 @@
+-
+  var cobrancas = [
+    { id: "Myfinance Development - Boleto Bradesco 09", type: "payment", payer: "John Doe", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "R$ 15,00", status_msg: "Capturado", status_color: "blue", status_icon: "check circle"
+    },
+    { id: "Myfinance DEVELOPMENT Cielo", type: "barcode", payer: "Doe Company", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "---", status_msg: "Cobrança sem registro", status_color: "orange", status_icon: "minus circle"
+    },
+    { id: "Myfinance DEVELOPMENT Cielo", type: "payment", payer: "Doe Company", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "---", status_msg: "Cancelado", status_color: "yellow", status_icon: "remove circle"
+    },
+    { id: "Myfinance Development - Boleto Bradesco 09", type: "payment", payer: "John Doe", date: "11/03/2017",
+      cost: "R$ 15,00", paid: "---", status_msg: "Erro na autorização", status_color: "red", status_icon: "exclamation circle"
+    },
+    { id: "Myfinance Development - Boleto Bradesco 09", type: "barcode", payer: "John Doe", date: "11/03/2017",
+      cost: "R$ 49,90", paid: "R$ 49,90", status_msg: "Cobrança sem registro", status_color: "orange", status_icon: "minus circle"
+    },
+  ];
+
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('employees.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+          h2.ui.medium.header Cobranças
+
+          .ui.top.right.pointing.dropdown.button.positive
+            span Nova Cobrança
+            i.dropdown.icon
+            .menu
+              .item Boleto
+              .item Gateway de pagamento
+
+        .ui.stackable.padded.grid
+          .row
+            .four.wide.computer.column
+              .ui.segments
+                .ui.segment.attached.ch-segment-header
+                  .ui.title Filtros
+                .ui.segment.attached.padded
+                  form.ui.form
+                    .field
+                      label Vencimento em
+                      .two.fields
+                        .field.ui.calendar#rangestart
+                          .ui.left.icon.input
+                            input(type="text" placeholder="De")
+                            i.calendar.icon
+                        .field.ui.calendar#rangeend
+                          .ui.left.icon.input
+                            input(type="text" placeholder="Até")
+                            i.calendar.icon
+
+                    .ui.divider.hidden
+
+                    .field
+                      label Valor
+                      .two.fields
+                        .field
+                          .ui.left.icon.input
+                            input(type="text" placeholder="De")
+                            i.dollar.icon
+                        .field
+                          .ui.left.icon.input
+                            input(type="text" placeholder="Até")
+                            i.dollar.icon
+
+                      .slider-container
+                        #slider
+
+                    .ui.divider.hidden
+
+                    .field
+                      label Configuração de Cobrança
+                      select.ui.dropdown(name="")
+                        each option in ["Myfinance Development - Boleto Bradesco 09", "Myfinance DEVELOPMENT Cielo"]
+                          option(value= option)= option
+
+                    .ui.divider.hidden
+
+                    .field
+                      label Pagador
+                      select.ui.dropdown(name="")
+                        each option in ["John Doe", "Doe Company"]
+                          option(value= option)= option
+
+                    .ui.divider.hidden
+
+                    .field
+                      label Tipo de Cobrança
+                      select.ui.dropdown(name="")
+                        each option in ["Option 1", "Option 2"]
+                          option(value= option)= option
+
+                    .ui.divider.hidden
+
+                    .field
+                      label Status da Cobrança
+                      select.ui.dropdown(name="" disabled)
+                        each option in ["Escolha o tipo de cobrança", "Option 2"]
+                          option(value= option)= option
+
+            .twelve.wide.computer.column
+              .ui.segments
+                .ui.attached.segment.ch-segment-header
+                  span Mostrando 5 de 5 resultados
+                .ui.segment.attached.paddingless
+                  table.ui.basic.selectable.table
+                    thead
+                      tr
+                        th Config. de Cobrança
+                        th Tipo
+                        th Pagador
+                        th Vencimento
+                        th Cobrado
+                        th Pago
+                        th &nbsp;
+                        th &nbsp;
+                        th &nbsp;
+                    tbody
+                      each cobranca in cobrancas
+                        tr
+                          td= cobranca.id
+                          td
+                            i.ui.icon(class=cobranca.type)
+                          td= cobranca.payer
+                          td= cobranca.date
+                          td= cobranca.cost
+                          td= cobranca.paid
+                          td
+                            span.ui.label(class=cobranca.status_color)
+                              i.ui.icon(class=cobranca.status_icon)
+                              =cobranca.status_msg
+                          td
+                            .ui.info
+                              i.ui.icon.circle.info(data-html="<strong>Título</strong><br><p>Conteúdo HTML</p>")
+                          td.right.aligned
+                            .ui.icon.dropdown.actions
+                              i.icon.ellipsis.vertical
+                              .menu.fixed-position
+                                for item in ["Option 1", "Option 2", "Option 3"]
+                                  .item=item
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
+    script(type="text/javascript").
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });

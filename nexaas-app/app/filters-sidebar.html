@@ -90,9 +90,86 @@
         </div>
         <div class="ui stackable padded grid">
           <div class="row">
-            <div class="sixteen wide column">
+            <div class="four wide computer column">
               <div class="ui segments">
-                <div class="ui attached segment ch-segment-header"><span>Mostrando 5 de 5 resultados</span><a class="ch-filters-btn btn-filters" href="#"><i class="filter icon"></i><span class="text">Filtros</span></a></div>
+                <div class="ui segment attached ch-segment-header">
+                  <div class="ui title">Filtros</div>
+                </div>
+                <div class="ui segment attached padded">
+                  <form class="ui form">
+                    <div class="field">
+                      <label>Vencimento em</label>
+                      <div class="two fields">
+                        <div class="field ui calendar" id="rangestart">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="De"><i class="calendar icon"></i>
+                          </div>
+                        </div>
+                        <div class="field ui calendar" id="rangeend">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="Até"><i class="calendar icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Valor</label>
+                      <div class="two fields">
+                        <div class="field">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="De"><i class="dollar icon"></i>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="Até"><i class="dollar icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slider-container">
+                        <div id="slider"></div>
+                      </div>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Configuração de Cobrança</label>
+                      <select class="ui dropdown" name="">
+                        <option value="Myfinance Development - Boleto Bradesco 09">Myfinance Development - Boleto Bradesco 09</option>
+                        <option value="Myfinance DEVELOPMENT Cielo">Myfinance DEVELOPMENT Cielo</option>
+                      </select>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Pagador</label>
+                      <select class="ui dropdown" name="">
+                        <option value="John Doe">John Doe</option>
+                        <option value="Doe Company">Doe Company</option>
+                      </select>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Tipo de Cobrança</label>
+                      <select class="ui dropdown" name="">
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                      </select>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Status da Cobrança</label>
+                      <select class="ui dropdown" name="" disabled>
+                        <option value="Escolha o tipo de cobrança">Escolha o tipo de cobrança</option>
+                        <option value="Option 2">Option 2</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="twelve wide computer column">
+              <div class="ui segments">
+                <div class="ui attached segment ch-segment-header"><span>Mostrando 5 de 5 resultados</span></div>
                 <div class="ui segment attached paddingless">
                   <table class="ui basic selectable table">
                     <thead>
@@ -222,86 +299,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="ch-filters">
-      <div class="ch-overlay">
-        <div class="ch-filters-content">
-          <div class="ch-filters-header">Filtros<span class="btn-close"><i class="close icon"></i></span></div>
-          <div class="ch-filters-container">
-            <div class="ui segment basic padded">
-              <form class="ui form">
-                <div class="field">
-                  <label>Vencimento em</label>
-                  <div class="two fields">
-                    <div class="field ui calendar" id="rangestart">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field ui calendar" id="rangeend">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Valor</label>
-                  <div class="two fields">
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="dollar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="dollar icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slider-container">
-                    <div id="slider"></div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Configuração de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Myfinance Development - Boleto Bradesco 09">Myfinance Development - Boleto Bradesco 09</option>
-                    <option value="Myfinance DEVELOPMENT Cielo">Myfinance DEVELOPMENT Cielo</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Pagador</label>
-                  <select class="ui dropdown" name="">
-                    <option value="John Doe">John Doe</option>
-                    <option value="Doe Company">Doe Company</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Tipo de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Option 1">Option 1</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Status da Cobrança</label>
-                  <select class="ui dropdown" name="" disabled>
-                    <option value="Escolha o tipo de cobrança">Escolha o tipo de cobrança</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-show-all">Filtrar</div>
     </div>
     <div class="ch-notifications">
       <div class="ch-overlay">
