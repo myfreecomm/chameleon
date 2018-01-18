@@ -15,18 +15,20 @@ html
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
-              .ui.top.attached.tabular.menu
-                a.active.item(data-tab="account") Dados da conta
-                a.item(data-tab="users") Usuários
-                a.item(data-tab="plan") Assinatura
-                a.item(data-tab="integrations") Integrações
-              .ui.bottom.attached.active.tab.segment.padded(data-tab="account").
+              .ch-header-tabs
+                .ui.pointing.secondary.menu
+                  a.active.item(data-tab="account") Dados da conta
+                  a.item(data-tab="users") Usuários
+                  a.item(data-tab="plan") Assinatura
+                  a.item(data-tab="integrations") Integrações
+
+              .ui.active.tab.segment.padded(data-tab="account").
                 Account
-              .ui.bottom.attached.tab.segment.padded(data-tab="users").
+              .ui.tab.segment.padded(data-tab="users").
                 Usuários
-              .ui.bottom.attached.tab.segment.padded(data-tab="plan").
+              .ui.tab.segment.padded(data-tab="plan").
                 Assinatura
-              .ui.bottom.attached.tab.segment.padded(data-tab="integrations").
+              .ui.tab.segment.padded(data-tab="integrations").
                 Integrações
 
     include includes/filters.pug
