@@ -5,7 +5,7 @@
   left: 0;
   z-index: 2;
 
-  &-content {
+  &-container {
     position: absolute;
     top: 0;
     right: 0;
@@ -25,7 +25,7 @@
     }
   }
 
-  &-container {
+  &-content {
     padding-bottom: 50px;
   }
 

@@ -1,32 +1,33 @@
 .ch-notifications
   .ch-overlay
-    .ch-notifications-content
+    .ch-notifications-container
       .ch-notifications-header Notificações
         span.btn-close
           i.close.icon
 
-      .ui.items
+      .ch-filters-content
+        .ui.items
 
-        .item.ch-notifications-message.unread
-          a.ui.image
-            img(src="http://via.placeholder.com/40x40")
-          .content
-            a.header Lorem Ipsum
-            .description
-              p.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ullam iure, exercitationem omnis magni, repellat quos tempore hic facere pariatur?
-            span.time 20 de agosto de 2017 às 21:30
-
-        - for (var i=0; i<5; i++)
-          .item.ch-notifications-message
+          .item.ch-notifications-message.unread
             a.ui.image
               img(src="http://via.placeholder.com/40x40")
-
             .content
               a.header Lorem Ipsum
               .description
                 p.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ullam iure, exercitationem omnis magni, repellat quos tempore hic facere pariatur?
               span.time 20 de agosto de 2017 às 21:30
+
+          - for (var i=0; i<5; i++)
+            .item.ch-notifications-message
+              a.ui.image
+                img(src="http://via.placeholder.com/40x40")
+
+              .content
+                a.header Lorem Ipsum
+                .description
+                  p.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.
+                span.time 20 de agosto de 2017 às 21:30
 
   .btn-show-all Ver tudo
