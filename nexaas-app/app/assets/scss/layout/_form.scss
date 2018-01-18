@@ -2,3 +2,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+.ch-copy-input {
+  width: 100%;
+
+
+  &.ui.input {
+    font-size: 0.8rem;
+  }
+
+}

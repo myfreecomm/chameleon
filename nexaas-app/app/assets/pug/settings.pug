@@ -1,0 +1,35 @@
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('pages.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-hgroup
+          h2.ui.medium.header Configurações
+
+        .ui.stackable.padded.grid
+          .row
+            .sixteen.wide.column
+              .ui.top.attached.tabular.menu
+                a.active.item(data-tab="account") Dados da conta
+                a.item(data-tab="users") Usuários
+                a.item(data-tab="plan") Assinatura
+                a.item(data-tab="integrations") Integrações
+              .ui.bottom.attached.active.tab.segment.padded(data-tab="account").
+                Account
+              .ui.bottom.attached.tab.segment.padded(data-tab="users").
+                Usuários
+              .ui.bottom.attached.tab.segment.padded(data-tab="plan").
+                Assinatura
+              .ui.bottom.attached.tab.segment.padded(data-tab="integrations").
+                Integrações
+
+    include includes/filters.pug
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug
