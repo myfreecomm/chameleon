@@ -8,13 +8,11 @@ $(document).ready(function() {
 
   $(document).on('click', '.btn-search', showSearch);
 
-  $(document).on('click', '.btn-notifications', showNotifications);
-
-  $(document).on('click', '.btn-filters', showFilters);
+  $(document).on('click', '.btn-modal', showSidebarModal);
 
   $(document).on('click', '.ch-overlay, .btn-close', hideChameleonModal);
 
-  $(document).on('click', '.ch-search-content, .ch-notifications-container, .ch-filters-container', function(e) { e.stopPropagation(); });
+  $(document).on('click', '.ch-search-content, .ch-sidebar-container', function(e) { e.stopPropagation(); });
 
   $(document).on('input', '.ch-search-form-input', toggleSearchResults);
 
@@ -57,26 +55,18 @@ var hideSearch = function() {
   $('.ch-search').hide(300);
 }
 
-var showNotifications = function(e) {
+var showSidebarModal = function(e) {
   e.preventDefault();
-  $('.ch-notifications').show(300);
-  $('.ch-notifications-container, .btn-show-all').addClass('active');
+  var targetModal = $(this).data('modal');
+  var modal = $('.ch-sidebar[data-modal="' + targetModal + '"');
+
+  modal.show(300);
+  modal.find('.ch-sidebar-container, .btn-show-all').addClass('active');
 }
 
-var hideNotifications = function() {
-  $('.ch-notifications-container, .btn-show-all').removeClass('active');
-  $('.ch-notifications').hide(300);
-}
-
-var showFilters = function(e) {
-  e.preventDefault();
-  $('.ch-filters').show(300);
-  $('.ch-filters-container, .btn-show-all').addClass('active');
-}
-
-var hideFilters = function() {
-  $('.ch-filters-container, .btn-show-all').removeClass('active');
-  $('.ch-filters').hide(300);
+var hideSidebarModal = function() {
+  $('.ch-sidebar-container, .btn-show-all').removeClass('active');
+  $('.ch-sidebar').hide(300);
 }
 
 var showDropdown = function(e) {
@@ -115,9 +105,7 @@ var hideDropdown = function(e) {
 var hideChameleonModal = function() {
   if ($('.ch-search').is(':visible')) { hideSearch() }
 
-  if ($('.ch-notifications').is(':visible')) { hideNotifications() }
-
-  if ($('.ch-filters').is(':visible')) { hideFilters() }
+  if ($('.ch-sidebar').is(':visible')) { hideSidebarModal() }
 }
 
 var toggleSearchResults = function() {
