@@ -5,6 +5,14 @@
   }
 }
 
+.ch-table-label  {
+  .ui.label {
+    width: 100%;
+    max-width: 175px;
+    text-align: center;
+  }
+}
+
 .bind-popup + .ui.popup {
   max-width: 275px;
 

@@ -83,14 +83,75 @@
         <div class="ch-content-hgroup">
           <h2 class="ui medium header">Configurações</h2>
         </div>
-        <div class="ui stackable padded grid">
+        <div class="ui stackable padded grid centered">
           <div class="row">
             <div class="sixteen wide column">
-              <div class="ui top attached tabular menu"><a class="item active" data-tab="users">Usuários</a><a class="item" data-tab="plan">Assinatura</a></div>
-              <div class="ui bottom attached tab segment padded active" data-tab="users">Usuários</div>
+              <div class="ui top attached tabular menu"><a class="item active" data-tab="user">Usuário</a><a class="item" data-tab="plan">Assinatura</a></div>
+              <div class="ui bottom attached tab segment padded active" data-tab="user">
+                <form class="ui form">
+                  <div class="ui divided stackable grid">
+                    <div class="row">
+                      <div class="four wide computer six wide tablet column">
+                        <div class="content">
+                          <div class="ui basic padded segment">
+                            <div class="ch-avatar-upload vertical">
+                              <div class="ch-avatar-container big"><img class="ch-avatar rounded" src="http://via.placeholder.com/105x105"></div>
+                              <div class="info">
+                                <h3 class="ui header">Foto de perfil</h3>
+                                <p>Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff</p>
+                                <p>Limite de tamanho de arquivo: 10MB</p>
+                                <div class="ch-input-file">
+                                  <label class="ui tiny button primary" for="file">Adicionar foto</label>
+                                  <input type="file" id="file">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="eight wide computer ten wide tablet column">
+                        <div class="content">
+                          <div class="ui basic padded segment">
+                            <h3 class="ui header">Dados Pessoais</h3>
+                            <div class="ui divider hidden"></div>
+                            <div class="two fields">
+                              <div class="field required">
+                                <label for="">Nome</label>
+                                <input type="text" placeholder="Nome">
+                              </div>
+                              <div class="field required">
+                                <label for="">Apelido</label>
+                                <input type="text" placeholder="Apelido">
+                              </div>
+                            </div>
+                            <div class="two fields">
+                              <div class="field required">
+                                <label for="">E-mail</label>
+                                <input type="text" placeholder="E-mail">
+                              </div>
+                              <div class="field">
+                                <label for="">Data de Nascimento</label>
+                                <div class="ui left icon input">
+                                  <input type="text" placeholder="dd/mm/aaaa"><i class="calendar icon"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
               <div class="ui bottom attached tab segment padded" data-tab="plan">
                 Assinatura
                 
+              </div>
+              <div class="ui segment basic right aligned">
+                <div class="actions">
+                  <div class="ui basic button close">Cancelar</div>
+                  <div class="ui submit positive button">Atualizar Informações</div>
+                </div>
               </div>
             </div>
           </div>

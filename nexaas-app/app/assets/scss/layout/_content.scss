@@ -68,6 +68,15 @@
       margin: 10px 0 0;
     }
   }
+
+  &.vertical {
+    display: block;
+    text-align: center;
+
+    .ch-avatar-container {
+      margin: 0 auto;
+    }
+  }
 }
 
 .ch-input-file {

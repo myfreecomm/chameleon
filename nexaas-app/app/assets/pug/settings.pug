@@ -12,17 +12,67 @@ html
         .ch-content-hgroup
           h2.ui.medium.header Configurações
 
-        .ui.stackable.padded.grid
+        .ui.stackable.padded.grid.centered
           .row
             .sixteen.wide.column
               .ui.top.attached.tabular.menu
-                a.item.active(data-tab="users") Usuários
+                a.item.active(data-tab="user") Usuário
                 a.item(data-tab="plan") Assinatura
 
-              .ui.bottom.attached.tab.segment.padded.active(data-tab="users").
-                Usuários
+              .ui.bottom.attached.tab.segment.padded.active(data-tab="user")
+                form.ui.form
+
+                  .ui.divided.stackable.grid
+                    .row
+                      .four.wide.computer.six.wide.tablet.column
+                        .content
+                          .ui.basic.padded.segment
+                            .ch-avatar-upload.vertical
+                              .ch-avatar-container.big
+                                img.ch-avatar.rounded(src="http://via.placeholder.com/105x105")
+                              .info
+                                h3.ui.header Foto de perfil
+                                p Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff
+                                p Limite de tamanho de arquivo: 10MB
+                                .ch-input-file
+                                  label.ui.tiny.button.primary(for="file").
+                                      Adicionar foto
+                                  input(type="file" id="file")
+
+                      .eight.wide.computer.ten.wide.tablet.column
+                        .content
+                          .ui.basic.padded.segment
+                            h3.ui.header Dados Pessoais
+
+                            .ui.divider.hidden
+
+                            .two.fields
+                              .field.required
+                                label(for="") Nome
+                                input(type="text" placeholder="Nome")
+
+                              .field.required
+                                label(for="") Apelido
+                                input(type="text" placeholder="Apelido")
+
+                            .two.fields
+                              .field.required
+                                label(for="") E-mail
+                                input(type="text" placeholder="E-mail")
+
+                              .field
+                                label(for="") Data de Nascimento
+                                .ui.left.icon.input
+                                  input(type="text" placeholder="dd/mm/aaaa")
+                                  i.calendar.icon
+
               .ui.bottom.attached.tab.segment.padded(data-tab="plan").
                 Assinatura
+
+              .ui.segment.basic.right.aligned
+                .actions
+                  .ui.basic.button.close Cancelar
+                  .ui.submit.positive.button Atualizar Informações
 
     include includes/filters.pug
     include includes/notifications.pug

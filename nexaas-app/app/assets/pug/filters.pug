@@ -57,7 +57,7 @@ html
                         th Vencimento
                         th Cobrado
                         th Pago
-                        th &nbsp;
+                        th.center.aligned &nbsp;
                         th &nbsp;
                         th &nbsp;
                     tbody
@@ -70,7 +70,7 @@ html
                           td= cobranca.date
                           td= cobranca.cost
                           td= cobranca.paid
-                          td
+                          td.center.aligned.ch-table-label
                             span.ui.label(class=cobranca.status_color)
                               i.ui.icon(class=cobranca.status_icon)
                               =cobranca.status_msg
