@@ -91,7 +91,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    &-content {
+    &-container {
       width: 100%;
       animation: fadeIn .3s;
     }
@@ -100,10 +100,6 @@
       padding: 10px;
     }
   }
-}
-
-.btn-close-notifications {
-  cursor: pointer;
 }
 
 .btn-show-all {

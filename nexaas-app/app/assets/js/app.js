@@ -61,11 +61,11 @@ var showSidebarModal = function(e) {
   var modal = $('.ch-sidebar[data-modal="' + targetModal + '"');
 
   modal.show(300);
-  modal.find('.ch-sidebar-container, .btn-show-all').addClass('active');
+  modal.find('.ch-sidebar-container, .btn-action').addClass('active');
 }
 
 var hideSidebarModal = function() {
-  $('.ch-sidebar-container, .btn-show-all').removeClass('active');
+  $('.ch-sidebar-container, .btn-action').removeClass('active');
   $('.ch-sidebar').hide(300);
 }
 
