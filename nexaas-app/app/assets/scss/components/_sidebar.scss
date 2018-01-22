@@ -42,6 +42,11 @@
 
   &-content {
     padding-bottom: 50px;
+    overflow: hidden;
+
+    .inside & {
+      padding-bottom: 120px;
+    }
   }
 
   &-message {
