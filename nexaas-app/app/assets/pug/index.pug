@@ -114,9 +114,9 @@ html
                     tbody
                       each worker in workers
                         tr
-                          td= worker.name
-                          td= worker.admission_date
-                          td= worker.email
+                          td(data-info="Nome")= worker.name
+                          td(data-info="Date Joined")= worker.admission_date
+                          td(data-info="E-mail")= worker.email
 
     include includes/notifications.pug
     include includes/search.pug

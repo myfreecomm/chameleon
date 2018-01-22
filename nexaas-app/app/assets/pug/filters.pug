@@ -63,14 +63,14 @@ html
                     tbody
                       each cobranca in cobrancas
                         tr
-                          td= cobranca.id
-                          td
+                          td(data-info="Config. de Cobrança")= cobranca.id
+                          td(data-info="Tipo")
                             i.ui.icon(class=cobranca.type)
-                          td= cobranca.payer
-                          td= cobranca.date
-                          td= cobranca.cost
-                          td= cobranca.paid
-                          td.center.aligned.ch-table-label
+                          td(data-info="Pagador")= cobranca.payer
+                          td(data-info="Vencimento")= cobranca.date
+                          td(data-info="Cobrado")= cobranca.cost
+                          td(data-info="Pago")= cobranca.paid
+                          td(data-info="Status").center.aligned.ch-table-label
                             span.ui.label(class=cobranca.status_color)
                               i.ui.icon(class=cobranca.status_icon)
                               =cobranca.status_msg

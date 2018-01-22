@@ -58,8 +58,8 @@ html
                     tbody
                       each person in people
                         tr
-                          td= person.name
-                          td= person.email
+                          td(data-info="Nome")= person.name
+                          td(data-info="E-mail")= person.email
                           td
                             if person.permissions
                               span.ui.label Administrador

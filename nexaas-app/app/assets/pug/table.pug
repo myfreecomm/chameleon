@@ -45,10 +45,10 @@ html
                       tr.row-link(data-href= worker.href)
                         td.center.aligned.ch-avatar-container
                           img.ch-avatar.small.rounded(src= worker.avatar_src)
-                        td= worker.name
-                        td= worker.email
-                        td= worker.post
-                        td= worker.id
+                        td(data-info="Nome")= worker.name
+                        td(data-info="E-mail")= worker.email
+                        td(data-info="Cargo")= worker.post
+                        td(data-info="Nº de Registro")= worker.id
                         td.right.aligned.ch-table-buttons
                           button.ui.icon.button.js-show-detail.hidden-mobile
                             i.chevron.down.icon
@@ -57,24 +57,20 @@ html
                           .ch-details-row-content
                             .ui.grid.padded
                               .sixteen.wide.column
-                                h3.ui.small.header Outras informações
+                                h3.ui.small.header Mais informações
 
                               .four.wide.computer.sixteen.wide.mobile.column
-                                span CPF
-                                p
-                                  strong= worker.cpf
+                                strong CPF
+                                p= worker.cpf
                               .four.wide.computer.sixteen.wide.mobile.column
-                                span Salário
-                                p
-                                  strong= worker.salary
+                                strong Salário
+                                p= worker.salary
                               .four.wide.computer.sixteen.wide.mobile.column
-                                span Data de Nascimento
-                                p
-                                  strong= worker.birthday
+                                strong Data de Nascimento
+                                p= worker.birthday
                               .four.wide.computer.sixteen.wide.mobile.column
-                                span Endereço
-                                p
-                                  strong= worker.adress
+                                strong Endereço
+                                p= worker.adress
 
               .ui.divider.hidden
 
@@ -93,14 +89,14 @@ html
                   tbody
                     each worker in workers
                       tr
-                        td.center.aligned
+                        td.center.aligned.checkbox
                           input(type="checkbox")
                         td.center.aligned.ch-avatar-container
                           img.ch-avatar.small.rounded(src= worker.avatar_src)
-                        td= worker.name
-                        td= worker.email
-                        td= worker.post
-                        td= worker.id
+                        td(data-info="Nome")= worker.name
+                        td(data-info="E-mail")= worker.email
+                        td(data-info="Cargo")= worker.post
+                        td(data-info="Nº de Registro")= worker.id
                         td.right.aligned.ch-table-buttons
                           button.ui.icon.button(data-tooltip="Editar" data-inverted)
                             i.edit.icon
@@ -125,15 +121,15 @@ html
                   tbody
                     each worker in workers
                       tr
-                        td.center.aligned
+                        td.center.aligned.checkbox
                           input(type="checkbox")
                         td.center.aligned.ch-avatar-container
                           img.ch-avatar.small.rounded(src= worker.avatar_src)
-                        td= worker.name
-                        td= worker.email
-                        td= worker.post
-                        td= worker.id
-                        td.right.aligned
+                        td(data-info="Nome")= worker.name
+                        td(data-info="E-mail")= worker.email
+                        td(data-info="Cargo")= worker.post
+                        td(data-info="Nº de Registro")= worker.id
+                        td.right.aligned.ch-table-menu
                           .ui.icon.dropdown.actions
                             i.icon.ellipsis.vertical
                             .menu.fixed-position
