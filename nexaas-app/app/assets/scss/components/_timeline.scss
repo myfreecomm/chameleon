@@ -36,7 +36,7 @@
     position: relative;
     left: -9px;
     display: flex;
-    padding: 15px 0 !important;
+    padding: 15px 0;
     z-index: 1;
 
     &:before {
@@ -69,11 +69,11 @@
 .btn-collapse {
   position: fixed;
   top: 50%;
-  right: 312px;
-  transition: all .3s;
+  right: 0;
+  transform: translate(-312px, -50%);
 
   &.inactive {
-    transform: translateX(315px);
+    transform: translate(2px, -50%);
   }
 
   &.ui.button {
@@ -90,5 +90,6 @@
     border: none;
     border-radius: 5px 0 0 5px;
     box-shadow: -2px 0px 1px 0px rgba(#000, .05);
+    transition: all .3s;
   }
 }

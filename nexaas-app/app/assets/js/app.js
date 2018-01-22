@@ -22,6 +22,8 @@ $(document).ready(function() {
 
   $(document).on('click', '.row-link', clickableRow);
 
+  $(document).on('click', '.btn-collapse', toggleSidebarCollapse);
+
   $(document).on({
     mouseup: function(e) {
       hideDropdown(e);
@@ -139,6 +141,16 @@ var toggleDetailView = function(e) {
 
   detailRow.toggleClass('hidden');
   toggleClass(buttonIcon, 'down', 'up');
+}
+
+var toggleSidebarCollapse = function() {
+  var container = $(this).prev('.ch-timeline-container');
+  var collapseButton = $(this);
+  var collapseButtonIcon = $(this).find('.icon');
+
+  toggleClass(collapseButtonIcon, 'right', 'left');
+  collapseButton.toggleClass('inactive')
+  container.toggleClass('inactive');
 }
 
 var toggleClass = function(elem, class1, class2) {
