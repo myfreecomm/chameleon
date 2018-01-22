@@ -1,0 +1,53 @@
+.ch-timeline-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  min-height: 100%;
+  margin-left: auto;
+  padding: 25px;
+  padding-top: calc(65px + 30px);
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.ch-timeline {
+  list-style: none;
+  padding-bottom: 20px;
+  border-left: 3px solid #e5e5e5;
+
+  li {
+    position: relative;
+    left: -9px;
+    display: flex;
+    padding: 15px 0 !important;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      display: block;
+      margin-right: 15px;
+      min-width: 15px;
+      height: 15px;
+      background: #fff;
+      border: 3px solid #e5e5e5;
+      border-radius: 100%;
+    }
+
+    &.date {
+      align-items: center;
+    }
+
+    &.event {
+      .header {
+        margin-bottom: 5px;
+      }
+
+      &:before {
+        border-color: $mainColor;
+      }
+    }
+  }
+}
