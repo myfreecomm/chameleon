@@ -11,6 +11,15 @@
   background-color: #fff;
   border-left: 1px solid #ddd;
   overflow-y: auto;
+  z-index: 0;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    top: 50%;
+    min-height: 50%;
+    padding-top: 20px;
+    border: none;
+  }
 }
 
 .ch-timeline {
@@ -49,5 +58,9 @@
         border-color: $mainColor;
       }
     }
+  }
+
+  @media screen and (max-width: 768px) {
+
   }
 }
