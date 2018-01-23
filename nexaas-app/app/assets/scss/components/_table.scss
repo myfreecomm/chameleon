@@ -75,6 +75,11 @@
       flex-direction: column;
 
       &.ch-details-row {
+
+        &.hidden {
+          display: none!important;
+        }
+
         .column {
           display: flex;
           justify-content: space-between;

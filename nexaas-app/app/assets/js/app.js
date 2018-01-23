@@ -29,7 +29,7 @@ $(document).ready(function() {
       hideDropdown(e);
     },
     keydown: function(e) {
-      hideSearchOnEscape(e);
+      hideOnEscape(e);
     }
   });
 
@@ -119,10 +119,11 @@ var removeSearchContext = function() {
   $('.ch-search-form-input').focus();
 }
 
-var hideSearchOnEscape = function(e) {
+var hideOnEscape = function(e) {
   var code = e.keyCode || e.which;
-  if ( code === 27 && $('.ch-search').is(':visible')) {
+  if ( code === 27 && $('.ch-overlay').is(':visible')) {
     hideSearch();
+    hideChameleonModal();
   }
 }
 
