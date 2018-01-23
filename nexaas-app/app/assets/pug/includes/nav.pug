@@ -1,7 +1,7 @@
 mixin nav(activeUrl)
   nav.ch-nav
 
-    a.ch-logo(href="index.html")
+    a.ch-logo(href="dashboard.html")
       img(src="assets/img/chameleon-logo.png")
       span.text Chameleon
 
@@ -9,7 +9,7 @@ mixin nav(activeUrl)
       -
         var currentUrl = activeUrl
         var menuItems = [
-          { name: "Painel", icon: "dashboard", href: "index.html" },
+          { name: "Painel", icon: "dashboard", href: "dashboard.html" },
           { name: "Formulários", icon: "clipboard", href: "form.html" },
           { name: "Tabelas", icon: "table", href: "table.html" },
           { name: "Wizard", icon: "wizard", href: "wizard.html" },
@@ -32,7 +32,7 @@ mixin nav(activeUrl)
         ]
 
       li.ch-menu-item(class={active: currentUrl === 'pages.html'})
-        a.dropdown-hover(href="index.html")
+        a.dropdown-hover(href="dashboard.html")
           i.puzzle.large.icon
           span.ch-menu-label Páginas
         .ch-dropdown

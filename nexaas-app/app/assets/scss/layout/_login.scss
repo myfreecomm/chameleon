@@ -1,0 +1,86 @@
+.ch-login {
+  &-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:before {
+      background: {
+        image: url('../img/bg_app.jpg');
+        size: cover;
+        position: center bottom;
+      }
+      filter: grayscale(100%) contrast(1.2);
+      z-index: -1;
+    }
+
+    &:after {
+      background-color: rgba($mainColorDark, 0.85);
+      z-index: 0;
+    }
+  }
+
+  &-content {
+    position: relative;
+    margin-left: 5%;
+    padding: 90px 30px;
+    max-width: 320px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px 2px rgba(#000, 0.15);
+    z-index: 1;
+  }
+
+  &-header {
+    text-align: center;
+
+    .logo-product {
+      width: 45px;
+    }
+
+    .logo-nexaas {
+      display: block;
+      margin: 5px auto;
+    }
+
+    .text {
+      display: block;
+      font-weight: 300;
+      font-size: 1.3em;
+    }
+  }
+
+  &-form {
+    padding: 50px 0;
+
+    .button {
+      color: #fff;
+      background-color: $mainColor;
+
+      &:hover {
+        color: #fff;
+        background-color: $mainColorLight;
+      }
+    }
+  }
+
+  &-footer {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    &-content {
+      margin: 0 auto;
+    }
+  }
+}
