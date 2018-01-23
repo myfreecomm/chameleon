@@ -32,9 +32,12 @@
 
   &-content {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 5%;
-    padding: 90px 30px;
-    max-width: 320px;
+    padding: 0 60px;
+    max-width: 450px;
     height: 100%;
     background-color: #fff;
     box-shadow: 1px 1px 5px 2px rgba(#000, 0.15);
@@ -62,6 +65,12 @@
 
   &-form {
     padding: 50px 0;
+
+    .ui.header {
+      font-weight: 300;
+      font-size: 1.5em;
+      text-align: center;
+    }
 
     .button {
       color: #fff;
