@@ -23,14 +23,14 @@ gulp.task('views', function buildHTML() {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['css', 'views'], function() {
+gulp.task('serve', ['views', 'css'], function() {
   browserSync.init({
     server: "./app",
     notify: false
   });
 
-  gulp.watch("app/assets/scss/**/*.scss", ['css']);
   gulp.watch("app/assets/pug/**/*.pug", ['views']);
+  gulp.watch("app/assets/scss/**/*.scss", ['css']);
   gulp.watch("app/*.html").on('change', browserSync.reload);
   gulp.watch("app/assets/**/*.js").on('change', browserSync.reload);
 });
