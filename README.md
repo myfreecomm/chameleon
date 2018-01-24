@@ -15,14 +15,14 @@ O Framework é baseado em uma estrutura totalmente modular, com todos os seus at
 Instale as dependências do projeto utilizando esse comando:
 
 ```
-npm install
+$ npm install
 ```
 
 #### Rodando a aplicação
 Seu ambiente está configurado. Para rodar a aplicação:
 
 ```
-gulp
+$ gulp
 ```
 
 Pronto, sua aplicação está rodando no `localhost:3000`
