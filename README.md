@@ -5,21 +5,24 @@ ___
 ## Conceito
 O Framework é baseado em uma estrutura totalmente modular, com todos os seus atributos armazenados no CSS, tornando o HTML mais enxuto e semântico.
 
-### Header
+#### Dependências
 
-### Navegação
+- [Node.js](https://nodejs.org/)
+- [npm](https://docs.npmjs.com/getting-started/installing-node)
+- [Gulp](https://gulpjs.com/)
 
-### Modal 
-___
+#### Instalando as dependências
+Instale as dependências do projeto utilizando esse comando:
 
-## Componentes
-___
+```
+npm install
+```
 
-## Grid
-___
+#### Rodando a aplicação
+Seu ambiente está configurado. Para rodar a aplicação:
 
-## Cores
-___
+```
+gulp
+```
 
-## Tipografia
-___
+Pronto, sua aplicação está rodando no `localhost:3000`
