@@ -26,12 +26,8 @@ var chameleon = (function(){
     $search.find('.ch-search-form-input').val('').focus();
   }
 
-  var closeSearch = function() {
-    $search.hide(300);
-  }
-
   var toggleSearchResults = function() {
-    var $searchResults = $search.find('.ch-search-results')
+    var $searchResults = $search.find('.ch-search-results');
 
     $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   }
@@ -51,8 +47,18 @@ var chameleon = (function(){
   }
 
   var closeModal = function() {
-    $sidebar.find('.ch-sidebar-container, .btn-action').removeClass('active');
-    $sidebar.hide(300);
+    if ($search.is(':visible') && !$sidebar.is('visible')) {
+      $search.hide(300);
+    } else {
+      $search.hide(300);
+      $sidebar.find('.ch-sidebar-container, .btn-action').removeClass('active');
+      $sidebar.hide(300);
+    }
+  }
+
+  var closeOnEscape = function(e) {
+    var code = e.keyCode || e.which;
+    if ( code === 27 && $modalOverlay.is(':visible')) { closeModal(); }
   }
 
   var openDropdown = function(e) {
@@ -66,7 +72,7 @@ var chameleon = (function(){
   }
 
   var closeDropdown = function(e) {
-    var $container = "";
+    var $container;
 
     if ( $(window).width() <= 768 ) {
       $container = $nav;
@@ -85,20 +91,6 @@ var chameleon = (function(){
         $container.removeClass('visible');
         $container.unbind('mouseup');
       }
-    }
-  }
-
-  var closeChameleonModal = function() {
-    if ($search.is(':visible')) { closeSearch() }
-
-    if ($sidebar.is(':visible')) { closeModal() }
-  }
-
-  var closeOnEscape = function(e) {
-    var code = e.keyCode || e.which;
-    if ( code === 27 && $modalOverlay.is(':visible')) {
-      closeSearch();
-      closeChameleonModal();
     }
   }
 
@@ -137,7 +129,7 @@ var chameleon = (function(){
 
     $(document).on('click', '.btn-modal', openModal);
 
-    $(document).on('click', '.ch-overlay, .btn-close', closeChameleonModal);
+    $(document).on('click', '.ch-overlay, .btn-close', closeModal);
 
     $(document).on('click', '.ch-search-content, .ch-sidebar-container', function(e) { e.stopPropagation(); });
 
