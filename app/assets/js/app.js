@@ -1,10 +1,12 @@
 var chameleon = (function(){
 
+  var $nav               = $('.ch-nav');
   var $navMenuElements   = $('.ch-nav, .ch-menu, .ch-menu--helpers');
   var $navDropdown       = $('.ch-nav .ch-dropdown');
   var $search            = $('.ch-search');
   var $dropdownContainer = $('.ch-dropdown');
   var $sidebar           = $('.ch-sidebar');
+  var $modalOverlay      = $('.ch-overlay');
 
   var openMenu = function(e) {
     e.preventDefault();
@@ -29,11 +31,9 @@ var chameleon = (function(){
   }
 
   var toggleSearchResults = function() {
-    if ($(this).val() === '') {
-      $search.find('.ch-search-results').slideUp(300)
-    } else {
-      $search.find('.ch-search-results').slideDown(300);
-    }
+    var $searchResults = $search.find('.ch-search-results')
+
+    $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   }
 
   var removeSearchContext = function() {
@@ -44,14 +44,14 @@ var chameleon = (function(){
   var openModal = function(e) {
     e.preventDefault();
     var $targetModal = $(this).data('modal'),
-        $modal = $('.ch-sidebar[data-modal="' + targetModal + '"');
+        $modal = $('.ch-sidebar[data-modal="' + $targetModal + '"');
 
     $modal.show(300);
     $modal.find('.ch-sidebar-container, .btn-action').addClass('active');
   }
 
   var closeModal = function() {
-    $('.ch-sidebar-container, .btn-action').removeClass('active');
+    $sidebar.find('.ch-sidebar-container, .btn-action').removeClass('active');
     $sidebar.hide(300);
   }
 
@@ -66,24 +66,24 @@ var chameleon = (function(){
   }
 
   var closeDropdown = function(e) {
-    var container = "";
+    var $container = "";
 
     if ( $(window).width() <= 768 ) {
-      container = $('.ch-nav');
+      $container = $nav;
 
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
+      if (!$container.is(e.target) && $container.has(e.target).length === 0) {
         closeMenu();
-        container.unbind('mouseup');
+        $container.unbind('mouseup');
       }
     } else {
-      container = $dropdownContainer;
+      $container = $dropdownContainer;
 
-      if (!container.is(e.target) &&
-        container.has(e.target).length === 0 &&
-        container.parent().has(e.target).length === 0)
+      if (!$container.is(e.target) &&
+        $container.has(e.target).length === 0 &&
+        $container.parent().has(e.target).length === 0)
       {
-        container.removeClass('visible');
-        container.unbind('mouseup');
+        $container.removeClass('visible');
+        $container.unbind('mouseup');
       }
     }
   }
@@ -96,7 +96,7 @@ var chameleon = (function(){
 
   var closeOnEscape = function(e) {
     var code = e.keyCode || e.which;
-    if ( code === 27 && $('.ch-overlay').is(':visible')) {
+    if ( code === 27 && $modalOverlay.is(':visible')) {
       closeSearch();
       closeChameleonModal();
     }
@@ -105,31 +105,28 @@ var chameleon = (function(){
   var clickableRow = function() {
     var sel = getSelection().toString();
 
-    if(!sel){
-      window.location = $(this).data("href");
-    }
+    if(!sel){ window.location = $(this).data("href"); }
   }
 
   var toggleDetailView = function(e) {
     e.stopPropagation();
-    var detailRow = $(this).parents('tr').next('tr');
-    var buttonIcon = $(this).find('.icon');
+    var $detailRow = $(this).parents('tr').next('tr'),
+        $buttonIcon = $(this).find('.icon');
 
-    detailRow.toggleClass('hidden');
-    toggleClass(buttonIcon, 'down', 'up');
+    $detailRow.toggleClass('hidden');
+    switchClass($buttonIcon, 'down', 'up');
   }
 
   var toggleSidebarCollapse = function() {
-    var container = $(this).prev('.ch-timeline-container');
-    var collapseButton = $(this);
-    var collapseButtonIcon = $(this).find('.icon');
+    var $container = $(this).prev('.ch-timeline-container',
+        $collapseButton = $(this);
 
-    toggleClass(collapseButtonIcon, 'right', 'left');
-    collapseButton.toggleClass('inactive')
-    container.toggleClass('inactive');
+    switchClass($collapseButton.find('.icon'), 'right', 'left');
+    $collapseButton.toggleClass('inactive')
+    $container.toggleClass('inactive');
   }
 
-  var toggleClass = function(elem, class1, class2) {
+  var switchClass = function(elem, class1, class2) {
     if ( $(elem).hasClass(class1) ) {
       $(elem).removeClass(class1);
       $(elem).addClass(class2);
@@ -165,18 +162,12 @@ var chameleon = (function(){
     $(document).on('click', '.btn-collapse', toggleSidebarCollapse);
 
     $(document).on({
-      mouseup: function(e) {
-        closeDropdown(e);
-      },
-      keydown: function(e) {
-        closeOnEscape(e);
-      }
+      mouseup: function(e) { closeDropdown(e); },
+      keydown: function(e) { closeOnEscape(e); }
     });
 
     $(window).resize(function() {
-      if ( $(window).width() >= 768 ) {
-        closeMenu();
-      }
+      if ( $(window).width() >= 768 ) { closeMenu(); }
     });
   };
 
@@ -185,12 +176,8 @@ var chameleon = (function(){
   };
 
   return {
-    init: init,
-    //anything else you want available
-    //through myApp.function()
-    //or expose variables here too
+    init: init
   };
-
 
 })();
 
