@@ -23,14 +23,14 @@ gulp.task('views', function buildHTML() {
   .pipe(gulp.dest('./app'));
 });
 
-gulp.task('concat', function() {
+gulp.task('scripts', function() {
   return gulp.src('app/assets/js/src/**/*.js')
     .pipe(concat('app.js'))
     .pipe(gulp.dest('app/assets/js/dist/'));
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['views', 'css'], function() {
+gulp.task('serve', ['views', 'css', 'scripts'], function() {
   browserSync.init({
     server: "./app",
     notify: false
