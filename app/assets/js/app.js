@@ -114,26 +114,16 @@ var chameleon = (function(){
         $buttonIcon = $(this).find('.icon');
 
     $detailRow.toggleClass('hidden');
-    switchClass($buttonIcon, 'down', 'up');
+    $buttonIcon.switchClass('down', 'up');
   }
 
   var toggleSidebarCollapse = function() {
     var $container = $(this).prev('.ch-timeline-container'),
         $collapseButton = $(this);
 
-    switchClass($collapseButton.find('.icon'), 'right', 'left');
+    $collapseButton.find('.icon').switchClass('right', 'left');
     $collapseButton.toggleClass('inactive')
     $container.toggleClass('inactive');
-  }
-
-  var switchClass = function(elem, class1, class2) {
-    if ( $(elem).hasClass(class1) ) {
-      $(elem).removeClass(class1);
-      $(elem).addClass(class2);
-    } else {
-      $(elem).removeClass(class2);
-      $(elem).addClass(class1);
-    }
   }
 
   var bindFunctions = function() {
@@ -183,5 +173,17 @@ var chameleon = (function(){
 
 
 $(document).ready(function() {
+
   chameleon.init();
+
+  $.fn.switchClass = function(class1, class2) {
+    if (this.hasClass(class1)) {
+      this.removeClass(class1);
+      this.addClass(class2);
+    } else {
+      this.removeClass(class2);
+      this.addClass(class1);
+    }
+  };
+
 });
