@@ -19,23 +19,23 @@ var chameleon = (function(){
     $navDropdown.removeClass('collapse visible');
   }
 
-  var openSearch = function(e) {
-    e.preventDefault();
-    $search.show();
-    $search.find('.ch-search-results').hide();
-    $search.find('.ch-search-form-input').val('').focus();
-  }
+  // var openSearch = function(e) {
+  //   e.preventDefault();
+  //   $search.show();
+  //   $search.find('.ch-search-results').hide();
+  //   $search.find('.ch-search-form-input').val('').focus();
+  // }
 
-  var toggleSearchResults = function() {
-    var $searchResults = $search.find('.ch-search-results');
+  // var toggleSearchResults = function() {
+  //   var $searchResults = $search.find('.ch-search-results');
 
-    $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
-  }
+  //   $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
+  // }
 
-  var removeSearchContext = function() {
-    $search.find('.ch-search-context').fadeOut(300);
-    $search.find('.ch-search-form-input').focus();
-  }
+  // var removeSearchContext = function() {
+  //   $search.find('.ch-search-context').fadeOut(300);
+  //   $search.find('.ch-search-form-input').focus();
+  // }
 
   var openModal = function(e) {
     e.preventDefault();
@@ -125,7 +125,7 @@ var chameleon = (function(){
 
     $(document).on('click', '.dropdown-toggle, .dropdown-hover', openDropdown);
 
-    $(document).on('click', '.btn-search', openSearch);
+    // $(document).on('click', '.btn-search', openSearch);
 
     $(document).on('click', '.btn-modal', openModal);
 
@@ -133,9 +133,9 @@ var chameleon = (function(){
 
     $(document).on('click', '.ch-search-content, .ch-sidebar-container', function(e) { e.stopPropagation(); });
 
-    $(document).on('input', '.ch-search-form-input', toggleSearchResults);
+    // $(document).on('input', '.ch-search-form-input', toggleSearchResults);
 
-    $(document).on('click', '.btn-remove-context', removeSearchContext);
+    // $(document).on('click', '.btn-remove-context', removeSearchContext);
 
     $(document).on('click', '.js-show-detail', toggleDetailView);
 
