@@ -35,9 +35,7 @@ Chameleon.Modal = (function() {
 
     $(document).on('click', '.ch-search-content, .ch-sidebar-container', function(e) { e.stopPropagation(); });
 
-    $(document).on({
-      keydown: function(e) { closeOnEscape(e); }
-    });
+    $(document).on('keydown', function(e) { closeOnEscape(e); });
   };
 
   var init = function() {

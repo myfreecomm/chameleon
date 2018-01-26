@@ -1,5 +1,4 @@
 Chameleon.Dropdown = (function() {
-
   var $nav               = $('.ch-nav');
   var $dropdownContainer = $('.ch-dropdown');
 

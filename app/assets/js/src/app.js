@@ -8,6 +8,7 @@ var App = (function(){
     window.Chameleon.Modal.init();
     window.Chameleon.Menu.init();
     window.Chameleon.Table.init();
+    window.Chameleon.Utils;
   };
 
   return {
@@ -17,17 +18,5 @@ var App = (function(){
 })();
 
 $(document).ready(function() {
-
   App.init();
-
-  $.fn.switchClass = function(class1, class2) {
-    if (this.hasClass(class1)) {
-      this.removeClass(class1);
-      this.addClass(class2);
-    } else {
-      this.removeClass(class2);
-      this.addClass(class1);
-    }
-  };
-
 });

@@ -26,7 +26,8 @@ gulp.task('views', function buildHTML() {
 gulp.task('scripts', function() {
   return gulp.src('app/assets/js/src/**/*.js')
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('app/assets/js/dist/'));
+    .pipe(gulp.dest('app/assets/js/dist/'))
+    .pipe(browserSync.stream());
 });
 
 // Static Server + watching scss/html files
@@ -38,8 +39,8 @@ gulp.task('serve', ['views', 'css', 'scripts'], function() {
 
   gulp.watch("app/assets/pug/**/*.pug", ['views']);
   gulp.watch("app/assets/scss/**/*.scss", ['css']);
+  gulp.watch("app/assets/**/*.js", ['scripts']);
   gulp.watch("app/*.html").on('change', browserSync.reload);
-  gulp.watch("app/assets/**/*.js").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['serve']);
