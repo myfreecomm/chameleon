@@ -21,10 +21,6 @@ Chameleon.Components.Menu = (function() {
     $(window).resize(function() {
       if ( $(window).width() >= 768 ) { closeMenu(); }
     });
-
-    $(window).resize(function() {
-      if ( $(window).width() >= 768 ) { closeMenu(); }
-    });
   };
 
   var init = function() {
