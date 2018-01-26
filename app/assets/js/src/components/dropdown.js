@@ -48,4 +48,4 @@ Chameleon.Dropdown = (function() {
   return {
     init: init
   };
-})()
+})();

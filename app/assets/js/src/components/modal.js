@@ -1,8 +1,6 @@
 Chameleon.Modal = (function() {
-  var $search            = $('.ch-search');
   var $dropdownContainer = $('.ch-dropdown');
   var $sidebar           = $('.ch-sidebar');
-  var $modalOverlay      = $('.ch-overlay');
 
   var openModal = function(e) {
     e.preventDefault();
@@ -14,18 +12,8 @@ Chameleon.Modal = (function() {
   }
 
   var closeModal = function() {
-    if ($search.is(':visible') && !$sidebar.is('visible')) {
-      $search.hide(300);
-    } else {
-      $search.hide(300);
-      $sidebar.find('.ch-sidebar-container, .btn-action').removeClass('active');
-      $sidebar.hide(300);
-    }
-  }
-
-  var closeOnEscape = function(e) {
-    var code = e.keyCode || e.which;
-    if ( code === 27 && $modalOverlay.is(':visible')) { closeModal(); }
+    $sidebar.find('.ch-sidebar-container, .btn-action').removeClass('active');
+    $sidebar.hide(300);
   }
 
   var bindFunctions = function() {
@@ -33,16 +21,16 @@ Chameleon.Modal = (function() {
 
     $(document).on('click', '.ch-overlay, .btn-close', closeModal);
 
-    $(document).on('click', '.ch-search-content, .ch-sidebar-container', function(e) { e.stopPropagation(); });
+    $(document).on('keydown', function(e) { $sidebar.closeOnEscape(e, closeModal); });
 
-    $(document).on('keydown', function(e) { closeOnEscape(e); });
-  };
+    $(document).on('click', '.ch-sidebar-container', function(e) { e.stopPropagation(); });
+  }
 
   var init = function() {
     bindFunctions();
-  };
+  }
 
   return {
     init: init
-  };
+  }
 })();

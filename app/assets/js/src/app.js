@@ -1,22 +1,13 @@
 if (window.Chameleon === undefined) { window.Chameleon = {}; }
 
-var App = (function(){
-
-  var init = function() {
-    window.Chameleon.Search.init();
-    window.Chameleon.Dropdown.init();
-    window.Chameleon.Modal.init();
-    window.Chameleon.Menu.init();
-    window.Chameleon.Table.init();
-    window.Chameleon.Utils;
-  };
-
-  return {
-    init: init
-  };
-
-})();
+Chameleon.init = function() {
+  Chameleon.Search.init();
+  Chameleon.Dropdown.init();
+  Chameleon.Modal.init();
+  Chameleon.Menu.init();
+  Chameleon.Table.init();
+}
 
 $(document).ready(function() {
-  App.init();
+  Chameleon.init();
 });

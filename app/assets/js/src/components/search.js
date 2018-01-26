@@ -8,6 +8,10 @@ Chameleon.Search = (function() {
     $search.find('.ch-search-form-input').val('').focus();
   }
 
+  var closeSearch = function() {
+    $search.hide(300);
+  }
+
   var toggleSearchResults = function() {
     var $searchResults = $search.find('.ch-search-results');
 
@@ -22,19 +26,23 @@ Chameleon.Search = (function() {
   var bindFunctions = function() {
     $(document).on('click', '.btn-search', openSearch);
 
-    $(document).on('click', '.ch-search-content, .ch-sidebar-container', function(e) { e.stopPropagation(); });
+    $(document).on('click', '.ch-search-content', function(e) { e.stopPropagation(); });
+
+    $(document).on('click', '.ch-overlay', closeSearch);
+
+    $(document).on('keydown', function(e) { $search.closeOnEscape(e, closeSearch); });
 
     $(document).on('input', '.ch-search-form-input', toggleSearchResults);
 
     $(document).on('click', '.btn-remove-context', removeSearchContext);
-  };
+  }
 
   var init = function() {
     bindFunctions();
-  };
+  }
 
   return {
     init: init
-  };
+  }
 
 })();
