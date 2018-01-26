@@ -1,4 +1,4 @@
-Chameleon.Menu = (function() {
+Chameleon.Components.Menu = (function() {
   var $navMenuElements   = $('.ch-nav, .ch-menu, .ch-menu--helpers');
   var $navDropdown       = $('.ch-nav .ch-dropdown');
 

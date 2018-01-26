@@ -1,4 +1,4 @@
-Chameleon.Modal = (function() {
+Chameleon.Components.Modal = (function() {
   var $dropdownContainer = $('.ch-dropdown');
   var $sidebar           = $('.ch-sidebar');
 

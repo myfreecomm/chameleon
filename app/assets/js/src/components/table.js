@@ -1,4 +1,4 @@
-Chameleon.Table = (function(){
+Chameleon.Components.Table = (function(){
 
   var clickableRow = function() {
     var sel = getSelection().toString();

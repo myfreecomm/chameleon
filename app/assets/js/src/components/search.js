@@ -1,5 +1,6 @@
-Chameleon.Search = (function() {
+Chameleon.Components.Search = (function() {
   var $search = $('.ch-search');
+  var $searchResults = $search.find('.ch-search-results');
 
   var openSearch = function(e) {
     e.preventDefault();
@@ -13,8 +14,6 @@ Chameleon.Search = (function() {
   }
 
   var toggleSearchResults = function() {
-    var $searchResults = $search.find('.ch-search-results');
-
     $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   }
 
