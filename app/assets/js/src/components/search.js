@@ -1,6 +1,7 @@
 Chameleon.Components.Search = (function() {
   let $search = $('.ch-search');
   let $searchResults = $search.find('.ch-search-results');
+  let $modal = $('.ch-sidebar');
 
   const open = function(e) {
     e.preventDefault();
@@ -11,13 +12,15 @@ Chameleon.Components.Search = (function() {
 
   const close = function() {
     $search.hide(300);
+
+    if ( $modal.find('.inside').is(':visible') ) { $modal.focus() }
   }
 
-  const toggleSearchResults = function() {
+  const toggleResults = function() {
     $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   }
 
-  const removeSearchContext = function() {
+  const removeContext = function() {
     $search.find('.ch-search-context').fadeOut(300);
     $search.find('.ch-search-form-input').focus();
   }
@@ -29,11 +32,11 @@ Chameleon.Components.Search = (function() {
 
     $(document).on('click', '.ch-search .btn-close, .ch-overlay', close);
 
-    $(document).on('keydown', function(e) { $search.closeOnEscape(e, close); });
+    $search.on('keydown', function(e) { Chameleon.Utils.keyboardClose(e, close); });
 
-    $(document).on('input', '.ch-search-form-input', toggleSearchResults);
+    $(document).on('input', '.ch-search-form-input', toggleResults);
 
-    $(document).on('click', '.btn-remove-context', removeSearchContext);
+    $(document).on('click', '.btn-remove-context', removeContext);
   }
 
   const init = function() {

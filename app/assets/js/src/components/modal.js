@@ -1,19 +1,19 @@
 Chameleon.Components.Modal = (function() {
-  let $dropdownContainer = $('.ch-dropdown');
-  let $sidebar           = $('.ch-sidebar');
+  let $modal = $('.ch-sidebar');
 
   const open = function(e) {
     e.preventDefault();
-    let $targetModal = $(this).data('modal'),
-        $modal = $('.ch-sidebar[data-modal="' + $targetModal + '"');
+    let modalType = $(this).data('modal'),
+        $targetModal = $(`[data-modal=${modalType}`);
 
-    $modal.show(300);
-    $modal.find('.ch-sidebar-container, .btn-action').addClass('active');
+    $targetModal.show(300);
+    $targetModal.find('.ch-sidebar-container, .btn-action').addClass('active');
+    $targetModal.focus();
   }
 
   const close = function() {
-    $sidebar.find('.ch-sidebar-container, .btn-action').removeClass('active');
-    $sidebar.hide(300);
+    $modal.find('.ch-sidebar-container, .btn-action').removeClass('active');
+    $modal.hide(300);
   }
 
   const bindFunctions = function() {
@@ -21,7 +21,7 @@ Chameleon.Components.Modal = (function() {
 
     $(document).on('click', '.ch-overlay, .btn-close', close);
 
-    $(document).on('keydown', function(e) { $sidebar.closeOnEscape(e, close); });
+    $modal.on('keydown', function(e) { Chameleon.Utils.keyboardClose(e, close); });
 
     $(document).on('click', '.ch-sidebar-container', function(e) { e.stopPropagation(); });
   }
