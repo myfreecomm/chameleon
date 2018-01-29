@@ -12,27 +12,25 @@ Chameleon.Components.Dropdown = (function() {
     }
   }
 
-  const closeDropdown = function(e) {
-    let $container;
-
-    if ( $(window).width() <= 768 ) {
-      $container = $nav;
-
-      if (!$container.is(e.target) && $container.has(e.target).length === 0) {
-        closeMenu();
-        $container.unbind('mouseup');
-      }
-    } else {
-      $container = $dropdownContainer;
-
-      if (!$container.is(e.target) &&
-        $container.has(e.target).length === 0 &&
-        $container.parent().has(e.target).length === 0)
-      {
-        $container.removeClass('visible');
-        $container.unbind('mouseup');
-      }
+  const closeOnMobile = function(event, $container) {
+    if (!$container.is(event.target) && $container.has(event.target).length === 0) {
+      closeMenu();
+      $container.unbind('mouseup');
     }
+  }
+
+  const closeOnDesktop = function(event, $container) {
+    if (!$container.is(event.target) &&
+      $container.has(event.target).length === 0 &&
+      $container.parent().has(event.target).length === 0)
+    {
+      $container.removeClass('visible');
+      $container.unbind('mouseup');
+    }
+  }
+
+  const closeDropdown = function(e) {
+    $(window).width() <= 768 ? closeOnMobile(e, $nav) : closeOnDesktop(e, $dropdownContainer);
   }
 
   const bindFunctions = function() {
