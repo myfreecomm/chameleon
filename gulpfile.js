@@ -5,6 +5,7 @@ var browserSync = require('browser-sync').create();
 var pug = require('gulp-pug');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var babel = require("gulp-babel");
 
 gulp.task('css', function(){
   return gulp.src('app/assets/scss/style.scss')
@@ -26,6 +27,7 @@ gulp.task('views', function buildHTML() {
 gulp.task('scripts', function() {
   return gulp.src('app/assets/js/src/**/*.js')
     .pipe(concat('app.js'))
+    .pipe(babel())
     .pipe(gulp.dest('app/assets/js/dist/'))
     .pipe(browserSync.stream());
 });
