@@ -10,7 +10,7 @@ Chameleon.Utils = (function() {
   }
 
   $.fn.closeOnEscape = function(e, closeFunction) {
-    var code = e.keyCode || e.which;
+    let code = e.keyCode || e.which;
     if ( code === 27 && $('.ch-overlay').is(':visible')) {
       closeFunction();
     }

@@ -1,28 +1,28 @@
 Chameleon.Components.Search = (function() {
-  var $search = $('.ch-search');
-  var $searchResults = $search.find('.ch-search-results');
+  let $search = $('.ch-search');
+  let $searchResults = $search.find('.ch-search-results');
 
-  var openSearch = function(e) {
+  const openSearch = function(e) {
     e.preventDefault();
     $search.show();
     $search.find('.ch-search-results').hide();
     $search.find('.ch-search-form-input').val('').focus();
   }
 
-  var closeSearch = function() {
+  const closeSearch = function() {
     $search.hide(300);
   }
 
-  var toggleSearchResults = function() {
+  const toggleSearchResults = function() {
     $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   }
 
-  var removeSearchContext = function() {
+  const removeSearchContext = function() {
     $search.find('.ch-search-context').fadeOut(300);
     $search.find('.ch-search-form-input').focus();
   }
 
-  var bindFunctions = function() {
+  const bindFunctions = function() {
     $(document).on('click', '.btn-search', openSearch);
 
     $(document).on('click', '.ch-search-content', function(e) { e.stopPropagation(); });
@@ -36,7 +36,7 @@ Chameleon.Components.Search = (function() {
     $(document).on('click', '.btn-remove-context', removeSearchContext);
   }
 
-  var init = function() {
+  const init = function() {
     bindFunctions();
   }
 

@@ -1,8 +1,8 @@
 Chameleon.Components.Dropdown = (function() {
-  var $nav               = $('.ch-nav');
-  var $dropdownContainer = $('.ch-dropdown');
+  let $nav               = $('.ch-nav');
+  let $dropdownContainer = $('.ch-dropdown');
 
-  var openDropdown = function(e) {
+  const openDropdown = function(e) {
     e.preventDefault();
     if ( $(this).siblings().hasClass('visible') ) {
       $dropdownContainer.removeClass('visible');
@@ -12,8 +12,8 @@ Chameleon.Components.Dropdown = (function() {
     }
   }
 
-  var closeDropdown = function(e) {
-    var $container;
+  const closeDropdown = function(e) {
+    let $container;
 
     if ( $(window).width() <= 768 ) {
       $container = $nav;
@@ -35,13 +35,13 @@ Chameleon.Components.Dropdown = (function() {
     }
   }
 
-  var bindFunctions = function() {
+  const bindFunctions = function() {
     $(document).on('click', '.dropdown-toggle, .dropdown-hover', openDropdown);
 
     $(document).on('mouseup', function(e) { closeDropdown(e); });
   };
 
-  var init = function() {
+  const init = function() {
     bindFunctions();
   };
 

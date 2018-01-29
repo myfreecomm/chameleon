@@ -1,22 +1,22 @@
 Chameleon.Components.Modal = (function() {
-  var $dropdownContainer = $('.ch-dropdown');
-  var $sidebar           = $('.ch-sidebar');
+  let $dropdownContainer = $('.ch-dropdown');
+  let $sidebar           = $('.ch-sidebar');
 
-  var openModal = function(e) {
+  const openModal = function(e) {
     e.preventDefault();
-    var $targetModal = $(this).data('modal'),
+    let $targetModal = $(this).data('modal'),
         $modal = $('.ch-sidebar[data-modal="' + $targetModal + '"');
 
     $modal.show(300);
     $modal.find('.ch-sidebar-container, .btn-action').addClass('active');
   }
 
-  var closeModal = function() {
+  const closeModal = function() {
     $sidebar.find('.ch-sidebar-container, .btn-action').removeClass('active');
     $sidebar.hide(300);
   }
 
-  var bindFunctions = function() {
+  const bindFunctions = function() {
     $(document).on('click', '.btn-modal', openModal);
 
     $(document).on('click', '.ch-overlay, .btn-close', closeModal);
@@ -26,7 +26,7 @@ Chameleon.Components.Modal = (function() {
     $(document).on('click', '.ch-sidebar-container', function(e) { e.stopPropagation(); });
   }
 
-  var init = function() {
+  const init = function() {
     bindFunctions();
   }
 

@@ -1,19 +1,19 @@
 Chameleon.Components.Menu = (function() {
-  var $navMenuElements   = $('.ch-nav, .ch-menu, .ch-menu--helpers');
-  var $navDropdown       = $('.ch-nav .ch-dropdown');
+  let $navMenuElements   = $('.ch-nav, .ch-menu, .ch-menu--helpers');
+  let $navDropdown       = $('.ch-nav .ch-dropdown');
 
-  var openMenu = function(e) {
+  const openMenu = function(e) {
     e.preventDefault();
     $navMenuElements.addClass('open');
     $navDropdown.addClass('collapse');
   }
 
-  var closeMenu = function() {
+  const closeMenu = function() {
     $navMenuElements.removeClass('open');
     $navDropdown.removeClass('collapse visible');
   }
 
-  var bindFunctions = function() {
+  const bindFunctions = function() {
     $(document).on('click', '.btn-show-menu', openMenu);
 
     $(document).on('click', '.btn-close-menu', closeMenu);
@@ -23,7 +23,7 @@ Chameleon.Components.Menu = (function() {
     });
   };
 
-  var init = function() {
+  const init = function() {
     bindFunctions();
   };
 
