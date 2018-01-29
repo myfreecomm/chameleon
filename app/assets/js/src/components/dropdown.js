@@ -2,7 +2,7 @@ Chameleon.Components.Dropdown = (function() {
   let $nav               = $('.ch-nav');
   let $dropdownContainer = $('.ch-dropdown');
 
-  const openDropdown = function(e) {
+  const open = function(e) {
     e.preventDefault();
     if ( $(this).siblings().hasClass('visible') ) {
       $dropdownContainer.removeClass('visible');
@@ -14,7 +14,7 @@ Chameleon.Components.Dropdown = (function() {
 
   const closeOnMobile = function(event, $container) {
     if (!$container.is(event.target) && $container.has(event.target).length === 0) {
-      closeMenu();
+      Chameleon.Components.Menu.close();
       $container.unbind('mouseup');
     }
   }
@@ -29,14 +29,14 @@ Chameleon.Components.Dropdown = (function() {
     }
   }
 
-  const closeDropdown = function(e) {
+  const close = function(e) {
     $(window).width() <= 768 ? closeOnMobile(e, $nav) : closeOnDesktop(e, $dropdownContainer);
   }
 
   const bindFunctions = function() {
-    $(document).on('click', '.dropdown-toggle, .dropdown-hover', openDropdown);
+    $(document).on('click', '.dropdown-toggle, .dropdown-hover', open);
 
-    $(document).on('mouseup', function(e) { closeDropdown(e); });
+    $(document).on('mouseup', function(e) { close(e); });
   };
 
   const init = function() {

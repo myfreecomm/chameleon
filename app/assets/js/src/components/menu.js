@@ -2,24 +2,24 @@ Chameleon.Components.Menu = (function() {
   let $navMenuElements   = $('.ch-nav, .ch-menu, .ch-menu--helpers');
   let $navDropdown       = $('.ch-nav .ch-dropdown');
 
-  const openMenu = function(e) {
+  const open = function(e) {
     e.preventDefault();
     $navMenuElements.addClass('open');
     $navDropdown.addClass('collapse');
   }
 
-  const closeMenu = function() {
+  const close = function() {
     $navMenuElements.removeClass('open');
     $navDropdown.removeClass('collapse visible');
   }
 
   const bindFunctions = function() {
-    $(document).on('click', '.btn-show-menu', openMenu);
+    $(document).on('click', '.btn-show-menu', open);
 
-    $(document).on('click', '.btn-close-menu', closeMenu);
+    $(document).on('click', '.btn-close-menu', close);
 
     $(window).resize(function() {
-      if ( $(window).width() >= 768 ) { closeMenu(); }
+      if ( $(window).width() >= 768 ) { close(); }
     });
   };
 
@@ -28,6 +28,7 @@ Chameleon.Components.Menu = (function() {
   };
 
   return {
-    init: init
+    init: init,
+    close: close
   };
 })();
