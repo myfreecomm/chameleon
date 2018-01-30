@@ -20,12 +20,23 @@ var jsLibs = [
   `${jsPath}/libs/nouislider.js`,
 ]
 
+var cssExternals = [
+  `${stylesheetsPath}/css/vendors/semantic.min.css`,
+  `${stylesheetsPath}/css/vendors/calendar.css`,
+  `${stylesheetsPath}/css/vendors/nouislider.css`,
+]
+
 gulp.task('css', function(){
   return gulp.src(`${stylesheetsPath }/scss/style.scss`)
     .pipe(sass().on('error', sass.logError))
-    .pipe(minifyCSS())
-    .pipe(rename('chameleon.min.css'))
-    .pipe(gulp.dest(`${stylesheetsPath }/css`))
+    .pipe(rename('bundle.css'))
+    .pipe(gulp.dest(`${stylesheetsPath}/tmp`))
+});
+
+gulp.task('styles', ['css'], function() {
+  return gulp.src([...cssExternals, `${stylesheetsPath}/tmp/bundle.css`])
+    .pipe(concat('main.css'))
+    .pipe(gulp.dest(stylesheetsPath))
     .pipe(browserSync.stream());
 });
 
@@ -57,7 +68,7 @@ gulp.task('clean', function () {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['templates', 'css', 'scripts'], function() {
+gulp.task('serve', ['templates', 'styles', 'scripts'], function() {
   browserSync.init({
     server: {
       baseDir: "source",
@@ -67,7 +78,7 @@ gulp.task('serve', ['templates', 'css', 'scripts'], function() {
   });
 
   gulp.watch(`${templatesPath}/**/*.pug`, ['templates']);
-  gulp.watch(`${stylesheetsPath}/scss/**/*.scss`, ['css']);
+  gulp.watch(`${stylesheetsPath}/scss/**/*.scss`, ['styles']);
   gulp.watch(`${jsPath}/**/*.js`, ['scripts']);
   gulp.watch("source/views/**/*.html").on('change', browserSync.reload);
 });

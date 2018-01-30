@@ -2012,7 +2012,7 @@ a {
     width: 100%;
     height: 100%; }
   .ch-login-container:before {
-    background-image: url("../../images/bg_app.jpg");
+    background-image: url("../images/bg_app.jpg");
     background-size: cover;
     background-position: center bottom;
     filter: grayscale(100%) contrast(1.2);

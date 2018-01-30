@@ -27,5 +27,5 @@ dist
 yarn.lock
 
 #Ignore the temporary directory
-
-/source/assets/js/chameleon/tmp
+/source/assets/javascripts/chameleon/tmp
+/source/assets/stylesheets/tmp
