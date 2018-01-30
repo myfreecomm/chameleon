@@ -6,8 +6,16 @@ var pug = require('gulp-pug');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var babel = require("gulp-babel");
+var clean = require("gulp-clean");
 
 var assetsPath = "source/assets";
+var jsLibsAssetsPath = "source/assets/js/libs";
+var jsLibs = [
+  `${jsLibsAssetsPath}/jquery-3.2.1.min.js`,
+  `${jsLibsAssetsPath}/semantic.min.js`,
+  `${jsLibsAssetsPath}/calendar.js`,
+  `${jsLibsAssetsPath}/nouislider.js`,
+]
 
 gulp.task('css', function(){
   return gulp.src(`${assetsPath}/scss/style.scss`)
@@ -26,12 +34,23 @@ gulp.task('views', function buildHTML() {
   .pipe(gulp.dest('./source'));
 });
 
-gulp.task('scripts', function() {
+gulp.task('babel', function() {
   return gulp.src(`${assetsPath}/js/chameleon/**/*.js`)
-    .pipe(concat('main.js'))
     .pipe(babel())
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest(`${assetsPath}/js/chameleon`))
+})
+
+gulp.task('scripts', ['babel'], function() {
+  return gulp.src([...jsLibs, `${assetsPath}/js/chameleon/tmp/bundle.js`])
+    .pipe(concat('main.js'))
     .pipe(gulp.dest(`${assetsPath}/js/`))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream())
+});
+
+gulp.task('clean', function () {
+  return gulp.src(`${assetsPath}/js/chameleon/tmp`, {read: false})
+    .pipe(clean());
 });
 
 // Static Server + watching scss/html files

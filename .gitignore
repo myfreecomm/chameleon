@@ -25,3 +25,7 @@ dist
 /vendor
 .ruby-version
 yarn.lock
+
+#Ignore the temporary directory
+
+/source/assets/js/chameleon/tmp
