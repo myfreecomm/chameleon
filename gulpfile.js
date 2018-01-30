@@ -10,7 +10,7 @@ var clean = require("gulp-clean");
 
 var assetsPath = "source/assets";
 var stylesheetsPath = "source/assets/stylesheets";
-var viewsPath = "source/views"
+var templatesPath = "source/templates"
 var jsPath = "source/assets/js";
 
 var jsLibs = [
@@ -29,8 +29,8 @@ gulp.task('css', function(){
     .pipe(browserSync.stream());
 });
 
-gulp.task('views', function buildHTML() {
-  return gulp.src(`${viewsPath}/*.pug`)
+gulp.task('templates', function buildHTML() {
+  return gulp.src(`${templatesPath}/*.pug`)
   .pipe(pug({
     pretty: true,
   }))
@@ -57,19 +57,19 @@ gulp.task('clean', function () {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['views', 'css', 'scripts'], function() {
+gulp.task('serve', ['templates', 'css', 'scripts'], function() {
   browserSync.init({
     server: {
       baseDir: "source",
-      index: 'layouts/index.html'
+      index: 'views/index.html'
     },
     notify: false
   });
 
-  gulp.watch(`${viewsPath}/**/*.pug`, ['views']);
+  gulp.watch(`${templatesPath}/**/*.pug`, ['templates']);
   gulp.watch(`${stylesheetsPath}/scss/**/*.scss`, ['css']);
   gulp.watch(`${jsPath}/**/*.js`, ['scripts']);
-  gulp.watch("source/layouts/**/*.html").on('change', browserSync.reload);
+  gulp.watch("source/views/**/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['serve']);
