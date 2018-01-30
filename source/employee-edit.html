@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
@@ -85,8 +86,8 @@
             <div class="sub header">Utilize o passa a passo para alterar as informações do colaborador</div>
           </h2>
           <ol class="ch-horizontal-wizard">
-            <li class="ch-step done">Informações Pessoais</li>
-            <li class="ch-step current">Informações de Endereço</li>
+            <li class="ch-step current">Informações Pessoais</li>
+            <li class="ch-step">Informações de Endereço</li>
             <li class="ch-step">Foto de Perfil</li>
             <li class="ch-step">
               Final
@@ -100,59 +101,80 @@
               <form class="ui form">
                 <div class="ui segments">
                   <div class="ui attached segment ch-segment-header">
-                    <div class="ui title">Informações de Endereço</div>
+                    <div class="ui title">Informações Pessoais</div>
                   </div>
                   <div class="ui attached segment padded">
                     <div class="fields">
-                      <div class="four wide field required">
-                        <label for="">CEP</label>
-                        <input type="text" placeholder="00.000-00" value="21.000-00">
+                      <div class="eight wide field required">
+                        <label for="">Nome Completo</label>
+                        <input type="text" placeholder="Nome" value="Rachel Lilki">
                       </div>
-                      <div class="ten wide field required">
-                        <label for="">Endereço</label>
-                        <input type="text" placeholder="Endereço" value="Rua Lorem Ipsum">
-                      </div>
-                      <div class="two wide field required">
-                        <label for="">Número</label>
-                        <input type="text" placeholder="Número" value="00">
+                      <div class="field required">
+                        <label for="">Nº de Registro</label>
+                        <input type="text" value="32133">
                       </div>
                     </div>
                     <div class="four fields">
                       <div class="field">
-                        <label for="">Complemento</label>
-                        <input type="text">
+                        <label for="">Data de Nascimento</label>
+                        <div class="ui left icon input">
+                          <input type="date" placeholder="dd/mm/aaaa" value="1985-05-20"><i class="calendar icon"></i>
+                        </div>
                       </div>
                       <div class="field">
-                        <label for="">Bairro</label>
-                        <input type="text" value="Flamengo">
+                        <label for="">Nacionalidade</label>
+                        <input type="text" placeholder="Nacionalidade" value="Brasileira">
                       </div>
                       <div class="field">
-                        <label for="">Estado</label>
+                        <label for="">Naturalidade</label>
+                        <input type="text" placeholder="Naturalidade" value="São Paulo, SP">
+                      </div>
+                      <div class="field">
+                        <label for="">Sexo</label>
+                        <input type="text" placeholder="" value="Feminino">
+                      </div>
+                    </div>
+                    <div class="two fields">
+                      <div class="field">
+                        <label for="">Estado Civil</label>
                         <select class="ui dropdown" name="">
-                          <option value="RJ">RJ</option>
-                          <option value="Option 1">Option 1</option>
-                          <option value="Option 2">Option 2</option>
-                          <option value="Option 3">Option 3</option>
-                          <option value="Option 4">Option 4</option>
+                          <option value="Opção 1">Opção 1</option>
+                          <option value="Opção 2">Opção 2</option>
                         </select>
                       </div>
                       <div class="field">
-                        <label for="">Cidade</label>
+                        <label>Escolaridade</label>
                         <select class="ui dropdown" name="">
-                          <option value="Rio de Janeiro">Rio de Janeiro</option>
-                          <option value="Option 1">Option 1</option>
-                          <option value="Option 2">Option 2</option>
-                          <option value="Option 3">Option 3</option>
-                          <option value="Option 4">Option 4</option>
+                          <option value="Opção 1">Opção 1</option>
+                          <option value="Opção 2">Opção 2</option>
                         </select>
+                      </div>
+                    </div>
+                    <div class="two fields">
+                      <div class="field">
+                        <label for="">Cargo</label>
+                        <input type="text" value="Aux. Administrativo">
+                      </div>
+                      <div class="field">
+                        <label for="">Salário</label>
+                        <div class="ui right labeled input">
+                          <input type="text" placeholder="0,00" value="5.000,00">
+                          <div class="ui dropdown label">
+                            <div class="text">BRL</div><i class="dropdown icon"></i>
+                            <div class="menu">
+                              <div class="item">BRL</div>
+                              <div class="item">EUR</div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="ch-buttons-container">
-                  <div class="cancel-container"><a class="ui button basic" href="employee-edit.html">Voltar</a></div>
+                  <div class="cancel-container"><a class="ui button basic" href="employee-detail.html">Cancelar</a></div>
                   <div class="submit-container">
-                    <input class="ui button grey" type="submit" value="Salvar"><a class="ui positive button" href="#">Salvar e continuar</a>
+                    <input class="ui button grey" type="submit" value="Salvar"><a class="ui positive button" href="employee-edit-page2.html">Salvar e continuar</a>
                   </div>
                 </div>
               </form>
@@ -229,11 +251,11 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/nouislider/nouislider.min.js"></script>
-    <script type="text/javascript" src="assets/js/dist/app.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/calendar.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/init.js"></script>
     <script type="text/javascript">
       $('.js-new-billet').on('click', function() {

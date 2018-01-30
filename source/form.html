@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
       <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="assets/img/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
         <ul class="ch-menu">
           <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
-          <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
+          <li class="ch-menu-item active"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
           <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
           <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
@@ -80,28 +81,16 @@
         </div>
       </header>
       <div class="ch-content">
-        <div class="ch-content-hgroup">
-          <h2 class="ui medium header">Alterar Colaborador
-            <div class="sub header">Utilize o passa a passo para alterar as informações do colaborador</div>
-          </h2>
-          <ol class="ch-horizontal-wizard">
-            <li class="ch-step current">Informações Pessoais</li>
-            <li class="ch-step">Informações de Endereço</li>
-            <li class="ch-step">Foto de Perfil</li>
-            <li class="ch-step">
-              Final
-              
-            </li>
-          </ol>
+        <div class="ch-content-hgroup padded">
+          <h1 class="ui header">Formulários
+            <div class="sub header">Exemplos de formulários</div>
+          </h1>
         </div>
-        <div class="ui stackable padded grid centered">
+        <div class="ui stackable padded grid">
           <div class="row">
-            <div class="sixteen wide column">
+            <div class="eight wide column">
               <form class="ui form">
                 <div class="ui segments">
-                  <div class="ui attached segment ch-segment-header">
-                    <div class="ui title">Informações Pessoais</div>
-                  </div>
                   <div class="ui attached segment padded">
                     <div class="fields">
                       <div class="eight wide field required">
@@ -110,7 +99,7 @@
                       </div>
                       <div class="field required">
                         <label for="">Nº de Registro</label>
-                        <input type="text" value="32133">
+                        <input type="text" value="32133" disabled>
                       </div>
                     </div>
                     <div class="four fields">
@@ -152,7 +141,7 @@
                     <div class="two fields">
                       <div class="field">
                         <label for="">Cargo</label>
-                        <input type="text" value="Aux. Administrativo">
+                        <input type="text" value="" placeholder="Função">
                       </div>
                       <div class="field">
                         <label for="">Salário</label>
@@ -168,12 +157,61 @@
                         </div>
                       </div>
                     </div>
+                    <div class="ch-buttons-container">
+                      <div class="cancel-container">
+                        <button class="ui button basic">Cancelar</button>
+                      </div>
+                      <div class="submit-container">
+                        <input class="ui button positive" type="submit" value="Enviar">
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="ch-buttons-container">
-                  <div class="cancel-container"><a class="ui button basic" href="employee-detail.html">Cancelar</a></div>
-                  <div class="submit-container">
-                    <input class="ui button grey" type="submit" value="Salvar"><a class="ui positive button" href="employee-edit-page2.html">Salvar e continuar</a>
+              </form>
+            </div>
+            <div class="eight wide column">
+              <form class="ui form">
+                <div class="ui segments">
+                  <div class="ui attached segment padded">
+                    <div class="field">
+                      <label>Multiple Select</label>
+                      <select class="ui dropdown" name="" multiple>
+                        <option value="Opção 1">Opção 1</option>
+                        <option value="Opção 2">Opção 2</option>
+                        <option value="Opção 3">Opção 3</option>
+                        <option value="Opção 4">Opção 4</option>
+                        <option value="Opção 5">Opção 5</option>
+                      </select>
+                    </div>
+                    <div class="field error required">
+                      <label>E-mail</label>
+                      <input type="text" placeholder="E-mail" value="email@email.com">
+                    </div>
+                    <div class="inline fields">
+                      <label>Boolean</label>
+                      <div class="field">
+                        <div class="ui radio checkbox">
+                          <input type="radio" name="boolean" value="yes">
+                          <label>Sim</label>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="ui radio checkbox">
+                          <input type="radio" name="boolean" value="no">
+                          <label>Não</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Observações</label>
+                      <textarea rows="2" placeholder="Insira aqui suas observações"></textarea>
+                    </div>
+                    <div class="inline field required">
+                      <div class="ui checkbox">
+                        <input type="checkbox">
+                        <label>Trabalha Remotamente</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -250,17 +288,11 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/nouislider/nouislider.min.js"></script>
-    <script type="text/javascript" src="assets/js/dist/app.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/calendar.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/init.js"></script>
-    <script type="text/javascript">
-      $('.js-new-billet').on('click', function() {
-        $('.long.modal').modal('show');
-        $(this).removeClass('.active.selected');
-      });
-    </script>
   </body>
 </html>

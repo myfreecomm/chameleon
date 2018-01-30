@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
@@ -81,95 +82,142 @@
       </header>
       <div class="ch-content">
         <div class="ch-content-hgroup">
-          <h2 class="ui medium header">Conta Lorem Ipsum</h2>
-          <div class="ch-group-buttons">
-            <button class="ui button basic"><i class="ui icon exchange"></i> Trocar Conta</button><a class="ui positive button" href="#">Editar</a>
+          <h2 class="ui medium header">Cobranças</h2>
+          <div class="ui top right pointing dropdown button positive"><span>Nova Cobrança</span><i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">Boleto</div>
+              <div class="item">Gateway de pagamento</div>
+            </div>
           </div>
         </div>
         <div class="ui stackable padded grid">
           <div class="row">
-            <div class="thirteen wide column">
-              <div class="ui horizontal segments">
-                <div class="ui segment center aligned">
-                  <div class="ui header">5
-                    <div class="sub header">Usuários</div>
-                  </div>
-                </div>
-                <div class="ui segment center aligned">
-                  <div class="ui header">6
-                    <div class="sub header">Organizações</div>
-                  </div>
-                </div>
-                <div class="ui segment center aligned">
-                  <div class="ui header">63
-                    <div class="sub header">Documentos</div>
-                  </div>
-                </div>
-              </div>
+            <div class="sixteen wide column">
               <div class="ui segments">
-                <div class="ui attached segment ch-segment-header">
-                  <div class="ui title">Usuários</div>
-                  <button class="ui button grey"><i class="ui icon add user"></i> Convidar Usuário</button>
-                </div>
+                <div class="ui attached segment ch-segment-header"><span>Mostrando 5 de 5 resultados</span><a class="ch-filters-btn btn-modal" href="#" data-modal="filters"><i class="filter icon"></i><span class="text">Filtros</span></a></div>
                 <div class="ui segment attached paddingless">
                   <table class="ui basic selectable table">
                     <thead>
                       <tr>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Permissões</th>
+                        <th>Config. de Cobrança</th>
+                        <th>Tipo</th>
+                        <th>Pagador</th>
+                        <th>Vencimento</th>
+                        <th>Cobrado</th>
+                        <th>Pago</th>
+                        <th class="center aligned">&nbsp;</th>
+                        <th>&nbsp;</th>
                         <th>&nbsp;</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td data-info="Nome">Administrador</td>
-                        <td data-info="E-mail">admin@email.com</td>
-                        <td><span class="ui label">Administrador</span>
+                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
+                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
+                        <td data-info="Pagador">John Doe</td>
+                        <td data-info="Vencimento">11/03/2017</td>
+                        <td data-info="Cobrado">R$ 15,00</td>
+                        <td data-info="Pago">R$ 15,00</td>
+                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label blue"><i class="ui icon check circle"></i>Capturado</span></td>
+                        <td>
+                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
+                        </td>
+                        <td class="right aligned">
+                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
+                            <div class="menu fixed-position">
+                              <div class="item">Option 1</div>
+                              <div class="item">Option 2</div>
+                              <div class="item">Option 3</div>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Nome">Lorem Ipsum</td>
-                        <td data-info="E-mail">lorem@email.com</td>
-                        <td><span>&nbsp;</span>
+                        <td data-info="Config. de Cobrança">Myfinance DEVELOPMENT Cielo</td>
+                        <td data-info="Tipo"><i class="ui icon barcode"></i></td>
+                        <td data-info="Pagador">Doe Company</td>
+                        <td data-info="Vencimento">11/03/2017</td>
+                        <td data-info="Cobrado">R$ 15,00</td>
+                        <td data-info="Pago">---</td>
+                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
+                        <td>
+                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
+                        </td>
+                        <td class="right aligned">
+                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
+                            <div class="menu fixed-position">
+                              <div class="item">Option 1</div>
+                              <div class="item">Option 2</div>
+                              <div class="item">Option 3</div>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Nome">Rachel Lilki</td>
-                        <td data-info="E-mail">rachel@email.com</td>
-                        <td><span>&nbsp;</span>
+                        <td data-info="Config. de Cobrança">Myfinance DEVELOPMENT Cielo</td>
+                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
+                        <td data-info="Pagador">Doe Company</td>
+                        <td data-info="Vencimento">11/03/2017</td>
+                        <td data-info="Cobrado">R$ 15,00</td>
+                        <td data-info="Pago">---</td>
+                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label yellow"><i class="ui icon remove circle"></i>Cancelado</span></td>
+                        <td>
+                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
+                        </td>
+                        <td class="right aligned">
+                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
+                            <div class="menu fixed-position">
+                              <div class="item">Option 1</div>
+                              <div class="item">Option 2</div>
+                              <div class="item">Option 3</div>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Nome">Jamie Harington</td>
-                        <td data-info="E-mail">jamie@email.com</td>
-                        <td><span>&nbsp;</span>
+                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
+                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
+                        <td data-info="Pagador">John Doe</td>
+                        <td data-info="Vencimento">11/03/2017</td>
+                        <td data-info="Cobrado">R$ 15,00</td>
+                        <td data-info="Pago">---</td>
+                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label red"><i class="ui icon exclamation circle"></i>Erro na autorização</span></td>
+                        <td>
+                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
+                        </td>
+                        <td class="right aligned">
+                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
+                            <div class="menu fixed-position">
+                              <div class="item">Option 1</div>
+                              <div class="item">Option 2</div>
+                              <div class="item">Option 3</div>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Nome">John Lewis</td>
-                        <td data-info="E-mail">john@email.com</td>
-                        <td><span>&nbsp;</span>
+                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
+                        <td data-info="Tipo"><i class="ui icon barcode"></i></td>
+                        <td data-info="Pagador">John Doe</td>
+                        <td data-info="Vencimento">11/03/2017</td>
+                        <td data-info="Cobrado">R$ 49,90</td>
+                        <td data-info="Pago">R$ 49,90</td>
+                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
+                        <td>
+                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
+                        </td>
+                        <td class="right aligned">
+                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
+                            <div class="menu fixed-position">
+                              <div class="item">Option 1</div>
+                              <div class="item">Option 2</div>
+                              <div class="item">Option 3</div>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-            <div class="three wide column">
-              <div class="ui segment basic">
-                <div class="ui header">Token de Acesso à API</div>
-                <div class="ui action input mini ch-copy-input">
-                  <input type="text" value="http://ww.short.url/c0opq">
-                  <button class="ui icon button"><i class="icon copy"></i></button>
-                </div>
-                <div class="ui icon message tiny"><i class="ui icon info"></i>
-                  <div class="content">
-                    O token permite que as aplicações se autentiquem na API do Emites. Informe este código nas aplicações a
-                    serem integradas ao Emites.
-                    
-                  </div>
                 </div>
               </div>
             </div>
@@ -325,11 +373,11 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/nouislider/nouislider.min.js"></script>
-    <script type="text/javascript" src="assets/js/dist/app.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/calendar.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/init.js"></script>
   </body>
 </html>

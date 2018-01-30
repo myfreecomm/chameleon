@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
@@ -16,8 +17,8 @@
           <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
           <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
-          <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
-          <li class="ch-menu-item active"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
+          <li class="ch-menu-item active"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
+          <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
             <div class="ch-dropdown">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
@@ -80,52 +81,63 @@
         </div>
       </header>
       <div class="ch-content">
-        <div id="map"></div>
-        <div class="ch-timeline-container">
-          <div class="ui header">Atividades Recentes</div>
-          <ul class="ch-timeline">
-            <li class="date">
-              <div class="ui label">23 Jan 18</div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Lorem Ipsum</div>
-                <p>Lorem ipsum dolor sit amet, ex rebum scripta nonumes his, vix no nihil impetus philosophia. Voluptatum eloquentiam usu cu.</p>
+        <div class="ch-content-hgroup padded">
+          <h1 class="ui header">Wizard
+            <div class="sub header">Exemplos de passa a passo na vertical e na horizontal</div>
+          </h1>
+        </div><br>
+        <div class="ui stackable padded grid">
+          <div class="row">
+            <div class="sixteen wide column">
+              <div class="ui medium dividing header">Horizontal</div><br>
+              <div class="ui grid">
+                <div class="eight wide computer sixteen wide mobile column">
+                  <div class="ch-wizard-container">
+                    <ol class="ch-horizontal-wizard">
+                      <li class="ch-step done">Informações Pessoais</li>
+                      <li class="ch-step current">Informações de Endereço</li>
+                      <li class="ch-step">Foto de Perfil</li>
+                      <li class="ch-step">
+                        Final
+                        
+                      </li>
+                    </ol>
+                  </div>
+                </div>
               </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Pri facilisis</div>
-                <p>Pri facilisis dissentias ei, usu no quodsi nonumes, eos quaestio interesset ad. Mel at saperet expetenda necessitatibus.</p>
+              <div class="ui divider hidden"></div>
+              <div class="ui medium dividing header">Vertical</div><br>
+              <div class="ch-wizard-container">
+                <ol class="ch-vertical-wizard">
+                  <li class="ch-step done">
+                    <div class="step-header">
+                      <h4 class="ui medium header">Selecione o agrupador
+                        <div class="sub header">Agrupadores servem para organizar a informação de uma forma mais eficiente.</div>
+                      </h4>
+                    </div>
+                    <div class="step-content"></div>
+                  </li>
+                  <li class="ch-step current">
+                    <div class="step-header">
+                      <h4 class="ui medium header">Qual tipo ?
+                        <div class="sub header">Defina o tipo do seu relatório.</div>
+                      </h4>
+                    </div>
+                    <div class="step-content"></div>
+                  </li>
+                  <li class="ch-step">
+                    <div class="step-header">
+                      <h4 class="ui medium header">Gostaria de mais opções ?
+                        <div class="sub header">Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!</div>
+                      </h4>
+                    </div>
+                    <div class="step-content"></div>
+                  </li>
+                </ol>
               </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Quo an simul prompta</div>
-                <p>Quo an simul prompta, per illud homero albucius no. Sed vocent vulputate ei. Quod laudem ne vim, quem inermis legendos ne sit.</p>
-              </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Tempor verear</div>
-                <p>Mel cu malis tempor verear, soleat aliquip nostrum his ne. Ea mucius saperet principes usu, cu vix luptatum convenire, cu cum error tamquam.</p>
-              </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Sea quis nonumes</div>
-                <p>Sea quis nonumes fastidii cu. No sea alii maluisset consectetuer, ut dicant causae duo. Te dicat equidem dolorem mea.</p>
-              </div>
-            </li>
-            <li class="date">
-              <div class="ui label">
-                24 Jan 18
-                
-              </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-        <div class="btn-collapse ui icon button hidden-mobile"><i class="icon chevron right small"></i></div>
       </div>
     </div>
     <div class="ch-sidebar" data-modal="notifications" tabindex="0">
@@ -196,23 +208,11 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/nouislider/nouislider.min.js"></script>
-    <script type="text/javascript" src="assets/js/dist/app.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/calendar.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/init.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlHYJLboGs7xpvK0it2w4S8SjqLMUvZWs&amp;callback=initMap" async defer></script>
-    <script type="text/javascript">
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -22.8048372, lng: -43.2458182},
-          scrollwheel: false,
-          zoom: 12,
-          mapTypeControl: false,
-        });
-      }
-    </script>
   </body>
 </html>

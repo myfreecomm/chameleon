@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
@@ -80,163 +81,53 @@
         </div>
       </header>
       <div class="ch-content">
-        <div class="ch-content-hgroup">
-          <h2 class="ui medium header">Configurações</h2>
-        </div>
-        <div class="ui stackable padded grid centered">
-          <div class="row">
-            <div class="sixteen wide column">
-              <div class="ui top attached tabular menu"><a class="item active" data-tab="user">Usuário</a><a class="item" data-tab="plan">Assinatura</a></div>
-              <div class="ui bottom attached tab segment padded active" data-tab="user">
-                <form class="ui form">
-                  <div class="ui divided stackable grid">
-                    <div class="row">
-                      <div class="four wide computer six wide tablet column">
-                        <div class="content">
-                          <div class="ui basic padded segment">
-                            <div class="ch-avatar-upload vertical">
-                              <div class="ch-avatar-container big"><img class="ch-avatar rounded" src="http://via.placeholder.com/105x105"></div>
-                              <div class="info">
-                                <h3 class="ui header">Foto de perfil</h3>
-                                <p>Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff</p>
-                                <p>Limite de tamanho de arquivo: 10MB</p>
-                                <div class="ch-input-file">
-                                  <label class="ui tiny button primary" for="file">Adicionar foto</label>
-                                  <input type="file" id="file">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="eight wide computer ten wide tablet column">
-                        <div class="content">
-                          <div class="ui basic padded segment">
-                            <h3 class="ui header">Dados Pessoais</h3>
-                            <div class="ui divider hidden"></div>
-                            <div class="two fields">
-                              <div class="field required">
-                                <label for="">Nome</label>
-                                <input type="text" placeholder="Nome">
-                              </div>
-                              <div class="field required">
-                                <label for="">Apelido</label>
-                                <input type="text" placeholder="Apelido">
-                              </div>
-                            </div>
-                            <div class="two fields">
-                              <div class="field required">
-                                <label for="">E-mail</label>
-                                <input type="text" placeholder="E-mail">
-                              </div>
-                              <div class="field">
-                                <label for="">Data de Nascimento</label>
-                                <div class="ui left icon input">
-                                  <input type="text" placeholder="dd/mm/aaaa"><i class="calendar icon"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+        <div id="map"></div>
+        <div class="ch-timeline-container">
+          <div class="ui header">Atividades Recentes</div>
+          <ul class="ch-timeline">
+            <li class="date">
+              <div class="ui label">23 Jan 18</div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Lorem Ipsum</div>
+                <p>Lorem ipsum dolor sit amet, ex rebum scripta nonumes his, vix no nihil impetus philosophia. Voluptatum eloquentiam usu cu.</p>
               </div>
-              <div class="ui bottom attached tab segment padded" data-tab="plan">
-                Assinatura
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Pri facilisis</div>
+                <p>Pri facilisis dissentias ei, usu no quodsi nonumes, eos quaestio interesset ad. Mel at saperet expetenda necessitatibus.</p>
+              </div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Quo an simul prompta</div>
+                <p>Quo an simul prompta, per illud homero albucius no. Sed vocent vulputate ei. Quod laudem ne vim, quem inermis legendos ne sit.</p>
+              </div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Tempor verear</div>
+                <p>Mel cu malis tempor verear, soleat aliquip nostrum his ne. Ea mucius saperet principes usu, cu vix luptatum convenire, cu cum error tamquam.</p>
+              </div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Sea quis nonumes</div>
+                <p>Sea quis nonumes fastidii cu. No sea alii maluisset consectetuer, ut dicant causae duo. Te dicat equidem dolorem mea.</p>
+              </div>
+            </li>
+            <li class="date">
+              <div class="ui label">
+                24 Jan 18
                 
               </div>
-              <div class="ui segment basic right aligned">
-                <div class="actions">
-                  <div class="ui basic button close">Cancelar</div>
-                  <div class="ui submit positive button">Atualizar Informações</div>
-                </div>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
+        <div class="btn-collapse ui icon button hidden-mobile"><i class="icon chevron right small"></i></div>
       </div>
-    </div>
-    <div class="ch-sidebar" data-modal="filters" tabindex="0">
-      <div class="ch-overlay inside">
-        <div class="ch-sidebar-container">
-          <div class="ch-sidebar-header">Filtros<span class="btn-close"><i class="close icon"></i></span></div>
-          <div class="ch-sidebar-content">
-            <div class="ui segment basic padded">
-              <form class="ui form">
-                <div class="field">
-                  <label>Vencimento em</label>
-                  <div class="two fields">
-                    <div class="field ui calendar" id="rangestart">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field ui calendar" id="rangeend">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Valor</label>
-                  <div class="two fields">
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="dollar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="dollar icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slider-container">
-                    <div id="slider"></div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Configuração de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Myfinance Development - Boleto Bradesco 09">Myfinance Development - Boleto Bradesco 09</option>
-                    <option value="Myfinance DEVELOPMENT Cielo">Myfinance DEVELOPMENT Cielo</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Pagador</label>
-                  <select class="ui dropdown" name="">
-                    <option value="John Doe">John Doe</option>
-                    <option value="Doe Company">Doe Company</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Tipo de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Option 1">Option 1</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Status da Cobrança</label>
-                  <select class="ui dropdown" name="" disabled>
-                    <option value="Escolha o tipo de cobrança">Escolha o tipo de cobrança</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-action">Filtrar</div>
     </div>
     <div class="ch-sidebar" data-modal="notifications" tabindex="0">
       <div class="ch-overlay">
@@ -306,11 +197,23 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/nouislider/nouislider.min.js"></script>
-    <script type="text/javascript" src="assets/js/dist/app.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/calendar.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/init.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlHYJLboGs7xpvK0it2w4S8SjqLMUvZWs&amp;callback=initMap" async defer></script>
+    <script type="text/javascript">
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -22.8048372, lng: -43.2458182},
+          scrollwheel: false,
+          zoom: 12,
+          mapTypeControl: false,
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
     <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="assets/css/chameleon.min.css">
   </head>
   <body>
@@ -81,142 +82,76 @@
       </header>
       <div class="ch-content">
         <div class="ch-content-hgroup">
-          <h2 class="ui medium header">Cobranças</h2>
-          <div class="ui top right pointing dropdown button positive"><span>Nova Cobrança</span><i class="dropdown icon"></i>
-            <div class="menu">
-              <div class="item">Boleto</div>
-              <div class="item">Gateway de pagamento</div>
-            </div>
-          </div>
+          <h2 class="ui medium header">Configurações</h2>
         </div>
-        <div class="ui stackable padded grid">
+        <div class="ui stackable padded grid centered">
           <div class="row">
             <div class="sixteen wide column">
-              <div class="ui segments">
-                <div class="ui attached segment ch-segment-header"><span>Mostrando 5 de 5 resultados</span><a class="ch-filters-btn btn-modal" href="#" data-modal="filters"><i class="filter icon"></i><span class="text">Filtros</span></a></div>
-                <div class="ui segment attached paddingless">
-                  <table class="ui basic selectable table">
-                    <thead>
-                      <tr>
-                        <th>Config. de Cobrança</th>
-                        <th>Tipo</th>
-                        <th>Pagador</th>
-                        <th>Vencimento</th>
-                        <th>Cobrado</th>
-                        <th>Pago</th>
-                        <th class="center aligned">&nbsp;</th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
-                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
-                        <td data-info="Pagador">John Doe</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">R$ 15,00</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label blue"><i class="ui icon check circle"></i>Capturado</span></td>
-                        <td>
-                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
-                        </td>
-                        <td class="right aligned">
-                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
-                            <div class="menu fixed-position">
-                              <div class="item">Option 1</div>
-                              <div class="item">Option 2</div>
-                              <div class="item">Option 3</div>
+              <div class="ui top attached tabular menu"><a class="item active" data-tab="user">Usuário</a><a class="item" data-tab="plan">Assinatura</a></div>
+              <div class="ui bottom attached tab segment padded active" data-tab="user">
+                <form class="ui form">
+                  <div class="ui divided stackable grid">
+                    <div class="row">
+                      <div class="four wide computer six wide tablet column">
+                        <div class="content">
+                          <div class="ui basic padded segment">
+                            <div class="ch-avatar-upload vertical">
+                              <div class="ch-avatar-container big"><img class="ch-avatar rounded" src="http://via.placeholder.com/105x105"></div>
+                              <div class="info">
+                                <h3 class="ui header">Foto de perfil</h3>
+                                <p>Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff</p>
+                                <p>Limite de tamanho de arquivo: 10MB</p>
+                                <div class="ch-input-file">
+                                  <label class="ui tiny button primary" for="file">Adicionar foto</label>
+                                  <input type="file" id="file">
+                                </div>
+                              </div>
                             </div>
                           </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td data-info="Config. de Cobrança">Myfinance DEVELOPMENT Cielo</td>
-                        <td data-info="Tipo"><i class="ui icon barcode"></i></td>
-                        <td data-info="Pagador">Doe Company</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">---</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
-                        <td>
-                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
-                        </td>
-                        <td class="right aligned">
-                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
-                            <div class="menu fixed-position">
-                              <div class="item">Option 1</div>
-                              <div class="item">Option 2</div>
-                              <div class="item">Option 3</div>
+                        </div>
+                      </div>
+                      <div class="eight wide computer ten wide tablet column">
+                        <div class="content">
+                          <div class="ui basic padded segment">
+                            <h3 class="ui header">Dados Pessoais</h3>
+                            <div class="ui divider hidden"></div>
+                            <div class="two fields">
+                              <div class="field required">
+                                <label for="">Nome</label>
+                                <input type="text" placeholder="Nome">
+                              </div>
+                              <div class="field required">
+                                <label for="">Apelido</label>
+                                <input type="text" placeholder="Apelido">
+                              </div>
+                            </div>
+                            <div class="two fields">
+                              <div class="field required">
+                                <label for="">E-mail</label>
+                                <input type="text" placeholder="E-mail">
+                              </div>
+                              <div class="field">
+                                <label for="">Data de Nascimento</label>
+                                <div class="ui left icon input">
+                                  <input type="text" placeholder="dd/mm/aaaa"><i class="calendar icon"></i>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td data-info="Config. de Cobrança">Myfinance DEVELOPMENT Cielo</td>
-                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
-                        <td data-info="Pagador">Doe Company</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">---</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label yellow"><i class="ui icon remove circle"></i>Cancelado</span></td>
-                        <td>
-                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
-                        </td>
-                        <td class="right aligned">
-                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
-                            <div class="menu fixed-position">
-                              <div class="item">Option 1</div>
-                              <div class="item">Option 2</div>
-                              <div class="item">Option 3</div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
-                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
-                        <td data-info="Pagador">John Doe</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">---</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label red"><i class="ui icon exclamation circle"></i>Erro na autorização</span></td>
-                        <td>
-                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
-                        </td>
-                        <td class="right aligned">
-                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
-                            <div class="menu fixed-position">
-                              <div class="item">Option 1</div>
-                              <div class="item">Option 2</div>
-                              <div class="item">Option 3</div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
-                        <td data-info="Tipo"><i class="ui icon barcode"></i></td>
-                        <td data-info="Pagador">John Doe</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 49,90</td>
-                        <td data-info="Pago">R$ 49,90</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
-                        <td>
-                          <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
-                        </td>
-                        <td class="right aligned">
-                          <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
-                            <div class="menu fixed-position">
-                              <div class="item">Option 1</div>
-                              <div class="item">Option 2</div>
-                              <div class="item">Option 3</div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="ui bottom attached tab segment padded" data-tab="plan">
+                Assinatura
+                
+              </div>
+              <div class="ui segment basic right aligned">
+                <div class="actions">
+                  <div class="ui basic button close">Cancelar</div>
+                  <div class="ui submit positive button">Atualizar Informações</div>
                 </div>
               </div>
             </div>
@@ -372,11 +307,11 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/semantic.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/calendar/calendar.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/nouislider/nouislider.min.js"></script>
-    <script type="text/javascript" src="assets/js/dist/app.js"></script>
+    <script type="text/javascript" src="assets/js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/semantic.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/calendar.min.js"></script>
+    <script type="text/javascript" src="assets/js/libs/nouislider.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/init.js"></script>
   </body>
 </html>
