@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
-    <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="assets/css/chameleon.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/semantic.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/chameleon.min.css">
   </head>
   <body>
-      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="assets/img/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
+      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="../assets/images/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
         <ul class="ch-menu">
           <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
           <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
           <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
-          <li class="ch-menu-item active"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
+          <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
             <div class="ch-dropdown">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
@@ -92,9 +91,86 @@
         </div>
         <div class="ui stackable padded grid">
           <div class="row">
-            <div class="sixteen wide column">
+            <div class="four wide computer column">
               <div class="ui segments">
-                <div class="ui attached segment ch-segment-header"><span>Mostrando 5 de 5 resultados</span><a class="ch-filters-btn btn-modal" href="#" data-modal="filters"><i class="filter icon"></i><span class="text">Filtros</span></a></div>
+                <div class="ui segment attached ch-segment-header">
+                  <div class="ui title">Filtros</div>
+                </div>
+                <div class="ui segment attached padded">
+                  <form class="ui form">
+                    <div class="field">
+                      <label>Vencimento em</label>
+                      <div class="two fields">
+                        <div class="field ui calendar" id="rangestart">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="De"><i class="calendar icon"></i>
+                          </div>
+                        </div>
+                        <div class="field ui calendar" id="rangeend">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="Até"><i class="calendar icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Valor</label>
+                      <div class="two fields">
+                        <div class="field">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="De"><i class="dollar icon"></i>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <div class="ui left icon input">
+                            <input type="text" placeholder="Até"><i class="dollar icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slider-container">
+                        <div id="slider"></div>
+                      </div>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Configuração de Cobrança</label>
+                      <select class="ui dropdown" name="">
+                        <option value="Myfinance Development - Boleto Bradesco 09">Myfinance Development - Boleto Bradesco 09</option>
+                        <option value="Myfinance DEVELOPMENT Cielo">Myfinance DEVELOPMENT Cielo</option>
+                      </select>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Pagador</label>
+                      <select class="ui dropdown" name="">
+                        <option value="John Doe">John Doe</option>
+                        <option value="Doe Company">Doe Company</option>
+                      </select>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Tipo de Cobrança</label>
+                      <select class="ui dropdown" name="">
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                      </select>
+                    </div>
+                    <div class="ui divider hidden"></div>
+                    <div class="field">
+                      <label>Status da Cobrança</label>
+                      <select class="ui dropdown" name="" disabled>
+                        <option value="Escolha o tipo de cobrança">Escolha o tipo de cobrança</option>
+                        <option value="Option 2">Option 2</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="twelve wide computer column">
+              <div class="ui segments">
+                <div class="ui attached segment ch-segment-header"><span>Mostrando 5 de 5 resultados</span></div>
                 <div class="ui segment attached paddingless">
                   <table class="ui basic selectable table">
                     <thead>
@@ -105,20 +181,20 @@
                         <th>Vencimento</th>
                         <th>Cobrado</th>
                         <th>Pago</th>
-                        <th class="center aligned">&nbsp;</th>
+                        <th>&nbsp;</th>
                         <th>&nbsp;</th>
                         <th>&nbsp;</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
-                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
-                        <td data-info="Pagador">John Doe</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">R$ 15,00</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label blue"><i class="ui icon check circle"></i>Capturado</span></td>
+                        <td>Myfinance Development - Boleto Bradesco 09</td>
+                        <td><i class="ui icon payment"></i></td>
+                        <td>John Doe</td>
+                        <td>11/03/2017</td>
+                        <td>R$ 15,00</td>
+                        <td>R$ 15,00</td>
+                        <td><span class="ui label blue"><i class="ui icon check circle"></i>Capturado</span></td>
                         <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
@@ -133,13 +209,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Config. de Cobrança">Myfinance DEVELOPMENT Cielo</td>
-                        <td data-info="Tipo"><i class="ui icon barcode"></i></td>
-                        <td data-info="Pagador">Doe Company</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">---</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
+                        <td>Myfinance DEVELOPMENT Cielo</td>
+                        <td><i class="ui icon barcode"></i></td>
+                        <td>Doe Company</td>
+                        <td>11/03/2017</td>
+                        <td>R$ 15,00</td>
+                        <td>---</td>
+                        <td><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
                         <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
@@ -154,13 +230,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Config. de Cobrança">Myfinance DEVELOPMENT Cielo</td>
-                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
-                        <td data-info="Pagador">Doe Company</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">---</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label yellow"><i class="ui icon remove circle"></i>Cancelado</span></td>
+                        <td>Myfinance DEVELOPMENT Cielo</td>
+                        <td><i class="ui icon payment"></i></td>
+                        <td>Doe Company</td>
+                        <td>11/03/2017</td>
+                        <td>R$ 15,00</td>
+                        <td>---</td>
+                        <td><span class="ui label yellow"><i class="ui icon remove circle"></i>Cancelado</span></td>
                         <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
@@ -175,13 +251,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
-                        <td data-info="Tipo"><i class="ui icon payment"></i></td>
-                        <td data-info="Pagador">John Doe</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 15,00</td>
-                        <td data-info="Pago">---</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label red"><i class="ui icon exclamation circle"></i>Erro na autorização</span></td>
+                        <td>Myfinance Development - Boleto Bradesco 09</td>
+                        <td><i class="ui icon payment"></i></td>
+                        <td>John Doe</td>
+                        <td>11/03/2017</td>
+                        <td>R$ 15,00</td>
+                        <td>---</td>
+                        <td><span class="ui label red"><i class="ui icon exclamation circle"></i>Erro na autorização</span></td>
                         <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
@@ -196,13 +272,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td data-info="Config. de Cobrança">Myfinance Development - Boleto Bradesco 09</td>
-                        <td data-info="Tipo"><i class="ui icon barcode"></i></td>
-                        <td data-info="Pagador">John Doe</td>
-                        <td data-info="Vencimento">11/03/2017</td>
-                        <td data-info="Cobrado">R$ 49,90</td>
-                        <td data-info="Pago">R$ 49,90</td>
-                        <td class="center aligned ch-table-label" data-info="Status"><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
+                        <td>Myfinance Development - Boleto Bradesco 09</td>
+                        <td><i class="ui icon barcode"></i></td>
+                        <td>John Doe</td>
+                        <td>11/03/2017</td>
+                        <td>R$ 49,90</td>
+                        <td>R$ 49,90</td>
+                        <td><span class="ui label orange"><i class="ui icon minus circle"></i>Cobrança sem registro</span></td>
                         <td>
                           <div class="ui info"><i class="ui icon circle info" data-html="&lt;strong&gt;Título&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Conteúdo HTML&lt;/p&gt;"></i></div>
                         </td>
@@ -224,86 +300,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="ch-sidebar" data-modal="filters" tabindex="0">
-      <div class="ch-overlay inside">
-        <div class="ch-sidebar-container">
-          <div class="ch-sidebar-header">Filtros<span class="btn-close"><i class="close icon"></i></span></div>
-          <div class="ch-sidebar-content">
-            <div class="ui segment basic padded">
-              <form class="ui form">
-                <div class="field">
-                  <label>Vencimento em</label>
-                  <div class="two fields">
-                    <div class="field ui calendar" id="rangestart">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field ui calendar" id="rangeend">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="calendar icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Valor</label>
-                  <div class="two fields">
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="dollar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="dollar icon"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slider-container">
-                    <div id="slider"></div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Configuração de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Myfinance Development - Boleto Bradesco 09">Myfinance Development - Boleto Bradesco 09</option>
-                    <option value="Myfinance DEVELOPMENT Cielo">Myfinance DEVELOPMENT Cielo</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Pagador</label>
-                  <select class="ui dropdown" name="">
-                    <option value="John Doe">John Doe</option>
-                    <option value="Doe Company">Doe Company</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Tipo de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Option 1">Option 1</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Status da Cobrança</label>
-                  <select class="ui dropdown" name="" disabled>
-                    <option value="Escolha o tipo de cobrança">Escolha o tipo de cobrança</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-action">Filtrar</div>
     </div>
     <div class="ch-sidebar" data-modal="notifications" tabindex="0">
       <div class="ch-overlay">
@@ -373,7 +369,13 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/init.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/init.js"></script>
+    <script type="text/javascript">
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });
+    </script>
   </body>
 </html>

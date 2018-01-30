@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
-    <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="assets/css/chameleon.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/semantic.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/chameleon.min.css">
   </head>
   <body>
-      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="assets/img/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
+      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="../assets/images/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
         <ul class="ch-menu">
           <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
           <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
           <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
-          <li class="ch-menu-item active"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
+          <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
             <div class="ch-dropdown">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
@@ -81,52 +80,85 @@
         </div>
       </header>
       <div class="ch-content">
-        <div id="map"></div>
-        <div class="ch-timeline-container">
-          <div class="ui header">Atividades Recentes</div>
-          <ul class="ch-timeline">
-            <li class="date">
-              <div class="ui label">23 Jan 18</div>
+        <div class="ch-content-hgroup">
+          <h2 class="ui medium header">Alterar Colaborador
+            <div class="sub header">Utilize o passa a passo para alterar as informações do colaborador</div>
+          </h2>
+          <ol class="ch-horizontal-wizard">
+            <li class="ch-step done">Informações Pessoais</li>
+            <li class="ch-step current">Informações de Endereço</li>
+            <li class="ch-step">Foto de Perfil</li>
+            <li class="ch-step">
+              Final
+              
             </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Lorem Ipsum</div>
-                <p>Lorem ipsum dolor sit amet, ex rebum scripta nonumes his, vix no nihil impetus philosophia. Voluptatum eloquentiam usu cu.</p>
-              </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Pri facilisis</div>
-                <p>Pri facilisis dissentias ei, usu no quodsi nonumes, eos quaestio interesset ad. Mel at saperet expetenda necessitatibus.</p>
-              </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Quo an simul prompta</div>
-                <p>Quo an simul prompta, per illud homero albucius no. Sed vocent vulputate ei. Quod laudem ne vim, quem inermis legendos ne sit.</p>
-              </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Tempor verear</div>
-                <p>Mel cu malis tempor verear, soleat aliquip nostrum his ne. Ea mucius saperet principes usu, cu vix luptatum convenire, cu cum error tamquam.</p>
-              </div>
-            </li>
-            <li class="event">
-              <div class="content">
-                <div class="ui header tiny">Sea quis nonumes</div>
-                <p>Sea quis nonumes fastidii cu. No sea alii maluisset consectetuer, ut dicant causae duo. Te dicat equidem dolorem mea.</p>
-              </div>
-            </li>
-            <li class="date">
-              <div class="ui label">
-                24 Jan 18
-                
-              </div>
-            </li>
-          </ul>
+          </ol>
         </div>
-        <div class="btn-collapse ui icon button hidden-mobile"><i class="icon chevron right small"></i></div>
+        <div class="ui stackable padded grid centered">
+          <div class="row">
+            <div class="sixteen wide column">
+              <form class="ui form">
+                <div class="ui segments">
+                  <div class="ui attached segment ch-segment-header">
+                    <div class="ui title">Informações de Endereço</div>
+                  </div>
+                  <div class="ui attached segment padded">
+                    <div class="fields">
+                      <div class="four wide field required">
+                        <label for="">CEP</label>
+                        <input type="text" placeholder="00.000-00" value="21.000-00">
+                      </div>
+                      <div class="ten wide field required">
+                        <label for="">Endereço</label>
+                        <input type="text" placeholder="Endereço" value="Rua Lorem Ipsum">
+                      </div>
+                      <div class="two wide field required">
+                        <label for="">Número</label>
+                        <input type="text" placeholder="Número" value="00">
+                      </div>
+                    </div>
+                    <div class="four fields">
+                      <div class="field">
+                        <label for="">Complemento</label>
+                        <input type="text">
+                      </div>
+                      <div class="field">
+                        <label for="">Bairro</label>
+                        <input type="text" value="Flamengo">
+                      </div>
+                      <div class="field">
+                        <label for="">Estado</label>
+                        <select class="ui dropdown" name="">
+                          <option value="RJ">RJ</option>
+                          <option value="Option 1">Option 1</option>
+                          <option value="Option 2">Option 2</option>
+                          <option value="Option 3">Option 3</option>
+                          <option value="Option 4">Option 4</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <label for="">Cidade</label>
+                        <select class="ui dropdown" name="">
+                          <option value="Rio de Janeiro">Rio de Janeiro</option>
+                          <option value="Option 1">Option 1</option>
+                          <option value="Option 2">Option 2</option>
+                          <option value="Option 3">Option 3</option>
+                          <option value="Option 4">Option 4</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ch-buttons-container">
+                  <div class="cancel-container"><a class="ui button basic" href="employee-edit.html">Voltar</a></div>
+                  <div class="submit-container">
+                    <input class="ui button grey" type="submit" value="Salvar"><a class="ui positive button" href="#">Salvar e continuar</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="ch-sidebar" data-modal="notifications" tabindex="0">
@@ -197,19 +229,13 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/init.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlHYJLboGs7xpvK0it2w4S8SjqLMUvZWs&amp;callback=initMap" async defer></script>
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/init.js"></script>
     <script type="text/javascript">
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -22.8048372, lng: -43.2458182},
-          scrollwheel: false,
-          zoom: 12,
-          mapTypeControl: false,
-        });
-      }
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });
     </script>
   </body>
 </html>

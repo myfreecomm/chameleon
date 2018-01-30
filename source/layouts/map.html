@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
-    <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="assets/css/chameleon.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/semantic.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/chameleon.min.css">
   </head>
   <body>
-      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="assets/img/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
+      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="../assets/images/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
         <ul class="ch-menu">
           <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
-          <li class="ch-menu-item active"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
+          <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
           <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
-          <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
+          <li class="ch-menu-item active"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
             <div class="ch-dropdown">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
@@ -81,143 +80,52 @@
         </div>
       </header>
       <div class="ch-content">
-        <div class="ch-content-hgroup padded">
-          <h1 class="ui header">Formulários
-            <div class="sub header">Exemplos de formulários</div>
-          </h1>
+        <div id="map"></div>
+        <div class="ch-timeline-container">
+          <div class="ui header">Atividades Recentes</div>
+          <ul class="ch-timeline">
+            <li class="date">
+              <div class="ui label">23 Jan 18</div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Lorem Ipsum</div>
+                <p>Lorem ipsum dolor sit amet, ex rebum scripta nonumes his, vix no nihil impetus philosophia. Voluptatum eloquentiam usu cu.</p>
+              </div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Pri facilisis</div>
+                <p>Pri facilisis dissentias ei, usu no quodsi nonumes, eos quaestio interesset ad. Mel at saperet expetenda necessitatibus.</p>
+              </div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Quo an simul prompta</div>
+                <p>Quo an simul prompta, per illud homero albucius no. Sed vocent vulputate ei. Quod laudem ne vim, quem inermis legendos ne sit.</p>
+              </div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Tempor verear</div>
+                <p>Mel cu malis tempor verear, soleat aliquip nostrum his ne. Ea mucius saperet principes usu, cu vix luptatum convenire, cu cum error tamquam.</p>
+              </div>
+            </li>
+            <li class="event">
+              <div class="content">
+                <div class="ui header tiny">Sea quis nonumes</div>
+                <p>Sea quis nonumes fastidii cu. No sea alii maluisset consectetuer, ut dicant causae duo. Te dicat equidem dolorem mea.</p>
+              </div>
+            </li>
+            <li class="date">
+              <div class="ui label">
+                24 Jan 18
+                
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="ui stackable padded grid">
-          <div class="row">
-            <div class="eight wide column">
-              <form class="ui form">
-                <div class="ui segments">
-                  <div class="ui attached segment padded">
-                    <div class="fields">
-                      <div class="eight wide field required">
-                        <label for="">Nome Completo</label>
-                        <input type="text" placeholder="Nome" value="Rachel Lilki">
-                      </div>
-                      <div class="field required">
-                        <label for="">Nº de Registro</label>
-                        <input type="text" value="32133" disabled>
-                      </div>
-                    </div>
-                    <div class="four fields">
-                      <div class="field">
-                        <label for="">Data de Nascimento</label>
-                        <div class="ui left icon input">
-                          <input type="date" placeholder="dd/mm/aaaa" value="1985-05-20"><i class="calendar icon"></i>
-                        </div>
-                      </div>
-                      <div class="field">
-                        <label for="">Nacionalidade</label>
-                        <input type="text" placeholder="Nacionalidade" value="Brasileira">
-                      </div>
-                      <div class="field">
-                        <label for="">Naturalidade</label>
-                        <input type="text" placeholder="Naturalidade" value="São Paulo, SP">
-                      </div>
-                      <div class="field">
-                        <label for="">Sexo</label>
-                        <input type="text" placeholder="" value="Feminino">
-                      </div>
-                    </div>
-                    <div class="two fields">
-                      <div class="field">
-                        <label for="">Estado Civil</label>
-                        <select class="ui dropdown" name="">
-                          <option value="Opção 1">Opção 1</option>
-                          <option value="Opção 2">Opção 2</option>
-                        </select>
-                      </div>
-                      <div class="field">
-                        <label>Escolaridade</label>
-                        <select class="ui dropdown" name="">
-                          <option value="Opção 1">Opção 1</option>
-                          <option value="Opção 2">Opção 2</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="two fields">
-                      <div class="field">
-                        <label for="">Cargo</label>
-                        <input type="text" value="" placeholder="Função">
-                      </div>
-                      <div class="field">
-                        <label for="">Salário</label>
-                        <div class="ui right labeled input">
-                          <input type="text" placeholder="0,00" value="5.000,00">
-                          <div class="ui dropdown label">
-                            <div class="text">BRL</div><i class="dropdown icon"></i>
-                            <div class="menu">
-                              <div class="item">BRL</div>
-                              <div class="item">EUR</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="ch-buttons-container">
-                      <div class="cancel-container">
-                        <button class="ui button basic">Cancelar</button>
-                      </div>
-                      <div class="submit-container">
-                        <input class="ui button positive" type="submit" value="Enviar">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="eight wide column">
-              <form class="ui form">
-                <div class="ui segments">
-                  <div class="ui attached segment padded">
-                    <div class="field">
-                      <label>Multiple Select</label>
-                      <select class="ui dropdown" name="" multiple>
-                        <option value="Opção 1">Opção 1</option>
-                        <option value="Opção 2">Opção 2</option>
-                        <option value="Opção 3">Opção 3</option>
-                        <option value="Opção 4">Opção 4</option>
-                        <option value="Opção 5">Opção 5</option>
-                      </select>
-                    </div>
-                    <div class="field error required">
-                      <label>E-mail</label>
-                      <input type="text" placeholder="E-mail" value="email@email.com">
-                    </div>
-                    <div class="inline fields">
-                      <label>Boolean</label>
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="boolean" value="yes">
-                          <label>Sim</label>
-                        </div>
-                      </div>
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="boolean" value="no">
-                          <label>Não</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <label>Observações</label>
-                      <textarea rows="2" placeholder="Insira aqui suas observações"></textarea>
-                    </div>
-                    <div class="inline field required">
-                      <div class="ui checkbox">
-                        <input type="checkbox">
-                        <label>Trabalha Remotamente</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+        <div class="btn-collapse ui icon button hidden-mobile"><i class="icon chevron right small"></i></div>
       </div>
     </div>
     <div class="ch-sidebar" data-modal="notifications" tabindex="0">
@@ -288,7 +196,19 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/init.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/init.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlHYJLboGs7xpvK0it2w4S8SjqLMUvZWs&amp;callback=initMap" async defer></script>
+    <script type="text/javascript">
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -22.8048372, lng: -43.2458182},
+          scrollwheel: false,
+          zoom: 12,
+          mapTypeControl: false,
+        });
+      }
+    </script>
   </body>
 </html>

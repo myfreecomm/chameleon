@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
-    <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="assets/css/chameleon.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/semantic.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/chameleon.min.css">
   </head>
   <body>
-      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="assets/img/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
+      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="../assets/images/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
         <ul class="ch-menu">
           <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
           <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
           <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
-          <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
+          <li class="ch-menu-item active"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
             <div class="ch-dropdown">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
@@ -81,77 +80,163 @@
         </div>
       </header>
       <div class="ch-content">
-        <div class="ch-content-hgroup colored padded">
-          <div class="ch-detail-header">
-            <div class="info">
-              <div class="ch-avatar-container big"><img class="ch-avatar rounded" src="http://i.pravatar.cc/105?img=1"></div>
-              <div class="ui large header">Rachel Lilki
-                <div class="sub header">rachel@email.com</div>
-              </div>
-            </div>
-          </div>
-          <div class="ch-group-buttons">
-            <button class="ui negative button basic">Excluir</button><a class="ui positive button" href="employee-edit.html">Editar</a>
-          </div>
-        </div><br><br>
+        <div class="ch-content-hgroup">
+          <h2 class="ui medium header">Configurações</h2>
+        </div>
         <div class="ui stackable padded grid centered">
           <div class="row">
-            <div class="fourteen wide column">
-              <div class="ui segments">
-                <div class="ui attached segment ch-segment-header">
-                  <div class="ui title">Sobre o Colaborador</div>
-                </div>
-                <div class="ui attached segment">
-                  <div class="ui grid">
-                    <div class="four wide computer sixteen wide mobile column"><span>Nº de Registro</span>
-                      <p><strong>32133</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Cargo</span>
-                      <p><strong>Aux. Administrativo</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Salário</span>
-                      <p><strong>R$ 5.000,00</strong></p>
+            <div class="sixteen wide column">
+              <div class="ui top attached tabular menu"><a class="item active" data-tab="user">Usuário</a><a class="item" data-tab="plan">Assinatura</a></div>
+              <div class="ui bottom attached tab segment padded active" data-tab="user">
+                <form class="ui form">
+                  <div class="ui divided stackable grid">
+                    <div class="row">
+                      <div class="four wide computer six wide tablet column">
+                        <div class="content">
+                          <div class="ui basic padded segment">
+                            <div class="ch-avatar-upload vertical">
+                              <div class="ch-avatar-container big"><img class="ch-avatar rounded" src="http://via.placeholder.com/105x105"></div>
+                              <div class="info">
+                                <h3 class="ui header">Foto de perfil</h3>
+                                <p>Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff</p>
+                                <p>Limite de tamanho de arquivo: 10MB</p>
+                                <div class="ch-input-file">
+                                  <label class="ui tiny button primary" for="file">Adicionar foto</label>
+                                  <input type="file" id="file">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="eight wide computer ten wide tablet column">
+                        <div class="content">
+                          <div class="ui basic padded segment">
+                            <h3 class="ui header">Dados Pessoais</h3>
+                            <div class="ui divider hidden"></div>
+                            <div class="two fields">
+                              <div class="field required">
+                                <label for="">Nome</label>
+                                <input type="text" placeholder="Nome">
+                              </div>
+                              <div class="field required">
+                                <label for="">Apelido</label>
+                                <input type="text" placeholder="Apelido">
+                              </div>
+                            </div>
+                            <div class="two fields">
+                              <div class="field required">
+                                <label for="">E-mail</label>
+                                <input type="text" placeholder="E-mail">
+                              </div>
+                              <div class="field">
+                                <label for="">Data de Nascimento</label>
+                                <div class="ui left icon input">
+                                  <input type="text" placeholder="dd/mm/aaaa"><i class="calendar icon"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
-              <div class="ui segments">
-                <div class="ui attached segment ch-segment-header">
-                  <div class="ui title">Dados Pessoais</div>
-                </div>
-                <div class="ui attached segment">
-                  <div class="ui grid">
-                    <div class="four wide computer sixteen wide mobile column"><span>CPF</span>
-                      <p><strong>123.456.789-10</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Data de Nascimento</span>
-                      <p><strong>20/05/1985</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Nacionalidade</span>
-                      <p><strong>Brasileira</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Naturalidade</span>
-                      <p><strong>São Paulo, SP</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Sexo</span>
-                      <p><strong>Feminino</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Estado Civil</span>
-                      <p><strong>Casada</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Escolaridade</span>
-                      <p><strong>Superior Completo</strong></p>
-                    </div>
-                    <div class="four wide computer sixteen wide mobile column"><span>Endereço</span>
-                      <p><strong>Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ</strong></p>
-                    </div>
-                  </div>
+              <div class="ui bottom attached tab segment padded" data-tab="plan">
+                Assinatura
+                
+              </div>
+              <div class="ui segment basic right aligned">
+                <div class="actions">
+                  <div class="ui basic button close">Cancelar</div>
+                  <div class="ui submit positive button">Atualizar Informações</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="ch-sidebar" data-modal="filters" tabindex="0">
+      <div class="ch-overlay inside">
+        <div class="ch-sidebar-container">
+          <div class="ch-sidebar-header">Filtros<span class="btn-close"><i class="close icon"></i></span></div>
+          <div class="ch-sidebar-content">
+            <div class="ui segment basic padded">
+              <form class="ui form">
+                <div class="field">
+                  <label>Vencimento em</label>
+                  <div class="two fields">
+                    <div class="field ui calendar" id="rangestart">
+                      <div class="ui left icon input">
+                        <input type="text" placeholder="De"><i class="calendar icon"></i>
+                      </div>
+                    </div>
+                    <div class="field ui calendar" id="rangeend">
+                      <div class="ui left icon input">
+                        <input type="text" placeholder="Até"><i class="calendar icon"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui divider hidden"></div>
+                <div class="field">
+                  <label>Valor</label>
+                  <div class="two fields">
+                    <div class="field">
+                      <div class="ui left icon input">
+                        <input type="text" placeholder="De"><i class="dollar icon"></i>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui left icon input">
+                        <input type="text" placeholder="Até"><i class="dollar icon"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider-container">
+                    <div id="slider"></div>
+                  </div>
+                </div>
+                <div class="ui divider hidden"></div>
+                <div class="field">
+                  <label>Configuração de Cobrança</label>
+                  <select class="ui dropdown" name="">
+                    <option value="Myfinance Development - Boleto Bradesco 09">Myfinance Development - Boleto Bradesco 09</option>
+                    <option value="Myfinance DEVELOPMENT Cielo">Myfinance DEVELOPMENT Cielo</option>
+                  </select>
+                </div>
+                <div class="ui divider hidden"></div>
+                <div class="field">
+                  <label>Pagador</label>
+                  <select class="ui dropdown" name="">
+                    <option value="John Doe">John Doe</option>
+                    <option value="Doe Company">Doe Company</option>
+                  </select>
+                </div>
+                <div class="ui divider hidden"></div>
+                <div class="field">
+                  <label>Tipo de Cobrança</label>
+                  <select class="ui dropdown" name="">
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                  </select>
+                </div>
+                <div class="ui divider hidden"></div>
+                <div class="field">
+                  <label>Status da Cobrança</label>
+                  <select class="ui dropdown" name="" disabled>
+                    <option value="Escolha o tipo de cobrança">Escolha o tipo de cobrança</option>
+                    <option value="Option 2">Option 2</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-action">Filtrar</div>
     </div>
     <div class="ch-sidebar" data-modal="notifications" tabindex="0">
       <div class="ch-overlay">
@@ -221,13 +306,7 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/init.js"></script>
-    <script type="text/javascript">
-      $('.js-new-billet').on('click', function() {
-        $('.long.modal').modal('show');
-        $(this).removeClass('.active.selected');
-      });
-    </script>
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/init.js"></script>
   </body>
 </html>

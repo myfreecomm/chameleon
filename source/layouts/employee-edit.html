@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <css/>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Nexaas - Chameleon</title>
-    <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="assets/css/chameleon.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/semantic.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/calendar/calendar.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/plugins/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/css/chameleon.min.css">
   </head>
   <body>
-      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="assets/img/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
+      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="../assets/images/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
         <ul class="ch-menu">
           <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
           <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
           <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
           <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
-          <li class="ch-menu-item active"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
+          <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
             <div class="ch-dropdown">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
@@ -82,162 +81,106 @@
       </header>
       <div class="ch-content">
         <div class="ch-content-hgroup">
-          <h2 class="ui medium header">Configurações</h2>
+          <h2 class="ui medium header">Alterar Colaborador
+            <div class="sub header">Utilize o passa a passo para alterar as informações do colaborador</div>
+          </h2>
+          <ol class="ch-horizontal-wizard">
+            <li class="ch-step current">Informações Pessoais</li>
+            <li class="ch-step">Informações de Endereço</li>
+            <li class="ch-step">Foto de Perfil</li>
+            <li class="ch-step">
+              Final
+              
+            </li>
+          </ol>
         </div>
         <div class="ui stackable padded grid centered">
           <div class="row">
             <div class="sixteen wide column">
-              <div class="ui top attached tabular menu"><a class="item active" data-tab="user">Usuário</a><a class="item" data-tab="plan">Assinatura</a></div>
-              <div class="ui bottom attached tab segment padded active" data-tab="user">
-                <form class="ui form">
-                  <div class="ui divided stackable grid">
-                    <div class="row">
-                      <div class="four wide computer six wide tablet column">
-                        <div class="content">
-                          <div class="ui basic padded segment">
-                            <div class="ch-avatar-upload vertical">
-                              <div class="ch-avatar-container big"><img class="ch-avatar rounded" src="http://via.placeholder.com/105x105"></div>
-                              <div class="info">
-                                <h3 class="ui header">Foto de perfil</h3>
-                                <p>Extensões de arquivo aceitas: .jpeg, .png, .gif, .tiff</p>
-                                <p>Limite de tamanho de arquivo: 10MB</p>
-                                <div class="ch-input-file">
-                                  <label class="ui tiny button primary" for="file">Adicionar foto</label>
-                                  <input type="file" id="file">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="eight wide computer ten wide tablet column">
-                        <div class="content">
-                          <div class="ui basic padded segment">
-                            <h3 class="ui header">Dados Pessoais</h3>
-                            <div class="ui divider hidden"></div>
-                            <div class="two fields">
-                              <div class="field required">
-                                <label for="">Nome</label>
-                                <input type="text" placeholder="Nome">
-                              </div>
-                              <div class="field required">
-                                <label for="">Apelido</label>
-                                <input type="text" placeholder="Apelido">
-                              </div>
-                            </div>
-                            <div class="two fields">
-                              <div class="field required">
-                                <label for="">E-mail</label>
-                                <input type="text" placeholder="E-mail">
-                              </div>
-                              <div class="field">
-                                <label for="">Data de Nascimento</label>
-                                <div class="ui left icon input">
-                                  <input type="text" placeholder="dd/mm/aaaa"><i class="calendar icon"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="ui bottom attached tab segment padded" data-tab="plan">
-                Assinatura
-                
-              </div>
-              <div class="ui segment basic right aligned">
-                <div class="actions">
-                  <div class="ui basic button close">Cancelar</div>
-                  <div class="ui submit positive button">Atualizar Informações</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="ch-sidebar" data-modal="filters" tabindex="0">
-      <div class="ch-overlay inside">
-        <div class="ch-sidebar-container">
-          <div class="ch-sidebar-header">Filtros<span class="btn-close"><i class="close icon"></i></span></div>
-          <div class="ch-sidebar-content">
-            <div class="ui segment basic padded">
               <form class="ui form">
-                <div class="field">
-                  <label>Vencimento em</label>
-                  <div class="two fields">
-                    <div class="field ui calendar" id="rangestart">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="calendar icon"></i>
+                <div class="ui segments">
+                  <div class="ui attached segment ch-segment-header">
+                    <div class="ui title">Informações Pessoais</div>
+                  </div>
+                  <div class="ui attached segment padded">
+                    <div class="fields">
+                      <div class="eight wide field required">
+                        <label for="">Nome Completo</label>
+                        <input type="text" placeholder="Nome" value="Rachel Lilki">
+                      </div>
+                      <div class="field required">
+                        <label for="">Nº de Registro</label>
+                        <input type="text" value="32133">
                       </div>
                     </div>
-                    <div class="field ui calendar" id="rangeend">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="calendar icon"></i>
+                    <div class="four fields">
+                      <div class="field">
+                        <label for="">Data de Nascimento</label>
+                        <div class="ui left icon input">
+                          <input type="date" placeholder="dd/mm/aaaa" value="1985-05-20"><i class="calendar icon"></i>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label for="">Nacionalidade</label>
+                        <input type="text" placeholder="Nacionalidade" value="Brasileira">
+                      </div>
+                      <div class="field">
+                        <label for="">Naturalidade</label>
+                        <input type="text" placeholder="Naturalidade" value="São Paulo, SP">
+                      </div>
+                      <div class="field">
+                        <label for="">Sexo</label>
+                        <input type="text" placeholder="" value="Feminino">
+                      </div>
+                    </div>
+                    <div class="two fields">
+                      <div class="field">
+                        <label for="">Estado Civil</label>
+                        <select class="ui dropdown" name="">
+                          <option value="Opção 1">Opção 1</option>
+                          <option value="Opção 2">Opção 2</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <label>Escolaridade</label>
+                        <select class="ui dropdown" name="">
+                          <option value="Opção 1">Opção 1</option>
+                          <option value="Opção 2">Opção 2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="two fields">
+                      <div class="field">
+                        <label for="">Cargo</label>
+                        <input type="text" value="Aux. Administrativo">
+                      </div>
+                      <div class="field">
+                        <label for="">Salário</label>
+                        <div class="ui right labeled input">
+                          <input type="text" placeholder="0,00" value="5.000,00">
+                          <div class="ui dropdown label">
+                            <div class="text">BRL</div><i class="dropdown icon"></i>
+                            <div class="menu">
+                              <div class="item">BRL</div>
+                              <div class="item">EUR</div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Valor</label>
-                  <div class="two fields">
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="De"><i class="dollar icon"></i>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui left icon input">
-                        <input type="text" placeholder="Até"><i class="dollar icon"></i>
-                      </div>
-                    </div>
+                <div class="ch-buttons-container">
+                  <div class="cancel-container"><a class="ui button basic" href="employee-detail.html">Cancelar</a></div>
+                  <div class="submit-container">
+                    <input class="ui button grey" type="submit" value="Salvar"><a class="ui positive button" href="employee-edit-page2.html">Salvar e continuar</a>
                   </div>
-                  <div class="slider-container">
-                    <div id="slider"></div>
-                  </div>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Configuração de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Myfinance Development - Boleto Bradesco 09">Myfinance Development - Boleto Bradesco 09</option>
-                    <option value="Myfinance DEVELOPMENT Cielo">Myfinance DEVELOPMENT Cielo</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Pagador</label>
-                  <select class="ui dropdown" name="">
-                    <option value="John Doe">John Doe</option>
-                    <option value="Doe Company">Doe Company</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Tipo de Cobrança</label>
-                  <select class="ui dropdown" name="">
-                    <option value="Option 1">Option 1</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
-                </div>
-                <div class="ui divider hidden"></div>
-                <div class="field">
-                  <label>Status da Cobrança</label>
-                  <select class="ui dropdown" name="" disabled>
-                    <option value="Escolha o tipo de cobrança">Escolha o tipo de cobrança</option>
-                    <option value="Option 2">Option 2</option>
-                  </select>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="btn-action">Filtrar</div>
     </div>
     <div class="ch-sidebar" data-modal="notifications" tabindex="0">
       <div class="ch-overlay">
@@ -307,7 +250,13 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/init.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/init.js"></script>
+    <script type="text/javascript">
+      $('.js-new-billet').on('click', function() {
+        $('.long.modal').modal('show');
+        $(this).removeClass('.active.selected');
+      });
+    </script>
   </body>
 </html>
