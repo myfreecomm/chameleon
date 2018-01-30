@@ -34,7 +34,7 @@ gulp.task('templates', function buildHTML() {
   .pipe(pug({
     pretty: true,
   }))
-  .pipe(gulp.dest('./source/layouts'));
+  .pipe(gulp.dest('./source/views'));
 });
 
 gulp.task('babel', function() {
