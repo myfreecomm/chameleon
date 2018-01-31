@@ -5,6 +5,7 @@ var browserSync = require('browser-sync').create();
 var pug = require('gulp-pug');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var concatCss = require('gulp-concat-css');
 var babel = require("gulp-babel");
 var clean = require("gulp-clean");
 
@@ -35,7 +36,9 @@ gulp.task('css', function(){
 
 gulp.task('styles', ['css'], function() {
   return gulp.src([...cssExternals, `${stylesheetsPath}/tmp/bundle.css`])
-    .pipe(concat('main.css'))
+    .pipe(concatCss('main.css', {
+      rebaseUrls: false
+    }))
     .pipe(gulp.dest(stylesheetsPath))
     .pipe(browserSync.stream());
 });
