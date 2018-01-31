@@ -14,7 +14,7 @@ let libs = [
 ]
 
 const compile = function() {
-  return gulp.src(`${scriptsPath}/chameleon/**/*.js`)
+  return gulp.src([`${scriptsPath}/chameleon/**/*.js`, `!${scriptsPath}/chameleon/tmp/**`])
     .pipe(babel())
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest(`${scriptsPath}/chameleon/tmp/`))
