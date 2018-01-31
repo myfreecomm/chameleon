@@ -17,7 +17,7 @@ const watch = function() {
   gulp.watch(`${templatesPath}/**/*.pug`, ['templates']);
   gulp.watch(`${stylesPath}/scss/**/*.scss`, ['styles']);
   gulp.watch(`${scriptsPath}/**/*.js`, ['scripts']);
-  gulp.watch("source/views/**/*.html").on('change', browserSync.reload);
+  gulp.watch("source/assets/**/*").on('change', browserSync.reload);
 }
 
 module.exports = { watch }
