@@ -2,7 +2,9 @@ let gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
     babel = require("gulp-babel"),
-    clean = require("gulp-clean");
+    clean = require("gulp-clean"),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename');
 
 let scriptsPath = "source/assets/javascripts";
 
@@ -27,9 +29,18 @@ const bundle = function() {
     .pipe(browserSync.stream())
 }
 
+const deploy = function() {
+  return gulp.src([...libs, `${scriptsPath}/chameleon/tmp/bundle.js`])
+    .pipe(concat('chameleon.js'))
+    .pipe(gulp.dest('dist/'))
+    .pipe(uglify())
+    .pipe(rename('chameleon.min.js'))
+    .pipe(gulp.dest('dist/'))
+}
+
 const cleanFiles = function () {
   return gulp.src(`${scriptsPath}/chameleon/tmp`, {read: false})
     .pipe(clean());
 }
 
-module.exports = { compile, bundle, cleanFiles };
+module.exports = { compile, bundle, cleanFiles, deploy };
