@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Nexaas - Chameleon</title>
+    <link rel="stylesheet" href="../assets/stylesheets/main.css">
+  </head>
+  <body>
+      <nav class="ch-nav"><a class="ch-logo" href="dashboard.html"><img src="../assets/images/chameleon_logo_white.png"><span class="text">Chameleon</span></a>
+        <ul class="ch-menu">
+          <li class="ch-menu-item"><a href="dashboard.html"><i class="dashboard large icon"></i><span class="ch-menu-label">Painel</span></a></li>
+          <li class="ch-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-menu-label">Formulários</span></a></li>
+          <li class="ch-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-menu-label">Tabelas</span></a></li>
+          <li class="ch-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-menu-label">Wizard</span></a></li>
+          <li class="ch-menu-item"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-menu-label">Páginas</span></a>
+            <div class="ch-dropdown">
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
+                <li class="ch-dropdown-menu-item"><a href="reports.html">Relatórios</a></li>
+                <li class="ch-dropdown-menu-item"><a href="filters.html">Filtros</a></li>
+                <li class="ch-dropdown-menu-item"><a href="detail.html">Detalhe</a></li>
+                <li class="ch-dropdown-menu-item"><a href="settings.html">Configurações</a></li>
+                <li class="ch-dropdown-menu-item"><a href="map.html">Mapa</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="ch-menu-item btn-show-menu"><a href="#"><i class="ellipsis large horizontal icon"></i></a></li>
+        </ul>
+        <div class="ch-menu--helpers">
+          <div class="ch-menu-item mobile-only"><a class="dropdown-hover" href="#"><i class="university large icon"></i><span class="ch-menu-label">Trocar Conta</span></a>
+            <div class="ch-dropdown">
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Conta 1</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Conta 2</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Conta 3</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ch-menu-item"><a href="#"><i class="large help circle outline icon"></i><span class="ch-menu-label">Ajuda</span></a></div>
+        </div>
+        <div class="btn-close-menu"><i class="large close icon"></i></div>
+      </nav>
+    <div class="main-content">
+      <header class="ch-header">
+        <div class="ch-breadcrumb">
+          <div class="ch-breadcrumb-section"><a class="dropdown-toggle" href="#">Nome da organização</a>
+            <div class="ch-dropdown bottom left" tabindex="-1">
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Organização 1</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Organização 2</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Organização 3</a></li>
+              </ul>
+            </div>
+          </div><i class="right chevron icon divider"></i>
+          <div class="ch-breadcrumb-section active"><a class="dropdown-toggle" href="#">Painel Principal</a>
+            <div class="ch-dropdown bottom left" tabindex="-1">
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Painel de exemplo</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Painel Modelo 1</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Painel Modelo 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ch-header-nav"><a class="ch-header-nav-buttons btn-search"><i class="search large icon"></i></a><a class="ch-header-nav-buttons btn-modal" href="#" data-modal="notifications"><i class="ch-notification-label bell outline large icon"></i></a>
+          <div class="ch-dropdown-container computer-only"><a class="ch-header-nav-buttons dropdown-toggle" href="#"><span class="avatar">CH</span></a>
+            <div class="ch-dropdown bottom right" tabindex="-1"><span class="ch-dropdown-header">Contas</span>
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Conta Nexaas 1</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Conta Nexaas 2</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Conta Nexaas 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="ch-content">
+        <div class="ui stackable doubling padded grid">
+          <div class="row">
+            <div class="four wide computer eight wide tablet column">
+              <div class="ui segment">
+                <div class="ui equal width grid ch-metric">
+                  <div class="middle aligned column">
+                    <div class="ch-metric-label">Total de colaboradores</div>
+                  </div>
+                  <div class="column right aligned">
+                    <div class="ch-metric-value blue"><i class="icon small up arrow"></i><span>800</span></div><span class="ch-metric-date">Jan  - Ago 2017</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="four wide computer eight wide tablet column">
+              <div class="ui segment">
+                <div class="ui equal width grid ch-metric">
+                  <div class="middle aligned column">
+                    <div class="ch-metric-label">Total de grupos</div>
+                  </div>
+                  <div class="column right aligned">
+                    <div class="ch-metric-value blue"><i class="icon small up arrow"></i><span>10</span></div><span class="ch-metric-date">Jan  - Ago 2017</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="four wide computer eight wide tablet column">
+              <div class="ui segment">
+                <div class="ui equal width grid ch-metric">
+                  <div class="middle aligned column">
+                    <div class="ch-metric-label">Tarefas pendentes</div>
+                  </div>
+                  <div class="column right aligned">
+                    <div class="ch-metric-value blue"><i class="icon small up arrow"></i><span>27</span></div><span class="ch-metric-date">Jan  - Ago 2017</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="four wide computer eight wide tablet column">
+              <div class="ui segment">
+                <div class="ui equal width grid ch-metric">
+                  <div class="middle aligned column">
+                    <div class="ch-metric-label">Eventos</div>
+                  </div>
+                  <div class="column right aligned">
+                    <div class="ch-metric-value red"><i class="icon small up arrow"></i><span>14</span></div><span class="ch-metric-date">Jan  - Ago 2017</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row equal width">
+            <div class="column">
+              <div class="ui segments">
+                <div class="ui attached segment middle aligned ch-segment-header"><span class="ui title">Colaboradores</span>
+                  <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
+                    <div class="menu fixed-position">
+                      <div class="item">Option 1</div>
+                      <div class="item">Option 2</div>
+                      <div class="item">Option 3</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui attached segment">
+                  <div class="ui unstackable divided items ch-list">
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=1"/>
+                      <div class="middle aligned content"><span>Rachel</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=2"/>
+                      <div class="middle aligned content"><span>Lindsay</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=3"/>
+                      <div class="middle aligned content"><span>Matthew</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=4"/>
+                      <div class="middle aligned content"><span>Jenny Hess</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=5"/>
+                      <div class="middle aligned content"><span>Veronika Ossi</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui segments">
+                <div class="ui attached segment middle aligned ch-segment-header"><span class="ui title">Grupos</span>
+                  <div class="ui icon dropdown actions"><i class="icon ellipsis vertical"></i>
+                    <div class="menu fixed-position">
+                      <div class="item">Option 1</div>
+                      <div class="item">Option 2</div>
+                      <div class="item">Option 3</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui attached segment">
+                  <div class="ui unstackable divided items ch-list">
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=6"/>
+                      <div class="middle aligned content"><span>Marketing</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=7"/>
+                      <div class="middle aligned content"><span>Comercial</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=8"/>
+                      <div class="middle aligned content"><span>Desenvolvimento</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=9"/>
+                      <div class="middle aligned content"><span>Contabilidade</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=10"/>
+                      <div class="middle aligned content"><span>Suporte</span><a class="right floated" href="#"><i class="icon pencil"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="ten wide column">
+              <div class="ui segments">
+                <div class="ui attached segment middle aligned ch-segment-header"><span class="ui title">Gráficos em linha</span></div>
+                <div class="ui attached segment">
+                  <div id="users-chart"></div>
+                </div>
+              </div>
+            </div>
+            <div class="six wide column">
+              <div class="ui segments">
+                <div class="ui attached segment middle aligned ch-segment-header"><span class="ui title">Gráficos em pizza</span></div>
+                <div class="ui attached segment">
+                  <div id="pie-chart"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="sixteen wide column">
+              <div class="ui segments">
+                <div class="ui attached segment middle aligned ch-segment-header"><span class="ui title">Lista de colaboradores</span></div>
+                <div class="ui attached segment">
+                  <table class="ui very basic table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Date Joined</th>
+                        <th>E-mail</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-info="Nome">John Lilki</td>
+                        <td data-info="Date Joined">September 14, 2013</td>
+                        <td data-info="E-mail">jhlilk22@yahoo.com</td>
+                      </tr>
+                      <tr>
+                        <td data-info="Nome">Jamie Harington</td>
+                        <td data-info="Date Joined">January 11, 2014</td>
+                        <td data-info="E-mail">jamieharingonton@yahoo.com</td>
+                      </tr>
+                      <tr>
+                        <td data-info="Nome">Jill Lewis</td>
+                        <td data-info="Date Joined">May 11, 2014</td>
+                        <td data-info="E-mail">jilsewris22@yahoo.com</td>
+                      </tr>
+                      <tr>
+                        <td data-info="Nome">Veronika Ossi</td>
+                        <td data-info="Date Joined">September 14, 2013</td>
+                        <td data-info="E-mail">verossi@yahoo.com</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-sidebar" data-modal="notifications" tabindex="0">
+      <div class="ch-overlay">
+        <div class="ch-sidebar-container">
+          <div class="ch-sidebar-header">Notificações<span class="btn-close"><i class="close icon"></i></span></div>
+          <div class="ch-sidebar-content">
+            <div class="ui items">
+              <div class="item ch-sidebar-message unread"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+                <div class="content"><a class="header">Lorem Ipsum</a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ullam iure, exercitationem omnis magni, repellat quos tempore hic facere pariatur?</p>
+                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                </div>
+              </div>
+              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+                <div class="content"><a class="header">Lorem Ipsum</a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                </div>
+              </div>
+              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+                <div class="content"><a class="header">Lorem Ipsum</a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                </div>
+              </div>
+              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+                <div class="content"><a class="header">Lorem Ipsum</a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                </div>
+              </div>
+              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+                <div class="content"><a class="header">Lorem Ipsum</a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                </div>
+              </div>
+              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+                <div class="content"><a class="header">Lorem Ipsum</a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-action">Ver tudo</div>
+    </div>
+    <div class="ch-search" tabindex="0">
+      <div class="ch-overlay">
+        <div class="ch-search-content">
+          <div class="ch-search-input-group">
+            <div class="ch-search-context computer-only">Pesquisando em Cobranças<span class="btn-remove-context"><i class="close small icon"></i></span></div>
+            <div class="ch-search-form">
+              <input class="ch-search-form-input" type="text" placeholder="Ex Nexaas"><a class="ch-search-form-icon computer-only" href="#"><i class="search large icon"></i></a><a class="ch-search-form-icon btn-close mobile-only" href="#"><i class="close large icon"></i></a>
+            </div>
+          </div>
+          <div class="ch-search-results"><span class="ch-search-results-count">5 Resultados encontrados</span><a class="ch-search-results-item" href="#">V7 Digital Photo Printing</a><a class="ch-search-results-item" href="#">Download Free Song For Ipod</a><a class="ch-search-results-item" href="#">How Plasma Tvs And Lcd Tvs Differ</a><a class="ch-search-results-item" href="#">Going Wireless With Your Headphones</a><a class="ch-search-results-item" href="#">Microsoft Patch Management For Home Users</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/init.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript">
+      Highcharts.setOptions({
+        colors: ["#2980b9", "#d35400", "#2ecc71", "#f1c40f", "#2c3e50", "#7f8c8d"],
+        credits: {
+          enabled: false
+        },
+        chart: {
+          type: 'line',
+          animation: false,
+          style: {
+            fontFamily: 'Lato, sans-serif'
+          }
+        },
+        title: {
+          text: null,
+        },
+        tooltip: {
+          shared: true,
+          crosshairs: true,
+        },
+        plotOptions: {
+          series: {
+            title: null,
+            animation: false,
+            fillOpacity: 0.1,
+          },
+        },
+        yAxis: {
+          allowDecimals: false,
+          title: null
+        },
+      });
+      
+      Highcharts.chart('users-chart', {
+        title: {
+          text: null
+        },
+      
+        subtitle: {
+          text: null
+        },
+      
+        yAxis: {
+          title: {
+            text: null
+          }
+        },
+      
+        plotOptions: {
+          series: {
+            pointStart: 2010
+          }
+        },
+      
+        series: [{
+          name: 'Installation',
+          data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+        }, {
+          name: 'Manufacturing',
+          data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+        }, {
+          name: 'Sales & Distribution',
+          data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+        }, {
+          name: 'Other',
+          data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+        }]
+      });
+      
+      Highcharts.chart('pie-chart', {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+        },
+        title: {
+          text: null
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+          }
+        },
+        series: [{
+          name: 'Brands',
+          colorByPoint: true,
+          data: [{
+              name: 'Microsoft Internet Explorer',
+              y: 56.33
+          }, {
+              name: 'Chrome',
+              y: 24.03,
+          }, {
+              name: 'Firefox',
+              y: 10.38
+          }, {
+              name: 'Safari',
+              y: 4.77
+          }, {
+              name: 'Opera',
+              y: 0.91
+          }, {
+              name: 'Proprietary or Undetectable',
+              y: 0.2
+          }],
+        }]
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+mixin nav(activeUrl)
+  nav.ch-nav
+
+    a.ch-logo(href="dashboard.html")
+      img(src="../assets/images/chameleon_logo_white.png")
+      span.text Chameleon
+
+    ul.ch-menu
+      -
+        var currentUrl = activeUrl
+        var menuItems = [
+          { name: "Painel", icon: "dashboard", href: "dashboard.html" },
+          { name: "Formulários", icon: "clipboard", href: "form.html" },
+          { name: "Tabelas", icon: "table", href: "table.html" },
+          { name: "Wizard", icon: "wizard", href: "wizard.html" },
+        ]
+
+      each option in menuItems
+        li.ch-menu-item(class={active: currentUrl === option.href})
+          a(href=option.href)
+            i(class= option.icon + " large icon")
+            span(class="ch-menu-label")= option.name
+
+      -
+        var pages = [
+          { name: "Colaboradores", href: "employees.html" },
+          { name: "Relatórios", href: "reports.html" },
+          { name: "Filtros", href: "filters.html" },
+          { name: "Detalhe", href: "detail.html" },
+          { name: "Configurações", href: "settings.html" },
+          { name: "Mapa", href: "map.html" },
+        ]
+
+      li.ch-menu-item(class={active: currentUrl === 'pages.html'})
+        a.dropdown-hover(href="dashboard.html")
+          i.puzzle.large.icon
+          span.ch-menu-label Páginas
+        .ch-dropdown
+          ul.ch-dropdown-menu
+            each page in pages
+              li.ch-dropdown-menu-item
+                a(href=page.href)=page.name
+
+      li.ch-menu-item.btn-show-menu
+        a(href="#")
+          i.ellipsis.large.horizontal.icon
+
+    .ch-menu--helpers
+      .ch-menu-item.mobile-only
+        a.dropdown-hover(href="#")
+          i.university.large.icon
+          span.ch-menu-label Trocar Conta
+
+        .ch-dropdown
+          ul.ch-dropdown-menu
+            each account in ["Conta 1", "Conta 2", "Conta 3"]
+              li.ch-dropdown-menu-item
+                a(href="#")= account
+
+      .ch-menu-item
+        a(href="#")
+          i.large.help.circle.outline.icon
+          span.ch-menu-label Ajuda
+
+    .btn-close-menu
+      i.large.close.icon

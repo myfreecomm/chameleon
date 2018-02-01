@@ -1,38 +1,28 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var minifyCSS = require('gulp-csso');
-var browserSync = require('browser-sync').create();
-var pug = require('gulp-pug');
-var rename = require('gulp-rename');
+let gulp = require('gulp');
 
-gulp.task('css', function(){
-  return gulp.src('app/assets/scss/style.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(minifyCSS())
-    .pipe(rename('chameleon.min.css'))
-    .pipe(gulp.dest('app/assets/css'))
-    .pipe(browserSync.stream());
-});
+let styles = require('./tasks/styles'),
+    scripts = require('./tasks/scripts'),
+    templates = require('./tasks/templates'),
+    browserSync = require('./tasks/watch');
 
-gulp.task('views', function buildHTML() {
-  return gulp.src('app/assets/pug/*.pug')
-  .pipe(pug({
-    pretty: true,
-  }))
-  .pipe(gulp.dest('./app'));
-});
+gulp.task('css', styles.bundle);
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['views', 'css'], function() {
-  browserSync.init({
-    server: "./app",
-    notify: false
-  });
+gulp.task('styles', ['css'], styles.build);
 
-  gulp.watch("app/assets/pug/**/*.pug", ['views']);
-  gulp.watch("app/assets/scss/**/*.scss", ['css']);
-  gulp.watch("app/*.html").on('change', browserSync.reload);
-  gulp.watch("app/assets/**/*.js").on('change', browserSync.reload);
-});
+gulp.task('babel', scripts.compile)
+
+gulp.task('scripts', ['babel'], scripts.bundle);
+
+gulp.task('cleanJS', scripts.cleanFiles);
+
+gulp.task('templates', templates.build);
+
+gulp.task('deployJS', ['babel'], scripts.deploy);
+
+gulp.task('deployCSS', ['css'], styles.deploy);
+
+gulp.task('serve', ['templates', 'styles', 'scripts'], browserSync.watch);
 
 gulp.task('default', ['serve']);
+
+gulp.task('deploy', ['deployJS', 'deployCSS']);

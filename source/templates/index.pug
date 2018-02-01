@@ -1,0 +1,33 @@
+doctype html
+html
+  include includes/head.pug
+
+  body
+    .ch-login-container
+      .ch-login-content
+        .ch-login-header
+          img.logo-product(src="../assets/images/chameleon_logo.png")
+          img.logo-nexaas(src="../assets/images/nexaas_logo.png")
+          span.text Chameleon
+
+        .ch-login-form
+          form.ui.form(action="views/dashboard.html")
+            .ui.header.medium Acesse com seu Nexaas ID
+            .field
+              input(type="text" placeholder="E-mail")
+            .field
+              input(type="password" placeholder="Senha")
+            .field
+              .ui.checkbox
+                input(type="checkbox")
+                label Eu utilizo a verificação em duas etapas
+            .field
+              .ui.checkbox
+                input(type="checkbox")
+                label Mantenha-me conectado
+
+            .ui.divider.hidden
+            input.ui.fluid.button(type="submit" value="Entrar")
+
+        .ch-login-footer
+          a(href="#") Esqueci minha senha
