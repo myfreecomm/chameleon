@@ -29,4 +29,15 @@ const build = function() {
     .pipe(browserSync.stream());
 }
 
-module.exports = { bundle, build };
+const deploy = function() {
+  return gulp.src([...cssExternals, `${stylesPath}/tmp/bundle.css`])
+    .pipe(concatCss('chameleon.css', {
+      rebaseUrls: false
+    }))
+    .pipe(gulp.dest('dist/stylesheets'))
+    .pipe(minifyCSS())
+    .pipe(rename('chameleon.min.css'))
+    .pipe(gulp.dest('dist/stylesheets'))
+}
+
+module.exports = { bundle, build, deploy };
