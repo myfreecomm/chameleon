@@ -26,5 +26,4 @@ node_modules
 yarn.lock
 
 #Ignore the temporary directory
-/source/assets/javascripts/chameleon/tmp
-/source/assets/stylesheets/tmp
+tmp

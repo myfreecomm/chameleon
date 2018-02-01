@@ -32,10 +32,10 @@ const bundle = function() {
 const deploy = function() {
   return gulp.src([...libs, `${scriptsPath}/chameleon/tmp/bundle.js`])
     .pipe(concat('chameleon.js'))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/javascripts'))
     .pipe(uglify())
     .pipe(rename('chameleon.min.js'))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/javascripts'))
 }
 
 const cleanFiles = function () {

@@ -17,12 +17,12 @@ gulp.task('cleanJS', scripts.cleanFiles);
 
 gulp.task('templates', templates.build);
 
-gulp.task('deployJS', scripts.deploy);
+gulp.task('deployJS', ['babel'], scripts.deploy);
 
-gulp.task('deployCSS', styles.deploy);
+gulp.task('deployCSS', ['css'], styles.deploy);
 
 gulp.task('serve', ['templates', 'styles', 'scripts'], browserSync.watch);
 
 gulp.task('default', ['serve']);
 
-gulp.task('deploy', ['deployJS']);
+gulp.task('deploy', ['deployJS', 'deployCSS']);
