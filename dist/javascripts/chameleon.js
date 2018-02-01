@@ -3742,7 +3742,7 @@ if (window.Chameleon.Components === undefined) {
 }
 
 Chameleon.init = function () {
-  var chameleonComponents = Object.values(Chameleon.Components);
+  var components = Object.values(Chameleon.Components);
 
   components.forEach(function (component) {
     return component.init();
