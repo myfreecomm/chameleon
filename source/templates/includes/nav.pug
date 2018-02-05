@@ -31,11 +31,11 @@ mixin nav(activeUrl)
           { name: "Mapa", href: "map.html" },
         ]
 
-      li.ch-nav-menu-item(class={active: currentUrl === 'pages.html'})
-        a.dropdown-hover(href="dashboard.html")
+      li.ch-nav-menu-item.ch-dropdown(class={active: currentUrl === 'pages.html'})
+        a.ch-dropdown-hover(href="dashboard.html")
           i.puzzle.large.icon
           span.ch-nav-menu-item-label Páginas
-        .ch-dropdown
+        .ch-dropdown-content
           ul.ch-dropdown-menu
             each page in pages
               li.ch-dropdown-menu-item
@@ -46,12 +46,12 @@ mixin nav(activeUrl)
           i.ellipsis.large.horizontal.icon
 
     .ch-nav-menu--secondary
-      .ch-nav-menu-item.mobile-only
-        a.dropdown-hover(href="#")
+      .ch-nav-menu-item.mobile-only.ch-dropdown
+        a.ch-dropdown-hover(href="#")
           i.university.large.icon
           span.ch-nav-menu-item-label Trocar Conta
 
-        .ch-dropdown
+        .ch-dropdown-content
           ul.ch-dropdown-menu
             each account in ["Conta 1", "Conta 2", "Conta 3"]
               li.ch-dropdown-menu-item

@@ -1,6 +1,6 @@
 Chameleon.Components.Dropdown = (function() {
   let $nav               = $('.ch-nav');
-  let $dropdownContainer = $('.ch-dropdown');
+  let $dropdownContainer = $('.ch-dropdown-content');
 
   const open = function(e) {
     e.preventDefault();
@@ -34,7 +34,7 @@ Chameleon.Components.Dropdown = (function() {
   }
 
   const bindFunctions = function() {
-    $(document).on('click', '.dropdown-toggle, .dropdown-hover', open);
+    $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);
 
     $(document).on('mouseup', function(e) { close(e); });
   };

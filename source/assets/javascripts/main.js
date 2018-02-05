@@ -3756,7 +3756,7 @@ $(document).ready(function () {
 
 Chameleon.Components.Dropdown = function () {
   var $nav = $('.ch-nav');
-  var $dropdownContainer = $('.ch-dropdown');
+  var $dropdownContainer = $('.ch-dropdown-content');
 
   var open = function open(e) {
     e.preventDefault();
@@ -3787,7 +3787,7 @@ Chameleon.Components.Dropdown = function () {
   };
 
   var bindFunctions = function bindFunctions() {
-    $(document).on('click', '.dropdown-toggle, .dropdown-hover', open);
+    $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);
 
     $(document).on('mouseup', function (e) {
       close(e);
@@ -3806,7 +3806,7 @@ Chameleon.Components.Dropdown = function () {
 
 Chameleon.Components.Menu = function () {
   var $navMenuElements = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
-  var $navDropdown = $('.ch-nav .ch-dropdown');
+  var $navDropdown = $('.ch-nav .ch-dropdown-content');
 
   var open = function open(e) {
     e.preventDefault();

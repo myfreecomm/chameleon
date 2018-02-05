@@ -45,6 +45,10 @@
   color: inherit;
   background-color: $mainColorLight;
 
+  &:hover {
+    color: inherit;
+  }
+
   .text {
     font-size: 12px;
   }
@@ -98,6 +102,10 @@
       display: block;
       padding: 10px 10px 0;
       text-align: center;
+    }
+
+   .icon {
+      margin: 0;
     }
 
     &-label {
@@ -211,7 +219,7 @@
 
   @media screen and (min-width: 769px) {
     &-item:hover {
-      > .ch-dropdown {
+      > .ch-dropdown-content {
         display: block;
         -webkit-animation: fadeIn 0.5s;
         animation: fadeIn 0.5s;

@@ -1,6 +1,6 @@
 Chameleon.Components.Menu = (function() {
   let $navMenuElements   = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
-  let $navDropdown       = $('.ch-nav .ch-dropdown');
+  let $navDropdown       = $('.ch-nav .ch-dropdown-content');
 
   const open = function(e) {
     e.preventDefault();
