@@ -33479,7 +33479,6 @@ a {
 
 .ch-nav a {
   text-decoration: none;
-  color: inherit;
 }
 
 .ch-nav ol,
@@ -33510,6 +33509,7 @@ a {
   flex-direction: column;
   height: 65px;
   padding: 10px;
+  color: inherit;
   background-color: #00c8e9;
 }
 
@@ -33527,6 +33527,10 @@ a {
   position: relative;
   opacity: 0.7;
   cursor: pointer;
+}
+
+.ch-nav-menu-item > a {
+  color: inherit;
 }
 
 .ch-nav-menu-item:after {
