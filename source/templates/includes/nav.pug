@@ -19,7 +19,7 @@ mixin nav(activeUrl)
         li.ch-nav-menu-item(class={active: currentUrl === option.href})
           a(href=option.href)
             i(class= option.icon + " large icon")
-            span(class="ch-nav-menu-label")= option.name
+            span(class="ch-nav-menu-item-label")= option.name
 
       -
         var pages = [
@@ -34,14 +34,14 @@ mixin nav(activeUrl)
       li.ch-nav-menu-item(class={active: currentUrl === 'pages.html'})
         a.dropdown-hover(href="dashboard.html")
           i.puzzle.large.icon
-          span.ch-nav-menu-label Páginas
+          span.ch-nav-menu-item-label Páginas
         .ch-dropdown
           ul.ch-dropdown-menu
             each page in pages
               li.ch-dropdown-menu-item
                 a(href=page.href)=page.name
 
-      li.ch-nav-menu-item.btn-show-menu
+      li.ch-nav-menu-item.show-menu
         a(href="#")
           i.ellipsis.large.horizontal.icon
 
@@ -49,7 +49,7 @@ mixin nav(activeUrl)
       .ch-nav-menu-item.mobile-only
         a.dropdown-hover(href="#")
           i.university.large.icon
-          span.ch-nav-menu-label Trocar Conta
+          span.ch-nav-menu-item-label Trocar Conta
 
         .ch-dropdown
           ul.ch-dropdown-menu
@@ -60,7 +60,7 @@ mixin nav(activeUrl)
       .ch-nav-menu-item
         a(href="#")
           i.large.help.circle.outline.icon
-          span.ch-nav-menu-label Ajuda
+          span.ch-nav-menu-item-label Ajuda
 
-    .btn-close-menu
+    .close-menu
       i.large.close.icon

@@ -7,12 +7,13 @@
   display: flex;
   flex-direction: column;
   background-color: $mainColor;
+  color: #fff;
   z-index:1;
 
   a {
     text-decoration: none;
+    color: inherit;
   }
-
 
   ol, li {
     list-style: none;
@@ -30,7 +31,7 @@
   }
 
   &.open {
-    .btn-close-menu {
+    .close-menu {
       display: block;
     }
   }
@@ -42,16 +43,7 @@
   flex-direction: column;
   height: 65px;
   padding: 10px;
-  color: #fff;
   background-color: $mainColorLight;
-
-  &:hover, &:active {
-    color: #fff;
-  }
-
-  img {
-    margin: auto;
-  }
 
   .text {
     font-size: 12px;
@@ -63,18 +55,11 @@
 }
 
 .ch-nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 
   &-item {
     position: relative;
     opacity: 0.7;
     cursor: pointer;
-
-    > a {
-      color: #fff,
-    }
 
     &:after {
       content: "";
@@ -100,7 +85,6 @@
     }
 
     &:last-child {
-
       &:after {
         content: none;
       }
@@ -111,16 +95,16 @@
       padding: 10px 10px 0;
       text-align: center;
     }
-  }
 
-  &-label {
-    display: block;
-    margin-top: 5px;
-    font-size: 9px;
-    line-height: 11px;
-    text-transform: uppercase;
-    word-break: break-word;
-    hyphens: auto;
+    &-label {
+      display: block;
+      margin-top: 5px;
+      font-size: 9px;
+      line-height: 11px;
+      text-transform: uppercase;
+      word-break: break-word;
+      hyphens: auto;
+    }
   }
 
   &--secondary {
@@ -130,7 +114,7 @@
     }
   }
 
-  .btn-show-menu {
+  .show-menu {
     display: none;
   }
 
@@ -148,7 +132,6 @@
     }
 
     &-item {
-
       > a {
         padding: 5px 10px;
       }
@@ -156,13 +139,13 @@
       &:last-child > a {
         padding: 5px;
       }
-    }
 
-    &-label {
-      max-width: 65px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      &-label {
+        max-width: 65px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
 
     &:not(.open) {
@@ -180,7 +163,7 @@
       }
     }
 
-    .btn-show-menu {
+    .show-menu {
       display: block;
     }
 
@@ -196,14 +179,14 @@
           padding: 10px 15px;
         }
 
-        &.btn-show-menu {
+        &.show-menu {
           display: none;
         }
-      }
 
-      .ch-nav-menu-label {
-        max-width: 100%;
-        font-size: 10px;
+        &-label {
+          max-width: 100%;
+          font-size: 10px;
+        }
       }
     }
 
@@ -222,7 +205,7 @@
     }
   }
 
-  @media screen and (min-width: 769px ) {
+  @media screen and (min-width: 769px) {
     &-item:hover {
       > .ch-dropdown {
         display: block;
@@ -233,7 +216,7 @@
   }
 }
 
-.btn-close-menu {
+.close-menu {
   display: none;
   padding: 10px 15px;
   width: 100%;
