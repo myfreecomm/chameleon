@@ -1,5 +1,5 @@
 Chameleon.Components.Modal = (function() {
-  let $modal = $('.ch-sidebar');
+  let $modal = $('.ch-dialog');
 
   const open = function(e) {
     e.preventDefault();
@@ -7,23 +7,23 @@ Chameleon.Components.Modal = (function() {
         $targetModal = $(`[data-modal=${modalType}`);
 
     $targetModal.show(300);
-    $targetModal.find('.ch-sidebar-container, .btn-action').addClass('active');
+    $targetModal.find('.ch-dialog-container, .action-dialog').addClass('active');
     $targetModal.focus();
   }
 
   const close = function() {
-    $modal.find('.ch-sidebar-container, .btn-action').removeClass('active');
+    $modal.find('.ch-dialog-container, .action-dialog').removeClass('active');
     $modal.hide(300);
   }
 
   const bindFunctions = function() {
     $(document).on('click', '.btn-modal', open);
 
-    $(document).on('click', '.ch-overlay, .btn-close', close);
+    $(document).on('click', '.ch-overlay, .close-dialog', close);
 
     $modal.on('keydown', function(e) { Chameleon.Utils.keyboardClose(e, close); });
 
-    $(document).on('click', '.ch-sidebar-container', function(e) { e.stopPropagation(); });
+    $(document).on('click', '.ch-dialog-container', function(e) { e.stopPropagation(); });
   }
 
   const init = function() {

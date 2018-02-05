@@ -1,6 +1,10 @@
 .ch-dropdown {
   position: relative;
 
+  ul, li {
+    list-style: none;
+  }
+
   &-content {
     display: none;
     position: absolute;
@@ -50,10 +54,6 @@
         left: 0;
       }
     }
-  }
-
-  ul, li {
-    list-style: none;
   }
 
   &-header, &-menu-item a {

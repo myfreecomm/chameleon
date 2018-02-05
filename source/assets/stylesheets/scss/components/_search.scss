@@ -60,6 +60,10 @@
     &-icon {
       color: $fontColor;
       order: 1;
+
+      &:hover, &:active {
+        color: $fontColor;
+      }
     }
 
     &:after {
