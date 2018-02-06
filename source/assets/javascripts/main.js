@@ -3961,7 +3961,7 @@ Chameleon.Components.Table = function () {
   };
 
   var toggleSidebarCollapse = function toggleSidebarCollapse() {
-    var $container = $(this).prev('.ch-timeline-container'),
+    var $container = $(this).prev('.ch-sidebar'),
         $collapseButton = $(this);
 
     $collapseButton.find('.icon').switchClass('right', 'left');
@@ -3974,7 +3974,7 @@ Chameleon.Components.Table = function () {
 
     $(document).on('click', '.row-link', clickableRow);
 
-    $(document).on('click', '.btn-collapse', toggleSidebarCollapse);
+    $(document).on('click', '[data-sidebar="toggle"]', toggleSidebarCollapse);
   };
 
   var init = function init() {

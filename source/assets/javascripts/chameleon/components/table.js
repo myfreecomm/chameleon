@@ -16,7 +16,7 @@ Chameleon.Components.Table = (function(){
   }
 
   const toggleSidebarCollapse = function() {
-    let $container = $(this).prev('.ch-timeline-container'),
+    let $container = $(this).prev('.ch-sidebar'),
         $collapseButton = $(this);
 
     $collapseButton.find('.icon').switchClass('right', 'left');
@@ -29,7 +29,7 @@ Chameleon.Components.Table = (function(){
 
     $(document).on('click', '.row-link', clickableRow);
 
-    $(document).on('click', '.btn-collapse', toggleSidebarCollapse);
+    $(document).on('click', '[data-sidebar="toggle"]', toggleSidebarCollapse);
   }
 
   const init = function() {
