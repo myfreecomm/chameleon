@@ -26,52 +26,51 @@ html
           h1.ui.header Wizard
             .sub.header Exemplos de passa a passo na vertical e na horizontal
 
-        br
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
               .ui.medium.dividing.header Horizontal
 
-              br
+              .ui.divider.hidden
 
               .ui.grid
                 .eight.wide.computer.sixteen.wide.mobile.column
                   .ch-wizard-container
-                    ol.ch-horizontal-wizard
-                      li.ch-step.done.
+                    ol.ch-wizard.ch-wizard--horizontal
+                      li.ch-wizard-step.done.
                         Informações Pessoais
-                      li.ch-step.current.
+                      li.ch-wizard-step.current.
                         Informações de Endereço
-                      li.ch-step.
+                      li.ch-wizard-step.
                         Foto de Perfil
-                      li.ch-step.
+                      li.ch-wizard-step.
                         Final
 
               .ui.divider.hidden
 
               .ui.medium.dividing.header Vertical
 
-              br
+              .ui.divider.hidden
 
               .ch-wizard-container
-                ol.ch-vertical-wizard
-                  li.ch-step.done
-                    .step-header
+                ol.ch-wizard.ch-wizard--vertical
+                  li.ch-wizard-step.done
+                    .header
                       h4.ui.medium.header Selecione o agrupador
                         .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
-                    .step-content
+                    .content
 
-                  li.ch-step.current
-                    .step-header
+                  li.ch-wizard-step.current
+                    .header
                       h4.ui.medium.header Qual tipo ?
                         .sub.header Defina o tipo do seu relatório.
-                    .step-content
+                    .content
 
-                  li.ch-step
-                    .step-header
+                  li.ch-wizard-step
+                    .header
                       h4.ui.medium.header Gostaria de mais opções ?
                         .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
-                    .step-content
+                    .content
 
     include includes/notifications.pug
     include includes/search.pug
