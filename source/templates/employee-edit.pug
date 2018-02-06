@@ -3,7 +3,7 @@ html
   include includes/head.pug
 
   body
-    +nav('employees.html')
+    +nav('pages.html')
 
     .main-content
       include includes/header.pug
@@ -13,14 +13,14 @@ html
           h2.ui.medium.header Alterar Colaborador
             .sub.header Utilize o passa a passo para alterar as informações do colaborador
 
-          ol.ch-horizontal-wizard
-            li.ch-step.current.
+          ol.ch-wizard.ch-wizard--horizontal
+            li.ch-wizard-step.current.
               Informações Pessoais
-            li.ch-step.
+            li.ch-wizard-step.
               Informações de Endereço
-            li.ch-step.
+            li.ch-wizard-step.
               Foto de Perfil
-            li.ch-step.
+            li.ch-wizard-step.
               Final
 
         .ui.stackable.padded.grid.centered

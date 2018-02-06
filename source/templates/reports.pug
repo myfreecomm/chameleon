@@ -108,12 +108,12 @@ html
                     .thirteen.wide.column
                       .ch-wizard-container
                         form.ui.form
-                          ol.ch-vertical-wizard
-                            li.ch-step.current
-                              .step-header
+                          ol.ch-wizard.ch-wizard--vertical
+                            li.ch-wizard-step.current
+                              .header
                                 h4.ui.medium.header Selecione o agrupador
                                   .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.radio.checkbox.options
@@ -128,11 +128,11 @@ html
                                       input.hidden(type="radio" tabindex="0" name="agrupador" id="employees")
                                       label(for="employees") Colaboradores
 
-                            li.ch-step
-                              .step-header
+                            li.ch-wizard-step
+                              .header
                                 h4.ui.medium.header Qual tipo ?
                                   .sub.header Defina o tipo do seu relatório.
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.radio.checkbox.options
@@ -143,11 +143,11 @@ html
                                       input.hidden(type="radio" tabindex="0" name="tipo" id="analytic")
                                       label(for="analytic") Analítico
 
-                            li.ch-step
-                              .step-header
+                            li.ch-wizard-step
+                              .header
                                 h4.ui.medium.header Gostaria de mais opções ?
                                   .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.checkbox.options
@@ -158,11 +158,11 @@ html
                                       input.hidden(type="checkbox" tabindex="0" name="add-stats" id="add-stats")
                                       label(for="add-stats") Adicionar Estatísticas
 
-                            li.ch-step
-                              .step-header
+                            li.ch-wizard-step
+                              .header
                                 h4.ui.medium.header Gostaria de mais opções ?
                                   .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.radio.checkbox.options
@@ -172,18 +172,6 @@ html
                                     .ui.radio.checkbox.options
                                       input.hidden(type="radio" tabindex="0" name="filters" id="filter-no")
                                       label Não
-
-                    .three.wide.column.hidden-mobile
-                      .ch-rail.report-resume
-                        .ui.segments
-                          .ui.segment.attached.ch-segment-header.center.aligned
-                            div.ui.header.small Pré-Visualização do relatório
-                          .ui.segment.padded.attached.center.aligned
-                            .preview-report
-                              .header Relatório
-                              .content
-                            p.
-                              Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.
 
                     .sixteen.wide.column
                       .ui.divider
