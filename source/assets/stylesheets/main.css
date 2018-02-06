@@ -32861,6 +32861,32 @@ li {
   border-radius: 0;
 }
 
+.ui.segment.borderless {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ui.segment.paddingless {
+  padding: 0;
+}
+
+.ui.segment.paddingless .ui.table td,
+.ui.segment.paddingless .ui.table th {
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+.ui.segment.paddingless .ui.table td:first-child,
+.ui.segment.paddingless .ui.table th:first-child {
+  padding-left: 1.6em;
+}
+
+.ui.segment.paddingless .ui.table td:last-child,
+.ui.segment.paddingless .ui.table th:last-child {
+  padding-right: 1.6em;
+}
+
 .ch-filters-btn {
   color: #4b4b4b;
   font-size: 0.9em;
@@ -32869,6 +32895,22 @@ li {
 
 .ch-filters-btn:hover {
   color: #7e7e7e;
+}
+
+/*Find a better class name*/
+
+.ch-segment-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ch-segment-header.center.aligned {
+  justify-content: center;
+}
+
+.ch-segment-header .title {
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .noUi-target,
@@ -33240,32 +33282,6 @@ li {
   height: 300px;
 }
 
-.ui.segment.borderless {
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.ui.segment.paddingless {
-  padding: 0;
-}
-
-.ui.segment.paddingless .ui.table td,
-.ui.segment.paddingless .ui.table th {
-  padding-top: 1.2em;
-  padding-bottom: 1.2em;
-}
-
-.ui.segment.paddingless .ui.table td:first-child,
-.ui.segment.paddingless .ui.table th:first-child {
-  padding-left: 1.6em;
-}
-
-.ui.segment.paddingless .ui.table td:last-child,
-.ui.segment.paddingless .ui.table th:last-child {
-  padding-right: 1.6em;
-}
-
 .ch-metric-label {
   color: #000;
   font-size: 16px;
@@ -33299,24 +33315,6 @@ li {
 
 .ch-list .icon:hover {
   color: #717171;
-}
-
-/*Find a better class name*/
-
-.ch-segment-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.ch-segment-header.center.aligned {
-  justify-content: center;
-}
-
-.ch-segment-header .title {
-  font-weight: 300;
-  font-size: 1em;
-  text-transform: uppercase;
-  color: #000;
 }
 
 /*Find a better class name*/

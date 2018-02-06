@@ -14,6 +14,29 @@
 
 .ui.segment {
   border-radius: 0;
+
+  &.borderless {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &.paddingless {
+    padding: 0;
+
+    .ui.table td, .ui.table th {
+      padding-top: 1.2em;
+      padding-bottom: 1.2em;
+
+      &:first-child {
+        padding-left: 1.6em;
+      }
+
+      &:last-child {
+        padding-right: 1.6em;
+      }
+    }
+  }
 }
 
 .ch-filters-btn {
@@ -23,5 +46,21 @@
 
   &:hover {
     color: lighten($fontColor, 20%);
+  }
+}
+
+/*Find a better class name*/
+
+.ch-segment-header {
+  display: flex;
+  justify-content: space-between;
+
+  &.center.aligned {
+    justify-content: center;
+  }
+
+  .title {
+    font-weight: 300;
+    text-transform: uppercase;
   }
 }
