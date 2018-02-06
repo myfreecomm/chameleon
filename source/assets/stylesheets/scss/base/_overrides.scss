@@ -73,6 +73,18 @@
   padding: 10px;
 }
 
+.ui.pagination.menu {
+  @media screen and (max-width: 480px) {
+    .item {
+      display: none;
+
+      &:first-child, &:last-child {
+        display: flex;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .ui.form .fields .field {
     margin: 0 0 1em;
