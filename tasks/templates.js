@@ -1,14 +1,16 @@
-var pug = require('gulp-pug');
-var gulp = require('gulp');
+let gulp = require('gulp'),
+    pug = require('gulp-pug'),
+    browserSync = require('browser-sync').create();
 
-var templatesPath = "source/templates"
+let templatesPath = 'source/templates'
 
-var build = function buildHTML() {
+const build = function buildHTML() {
   return gulp.src(`${templatesPath}/*.pug`)
   .pipe(pug({
     pretty: true,
   }))
-  .pipe(gulp.dest('./source/views'));
+  .pipe(gulp.dest('./source/views'))
+  .pipe(browserSync.stream());
 };
 
 module.exports = { build }

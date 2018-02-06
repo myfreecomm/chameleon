@@ -5,7 +5,6 @@
 
 .ch-vertical-wizard {
   counter-reset: steps;
-  list-style: none;
 
   > .ch-step {
     opacity: .3;
@@ -181,21 +180,13 @@
     min-width: 120px;
     padding: 0.6rem 1rem;
     background-color: #e8e8e8;
-    border: 1px solid;
-    border-color: #ccc;
+    border: 1px solid #ccc;
     border-radius: 5px;
 
     &.checked {
-      font-weight: 600;
       background-color: #fff;
       border-color: #ccc;
     }
-  }
-}
-
-.ch-rail {
-  .ui.sticky.fixed.top {
-    top: calc(65px + 20px)
   }
 }
 

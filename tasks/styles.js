@@ -5,7 +5,7 @@ let gulp = require('gulp'),
     rename = require('gulp-rename'),
     concatCss = require('gulp-concat-css');
 
-let stylesPath = "source/assets/stylesheets";
+let stylesPath = 'source/assets/stylesheets';
 
 let cssExternals = [
   `${stylesPath}/css/vendors/semantic.min.css`,

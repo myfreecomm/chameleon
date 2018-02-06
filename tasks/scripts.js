@@ -1,12 +1,12 @@
 let gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
-    babel = require("gulp-babel"),
-    clean = require("gulp-clean"),
+    babel = require('gulp-babel'),
+    clean = require('gulp-clean'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename');
 
-let scriptsPath = "source/assets/javascripts";
+let scriptsPath = 'source/assets/javascripts';
 
 let libs = [
   `${scriptsPath}/libs/jquery-3.2.1.min.js`,

@@ -32041,6 +32041,12 @@ a {
   text-decoration: none;
 }
 
+ol,
+ul,
+li {
+  list-style: none;
+}
+
 .ui.segment.grow {
   display: flex;
   flex-grow: 1;
@@ -32639,7 +32645,6 @@ a {
 
 .ch-vertical-wizard {
   counter-reset: steps;
-  list-style: none;
 }
 
 .ch-vertical-wizard > .ch-step {
@@ -32812,19 +32817,13 @@ a {
   min-width: 120px;
   padding: 0.6rem 1rem;
   background-color: #e8e8e8;
-  border: 1px solid;
-  border-color: #ccc;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .ch-step .options.checked {
-  font-weight: 600;
   background-color: #fff;
   border-color: #ccc;
-}
-
-.ch-rail .ui.sticky.fixed.top {
-  top: calc(65px + 20px);
 }
 
 .report-resume .preview-report {
@@ -33075,7 +33074,6 @@ a {
 }
 
 .ch-timeline {
-  list-style: none;
   padding-bottom: 20px;
   border-left: 3px solid #e5e5e5;
 }
@@ -33488,11 +33486,6 @@ a {
 
 .ch-nav a {
   text-decoration: none;
-}
-
-.ch-nav ol,
-.ch-nav li {
-  list-style: none;
 }
 
 @media screen and (max-width: 768px) {
