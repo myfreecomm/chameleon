@@ -18,7 +18,9 @@ html
             a.item.active(data-tab="rs") Relatório Simples
             a.item(data-tab="rd") Relatório Dinâmico
             a.item(data-tab="mr") Modelos de Relatório
-        br
+
+        .ui.divider.hidden
+
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
@@ -26,7 +28,7 @@ html
                 form.ui.form
                   .ui.segments
                     .ui.segment.attached.ch-segment-header
-                      .ui.title Relatório Simples
+                      span.ch-segment-header-title Relatório Simples
                     .ui.segment.attached
                       .fields
                         .four.wide.field
@@ -101,7 +103,7 @@ html
                       .ui.button.blue Gerar Relatório
 
               .ui.bottom.tab(data-tab="rd")
-                .ui.stackable.padded.grid
+                .ui.stackable.grid
                   .row
                     .thirteen.wide.column
                       .ch-wizard-container
@@ -190,7 +192,7 @@ html
               .ui.tab(data-tab="mr")
                 .ui.segments
                   .ui.attached.segment.ch-segment-header
-                    .ui.title Modelos de Relatório
+                    span.ch-segment-header-title Modelos de Relatório
 
                   .ui.attached.segment.paddingless
                     table.ui.very.basic.table

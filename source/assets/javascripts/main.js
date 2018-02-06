@@ -3861,7 +3861,7 @@ Chameleon.Components.Modal = function () {
   };
 
   var bindFunctions = function bindFunctions() {
-    $(document).on('click', '.btn-modal', open);
+    $(document).on('click', '[data-target="modal"]', open);
 
     $(document).on('click', '.ch-overlay, .close-dialog', close);
 
@@ -3914,7 +3914,7 @@ Chameleon.Components.Search = function () {
   };
 
   var bindFunctions = function bindFunctions() {
-    $(document).on('click', '.btn-search', open);
+    $(document).on('click', '[data-target="search"]', open);
 
     $(document).on('click', '.ch-search-content', function (e) {
       e.stopPropagation();

@@ -36,7 +36,7 @@ mixin smallCard(name, value, date, type)
 
 mixin listSegment(title, items)
   .ui.attached.segment.middle.aligned.ch-segment-header
-    span.ui.title= title
+    span.ch-segment-header-title= title
     .ui.icon.dropdown.actions
       i.icon.ellipsis.vertical
       .menu.fixed-position
@@ -86,7 +86,7 @@ html
             .ten.wide.column
               .ui.segments
                 .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ui.title Gráficos em linha
+                  span.ch-segment-header-title Gráficos em linha
 
                 .ui.attached.segment
                   #users-chart
@@ -94,7 +94,7 @@ html
             .six.wide.column
               .ui.segments
                 .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ui.title Gráficos em pizza
+                  span.ch-segment-header-title Gráficos em pizza
 
                 .ui.attached.segment
                   #pie-chart
@@ -103,7 +103,7 @@ html
             .sixteen.wide.column
               .ui.segments
                 .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ui.title Lista de colaboradores
+                  span.ch-segment-header-title Lista de colaboradores
                 .ui.attached.segment
                   table.ui.very.basic.table
                     thead

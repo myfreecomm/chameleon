@@ -32033,7 +32033,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #4b4b4b;
-  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
   background-color: #f0f0f0;
 }
 
@@ -32051,6 +32051,51 @@ li {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+}
+
+.ui.segments {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  border-color: #dbdbdb;
+}
+
+.ui.segments > .segment {
+  border-color: #dbdbdb;
+  border-radius: 0 !important;
+}
+
+.ui.segments > .segment:last-child {
+  border-bottom: none;
+}
+
+.ui.segment {
+  border-radius: 0;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ui.segment.borderless {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ui.segment.paddingless {
+  padding: 0;
+}
+
+.ui.segment.paddingless .ui.table td,
+.ui.segment.paddingless .ui.table th {
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+.ui.segment.paddingless .ui.table td:first-child,
+.ui.segment.paddingless .ui.table th:first-child {
+  padding-left: 1.6em;
+}
+
+.ui.segment.paddingless .ui.table td:last-child,
+.ui.segment.paddingless .ui.table th:last-child {
+  padding-right: 1.6em;
 }
 
 .ui.modal.ch-modal > .close {
@@ -32105,7 +32150,7 @@ li {
 
 .ch-breadcrumb-section:hover {
   color: #4b4b4b;
-  background-color: #eee;
+  background-color: #f0f0f0;
 }
 
 .ch-breadcrumb-section a {
@@ -32843,62 +32888,6 @@ li {
   box-shadow: 0px 5px 5px #dcdcdc;
 }
 
-.ui.segments {
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
-  border-color: #dbdbdb;
-}
-
-.ui.segments > .segment {
-  border-color: #dbdbdb;
-  border-radius: 0 !important;
-}
-
-.ui.segments > .segment:last-child {
-  border-bottom: none;
-}
-
-.ui.segment {
-  border-radius: 0;
-}
-
-.ui.segment.borderless {
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.ui.segment.paddingless {
-  padding: 0;
-}
-
-.ui.segment.paddingless .ui.table td,
-.ui.segment.paddingless .ui.table th {
-  padding-top: 1.2em;
-  padding-bottom: 1.2em;
-}
-
-.ui.segment.paddingless .ui.table td:first-child,
-.ui.segment.paddingless .ui.table th:first-child {
-  padding-left: 1.6em;
-}
-
-.ui.segment.paddingless .ui.table td:last-child,
-.ui.segment.paddingless .ui.table th:last-child {
-  padding-right: 1.6em;
-}
-
-.ch-filters-btn {
-  color: #4b4b4b;
-  font-size: 0.9em;
-  text-transform: uppercase;
-}
-
-.ch-filters-btn:hover {
-  color: #7e7e7e;
-}
-
-/*Find a better class name*/
-
 .ch-segment-header {
   display: flex;
   justify-content: space-between;
@@ -32908,9 +32897,20 @@ li {
   justify-content: center;
 }
 
-.ch-segment-header .title {
-  font-weight: 300;
+.ch-segment-header-title {
+  font-size: 14px;
   text-transform: uppercase;
+  color: #656565;
+}
+
+.ch-segment-header-button {
+  color: #4b4b4b;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.ch-segment-header-button:hover {
+  color: #7e7e7e;
 }
 
 .noUi-target,

@@ -17,7 +17,7 @@ Chameleon.Components.Modal = (function() {
   }
 
   const bindFunctions = function() {
-    $(document).on('click', '.btn-modal', open);
+    $(document).on('click', '[data-target="modal"]', open);
 
     $(document).on('click', '.ch-overlay, .close-dialog', close);
 

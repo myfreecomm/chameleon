@@ -10,8 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $fontColor;
-  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-  background-color: #f0f0f0;
+  font-family: $fontFamily;
+  background-color: $lightBgColor;
 }
 
 a {
