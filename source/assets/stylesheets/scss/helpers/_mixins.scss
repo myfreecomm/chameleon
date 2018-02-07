@@ -1,5 +1,6 @@
 @mixin title($font-size) {
   font-size: $font-size;
+  font-weight: 400;
   text-transform: uppercase;
   color: lighten($fontColor, 10%);
 }

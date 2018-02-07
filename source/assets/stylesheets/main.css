@@ -32007,6 +32007,12 @@ body.pushable>.pusher {
   cursor: pointer;
 }
 
+.ch-modal .ui.header {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #656565;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -32144,6 +32150,13 @@ li {
 
 .ui.dimmer {
   background-color: rgba(0, 0, 0, 0.65);
+}
+
+.ui.modal > .header:not(.ui) {
+  font-size: 1.2em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #656565;
 }
 
 @media screen and (max-width: 480px) {
@@ -32880,6 +32893,7 @@ li {
 
 .ch-segment-header-title {
   font-size: 14px;
+  font-weight: 400;
   text-transform: uppercase;
   color: #656565;
 }
@@ -33262,6 +33276,7 @@ li {
 
 .ch-metric-label {
   font-size: 14px;
+  font-weight: 400;
   text-transform: uppercase;
   color: #656565;
 }
@@ -33793,6 +33808,7 @@ li {
 
 .ch-sidebar-title {
   font-size: 16px;
+  font-weight: 400;
   text-transform: uppercase;
   color: #656565;
   margin-bottom: 15px;

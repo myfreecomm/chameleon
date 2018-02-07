@@ -90,6 +90,10 @@
   background-color: rgba(#000, 0.65);
 }
 
+.ui.modal>.header:not(.ui) {
+  @include title(1.2em);
+}
+
 .ui.pagination.menu {
   @media screen and (max-width: 480px) {
     .item {

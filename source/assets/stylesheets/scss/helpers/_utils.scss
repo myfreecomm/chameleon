@@ -67,3 +67,9 @@
 .close-dialog {
   cursor: pointer;
 }
+
+.ch-modal {
+  .ui.header {
+    @include title();
+  }
+}
