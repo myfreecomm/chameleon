@@ -58,11 +58,11 @@
     }
 
     &-icon {
-      color: $fontColor;
+      color: darken($headerElementsColor, 10%);
       order: 1;
 
       &:hover, &:active {
-        color: $fontColor;
+        color: darken($headerElementsColor, 10%);;
       }
     }
 

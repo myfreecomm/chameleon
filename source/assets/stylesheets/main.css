@@ -32125,6 +32125,10 @@ li {
   padding: 10px;
 }
 
+.ui.dimmer {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
 @media screen and (max-width: 480px) {
   .ui.pagination.menu .item {
     display: none;
@@ -32508,13 +32512,13 @@ li {
 }
 
 .ch-search-form-icon {
-  color: #4b4b4b;
+  color: #919191;
   order: 1;
 }
 
 .ch-search-form-icon:hover,
 .ch-search-form-icon:active {
-  color: #4b4b4b;
+  color: #919191;
 }
 
 .ch-search-form:after {
@@ -33309,13 +33313,13 @@ li {
 .ch-header-nav-button {
   display: block;
   padding: 5px;
-  color: #666;
+  color: #aaa;
+  transition: all .3s;
 }
 
 .ch-header-nav-button:hover,
 .ch-header-nav-button.active {
-  color: #4b4b4b;
-  background-color: #f0f0f0;
+  color: #919191;
   border-radius: 3px;
 }
 
@@ -33332,7 +33336,7 @@ li {
   position: relative;
 }
 
-.ch-notification-label:after {
+.ch-notification-label.new:after {
   content: "";
   position: absolute;
   top: 0;

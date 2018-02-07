@@ -27,11 +27,11 @@
   &-button {
     display: block;
     padding: 5px;
-    color: #666;
+    color: $headerElementsColor;
+    transition: all .3s;
 
     &:hover, &.active {
-      color: $fontColor;
-      background-color: #f0f0f0;
+      color: darken($headerElementsColor, 10%);
       border-radius: 3px;
     }
 
@@ -49,16 +49,18 @@
 .ch-notification-label {
   position: relative;
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 4px;
-    display: block;
-    width: 7px;
-    height: 7px;
-    background-color: #bb0c0c;
-    border-radius: 100%;
+  &.new {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 4px;
+      display: block;
+      width: 7px;
+      height: 7px;
+      background-color: #bb0c0c;
+      border-radius: 100%;
+    }
   }
 }
 
