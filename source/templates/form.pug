@@ -87,12 +87,8 @@ html
                             .menu
                               .item BRL
                               .item EUR
-
-                    .ch-buttons-container
-                      .cancel-container
-                        button.ui.button.basic Cancelar
-                      .submit-container
-                        input(type="submit" value="Enviar").ui.button.positive
+                  .ui.attached.segment.right.aligned
+                    input(type="submit" value="Salvar").ui.button.positive.small
 
             .eight.wide.column
               form.ui.form
@@ -124,6 +120,12 @@ html
                       .ui.checkbox
                         input(type="checkbox")
                         label Trabalha Remotamente
+                  .ui.attached.segment
+                    .ch-buttons-container
+                      .cancel-container
+                        button.ui.button.basic.small Cancelar
+                      .submit-container
+                        input(type="submit" value="Enviar").ui.button.positive.small
 
     include includes/notifications.pug
     include includes/search.pug

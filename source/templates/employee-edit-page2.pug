@@ -67,13 +67,13 @@ html
                           each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
                             option(value= option)= option
 
-                .ch-buttons-container
-                  .cancel-container
-                    a(href="employee-edit.html").ui.button.basic Voltar
-                  .submit-container
-                    input(type="submit" value="Salvar").ui.button.grey
-                    a(href="#").ui.positive.button Salvar e continuar
-
+                  .ui.attached.segment
+                    .ch-buttons-container
+                      .cancel-container
+                        a(href="employee-edit.html").ui.button.basic.small Voltar
+                      .submit-container
+                        input(type="submit" value="Salvar").ui.button.grey.small
+                        a(href="#").ui.positive.button.small Salvar e continuar
 
     include includes/notifications.pug
     include includes/search.pug

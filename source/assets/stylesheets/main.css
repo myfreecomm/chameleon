@@ -31983,6 +31983,10 @@ body.pushable>.pusher {
   .ch-overlay {
     background-color: #fff;
   }
+
+  .ch-overlay.inside {
+    top: 0;
+  }
 }
 
 .hidden {
