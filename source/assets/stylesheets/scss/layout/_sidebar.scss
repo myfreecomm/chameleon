@@ -56,4 +56,9 @@
       transition: all .3s;
     }
   }
+
+  &-title {
+    @include title(16px);
+    margin-bottom: 15px;
+  }
 }

@@ -5,8 +5,7 @@
 .ch-metric {
 
   &-label {
-    color: #000;
-    font-size: 16px;
+    @include title(14px);
   }
 
   &-value {

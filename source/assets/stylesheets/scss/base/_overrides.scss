@@ -5,8 +5,8 @@
 }
 
 .ui.segments {
-  box-shadow: 0 3px 5px 0 rgba(#000,.1);
-  border-color: #dbdbdb;
+  box-shadow: 0 3px 5px 0 rgba(#000,.1) !important;
+  border-color: #dbdbdb !important;
 
   > .segment {
     border-color: #dbdbdb;
@@ -15,6 +15,19 @@
     &:last-child {
       border-bottom: none;
     }
+
+    &.borderless {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  &.horizontal {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    border-radius: 0;
   }
 }
 

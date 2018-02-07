@@ -24,15 +24,14 @@
 
 mixin smallCard(name, value, date, type)
   .four.wide.computer.eight.wide.tablet.column
-    .ui.segment
-      .ui.equal.width.grid.ch-metric
-        .middle.aligned.column
-          .ch-metric-label=name
-        .column.right.aligned
-          .ch-metric-value(class=type)
-            i.icon.small.up.arrow
-            span=value
-          span.ch-metric-date=date
+    .ui.horizontal.segments
+      .ui.segment.borderless.middle.aligned
+        .ch-metric-label=name
+      .ui.segment.borderless.right.aligned
+        .ch-metric-value(class=type)
+          i.icon.small.up.arrow
+          span=value
+        span.ch-metric-date=date
 
 mixin listSegment(title, items)
   .ui.attached.segment.middle.aligned.ch-segment-header
