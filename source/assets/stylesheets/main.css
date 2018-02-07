@@ -32346,9 +32346,10 @@ li {
   height: 65px;
   padding: 15px;
   padding-right: 5px;
-  font-size: 20px;
-  color: #4b4b4b;
-  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #656565;
+  border-bottom: 1px solid #EBEBEB;
 }
 
 .ch-dialog-header .icon {
@@ -32375,10 +32376,15 @@ li {
 .ch-dialog .ui.items > .item {
   margin: 0;
   flex-direction: row;
+  border-color: #EBEBEB;
+}
+
+.ch-dialog .ui.items > .item:first-child {
+  padding-top: 1em !important;
 }
 
 .ch-dialog .ui.items > .item.unread {
-  background-color: #f0f0f0;
+  background-color: #f8f8f8;
 }
 
 .ch-dialog .ui.items > .item > .image {
@@ -32390,7 +32396,7 @@ li {
 }
 
 .ch-dialog .ui.items > .item > .content {
-  padding: 10px 20px;
+  padding: 5px 15px;
 }
 
 .ch-dialog .ui.items > .item > .content .header,
@@ -32399,7 +32405,7 @@ li {
 }
 
 .ch-dialog .ui.items > .item > .content .header {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .ch-dialog .ui.items > .item > .content .description {
@@ -32407,7 +32413,7 @@ li {
 }
 
 .ch-dialog .ui.items > .item > .content .time {
-  font-style: italic;
+  text-transform: uppercase;
   color: #656565;
 }
 
@@ -32430,10 +32436,11 @@ li {
   width: 100%;
   max-width: 400px;
   padding: 15px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
-  border-top: 1px solid #ddd;
+  text-transform: uppercase;
+  color: #4b4b4b;
+  border-top: 1px solid #EBEBEB;
   background-color: #fff;
   transform: translate(100%);
   transition: all .3s;
