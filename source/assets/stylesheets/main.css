@@ -32881,6 +32881,11 @@ li {
   color: #7e7e7e;
 }
 
+.ch-segment-footer-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .noUi-target,
 .noUi-target * {
   touch-action: none;
@@ -33601,11 +33606,6 @@ li {
   width: 100%;
   color: #fff;
   text-align: right;
-}
-
-.ch-buttons-container {
-  display: flex;
-  justify-content: space-between;
 }
 
 .ch-copy-input {

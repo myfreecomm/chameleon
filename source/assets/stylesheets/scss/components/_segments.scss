@@ -22,3 +22,10 @@
     }
   }
 }
+
+.ch-segment-footer {
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
