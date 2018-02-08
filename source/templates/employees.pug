@@ -69,14 +69,14 @@ html
                           td(data-info="Cargo")= worker.post
                           td(data-info="Nº de Registro")= worker.id
                           td.right.aligned.ch-table-buttons
-                            button.ui.icon.button.js-show-detail
+                            button.ui.icon.button(data-table-detail="toggle")
                               i.chevron.down.icon
-                        tr.ch-details-row.hidden
+                        tr.ch-table-details.hidden
                           td(colspan="7")
-                            .ch-details-row-content
+                            .ch-table-details-content
                               .ui.grid.padded
                                 .sixteen.wide.column
-                                  h3.ui.small.header Outras informações
+                                  span.ch-table-details-title Outras informações
 
                                 .four.wide.computer.sixteen.wide.mobile.column
                                   strong CPF

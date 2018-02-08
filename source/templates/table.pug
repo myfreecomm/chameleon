@@ -49,7 +49,7 @@ html
                         td(data-info="Cargo")= worker.post
                         td(data-info="Nº de Registro")= worker.id
                         td.right.aligned.ch-table-buttons
-                          button.ui.icon.button.js-show-detail
+                          button.ui.icon.button(data-table-detail="toggle")
                             i.chevron.down.icon
                       tr.ch-table-details.hidden
                         td(colspan="7")

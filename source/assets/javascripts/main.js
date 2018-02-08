@@ -3970,7 +3970,7 @@ Chameleon.Components.Table = function () {
   };
 
   var bindFunctions = function bindFunctions() {
-    $(document).on('click', '.js-show-detail', toggleDetailView);
+    $(document).on('click', '[data-table-detail="toggle"]', toggleDetailView);
 
     $(document).on('click', '.row-link', clickableRow);
 

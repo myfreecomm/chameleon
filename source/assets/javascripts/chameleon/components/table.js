@@ -25,7 +25,7 @@ Chameleon.Components.Table = (function(){
   }
 
   const bindFunctions = function() {
-    $(document).on('click', '.js-show-detail', toggleDetailView);
+    $(document).on('click', '[data-table-detail="toggle"]', toggleDetailView);
 
     $(document).on('click', '.row-link', clickableRow);
 
