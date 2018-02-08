@@ -1,4 +1,4 @@
-@mixin title($font-size) {
+@mixin title($font-size: auto) {
   font-size: $font-size;
   font-weight: 400;
   text-transform: uppercase;

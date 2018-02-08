@@ -1,0 +1,9 @@
+.ui.grid>.white.column,
+.ui.grid>.white.row,
+.ui.grid>.row>.white.column {
+  background-color: #fff;
+}
+
+.ui.padded.grid:not(.vertically):not(.horizontally) {
+  padding: 10px;
+}

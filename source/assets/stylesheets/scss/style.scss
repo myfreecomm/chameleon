@@ -8,7 +8,14 @@
 //BASE
 
 @import 'base/_reset';
-@import 'base/_overrides';
+
+//SEMANTIC UI OVERRIDES
+
+@import 'overrides/_grid';
+@import 'overrides/_menu';
+@import 'overrides/_table';
+@import 'overrides/_segments';
+
 
 //COMPONENTS
 
