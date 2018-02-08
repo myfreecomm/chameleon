@@ -32705,6 +32705,13 @@ li {
   text-align: center;
 }
 
+.ch-table-details-title {
+  font-size: auto;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #656565;
+}
+
 .bind-popup + .ui.popup {
   max-width: 275px;
 }
@@ -32712,13 +32719,6 @@ li {
 .bind-popup + .ui.popup .ui.label {
   margin: 0.25em;
   white-space: nowrap;
-}
-
-.ch-table-details-title {
-  font-size: auto;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #656565;
 }
 
 .ch-wizard--vertical > .ch-wizard-step > .header:before,

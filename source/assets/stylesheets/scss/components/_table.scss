@@ -1,15 +1,23 @@
-.ch-table-buttons {
-  .ui.icon.button {
-    padding: 0.5em;
-    background-color: transparent;
+.ch-table {
+  &-buttons {
+    .ui.icon.button {
+      padding: 0.5em;
+      background-color: transparent;
+    }
   }
-}
 
-.ch-table-label  {
-  .ui.label {
-    width: 100%;
-    max-width: 175px;
-    text-align: center;
+  &-label  {
+    .ui.label {
+      width: 100%;
+      max-width: 175px;
+      text-align: center;
+    }
+  }
+
+  &-details {
+    &-title {
+      @include title();
+    }
   }
 }
 
@@ -21,12 +29,3 @@
     white-space: nowrap;
   }
 }
-
-.ch-table-details {
-  &-title {
-    @include title();
-  }
-}
-
-
-
