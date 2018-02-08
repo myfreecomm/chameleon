@@ -1,11 +1,13 @@
-.ui.modal.ch-modal>.close {
-  top: 1rem;
-  right: 0.5rem;
-  color: $fontColor;
-}
+.ui.modal {
+  &.ch-modal > .close {
+    top: 1rem;
+    right: 0.5rem;
+    color: $fontColor;
+  }
 
-.ui.modal>.header:not(.ui) {
-  @include title(1.2em);
+  >.header:not(.ui) {
+    @include title(1.2em);
+  }
 }
 
 .ui.dimmer {

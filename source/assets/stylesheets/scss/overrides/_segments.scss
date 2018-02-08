@@ -1,9 +1,3 @@
-.ui.segment.grow {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-}
-
 .ui.segments {
   box-shadow: 0 3px 5px 0 rgba(#000,.1) !important;
   border-color: #dbdbdb !important;
@@ -34,6 +28,12 @@
 .ui.segment {
   border-radius: 0;
   box-shadow: 0 3px 5px 0 rgba(#000,.1);
+
+  &.grow {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
 
   &.borderless {
     border: none;

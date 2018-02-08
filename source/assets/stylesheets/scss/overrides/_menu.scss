@@ -1,10 +1,12 @@
-.ui.pagination.menu {
+.ui.menu {
   @media screen and (max-width: 480px) {
-    .item {
-      display: none;
+    &.pagination {
+      .item {
+        display: none;
 
-      &:first-child, &:last-child {
-        display: flex;
+        &:first-child, &:last-child {
+          display: flex;
+        }
       }
     }
   }
