@@ -1,5 +1,5 @@
 Chameleon.Components.Menu = (function() {
-  let $navMenuElements   = $('.ch-nav, .ch-menu, .ch-menu--helpers');
+  let $navMenuElements   = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
   let $navDropdown       = $('.ch-nav .ch-dropdown');
 
   const open = function(e) {
@@ -14,9 +14,9 @@ Chameleon.Components.Menu = (function() {
   }
 
   const bindFunctions = function() {
-    $(document).on('click', '.btn-show-menu', open);
+    $(document).on('click', '.show-menu', open);
 
-    $(document).on('click', '.btn-close-menu', close);
+    $(document).on('click', '.close-menu', close);
 
     $(window).resize(function() {
       if ( $(window).width() >= 768 ) { close(); }

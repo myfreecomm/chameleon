@@ -1,11 +1,11 @@
 mixin nav(activeUrl)
   nav.ch-nav
 
-    a.ch-logo(href="dashboard.html")
+    a.ch-nav-logo(href="dashboard.html")
       img(src="../assets/images/chameleon_logo_white.png")
       span.text Chameleon
 
-    ul.ch-menu
+    ul.ch-nav-menu
       -
         var currentUrl = activeUrl
         var menuItems = [
@@ -16,10 +16,10 @@ mixin nav(activeUrl)
         ]
 
       each option in menuItems
-        li.ch-menu-item(class={active: currentUrl === option.href})
+        li.ch-nav-menu-item(class={active: currentUrl === option.href})
           a(href=option.href)
             i(class= option.icon + " large icon")
-            span(class="ch-menu-label")= option.name
+            span(class="ch-nav-menu-item-label")= option.name
 
       -
         var pages = [
@@ -31,25 +31,25 @@ mixin nav(activeUrl)
           { name: "Mapa", href: "map.html" },
         ]
 
-      li.ch-menu-item(class={active: currentUrl === 'pages.html'})
+      li.ch-nav-menu-item(class={active: currentUrl === 'pages.html'})
         a.dropdown-hover(href="dashboard.html")
           i.puzzle.large.icon
-          span.ch-menu-label Páginas
+          span.ch-nav-menu-item-label Páginas
         .ch-dropdown
           ul.ch-dropdown-menu
             each page in pages
               li.ch-dropdown-menu-item
                 a(href=page.href)=page.name
 
-      li.ch-menu-item.btn-show-menu
+      li.ch-nav-menu-item.show-menu
         a(href="#")
           i.ellipsis.large.horizontal.icon
 
-    .ch-menu--helpers
-      .ch-menu-item.mobile-only
+    .ch-nav-menu--secondary
+      .ch-nav-menu-item.mobile-only
         a.dropdown-hover(href="#")
           i.university.large.icon
-          span.ch-menu-label Trocar Conta
+          span.ch-nav-menu-item-label Trocar Conta
 
         .ch-dropdown
           ul.ch-dropdown-menu
@@ -57,10 +57,10 @@ mixin nav(activeUrl)
               li.ch-dropdown-menu-item
                 a(href="#")= account
 
-      .ch-menu-item
+      .ch-nav-menu-item
         a(href="#")
           i.large.help.circle.outline.icon
-          span.ch-menu-label Ajuda
+          span.ch-nav-menu-item-label Ajuda
 
-    .btn-close-menu
+    .close-menu
       i.large.close.icon

@@ -3805,7 +3805,7 @@ Chameleon.Components.Dropdown = function () {
 'use strict';
 
 Chameleon.Components.Menu = function () {
-  var $navMenuElements = $('.ch-nav, .ch-menu, .ch-menu--helpers');
+  var $navMenuElements = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
   var $navDropdown = $('.ch-nav .ch-dropdown');
 
   var open = function open(e) {
@@ -3820,9 +3820,9 @@ Chameleon.Components.Menu = function () {
   };
 
   var bindFunctions = function bindFunctions() {
-    $(document).on('click', '.btn-show-menu', open);
+    $(document).on('click', '.show-menu', open);
 
-    $(document).on('click', '.btn-close-menu', close);
+    $(document).on('click', '.close-menu', close);
 
     $(window).resize(function () {
       if ($(window).width() >= 768) {
