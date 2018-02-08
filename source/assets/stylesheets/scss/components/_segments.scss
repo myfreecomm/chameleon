@@ -1,29 +1,31 @@
-.ch-segment-header {
-  display: flex;
-  justify-content: space-between;
-
-  &.center.aligned {
-    justify-content: center;
-  }
-
-  &-title {
-    @include title(14px);
-  }
-
-  &-button {
-    color: $fontColor;
-    font-size: 12px;
-    text-transform: uppercase;
-
-    &:hover {
-      color: lighten($fontColor, 20%);
-    }
-  }
-}
-
-.ch-segment-footer {
-  &-buttons {
+.ch-segment {
+  &-header {
     display: flex;
     justify-content: space-between;
+
+    &.center.aligned {
+      justify-content: center;
+    }
+
+    &-title {
+      @include title(14px);
+    }
+
+    &-button {
+      color: $fontColor;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: lighten($fontColor, 20%);
+      }
+    }
+  }
+
+  &-footer {
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
