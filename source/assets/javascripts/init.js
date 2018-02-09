@@ -54,3 +54,10 @@ $('#rangeend').calendar({
     lastResort: 'bottom right'
   }
 });
+
+$('.ui.form input:submit').on('click', function(e) {
+  e.preventDefault()
+  $(this).messenger('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.', {
+    className: 'positive'
+  });
+})

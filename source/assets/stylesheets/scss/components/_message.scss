@@ -1,0 +1,21 @@
+.ch-message {
+  &--fixed {
+    position: fixed;
+    top: 65px;
+    left: calc(50% - 85px);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+
+    .ui.message {
+    }
+
+    @media screen and (max-width: 768px) {
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

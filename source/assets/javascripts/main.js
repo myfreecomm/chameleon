@@ -3988,6 +3988,8 @@ Chameleon.Components.Table = function () {
 'use strict';
 
 Chameleon.Utils = function () {
+  var timeout;
+
   $.fn.switchClass = function (class1, class2) {
     if (this.hasClass(class1)) {
       this.removeClass(class1);
@@ -3995,6 +3997,39 @@ Chameleon.Utils = function () {
     } else {
       this.removeClass(class2);
       this.addClass(class1);
+    }
+  };
+
+  $.fn.messenger = function (message, options) {
+
+    var settings = $.extend({
+      className: '',
+      message: message,
+      timeout: 3000
+    }, options);
+
+    if ($('.ch-message--fixed').length === 0) {
+      $('body').append('<ul class="ch-message ch-message--fixed"></ul>');
+    }
+
+    var messageTemplate = $('<li class="ui message compact tiny ' + settings.className + ' bounceInDown animated">' + settings.message + '</li>');
+
+    var elem = messageTemplate.appendTo('.ch-message--fixed');
+
+    if (!settings.timeout == 0) {
+      setTimeout(function () {
+        return destroyMessage(elem);
+      }, settings.timeout);
+    }
+
+    function destroyMessage(element) {
+      setTimeout(function () {
+        $(element).removeClass('bounceInDown');
+        $(element).addClass('bounceOutUp');
+        setTimeout(function () {
+          return $(element).remove();
+        }, 1000);
+      }, 750);
     }
   };
 
