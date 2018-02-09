@@ -2,20 +2,25 @@
   &--fixed {
     position: fixed;
     top: 65px;
-    left: calc(50% - 85px);
+    left: 50%;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 2;
+    transform: translateX(-50%);
 
     .ui.message {
+      width: 600px;
     }
 
     @media screen and (max-width: 768px) {
       top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+
+      .ui.message {
+        width: auto;
+        min-width: 300px;
+      }
     }
   }
 }

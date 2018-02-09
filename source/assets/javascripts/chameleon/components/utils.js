@@ -1,5 +1,4 @@
 Chameleon.Utils = (function() {
-  var timeout;
 
   $.fn.switchClass = function(class1, class2) {
     if (this.hasClass(class1)) {
@@ -11,19 +10,23 @@ Chameleon.Utils = (function() {
     }
   }
 
-  $.fn.messenger = function(message, options) {
+  var pluginName = "messenger";
+
+  const Messenger = function(message, options) {
 
     let settings = $.extend({
       className: '',
       message: message,
-      timeout: 3000
+      timeout: 3000,
+      animationEntrance: 'bounceInDown',
+      animationExit: 'bounceOutUp'
     }, options)
 
     if ( $('.ch-message--fixed').length === 0 ) {
       $('body').append(`<ul class="ch-message ch-message--fixed"></ul>`);
     }
 
-    let messageTemplate = $(`<li class="ui message compact tiny ${settings.className} bounceInDown animated">${settings.message}</li>`);
+    let messageTemplate = $(`<li class="ui message compact tiny ${settings.className} ${settings.animationEntrance} animated">${settings.message}</li>`);
 
     let elem = messageTemplate.appendTo('.ch-message--fixed');
 
@@ -33,13 +36,15 @@ Chameleon.Utils = (function() {
 
     function destroyMessage(element) {
       setTimeout(() => {
-        $(element).removeClass('bounceInDown');
-        $(element).addClass('bounceOutUp');
+        $(element).removeClass(settings.animationEntrance);
+        $(element).addClass(settings.animationExit);
         setTimeout(() => $(element).remove(), 1000);
       }, 750);
     }
-
   }
+
+  $[pluginName] = Messenger;
+  $.fn[pluginName] = Messenger;
 
   const keyboardClose = function(e, closeFunction) {
     let code = e.keyCode || e.which;
