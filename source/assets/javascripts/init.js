@@ -59,7 +59,7 @@ $('.ui.form input:submit').on('click', function(e) {
   e.preventDefault()
   $(this).notify('notification', {
     title: 'Success',
-    message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'success',
     icon: 'check',
     className: 'positive'

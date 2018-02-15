@@ -3999,42 +3999,41 @@ Chameleon.Utils = function () {
     }
   };
 
-  var pluginName = "notify";
-
   var notificationTemplate = function notificationTemplate(type, settings) {
     var template = '';
 
     switch (type) {
       case 'notification':
-        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n              <div class="ch-notification-icon">\n                <i class="icon circular large ' + settings.icon + '"></i>\n              </div>\n              <div class="ch-notification-content">\n                <span class="ch-notification-title">' + settings.title + '</span>\n                <p class="ch-notification-message">' + settings.message + '</p>\n              </div>\n              <button class="ch-notification-button--close">\n                <i class="icon close large"></i>\n              </button>\n            </li> ';
+        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n              <div class="ch-notification-icon">\n                <i class="icon circular large ' + settings.icon + '"></i>\n              </div>\n              <div class="ch-notification-content">\n                <span class="ch-notification-title">' + settings.title + '</span>\n                <p class="ch-notification-message">' + settings.description + '</p>\n              </div>\n              <button class="ch-notification-button--close">\n                <i class="icon close large"></i>\n              </button>\n            </li> ';
         break;
       case 'message':
-        template = '<li class="ui message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">' + settings.message + '</li>';
+        template = '<li class="ui message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">' + settings.description + '</li>';
         break;
     }
 
     return template;
   };
 
-  var notificationContainer = function notificationContainer(type) {
-    var container = '';
+  var notificationContainer = function notificationContainer(type, settings) {
+    var containerMainClass = '',
+        containerAllClassesNames = '';
 
     switch (type) {
       case 'notification':
-        container = '.ch-notification-container';
-        if ($('.ch-notification-container').length === 0) {
-          $('body').append('<ul class="ch-notification-container top right"></ul>');
-        }
+        containerMainClass = '.ch-notification-container';
+        containerAllClassesNames = 'ch-notification-container ' + settings.position;
         break;
       case 'message':
-        container = '.ch-message--fixed';
-        if ($('.ch-message--fixed').length === 0) {
-          $('body').append('<ul class="ch-message ch-message--fixed"></ul>');
-        }
+        containerMainClass = '.ch-message--fixed';
+        containerAllClassesNames = 'ch-message ch-message--fixed';
         break;
     }
 
-    return container;
+    if ($(containerMainClass).length === 0) {
+      $('body').append('<ul class="' + containerAllClassesNames + '"></ul>');
+    }
+
+    return containerMainClass;
   };
 
   var notificationDefinitions = function notificationDefinitions(type, settings) {
@@ -4050,9 +4049,10 @@ Chameleon.Utils = function () {
     var settings = $.extend({
       className: '',
       title: '',
-      message: '',
+      description: '',
       type: '',
       icon: '',
+      position: 'top right',
       timeout: 3000,
       animationEntrance: 'bounceInDown',
       animationExit: 'bounceOutUp'
@@ -4078,6 +4078,8 @@ Chameleon.Utils = function () {
       }, 750);
     }
   };
+
+  var pluginName = "notify";
 
   $[pluginName] = Notification;
   $.fn[pluginName] = Notification;
