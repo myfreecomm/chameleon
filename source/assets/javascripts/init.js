@@ -57,7 +57,7 @@ $('#rangeend').calendar({
 
 $('.ui.form input:submit').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('notification', {
+  $(this).notify('chameleon', {
     title: 'Success',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'success',

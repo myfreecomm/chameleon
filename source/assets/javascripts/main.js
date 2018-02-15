@@ -4003,10 +4003,10 @@ Chameleon.Utils = function () {
     var template = '';
 
     switch (type) {
-      case 'notification':
+      case 'chameleon':
         template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n              <div class="ch-notification-icon">\n                <i class="icon circular large ' + settings.icon + '"></i>\n              </div>\n              <div class="ch-notification-content">\n                <span class="ch-notification-title">' + settings.title + '</span>\n                <p class="ch-notification-message">' + settings.description + '</p>\n              </div>\n              <button class="ch-notification-button--close">\n                <i class="icon close large"></i>\n              </button>\n            </li> ';
         break;
-      case 'message':
+      case 'semanticUI':
         template = '<li class="ui message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">' + settings.description + '</li>';
         break;
     }
@@ -4019,11 +4019,11 @@ Chameleon.Utils = function () {
         containerAllClassesNames = '';
 
     switch (type) {
-      case 'notification':
+      case 'chameleon':
         containerMainClass = '.ch-notification-container';
         containerAllClassesNames = 'ch-notification-container ' + settings.position;
         break;
-      case 'message':
+      case 'semanticUI':
         containerMainClass = '.ch-message--fixed';
         containerAllClassesNames = 'ch-message ch-message--fixed';
         break;
