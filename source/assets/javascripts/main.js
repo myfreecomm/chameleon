@@ -4044,6 +4044,16 @@ Chameleon.Utils = function () {
     return { template: template, container: container };
   };
 
+  var destroyNotification = function destroyNotification(element, settings) {
+    setTimeout(function () {
+      $(element).removeClass(settings.animationEntrance);
+      $(element).addClass(settings.animationExit);
+      setTimeout(function () {
+        return $(element).remove();
+      }, 1000);
+    }, 750);
+  };
+
   var Notification = function Notification(type, options) {
 
     var settings = $.extend({
@@ -4064,19 +4074,13 @@ Chameleon.Utils = function () {
 
     if (!settings.timeout == 0) {
       setTimeout(function () {
-        return destroyMessage(elem);
+        return destroyNotification(elem, settings);
       }, settings.timeout);
     }
 
-    function destroyMessage(element) {
-      setTimeout(function () {
-        $(element).removeClass(settings.animationEntrance);
-        $(element).addClass(settings.animationExit);
-        setTimeout(function () {
-          return $(element).remove();
-        }, 1000);
-      }, 750);
-    }
+    $(document).on('click', '.ch-notification-button--close', function () {
+      destroyNotification($(this).parent(), settings);
+    });
   };
 
   var pluginName = "notify";

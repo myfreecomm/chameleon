@@ -36622,6 +36622,7 @@ li {
   cursor: pointer;
   background: none;
   border: none;
+  outline: 0;
 }
 
 .ch-notification .ch-notification-button--close .icon.close {
