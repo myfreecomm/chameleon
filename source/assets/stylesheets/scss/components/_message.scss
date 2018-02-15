@@ -66,6 +66,7 @@ $warningColor: #fbbd08;
   }
 
   &-title {
+    display: block;
     @include title(16px);
     margin-bottom: 5px;
 
