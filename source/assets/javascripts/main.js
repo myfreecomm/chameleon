@@ -3999,49 +3999,53 @@ Chameleon.Utils = function () {
     }
   };
 
-  var pluginName = "messenger";
-
-  var Messenger = function Messenger(message, options) {
-
-    var settings = $.extend({
-      className: '',
-      message: message,
-      timeout: 3000,
-      animationEntrance: 'bounceInDown',
-      animationExit: 'bounceOutUp'
-    }, options);
-
-    if ($('.ch-message--fixed').length === 0) {
-      $('body').append('<ul class="ch-message ch-message--fixed"></ul>');
-    }
-
-    var messageTemplate = $('<li class="ui message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">' + settings.message + '</li>');
-
-    var elem = messageTemplate.appendTo('.ch-message--fixed');
-
-    if (!settings.timeout == 0) {
-      setTimeout(function () {
-        return destroyMessage(elem);
-      }, settings.timeout);
-    }
-
-    function destroyMessage(element) {
-      setTimeout(function () {
-        $(element).removeClass(settings.animationEntrance);
-        $(element).addClass(settings.animationExit);
-        setTimeout(function () {
-          return $(element).remove();
-        }, 1000);
-      }, 750);
-    }
-  };
-
-  $[pluginName] = Messenger;
-  $.fn[pluginName] = Messenger;
-
   var pluginName = "notify";
 
-  var Notification = function Notification(options) {
+  var notificationTemplate = function notificationTemplate(type, settings) {
+    var template = '';
+
+    switch (type) {
+      case 'notification':
+        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n              <div class="ch-notification-icon">\n                <i class="icon circular large ' + settings.icon + '"></i>\n              </div>\n              <div class="ch-notification-content">\n                <span class="ch-notification-title">' + settings.title + '</span>\n                <p class="ch-notification-message">' + settings.message + '</p>\n              </div>\n              <button class="ch-notification-button--close">\n                <i class="icon close large"></i>\n              </button>\n            </li> ';
+        break;
+      case 'message':
+        template = '<li class="ui message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">' + settings.message + '</li>';
+        break;
+    }
+
+    return template;
+  };
+
+  var notificationContainer = function notificationContainer(type) {
+    var container = '';
+
+    switch (type) {
+      case 'notification':
+        container = '.ch-notification-container';
+        if ($('.ch-notification-container').length === 0) {
+          $('body').append('<ul class="ch-notification-container top right"></ul>');
+        }
+        break;
+      case 'message':
+        container = '.ch-message--fixed';
+        if ($('.ch-message--fixed').length === 0) {
+          $('body').append('<ul class="ch-message ch-message--fixed"></ul>');
+        }
+        break;
+    }
+
+    return container;
+  };
+
+  var notificationDefinitions = function notificationDefinitions(type, settings) {
+
+    var template = notificationTemplate(type, settings);
+    var container = notificationContainer(type, settings);
+
+    return { template: template, container: container };
+  };
+
+  var Notification = function Notification(type, options) {
 
     var settings = $.extend({
       className: '',
@@ -4054,13 +4058,9 @@ Chameleon.Utils = function () {
       animationExit: 'bounceOutUp'
     }, options);
 
-    if ($('.ch-notification-container').length === 0) {
-      $('body').append('<ul class="ch-notification-container"></ul>');
-    }
+    var notification = notificationDefinitions(type, settings);
 
-    var messageTemplate = $('<li class="ch-notification-container top right ' + settings.animationEntrance + ' animated">\n        <div class="ch-notification ch-notification--' + settings.type + '">\n          <div class="ch-notification-icon">\n            <i class="icon circular large ' + settings.icon + '"></i>\n          </div>\n          <div class="ch-notification-content">\n            <span class="ch-notification-title">' + settings.title + '</span>\n            <p class="ch-notification-message">' + settings.message + '</p>\n          </div>\n          <button class="ch-notification-button--close">\n            <i class="icon close large"></i>\n          </button>\n        </div>\n      </li> ');
-
-    var elem = messageTemplate.appendTo('.ch-notification-container');
+    var elem = $(notification.template).appendTo(notification.container);
 
     if (!settings.timeout == 0) {
       setTimeout(function () {

@@ -57,17 +57,11 @@ $('#rangeend').calendar({
 
 $('.ui.form input:submit').on('click', function(e) {
   e.preventDefault()
-  $(this).messenger('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.', {
-    className: 'positive'
-  });
-})
-
-$('.ui.form input:submit').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $(this).notify('notification', {
     title: 'Success',
     message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'success',
-    icon: 'check'
+    icon: 'check',
+    className: 'positive'
   });
 })
