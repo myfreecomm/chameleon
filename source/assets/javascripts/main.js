@@ -4039,6 +4039,49 @@ Chameleon.Utils = function () {
   $[pluginName] = Messenger;
   $.fn[pluginName] = Messenger;
 
+  var pluginName = "notify";
+
+  var Notification = function Notification(options) {
+
+    var settings = $.extend({
+      className: '',
+      title: '',
+      message: '',
+      type: '',
+      icon: '',
+      timeout: 3000,
+      animationEntrance: 'bounceInDown',
+      animationExit: 'bounceOutUp'
+    }, options);
+
+    if ($('.ch-notification-container').length === 0) {
+      $('body').append('<ul class="ch-notification-container"></ul>');
+    }
+
+    var messageTemplate = $('<li class="ch-notification-container top right ' + settings.animationEntrance + ' animated">\n        <div class="ch-notification ch-notification--' + settings.type + '">\n          <div class="ch-notification-icon">\n            <i class="icon circular large ' + settings.icon + '"></i>\n          </div>\n          <div class="ch-notification-content">\n            <span class="ch-notification-title">' + settings.title + '</span>\n            <p class="ch-notification-message">' + settings.message + '</p>\n          </div>\n          <button class="ch-notification-button--close">\n            <i class="icon close large"></i>\n          </button>\n        </div>\n      </li> ');
+
+    var elem = messageTemplate.appendTo('.ch-notification-container');
+
+    if (!settings.timeout == 0) {
+      setTimeout(function () {
+        return destroyMessage(elem);
+      }, settings.timeout);
+    }
+
+    function destroyMessage(element) {
+      setTimeout(function () {
+        $(element).removeClass(settings.animationEntrance);
+        $(element).addClass(settings.animationExit);
+        setTimeout(function () {
+          return $(element).remove();
+        }, 1000);
+      }, 750);
+    }
+  };
+
+  $[pluginName] = Notification;
+  $.fn[pluginName] = Notification;
+
   var keyboardClose = function keyboardClose(e, closeFunction) {
     var code = e.keyCode || e.which;
     if (code === 27 && $('.ch-overlay').is(':visible')) {

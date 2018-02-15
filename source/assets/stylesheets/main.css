@@ -36538,6 +36538,96 @@ li {
   }
 }
 
+.ch-notification-container {
+  position: fixed;
+  z-index: 2;
+}
+
+.ch-notification-container.top {
+  top: 85px;
+}
+
+.ch-notification-container.right {
+  right: 25px;
+}
+
+.ch-notification-container.left {
+  left: calc(85px + 25px);
+}
+
+.ch-notification-container.bottom {
+  bottom: 35px;
+}
+
+.ch-notification {
+  display: flex;
+  align-items: center;
+  min-width: 350px;
+  max-width: 450px;
+  margin: 20px 0;
+  padding: 25px;
+  background: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.ch-notification-icon {
+  margin-right: 20px;
+}
+
+.ch-notification-title {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #656565;
+  margin-bottom: 5px;
+}
+
+.ch-notification--success .ch-notification-title,
+.ch-notification--success .circular.icon {
+  color: #2b4;
+}
+
+.ch-notification--success .circular.icon {
+  box-shadow: 0 0 0 0.1em #2b4 inset;
+}
+
+.ch-notification--danger .ch-notification-title,
+.ch-notification--danger .circular.icon {
+  color: #db2828;
+}
+
+.ch-notification--danger .circular.icon {
+  box-shadow: 0 0 0 0.1em #db2828 inset;
+}
+
+.ch-notification--info .ch-notification-title,
+.ch-notification--info .circular.icon {
+  color: #2185d0;
+}
+
+.ch-notification--info .circular.icon {
+  box-shadow: 0 0 0 0.1em #2185d0 inset;
+}
+
+.ch-notification--warning .ch-notification-title,
+.ch-notification--warning .circular.icon {
+  color: #fbbd08;
+}
+
+.ch-notification--warning .circular.icon {
+  box-shadow: 0 0 0 0.1em #fbbd08 inset;
+}
+
+.ch-notification .ch-notification-button--close {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.ch-notification .ch-notification-button--close .icon.close {
+  color: #d6d6d6;
+}
+
 .main-content {
   margin-left: 85px;
   min-height: 100%;
