@@ -36511,7 +36511,7 @@ li {
   border-color: #00BBDA;
 }
 
-.ch-message--fixed {
+.ch-message {
   position: fixed;
   top: 65px;
   left: 50%;
@@ -36523,18 +36523,22 @@ li {
   transform: translateX(-50%);
 }
 
-.ch-message--fixed .ui.message {
-  width: 600px;
+.ch-message .ui.message {
+  max-width: 600px;
+}
+
+.ch-message .ui.icon.message > .icon:not(.close) {
+  font-size: 2em;
 }
 
 @media screen and (max-width: 768px) {
-  .ch-message--fixed {
+  .ch-message {
     top: 20px;
   }
 
-  .ch-message--fixed .ui.message {
+  .ch-message .ui.message {
     width: auto;
-    min-width: 300px;
+    max-width: 300px;
   }
 }
 

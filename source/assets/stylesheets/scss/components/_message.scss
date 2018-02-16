@@ -1,26 +1,28 @@
 .ch-message {
-  &--fixed {
-    position: fixed;
-    top: 65px;
-    left: 50%;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
-    transform: translateX(-50%);
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  transform: translateX(-50%);
+
+  .ui.message {
+    max-width: 600px;
+  }
+
+  .ui.icon.message > .icon:not(.close) {
+    font-size: 2em;
+  }
+
+  @media screen and (max-width: 768px) {
+    top: 20px;
 
     .ui.message {
-      width: 600px;
-    }
-
-    @media screen and (max-width: 768px) {
-      top: 20px;
-
-      .ui.message {
-        width: auto;
-        min-width: 300px;
-      }
+      width: auto;
+      max-width: 300px;
     }
   }
 }

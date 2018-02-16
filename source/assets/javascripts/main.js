@@ -4004,10 +4004,12 @@ Chameleon.Utils = function () {
 
     switch (type) {
       case 'chameleon':
-        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n              <div class="ch-notification-icon">\n                <i class="icon circular large ' + settings.icon + '"></i>\n              </div>\n              <div class="ch-notification-content">\n                <span class="ch-notification-title">' + settings.title + '</span>\n                <p class="ch-notification-message">' + settings.description + '</p>\n              </div>\n              <button class="ch-notification-button--close">\n                <i class="icon close large"></i>\n              </button>\n            </li> ';
+        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li> ';
         break;
       case 'semanticUI':
-        template = '<li class="ui message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">' + settings.description + '</li>';
+        var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
+
+        template = '<li class="ui icon message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
         break;
     }
 
@@ -4024,8 +4026,8 @@ Chameleon.Utils = function () {
         containerAllClassesNames = 'ch-notification-container ' + settings.position;
         break;
       case 'semanticUI':
-        containerMainClass = '.ch-message--fixed';
-        containerAllClassesNames = 'ch-message ch-message--fixed';
+        containerMainClass = '.ch-message';
+        containerAllClassesNames = 'ch-message';
         break;
     }
 

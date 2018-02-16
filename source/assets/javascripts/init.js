@@ -104,6 +104,8 @@ $('.ui.semantic.button.green').on('click', function(e) {
   $(this).notify('semanticUI', {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     className: 'positive',
+    icon: 'check',
+    title: 'Success',
   });
 })
 
@@ -120,6 +122,7 @@ $('.ui.semantic.button.blue').on('click', function(e) {
   $(this).notify('semanticUI', {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     className: 'blue',
+    icon: 'info',
   });
 })
 
