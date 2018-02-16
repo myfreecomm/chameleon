@@ -92,7 +92,6 @@ Chameleon.Utils = (function() {
 
     let elem = $(notification.template).appendTo(notification.container);
 
-
     if (!settings.timeout == 0) {
       setTimeout(() => destroyNotification(elem, settings), settings.timeout);
     }

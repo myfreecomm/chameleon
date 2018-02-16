@@ -55,13 +55,78 @@ $('#rangeend').calendar({
   }
 });
 
-$('.ui.form input:submit').on('click', function(e) {
+$('.ch-button.green').on('click', function(e) {
   e.preventDefault()
   $(this).notify('chameleon', {
     title: 'Success',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'success',
     icon: 'check',
-    className: 'positive'
+  });
+})
+
+//CHAMELEON NOTIFICATIONS
+
+$('.ch-button.red').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('chameleon', {
+    title: 'Danger',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    type: 'danger',
+    icon: 'remove',
+  });
+})
+
+$('.ch-button.blue').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('chameleon', {
+    title: 'Info',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    type: 'info',
+    icon: 'info',
+  });
+})
+
+$('.ch-button.yellow').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('chameleon', {
+    title: 'Warning',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    type: 'warning',
+    icon: 'warning',
+  });
+})
+
+//SEMANTIC UI NOTIFICATIONS
+
+$('.ui.semantic.button.green').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('semanticUI', {
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    className: 'positive',
+  });
+})
+
+$('.ui.semantic.button.red').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('semanticUI', {
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    className: 'negative',
+  });
+})
+
+$('.ui.semantic.button.blue').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('semanticUI', {
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    className: 'blue',
+  });
+})
+
+$('.ui.semantic.button.yellow').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('semanticUI', {
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    className: 'yellow',
   });
 })
