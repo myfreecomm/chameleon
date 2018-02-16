@@ -1,3 +1,4 @@
+$defaultColor: #666;
 $successColor: #2b4;
 $dangerColor: #db2828;
 $infoColor: #2185d0;
@@ -72,6 +73,16 @@ $warningColor: #fbbd08;
 
   &:first-child {
     margin-top: 0;
+  }
+
+  &--default {
+    .ch-notification-title, .circular.icon {
+      color:  $defaultColor;
+    }
+
+    .circular.icon {
+      box-shadow: 0 0 0 0.1em $defaultColor inset;
+    }
   }
 
   &--success {

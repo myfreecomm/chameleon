@@ -4052,7 +4052,7 @@ Chameleon.Utils = function () {
       className: '',
       title: '',
       description: '',
-      type: '',
+      type: 'default',
       icon: '',
       position: 'top right',
       timeout: 3000,

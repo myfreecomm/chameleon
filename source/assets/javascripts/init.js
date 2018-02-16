@@ -55,6 +55,8 @@ $('#rangeend').calendar({
   }
 });
 
+//CHAMELEON NOTIFICATIONS
+
 $('.ch-button.green').on('click', function(e) {
   e.preventDefault()
   $(this).notify('chameleon', {
@@ -64,8 +66,6 @@ $('.ch-button.green').on('click', function(e) {
     icon: 'check',
   });
 })
-
-//CHAMELEON NOTIFICATIONS
 
 $('.ch-button.red').on('click', function(e) {
   e.preventDefault()
@@ -101,6 +101,26 @@ $('.ch-button.yellow').on('click', function(e) {
     type: 'warning',
     icon: 'warning',
     position: 'top left',
+  });
+})
+
+$('.ch-button.grey').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('chameleon', {
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    type: 'default',
+    icon: 'warning',
+    position: 'top center'
+  });
+})
+
+$('.ch-button.black').on('click', function(e) {
+  e.preventDefault()
+  $(this).notify('chameleon', {
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    type: 'default',
+    icon: 'warning',
+    position: 'bottom center'
   });
 })
 

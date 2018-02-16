@@ -36585,6 +36585,15 @@ li {
   margin-top: 0;
 }
 
+.ch-notification--default .ch-notification-title,
+.ch-notification--default .circular.icon {
+  color: #666;
+}
+
+.ch-notification--default .circular.icon {
+  box-shadow: 0 0 0 0.1em #666 inset;
+}
+
 .ch-notification--success .ch-notification-title,
 .ch-notification--success .circular.icon {
   color: #2b4;
