@@ -4009,39 +4009,29 @@ Chameleon.Utils = function () {
       case 'semanticUI':
         var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
 
-        template = '<li class="ui icon message ch-message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
+        template = '<li class="ui icon message tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
         break;
     }
 
     return template;
   };
 
-  var notificationContainer = function notificationContainer(type, settings) {
-    var containerMainClass = '',
-        containerAllClassesNames = '';
+  var notificationContainer = function notificationContainer(settings) {
 
-    switch (type) {
-      case 'chameleon':
-        containerMainClass = '.ch-notification-container';
-        containerAllClassesNames = 'ch-notification-container ' + settings.position;
-        break;
-      case 'semanticUI':
-        containerMainClass = '.ch-message-container';
-        containerAllClassesNames = 'ch-message-container';
-        break;
+    var container = 'ch-notification-container ' + settings.position;
+    var containerClasses = '.' + container.replace(/ +/g, '.');
+
+    if ($(containerClasses).length === 0) {
+      $('body').append('<ul class="' + container + '"></ul>');
     }
 
-    if ($(containerMainClass).length === 0) {
-      $('body').append('<ul class="' + containerAllClassesNames + '"></ul>');
-    }
-
-    return containerMainClass;
+    return containerClasses;
   };
 
   var notificationDefinitions = function notificationDefinitions(type, settings) {
 
     var template = notificationTemplate(type, settings);
-    var container = notificationContainer(type, settings);
+    var container = notificationContainer(settings);
 
     return { template: template, container: container };
   };
@@ -4081,7 +4071,9 @@ Chameleon.Utils = function () {
     }
 
     $(document).on('click', '.ch-notification-button--close', function () {
-      destroyNotification($(this).parent(), settings);
+      if ($(elem).is(':visible')) {
+        destroyNotification($(this).parent(), settings);
+      }
     });
   };
 

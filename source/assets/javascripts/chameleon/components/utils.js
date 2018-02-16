@@ -34,7 +34,7 @@ Chameleon.Utils = (function() {
        let icon = settings.icon !== '' ? `<i class="${settings.icon} tiny icon"></i>` : ''
 
         template =
-          `<li class="ui icon message ch-message compact tiny ${settings.className} ${settings.animationEntrance} animated">
+          `<li class="ui icon message tiny ${settings.className} ${settings.animationEntrance} animated">
             ${icon}
             <div class="content">
               <div class="header">${settings.title}</div>
@@ -48,32 +48,22 @@ Chameleon.Utils = (function() {
     return template
   }
 
-  const notificationContainer = function(type, settings) {
-    let containerMainClass = '',
-        containerAllClassesNames = '';
+  const notificationContainer = function(settings) {
 
-    switch(type) {
-      case 'chameleon':
-        containerMainClass = '.ch-notification-container';
-        containerAllClassesNames = `ch-notification-container ${settings.position}`;
-        break;
-      case 'semanticUI':
-        containerMainClass = '.ch-message-container';
-        containerAllClassesNames = 'ch-message-container'
-        break;
+    let container = `ch-notification-container ${settings.position}`;
+    let containerClasses = '.' + container.replace(/ +/g, '.') ;
+
+    if ( $(containerClasses).length === 0 ) {
+      $('body').append(`<ul class="${container}"></ul>`);
     }
 
-    if ( $(containerMainClass).length === 0 ) {
-      $('body').append(`<ul class="${containerAllClassesNames}"></ul>`);
-    }
-
-    return containerMainClass;
+    return containerClasses;
   }
 
   const notificationDefinitions = function(type, settings) {
 
     let template = notificationTemplate(type, settings);
-    let container = notificationContainer(type, settings);
+    let container = notificationContainer(settings);
 
     return { template, container };
   }
@@ -109,7 +99,9 @@ Chameleon.Utils = (function() {
     }
 
     $(document).on('click', '.ch-notification-button--close', function() {
-      destroyNotification($(this).parent(), settings);
+      if ( $(elem).is(':visible') ) {
+        destroyNotification($(this).parent(), settings);
+      }
     });
   }
 

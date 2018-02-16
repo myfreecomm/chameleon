@@ -1,40 +1,3 @@
-.ch-message {
-  &-container {
-    position: fixed;
-    top: 65px;
-    left: 50%;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
-    transform: translateX(-50%);
-  }
-
-  &.ui.icon.message {
-    max-width: 600px;
-
-    > .icon:not(.close) {
-      font-size: 2em;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-
-    &-container {
-      width: 90%;
-      top: 65px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    &.ui.icon.message {
-      min-width: 100%;
-      max-width: 100%;
-    }
-  }
-}
-
 $successColor: #2b4;
 $dangerColor: #db2828;
 $infoColor: #2185d0;
@@ -62,6 +25,11 @@ $warningColor: #fbbd08;
       right: 25px;
     }
 
+    &.center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     &.left {
       left: calc(85px + 25px);
     }
@@ -70,18 +38,23 @@ $warningColor: #fbbd08;
       bottom: 35px;
     }
 
+    .ui.icon.message {
+      > .icon:not(.close) {
+        font-size: 2em;
+      }
+    }
+
     @media screen and (max-width: 768px) {
       width: 90%;
       top: 65px;
       left: 50%;
       transform: translateX(-50%);
-    }
-  }
 
-  @media screen and (max-width: 768px) {
-    min-width: 100%;
-    max-width: 100%;
-    padding: 20px;
+      .ui.icon.message {
+        min-width: 100%;
+        max-width: 100%;
+      }
+    }
   }
 
   &-icon {
@@ -139,7 +112,7 @@ $warningColor: #fbbd08;
     }
   }
 
-  .ch-notification-button--close {
+  &-button--close {
     margin-left: auto;
     background: none;
     border: none;
@@ -149,5 +122,11 @@ $warningColor: #fbbd08;
     .icon.close {
       color: #d6d6d6;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
   }
 }

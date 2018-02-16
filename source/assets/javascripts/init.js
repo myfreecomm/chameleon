@@ -74,6 +74,9 @@ $('.ch-button.red').on('click', function(e) {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'danger',
     icon: 'remove',
+    position: 'bottom right',
+    animationEntrance: 'bounceInUp',
+    animationExit: 'bounceOutDown'
   });
 })
 
@@ -84,6 +87,9 @@ $('.ch-button.blue').on('click', function(e) {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'info',
     icon: 'info',
+    position: 'bottom left',
+    animationEntrance: 'bounceInUp',
+    animationExit: 'bounceOutDown'
   });
 })
 
@@ -94,6 +100,7 @@ $('.ch-button.yellow').on('click', function(e) {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'warning',
     icon: 'warning',
+    position: 'top left',
   });
 })
 
@@ -106,6 +113,7 @@ $('.ui.semantic.button.green').on('click', function(e) {
     className: 'positive',
     icon: 'check',
     title: 'Success',
+    position: 'top center',
   });
 })
 
@@ -114,6 +122,7 @@ $('.ui.semantic.button.red').on('click', function(e) {
   $(this).notify('semanticUI', {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     className: 'negative',
+    position: 'top center'
   });
 })
 
@@ -123,6 +132,7 @@ $('.ui.semantic.button.blue').on('click', function(e) {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     className: 'blue',
     icon: 'info',
+    position: 'top center'
   });
 })
 
@@ -131,5 +141,6 @@ $('.ui.semantic.button.yellow').on('click', function(e) {
   $(this).notify('semanticUI', {
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     className: 'yellow',
+    position: 'top center'
   });
 })
