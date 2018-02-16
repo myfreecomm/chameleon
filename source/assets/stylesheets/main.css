@@ -36555,8 +36555,10 @@ li {
 @media screen and (max-width: 768px) {
   .ch-notification-container {
     width: 90%;
-    top: 65px;
-    left: 50%;
+    top: 65px !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
     transform: translateX(-50%);
   }
 
