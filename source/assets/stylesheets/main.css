@@ -36511,7 +36511,7 @@ li {
   border-color: #00BBDA;
 }
 
-.ch-message {
+.ch-message-container {
   position: fixed;
   top: 65px;
   left: 50%;
@@ -36523,23 +36523,34 @@ li {
   transform: translateX(-50%);
 }
 
-.ch-message .ui.message {
+.ch-message.ui.icon.message {
   max-width: 600px;
 }
 
-.ch-message .ui.icon.message > .icon:not(.close) {
+.ch-message.ui.icon.message > .icon:not(.close) {
   font-size: 2em;
 }
 
 @media screen and (max-width: 768px) {
-  .ch-message {
+  .ch-message-container {
     top: 20px;
   }
 
-  .ch-message .ui.message {
+  .ch-message.ui.icon.message {
     width: auto;
     max-width: 300px;
   }
+}
+
+.ch-notification {
+  display: flex;
+  align-items: center;
+  min-width: 350px;
+  max-width: 450px;
+  margin: 20px 0;
+  padding: 25px;
+  background: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .ch-notification-container {
@@ -36561,17 +36572,6 @@ li {
 
 .ch-notification-container.bottom {
   bottom: 35px;
-}
-
-.ch-notification {
-  display: flex;
-  align-items: center;
-  min-width: 350px;
-  max-width: 450px;
-  margin: 20px 0;
-  padding: 25px;
-  background: #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .ch-notification-icon {

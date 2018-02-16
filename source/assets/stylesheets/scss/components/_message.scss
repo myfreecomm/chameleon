@@ -1,26 +1,31 @@
 .ch-message {
-  position: fixed;
-  top: 65px;
-  left: 50%;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 2;
-  transform: translateX(-50%);
-
-  .ui.message {
-    max-width: 600px;
+  &-container {
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    transform: translateX(-50%);
   }
 
-  .ui.icon.message > .icon:not(.close) {
-    font-size: 2em;
+  &.ui.icon.message {
+    max-width: 600px;
+
+    > .icon:not(.close) {
+      font-size: 2em;
+    }
   }
 
   @media screen and (max-width: 768px) {
-    top: 20px;
 
-    .ui.message {
+    &-container {
+      top: 20px;
+    }
+
+    &.ui.icon.message {
       width: auto;
       max-width: 300px;
     }
@@ -32,27 +37,6 @@ $dangerColor: #db2828;
 $infoColor: #2185d0;
 $warningColor: #fbbd08;
 
-.ch-notification-container {
-  position: fixed;
-  z-index: 2;
-
-  &.top {
-    top: 85px;
-  }
-
-  &.right {
-    right: 25px;
-  }
-
-  &.left {
-    left: calc(85px + 25px);
-  }
-
-  &.bottom {
-    bottom: 35px;
-  }
-}
-
 .ch-notification {
   display: flex;
   align-items: center;
@@ -62,6 +46,27 @@ $warningColor: #fbbd08;
   padding: 25px;
   background: #fff;
   box-shadow: 0 0 25px rgba(#000, 0.15);
+
+  &-container {
+    position: fixed;
+    z-index: 2;
+
+    &.top {
+      top: 85px;
+    }
+
+    &.right {
+      right: 25px;
+    }
+
+    &.left {
+      left: calc(85px + 25px);
+    }
+
+    &.bottom {
+      bottom: 35px;
+    }
+  }
 
   &-icon {
     margin-right: 20px;
@@ -124,6 +129,4 @@ $warningColor: #fbbd08;
       color: #d6d6d6;
     }
   }
-
-
 }

@@ -34,7 +34,7 @@ Chameleon.Utils = (function() {
        let icon = settings.icon !== '' ? `<i class="${settings.icon} tiny icon"></i>` : ''
 
         template =
-          `<li class="ui icon message compact tiny ${settings.className} ${settings.animationEntrance} animated">
+          `<li class="ui icon message ch-message compact tiny ${settings.className} ${settings.animationEntrance} animated">
             ${icon}
             <div class="content">
               <div class="header">${settings.title}</div>
@@ -58,8 +58,8 @@ Chameleon.Utils = (function() {
         containerAllClassesNames = `ch-notification-container ${settings.position}`;
         break;
       case 'semanticUI':
-        containerMainClass = '.ch-message';
-        containerAllClassesNames = 'ch-message'
+        containerMainClass = '.ch-message-container';
+        containerAllClassesNames = 'ch-message-container'
         break;
     }
 

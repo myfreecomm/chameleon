@@ -4009,7 +4009,7 @@ Chameleon.Utils = function () {
       case 'semanticUI':
         var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
 
-        template = '<li class="ui icon message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
+        template = '<li class="ui icon message ch-message compact tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
         break;
     }
 
@@ -4026,8 +4026,8 @@ Chameleon.Utils = function () {
         containerAllClassesNames = 'ch-notification-container ' + settings.position;
         break;
       case 'semanticUI':
-        containerMainClass = '.ch-message';
-        containerAllClassesNames = 'ch-message';
+        containerMainClass = '.ch-message-container';
+        containerAllClassesNames = 'ch-message-container';
         break;
     }
 
