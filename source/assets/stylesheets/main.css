@@ -36533,12 +36533,15 @@ li {
 
 @media screen and (max-width: 768px) {
   .ch-message-container {
-    top: 20px;
+    width: 90%;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .ch-message.ui.icon.message {
-    width: auto;
-    max-width: 300px;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -36574,6 +36577,23 @@ li {
   bottom: 35px;
 }
 
+@media screen and (max-width: 768px) {
+  .ch-notification-container {
+    width: 90%;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ch-notification {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
 .ch-notification-icon {
   margin-right: 20px;
 }
@@ -36585,6 +36605,10 @@ li {
   text-transform: uppercase;
   color: #656565;
   margin-bottom: 5px;
+}
+
+.ch-notification:first-child {
+  margin-top: 0;
 }
 
 .ch-notification--success .ch-notification-title,
@@ -36624,10 +36648,11 @@ li {
 }
 
 .ch-notification .ch-notification-button--close {
-  cursor: pointer;
+  margin-left: auto;
   background: none;
   border: none;
   outline: 0;
+  cursor: pointer;
 }
 
 .ch-notification .ch-notification-button--close .icon.close {

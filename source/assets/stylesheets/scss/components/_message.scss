@@ -22,12 +22,15 @@
   @media screen and (max-width: 768px) {
 
     &-container {
-      top: 20px;
+      width: 90%;
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     &.ui.icon.message {
-      width: auto;
-      max-width: 300px;
+      min-width: 100%;
+      max-width: 100%;
     }
   }
 }
@@ -66,6 +69,19 @@ $warningColor: #fbbd08;
     &.bottom {
       bottom: 35px;
     }
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
   }
 
   &-icon {
@@ -77,6 +93,10 @@ $warningColor: #fbbd08;
     @include title(16px);
     margin-bottom: 5px;
 
+  }
+
+  &:first-child {
+    margin-top: 0;
   }
 
   &--success {
@@ -120,10 +140,11 @@ $warningColor: #fbbd08;
   }
 
   .ch-notification-button--close {
-    cursor: pointer;
+    margin-left: auto;
     background: none;
     border: none;
     outline: 0;
+    cursor: pointer;
 
     .icon.close {
       color: #d6d6d6;

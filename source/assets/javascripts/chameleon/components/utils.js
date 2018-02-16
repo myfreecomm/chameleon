@@ -27,7 +27,7 @@ Chameleon.Utils = (function() {
             <button class="ch-notification-button--close">
               <i class="icon close large"></i>
             </button>
-          </li> `
+          </li>`
         ;
         break;
       case 'semanticUI':
