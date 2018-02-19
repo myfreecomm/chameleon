@@ -118,7 +118,9 @@ $('.ch-button.black').on('click', function(e) {
   $(this).notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     icon: 'warning',
-    position: 'bottom center'
+    position: 'bottom center',
+    animationEntrance: 'bounceInUp',
+    animationExit: 'bounceOutDown'
   });
 })
 
