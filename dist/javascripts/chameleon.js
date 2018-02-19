@@ -3740,6 +3740,9 @@ if (window.Chameleon === undefined) {
 if (window.Chameleon.Components === undefined) {
   window.Chameleon.Components = {};
 }
+if (window.Chameleon.Plugins === undefined) {
+  window.Chameleon.Plugins = {};
+}
 
 Chameleon.init = function () {
   var components = Object.values(Chameleon.Components);
@@ -3988,6 +3991,7 @@ Chameleon.Components.Table = function () {
 'use strict';
 
 Chameleon.Utils = function () {
+
   $.fn.switchClass = function (class1, class2) {
     if (this.hasClass(class1)) {
       this.removeClass(class1);
@@ -4008,4 +4012,91 @@ Chameleon.Utils = function () {
   return {
     keyboardClose: keyboardClose
   };
+}();
+'use strict';
+
+Chameleon.Plugins.Notification = function () {
+  var setTemplate = function setTemplate(settings) {
+    var template = '';
+
+    switch (settings.theme) {
+      case 'chameleon':
+        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li>';
+        break;
+      case 'semanticUI':
+        var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
+
+        template = '<li class="ui icon message tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
+        break;
+    }
+
+    return template;
+  };
+
+  var setContainer = function setContainer(settings) {
+
+    var container = 'ch-notification-container ' + settings.position;
+    var containerClasses = '.' + container.replace(/ +/g, '.');
+
+    if ($(containerClasses).length === 0) {
+      $('body').append('<ul class="' + container + '"></ul>');
+    }
+
+    return containerClasses;
+  };
+
+  var buildHTML = function buildHTML(settings) {
+
+    var template = setTemplate(settings);
+    var container = setContainer(settings);
+
+    return { template: template, container: container };
+  };
+
+  var destroy = function destroy(element, settings) {
+    setTimeout(function () {
+      $(element).removeClass(settings.animationEntrance);
+      $(element).addClass(settings.animationExit);
+      setTimeout(function () {
+        return $(element).remove();
+      }, 1000);
+    }, 750);
+  };
+
+  var Notification = function Notification(options) {
+
+    var settings = $.extend({
+      className: '',
+      title: '',
+      description: '',
+      type: 'default',
+      theme: 'chameleon',
+      icon: '',
+      position: 'top right',
+      timeout: 3000,
+      animationEntrance: 'bounceInDown',
+      animationExit: 'bounceOutUp'
+    }, options);
+
+    var notification = buildHTML(settings);
+
+    var elem = $(notification.template).appendTo(notification.container);
+
+    if (!settings.timeout == 0) {
+      setTimeout(function () {
+        return destroy(elem, settings);
+      }, settings.timeout);
+    }
+
+    $(document).on('click', '.ch-notification-button--close', function () {
+      if ($(elem).is(':visible')) {
+        destroy($(this).parent(), settings);
+      }
+    });
+  };
+
+  var pluginName = "notify";
+
+  $[pluginName] = Notification;
+  $.fn[pluginName] = Notification;
 }();
