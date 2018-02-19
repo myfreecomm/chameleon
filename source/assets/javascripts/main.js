@@ -3740,6 +3740,9 @@ if (window.Chameleon === undefined) {
 if (window.Chameleon.Components === undefined) {
   window.Chameleon.Components = {};
 }
+if (window.Chameleon.Plugins === undefined) {
+  window.Chameleon.Plugins = {};
+}
 
 Chameleon.init = function () {
   var components = Object.values(Chameleon.Components);
@@ -3999,6 +4002,20 @@ Chameleon.Utils = function () {
     }
   };
 
+  var keyboardClose = function keyboardClose(e, closeFunction) {
+    var code = e.keyCode || e.which;
+    if (code === 27 && $('.ch-overlay').is(':visible')) {
+      closeFunction();
+    }
+  };
+
+  return {
+    keyboardClose: keyboardClose
+  };
+}();
+'use strict';
+
+Chameleon.Plugins.Notification = function () {
   var notificationTemplate = function notificationTemplate(settings) {
     var template = '';
 
@@ -4082,15 +4099,4 @@ Chameleon.Utils = function () {
 
   $[pluginName] = Notification;
   $.fn[pluginName] = Notification;
-
-  var keyboardClose = function keyboardClose(e, closeFunction) {
-    var code = e.keyCode || e.which;
-    if (code === 27 && $('.ch-overlay').is(':visible')) {
-      closeFunction();
-    }
-  };
-
-  return {
-    keyboardClose: keyboardClose
-  };
 }();
