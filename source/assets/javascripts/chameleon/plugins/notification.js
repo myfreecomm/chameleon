@@ -1,5 +1,5 @@
 Chameleon.Plugins.Notification = (function() {
-  const notificationTemplate = function(settings) {
+  const setTemplate = function(settings) {
     let template = '';
 
     switch(settings.theme) {
@@ -37,7 +37,7 @@ Chameleon.Plugins.Notification = (function() {
     return template
   }
 
-  const notificationContainer = function(settings) {
+  const setContainer = function(settings) {
 
     let container = `ch-notification-container ${settings.position}`;
     let containerClasses = '.' + container.replace(/ +/g, '.') ;
@@ -49,15 +49,15 @@ Chameleon.Plugins.Notification = (function() {
     return containerClasses;
   }
 
-  const notificationDefinitions = function(settings) {
+  const buildHTML = function(settings) {
 
-    let template = notificationTemplate(settings);
-    let container = notificationContainer(settings);
+    let template = setTemplate(settings);
+    let container = setContainer(settings);
 
     return { template, container };
   }
 
-  const destroyNotification = function(element, settings) {
+  const destroy = function(element, settings) {
     setTimeout(() => {
       $(element).removeClass(settings.animationEntrance);
       $(element).addClass(settings.animationExit);
@@ -80,17 +80,17 @@ Chameleon.Plugins.Notification = (function() {
       animationExit: 'bounceOutUp'
     }, options)
 
-    let notification = notificationDefinitions(settings);
+    let notification = buildHTML(settings);
 
     let elem = $(notification.template).appendTo(notification.container);
 
     if (!settings.timeout == 0) {
-      setTimeout(() => destroyNotification(elem, settings), settings.timeout);
+      setTimeout(() => destroy(elem, settings), settings.timeout);
     }
 
     $(document).on('click', '.ch-notification-button--close', function() {
       if ( $(elem).is(':visible') ) {
-        destroyNotification($(this).parent(), settings);
+        destroy($(this).parent(), settings);
       }
     });
   }

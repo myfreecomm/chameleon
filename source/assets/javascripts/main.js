@@ -4016,7 +4016,7 @@ Chameleon.Utils = function () {
 'use strict';
 
 Chameleon.Plugins.Notification = function () {
-  var notificationTemplate = function notificationTemplate(settings) {
+  var setTemplate = function setTemplate(settings) {
     var template = '';
 
     switch (settings.theme) {
@@ -4033,7 +4033,7 @@ Chameleon.Plugins.Notification = function () {
     return template;
   };
 
-  var notificationContainer = function notificationContainer(settings) {
+  var setContainer = function setContainer(settings) {
 
     var container = 'ch-notification-container ' + settings.position;
     var containerClasses = '.' + container.replace(/ +/g, '.');
@@ -4045,15 +4045,15 @@ Chameleon.Plugins.Notification = function () {
     return containerClasses;
   };
 
-  var notificationDefinitions = function notificationDefinitions(settings) {
+  var buildHTML = function buildHTML(settings) {
 
-    var template = notificationTemplate(settings);
-    var container = notificationContainer(settings);
+    var template = setTemplate(settings);
+    var container = setContainer(settings);
 
     return { template: template, container: container };
   };
 
-  var destroyNotification = function destroyNotification(element, settings) {
+  var destroy = function destroy(element, settings) {
     setTimeout(function () {
       $(element).removeClass(settings.animationEntrance);
       $(element).addClass(settings.animationExit);
@@ -4078,19 +4078,19 @@ Chameleon.Plugins.Notification = function () {
       animationExit: 'bounceOutUp'
     }, options);
 
-    var notification = notificationDefinitions(settings);
+    var notification = buildHTML(settings);
 
     var elem = $(notification.template).appendTo(notification.container);
 
     if (!settings.timeout == 0) {
       setTimeout(function () {
-        return destroyNotification(elem, settings);
+        return destroy(elem, settings);
       }, settings.timeout);
     }
 
     $(document).on('click', '.ch-notification-button--close', function () {
       if ($(elem).is(':visible')) {
-        destroyNotification($(this).parent(), settings);
+        destroy($(this).parent(), settings);
       }
     });
   };
