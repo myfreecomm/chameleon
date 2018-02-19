@@ -3999,10 +3999,10 @@ Chameleon.Utils = function () {
     }
   };
 
-  var notificationTemplate = function notificationTemplate(type, settings) {
+  var notificationTemplate = function notificationTemplate(settings) {
     var template = '';
 
-    switch (type) {
+    switch (settings.theme) {
       case 'chameleon':
         template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li>';
         break;
@@ -4028,9 +4028,9 @@ Chameleon.Utils = function () {
     return containerClasses;
   };
 
-  var notificationDefinitions = function notificationDefinitions(type, settings) {
+  var notificationDefinitions = function notificationDefinitions(settings) {
 
-    var template = notificationTemplate(type, settings);
+    var template = notificationTemplate(settings);
     var container = notificationContainer(settings);
 
     return { template: template, container: container };
@@ -4046,13 +4046,14 @@ Chameleon.Utils = function () {
     }, 750);
   };
 
-  var Notification = function Notification(type, options) {
+  var Notification = function Notification(options) {
 
     var settings = $.extend({
       className: '',
       title: '',
       description: '',
       type: 'default',
+      theme: 'chameleon',
       icon: '',
       position: 'top right',
       timeout: 3000,
@@ -4060,7 +4061,7 @@ Chameleon.Utils = function () {
       animationExit: 'bounceOutUp'
     }, options);
 
-    var notification = notificationDefinitions(type, settings);
+    var notification = notificationDefinitions(settings);
 
     var elem = $(notification.template).appendTo(notification.container);
 

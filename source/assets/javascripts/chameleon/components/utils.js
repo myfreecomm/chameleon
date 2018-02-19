@@ -10,10 +10,10 @@ Chameleon.Utils = (function() {
     }
   }
 
-  const notificationTemplate = function(type, settings) {
+  const notificationTemplate = function(settings) {
     let template = '';
 
-    switch(type) {
+    switch(settings.theme) {
       case 'chameleon':
         template =
           `<li class="ch-notification ch-notification--${settings.type} ${settings.animationEntrance} animated">
@@ -60,9 +60,9 @@ Chameleon.Utils = (function() {
     return containerClasses;
   }
 
-  const notificationDefinitions = function(type, settings) {
+  const notificationDefinitions = function(settings) {
 
-    let template = notificationTemplate(type, settings);
+    let template = notificationTemplate(settings);
     let container = notificationContainer(settings);
 
     return { template, container };
@@ -76,13 +76,14 @@ Chameleon.Utils = (function() {
     }, 750);
   }
 
-  const Notification = function(type, options) {
+  const Notification = function(options) {
 
     let settings = $.extend({
       className: '',
       title: '',
       description: '',
       type: 'default',
+      theme: 'chameleon',
       icon: '',
       position: 'top right',
       timeout: 3000,
@@ -90,7 +91,7 @@ Chameleon.Utils = (function() {
       animationExit: 'bounceOutUp'
     }, options)
 
-    let notification = notificationDefinitions(type, settings);
+    let notification = notificationDefinitions(settings);
 
     let elem = $(notification.template).appendTo(notification.container);
 

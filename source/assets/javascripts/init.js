@@ -59,7 +59,7 @@ $('#rangeend').calendar({
 
 $('.ch-button.green').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('chameleon', {
+  $(this).notify({
     title: 'Success',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'success',
@@ -69,7 +69,7 @@ $('.ch-button.green').on('click', function(e) {
 
 $('.ch-button.red').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('chameleon', {
+  $(this).notify({
     title: 'Danger',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'danger',
@@ -82,7 +82,7 @@ $('.ch-button.red').on('click', function(e) {
 
 $('.ch-button.blue').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('chameleon', {
+  $(this).notify({
     title: 'Info',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'info',
@@ -95,7 +95,7 @@ $('.ch-button.blue').on('click', function(e) {
 
 $('.ch-button.yellow').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('chameleon', {
+  $(this).notify({
     title: 'Warning',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'warning',
@@ -106,9 +106,8 @@ $('.ch-button.yellow').on('click', function(e) {
 
 $('.ch-button.grey').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('chameleon', {
+  $(this).notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
-    type: 'default',
     icon: 'warning',
     position: 'top center'
   });
@@ -116,9 +115,8 @@ $('.ch-button.grey').on('click', function(e) {
 
 $('.ch-button.black').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('chameleon', {
+  $(this).notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
-    type: 'default',
     icon: 'warning',
     position: 'bottom center'
   });
@@ -128,8 +126,9 @@ $('.ch-button.black').on('click', function(e) {
 
 $('.ui.semantic.button.green').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('semanticUI', {
+  $(this).notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    theme: 'semanticUI',
     className: 'positive',
     icon: 'check',
     title: 'Success',
@@ -139,8 +138,9 @@ $('.ui.semantic.button.green').on('click', function(e) {
 
 $('.ui.semantic.button.red').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('semanticUI', {
+  $(this).notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    theme: 'semanticUI',
     className: 'negative',
     position: 'top center'
   });
@@ -148,8 +148,9 @@ $('.ui.semantic.button.red').on('click', function(e) {
 
 $('.ui.semantic.button.blue').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('semanticUI', {
+  $(this).notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    theme: 'semanticUI',
     className: 'blue',
     icon: 'info',
     position: 'top center'
@@ -158,8 +159,9 @@ $('.ui.semantic.button.blue').on('click', function(e) {
 
 $('.ui.semantic.button.yellow').on('click', function(e) {
   e.preventDefault()
-  $(this).notify('semanticUI', {
+  $(this).notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
+    theme: 'semanticUI',
     className: 'yellow',
     position: 'top center'
   });
