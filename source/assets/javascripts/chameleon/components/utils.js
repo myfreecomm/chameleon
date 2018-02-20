@@ -1,4 +1,5 @@
 Chameleon.Utils = (function() {
+
   $.fn.switchClass = function(class1, class2) {
     if (this.hasClass(class1)) {
       this.removeClass(class1);

@@ -11,6 +11,7 @@ let cssExternals = [
   `${stylesPath}/css/vendors/semantic.min.css`,
   `${stylesPath}/css/vendors/calendar.css`,
   `${stylesPath}/css/vendors/nouislider.css`,
+  `${stylesPath}/css/vendors/animate.css`,
 ]
 
 const bundle = function(){

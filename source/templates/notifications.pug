@@ -1,0 +1,55 @@
+-
+  var workers = [
+    { id: "32133", name: "Rachel Lilki", email: "rachel@email.com",  post: "Aux. Administrativo", avatar_src: "http://i.pravatar.cc/50?img=1", href: "employee-detail.html",
+      cpf: "123.456.789-10", salary: "5.000,00", birthday: "25/03/1988", adress: "Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ"
+    },
+    { id: "76914", name: "Jamie Harington", email: "jamie@email.com",  post: "Designer Jr.", avatar_src: "http://i.pravatar.cc/50?img=2", href: "#" ,
+      cpf: "123.456.789-11", salary: "4.500,00", birthday: "25/03/1990", adress: "Rua Lorem Ipsum, 00 - Flamengo, Rio de Janeiro - RJ"
+    },
+    { id: "96610", name: "John Lewis", email: "john@email.com",  post: "UX Designer", avatar_src: "http://i.pravatar.cc/50?img=3", href: "#",
+      cpf: "123.456.789-12", salary: "5.000,00", birthday: "25/03/1988", adress: "Rua Lorem Ipsum, 00 - Morumbi, São Paulo - SP"
+    },
+  ];
+
+doctype html
+html
+  include includes/head.pug
+
+  body
+    +nav('notifications.html')
+
+    .main-content
+      include includes/header.pug
+
+      .ch-content
+        .ch-content-header
+          h1.ui.header Notificações
+            .sub.header Exemplos de notificações
+
+        .ui.stackable.padded.grid
+          .row
+            .eight.wide.column
+              .ui.segments
+                .ui.attached.segment.ch-segment-header
+                  .ch-segment-header-title Chameleon
+                .ui.attached.segment
+                  button.ui.button.green.ch-button Top Right
+                  button.ui.button.red.ch-button Bottom Right
+                  button.ui.button.blue.ch-button Bottom Left
+                  button.ui.button.yellow.ch-button Top Left
+                  button.ui.button.grey.ch-button Top Center
+                  button.ui.button.black.ch-button Bottom Center
+
+            .eight.wide.column
+              .ui.segments
+                .ui.attached.segment.ch-segment-header
+                  .ch-segment-header-title Semantic UI
+                .ui.attached.segment
+                  button.ui.button.green.semantic Success
+                  button.ui.button.red.semantic Danger
+                  button.ui.button.blue.semantic Info
+                  button.ui.button.yellow.semantic Warning
+
+    include includes/notifications.pug
+    include includes/search.pug
+    include includes/foot.pug

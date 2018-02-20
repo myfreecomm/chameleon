@@ -1,0 +1,145 @@
+$defaultColor: #666;
+$successColor: #2b4;
+$dangerColor: #db2828;
+$infoColor: #2185d0;
+$warningColor: #fbbd08;
+
+.ch-notification {
+  display: flex;
+  align-items: center;
+  min-width: 350px;
+  max-width: 450px;
+  margin: 20px 0;
+  padding: 25px;
+  background: #fff;
+  box-shadow: 0 0 25px rgba(#000, 0.15);
+
+  &-container {
+    position: fixed;
+    z-index: 2;
+
+    &.top {
+      top: 85px;
+    }
+
+    &.right {
+      right: 25px;
+    }
+
+    &.center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.left {
+      left: calc(85px + 25px);
+    }
+
+    &.bottom {
+      bottom: 35px;
+    }
+
+    .ui.icon.message {
+      > .icon:not(.close) {
+        font-size: 2em;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      top: 65px !important;
+      left: 50% !important;
+      right: auto !important;
+      bottom: auto !important;
+      transform: translateX(-50%);
+
+      .ui.icon.message {
+        min-width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-icon {
+    margin-right: 20px;
+  }
+
+  &-title {
+    display: block;
+    @include title(16px);
+    margin-bottom: 5px;
+
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &--default {
+    .ch-notification-title, .circular.icon {
+      color:  $defaultColor;
+    }
+
+    .circular.icon {
+      box-shadow: 0 0 0 0.1em $defaultColor inset;
+    }
+  }
+
+  &--success {
+    .ch-notification-title, .circular.icon {
+      color: $successColor;
+    }
+
+    .circular.icon {
+      box-shadow: 0 0 0 0.1em $successColor inset;
+    }
+  }
+
+  &--danger {
+    .ch-notification-title, .circular.icon{
+      color: $dangerColor;
+    }
+
+    .circular.icon {
+      box-shadow: 0 0 0 0.1em $dangerColor inset;
+    }
+  }
+
+  &--info {
+    .ch-notification-title, .circular.icon {
+      color: $infoColor;
+    }
+
+    .circular.icon {
+      box-shadow: 0 0 0 0.1em $infoColor inset;
+    }
+  }
+
+  &--warning {
+    .ch-notification-title, .circular.icon {
+      color:  $warningColor;
+    }
+
+    .circular.icon {
+      box-shadow: 0 0 0 0.1em $warningColor inset;
+    }
+  }
+
+  &-button--close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+
+    .icon.close {
+      color: #d6d6d6;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+}
