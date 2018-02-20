@@ -9,16 +9,18 @@ html
       include includes/header.pug
 
       .ch-content
-        .ch-content-hgroup.colored
+        .ch-content-header.colored
           h2.ui.medium.header Relatórios
             .sub.header Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos.
 
-        .ch-header-tabs
+        .ch-tabs
           .ui.pointing.secondary.menu
             a.item.active(data-tab="rs") Relatório Simples
             a.item(data-tab="rd") Relatório Dinâmico
             a.item(data-tab="mr") Modelos de Relatório
-        br
+
+        .ui.divider.hidden
+
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
@@ -26,7 +28,7 @@ html
                 form.ui.form
                   .ui.segments
                     .ui.segment.attached.ch-segment-header
-                      .ui.title Relatório Simples
+                      span.ch-segment-header-title Relatório Simples
                     .ui.segment.attached
                       .fields
                         .four.wide.field
@@ -98,20 +100,20 @@ html
                                 i.calendar.icon
 
                     .ui.segment.attached.right.aligned
-                      .ui.button.blue Gerar Relatório
+                      .ui.button.blue.small Gerar Relatório
 
               .ui.bottom.tab(data-tab="rd")
-                .ui.stackable.padded.grid
+                .ui.stackable.grid
                   .row
                     .thirteen.wide.column
                       .ch-wizard-container
                         form.ui.form
-                          ol.ch-vertical-wizard
-                            li.ch-step.current
-                              .step-header
+                          ol.ch-wizard.ch-wizard--vertical
+                            li.ch-wizard-step.current
+                              .header
                                 h4.ui.medium.header Selecione o agrupador
                                   .sub.header Agrupadores servem para organizar a informação de uma forma mais eficiente.
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.radio.checkbox.options
@@ -126,11 +128,11 @@ html
                                       input.hidden(type="radio" tabindex="0" name="agrupador" id="employees")
                                       label(for="employees") Colaboradores
 
-                            li.ch-step
-                              .step-header
+                            li.ch-wizard-step
+                              .header
                                 h4.ui.medium.header Qual tipo ?
                                   .sub.header Defina o tipo do seu relatório.
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.radio.checkbox.options
@@ -141,11 +143,11 @@ html
                                       input.hidden(type="radio" tabindex="0" name="tipo" id="analytic")
                                       label(for="analytic") Analítico
 
-                            li.ch-step
-                              .step-header
+                            li.ch-wizard-step
+                              .header
                                 h4.ui.medium.header Gostaria de mais opções ?
                                   .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.checkbox.options
@@ -156,11 +158,11 @@ html
                                       input.hidden(type="checkbox" tabindex="0" name="add-stats" id="add-stats")
                                       label(for="add-stats") Adicionar Estatísticas
 
-                            li.ch-step
-                              .step-header
+                            li.ch-wizard-step
+                              .header
                                 h4.ui.medium.header Gostaria de mais opções ?
                                   .sub.header Quer um relatório mais completo? Adicione gráfico e estatísticas para uma apresentação incrível!
-                              .step-content
+                              .content
                                 .inline.fields
                                   .field
                                     .ui.radio.checkbox.options
@@ -171,26 +173,14 @@ html
                                       input.hidden(type="radio" tabindex="0" name="filters" id="filter-no")
                                       label Não
 
-                    .three.wide.column.hidden-mobile
-                      .ch-rail.report-resume
-                        .ui.segments
-                          .ui.segment.attached.ch-segment-header.center.aligned
-                            div.ui.header.small Pré-Visualização do relatório
-                          .ui.segment.padded.attached.center.aligned
-                            .preview-report
-                              .header Relatório
-                              .content
-                            p.
-                              Após concluir os passos, clique em "Gerar relatório" para visualizar a versão final.
-
                     .sixteen.wide.column
                       .ui.divider
-                      input.ui.button.blue(type="submit" value="Gerar Relatório")
+                      input.ui.button.blue.small(type="submit" value="Gerar Relatório")
 
               .ui.tab(data-tab="mr")
                 .ui.segments
                   .ui.attached.segment.ch-segment-header
-                    .ui.title Modelos de Relatório
+                    span.ch-segment-header-title Modelos de Relatório
 
                   .ui.attached.segment.paddingless
                     table.ui.very.basic.table

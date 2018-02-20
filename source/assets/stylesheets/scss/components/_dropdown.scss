@@ -1,38 +1,59 @@
 .ch-dropdown {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 84px;
-  font-size: 11px;
-  font-weight: 400;
-  background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 0 0 5px rgba(#000, 0.15);
-  outline: 0;
-  z-index:1;
-  animation: fadeIn 0.3s;
-
-  &:before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    display: block;
-    background-color: #fff;
-    position: absolute;
-    top: 25px;
-    left: -5px;
-    transform: rotate(45deg);
-    box-shadow: -2px 2px 2px rgba(#000, 0.15);
-    z-index: -1;
-  }
+  position: relative;
 
   ul, li {
     list-style: none;
   }
 
+  &-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 84px;
+    font-size: 11px;
+    font-weight: 400;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(#000, 0.15);
+    outline: 0;
+    z-index:1;
+    animation: fadeIn 0.3s;
 
-  &-container {
-    position: relative;
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      top: 25px;
+      left: -5px;
+      transform: rotate(45deg);
+      box-shadow: -2px 2px 2px rgba(#000, 0.15);
+      z-index: -1;
+    }
+
+    &.visible {
+      display: block;
+    }
+
+    &.bottom {
+      top: 100%;
+
+      &:before {
+        content: none;
+      }
+
+      &.right {
+        left: auto;
+        right: 0;
+      }
+
+      &.left {
+        right: auto;
+        left: 0;
+      }
+    }
   }
 
   &-header, &-menu-item a {
@@ -54,36 +75,31 @@
     }
   }
 
-  &.visible {
-    display: block;
-  }
-
-  &.bottom {
-    top: 100%;
-
-    &:before {
-      content: none;
-    }
-
-    &.right {
-      left: auto;
-      right: 0;
-    }
-
-    &.left {
-      right: auto;
-      left: 0;
-    }
-  }
-
   @media screen and (max-width: 768px) {
-    position: fixed;
-    width: 100%;
-    top: auto;
-    bottom: 50px;
-    left: 0;
-    background-color: $mainColorDark;
-    border-radius: 0;
+
+    &-content {
+      position: fixed;
+      width: 100%;
+      top: auto;
+      bottom: 50px;
+      left: 0;
+      background-color: $mainColorDark;
+      border-radius: 0;
+
+      &:before {
+        content: none;
+      }
+
+      &.collapse {
+        position: static;
+        box-shadow: none;
+        z-index: 1;
+
+        .ch-dropdown-header {
+          display: none;
+        }
+      }
+    }
 
     &-header {
       border-bottom: 1px solid rgba(#fff, 0.2);
@@ -93,18 +109,5 @@
       color: #fff;
     }
 
-    &:before {
-      content: none;
-    }
-
-    &.collapse {
-      position: static;
-      box-shadow: none;
-      z-index: 1;
-
-      .ch-dropdown-header {
-        display: none;
-      }
-    }
   }
 }

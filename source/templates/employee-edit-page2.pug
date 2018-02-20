@@ -3,24 +3,24 @@ html
   include includes/head.pug
 
   body
-    +nav('employees.html')
+    +nav('pages.html')
 
     .main-content
       include includes/header.pug
 
       .ch-content
-        .ch-content-hgroup
+        .ch-content-header
           h2.ui.medium.header Alterar Colaborador
             .sub.header Utilize o passa a passo para alterar as informações do colaborador
 
-          ol.ch-horizontal-wizard
-            li.ch-step.done.
+          ol.ch-wizard.ch-wizard--horizontal
+            li.ch-wizard-step.done.
               Informações Pessoais
-            li.ch-step.current.
+            li.ch-wizard-step.current.
               Informações de Endereço
-            li.ch-step.
+            li.ch-wizard-step.
               Foto de Perfil
-            li.ch-step.
+            li.ch-wizard-step.
               Final
 
         .ui.stackable.padded.grid.centered
@@ -29,7 +29,7 @@ html
               form.ui.form
                 .ui.segments
                   .ui.attached.segment.ch-segment-header
-                    .ui.title Informações de Endereço
+                    .ch-segment-header-title Informações de Endereço
                   .ui.attached.segment.padded
                     .fields
                       .four.wide.field.required
@@ -67,13 +67,13 @@ html
                           each option in ["Option 1", "Option 2", "Option 3", "Option 4"]
                             option(value= option)= option
 
-                .ch-buttons-container
-                  .cancel-container
-                    a(href="employee-edit.html").ui.button.basic Voltar
-                  .submit-container
-                    input(type="submit" value="Salvar").ui.button.grey
-                    a(href="#").ui.positive.button Salvar e continuar
-
+                  .ui.attached.segment.ch-segment-footer
+                    .ch-segment-footer-buttons
+                      .left.content
+                        a(href="employee-edit.html").ui.button.basic.small Voltar
+                      .right.content.ch-group-buttons
+                        input(type="submit" value="Salvar").ui.button.grey.small
+                        a(href="#").ui.positive.button.small Salvar e continuar
 
     include includes/notifications.pug
     include includes/search.pug

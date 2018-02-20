@@ -1,0 +1,16 @@
+.ui.modal {
+  &.ch-modal > .close {
+    top: 1rem;
+    right: 0.5rem;
+    color: $fontColor;
+  }
+
+  >.header:not(.ui) {
+    @include title(1.2em);
+  }
+}
+
+.ui.dimmer {
+  background-color: rgba(#000, 0.65);
+}
+

@@ -1,4 +1,4 @@
-.ch-sidebar {
+.ch-dialog {
   display: none;
   position: fixed;
   top: 0;
@@ -31,9 +31,10 @@
     height: 65px;
     padding: 15px;
     padding-right: 5px;
-    font-size: 20px;
-    color: $fontColor;
-    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: lighten($fontColor, 10%);
+    border-bottom: 1px solid $borderColor;
 
     .icon {
       margin: 0;
@@ -60,9 +61,14 @@
   .ui.items>.item {
     margin: 0;
     flex-direction: row;
+    border-color: $borderColor;
+
+    &:first-child {
+      padding-top: 1em !important;
+    }
 
     &.unread {
-      background-color: #f0f0f0;
+      background-color: #f8f8f8;
     }
 
     >.image  {
@@ -74,14 +80,14 @@
     }
 
     >.content {
-      padding: 10px 20px;
+      padding: 5px 15px;
 
       .header, .description {
         color: inherit;
       }
 
       .header {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .description {
@@ -89,8 +95,8 @@
       }
 
       .time {
-        font-style: italic;
-        color: lighten($fontColor, 10%)
+        text-transform: uppercase;
+        color: lighten($fontColor, 10%);
       }
     }
   }
@@ -107,7 +113,7 @@
   }
 }
 
-.btn-action {
+.action-dialog {
   cursor: pointer;
   position: fixed;
   bottom: 0;
@@ -115,10 +121,11 @@
   width: 100%;
   max-width: 400px;
   padding: 15px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
-  border-top: 1px solid #ddd;
+  text-transform: uppercase;
+  color: $fontColor;
+  border-top: 1px solid $borderColor;
   background-color: #fff;
   transform: translate(100%);
   transition: all .3s;

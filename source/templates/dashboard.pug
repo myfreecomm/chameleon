@@ -24,19 +24,18 @@
 
 mixin smallCard(name, value, date, type)
   .four.wide.computer.eight.wide.tablet.column
-    .ui.segment
-      .ui.equal.width.grid.ch-metric
-        .middle.aligned.column
-          .ch-metric-label=name
-        .column.right.aligned
-          .ch-metric-value(class=type)
-            i.icon.small.up.arrow
-            span=value
-          span.ch-metric-date=date
+    .ui.horizontal.segments
+      .ui.segment.borderless.middle.aligned
+        .ch-metric-label=name
+      .ui.segment.borderless.right.aligned
+        .ch-metric-value(class=type)
+          i.icon.small.up.arrow
+          span=value
+        span.ch-metric-date=date
 
 mixin listSegment(title, items)
   .ui.attached.segment.middle.aligned.ch-segment-header
-    span.ui.title= title
+    span.ch-segment-header-title= title
     .ui.icon.dropdown.actions
       i.icon.ellipsis.vertical
       .menu.fixed-position
@@ -86,7 +85,7 @@ html
             .ten.wide.column
               .ui.segments
                 .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ui.title Gráficos em linha
+                  span.ch-segment-header-title Gráficos em linha
 
                 .ui.attached.segment
                   #users-chart
@@ -94,7 +93,7 @@ html
             .six.wide.column
               .ui.segments
                 .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ui.title Gráficos em pizza
+                  span.ch-segment-header-title Gráficos em pizza
 
                 .ui.attached.segment
                   #pie-chart
@@ -103,8 +102,8 @@ html
             .sixteen.wide.column
               .ui.segments
                 .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ui.title Lista de colaboradores
-                .ui.attached.segment
+                  span.ch-segment-header-title Lista de colaboradores
+                .ui.attached.segment.paddingless
                   table.ui.very.basic.table
                     thead
                       tr

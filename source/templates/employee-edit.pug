@@ -3,24 +3,24 @@ html
   include includes/head.pug
 
   body
-    +nav('employees.html')
+    +nav('pages.html')
 
     .main-content
       include includes/header.pug
 
       .ch-content
-        .ch-content-hgroup
+        .ch-content-header
           h2.ui.medium.header Alterar Colaborador
             .sub.header Utilize o passa a passo para alterar as informações do colaborador
 
-          ol.ch-horizontal-wizard
-            li.ch-step.current.
+          ol.ch-wizard.ch-wizard--horizontal
+            li.ch-wizard-step.current.
               Informações Pessoais
-            li.ch-step.
+            li.ch-wizard-step.
               Informações de Endereço
-            li.ch-step.
+            li.ch-wizard-step.
               Foto de Perfil
-            li.ch-step.
+            li.ch-wizard-step.
               Final
 
         .ui.stackable.padded.grid.centered
@@ -29,7 +29,7 @@ html
               form.ui.form
                 .ui.segments
                   .ui.attached.segment.ch-segment-header
-                    .ui.title Informações Pessoais
+                    .ch-segment-header-title Informações Pessoais
                   .ui.attached.segment.padded
                     .fields
                       .eight.wide.field.required
@@ -87,12 +87,13 @@ html
                               .item BRL
                               .item EUR
 
-                .ch-buttons-container
-                  .cancel-container
-                    a(href="employee-detail.html").ui.button.basic Cancelar
-                  .submit-container
-                    input(type="submit" value="Salvar").ui.button.grey
-                    a(href="employee-edit-page2.html").ui.positive.button Salvar e continuar
+                  .ui.attached.segment.ch-segment-footer
+                    .ch-segment-footer-buttons
+                      .content.left
+                        a(href="employee-detail.html").ui.button.basic.small Cancelar
+                      .content.right.ch-group-buttons
+                        input(type="submit" value="Salvar").ui.button.grey.small
+                        a(href="employee-edit-page2.html").ui.positive.button.small Salvar e continuar
 
 
     include includes/notifications.pug

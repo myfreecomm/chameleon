@@ -22,11 +22,10 @@ html
       include includes/header.pug
 
       .ch-content
-        .ch-content-hgroup.padded
+        .ch-content-header
           h1.ui.header Tabelas
             .sub.header Exemplos de tabelas
 
-        br
         .ui.stackable.padded.grid
           .row
             .sixteen.wide.column
@@ -50,14 +49,14 @@ html
                         td(data-info="Cargo")= worker.post
                         td(data-info="Nº de Registro")= worker.id
                         td.right.aligned.ch-table-buttons
-                          button.ui.icon.button.js-show-detail
+                          button.ui.icon.button(data-table-detail="toggle")
                             i.chevron.down.icon
-                      tr.ch-details-row.hidden
+                      tr.ch-table-details.hidden
                         td(colspan="7")
-                          .ch-details-row-content
+                          .ch-table-details-content
                             .ui.grid.padded
                               .sixteen.wide.column
-                                h3.ui.small.header Mais informações
+                                span.ch-table-details-title Mais informações
 
                               .four.wide.computer.sixteen.wide.mobile.column
                                 strong CPF

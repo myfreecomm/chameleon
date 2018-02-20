@@ -26,7 +26,7 @@ Chameleon.Components.Search = (function() {
   }
 
   const bindFunctions = function() {
-    $(document).on('click', '.btn-search', open);
+    $(document).on('click', '[data-target="search"]', open);
 
     $(document).on('click', '.ch-search-content', function(e) { e.stopPropagation(); });
 

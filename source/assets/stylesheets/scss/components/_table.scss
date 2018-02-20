@@ -1,15 +1,23 @@
-.ch-table-buttons {
-  .ui.icon.button {
-    padding: 0.5em;
-    background-color: transparent;
+.ch-table {
+  &-buttons {
+    .ui.icon.button {
+      padding: 0.5em;
+      background-color: transparent;
+    }
   }
-}
 
-.ch-table-label  {
-  .ui.label {
-    width: 100%;
-    max-width: 175px;
-    text-align: center;
+  &-label  {
+    .ui.label {
+      width: 100%;
+      max-width: 175px;
+      text-align: center;
+    }
+  }
+
+  &-details {
+    &-title {
+      @include title();
+    }
   }
 }
 
@@ -21,107 +29,3 @@
     white-space: nowrap;
   }
 }
-
-.ui.table {
-  thead th {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .paddingless & {
-    border: none;
-  }
-
-  &.expandable {
-    background-color: #fff;
-  }
-
-  &.selectable {
-    tbody tr.invisible {
-
-      &:hover {
-        background-color: transparent !important;
-      }
-
-      .ch-details-row-content {
-        position: relative;
-      }
-    }
-  }
-
-  &[class*='very basic']:not(.sortable):not(.striped) {
-    thead tr:first-child th {
-      padding-top: 1.2em;
-    }
-  }
-
-  .checkbox-column {
-    width: 20px;
-  }
-
-  @media only screen and (max-width: 767px) {
-    &:not(.unstackable) td:first-child,
-    &:not(.unstackable) th:first-child {
-      font-weight: normal;
-    }
-
-    &:not(.unstackable) thead {
-      display: none;
-    }
-
-    &:not(.unstackable) tr {
-      display: flex !important;
-      flex-direction: column;
-
-      &.ch-details-row {
-
-        &.hidden {
-          display: none!important;
-        }
-
-        .column {
-          display: flex;
-          justify-content: space-between;
-          padding: 0.7em;
-        }
-      }
-    }
-
-    &:not(.unstackable) tr>td {
-      display: flex !important;
-      justify-content: space-between;
-      padding: 5px;
-      text-align: right;
-
-      &:before {
-        content: attr(data-info);
-        font-weight: 600;
-        text-align: left;
-      }
-
-      &.checkbox {
-        justify-content: flex-start;
-      }
-
-      &.ch-table-buttons {
-        justify-content: center;
-      }
-
-      &.ch-table-buttons:before {
-        content: '';
-      }
-    }
-
-    &.actions {
-      &:not(.unstackable) tr>td,
-      &:not(.unstackable) tr>th {
-        padding: 0.5em 1em !important;
-        text-align: left;
-      }
-    }
-  }
-}
-
-
-

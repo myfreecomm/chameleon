@@ -14,8 +14,8 @@
           <li class="ch-nav-menu-item"><a href="form.html"><i class="clipboard large icon"></i><span class="ch-nav-menu-item-label">Formulários</span></a></li>
           <li class="ch-nav-menu-item"><a href="table.html"><i class="table large icon"></i><span class="ch-nav-menu-item-label">Tabelas</span></a></li>
           <li class="ch-nav-menu-item"><a href="wizard.html"><i class="wizard large icon"></i><span class="ch-nav-menu-item-label">Wizard</span></a></li>
-          <li class="ch-nav-menu-item active"><a class="dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-nav-menu-item-label">Páginas</span></a>
-            <div class="ch-dropdown">
+          <li class="ch-nav-menu-item ch-dropdown active"><a class="ch-dropdown-hover" href="dashboard.html"><i class="puzzle large icon"></i><span class="ch-nav-menu-item-label">Páginas</span></a>
+            <div class="ch-dropdown-content">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="employees.html">Colaboradores</a></li>
                 <li class="ch-dropdown-menu-item"><a href="reports.html">Relatórios</a></li>
@@ -29,8 +29,8 @@
           <li class="ch-nav-menu-item show-menu"><a href="#"><i class="ellipsis large horizontal icon"></i></a></li>
         </ul>
         <div class="ch-nav-menu--secondary">
-          <div class="ch-nav-menu-item mobile-only"><a class="dropdown-hover" href="#"><i class="university large icon"></i><span class="ch-nav-menu-item-label">Trocar Conta</span></a>
-            <div class="ch-dropdown">
+          <div class="ch-nav-menu-item mobile-only ch-dropdown"><a class="ch-dropdown-hover" href="#"><i class="university large icon"></i><span class="ch-nav-menu-item-label">Trocar Conta</span></a>
+            <div class="ch-dropdown-content">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="#">Conta 1</a></li>
                 <li class="ch-dropdown-menu-item"><a href="#">Conta 2</a></li>
@@ -45,8 +45,8 @@
     <div class="main-content">
       <header class="ch-header">
         <div class="ch-breadcrumb">
-          <div class="ch-breadcrumb-section"><a class="dropdown-toggle" href="#">Nome da organização</a>
-            <div class="ch-dropdown bottom left" tabindex="-1">
+          <div class="ch-breadcrumb-section ch-dropdown"><a class="ch-dropdown-toggle" href="#">Nome da organização</a>
+            <div class="ch-dropdown-content bottom left" tabindex="-1">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="#">Organização 1</a></li>
                 <li class="ch-dropdown-menu-item"><a href="#">Organização 2</a></li>
@@ -54,8 +54,8 @@
               </ul>
             </div>
           </div><i class="right chevron icon divider"></i>
-          <div class="ch-breadcrumb-section active"><a class="dropdown-toggle" href="#">Painel Principal</a>
-            <div class="ch-dropdown bottom left" tabindex="-1">
+          <div class="ch-breadcrumb-section ch-dropdown active"><a class="ch-dropdown-toggle" href="#">Painel Principal</a>
+            <div class="ch-dropdown-content bottom left" tabindex="-1">
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="#">Painel de exemplo</a></li>
                 <li class="ch-dropdown-menu-item"><a href="#">Painel Modelo 1</a></li>
@@ -64,9 +64,9 @@
             </div>
           </div>
         </div>
-        <div class="ch-header-nav"><a class="ch-header-nav-buttons btn-search"><i class="search large icon"></i></a><a class="ch-header-nav-buttons btn-modal" href="#" data-modal="notifications"><i class="ch-notification-label bell outline large icon"></i></a>
-          <div class="ch-dropdown-container computer-only"><a class="ch-header-nav-buttons dropdown-toggle" href="#"><span class="avatar">CH</span></a>
-            <div class="ch-dropdown bottom right" tabindex="-1"><span class="ch-dropdown-header">Contas</span>
+        <div class="ch-header-nav"><a class="ch-header-nav-button" data-target="search"><i class="search large icon"></i></a><a class="ch-header-nav-button" href="#" data-target="modal" data-modal="notifications"><i class="ch-notification-label bell outline large icon"></i></a>
+          <div class="ch-dropdown computer-only"><a class="ch-header-nav-button ch-dropdown-toggle" href="#"><span class="avatar">CH</span></a>
+            <div class="ch-dropdown-content bottom right" tabindex="-1"><span class="ch-dropdown-header">Contas</span>
               <ul class="ch-dropdown-menu">
                 <li class="ch-dropdown-menu-item"><a href="#">Conta Nexaas 1</a></li>
                 <li class="ch-dropdown-menu-item"><a href="#">Conta Nexaas 2</a></li>
@@ -77,7 +77,7 @@
         </div>
       </header>
       <div class="ch-content">
-        <div class="ch-content-hgroup">
+        <div class="ch-content-header">
           <h2 class="ui medium header">Conta Lorem Ipsum</h2>
           <div class="ch-group-buttons">
             <button class="ui button basic"><i class="ui icon exchange"></i> Trocar Conta</button><a class="ui positive button" href="#">Editar</a>
@@ -105,8 +105,8 @@
               </div>
               <div class="ui segments">
                 <div class="ui attached segment ch-segment-header">
-                  <div class="ui title">Usuários</div>
-                  <button class="ui button grey"><i class="ui icon add user"></i> Convidar Usuário</button>
+                  <div class="ch-segment-header-title">Usuários</div>
+                  <button class="ui button grey tiny"><i class="ui icon add user"></i> Convidar Usuário</button>
                 </div>
                 <div class="ui segment attached paddingless">
                   <table class="ui basic selectable table">
@@ -174,11 +174,11 @@
         </div>
       </div>
     </div>
-    <div class="ch-sidebar" data-modal="filters" tabindex="0">
+    <div class="ch-dialog" data-modal="filters" tabindex="0">
       <div class="ch-overlay inside">
-        <div class="ch-sidebar-container">
-          <div class="ch-sidebar-header">Filtros<span class="btn-close"><i class="close icon"></i></span></div>
-          <div class="ch-sidebar-content">
+        <div class="ch-dialog-container">
+          <div class="ch-dialog-header">Filtros<span class="close-dialog"><i class="close icon"></i></span></div>
+          <div class="ch-dialog-content">
             <div class="ui segment basic padded">
               <form class="ui form">
                 <div class="field">
@@ -252,61 +252,61 @@
           </div>
         </div>
       </div>
-      <div class="btn-action">Filtrar</div>
+      <div class="action-dialog">Filtrar</div>
     </div>
-    <div class="ch-sidebar" data-modal="notifications" tabindex="0">
+    <div class="ch-dialog" data-modal="notifications" tabindex="0">
       <div class="ch-overlay">
-        <div class="ch-sidebar-container">
-          <div class="ch-sidebar-header">Notificações<span class="btn-close"><i class="close icon"></i></span></div>
-          <div class="ch-sidebar-content">
-            <div class="ui items">
-              <div class="item ch-sidebar-message unread"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+        <div class="ch-dialog-container">
+          <div class="ch-dialog-header">Notificações<span class="close-dialog"><i class="close icon"></i></span></div>
+          <div class="ch-dialog-content">
+            <div class="ui divided items">
+              <div class="item ch-dialog-message unread"><a class="ui image"><img src="http://via.placeholder.com/30x30"></a>
                 <div class="content"><a class="header">Lorem Ipsum</a>
                   <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ullam iure, exercitationem omnis magni, repellat quos tempore hic facere pariatur?</p>
-                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ullam iure, exercitationem omnis magni</p>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
                 </div>
               </div>
-              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+              <div class="item ch-dialog-message"><a class="ui image"><img src="http://via.placeholder.com/30x30"></a>
                 <div class="content"><a class="header">Lorem Ipsum</a>
                   <div class="description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
-                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
                 </div>
               </div>
-              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+              <div class="item ch-dialog-message"><a class="ui image"><img src="http://via.placeholder.com/30x30"></a>
                 <div class="content"><a class="header">Lorem Ipsum</a>
                   <div class="description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
-                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
                 </div>
               </div>
-              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+              <div class="item ch-dialog-message"><a class="ui image"><img src="http://via.placeholder.com/30x30"></a>
                 <div class="content"><a class="header">Lorem Ipsum</a>
                   <div class="description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
-                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
                 </div>
               </div>
-              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+              <div class="item ch-dialog-message"><a class="ui image"><img src="http://via.placeholder.com/30x30"></a>
                 <div class="content"><a class="header">Lorem Ipsum</a>
                   <div class="description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
-                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
                 </div>
               </div>
-              <div class="item ch-sidebar-message"><a class="ui image"><img src="http://via.placeholder.com/40x40"></a>
+              <div class="item ch-dialog-message"><a class="ui image"><img src="http://via.placeholder.com/30x30"></a>
                 <div class="content"><a class="header">Lorem Ipsum</a>
                   <div class="description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
-                  </div><span class="time">20 de agosto de 2017 às 21:30</span>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="btn-action">Ver tudo</div>
+      <div class="action-dialog">Ver tudo</div>
     </div>
     <div class="ch-search" tabindex="0">
       <div class="ch-overlay">

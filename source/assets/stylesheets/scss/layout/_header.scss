@@ -1,12 +1,12 @@
 .ch-header {
-  padding: 20px 8px 20px 14px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 65px;
   background-color: #fff;
 
-  .ch-dropdown {
+  .ch-dropdown-content {
     min-width: 200px;
   }
   @media screen and (min-width: 769px) {
@@ -24,14 +24,14 @@
   justify-content: center;
   align-items: center;
 
-  &-buttons {
+  &-button {
     display: block;
     padding: 5px;
-    color: #666;
+    color: $headerElementsColor;
+    transition: all .3s;
 
     &:hover, &.active {
-      color: $fontColor;
-      background-color: #f0f0f0;
+      color: darken($headerElementsColor, 10%);
       border-radius: 3px;
     }
 
@@ -49,70 +49,17 @@
 .ch-notification-label {
   position: relative;
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 4px;
-    display: block;
-    width: 7px;
-    height: 7px;
-    background-color: #bb0c0c;
-    border-radius: 100%;
-  }
-}
-
-.ch-content {
-
-  &-hgroup {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 20px;
-    align-items: center;
-    justify-content: space-between;
-
-    &.colored {
-
-      background-color: white;
-      box-shadow: 0 1px 3px rgba(170,170,170,.2);
-
-      &.padded {
-        padding: 25px 40px;
-      }
-
-      @media screen and (max-width: 768px) {
-        border-top: 1px solid #eee;
-      }
-    }
-
-    ~ .ui.padded.grid>.row {
-      padding-top: 0;
-    }
-
-    > .ui.button.right.aligned {
-      margin-left: auto;
-    }
-
-    .ui.header {
-      margin: {
-        right: 5px;
-        bottom: 0;
-      }
-    }
-  }
-
-  @media screen and (min-width: 769px) {
-    padding-top: 65px;
-  }
-
-  @media screen and (max-width: 768px) {
-    &-hgroup {
-      .ui.button {
-        width: 100%;
-        margin: 10px 0 0;
-        text-align: center;
-      }
+  &.new {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 4px;
+      display: block;
+      width: 7px;
+      height: 7px;
+      background-color: #bb0c0c;
+      border-radius: 100%;
     }
   }
 }

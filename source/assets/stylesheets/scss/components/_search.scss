@@ -7,7 +7,7 @@
 
   &-content {
     margin-left: 85px;
-    width: calc(100% - 170px);
+    width: calc(100% - 180px);
     box-shadow: 0px 2px 4px rgba(#000, 0.35);
   }
 
@@ -58,8 +58,12 @@
     }
 
     &-icon {
-      color: $fontColor;
+      color: darken($headerElementsColor, 10%);
       order: 1;
+
+      &:hover, &:active {
+        color: darken($headerElementsColor, 10%);;
+      }
     }
 
     &:after {

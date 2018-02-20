@@ -42,6 +42,10 @@
 
   @media screen and (max-width: 767px) {
     background-color: #fff;
+
+    &.inside {
+      top: 0;
+    }
   }
 
 }
@@ -60,6 +64,12 @@
   }
 }
 
-.btn-close {
+.close-dialog {
   cursor: pointer;
+}
+
+.ch-modal {
+  .ui.header {
+    @include title();
+  }
 }

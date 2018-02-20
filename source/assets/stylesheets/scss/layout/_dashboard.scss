@@ -2,34 +2,10 @@
   height: 300px;
 }
 
-.ui.segment.borderless {
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.ui.segment.paddingless {
-  padding: 0;
-
-  .ui.table td, .ui.table th {
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-
-    &:first-child {
-      padding-left: 1.6em;
-    }
-
-    &:last-child {
-      padding-right: 1.6em;
-    }
-  }
-}
-
 .ch-metric {
 
   &-label {
-    color: #000;
-    font-size: 16px;
+    @include title(14px);
   }
 
   &-value {
@@ -62,24 +38,6 @@
     &:hover {
       color: lighten($fontColor, 15%)
     }
-  }
-}
-
-/*Find a better class name*/
-
-.ch-segment-header {
-  display: flex;
-  justify-content: space-between;
-
-  &.center.aligned {
-    justify-content: center;
-  }
-
-  .title {
-    font-weight: 300;
-    font-size: 1em;
-    text-transform: uppercase;
-    color: #000;
   }
 }
 

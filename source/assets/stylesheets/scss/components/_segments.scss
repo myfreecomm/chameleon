@@ -1,27 +1,31 @@
-.ui.segments {
-  box-shadow: 0 3px 5px 0 rgba(#000,.1);
-  border-color: #dbdbdb;
+.ch-segment {
+  &-header {
+    display: flex;
+    justify-content: space-between;
 
-  > .segment {
-    border-color: #dbdbdb;
-    border-radius: 0 !important;
+    &.center.aligned {
+      justify-content: center;
+    }
 
-    &:last-child {
-      border-bottom: none;
+    &-title {
+      @include title(14px);
+    }
+
+    &-button {
+      color: $fontColor;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: lighten($fontColor, 20%);
+      }
     }
   }
-}
 
-.ui.segment {
-  border-radius: 0;
-}
-
-.ch-filters-btn {
-  color: $fontColor;
-  font-size: 0.9em;
-  text-transform: uppercase;
-
-  &:hover {
-    color: lighten($fontColor, 20%);
+  &-footer {
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }

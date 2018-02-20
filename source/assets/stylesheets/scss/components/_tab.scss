@@ -1,4 +1,4 @@
-.ch-header-tabs {
+.ch-tabs {
   width: 100%;
   overflow: hidden;
 
@@ -19,7 +19,7 @@
 
 }
 
-.ch-content-hgroup ~ .ch-header-tabs {
+.ch-content-header ~ .ch-tabs {
   margin-top: 0;
   background-color: #fff;
 
