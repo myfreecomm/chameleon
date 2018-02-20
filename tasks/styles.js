@@ -9,7 +9,6 @@ let stylesPath = 'source/assets/stylesheets';
 
 let cssExternals = [
   `${stylesPath}/css/vendors/semantic.min.css`,
-  `${stylesPath}/css/vendors/calendar.css`,
   `${stylesPath}/css/vendors/nouislider.css`,
   `${stylesPath}/css/vendors/animate.css`,
 ]
@@ -31,14 +30,24 @@ const build = function() {
 }
 
 const deploy = function() {
+  return gulp.src(`${stylesPath }/scss/style.scss`)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename('chameleon.css'))
+    .pipe(gulp.dest('dist/without-deps/stylesheets'))
+    .pipe(minifyCSS())
+    .pipe(rename('chameleon.min.css'))
+    .pipe(gulp.dest('dist/without-deps/stylesheets'))
+}
+
+const deployAll = function() {
   return gulp.src([...cssExternals, `${stylesPath}/tmp/bundle.css`])
     .pipe(concatCss('chameleon.css', {
       rebaseUrls: false
     }))
-    .pipe(gulp.dest('dist/stylesheets'))
+    .pipe(gulp.dest('dist/with-deps/stylesheets'))
     .pipe(minifyCSS())
     .pipe(rename('chameleon.min.css'))
-    .pipe(gulp.dest('dist/stylesheets'))
+    .pipe(gulp.dest('dist/with-deps/stylesheets'))
 }
 
-module.exports = { bundle, build, deploy };
+module.exports = { bundle, build, deploy, deployAll };
