@@ -11,14 +11,13 @@ let scriptsPath = 'source/assets/javascripts';
 let libs = [
   `${scriptsPath}/libs/jquery-3.2.1.min.js`,
   `${scriptsPath}/libs/semantic.min.js`,
-  `${scriptsPath}/libs/calendar.js`,
   `${scriptsPath}/libs/nouislider.js`,
 ]
 
 const compile = function() {
   return gulp.src([`${scriptsPath}/chameleon/**/*.js`, `!${scriptsPath}/chameleon/tmp/**`])
-    .pipe(babel())
     .pipe(concat('bundle.js'))
+    .pipe(babel())
     .pipe(gulp.dest(`${scriptsPath}/chameleon/tmp/`))
 }
 
@@ -30,12 +29,23 @@ const bundle = function() {
 }
 
 const deploy = function() {
-  return gulp.src([...libs, `${scriptsPath}/chameleon/tmp/bundle.js`])
-    .pipe(concat('chameleon.js'))
-    .pipe(gulp.dest('dist/javascripts'))
+  return gulp.src([`${scriptsPath}/chameleon/**/*.js`, `!${scriptsPath}/chameleon/tmp/**`])
+    .pipe(concat('bundle.js'))
+    .pipe(babel())
+    .pipe(rename('chameleon.js'))
+    .pipe(gulp.dest('dist/without-deps/javascripts'))
     .pipe(uglify())
     .pipe(rename('chameleon.min.js'))
-    .pipe(gulp.dest('dist/javascripts'))
+    .pipe(gulp.dest('dist/without-deps/javascripts'))
+}
+
+const deployAll = function() {
+  return gulp.src([...libs, `${scriptsPath}/chameleon/tmp/bundle.js`])
+    .pipe(concat('chameleon.js'))
+    .pipe(gulp.dest('dist/with-deps/javascripts'))
+    .pipe(uglify())
+    .pipe(rename('chameleon.min.js'))
+    .pipe(gulp.dest('dist/with-deps/javascripts'))
 }
 
 const cleanFiles = function () {
@@ -43,4 +53,4 @@ const cleanFiles = function () {
     .pipe(clean());
 }
 
-module.exports = { compile, bundle, cleanFiles, deploy };
+module.exports = { compile, bundle, cleanFiles, deploy, deployAll };

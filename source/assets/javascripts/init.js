@@ -41,20 +41,6 @@ $('.ui.sticky')
 
 $('.menu .item').tab();
 
-$('#rangestart').calendar({
-  type: 'date',
-  endCalendar: $('#rangeend')
-});
-
-$('#rangeend').calendar({
-  type: 'date',
-  startCalendar: $('#rangestart'),
-  popupOptions: {
-    position: 'bottom right',
-    lastResort: 'bottom right'
-  }
-});
-
 //CHAMELEON NOTIFICATIONS
 
 $('.ch-button.green').on('click', function(e) {
