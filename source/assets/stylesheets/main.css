@@ -37727,6 +37727,7 @@ li {
 }
 
 .ch-dropdown-menu-item {
+  position: relative;
   border-top: 1px solid #f7f6f6;
 }
 
@@ -37737,6 +37738,26 @@ li {
 .ch-dropdown-menu-item a:hover,
 .ch-dropdown-menu-item.active {
   background-color: rgba(0, 0, 0, 0.02);
+}
+
+.ch-dropdown-menu-item:hover .ui.image.avatar ~ .ui.button {
+  visibility: visible;
+  opacity: 1;
+}
+
+.ch-dropdown-menu-item .ui.image.avatar {
+  margin-right: 10px;
+}
+
+.ch-dropdown-menu-item .ui.image.avatar ~ .ui.button {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  margin-left: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s;
 }
 
 @media screen and (max-width: 768px) {
