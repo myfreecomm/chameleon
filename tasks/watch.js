@@ -8,8 +8,8 @@ let stylesPath = 'source/assets/stylesheets',
 const watch = function() {
   browserSync.init({
     server: {
-      baseDir: 'source',
-      index: 'views/index.html'
+      baseDir: ['source/views', 'source'],
+      index: 'index.html',
     },
     notify: false
   });
