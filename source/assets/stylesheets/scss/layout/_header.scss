@@ -7,7 +7,7 @@
   background-color: #fff;
 
   .ch-dropdown-content {
-    min-width: 200px;
+    min-width: 250px;
   }
   @media screen and (min-width: 769px) {
     position: fixed;
@@ -29,19 +29,11 @@
     padding: 5px;
     color: $headerElementsColor;
     transition: all .3s;
+    cursor: pointer;
 
     &:hover, &.active {
       color: darken($headerElementsColor, 10%);
       border-radius: 3px;
-    }
-
-    .avatar {
-      background-color: #EF6C00;
-      padding: 4px;
-      width: 20px;
-      height: 20px;
-      color: #fff;
-      border-radius: 100%;
     }
   }
 }

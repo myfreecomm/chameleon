@@ -49,6 +49,17 @@ mixin nav(activeUrl)
     .ch-nav-menu--secondary
       .ch-nav-menu-item.mobile-only.ch-dropdown
         a.ch-dropdown-hover(href="#")
+          i.ch-notification-label.cog.large.icon
+          span.ch-nav-menu-item-label Configurações
+
+        .ch-dropdown-content
+          ul.ch-dropdown-menu
+            each option in ["Meu Plano", "Usuários", "Integrações", "Preferências"]
+              li(class="ch-dropdown-menu-item")
+                a(href="#")= option
+
+      .ch-nav-menu-item.mobile-only.ch-dropdown
+        a.ch-dropdown-hover(href="#")
           i.university.large.icon
           span.ch-nav-menu-item-label Trocar Conta
 
