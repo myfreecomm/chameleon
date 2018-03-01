@@ -37280,6 +37280,24 @@ body.pushable>.pusher {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+:root [data-theme="chameleon"] {
+  --main-color: #00BBDA;
+  --main-color-dark: #00a5c1;
+  --main-color-light: #00c8e9;
+}
+
+:root [data-theme="myfinance"] {
+  --main-color: #224168;
+  --main-color-dark: #1c3555;
+  --main-color-light: #264874;
+}
+
+:root [data-theme="cobrato"] {
+  --main-color: #D88414;
+  --main-color-dark: #c17612;
+  --main-color-light: #e68d15;
+}
+
 .mobile-only {
   display: none;
 }
@@ -37767,7 +37785,7 @@ li {
     top: auto;
     bottom: 50px;
     left: 0;
-    background-color: #00a5c1;
+    background-color: var(--main-color-dark);
     border-radius: 0;
   }
 
@@ -38924,7 +38942,7 @@ li {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #00BBDA;
+  background-color: var(--main-color);
   color: #fff;
   z-index: 1;
 }
@@ -38957,7 +38975,7 @@ li {
   height: 65px;
   padding: 10px;
   color: inherit;
-  background-color: #00c8e9;
+  background-color: var(--main-color-light);
 }
 
 .ch-nav-logo:hover {

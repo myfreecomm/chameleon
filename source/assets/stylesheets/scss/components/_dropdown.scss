@@ -113,7 +113,7 @@
       top: auto;
       bottom: 50px;
       left: 0;
-      background-color: $mainColorDark;
+      background-color: var(--main-color-dark);
       border-radius: 0;
 
       &:before {

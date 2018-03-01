@@ -9,3 +9,23 @@ $headerElementsColor: #999;
 
 $fontColor: #4b4b4b;
 $fontFamily: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+
+$themes: (
+  chameleon: #00BBDA,
+  myfinance: #224168,
+  cobrato: #D88414,
+);
+
+:root {
+  @each $name, $color in $themes {
+    [data-theme="#{$name}"] {
+      $mainColor: $color;
+      $mainColorDark: darken($mainColor, 5%);
+      $mainColorLight: lighten($mainColor, 3%);
+
+      --main-color: $mainColor;
+      --main-color-dark: $mainColorDark;
+      --main-color-light: $mainColorLight;
+    }
+  }
+}
