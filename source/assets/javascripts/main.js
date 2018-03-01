@@ -2358,7 +2358,9 @@ if (window.Chameleon.Plugins === undefined) {
 }
 
 Chameleon.init = function () {
-  var components = Object.values(Chameleon.Components);
+  var components = Object.keys(Chameleon.Components).map(function (key) {
+    return Chameleon.Components[key];
+  });
 
   components.forEach(function (component) {
     return component.init();

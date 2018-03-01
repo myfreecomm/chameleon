@@ -30,7 +30,7 @@
       }
 
       &:before {
-        border-color: $mainColor;
+        border-color: var(--main-color);
       }
     }
   }

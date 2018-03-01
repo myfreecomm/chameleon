@@ -1,0 +1,80 @@
+$mainColor: #00BBDA;
+$mainColorDark: darken($mainColor, 5%);
+$mainColorLight: lighten($mainColor, 3%);
+
+$themes: (
+  default: $mainColor,
+  myfinance: #224168,
+  cobrato: #D88414,
+  billimatic: #6B180F,
+  contabilone: #832664,
+  emites: #0C4E43,
+  rexpense: #3BB3A4
+);
+
+@each $name, $color in $themes {
+  [data-theme="#{$name}"] {
+    :root & {
+      $mainColor: $color;
+      $mainColorDark: darken($mainColor, 5%);
+      $mainColorLight: lighten($mainColor, 3%);
+
+      --main-color: $mainColor;
+      --main-color-dark: $mainColorDark;
+      --main-color-light: $mainColorLight;
+    }
+
+    .ch-nav {
+      background-color: $mainColor;
+
+      &-logo {
+        background-color: $mainColorLight;
+      }
+    }
+
+    .noUi {
+      &-horizontal .noUi-handle {
+        background-color: $mainColorDark;
+      }
+
+      &-connect {
+        background: $mainColorDark;
+      }
+
+      &-handle:active {
+        border: 8px solid rgba($mainColorDark, 0.85);
+      }
+    }
+
+    .ch-login {
+      &-container:after {
+        background-color: $mainColorDark;
+      }
+
+      &-form {
+        .button {
+          background-color: $mainColor;
+        }
+
+        .button:hover {
+          background-color: $mainColorLight;
+        }
+      }
+    }
+
+    .ch-timeline {
+      li.event {
+        &:before {
+          border-color: $mainColor;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .ch-dropdown-content {
+        background-color: $mainColorDark;
+      }
+    }
+  }
+}
+

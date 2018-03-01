@@ -37280,24 +37280,6 @@ body.pushable>.pusher {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
-:root [data-theme="chameleon"] {
-  --main-color: #00BBDA;
-  --main-color-dark: #00a5c1;
-  --main-color-light: #00c8e9;
-}
-
-:root [data-theme="myfinance"] {
-  --main-color: #224168;
-  --main-color-dark: #1c3555;
-  --main-color-light: #264874;
-}
-
-:root [data-theme="cobrato"] {
-  --main-color: #D88414;
-  --main-color-dark: #c17612;
-  --main-color-light: #e68d15;
-}
-
 .mobile-only {
   display: none;
 }
@@ -37395,6 +37377,342 @@ body.pushable>.pusher {
 
   to {
     opacity: 1;
+  }
+}
+
+:root [data-theme="default"] {
+  --main-color: #00BBDA;
+  --main-color-dark: #00a5c1;
+  --main-color-light: #00c8e9;
+}
+
+[data-theme="default"] .ch-nav {
+  background-color: #00BBDA;
+}
+
+[data-theme="default"] .ch-nav-logo {
+  background-color: #00c8e9;
+}
+
+[data-theme="default"] .noUi-horizontal .noUi-handle {
+  background-color: #00a5c1;
+}
+
+[data-theme="default"] .noUi-connect {
+  background: #00a5c1;
+}
+
+[data-theme="default"] .noUi-handle:active {
+  border: 8px solid rgba(0, 165, 193, 0.85);
+}
+
+[data-theme="default"] .ch-login-container:after {
+  background-color: #00a5c1;
+}
+
+[data-theme="default"] .ch-login-form .button {
+  background-color: #00BBDA;
+}
+
+[data-theme="default"] .ch-login-form .button:hover {
+  background-color: #00c8e9;
+}
+
+[data-theme="default"] .ch-timeline li.event:before {
+  border-color: #00BBDA;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="default"] .ch-dropdown-content {
+    background-color: #00a5c1;
+  }
+}
+
+:root [data-theme="myfinance"] {
+  --main-color: #224168;
+  --main-color-dark: #1c3555;
+  --main-color-light: #264874;
+}
+
+[data-theme="myfinance"] .ch-nav {
+  background-color: #224168;
+}
+
+[data-theme="myfinance"] .ch-nav-logo {
+  background-color: #264874;
+}
+
+[data-theme="myfinance"] .noUi-horizontal .noUi-handle {
+  background-color: #1c3555;
+}
+
+[data-theme="myfinance"] .noUi-connect {
+  background: #1c3555;
+}
+
+[data-theme="myfinance"] .noUi-handle:active {
+  border: 8px solid rgba(28, 53, 85, 0.85);
+}
+
+[data-theme="myfinance"] .ch-login-container:after {
+  background-color: #1c3555;
+}
+
+[data-theme="myfinance"] .ch-login-form .button {
+  background-color: #224168;
+}
+
+[data-theme="myfinance"] .ch-login-form .button:hover {
+  background-color: #264874;
+}
+
+[data-theme="myfinance"] .ch-timeline li.event:before {
+  border-color: #224168;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="myfinance"] .ch-dropdown-content {
+    background-color: #1c3555;
+  }
+}
+
+:root [data-theme="cobrato"] {
+  --main-color: #D88414;
+  --main-color-dark: #c17612;
+  --main-color-light: #e68d15;
+}
+
+[data-theme="cobrato"] .ch-nav {
+  background-color: #D88414;
+}
+
+[data-theme="cobrato"] .ch-nav-logo {
+  background-color: #e68d15;
+}
+
+[data-theme="cobrato"] .noUi-horizontal .noUi-handle {
+  background-color: #c17612;
+}
+
+[data-theme="cobrato"] .noUi-connect {
+  background: #c17612;
+}
+
+[data-theme="cobrato"] .noUi-handle:active {
+  border: 8px solid rgba(193, 118, 18, 0.85);
+}
+
+[data-theme="cobrato"] .ch-login-container:after {
+  background-color: #c17612;
+}
+
+[data-theme="cobrato"] .ch-login-form .button {
+  background-color: #D88414;
+}
+
+[data-theme="cobrato"] .ch-login-form .button:hover {
+  background-color: #e68d15;
+}
+
+[data-theme="cobrato"] .ch-timeline li.event:before {
+  border-color: #D88414;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="cobrato"] .ch-dropdown-content {
+    background-color: #c17612;
+  }
+}
+
+:root [data-theme="billimatic"] {
+  --main-color: #6B180F;
+  --main-color-dark: #55130c;
+  --main-color-light: #781b11;
+}
+
+[data-theme="billimatic"] .ch-nav {
+  background-color: #6B180F;
+}
+
+[data-theme="billimatic"] .ch-nav-logo {
+  background-color: #781b11;
+}
+
+[data-theme="billimatic"] .noUi-horizontal .noUi-handle {
+  background-color: #55130c;
+}
+
+[data-theme="billimatic"] .noUi-connect {
+  background: #55130c;
+}
+
+[data-theme="billimatic"] .noUi-handle:active {
+  border: 8px solid rgba(85, 19, 12, 0.85);
+}
+
+[data-theme="billimatic"] .ch-login-container:after {
+  background-color: #55130c;
+}
+
+[data-theme="billimatic"] .ch-login-form .button {
+  background-color: #6B180F;
+}
+
+[data-theme="billimatic"] .ch-login-form .button:hover {
+  background-color: #781b11;
+}
+
+[data-theme="billimatic"] .ch-timeline li.event:before {
+  border-color: #6B180F;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="billimatic"] .ch-dropdown-content {
+    background-color: #55130c;
+  }
+}
+
+:root [data-theme="contabilone"] {
+  --main-color: #832664;
+  --main-color-dark: #6f2055;
+  --main-color-light: #8f296d;
+}
+
+[data-theme="contabilone"] .ch-nav {
+  background-color: #832664;
+}
+
+[data-theme="contabilone"] .ch-nav-logo {
+  background-color: #8f296d;
+}
+
+[data-theme="contabilone"] .noUi-horizontal .noUi-handle {
+  background-color: #6f2055;
+}
+
+[data-theme="contabilone"] .noUi-connect {
+  background: #6f2055;
+}
+
+[data-theme="contabilone"] .noUi-handle:active {
+  border: 8px solid rgba(111, 32, 85, 0.85);
+}
+
+[data-theme="contabilone"] .ch-login-container:after {
+  background-color: #6f2055;
+}
+
+[data-theme="contabilone"] .ch-login-form .button {
+  background-color: #832664;
+}
+
+[data-theme="contabilone"] .ch-login-form .button:hover {
+  background-color: #8f296d;
+}
+
+[data-theme="contabilone"] .ch-timeline li.event:before {
+  border-color: #832664;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="contabilone"] .ch-dropdown-content {
+    background-color: #6f2055;
+  }
+}
+
+:root [data-theme="emites"] {
+  --main-color: #0C4E43;
+  --main-color-dark: #093830;
+  --main-color-light: #0e5b4e;
+}
+
+[data-theme="emites"] .ch-nav {
+  background-color: #0C4E43;
+}
+
+[data-theme="emites"] .ch-nav-logo {
+  background-color: #0e5b4e;
+}
+
+[data-theme="emites"] .noUi-horizontal .noUi-handle {
+  background-color: #093830;
+}
+
+[data-theme="emites"] .noUi-connect {
+  background: #093830;
+}
+
+[data-theme="emites"] .noUi-handle:active {
+  border: 8px solid rgba(9, 56, 48, 0.85);
+}
+
+[data-theme="emites"] .ch-login-container:after {
+  background-color: #093830;
+}
+
+[data-theme="emites"] .ch-login-form .button {
+  background-color: #0C4E43;
+}
+
+[data-theme="emites"] .ch-login-form .button:hover {
+  background-color: #0e5b4e;
+}
+
+[data-theme="emites"] .ch-timeline li.event:before {
+  border-color: #0C4E43;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="emites"] .ch-dropdown-content {
+    background-color: #093830;
+  }
+}
+
+:root [data-theme="rexpense"] {
+  --main-color: #3BB3A4;
+  --main-color-dark: #35a092;
+  --main-color-light: #3fbfaf;
+}
+
+[data-theme="rexpense"] .ch-nav {
+  background-color: #3BB3A4;
+}
+
+[data-theme="rexpense"] .ch-nav-logo {
+  background-color: #3fbfaf;
+}
+
+[data-theme="rexpense"] .noUi-horizontal .noUi-handle {
+  background-color: #35a092;
+}
+
+[data-theme="rexpense"] .noUi-connect {
+  background: #35a092;
+}
+
+[data-theme="rexpense"] .noUi-handle:active {
+  border: 8px solid rgba(53, 160, 146, 0.85);
+}
+
+[data-theme="rexpense"] .ch-login-container:after {
+  background-color: #35a092;
+}
+
+[data-theme="rexpense"] .ch-login-form .button {
+  background-color: #3BB3A4;
+}
+
+[data-theme="rexpense"] .ch-login-form .button:hover {
+  background-color: #3fbfaf;
+}
+
+[data-theme="rexpense"] .ch-timeline li.event:before {
+  border-color: #3BB3A4;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="rexpense"] .ch-dropdown-content {
+    background-color: #35a092;
   }
 }
 
@@ -38371,7 +38689,7 @@ li {
   border-radius: 50%;
   left: -7px;
   top: -7px;
-  background-color: #00a5c1;
+  background-color: var(--main-color-dark);
 }
 
 .noUi-background {
@@ -38379,7 +38697,7 @@ li {
 }
 
 .noUi-connect {
-  background: #00a5c1;
+  background: var(--main-color-dark);
   transition: background 450ms;
 }
 
@@ -38415,8 +38733,7 @@ li {
 }
 
 .noUi-handle:active {
-  border: 8px solid #00a5c1;
-  border: 8px solid rgba(0, 165, 193, 0.38);
+  border: 8px solid var(--main-color-dark);
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   left: -14px;
@@ -38508,7 +38825,7 @@ li {
 }
 
 .ch-timeline li.event:before {
-  border-color: #00BBDA;
+  border-color: var(--main-color);
 }
 
 .ch-notification {
@@ -39218,7 +39535,8 @@ li {
 }
 
 .ch-login-container:after {
-  background-color: rgba(0, 165, 193, 0.85);
+  background-color: var(--main-color-dark);
+  opacity: 0.85;
   z-index: 0;
 }
 
@@ -39267,12 +39585,12 @@ li {
 
 .ch-login-form .button {
   color: #fff;
-  background-color: #00BBDA;
+  background-color: var(--main-color);
 }
 
 .ch-login-form .button:hover {
   color: #fff;
-  background-color: #00c8e9;
+  background-color: var(--main-color-light);
 }
 
 .ch-login-footer {

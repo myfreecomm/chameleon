@@ -25,7 +25,8 @@
     }
 
     &:after {
-      background-color: rgba($mainColorDark, 0.85);
+      background-color: var(--main-color-dark);
+      opacity: 0.85;
       z-index: 0;
     }
   }
@@ -74,11 +75,11 @@
 
     .button {
       color: #fff;
-      background-color: $mainColor;
+      background-color: var(--main-color);
 
       &:hover {
         color: #fff;
-        background-color: $mainColorLight;
+        background-color: var(--main-color-light);
       }
     }
   }
