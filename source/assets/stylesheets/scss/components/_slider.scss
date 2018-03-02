@@ -63,7 +63,7 @@
     border-radius: 50%;
     left: -7px;
     top: -7px;
-    background-color: $mainColorDark;
+    background-color: var(--main-color-dark);
   }
 
   &-background {
@@ -71,7 +71,7 @@
   }
 
   &-connect {
-    background: $mainColorDark;
+    background: var(--main-color-dark);
     transition: background 450ms;
   }
 
@@ -105,8 +105,7 @@
     }
 
     &:active {
-      border: 8px solid $mainColorDark;
-      border: 8px solid rgba($mainColorDark,0.38);
+      border: 8px solid var(--main-color-dark);
       -webkit-background-clip: padding-box;
       background-clip: padding-box;
       left: -14px;
