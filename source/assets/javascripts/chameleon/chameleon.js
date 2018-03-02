@@ -3,7 +3,7 @@ if (window.Chameleon.Components === undefined) { window.Chameleon.Components = {
 if (window.Chameleon.Plugins === undefined) { window.Chameleon.Plugins = {}; }
 
 Chameleon.init = function() {
-  let components = Object.keys(Chameleon.Components).map( key => Chameleon.Components[key] )
+  let components = Object.keys(Chameleon.Components).map( key => Chameleon.Components[key] );
 
   components.forEach( component => component.init() );
 }
