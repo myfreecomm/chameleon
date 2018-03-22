@@ -38434,7 +38434,7 @@ li {
 }
 
 .ch-wizard--vertical > .ch-wizard-step > .header:before,
-.ch-wizard--horizontal > .ch-wizard-step:before {
+.ch-wizard--horizontal > .ch-wizard-step a:before {
   counter-increment: steps;
   content: counter(steps);
   min-width: 35px;
@@ -38452,7 +38452,7 @@ li {
 }
 
 .ch-wizard--vertical > .ch-wizard-step.done > .header:before,
-.ch-wizard--horizontal > .ch-wizard-step.done:before {
+.ch-wizard--horizontal > .ch-wizard-step.done a:before {
   content: "\f00c";
   font-family: "Icons";
   color: #fff;
@@ -38461,7 +38461,7 @@ li {
 }
 
 .ch-wizard--vertical > .ch-wizard-step.current > .header:before,
-.ch-wizard--horizontal > .ch-wizard-step.current:before {
+.ch-wizard--horizontal > .ch-wizard-step.current a:before {
   color: #fff;
   background-color: #838383;
   border-color: #838383;
@@ -38534,7 +38534,15 @@ li {
   opacity: .5;
 }
 
-.ch-wizard--horizontal > .ch-wizard-step:before {
+.ch-wizard--horizontal > .ch-wizard-step a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+}
+
+.ch-wizard--horizontal > .ch-wizard-step a:before {
   margin-right: 0;
   margin-bottom: 5px;
 }
@@ -38558,11 +38566,11 @@ li {
   content: none;
 }
 
-.ch-wizard--horizontal > .ch-wizard-step.current {
+.ch-wizard--horizontal > .ch-wizard-step.current a {
   color: #4b4b4b;
 }
 
-.ch-wizard--horizontal > .ch-wizard-step.done {
+.ch-wizard--horizontal > .ch-wizard-step.done a {
   color: #2b4;
 }
 

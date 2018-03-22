@@ -113,7 +113,15 @@
       line-height: normal;
       opacity: .5;
 
-      &:before {
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        color: inherit;
+      }
+
+      a:before {
         @extend %step;
         margin-right: 0;
         margin-bottom: 5px;
@@ -138,7 +146,7 @@
         }
       }
 
-      &.current {
+      &.current a {
         color: $fontColor;
 
         &:before {
@@ -146,7 +154,7 @@
         }
       }
 
-      &.done {
+      &.done a {
         color: #2b4;
 
         &:before {
