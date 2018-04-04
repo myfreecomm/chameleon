@@ -121,8 +121,13 @@
   }
 
   @media screen and (max-width: 768px) {
-    &-content {
-      margin: 0 auto;
+    &-container {
+      width: 100%;
+      padding: 20px;
+    }
+
+    &-footer {
+      padding: 20px;
     }
   }
 }
