@@ -1629,8 +1629,11 @@ ol, ul, li {
       display: block;
       padding: 10px; }
   @media screen and (max-width: 768px) {
-    .ch-login-content {
-      margin: 0 auto; } }
+    .ch-login-container {
+      width: 100%;
+      padding: 20px; }
+    .ch-login-footer {
+      padding: 20px; } }
 
 .ch-sidebar--fixed {
   position: absolute;
