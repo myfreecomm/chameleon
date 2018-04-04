@@ -9,7 +9,8 @@ $themes: (
   billimatic: #6B180F,
   contabilone: #832664,
   emites: #0C4E43,
-  rexpense: #3BB3A4
+  rexpense: #3BB3A4,
+  passaporteWeb: #242633
 );
 
 @each $name, $color in $themes {

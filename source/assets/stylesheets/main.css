@@ -37716,6 +37716,54 @@ body.pushable>.pusher {
   }
 }
 
+:root [data-theme="passaporteWeb"] {
+  --main-color: #242633;
+  --main-color-dark: #191b24;
+  --main-color-light: #2a2d3c;
+}
+
+[data-theme="passaporteWeb"] .ch-nav {
+  background-color: #242633;
+}
+
+[data-theme="passaporteWeb"] .ch-nav-logo {
+  background-color: #2a2d3c;
+}
+
+[data-theme="passaporteWeb"] .noUi-horizontal .noUi-handle {
+  background-color: #191b24;
+}
+
+[data-theme="passaporteWeb"] .noUi-connect {
+  background: #191b24;
+}
+
+[data-theme="passaporteWeb"] .noUi-handle:active {
+  border: 8px solid rgba(25, 27, 36, 0.85);
+}
+
+[data-theme="passaporteWeb"] .ch-login-container:after {
+  background-color: #191b24;
+}
+
+[data-theme="passaporteWeb"] .ch-login-form .button {
+  background-color: #242633;
+}
+
+[data-theme="passaporteWeb"] .ch-login-form .button:hover {
+  background-color: #2a2d3c;
+}
+
+[data-theme="passaporteWeb"] .ch-timeline li.event:before {
+  border-color: #242633;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="passaporteWeb"] .ch-dropdown-content {
+    background-color: #191b24;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
