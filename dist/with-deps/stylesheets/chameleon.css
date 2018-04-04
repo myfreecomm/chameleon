@@ -37406,7 +37406,7 @@ body.pushable>.pusher {
   border: 8px solid rgba(0, 165, 193, 0.85);
 }
 
-[data-theme="default"] .ch-login-container:after {
+[data-theme="default"] .ch-login:after {
   background-color: #00a5c1;
 }
 
@@ -37454,7 +37454,7 @@ body.pushable>.pusher {
   border: 8px solid rgba(28, 53, 85, 0.85);
 }
 
-[data-theme="myfinance"] .ch-login-container:after {
+[data-theme="myfinance"] .ch-login:after {
   background-color: #1c3555;
 }
 
@@ -37502,7 +37502,7 @@ body.pushable>.pusher {
   border: 8px solid rgba(193, 118, 18, 0.85);
 }
 
-[data-theme="cobrato"] .ch-login-container:after {
+[data-theme="cobrato"] .ch-login:after {
   background-color: #c17612;
 }
 
@@ -37550,7 +37550,7 @@ body.pushable>.pusher {
   border: 8px solid rgba(85, 19, 12, 0.85);
 }
 
-[data-theme="billimatic"] .ch-login-container:after {
+[data-theme="billimatic"] .ch-login:after {
   background-color: #55130c;
 }
 
@@ -37598,7 +37598,7 @@ body.pushable>.pusher {
   border: 8px solid rgba(111, 32, 85, 0.85);
 }
 
-[data-theme="contabilone"] .ch-login-container:after {
+[data-theme="contabilone"] .ch-login:after {
   background-color: #6f2055;
 }
 
@@ -37646,7 +37646,7 @@ body.pushable>.pusher {
   border: 8px solid rgba(9, 56, 48, 0.85);
 }
 
-[data-theme="emites"] .ch-login-container:after {
+[data-theme="emites"] .ch-login:after {
   background-color: #093830;
 }
 
@@ -37694,7 +37694,7 @@ body.pushable>.pusher {
   border: 8px solid rgba(53, 160, 146, 0.85);
 }
 
-[data-theme="rexpense"] .ch-login-container:after {
+[data-theme="rexpense"] .ch-login:after {
   background-color: #35a092;
 }
 
@@ -37713,6 +37713,54 @@ body.pushable>.pusher {
 @media screen and (max-width: 768px) {
   [data-theme="rexpense"] .ch-dropdown-content {
     background-color: #35a092;
+  }
+}
+
+:root [data-theme="passaporteWeb"] {
+  --main-color: #242633;
+  --main-color-dark: #191b24;
+  --main-color-light: #2a2d3c;
+}
+
+[data-theme="passaporteWeb"] .ch-nav {
+  background-color: #242633;
+}
+
+[data-theme="passaporteWeb"] .ch-nav-logo {
+  background-color: #2a2d3c;
+}
+
+[data-theme="passaporteWeb"] .noUi-horizontal .noUi-handle {
+  background-color: #191b24;
+}
+
+[data-theme="passaporteWeb"] .noUi-connect {
+  background: #191b24;
+}
+
+[data-theme="passaporteWeb"] .noUi-handle:active {
+  border: 8px solid rgba(25, 27, 36, 0.85);
+}
+
+[data-theme="passaporteWeb"] .ch-login:after {
+  background-color: #191b24;
+}
+
+[data-theme="passaporteWeb"] .ch-login-form .button {
+  background-color: #242633;
+}
+
+[data-theme="passaporteWeb"] .ch-login-form .button:hover {
+  background-color: #2a2d3c;
+}
+
+[data-theme="passaporteWeb"] .ch-timeline li.event:before {
+  border-color: #242633;
+}
+
+@media screen and (max-width: 768px) {
+  [data-theme="passaporteWeb"] .ch-dropdown-content {
+    background-color: #191b24;
   }
 }
 
@@ -38434,7 +38482,7 @@ li {
 }
 
 .ch-wizard--vertical > .ch-wizard-step > .header:before,
-.ch-wizard--horizontal > .ch-wizard-step:before {
+.ch-wizard--horizontal > .ch-wizard-step a:before {
   counter-increment: steps;
   content: counter(steps);
   min-width: 35px;
@@ -38452,7 +38500,7 @@ li {
 }
 
 .ch-wizard--vertical > .ch-wizard-step.done > .header:before,
-.ch-wizard--horizontal > .ch-wizard-step.done:before {
+.ch-wizard--horizontal > .ch-wizard-step.done a:before {
   content: "\f00c";
   font-family: "Icons";
   color: #fff;
@@ -38461,7 +38509,7 @@ li {
 }
 
 .ch-wizard--vertical > .ch-wizard-step.current > .header:before,
-.ch-wizard--horizontal > .ch-wizard-step.current:before {
+.ch-wizard--horizontal > .ch-wizard-step.current a:before {
   color: #fff;
   background-color: #838383;
   border-color: #838383;
@@ -38534,7 +38582,15 @@ li {
   opacity: .5;
 }
 
-.ch-wizard--horizontal > .ch-wizard-step:before {
+.ch-wizard--horizontal > .ch-wizard-step a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+}
+
+.ch-wizard--horizontal > .ch-wizard-step a:before {
   margin-right: 0;
   margin-bottom: 5px;
 }
@@ -38558,11 +38614,11 @@ li {
   content: none;
 }
 
-.ch-wizard--horizontal > .ch-wizard-step.current {
+.ch-wizard--horizontal > .ch-wizard-step.current a {
   color: #4b4b4b;
 }
 
-.ch-wizard--horizontal > .ch-wizard-step.done {
+.ch-wizard--horizontal > .ch-wizard-step.done a {
   color: #2b4;
 }
 
@@ -39510,14 +39566,14 @@ li {
   height: 100%;
 }
 
-.ch-login-container {
+.ch-login {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.ch-login-container:before,
-.ch-login-container:after {
+.ch-login:before,
+.ch-login:after {
   content: '';
   position: absolute;
   top: 0;
@@ -39526,7 +39582,7 @@ li {
   height: 100%;
 }
 
-.ch-login-container:before {
+.ch-login:before {
   background-image: url("../images/bg_app.jpg");
   background-size: cover;
   background-position: center bottom;
@@ -39534,23 +39590,21 @@ li {
   z-index: -1;
 }
 
-.ch-login-container:after {
+.ch-login:after {
   background-color: var(--main-color-dark);
   opacity: 0.85;
   z-index: 0;
 }
 
-.ch-login-content {
+.ch-login-container {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 5%;
   padding: 0 60px;
-  max-width: 450px;
+  width: 50%;
   height: 100%;
   background-color: #fff;
-  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
@@ -39574,7 +39628,10 @@ li {
 }
 
 .ch-login-form {
-  padding: 50px 0;
+  max-width: 330px;
+  padding: 35px 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ch-login-form .ui.header {
@@ -39593,12 +39650,40 @@ li {
   background-color: var(--main-color-light);
 }
 
-.ch-login-footer {
+.ch-login-helpers {
+  padding: 35px 0;
+  color: #999;
+}
+
+.ch-login-helpers span {
+  display: block;
+  margin-bottom: 15px;
   text-align: center;
 }
 
-.ch-login-footer a {
+.ch-login-helpers a {
+  display: inline-block;
+  color: inherit;
   text-decoration: underline;
+}
+
+.ch-login-footer {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  padding: 20px 60px;
+  text-align: center;
+}
+
+.ch-login-footer li {
+  display: inline-block;
+}
+
+.ch-login-footer li a {
+  color: #999;
+  display: block;
+  padding: 10px;
 }
 
 @media screen and (max-width: 768px) {
