@@ -48,7 +48,7 @@ $themes: (
     }
 
     .ch-login {
-      &-container:after {
+      &:after {
         background-color: $mainColorDark;
       }
 

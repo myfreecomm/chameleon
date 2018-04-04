@@ -8,35 +8,37 @@
     <link rel="stylesheet" href="../assets/stylesheets/main.css">
   </head>
   <body data-theme="default">
-    <div class="ch-login-container">
-      <div class="ch-login-content">
-        <div class="ch-login-header"><img class="logo-product" src="../assets/images/chameleon_logo.png"><img class="logo-nexaas" src="../assets/images/nexaas_logo.png"><span class="text">Chameleon</span></div>
-        <div class="ch-login-form">
-          <form class="ui form" action="dashboard.html">
-            <div class="ui header medium">Acesse com seu Nexaas ID</div>
-            <div class="field">
-              <input type="text" placeholder="E-mail">
-            </div>
-            <div class="field">
-              <input type="password" placeholder="Senha">
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox">
-                <label>Eu utilizo a verificação em duas etapas</label>
+    <div class="ch-login">
+      <div class="ch-login-container">
+        <div class="ch-login-header"><img class="logo-nexaas" src="../assets/images/nexaas_logo.png"></div>
+        <div class="ch-login-content">
+          <div class="ch-login-form">
+            <form class="ui form" action="dashboard.html">
+              <div class="field">
+                <input type="text" placeholder="E-mail">
               </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox">
-                <label>Mantenha-me conectado</label>
+              <div class="field">
+                <input type="password" placeholder="Senha">
               </div>
-            </div>
-            <div class="ui divider hidden"></div>
-            <input class="ui fluid button" type="submit" value="Entrar">
-          </form>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox">
+                  <label>Mantenha-me conectado</label>
+                </div>
+              </div>
+              <div class="ui divider hidden"></div>
+              <input class="ui fluid button" type="submit" value="Entrar">
+            </form>
+            <div class="ch-login-helpers"><span><a href="#">Esqueceu sua senha ?</a></span><span>Ainda não possui conta ? <a href="#">Crie Agora</a></span></div>
+          </div>
         </div>
-        <div class="ch-login-footer"><a href="#">Esqueci minha senha</a></div>
+        <div class="ch-login-footer">
+          <ul>
+            <li><a href="#">Cadastro</a></li>
+            <li><a href="#">Termos de serviço</a></li>
+            <li><a href="#">Documentação</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>

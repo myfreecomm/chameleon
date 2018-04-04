@@ -3,31 +3,38 @@ html
   include includes/head.pug
 
   body(data-theme="default")
-    .ch-login-container
-      .ch-login-content
+    .ch-login
+      .ch-login-container
         .ch-login-header
-          img.logo-product(src="../assets/images/chameleon_logo.png")
           img.logo-nexaas(src="../assets/images/nexaas_logo.png")
-          span.text Chameleon
 
-        .ch-login-form
-          form.ui.form(action="dashboard.html")
-            .ui.header.medium Acesse com seu Nexaas ID
-            .field
-              input(type="text" placeholder="E-mail")
-            .field
-              input(type="password" placeholder="Senha")
-            .field
-              .ui.checkbox
-                input(type="checkbox")
-                label Eu utilizo a verificação em duas etapas
-            .field
-              .ui.checkbox
-                input(type="checkbox")
-                label Mantenha-me conectado
+        .ch-login-content
+          .ch-login-form
+            form.ui.form(action="dashboard.html")
+              .field
+                input(type="text" placeholder="E-mail")
+              .field
+                input(type="password" placeholder="Senha")
+              .field
+                .ui.checkbox
+                  input(type="checkbox")
+                  label Mantenha-me conectado
 
-            .ui.divider.hidden
-            input.ui.fluid.button(type="submit" value="Entrar")
+              .ui.divider.hidden
+              input.ui.fluid.button(type="submit" value="Entrar")
+
+            .ch-login-helpers
+              span
+                a(href="#") Esqueceu sua senha ?
+              span Ainda não possui conta ? <a href="#">Crie Agora</a>
 
         .ch-login-footer
-          a(href="#") Esqueci minha senha
+          ul
+            li
+              a(href="#") Cadastro
+
+            li
+              a(href="#") Termos de serviço
+
+            li
+              a(href="#") Documentação
