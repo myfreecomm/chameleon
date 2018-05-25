@@ -2358,13 +2358,13 @@ if (window.Chameleon.Plugins === undefined) {
 }
 
 Chameleon.init = function () {
+
   var components = Object.keys(Chameleon.Components).map(function (key) {
-    return Chameleon.Components[key];
+    var component = Chameleon.Components[key];
+    Chameleon[key.toLowerCase()] = new component();
   });
 
-  components.forEach(function (component) {
-    return component.init();
-  });
+  Chameleon.notifications = new Chameleon.Plugins.Notification();
 };
 
 $(document).ready(function () {
@@ -2387,7 +2387,7 @@ Chameleon.Components.Dropdown = function () {
 
   var closeOnMobile = function closeOnMobile(event, $container) {
     if (!$container.is(event.target) && $container.has(event.target).length === 0) {
-      Chameleon.Components.Menu.close();
+      Chameleon.menu.close();
       $container.unbind('mouseup');
     }
   };
@@ -2403,22 +2403,10 @@ Chameleon.Components.Dropdown = function () {
     $(window).width() <= 768 ? closeOnMobile(e, $nav) : closeOnDesktop(e, $dropdownContainer);
   };
 
-  var bindFunctions = function bindFunctions() {
-    $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);
+  $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);
 
-    $(document).on('mouseup', function (e) {
-      close(e);
-    });
-  };
-
-  var init = function init() {
-    bindFunctions();
-  };
-
-  return {
-    init: init
-  };
-}();
+  $(document).on('mouseup', close);
+};
 
 Chameleon.Components.Menu = function () {
   var $navMenuElements = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
@@ -2435,27 +2423,20 @@ Chameleon.Components.Menu = function () {
     $navDropdown.removeClass('collapse visible');
   };
 
-  var bindFunctions = function bindFunctions() {
-    $(document).on('click', '.show-menu', open);
+  $(document).on('click', '.show-menu', open);
 
-    $(document).on('click', '.close-menu', close);
+  $(document).on('click', '.close-menu', close);
 
-    $(window).resize(function () {
-      if ($(window).width() >= 768) {
-        close();
-      }
-    });
-  };
-
-  var init = function init() {
-    bindFunctions();
-  };
+  $(window).resize(function () {
+    if ($(window).width() >= 768) {
+      close();
+    }
+  });
 
   return {
-    init: init,
     close: close
   };
-}();
+};
 
 Chameleon.Components.Modal = function () {
   var $modal = $('.ch-dialog');
@@ -2475,28 +2456,18 @@ Chameleon.Components.Modal = function () {
     $modal.hide(300);
   };
 
-  var bindFunctions = function bindFunctions() {
-    $(document).on('click', '[data-target="modal"]', open);
+  $(document).on('click', '[data-target="modal"]', open);
 
-    $(document).on('click', '.ch-overlay, .close-dialog', close);
+  $(document).on('click', '.ch-overlay, .close-dialog', close);
 
-    $modal.on('keydown', function (e) {
-      Chameleon.Utils.keyboardClose(e, close);
-    });
+  $modal.on('keydown', function (e) {
+    $.keyboardClose(e, close);
+  });
 
-    $(document).on('click', '.ch-dialog-container', function (e) {
-      e.stopPropagation();
-    });
-  };
-
-  var init = function init() {
-    bindFunctions();
-  };
-
-  return {
-    init: init
-  };
-}();
+  $(document).on('click', '.ch-dialog-container', function (e) {
+    e.stopPropagation();
+  });
+};
 
 Chameleon.Components.Search = function () {
   var $search = $('.ch-search');
@@ -2527,35 +2498,24 @@ Chameleon.Components.Search = function () {
     $search.find('.ch-search-form-input').focus();
   };
 
-  var bindFunctions = function bindFunctions() {
-    $(document).on('click', '[data-target="search"]', open);
+  $(document).on('click', '[data-target="search"]', open);
 
-    $(document).on('click', '.ch-search-content', function (e) {
-      e.stopPropagation();
-    });
+  $(document).on('click', '.ch-search-content', function (e) {
+    e.stopPropagation();
+  });
 
-    $(document).on('click', '.ch-search .btn-close, .ch-overlay', close);
+  $(document).on('click', '.ch-search .btn-close, .ch-overlay', close);
 
-    $search.on('keydown', function (e) {
-      Chameleon.Utils.keyboardClose(e, close);
-    });
+  $search.on('keydown', function (e) {
+    $.keyboardClose(e, close);
+  });
 
-    $(document).on('input', '.ch-search-form-input', toggleResults);
+  $(document).on('input', '.ch-search-form-input', toggleResults);
 
-    $(document).on('click', '.btn-remove-context', removeContext);
-  };
-
-  var init = function init() {
-    bindFunctions();
-  };
-
-  return {
-    init: init
-  };
-}();
+  $(document).on('click', '.btn-remove-context', removeContext);
+};
 
 Chameleon.Components.Table = function () {
-
   var clickableRow = function clickableRow() {
     var sel = getSelection().toString();
 
@@ -2582,25 +2542,14 @@ Chameleon.Components.Table = function () {
     $container.toggleClass('inactive');
   };
 
-  var bindFunctions = function bindFunctions() {
-    $(document).on('click', '[data-table-detail="toggle"]', toggleDetailView);
+  $(document).on('click', '[data-table-detail="toggle"]', toggleDetailView);
 
-    $(document).on('click', '.row-link', clickableRow);
+  $(document).on('click', '.row-link', clickableRow);
 
-    $(document).on('click', '[data-sidebar="toggle"]', toggleSidebarCollapse);
-  };
-
-  var init = function init() {
-    bindFunctions();
-  };
-
-  return {
-    init: init
-  };
-}();
+  $(document).on('click', '[data-sidebar="toggle"]', toggleSidebarCollapse);
+};
 
 Chameleon.Utils = function () {
-
   $.fn.switchClass = function (class1, class2) {
     if (this.hasClass(class1)) {
       this.removeClass(class1);
@@ -2611,15 +2560,11 @@ Chameleon.Utils = function () {
     }
   };
 
-  var keyboardClose = function keyboardClose(e, closeFunction) {
+  $.keyboardClose = function (e, closeFunction) {
     var code = e.keyCode || e.which;
     if (code === 27 && $('.ch-overlay').is(':visible')) {
       closeFunction();
     }
-  };
-
-  return {
-    keyboardClose: keyboardClose
   };
 }();
 
@@ -2686,25 +2631,29 @@ Chameleon.Plugins.Notification = function () {
       animationExit: 'bounceOutUp'
     }, options);
 
-    var notification = buildHTML(settings);
+    var build = function build() {
+      var notification = buildHTML(settings);
 
-    var elem = $(notification.template).appendTo(notification.container);
+      var elem = $(notification.template).appendTo(notification.container);
 
-    if (!settings.timeout == 0) {
-      setTimeout(function () {
-        return destroy(elem, settings);
-      }, settings.timeout);
-    }
-
-    $(document).on('click', '.ch-notification-button--close', function () {
-      if ($(elem).is(':visible')) {
-        destroy($(this).parent(), settings);
+      if (!settings.timeout == 0) {
+        setTimeout(function () {
+          return destroy(elem, settings);
+        }, settings.timeout);
       }
-    });
+
+      $(document).on('click', '.ch-notification-button--close', function () {
+        if ($(elem).is(':visible')) {
+          destroy($(this).parent(), settings);
+        }
+      });
+    };
+
+    typeof this === 'function' ? build() : $(this).on('click', build);
   };
 
   var pluginName = "notify";
 
   $[pluginName] = Notification;
   $.fn[pluginName] = Notification;
-}();
+};
