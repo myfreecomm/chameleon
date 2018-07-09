@@ -61,43 +61,19 @@
     opacity: 0.7;
     cursor: pointer;
 
-    > a {
-      color: inherit;
-    }
-
-    &:after {
-      content: "";
-      display: block;
-      margin: 5px auto;
-      height: 1px;
-      width: 15px;
-      background-color: rgba(#fff, 0.3);
+    &:first-child > a {
+      padding-top: 20px;
     }
 
     &.active, &:hover {
       opacity: 1;
     }
 
-    &.active {
-      &:after {
-        content: "";
-        display: block;
-        height: 2px;
-        width: 50px;
-        background-color: #fff;
-      }
-    }
-
-    &:last-child {
-      &:after {
-        content: none;
-      }
-    }
-
     > a {
       display: block;
-      padding: 10px 10px 0;
+      padding: 10px;
       text-align: center;
+      color: inherit;
     }
 
    .icon {
@@ -154,7 +130,8 @@
     }
 
     &-item {
-      > a {
+      > a,
+      &:first-child > a {
         padding: 5px 10px;
       }
 

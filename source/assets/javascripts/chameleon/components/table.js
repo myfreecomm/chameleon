@@ -1,5 +1,4 @@
-Chameleon.Components.Table = (function(){
-
+Chameleon.Components.Table = function(){
   const clickableRow = function() {
     let sel = getSelection().toString();
 
@@ -24,19 +23,9 @@ Chameleon.Components.Table = (function(){
     $container.toggleClass('inactive');
   }
 
-  const bindFunctions = function() {
-    $(document).on('click', '[data-table-detail="toggle"]', toggleDetailView);
+  $(document).on('click', '[data-table-detail="toggle"]', toggleDetailView);
 
-    $(document).on('click', '.row-link', clickableRow);
+  $(document).on('click', '.row-link', clickableRow);
 
-    $(document).on('click', '[data-sidebar="toggle"]', toggleSidebarCollapse);
-  }
-
-  const init = function() {
-    bindFunctions();
-  }
-
-  return {
-    init: init
-  }
-})();
+  $(document).on('click', '[data-sidebar="toggle"]', toggleSidebarCollapse);
+}

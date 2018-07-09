@@ -1,4 +1,4 @@
-Chameleon.Plugins.Notification = (function() {
+Chameleon.Plugins.Notification = function() {
   const setTemplate = function(settings) {
     let template = '';
 
@@ -80,24 +80,29 @@ Chameleon.Plugins.Notification = (function() {
       animationExit: 'bounceOutUp'
     }, options)
 
-    let notification = buildHTML(settings);
+    let build = function() {
+      let notification = buildHTML(settings);
 
-    let elem = $(notification.template).appendTo(notification.container);
+      let elem = $(notification.template).appendTo(notification.container);
 
-    if (!settings.timeout == 0) {
-      setTimeout(() => destroy(elem, settings), settings.timeout);
+      if (!settings.timeout == 0) {
+        setTimeout(() => destroy(elem, settings), settings.timeout);
+      }
+
+      $(document).on('click', '.ch-notification-button--close', function() {
+        if ( $(elem).is(':visible') ) {
+          destroy($(this).parent(), settings);
+        }
+      });
     }
 
-    $(document).on('click', '.ch-notification-button--close', function() {
-      if ( $(elem).is(':visible') ) {
-        destroy($(this).parent(), settings);
-      }
-    });
+    typeof this === 'function' ? build() : $(this).on('click', build)
+
   }
 
   let pluginName = "notify";
 
   $[pluginName] = Notification;
   $.fn[pluginName] = Notification;
-})();
+};
 

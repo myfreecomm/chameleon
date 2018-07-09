@@ -1,4 +1,4 @@
-Chameleon.Components.Modal = (function() {
+Chameleon.Components.Modal = function() {
   let $modal = $('.ch-dialog');
 
   const open = function(e) {
@@ -16,21 +16,11 @@ Chameleon.Components.Modal = (function() {
     $modal.hide(300);
   }
 
-  const bindFunctions = function() {
-    $(document).on('click', '[data-target="modal"]', open);
+  $(document).on('click', '[data-target="modal"]', open);
 
-    $(document).on('click', '.ch-overlay, .close-dialog', close);
+  $(document).on('click', '.ch-overlay, .close-dialog', close);
 
-    $modal.on('keydown', function(e) { Chameleon.Utils.keyboardClose(e, close); });
+  $modal.on('keydown', function(e) { $.keyboardClose(e, close); });
 
-    $(document).on('click', '.ch-dialog-container', function(e) { e.stopPropagation(); });
-  }
-
-  const init = function() {
-    bindFunctions();
-  }
-
-  return {
-    init: init
-  }
-})();
+  $(document).on('click', '.ch-dialog-container', function(e) { e.stopPropagation(); });
+}

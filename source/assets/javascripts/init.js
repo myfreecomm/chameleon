@@ -1,61 +1,57 @@
-var slider = document.getElementById('slider');
+$(document).ready(function() {
+  var slider = document.getElementById('slider');
 
-if (slider) {
-  noUiSlider.create(slider, {
-    start: [20, 80],
-    connect: true,
-    range: {
-      'min': 0,
-      'max': 100
-    }
-  });
-}
+  if (slider) {
+    noUiSlider.create(slider, {
+      start: [20, 80],
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 100
+      }
+    });
+  }
 
-/*** SEMANTIC UI **/
+  /*** SEMANTIC UI **/
 
-$('.ui.dropdown').dropdown({
-    showOnFocus: false
-  })
-;
+  $('.ui.dropdown').dropdown({
+      showOnFocus: false
+    })
+  ;
 
-$('.ui.checkbox').checkbox();
+  $('.ui.checkbox').checkbox();
 
-$('.bind-popup')
-  .popup({
-    inline: true
-  });
-;
+  $('.bind-popup')
+    .popup({
+      inline: true
+    });
+  ;
 
-$('.ui.info')
-  .popup({
-    inline: true,
-    on: 'hover'
-  })
-;
+  $('.ui.info')
+    .popup({
+      inline: true,
+      on: 'hover'
+    })
+  ;
 
-$('.ui.sticky')
-  .sticky({
-    context: '#report-form'
-  })
-;
+  $('.ui.sticky')
+    .sticky({
+      context: '#report-form'
+    })
+  ;
 
-$('.menu .item').tab();
+  $('.menu .item').tab();
 
-//CHAMELEON NOTIFICATIONS
+  //CHAMELEON NOTIFICATIONS
 
-$('.ch-button.green').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ch-button.green').notify({
     title: 'Success',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'success',
     icon: 'check',
   });
-})
 
-$('.ch-button.red').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ch-button.red').notify({
     title: 'Danger',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'danger',
@@ -64,11 +60,8 @@ $('.ch-button.red').on('click', function(e) {
     animationEntrance: 'bounceInUp',
     animationExit: 'bounceOutDown'
   });
-})
 
-$('.ch-button.blue').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ch-button.blue').notify({
     title: 'Info',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'info',
@@ -77,44 +70,32 @@ $('.ch-button.blue').on('click', function(e) {
     animationEntrance: 'bounceInUp',
     animationExit: 'bounceOutDown'
   });
-})
 
-$('.ch-button.yellow').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ch-button.yellow').notify({
     title: 'Warning',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     type: 'warning',
     icon: 'warning',
     position: 'top left',
   });
-})
 
-$('.ch-button.grey').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ch-button.grey').notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     icon: 'warning',
     position: 'top center'
   });
-})
 
-$('.ch-button.black').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ch-button.black').notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     icon: 'warning',
     position: 'bottom center',
     animationEntrance: 'bounceInUp',
     animationExit: 'bounceOutDown'
   });
-})
 
-//SEMANTIC UI NOTIFICATIONS
+  //SEMANTIC UI NOTIFICATIONS
 
-$('.ui.semantic.button.green').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ui.semantic.button.green').notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     theme: 'semanticUI',
     className: 'positive',
@@ -122,32 +103,23 @@ $('.ui.semantic.button.green').on('click', function(e) {
     title: 'Success',
     position: 'top center',
   });
-})
 
-$('.ui.semantic.button.red').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ui.semantic.button.red').notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     theme: 'semanticUI',
     className: 'negative',
     position: 'top center'
   });
-})
 
-$('.ui.semantic.button.blue').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ui.semantic.button.blue').notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     theme: 'semanticUI',
     className: 'blue',
     icon: 'info',
     position: 'top center'
   });
-})
 
-$('.ui.semantic.button.yellow').on('click', function(e) {
-  e.preventDefault()
-  $(this).notify({
+  $('.ui.semantic.button.yellow').notify({
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, consectetur.',
     theme: 'semanticUI',
     className: 'yellow',

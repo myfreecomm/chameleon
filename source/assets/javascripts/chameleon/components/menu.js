@@ -1,4 +1,4 @@
-Chameleon.Components.Menu = (function() {
+Chameleon.Components.Menu = function() {
   let $navMenuElements   = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
   let $navDropdown       = $('.ch-nav .ch-dropdown-content');
 
@@ -13,22 +13,15 @@ Chameleon.Components.Menu = (function() {
     $navDropdown.removeClass('collapse visible');
   }
 
-  const bindFunctions = function() {
-    $(document).on('click', '.show-menu', open);
+  $(document).on('click', '.show-menu', open);
 
-    $(document).on('click', '.close-menu', close);
+  $(document).on('click', '.close-menu', close);
 
-    $(window).resize(function() {
-      if ( $(window).width() >= 768 ) { close(); }
-    });
-  };
-
-  const init = function() {
-    bindFunctions();
-  };
+  $(window).resize(function() {
+    if ( $(window).width() >= 768 ) { close(); }
+  });
 
   return {
-    init: init,
     close: close
   };
-})();
+}
