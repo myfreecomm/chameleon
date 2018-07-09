@@ -3,7 +3,6 @@ Chameleon.Components.Dropdown = function() {
   let $dropdownContainer = $('.ch-dropdown-content');
 
   const open = function(e) {
-    e.preventDefault();
     if ( $(this).siblings().hasClass('visible') ) {
       $dropdownContainer.removeClass('visible');
     } else {

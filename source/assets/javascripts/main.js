@@ -2376,7 +2376,6 @@ Chameleon.Components.Dropdown = function () {
   var $dropdownContainer = $('.ch-dropdown-content');
 
   var open = function open(e) {
-    e.preventDefault();
     if ($(this).siblings().hasClass('visible')) {
       $dropdownContainer.removeClass('visible');
     } else {
