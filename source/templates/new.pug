@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+    title.
+      Nexaas - Chameleon
+    link(rel="stylesheet" href="../assets/stylesheets/main.css")
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto:300,400,500,700" rel="stylesheet")
+    script(type="text/javascript" src="../assets/javascripts/main.js")
+    script.
+      $(document).ready(function(){
+       $('.chn-collapse-button').on('click', function() {
+        $('.chn-nav').toggleClass('collapsed');
+       });
+      });
+
+  body.chameleon-v2
+    nav.chn-nav
+      .chn-logo
+        .chn-logo-icon
+          i.icon.dollar.black.inverted
+        span.chn-logo-label MyFinance
+
+      ul.chn-menu
+        -
+          var menuItems = [
+            { name: "Painel", icon: "dashboard", href: "dashboard.html", active: true },
+            { name: "Formulários", icon: "clipboard", href: "form.html" },
+            { name: "Tabelas", icon: "table", href: "table.html" },
+            { name: "Notificações", icon: "warning circle", href: "notifications.html" },
+            { name: "Wizard", icon: "wizard", href: "wizard.html" },
+          ]
+
+        each item in menuItems
+          li.chn-menu-item(class={active: item.active})
+            a(href="#")
+              i(class= item.icon + " icon")
+              span(class="chn-menu-item-label")= item.name
+
+      button.chn-collapse-button
+        i.icon.caret.square.left.outline
+        span.chn-collapse-button-label Minimizar
+
+    main.chn-content
+      include includes/header.pug
+
+
+
+
+
+
+

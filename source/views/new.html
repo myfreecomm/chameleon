@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Nexaas - Chameleon</title>
+    <link rel="stylesheet" href="../assets/stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto:300,400,500,700" rel="stylesheet">
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script>
+      $(document).ready(function(){
+       $('.chn-collapse-button').on('click', function() {
+        $('.chn-nav').toggleClass('collapsed');
+       });
+      });
+      
+    </script>
+  </head>
+  <body class="chameleon-v2">
+    <nav class="chn-nav">
+      <div class="chn-logo">
+        <div class="chn-logo-icon"><i class="icon dollar black inverted"></i></div><span class="chn-logo-label">MyFinance</span>
+      </div>
+      <ul class="chn-menu">
+        <li class="chn-menu-item active"><a href="#"><i class="dashboard icon"></i><span class="chn-menu-item-label">Painel</span></a></li>
+        <li class="chn-menu-item"><a href="#"><i class="clipboard icon"></i><span class="chn-menu-item-label">Formulários</span></a></li>
+        <li class="chn-menu-item"><a href="#"><i class="table icon"></i><span class="chn-menu-item-label">Tabelas</span></a></li>
+        <li class="chn-menu-item"><a href="#"><i class="warning circle icon"></i><span class="chn-menu-item-label">Notificações</span></a></li>
+        <li class="chn-menu-item"><a href="#"><i class="wizard icon"></i><span class="chn-menu-item-label">Wizard</span></a></li>
+      </ul>
+      <button class="chn-collapse-button"><i class="icon caret square left outline"></i><span class="chn-collapse-button-label">Minimizar</span></button>
+    </nav>
+    <main class="chn-content">
+      <header class="ch-header">
+        <div class="ch-breadcrumb">
+          <div class="ch-breadcrumb-section ch-dropdown"><a class="ch-dropdown-toggle" href="#">Nome da organização</a>
+            <div class="ch-dropdown-content bottom left" tabindex="-1">
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Organização 1</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Organização 2</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Organização 3</a></li>
+              </ul>
+            </div>
+          </div><i class="right chevron icon divider"></i>
+          <div class="ch-breadcrumb-section ch-dropdown active"><a class="ch-dropdown-toggle" href="#">Painel Principal</a>
+            <div class="ch-dropdown-content bottom left" tabindex="-1">
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Painel de exemplo</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Painel Modelo 1</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Painel Modelo 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ch-header-nav"><a class="ch-header-nav-button" data-target="search"><i class="search large icon"></i></a><a class="ch-header-nav-button" href="#" data-target="modal" data-modal="notifications"><i class="ch-notification-label bell outline large icon"></i></a>
+          <div class="ch-dropdown computer-only"><a class="ch-header-nav-button ch-dropdown-toggle" href="#"><i class="ch-notification-label cog large icon"></i></a>
+            <div class="ch-dropdown-content bottom right" tabindex="-1"><span class="ch-dropdown-header">Configurações</span>
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Meu Plano</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Usuários</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Integrações</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Preferências</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ch-dropdown computer-only"><a class="ch-header-nav-button ch-dropdown-toggle" href="#"><img class="ui avatar image" src="https://ui-avatars.com/api/?background=EF6C00&amp;color=fff&amp;name=Chameleon&amp;font-size=0.4"></a>
+            <div class="ch-dropdown-content bottom right" tabindex="-1"><span class="ch-dropdown-header">Contas</span>
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#"><img class="ui avatar image" src="https://ui-avatars.com/api/?background=EF6C00&amp;color=fff&amp;name=Chameleon"><span>Chameleon</span>
+                    <div class="ui button mini basic">Editar</div></a></li>
+                <li class="ch-dropdown-menu-item"><a href="#"><img class="ui avatar image" src="https://ui-avatars.com/api/?background=3d8af7&amp;color=fff&amp;name=Conta Nexaas 2"><span>Conta Nexaas 2</span>
+                    <div class="ui button mini basic">Editar</div></a></li>
+                <li class="ch-dropdown-menu-item"><a href="#"><img class="ui avatar image" src="https://ui-avatars.com/api/?background=e93578&amp;color=fff&amp;name=Conta Nexaas 3"><span>Conta Nexaas 3</span>
+                    <div class="ui button mini basic">Editar</div></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </main>
+  </body>
+</html>
