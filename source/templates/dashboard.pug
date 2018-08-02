@@ -60,62 +60,62 @@ html
     +nav('dashboard.html')
 
     .main-content
-      include includes/header.pug
+      // include includes/header.pug
 
       .ch-content
-        .ui.stackable.doubling.padded.grid
+        // .ui.stackable.doubling.padded.grid
 
-          .row
-            +smallCard("Total de colaboradores", "800", "Jan  - Ago 2017", "blue")
-            +smallCard("Total de grupos", "10", "Jan  - Ago 2017", "blue")
-            +smallCard("Tarefas pendentes", "27", "Jan  - Ago 2017", "blue")
-            +smallCard("Eventos", "14", "Jan  - Ago 2017", "red")
+        //   .row
+        //     +smallCard("Total de colaboradores", "800", "Jan  - Ago 2017", "blue")
+        //     +smallCard("Total de grupos", "10", "Jan  - Ago 2017", "blue")
+        //     +smallCard("Tarefas pendentes", "27", "Jan  - Ago 2017", "blue")
+        //     +smallCard("Eventos", "14", "Jan  - Ago 2017", "red")
 
-          .row.equal.width
+        //   .row.equal.width
 
-            .column
-              .ui.segments
-                +listSegment("Colaboradores", people)
+        //     .column
+        //       .ui.segments
+        //         +listSegment("Colaboradores", people)
 
-            .column
-              .ui.segments
-                +listSegment("Grupos", groups)
+        //     .column
+        //       .ui.segments
+        //         +listSegment("Grupos", groups)
 
-          .row
-            .ten.wide.column
-              .ui.segments
-                .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ch-segment-header-title Gráficos em linha
+        //   .row
+        //     .ten.wide.column
+        //       .ui.segments
+        //         .ui.attached.segment.middle.aligned.ch-segment-header
+        //           span.ch-segment-header-title Gráficos em linha
 
-                .ui.attached.segment
-                  #users-chart
+        //         .ui.attached.segment
+        //           #users-chart
 
-            .six.wide.column
-              .ui.segments
-                .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ch-segment-header-title Gráficos em pizza
+        //     .six.wide.column
+        //       .ui.segments
+        //         .ui.attached.segment.middle.aligned.ch-segment-header
+        //           span.ch-segment-header-title Gráficos em pizza
 
-                .ui.attached.segment
-                  #pie-chart
+        //         .ui.attached.segment
+        //           #pie-chart
 
-          .row
-            .sixteen.wide.column
-              .ui.segments
-                .ui.attached.segment.middle.aligned.ch-segment-header
-                  span.ch-segment-header-title Lista de colaboradores
-                .ui.attached.segment.paddingless
-                  table.ui.very.basic.table
-                    thead
-                      tr
-                        th Name
-                        th Date Joined
-                        th E-mail
-                    tbody
-                      each worker in workers
-                        tr
-                          td(data-info="Nome")= worker.name
-                          td(data-info="Date Joined")= worker.admission_date
-                          td(data-info="E-mail")= worker.email
+        //   .row
+        //     .sixteen.wide.column
+        //       .ui.segments
+        //         .ui.attached.segment.middle.aligned.ch-segment-header
+        //           span.ch-segment-header-title Lista de colaboradores
+        //         .ui.attached.segment.paddingless
+        //           table.ui.very.basic.table
+        //             thead
+        //               tr
+        //                 th Name
+        //                 th Date Joined
+        //                 th E-mail
+        //             tbody
+        //               each worker in workers
+        //                 tr
+        //                   td(data-info="Nome")= worker.name
+        //                   td(data-info="Date Joined")= worker.admission_date
+        //                   td(data-info="E-mail")= worker.email
 
     include includes/notifications.pug
     include includes/search.pug
