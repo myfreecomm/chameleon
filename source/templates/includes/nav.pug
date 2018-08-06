@@ -2,7 +2,6 @@ mixin nav(activeUrl)
   nav.ch-nav
     .ch-logo
       .ch-logo-icon
-        i.icon.dollar.black.inverted
       span.ch-logo-label MyFinance
 
     ul.ch-menu
@@ -11,16 +10,18 @@ mixin nav(activeUrl)
           { name: "Painel", icon: "dashboard", href: "dashboard.html", active: true },
           { name: "Formulários", icon: "clipboard", href: "form.html" },
           { name: "Tabelas", icon: "table", href: "table.html" },
-          { name: "Notificações", icon: "warning circle", href: "notifications.html" },
           { name: "Wizard", icon: "wizard", href: "wizard.html" },
+          { name: "Desabilitado", icon: "warning circle", href: "notifications.html", disabled: true },
         ]
 
       each item in menuItems
-        li.ch-menu-item(class={active: item.active})
+        li.ch-menu-item(class={active: item.active, disabled: item.disabled})
           a(href="#")
             i(class= item.icon + " icon")
             span(class="ch-menu-item-label")= item.name
 
     button.ch-collapse-button
       i.icon.caret.square.left.outline
-      span.ch-collapse-button-label Minimizar
+      span.ch-collapse-button-label
+
+
