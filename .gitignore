@@ -27,3 +27,6 @@ yarn.lock
 
 #Ignore the temporary directory
 tmp
+
+#Ignore views
+source/views
