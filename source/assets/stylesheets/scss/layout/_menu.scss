@@ -23,8 +23,9 @@ $navbar-collapsed-size: 60px;
 
     .ch-logo-label,
     .ch-menu-item-label,
-    .ch-collapse-button-label {
-      display: none;
+    .ch-collapse-button-label,
+    .ch-dropdown-content {
+      display: none !important;
     }
   }
 
@@ -35,8 +36,9 @@ $navbar-collapsed-size: 60px;
 
     .ch-logo-label,
     .ch-menu-item-label,
-    .ch-collapse-button-label {
-      display: initial;
+    .ch-collapse-button-label,
+    .ch-dropdown-content {
+      display: initial !important;
     }
   }
 }
@@ -69,37 +71,38 @@ $navbar-collapsed-size: 60px;
   }
 }
 
-.ch-menu {
-  &-item {
+.ch-menu-item {
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+  }
+
+  .icon, &-label {
+    line-height: 20px;
+  }
+
+  a {
+    display: block;
     position: relative;
     min-height: 40px;
     padding: .7em 0;
     padding-left: $navbar-collapsed-size;
     font-weight: 600;
+    color: #C7D0DD;
+  }
 
-    .icon {
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      width: 20px;
-      height: 20px;
-      transform: translateY(-50%);
-    }
+  a:hover {
+    color: #fff;
+  }
 
+  &.active {
     a {
-      display: block;
-      color: #C7D0DD;
-    }
-
-    a:hover {
       color: #fff;
-    }
 
-    .icon, &-label {
-      line-height: 20px;
-    }
-
-    &.active {
       &:before {
         content: '';
         position: absolute;
@@ -114,18 +117,30 @@ $navbar-collapsed-size: 60px;
       .icon {
         color: #00E2F6;
       }
-
-      a {
-        color: #fff;
-      }
     }
+  }
 
-    &.disabled {
+  &.disabled {
+    a {
+      color: #949FB2;
       pointer-events: none;
+    }
+  }
+}
 
-      a {
-        color: #949FB2
-      }
+.ch-menu-item.ch-dropdown {
+  > .ch-dropdown-content {
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 20px;
+    font-size: inherit;
+    background-color: transparent;
+    box-shadow: none;
+
+    &:before {
+      content: none;
     }
   }
 }

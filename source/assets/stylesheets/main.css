@@ -39267,8 +39267,9 @@ li {
 
 .ch-nav.collapsed .ch-logo-label,
 .ch-nav.collapsed .ch-menu-item-label,
-.ch-nav.collapsed .ch-collapse-button-label {
-  display: none;
+.ch-nav.collapsed .ch-collapse-button-label,
+.ch-nav.collapsed .ch-dropdown-content {
+  display: none !important;
 }
 
 .ch-nav.collapsed:hover {
@@ -39279,8 +39280,9 @@ li {
 
 .ch-nav.collapsed:hover .ch-logo-label,
 .ch-nav.collapsed:hover .ch-menu-item-label,
-.ch-nav.collapsed:hover .ch-collapse-button-label {
-  display: initial;
+.ch-nav.collapsed:hover .ch-collapse-button-label,
+.ch-nav.collapsed:hover .ch-dropdown-content {
+  display: initial !important;
 }
 
 .ch-logo {
@@ -39311,14 +39313,6 @@ li {
   transform: translateY(-50%);
 }
 
-.ch-menu-item {
-  position: relative;
-  min-height: 40px;
-  padding: .7em 0;
-  padding-left: 60px;
-  font-weight: 600;
-}
-
 .ch-menu-item .icon {
   position: absolute;
   top: 50%;
@@ -39328,8 +39322,18 @@ li {
   transform: translateY(-50%);
 }
 
+.ch-menu-item .icon,
+.ch-menu-item-label {
+  line-height: 20px;
+}
+
 .ch-menu-item a {
   display: block;
+  position: relative;
+  min-height: 40px;
+  padding: .7em 0;
+  padding-left: 60px;
+  font-weight: 600;
   color: #C7D0DD;
 }
 
@@ -39337,12 +39341,11 @@ li {
   color: #fff;
 }
 
-.ch-menu-item .icon,
-.ch-menu-item-label {
-  line-height: 20px;
+.ch-menu-item.active a {
+  color: #fff;
 }
 
-.ch-menu-item.active:before {
+.ch-menu-item.active a:before {
   content: '';
   position: absolute;
   top: 50%;
@@ -39353,20 +39356,28 @@ li {
   transform: translateY(-50%);
 }
 
-.ch-menu-item.active .icon {
+.ch-menu-item.active a .icon {
   color: #00E2F6;
-}
-
-.ch-menu-item.active a {
-  color: #fff;
-}
-
-.ch-menu-item.disabled {
-  pointer-events: none;
 }
 
 .ch-menu-item.disabled a {
   color: #949FB2;
+  pointer-events: none;
+}
+
+.ch-menu-item.ch-dropdown > .ch-dropdown-content {
+  display: block;
+  position: relative;
+  top: auto;
+  left: auto;
+  margin-bottom: 20px;
+  font-size: inherit;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.ch-menu-item.ch-dropdown > .ch-dropdown-content:before {
+  content: none;
 }
 
 .ch-collapse-button {

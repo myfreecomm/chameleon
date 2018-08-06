@@ -20,6 +20,27 @@ mixin nav(activeUrl)
             i(class= item.icon + " icon")
             span(class="ch-menu-item-label")= item.name
 
+      li.ch-menu-item.ch-dropdown
+        a.ch-dropdown-button(href="#")
+          i.puzzle.icon
+          span.ch-menu-item-label Páginas
+
+        -
+          var pages = [
+            { name: "Colaboradores", href: "employees.html" },
+            { name: "Relatórios", href: "reports.html" },
+            { name: "Filtros", href: "filters.html" },
+            { name: "Detalhe", href: "detail.html" },
+            { name: "Configurações", href: "settings.html" },
+            { name: "Mapa", href: "map.html" },
+          ]
+
+        .ch-dropdown-content
+          ul.ch-dropdown-menu
+            each page in pages
+              li.ch-menu-item
+                a(href=page.href)=page.name
+
     button.ch-collapse-button
       i.icon.caret.square.left.outline
       span.ch-collapse-button-label
