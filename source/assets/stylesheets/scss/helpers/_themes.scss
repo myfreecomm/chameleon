@@ -25,14 +25,6 @@ $themes: (
       --main-color-light: $mainColorLight;
     }
 
-    .ch-nav {
-      background-color: $mainColor;
-
-      &-logo {
-        background-color: $mainColorLight;
-      }
-    }
-
     .noUi {
       &-horizontal .noUi-handle {
         background-color: $mainColorDark;

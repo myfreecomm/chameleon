@@ -1,78 +1,26 @@
 mixin nav(activeUrl)
   nav.ch-nav
+    .ch-logo
+      .ch-logo-icon
+        i.icon.dollar.black.inverted
+      span.ch-logo-label MyFinance
 
-    a.ch-nav-logo(href="dashboard.html")
-      img(src="../assets/images/chameleon_logo_white.png")
-      span.text Chameleon
-
-    ul.ch-nav-menu
+    ul.ch-menu
       -
-        var currentUrl = activeUrl
         var menuItems = [
-          { name: "Painel", icon: "dashboard", href: "dashboard.html" },
+          { name: "Painel", icon: "dashboard", href: "dashboard.html", active: true },
           { name: "Formulários", icon: "clipboard", href: "form.html" },
           { name: "Tabelas", icon: "table", href: "table.html" },
           { name: "Notificações", icon: "warning circle", href: "notifications.html" },
           { name: "Wizard", icon: "wizard", href: "wizard.html" },
         ]
 
-      each option in menuItems
-        li.ch-nav-menu-item(class={active: currentUrl === option.href})
-          a(href=option.href)
-            i(class= option.icon + " large icon")
-            span(class="ch-nav-menu-item-label")= option.name
+      each item in menuItems
+        li.ch-menu-item(class={active: item.active})
+          a(href="#")
+            i(class= item.icon + " icon")
+            span(class="ch-menu-item-label")= item.name
 
-      -
-        var pages = [
-          { name: "Colaboradores", href: "employees.html" },
-          { name: "Relatórios", href: "reports.html" },
-          { name: "Filtros", href: "filters.html" },
-          { name: "Detalhe", href: "detail.html" },
-          { name: "Configurações", href: "settings.html" },
-          { name: "Mapa", href: "map.html" },
-        ]
-
-      li.ch-nav-menu-item.ch-dropdown(class={active: currentUrl === 'pages.html'})
-        a.ch-dropdown-hover(href="#")
-          i.puzzle.large.icon
-          span.ch-nav-menu-item-label Páginas
-        .ch-dropdown-content
-          ul.ch-dropdown-menu
-            each page in pages
-              li.ch-dropdown-menu-item
-                a(href=page.href)=page.name
-
-      li.ch-nav-menu-item.show-menu
-        a(href="#")
-          i.ellipsis.large.horizontal.icon
-
-    .ch-nav-menu--secondary
-      .ch-nav-menu-item.mobile-only.ch-dropdown
-        a.ch-dropdown-hover(href="#")
-          i.ch-notification-label.cog.large.icon
-          span.ch-nav-menu-item-label Configurações
-
-        .ch-dropdown-content
-          ul.ch-dropdown-menu
-            each option in ["Meu Plano", "Usuários", "Integrações", "Preferências"]
-              li(class="ch-dropdown-menu-item")
-                a(href="#")= option
-
-      .ch-nav-menu-item.mobile-only.ch-dropdown
-        a.ch-dropdown-hover(href="#")
-          i.university.large.icon
-          span.ch-nav-menu-item-label Trocar Conta
-
-        .ch-dropdown-content
-          ul.ch-dropdown-menu
-            each account in ["Conta 1", "Conta 2", "Conta 3"]
-              li.ch-dropdown-menu-item
-                a(href="#")= account
-
-      .ch-nav-menu-item
-        a(href="#")
-          i.large.help.circle.outline.icon
-          span.ch-nav-menu-item-label Ajuda
-
-    .close-menu
-      i.large.close.icon
+    button.ch-collapse-button
+      i.icon.caret.square.left.outline
+      span.ch-collapse-button-label Minimizar
