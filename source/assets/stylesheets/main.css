@@ -39249,7 +39249,7 @@ li {
   left: 0;
   width: 240px;
   height: 100%;
-  padding: 20px 0;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   background-color: #2D394C;
@@ -39267,9 +39267,8 @@ li {
 
 .ch-nav.collapsed .ch-logo-label,
 .ch-nav.collapsed .ch-menu-item-label,
-.ch-nav.collapsed .ch-collapse-button-label,
-.ch-nav.collapsed .ch-dropdown-content {
-  display: none !important;
+.ch-nav.collapsed .ch-collapse-button-label {
+  display: none;
 }
 
 .ch-nav.collapsed:hover {
@@ -39280,9 +39279,8 @@ li {
 
 .ch-nav.collapsed:hover .ch-logo-label,
 .ch-nav.collapsed:hover .ch-menu-item-label,
-.ch-nav.collapsed:hover .ch-collapse-button-label,
-.ch-nav.collapsed:hover .ch-dropdown-content {
-  display: initial !important;
+.ch-nav.collapsed:hover .ch-collapse-button-label {
+  display: initial;
 }
 
 .ch-logo {
@@ -39340,7 +39338,7 @@ li {
 
 .ch-menu-item a > .icon.dropdown {
   position: absolute;
-  font-size: .75em;
+  font-size: .65em;
   top: 50%;
   right: 0;
   height: auto;
@@ -39394,13 +39392,19 @@ li {
   content: none;
 }
 
-.ch-collapse-button {
-  position: relative;
-  height: 20px;
+.ch-collapse {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   margin-top: auto;
-  padding-left: 60px;
   align-self: flex-start;
   font-family: inherit;
+  background-color: #2D394C;
+}
+
+.ch-collapse-button {
+  height: 40px;
   color: #8491A5;
   background-color: transparent;
   border: 0;
@@ -39408,7 +39412,7 @@ li {
   cursor: pointer;
 }
 
-.ch-collapse-button .icon {
+.ch-collapse .icon {
   position: absolute;
   top: 50%;
   left: 20px;
