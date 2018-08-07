@@ -23,7 +23,8 @@ $navbar-collapsed-size: 60px;
 
     .ch-logo-label,
     .ch-menu-item-label,
-    .ch-collapse-button-label {
+    .ch-collapse-button-label,
+    .ch-menu-item.ch-dropdown > .ch-dropdown-content.active {
       display: none;
     }
   }
@@ -35,7 +36,8 @@ $navbar-collapsed-size: 60px;
 
     .ch-logo-label,
     .ch-menu-item-label,
-    .ch-collapse-button-label {
+    .ch-collapse-button-label,
+    .ch-menu-item.ch-dropdown > .ch-dropdown-content.active {
       display: initial;
     }
   }
@@ -154,6 +156,10 @@ $navbar-collapsed-size: 60px;
         content: none;
       }
     }
+
+    > .ch-dropdown-content.active {
+      display: block;
+    }
   }
 }
 
@@ -166,6 +172,7 @@ $navbar-collapsed-size: 60px;
   align-self: flex-start;
   font-family: inherit;
   background-color: #2D394C;
+  z-index: 1;
 
   &-button {
 

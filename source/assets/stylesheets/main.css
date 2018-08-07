@@ -39267,7 +39267,8 @@ li {
 
 .ch-nav.collapsed .ch-logo-label,
 .ch-nav.collapsed .ch-menu-item-label,
-.ch-nav.collapsed .ch-collapse-button-label {
+.ch-nav.collapsed .ch-collapse-button-label,
+.ch-nav.collapsed .ch-menu-item.ch-dropdown > .ch-dropdown-content.active {
   display: none;
 }
 
@@ -39279,7 +39280,8 @@ li {
 
 .ch-nav.collapsed:hover .ch-logo-label,
 .ch-nav.collapsed:hover .ch-menu-item-label,
-.ch-nav.collapsed:hover .ch-collapse-button-label {
+.ch-nav.collapsed:hover .ch-collapse-button-label,
+.ch-nav.collapsed:hover .ch-menu-item.ch-dropdown > .ch-dropdown-content.active {
   display: initial;
 }
 
@@ -39392,6 +39394,10 @@ li {
   content: none;
 }
 
+.ch-menu-item.ch-dropdown > .ch-dropdown-content.active {
+  display: block;
+}
+
 .ch-collapse {
   position: sticky;
   bottom: 0;
@@ -39401,6 +39407,7 @@ li {
   align-self: flex-start;
   font-family: inherit;
   background-color: #2D394C;
+  z-index: 1;
 }
 
 .ch-collapse-button {
