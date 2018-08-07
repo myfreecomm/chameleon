@@ -2423,7 +2423,6 @@ Chameleon.Components.Menu = function () {
 
   var toggleNavCollapse = function toggleNavCollapse() {
     $(this).parents('.ch-nav').toggleClass('collapsed');
-    $(this).find('.icon.caret').switchClass('left', 'right');
   };
 
   $(document).on('click', buttonClasses, toggleMenuDropdown);
