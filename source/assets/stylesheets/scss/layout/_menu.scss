@@ -217,3 +217,39 @@ $navbar-collapsed-size: 60px;
     box-shadow: none;
   }
 }
+
+.ch-tag {
+  &--new {
+    &.ui.label {
+      margin-left: 5px;
+      padding: .3em .55em;
+      color: #2D394C;
+      background-color: #FFA719;
+      border: 2px solid #2D394C;
+      text-transform: uppercase;
+    }
+
+    &:before {
+      content: attr(data-label);
+    }
+  }
+
+  .ch-nav.collapsed:not(:hover) & {
+    &--new {
+      &.ui.label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        font-size: 0;
+        border-radius: 100%;
+        transform: translate(0, -75%);
+
+        &:before {
+          content: '';
+        }
+      }
+    }
+  }
+}
