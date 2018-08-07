@@ -2408,13 +2408,19 @@ Chameleon.Components.Dropdown = function () {
 };
 
 Chameleon.Components.Menu = function () {
-  var $button = $('.ch-menu-item .ch-dropdown-button');
+  var buttonClasses = '.ch-menu-item .ch-dropdown-button';
+  var collapseButtonClass = '.ch-collapse-button';
 
-  var open = function open(e) {
+  var toggleMenuDropdown = function toggleMenuDropdown() {
     $(this).next('.ch-dropdown-content').toggleClass('active');
   };
 
-  $(document).on('click', '.ch-menu-item .ch-dropdown-button', open);
+  var toggleNavCollapse = function toggleNavCollapse() {
+    $(this).parents('.ch-nav').toggleClass('collapsed');
+  };
+
+  $(document).on('click', buttonClasses, toggleMenuDropdown);
+  $(document).on('click', collapseButtonClass, toggleNavCollapse);
 };
 
 Chameleon.Components.Modal = function () {
