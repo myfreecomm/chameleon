@@ -7,75 +7,75 @@
   }
 }
 
-.ch-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+// .ch-content {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100vh;
 
-  &.padded {
-    padding: 10px;
-  }
+//   &.padded {
+//     padding: 10px;
+//   }
 
-  .row.white {
-    background-color: #fff;
-  }
+//   .row.white {
+//     background-color: #fff;
+//   }
 
-  &-header {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 25px 25px 15px;
-    align-items: center;
-    justify-content: space-between;
+//   &-header {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin: 0;
+//     padding: 25px 25px 15px;
+//     align-items: center;
+//     justify-content: space-between;
 
-    &.colored {
+//     &.colored {
 
-      background-color: white;
-      box-shadow: 0 1px 3px rgba(170,170,170,.2);
+//       background-color: white;
+//       box-shadow: 0 1px 3px rgba(170,170,170,.2);
 
-      &.padded {
-        padding: 25px 40px;
-      }
+//       &.padded {
+//         padding: 25px 40px;
+//       }
 
-      @media screen and (max-width: 768px) {
-        border-top: 1px solid #eee;
-      }
-    }
+//       @media screen and (max-width: 768px) {
+//         border-top: 1px solid #eee;
+//       }
+//     }
 
-    ~ .ui.padded.grid>.row {
-      padding-top: 0;
-    }
+//     ~ .ui.padded.grid>.row {
+//       padding-top: 0;
+//     }
 
-    > .ui.button.right.aligned {
-      margin-left: auto;
-    }
+//     > .ui.button.right.aligned {
+//       margin-left: auto;
+//     }
 
-    .ui.header {
-      margin: {
-        right: 5px;
-        bottom: 0;
-      }
-    }
-  }
+//     .ui.header {
+//       margin: {
+//         right: 5px;
+//         bottom: 0;
+//       }
+//     }
+//   }
 
-  @media screen and (min-width: 769px) {
-    padding-top: 65px;
-  }
+//   @media screen and (min-width: 769px) {
+//     padding-top: 65px;
+//   }
 
-  @media screen and (max-width: 768px) {
-    min-height: calc(100vh - 65px - 50px);
-    padding-bottom: 50px;
+//   @media screen and (max-width: 768px) {
+//     min-height: calc(100vh - 65px - 50px);
+//     padding-bottom: 50px;
 
-    &-header {
-      .ui.button {
-        width: 100%;
-        margin: 10px 0 0;
-        text-align: center;
-      }
-    }
-  }
-}
+//     &-header {
+//       .ui.button {
+//         width: 100%;
+//         margin: 10px 0 0;
+//         text-align: center;
+//       }
+//     }
+//   }
+// }
 
 .ch-avatar-container {
   width: 35px;

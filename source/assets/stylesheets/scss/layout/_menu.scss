@@ -7,7 +7,6 @@ $navbar-collapsed-size: 60px;
   left: 0;
   width: $navbar-size;
   height: 100%;
-  padding-top: 20px;
   display: flex;
   flex-direction: column;
   background-color: #2D394C;
@@ -45,8 +44,7 @@ $navbar-collapsed-size: 60px;
 
 .ch-logo {
   position: relative;
-  min-height: 40px;
-  margin-bottom: 25px;
+  height: 65px;
   padding-left: $navbar-collapsed-size;
   display: flex;
   align-items: center;
@@ -260,7 +258,6 @@ $navbar-collapsed-size: 60px;
   .ch-header {
     position: static;
     width: 100%;
-    padding: 40px 20px;
     background: none;
     box-shadow: none;
   }

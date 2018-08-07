@@ -38970,77 +38970,6 @@ li {
   }
 }
 
-.ch-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.ch-content.padded {
-  padding: 10px;
-}
-
-.ch-content .row.white {
-  background-color: #fff;
-}
-
-.ch-content-header {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 25px 25px 15px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.ch-content-header.colored {
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(170, 170, 170, 0.2);
-}
-
-.ch-content-header.colored.padded {
-  padding: 25px 40px;
-}
-
-@media screen and (max-width: 768px) {
-  .ch-content-header.colored {
-    border-top: 1px solid #eee;
-  }
-}
-
-.ch-content-header ~ .ui.padded.grid > .row {
-  padding-top: 0;
-}
-
-.ch-content-header > .ui.button.right.aligned {
-  margin-left: auto;
-}
-
-.ch-content-header .ui.header {
-  margin-right: 5px;
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 769px) {
-  .ch-content {
-    padding-top: 65px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .ch-content {
-    min-height: calc(100vh - 65px - 50px);
-    padding-bottom: 50px;
-  }
-
-  .ch-content-header .ui.button {
-    width: 100%;
-    margin: 10px 0 0;
-    text-align: center;
-  }
-}
-
 .ch-avatar-container {
   width: 35px;
 }
@@ -39249,7 +39178,6 @@ li {
   left: 0;
   width: 240px;
   height: 100%;
-  padding-top: 20px;
   display: flex;
   flex-direction: column;
   background-color: #2D394C;
@@ -39287,8 +39215,7 @@ li {
 
 .ch-logo {
   position: relative;
-  min-height: 40px;
-  margin-bottom: 25px;
+  height: 65px;
   padding-left: 60px;
   display: flex;
   align-items: center;
@@ -39487,7 +39414,6 @@ li {
 .ch-content .ch-header {
   position: static;
   width: 100%;
-  padding: 40px 20px;
   background: none;
   box-shadow: none;
 }
