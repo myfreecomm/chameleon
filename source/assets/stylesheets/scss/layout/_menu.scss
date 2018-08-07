@@ -24,7 +24,7 @@ $navbar-collapsed-size: 60px;
     .ch-logo-label,
     .ch-menu-item-label,
     .ch-collapse-button-label,
-    .ch-menu-item.ch-dropdown > .ch-dropdown-content.active {
+    .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
       display: none;
     }
   }
@@ -37,7 +37,7 @@ $navbar-collapsed-size: 60px;
     .ch-logo-label,
     .ch-menu-item-label,
     .ch-collapse-button-label,
-    .ch-menu-item.ch-dropdown > .ch-dropdown-content.active {
+    .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
       display: initial;
     }
   }
@@ -99,19 +99,6 @@ $navbar-collapsed-size: 60px;
     > .icon:first-child, &-label {
       line-height: 20px;
     }
-
-    > .icon.dropdown {
-      position: absolute;
-      font-size: .65em;
-      top: 50%;
-      right: 0;
-      height: auto;
-      transform: translateY(-50%);
-
-      &:before {
-        content: "\f054";
-      }
-    }
   }
 
   a:hover {
@@ -162,8 +149,28 @@ $navbar-collapsed-size: 60px;
       }
     }
 
-    > .ch-dropdown-content.active {
-      display: block;
+    > .ch-dropdown-button > .icon.dropdown {
+      position: absolute;
+      font-size: .65em;
+      top: 50%;
+      right: 0;
+      height: auto;
+      transform: translateY(-50%);
+      transition: transform .3s;
+
+      &:before {
+        content: "\f054";
+      }
+    }
+
+    &.open {
+      > .ch-dropdown-content {
+        display: block;
+      }
+
+      > .ch-dropdown-button > .icon.dropdown {
+        transform: translateY(-50%) rotate(90deg);
+      }
     }
   }
 }

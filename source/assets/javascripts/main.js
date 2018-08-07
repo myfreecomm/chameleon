@@ -2412,7 +2412,7 @@ Chameleon.Components.Menu = function () {
   var collapseButtonClass = '.ch-collapse-button';
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
-    $(this).next('.ch-dropdown-content').toggleClass('active');
+    $(this).parent('.ch-dropdown').toggleClass('open');
   };
 
   var toggleNavCollapse = function toggleNavCollapse() {
