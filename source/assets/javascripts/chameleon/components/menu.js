@@ -3,7 +3,13 @@ Chameleon.Components.Menu = function() {
   let collapseButtonClass = '.ch-collapse-button';
 
   const toggleMenuDropdown = function() {
-    $(this).parent('.ch-dropdown').toggleClass('open');
+    let $dropdown = $(this).parent('.ch-dropdown');
+    let $dropdownSiblings = $dropdown.siblings();
+
+    if($dropdownSiblings.hasClass('open')) {
+      $dropdownSiblings.removeClass('open')
+    }
+    $dropdown.toggleClass('open');
   }
 
   const toggleNavCollapse = function() {
