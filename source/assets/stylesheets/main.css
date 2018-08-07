@@ -39313,6 +39313,11 @@ li {
   transform: translateY(-50%);
 }
 
+.ch-menu {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .ch-menu-item a {
   display: flex;
   align-items: center;

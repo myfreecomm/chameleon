@@ -71,6 +71,11 @@ $navbar-collapsed-size: 60px;
   }
 }
 
+.ch-menu {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .ch-menu-item {
   a {
     display: flex;
