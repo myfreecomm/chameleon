@@ -13,7 +13,8 @@ Chameleon.Components.Menu = function() {
   }
 
   const toggleNavCollapse = function() {
-    $(this).parents('.ch-nav').toggleClass('collapsed')
+    $(this).parents('.ch-nav').toggleClass('collapsed');
+    $(this).find('.icon.caret').switchClass('left', 'right');
   }
 
   $(document).on('click', buttonClasses,  toggleMenuDropdown);
