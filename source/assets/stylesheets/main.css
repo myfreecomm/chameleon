@@ -39690,6 +39690,7 @@ li {
   width: 370px;
   height: 250px;
   background-color: #F9FBFF;
+  text-transform: none;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
@@ -39699,7 +39700,6 @@ li {
   height: 45px;
   padding: 15px;
   font-size: 1.2em;
-  text-transform: capitalize;
   background-color: #EDEFF2;
   border-bottom: 1px solid #E0E2E5;
 }
@@ -39715,7 +39715,6 @@ li {
   bottom: 0;
   right: 0;
   font-size: 1.2em;
-  text-transform: capitalize;
 }
 
 .ch-account-content .menu > .label,
