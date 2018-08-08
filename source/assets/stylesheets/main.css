@@ -37922,7 +37922,7 @@ li {
 .ch-breadcrumb {
   display: flex;
   align-items: center;
-  font-size: 22px;
+  font-size: 1.25em;
   color: #4b4b4b;
 }
 

@@ -2,27 +2,13 @@ include ./message.pug
 
 header.ch-header
   .ch-breadcrumb
-    .ch-breadcrumb-section.ch-dropdown
-      a.ch-dropdown-toggle(href="#") Nome da organização
-      .ch-dropdown-content.bottom.left(tabindex="-1")
-        ul.ch-dropdown-menu
-          -
-            var entities = ["Organização 1", "Organização 2", "Organização 3"]
-          each entity in entities
-            li.ch-dropdown-menu-item
-              a(href="#")=entity
+    .ch-breadcrumb-section
+      a(href="#") Nome da organização
 
-    i.right.chevron.icon.divider
+    i.right.chevron.tiny.icon.divider
 
-    .ch-breadcrumb-section.ch-dropdown.active
-      a.ch-dropdown-toggle(href="#") Painel Principal
-      .ch-dropdown-content.bottom.left(tabindex="-1")
-        ul.ch-dropdown-menu
-          -
-            var contexts = ["Painel de exemplo", "Painel Modelo 1", "Painel Modelo 2"]
-          each context in contexts
-            li.ch-dropdown-menu-item
-              a(href="#")=context
+    .ch-breadcrumb-section.active
+      a(href="#") Painel Principal
 
   .ch-header-nav
     a.ch-header-nav-button(data-target="search")
