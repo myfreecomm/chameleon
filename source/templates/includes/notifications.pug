@@ -1,33 +1,41 @@
 .ch-dialog(data-modal="notifications" tabindex="0")
   .ch-overlay
     .ch-dialog-container
-      .ch-dialog-header Notificações
-        span.close-dialog
-          i.close.icon
+      .ch-dialog-header
+        .content
+          .title #[strong 4] Notificações
+          a(href="#").mark-as-read Marcar todas como lidas
+        .actions
+          i.cog.icon
 
       .ch-dialog-content
         .ui.divided.items
 
           .item.ch-dialog-message.unread
-            a.ui.image
-              img(src="http://via.placeholder.com/30x30")
             .content
-              a.header Lorem Ipsum
+              a.header
+                img.ui.avatar.image.symbol(src="http://i.pravatar.cc/50?img=2")
+                span Joel Simmons
               .description
                 p.
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ullam iure, exercitationem omnis magni
               small.time 20 de agosto de 2017 às 21:30
 
-          - for (var i=0; i<5; i++)
-            .item.ch-dialog-message
-              a.ui.image
-                img(src="http://via.placeholder.com/30x30")
+          -
+            var notifications = [
+              { name: "Myfinance", backgroundColor: "00E2F6", color: "00E2F6", unread: true },
+              { name: "Billimatic", backgroundColor: "D0021B", color: "D0021B", unread: true },
+              { name: "Siinco", backgroundColor: "B1C5CF", color: "B1C5CF", unread: true },
+              { name: "Siinco", backgroundColor: "B1C5CF", color: "B1C5CF" }
+            ];
 
+          each notification in notifications
+            .item.ch-dialog-message(class={unread: notification.unread})
               .content
-                a.header Lorem Ipsum
+                a.header
+                  img.ui.avatar.image.symbol(src="https://ui-avatars.com/api/?background=" + notification.backgroundColor + "&color=" + notification.color)
+                  span= notification.name
                 .description
                   p.
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.
                 small.time 20 de agosto de 2017 às 21:30
-
-  .action-dialog Ver tudo

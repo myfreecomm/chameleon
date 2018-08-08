@@ -10,7 +10,7 @@ $navbar-collapsed-size: 60px;
   display: flex;
   flex-direction: column;
   background-color: #2D394C;
-  z-index: 3;
+  z-index: 2;
 
   &.collapsed {
     width: $navbar-collapsed-size;
@@ -52,6 +52,10 @@ $navbar-collapsed-size: 60px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
   color: #fff;
+
+  &-label {
+    white-space: nowrap;
+  }
 
   &-icon {
     position: absolute;

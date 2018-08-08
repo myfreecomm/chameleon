@@ -13,6 +13,7 @@
     width: 400px;
     min-height: 100%;
     margin-left: auto;
+    padding: 20px;
     background-color: #fff;
     overflow-y: auto;
     transform: translate(100%);
@@ -29,10 +30,8 @@
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    padding: 15px;
+    padding: 15px 0;
     padding-right: 5px;
-    font-size: 16px;
-    text-transform: uppercase;
     color: lighten($fontColor, 10%);
     border-bottom: 1px solid $borderColor;
 
@@ -52,6 +51,7 @@
 
   &-message {
     justify-content: center;
+    opacity: .4;
   }
 
   .ui.items {
@@ -61,14 +61,14 @@
   .ui.items>.item {
     margin: 0;
     flex-direction: row;
-    border-color: $borderColor;
+    border: none;
 
     &:first-child {
       padding-top: 1em !important;
     }
 
     &.unread {
-      background-color: #f8f8f8;
+      opacity: 1;
     }
 
     >.image  {
@@ -80,14 +80,16 @@
     }
 
     >.content {
-      padding: 5px 15px;
-
       .header, .description {
         color: inherit;
       }
 
       .header {
-        font-size: 14px;
+        font-size: 1em;
+      }
+
+      .header > .symbol {
+        margin-right: 10px;
       }
 
       .description {
