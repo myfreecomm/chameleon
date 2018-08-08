@@ -40,6 +40,22 @@
     &:last-child {
       padding-right: 0;
     }
+
+    &.ch-account {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #666;
+
+      .icon.dropdown {
+        margin-left: .25rem;
+        opacity: .65;
+        font-size: .75em;
+
+        &:before {
+          content: "\f078";
+        }
+      }
+    }
   }
 }
 

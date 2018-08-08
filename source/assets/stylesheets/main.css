@@ -39148,6 +39148,22 @@ li {
   padding-right: 0;
 }
 
+.ch-header-nav-button.ch-account {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.ch-header-nav-button.ch-account .icon.dropdown {
+  margin-left: .25rem;
+  opacity: .65;
+  font-size: .75em;
+}
+
+.ch-header-nav-button.ch-account .icon.dropdown:before {
+  content: "\f078";
+}
+
 .ch-notification-label {
   position: relative;
 }
@@ -39667,4 +39683,106 @@ li {
   text-transform: uppercase;
   color: #656565;
   margin-bottom: 15px;
+}
+
+.ch-account-container {
+  position: relative;
+  width: 370px;
+  height: 250px;
+  background-color: #F9FBFF;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.ch-account-header {
+  display: flex;
+  height: 45px;
+  padding: 15px;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  background-color: #EDEFF2;
+  border-bottom: 1px solid #E0E2E5;
+}
+
+.ch-account-header > .actions {
+  margin-left: auto;
+}
+
+.ch-account-content {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 45px);
+  bottom: 0;
+  right: 0;
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
+.ch-account-content .menu > .label,
+.ch-account-content .submenu > .label {
+  display: block;
+  padding: 10px 25px;
+  font-style: italic;
+  color: #919499;
+}
+
+.ch-account-content .menu {
+  width: 50%;
+  height: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ch-account-content .menu ul {
+  overflow-y: hidden;
+  height: calc(100% - 40px);
+}
+
+.ch-account-content .menu ul:hover {
+  overflow-y: auto;
+}
+
+.ch-account-content .menu > ul {
+  max-height: 100%;
+}
+
+.ch-account-content .menu > ul li > a {
+  color: inherit;
+  display: block;
+  padding: 10px 25px;
+}
+
+.ch-account-content .menu > ul li.active > a {
+  position: relative;
+  font-weight: bold;
+}
+
+.ch-account-content .menu > ul li.active > a:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: auto;
+  height: 20px;
+  border-right: 5px solid #00E2F6;
+  transform: translateY(-50%);
+}
+
+.ch-account-content > .menu .submenu {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+}
+
+.ch-account-content > .menu .submenu li.active > a:before {
+  content: none;
+}
+
+.ch-account .ch-dropdown-toggle {
+  white-space: nowrap;
+}
+
+.ch-account .ch-dropdown-content {
+  top: -5px;
 }
