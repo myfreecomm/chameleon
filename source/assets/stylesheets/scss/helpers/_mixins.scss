@@ -4,3 +4,9 @@
   text-transform: uppercase;
   color: lighten($fontColor, 10%);
 }
+
+%overflow-ellipsis {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}

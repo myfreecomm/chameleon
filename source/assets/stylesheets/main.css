@@ -37280,6 +37280,12 @@ body.pushable>.pusher {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+.ch-breadcrumb-section {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
 .mobile-only {
   display: none;
 }
@@ -37924,13 +37930,12 @@ li {
   align-items: center;
   font-size: 1.25em;
   color: #4b4b4b;
+  overflow-x: hidden;
 }
 
 .ch-breadcrumb-section {
   position: relative;
   padding: 5px;
-  display: flex;
-  align-items: center;
   font-weight: 300;
   color: inherit;
   border-radius: 3px;
@@ -37946,12 +37951,11 @@ li {
 }
 
 .ch-breadcrumb-section.active {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .ch-breadcrumb .divider {
   margin: 0 5px;
-  font-size: 14px;
   opacity: .5;
 }
 
