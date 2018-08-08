@@ -38194,6 +38194,23 @@ li {
   opacity: 1;
 }
 
+.ch-dialog .ui.items > .item.new {
+  position: relative;
+}
+
+.ch-dialog .ui.items > .item.new:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #00CAE5;
+  visibility: visible;
+  border-radius: 100%;
+}
+
 .ch-dialog .ui.items > .item > .image {
   padding: 10px 0 10px 20px;
 }

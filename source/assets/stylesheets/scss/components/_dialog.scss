@@ -71,6 +71,23 @@
       opacity: 1;
     }
 
+    &.new {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        right: 0;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: #00CAE5;
+        visibility: visible;
+        border-radius: 100%;
+      }
+    }
+
     >.image  {
       padding: 10px 0 10px 20px;
 
