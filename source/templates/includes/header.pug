@@ -12,49 +12,37 @@ header.ch-header
 
     i.right.chevron.tiny.icon.divider
 
-    .ch-breadcrumb-section
-      a(href="#") Contas a Pagar
-
-    i.right.chevron.tiny.icon.divider
-
     .ch-breadcrumb-section.active
       a(href="#") Nova Despesa
 
   .ch-header-nav
-    a.ch-header-nav-button(data-target="search")
+    .ch-header-nav-button(data-target="search")
       i.search.large.icon
 
-    a.ch-header-nav-button(href="#" data-target="modal" data-modal="notifications")
-      i.ch-notification-label.bell.outline.large.icon
-
-    .ch-dropdown.computer-only
-      a.ch-header-nav-button.ch-dropdown-toggle(href="#")
+    .ch-header-nav-button.ch-dropdown.computer-only(href="#")
+      .ch-dropdown-toggle
         i.ch-notification-label.cog.large.icon
 
-      .ch-dropdown-content.bottom.right(tabindex="-1")
-        span.ch-dropdown-header Configurações
-        ul.ch-dropdown-menu
-          -
-            var accounts = ["Meu Plano", "Usuários", "Integrações", "Preferências"]
-          each account in accounts
-            li(class="ch-dropdown-menu-item")
-              a(href="#")= account
+      .ch-dropdown-content.bottom.right(tabindex="-1").
 
-    .ch-dropdown.computer-only
-      a.ch-header-nav-button.ch-dropdown-toggle(href="#")
+    .ch-header-nav-button(data-target="modal" data-modal="notifications")
+      i.ch-notification-label.bell.outline.large.icon
+
+    .ch-header-nav-button.ch-dropdown.computer-only(href="#")
+      .ch-avatar.ch-dropdown-toggle
         img.ui.avatar.image(src="https://ui-avatars.com/api/?background=EF6C00&color=fff&name=Chameleon&font-size=0.4")
 
       .ch-dropdown-content.bottom.right(tabindex="-1")
         span.ch-dropdown-header Contas
+        -
+          var accounts = [
+            { name: "Chameleon", backgroundColor: "EF6C00", color: "fff", },
+            { name: "Conta Nexaas 2", backgroundColor: "3d8af7", color: "fff", },
+            { name: "Conta Nexaas 3", backgroundColor: "e93578", color: "fff", }
+          ];
         ul.ch-dropdown-menu
-          -
-            var accounts = [
-              { name: "Chameleon", backgroundColor: "EF6C00", color: "fff", },
-              { name: "Conta Nexaas 2", backgroundColor: "3d8af7", color: "fff", },
-              { name: "Conta Nexaas 3", backgroundColor: "e93578", color: "fff", }
-            ]
           each account in accounts
-            li(class="ch-dropdown-menu-item")
+            li.ch-dropdown-menu-item
               a(href="#")
                 img.ui.avatar.image(src="https://ui-avatars.com/api/?background=" + account.backgroundColor + "&color=" + account.color + "&name=" + account.name)
                 span= account.name

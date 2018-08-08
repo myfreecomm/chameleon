@@ -88,6 +88,8 @@
 .ch-avatar {
   width: 35px;
   height: 35px;
+  display: flex;
+  align-items: center;
 
   .big & {
     width: 105px;

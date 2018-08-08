@@ -26,7 +26,8 @@
 
   &-button {
     display: block;
-    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
     color: $headerElementsColor;
     transition: all .3s;
     cursor: pointer;
@@ -34,6 +35,10 @@
     &:hover, &.active {
       color: darken($headerElementsColor, 10%);
       border-radius: 3px;
+    }
+
+    &:last-child {
+      padding-right: 0;
     }
   }
 }

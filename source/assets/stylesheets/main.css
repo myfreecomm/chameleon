@@ -38985,6 +38985,8 @@ li {
 .ch-avatar {
   width: 35px;
   height: 35px;
+  display: flex;
+  align-items: center;
 }
 
 .big .ch-avatar {
@@ -39129,7 +39131,8 @@ li {
 
 .ch-header-nav-button {
   display: block;
-  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   color: #999;
   transition: all .3s;
   cursor: pointer;
@@ -39139,6 +39142,10 @@ li {
 .ch-header-nav-button.active {
   color: gray;
   border-radius: 3px;
+}
+
+.ch-header-nav-button:last-child {
+  padding-right: 0;
 }
 
 .ch-notification-label {
