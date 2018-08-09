@@ -11,8 +11,10 @@
 
   &-header {
     display: flex;
-    height: 45px;
-    padding: 15px;
+    align-items: center;
+    height: 50px;
+    padding-right: 15px;
+    padding-left: 20px;
     font-size: 1.2em;
     background-color: #EDEFF2;
     border-bottom: 1px solid #E0E2E5;
@@ -25,7 +27,7 @@
   &-content {
     position: absolute;
     width: 100%;
-    height: calc(100% - 45px);
+    height: calc(100% - 50px);
     bottom: 0;
     right: 0;
     font-size: 1.2em;

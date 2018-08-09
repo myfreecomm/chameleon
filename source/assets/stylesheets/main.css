@@ -38290,9 +38290,14 @@ li {
 }
 
 .ch-search-content {
-  margin-left: 85px;
-  width: calc(100% - 220px);
+  margin-left: 240px;
+  width: calc(100% - 240px);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.ch-nav.collapsed ~ .ch-search .ch-search-content {
+  margin-left: 60px;
+  width: calc(100% - 60px);
 }
 
 .ch-search-input-group {
@@ -39718,8 +39723,10 @@ li {
 
 .ch-account-header {
   display: flex;
-  height: 45px;
-  padding: 15px;
+  align-items: center;
+  height: 50px;
+  padding-right: 15px;
+  padding-left: 20px;
   font-size: 1.2em;
   background-color: #EDEFF2;
   border-bottom: 1px solid #E0E2E5;
@@ -39732,7 +39739,7 @@ li {
 .ch-account-content {
   position: absolute;
   width: 100%;
-  height: calc(100% - 45px);
+  height: calc(100% - 50px);
   bottom: 0;
   right: 0;
   font-size: 1.2em;
