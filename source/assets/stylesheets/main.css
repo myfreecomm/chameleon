@@ -38292,6 +38292,7 @@ li {
 .ch-search-content {
   margin-left: 240px;
   width: calc(100% - 240px);
+  background-color: #F9FBFF;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
 }
 
@@ -38304,7 +38305,7 @@ li {
   display: flex;
   align-items: center;
   height: 65px;
-  background-color: #fff;
+  background-color: #F9FBFF;
   animation: fadeIn .1s;
 }
 
@@ -38321,6 +38322,7 @@ li {
   font-family: inherit;
   font-size: 1.2em;
   color: #4b4b4b;
+  background-color: #F9FBFF;
   border: 0;
 }
 
@@ -38351,10 +38353,24 @@ li {
   order: 1;
 }
 
+.ch-search-form:before,
 .ch-search-form:after {
-  content: attr(data-message);
-  margin: 0 5px;
   color: #D0D8E5;
+}
+
+.ch-search-form:before {
+  content: attr(data-message);
+  order: 1;
+}
+
+.ch-search-form:after {
+  content: 'ESC';
+  margin: 0 5px;
+  padding: 0 4px;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid rgba(148, 159, 178, 0.5);
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 768px) {
@@ -38383,7 +38399,7 @@ li {
   display: none;
   overflow: auto;
   max-height: calc(100% - 65px);
-  background-color: #fff;
+  background-color: #F9FBFF;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 3px 3px;
 }
@@ -38398,6 +38414,11 @@ li {
 .ch-search-results-count {
   padding: 24px;
   padding-bottom: 0;
+}
+
+.ch-search-results-show-more {
+  color: #949FB2;
+  font-weight: 600;
 }
 
 .ch-search-results-item {
