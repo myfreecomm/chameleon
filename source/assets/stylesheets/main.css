@@ -38381,26 +38381,30 @@ li {
 
 .ch-search-results {
   display: none;
+  overflow: auto;
+  max-height: calc(100% - 65px);
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 3px 3px;
 }
 
-.ch-search-results-item {
-  padding: 10px 15px;
-}
-
-.ch-search-results-count {
+.ch-search-results-count,
+.ch-search-results-label {
   display: block;
   font-size: 1em;
   color: #949FB2;
-  padding: 15px;
+}
+
+.ch-search-results-count {
+  padding: 24px;
+  padding-bottom: 0;
 }
 
 .ch-search-results-item {
   display: block;
-  transition: all .3s;
+  padding: 10px 15px;
   color: #4b4b4b;
+  transition: all .3s;
 }
 
 .ch-search-results-item:hover {

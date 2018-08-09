@@ -1,3 +1,11 @@
+-
+  var people = [
+    { name: "Ana Rachel", photo_id: "1", date: '10/09/2018' },
+    { name: "Brian Ridley", photo_id: "2", date: '10/09/2018' },
+    { name: "Donald Ronald", photo_id: "3", date: '10/09/2018' },
+    { name: "Jenny Rufus", photo_id: "4", date: '10/09/2018' },
+  ];
+
 .ch-search(tabindex="0")
   .ch-overlay
     .ch-search-content
@@ -11,3 +19,20 @@
 
       .ch-search-results
         span.ch-search-results-count 15 resultados encontrados em 4 categorias
+
+        .ui.stackable.three.column.padded.grid
+          .column
+            .ch-search-results-label Clientes
+            +list(people)
+
+          .column
+            .ch-search-results-label Contas a Pagar
+            +list_salary(people)
+
+          .column
+            .ch-search-results-label Contas a Receber
+            +list_salary(people)
+
+          .column
+            .ch-search-results-label Fornecedores
+            +list(people)

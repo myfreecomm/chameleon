@@ -99,25 +99,28 @@
 
 .ch-search-results {
   display: none;
+  overflow: auto;
+  max-height: calc(100% - 65px);
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 3px 3px;
 
-  &-item {
-    padding: 10px 15px;
-  }
-
-  &-count {
+  &-count, &-label {
     display: block;
     font-size: 1em;
     color: #949FB2;
-    padding: 15px;
+  }
+
+  &-count {
+    padding: 24px;
+    padding-bottom: 0;
   }
 
   &-item {
     display: block;
-    transition: all .3s;
+    padding: 10px 15px;
     color: $fontColor;
+    transition: all .3s;
 
     &:hover {
       cursor: pointer;
