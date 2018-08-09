@@ -2,20 +2,12 @@
   .ch-overlay
     .ch-search-content
       .ch-search-input-group
-        .ch-search-context.computer-only Pesquisando em Cobranças
-          span.btn-remove-context
-            i.close.small.icon
-        .ch-search-form
+        .ch-search-form(data-message="ESC para sair")
           input.ch-search-form-input(type="text" placeholder="Ex Nexaas")
-          a.ch-search-form-icon.computer-only(href="#")
+          span.ch-search-form-icon.computer-only
             i.search.large.icon
-          a.ch-search-form-icon.btn-close.mobile-only(href="#")
-            i.close.large.icon
+          button.ch-search-form-icon.btn-close
+            i.close.icon
 
       .ch-search-results
-        span.ch-search-results-count 5 Resultados encontrados
-        -
-          var searchResult = ["V7 Digital Photo Printing", "Download Free Song For Ipod", "How Plasma Tvs And Lcd Tvs Differ",
-                        "Going Wireless With Your Headphones", "Microsoft Patch Management For Home Users"]
-        each result in searchResult
-          a.ch-search-results-item(href="#")=result
+        span.ch-search-results-count 15 resultados encontrados em 4 categorias

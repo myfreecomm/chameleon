@@ -2490,11 +2490,6 @@ Chameleon.Components.Search = function () {
     $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   };
 
-  var removeContext = function removeContext() {
-    $search.find('.ch-search-context').fadeOut(300);
-    $search.find('.ch-search-form-input').focus();
-  };
-
   $(document).on('click', '[data-target="search"]', open);
 
   $(document).on('click', '.ch-search-content', function (e) {
@@ -2508,8 +2503,6 @@ Chameleon.Components.Search = function () {
   });
 
   $(document).on('input', '.ch-search-form-input', toggleResults);
-
-  $(document).on('click', '.btn-remove-context', removeContext);
 };
 
 Chameleon.Components.Table = function () {
