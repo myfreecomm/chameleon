@@ -39023,10 +39023,15 @@ li {
 }
 
 .ch-avatar {
-  width: 35px;
-  height: 35px;
   display: flex;
   align-items: center;
+  width: 36px;
+  height: 36px;
+}
+
+.ch-avatar > .ui.image.avatar {
+  width: 36px;
+  height: 36px;
 }
 
 .big .ch-avatar {
@@ -39300,8 +39305,8 @@ li {
   position: absolute;
   top: 50%;
   left: 10px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;

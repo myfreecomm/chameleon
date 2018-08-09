@@ -66,20 +66,20 @@ header.ch-header
 
     .ch-header-nav-button.ch-dropdown.computer-only(href="#")
       .ch-avatar.ch-dropdown-toggle
-        img.ui.avatar.image(src="https://ui-avatars.com/api/?background=EF6C00&color=fff&name=Chameleon&font-size=0.4")
+        img.ui.avatar.image(src="http://i.pravatar.cc/50?img==1")
 
       .ch-dropdown-content.bottom.right(tabindex="-1")
         span.ch-dropdown-header Contas
         -
           var accounts = [
-            { name: "Chameleon", backgroundColor: "EF6C00", color: "fff", },
-            { name: "Conta Nexaas 2", backgroundColor: "3d8af7", color: "fff", },
-            { name: "Conta Nexaas 3", backgroundColor: "e93578", color: "fff", }
+            { id: 1, name: "Chameleon", backgroundColor: "EF6C00", color: "fff", },
+            { id: 2, name: "Conta Nexaas 2", backgroundColor: "3d8af7", color: "fff", },
+            { id: 3, name: "Conta Nexaas 3", backgroundColor: "e93578", color: "fff", }
           ];
         ul.ch-dropdown-menu
           each account in accounts
             li.ch-dropdown-menu-item
               a(href="#")
-                img.ui.avatar.image(src="https://ui-avatars.com/api/?background=" + account.backgroundColor + "&color=" + account.color + "&name=" + account.name)
+                img.ui.avatar.image(src="http://i.pravatar.cc/50?img==" + account.id )
                 span= account.name
                 .ui.button.mini.basic Editar

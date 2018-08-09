@@ -86,10 +86,15 @@
 }
 
 .ch-avatar {
-  width: 35px;
-  height: 35px;
   display: flex;
   align-items: center;
+  width: 36px;
+  height: 36px;
+
+  > .ui.image.avatar {
+    width: 36px;
+    height: 36px;
+  }
 
   .big & {
     width: 105px;
