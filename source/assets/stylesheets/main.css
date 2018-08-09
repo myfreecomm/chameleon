@@ -38375,8 +38375,8 @@ li {
 
 @media screen and (max-width: 768px) {
   .ch-search-content {
-    margin: 0;
-    width: 100%;
+    margin: 0 !important;
+    width: 100% !important;
     height: 100%;
     flex-wrap: wrap;
     box-shadow: none;
@@ -38386,6 +38386,7 @@ li {
     display: none;
   }
 
+  .ch-search-form:before,
   .ch-search-form:after {
     content: "";
   }
