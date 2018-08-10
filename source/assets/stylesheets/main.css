@@ -39607,6 +39607,23 @@ li {
   content: '';
 }
 
+@media screen and (max-width: 768px) {
+  .ch-tag--new.ui.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    font-size: 0;
+    border-radius: 100%;
+    transform: translate(0, -75%);
+  }
+
+  .ch-tag--new.ui.label:before {
+    content: '';
+  }
+}
+
 .ch-copy-input {
   width: 100%;
 }
