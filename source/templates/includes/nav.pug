@@ -46,6 +46,9 @@ mixin nav(activeUrl)
               li.ch-menu-item
                 a(href=page.href)=page.name
 
+      li.ch-menu-item.more.mobile-only
+        a
+          i.ellipsis.horizontal.icon
 
     .ch-collapse
       button.ch-collapse-button(data-expand="Expandir" data-minimize="Minimizar")

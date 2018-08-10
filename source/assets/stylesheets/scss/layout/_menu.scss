@@ -40,6 +40,17 @@ $navbar-collapsed-size: 60px;
       display: initial;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+    height: 60px;
+    top: auto;
+    bottom: 0;
+
+    &.collapsed + .ch-content {
+      margin-left: 0;
+    }
+  }
 }
 
 .ch-logo {
@@ -71,11 +82,23 @@ $navbar-collapsed-size: 60px;
     border-radius: 100%;
     transform: translateY(-50%);
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .ch-menu {
   overflow-y: auto;
   overflow-x: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 
 .ch-menu-item {
@@ -175,6 +198,50 @@ $navbar-collapsed-size: 60px;
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    height: 100%;
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &.more
+    {
+      display: block;
+    }
+
+    &-label {
+      display: none;
+    }
+
+    a {
+      height: 100%;
+      padding: 10px;
+      align-items: flex-end;
+      justify-content: center;
+
+      > .icon:first-child {
+        position: static;
+        font-size: 1.5em;
+      }
+    }
+
+    &.active {
+      a:before {
+        width: 20px;
+        height: auto;
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: 50%;
+        border-right: none;
+        border-bottom: 5px solid #00E2F6;
+        transform: translate(50%, 0);
+      }
+    }
+  }
 }
 
 .ch-collapse {
@@ -184,7 +251,6 @@ $navbar-collapsed-size: 60px;
   width: 100%;
   margin-top: auto;
   align-self: flex-start;
-
   background-color: #2D394C;
   z-index: 1;
 
@@ -253,6 +319,10 @@ $navbar-collapsed-size: 60px;
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .ch-content {
@@ -264,6 +334,11 @@ $navbar-collapsed-size: 60px;
     width: 100%;
     background: none;
     box-shadow: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 0;
   }
 }
 

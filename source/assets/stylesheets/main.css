@@ -39285,6 +39285,19 @@ li {
   display: initial;
 }
 
+@media screen and (max-width: 768px) {
+  .ch-nav {
+    width: 100% !important;
+    height: 60px;
+    top: auto;
+    bottom: 0;
+  }
+
+  .ch-nav.collapsed + .ch-content {
+    margin-left: 0;
+  }
+}
+
 .ch-logo {
   position: relative;
   height: 65px;
@@ -39316,9 +39329,25 @@ li {
   transform: translateY(-50%);
 }
 
+@media screen and (max-width: 768px) {
+  .ch-logo {
+    display: none;
+  }
+}
+
 .ch-menu {
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .ch-menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 
 .ch-menu-item a {
@@ -39411,6 +39440,49 @@ li {
   transform: translateY(-50%) rotate(90deg);
 }
 
+@media screen and (max-width: 768px) {
+  .ch-menu-item {
+    display: none;
+    height: 100%;
+  }
+
+  .ch-menu-item:first-child,
+  .ch-menu-item:nth-child(2),
+  .ch-menu-item:nth-child(3),
+  .ch-menu-item:nth-child(4),
+  .ch-menu-item.more {
+    display: block;
+  }
+
+  .ch-menu-item-label {
+    display: none;
+  }
+
+  .ch-menu-item a {
+    height: 100%;
+    padding: 10px;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .ch-menu-item a > .icon:first-child {
+    position: static;
+    font-size: 1.5em;
+  }
+
+  .ch-menu-item.active a:before {
+    width: 20px;
+    height: auto;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 50%;
+    border-right: none;
+    border-bottom: 5px solid #00E2F6;
+    transform: translate(50%, 0);
+  }
+}
+
 .ch-collapse {
   position: sticky;
   bottom: 0;
@@ -39482,6 +39554,12 @@ li {
   display: block;
 }
 
+@media screen and (max-width: 768px) {
+  .ch-collapse {
+    display: none;
+  }
+}
+
 .ch-content {
   margin-left: 240px;
   transition: all .3s;
@@ -39492,6 +39570,13 @@ li {
   width: 100%;
   background: none;
   box-shadow: none;
+}
+
+@media screen and (max-width: 768px) {
+  .ch-content {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .ch-tag--new.ui.label {
