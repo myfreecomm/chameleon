@@ -2,29 +2,15 @@ let gulp = require('gulp'),
     sass = require('gulp-sass'),
     minifyCSS = require('gulp-csso'),
     browserSync = require('browser-sync').create(),
-    rename = require('gulp-rename'),
-    concatCss = require('gulp-concat-css');
+    rename = require('gulp-rename');
 
 let stylesPath = 'source/assets/stylesheets';
 
-let cssExternals = [
-  `${stylesPath}/css/vendors/nouislider.css`,
-  `${stylesPath}/css/vendors/animate.css`,
-]
-
-const bundle = function(){
+const build = function(){
   return gulp.src(`${stylesPath }/scss/style.scss`)
     .pipe(sass().on('error', sass.logError))
-    .pipe(rename('bundle.css'))
-    .pipe(gulp.dest(`${stylesPath}/tmp`))
-}
-
-const build = function() {
-  return gulp.src([...cssExternals, `${stylesPath}/tmp/bundle.css`])
-    .pipe(concatCss('main.css', {
-      rebaseUrls: false
-    }))
-    .pipe(gulp.dest(stylesPath))
+    .pipe(rename('main.css'))
+    .pipe(gulp.dest(`${stylesPath}/css`))
     .pipe(browserSync.stream());
 }
 
@@ -38,4 +24,4 @@ const deploy = function() {
     .pipe(gulp.dest('dist/stylesheets'))
 }
 
-module.exports = { bundle, build, deploy };
+module.exports = { build, deploy };
