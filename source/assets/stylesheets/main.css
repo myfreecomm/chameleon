@@ -38212,6 +38212,13 @@ li {
   }
 }
 
+.btn-close-dialog {
+  color: inherit;
+  background: none;
+  border: none;
+  outline: 0;
+}
+
 .ch-search {
   display: none;
   position: fixed;

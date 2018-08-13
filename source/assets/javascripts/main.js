@@ -2448,7 +2448,7 @@ Chameleon.Components.Modal = function () {
 
   $(document).on('click', '[data-target="modal"]', open);
 
-  $(document).on('click', '.ch-overlay, .close-dialog', close);
+  $(document).on('click', '.ch-overlay, .btn-close-dialog', close);
 
   $modal.on('keydown', function (e) {
     $.keyboardClose(e, close);
