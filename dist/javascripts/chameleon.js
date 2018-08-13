@@ -37,11 +37,8 @@ Chameleon.Components.Dropdown = function () {
     }
   };
 
-  var closeOnMobile = function closeOnMobile(event, $container) {
-    if (!$container.is(event.target) && $container.has(event.target).length === 0) {
-      Chameleon.menu.close();
-      $container.unbind('mouseup');
-    }
+  var closeButton = function closeButton() {
+    $(this).parents('.ch-dropdown-content').removeClass('visible');
   };
 
   var closeOnDesktop = function closeOnDesktop(event, $container) {
@@ -52,42 +49,36 @@ Chameleon.Components.Dropdown = function () {
   };
 
   var close = function close(e) {
-    $(window).width() <= 768 ? closeOnMobile(e, $nav) : closeOnDesktop(e, $dropdownContainer);
+    closeOnDesktop(e, $dropdownContainer);
   };
 
   $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);
+
+  $(document).on('click', '.ch-dropdown .icon.close', closeButton);
 
   $(document).on('mouseup', close);
 };
 
 Chameleon.Components.Menu = function () {
-  var $navMenuElements = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
-  var $navDropdown = $('.ch-nav .ch-dropdown-content');
+  var buttonClasses = '.ch-menu-item .ch-dropdown-button';
+  var collapseButtonClass = '.ch-collapse-button';
 
-  var open = function open(e) {
-    e.preventDefault();
-    $navMenuElements.addClass('open');
-    $navDropdown.addClass('collapse');
-  };
+  var toggleMenuDropdown = function toggleMenuDropdown() {
+    var $dropdown = $(this).parent('.ch-dropdown');
+    var $dropdownSiblings = $dropdown.siblings();
 
-  var close = function close() {
-    $navMenuElements.removeClass('open');
-    $navDropdown.removeClass('collapse visible');
-  };
-
-  $(document).on('click', '.show-menu', open);
-
-  $(document).on('click', '.close-menu', close);
-
-  $(window).resize(function () {
-    if ($(window).width() >= 768) {
-      close();
+    if ($dropdownSiblings.hasClass('open')) {
+      $dropdownSiblings.removeClass('open');
     }
-  });
-
-  return {
-    close: close
+    $dropdown.toggleClass('open');
   };
+
+  var toggleNavCollapse = function toggleNavCollapse() {
+    $(this).parents('.ch-nav').toggleClass('collapsed');
+  };
+
+  $(document).on('click', buttonClasses, toggleMenuDropdown);
+  $(document).on('click', collapseButtonClass, toggleNavCollapse);
 };
 
 Chameleon.Components.Modal = function () {
@@ -110,7 +101,7 @@ Chameleon.Components.Modal = function () {
 
   $(document).on('click', '[data-target="modal"]', open);
 
-  $(document).on('click', '.ch-overlay, .close-dialog', close);
+  $(document).on('click', '.ch-overlay, .btn-close-dialog', close);
 
   $modal.on('keydown', function (e) {
     $.keyboardClose(e, close);
@@ -145,11 +136,6 @@ Chameleon.Components.Search = function () {
     $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   };
 
-  var removeContext = function removeContext() {
-    $search.find('.ch-search-context').fadeOut(300);
-    $search.find('.ch-search-form-input').focus();
-  };
-
   $(document).on('click', '[data-target="search"]', open);
 
   $(document).on('click', '.ch-search-content', function (e) {
@@ -163,8 +149,6 @@ Chameleon.Components.Search = function () {
   });
 
   $(document).on('input', '.ch-search-form-input', toggleResults);
-
-  $(document).on('click', '.btn-remove-context', removeContext);
 };
 
 Chameleon.Components.Table = function () {
