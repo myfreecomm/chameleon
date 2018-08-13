@@ -690,13 +690,13 @@ ol, ul, li {
     .ch-search-form-icon {
       margin-left: 5px;
       margin-right: 10px;
-      color: gray;
+      color: #76849d;
       order: -1;
       border: none;
       background: none;
       outline: 0; }
       .ch-search-form-icon:hover, .ch-search-form-icon:active {
-        color: gray; }
+        color: #76849d; }
       .ch-search-form-icon.btn-close {
         order: 1; }
     .ch-search-form:before, .ch-search-form:after {
@@ -1248,23 +1248,24 @@ ol, ul, li {
 .ch-header-nav {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  color: #949FB2; }
   .ch-header-nav-button {
     display: block;
     padding-right: 10px;
     padding-left: 10px;
-    color: #999;
+    color: currentColor;
     transition: all .3s;
     cursor: pointer; }
     .ch-header-nav-button:hover, .ch-header-nav-button.active {
-      color: gray;
+      color: #76849d;
       border-radius: 3px; }
     .ch-header-nav-button:last-child {
       padding-right: 0; }
     .ch-header-nav-button.ch-account {
       font-weight: bold;
       text-transform: uppercase;
-      color: #666; }
+      color: #475266; }
       .ch-header-nav-button.ch-account .icon.dropdown {
         margin-left: .25rem;
         opacity: .65;
