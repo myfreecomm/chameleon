@@ -39791,6 +39791,16 @@ li {
   border-radius: 4px;
 }
 
+@media screen and (max-width: 768px) {
+  .ch-account-container {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 60px);
+    top: 0;
+    left: 0;
+  }
+}
+
 .ch-account-header {
   display: flex;
   align-items: center;
