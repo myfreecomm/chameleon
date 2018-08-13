@@ -2388,13 +2388,6 @@ Chameleon.Components.Dropdown = function () {
     $(this).parents('.ch-dropdown-content').removeClass('visible');
   };
 
-  var closeOnMobile = function closeOnMobile(event, $container) {
-    if (!$container.is(event.target) && $container.has(event.target).length === 0) {
-      Chameleon.menu.close();
-      $container.unbind('mouseup');
-    }
-  };
-
   var closeOnDesktop = function closeOnDesktop(event, $container) {
     if (!$container.is(event.target) && $container.has(event.target).length === 0 && $container.parent().has(event.target).length === 0) {
       $container.removeClass('visible');
@@ -2403,7 +2396,7 @@ Chameleon.Components.Dropdown = function () {
   };
 
   var close = function close(e) {
-    $(window).width() <= 768 ? closeOnMobile(e, $nav) : closeOnDesktop(e, $dropdownContainer);
+    closeOnDesktop(e, $dropdownContainer);
   };
 
   $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);

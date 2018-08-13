@@ -107,17 +107,17 @@
   @media screen and (max-width: 768px) {
 
     &-content {
-      position: fixed;
-      width: 100%;
-      top: auto;
-      bottom: 50px;
-      left: 0;
-      background-color: var(--main-color-dark);
-      border-radius: 0;
+      // position: fixed;
+      // width: 100%;
+      // top: auto;
+      // bottom: 50px;
+      // left: 0;
+      // background-color: var(--main-color-dark);
+      // border-radius: 0;
 
-      &:before {
-        content: none;
-      }
+      // &:before {
+      //   content: none;
+      // }
 
       &.collapse {
         position: static;
@@ -134,9 +134,9 @@
       border-bottom: 1px solid rgba(#fff, 0.2);
     }
 
-    &-header, &-menu-item a {
-      color: #fff;
-    }
+    // &-header, &-menu-item a {
+    //   color: #fff;
+    // }
 
   }
 }

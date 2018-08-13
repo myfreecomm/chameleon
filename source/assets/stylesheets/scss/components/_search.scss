@@ -55,7 +55,7 @@
       color: darken($headerElementsColor, 10%);
       order: -1;
       border: none;
-      background-color: none;
+      background: none;
       outline: 0;
 
       &:hover, &:active {
@@ -103,7 +103,7 @@
 
     &-form {
       &:before, &:after {
-        content: "";
+        content: none;
       }
     }
 

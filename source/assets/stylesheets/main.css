@@ -37420,12 +37420,6 @@ body.pushable>.pusher {
   border-color: #00BBDA;
 }
 
-@media screen and (max-width: 768px) {
-  [data-theme="default"] .ch-dropdown-content {
-    background-color: #00a5c1;
-  }
-}
-
 :root [data-theme="myfinance"] {
   --main-color: #224168;
   --main-color-dark: #1c3555;
@@ -37458,12 +37452,6 @@ body.pushable>.pusher {
 
 [data-theme="myfinance"] .ch-timeline li.event:before {
   border-color: #224168;
-}
-
-@media screen and (max-width: 768px) {
-  [data-theme="myfinance"] .ch-dropdown-content {
-    background-color: #1c3555;
-  }
 }
 
 :root [data-theme="cobrato"] {
@@ -37500,12 +37488,6 @@ body.pushable>.pusher {
   border-color: #D88414;
 }
 
-@media screen and (max-width: 768px) {
-  [data-theme="cobrato"] .ch-dropdown-content {
-    background-color: #c17612;
-  }
-}
-
 :root [data-theme="billimatic"] {
   --main-color: #6B180F;
   --main-color-dark: #55130c;
@@ -37538,12 +37520,6 @@ body.pushable>.pusher {
 
 [data-theme="billimatic"] .ch-timeline li.event:before {
   border-color: #6B180F;
-}
-
-@media screen and (max-width: 768px) {
-  [data-theme="billimatic"] .ch-dropdown-content {
-    background-color: #55130c;
-  }
 }
 
 :root [data-theme="contabilone"] {
@@ -37580,12 +37556,6 @@ body.pushable>.pusher {
   border-color: #832664;
 }
 
-@media screen and (max-width: 768px) {
-  [data-theme="contabilone"] .ch-dropdown-content {
-    background-color: #6f2055;
-  }
-}
-
 :root [data-theme="emites"] {
   --main-color: #0C4E43;
   --main-color-dark: #093830;
@@ -37618,12 +37588,6 @@ body.pushable>.pusher {
 
 [data-theme="emites"] .ch-timeline li.event:before {
   border-color: #0C4E43;
-}
-
-@media screen and (max-width: 768px) {
-  [data-theme="emites"] .ch-dropdown-content {
-    background-color: #093830;
-  }
 }
 
 :root [data-theme="rexpense"] {
@@ -37660,12 +37624,6 @@ body.pushable>.pusher {
   border-color: #3BB3A4;
 }
 
-@media screen and (max-width: 768px) {
-  [data-theme="rexpense"] .ch-dropdown-content {
-    background-color: #35a092;
-  }
-}
-
 :root [data-theme="passaporteWeb"] {
   --main-color: #242633;
   --main-color-dark: #191b24;
@@ -37698,12 +37656,6 @@ body.pushable>.pusher {
 
 [data-theme="passaporteWeb"] .ch-timeline li.event:before {
   border-color: #242633;
-}
-
-@media screen and (max-width: 768px) {
-  [data-theme="passaporteWeb"] .ch-dropdown-content {
-    background-color: #191b24;
-  }
 }
 
 * {
@@ -38084,20 +38036,6 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-  .ch-dropdown-content {
-    position: fixed;
-    width: 100%;
-    top: auto;
-    bottom: 50px;
-    left: 0;
-    background-color: var(--main-color-dark);
-    border-radius: 0;
-  }
-
-  .ch-dropdown-content:before {
-    content: none;
-  }
-
   .ch-dropdown-content.collapse {
     position: static;
     box-shadow: none;
@@ -38110,11 +38048,6 @@ li {
 
   .ch-dropdown-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .ch-dropdown-header,
-  .ch-dropdown-menu-item a {
-    color: #fff;
   }
 }
 
@@ -38339,7 +38272,7 @@ li {
   color: gray;
   order: -1;
   border: none;
-  background-color: none;
+  background: none;
   outline: 0;
 }
 
@@ -38387,7 +38320,7 @@ li {
 
   .ch-search-form:before,
   .ch-search-form:after {
-    content: "";
+    content: none;
   }
 
   .ch-search-input-group {
