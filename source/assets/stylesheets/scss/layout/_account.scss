@@ -3,7 +3,7 @@
     position: relative;
     width: 370px;
     height: 250px;
-    background-color: #F9FBFF;
+    background-color: #fff;
     text-transform: none;
     box-shadow: 0 1px 1px rgba(#000, .14), 0 2px 1px -1px rgba(#000, .12), 0 1px 3px rgba(#000, .2);
     border-radius: 4px;
@@ -23,9 +23,9 @@
     height: 50px;
     padding-right: 15px;
     padding-left: 20px;
-    font-size: 1.2em;
-    background-color: #EDEFF2;
-    border-bottom: 1px solid #E0E2E5;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
 
     > .actions {
       margin-left: auto;
@@ -52,7 +52,6 @@
     .menu {
       width: 50%;
       height: 100%;
-      box-shadow: 1px 1px 5px rgba(#000, .2);
 
       ul {
         overflow-y: hidden;

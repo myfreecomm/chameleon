@@ -8,7 +8,7 @@
   &-content {
     margin-left: 240px;
     width: calc(100% - 240px);
-    background-color: #F9FBFF;
+    background-color: #fff;
     box-shadow: 0px 2px 4px rgba(#000, 0.35);
 
     .ch-nav.collapsed ~ .ch-search & {
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     height: 65px;
-    background-color: #F9FBFF;
+    background-color: #fff;
     animation: fadeIn .1s;
   }
 
@@ -37,7 +37,7 @@
       font-family: inherit;
       font-size: 1.2em;
       color: $fontColor;
-      background-color: #F9FBFF;
+      background-color: #fff;
       border: 0;
 
       &::placeholder {
@@ -82,7 +82,7 @@
       margin: 0 5px;
       padding: 0 4px;
       font-weight: 600;
-      background: #fff;
+      background: #F9FBFF;
       border: 1px solid rgba(#949FB2, .5);
       border-radius: 3px;
     }
@@ -117,7 +117,7 @@
   display: none;
   overflow: auto;
   max-height: calc(100% - 65px);
-  background-color: #F9FBFF;
+  background-color: #fff;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 3px 3px;
 

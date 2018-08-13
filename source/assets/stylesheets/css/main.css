@@ -466,6 +466,7 @@ ol, ul, li {
     left: 84px;
     font-size: 11px;
     font-weight: 400;
+    background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     outline: 0;
     z-index: 1;
@@ -502,12 +503,9 @@ ol, ul, li {
     white-space: nowrap;
     color: #475266; }
   .ch-dropdown-header {
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.5);
-    background-color: #f7f6f6; }
+    font-weight: bold; }
   .ch-dropdown-menu-item {
-    position: relative;
-    border-top: 1px solid #f7f6f6; }
+    position: relative; }
     .ch-dropdown-menu-item:first-child {
       border-top: 0; }
     .ch-dropdown-menu-item a:hover, .ch-dropdown-menu-item.active {
@@ -551,7 +549,7 @@ ol, ul, li {
     min-height: 100%;
     margin-left: auto;
     padding: 20px;
-    background-color: #F9FBFF;
+    background-color: #fff;
     overflow-y: auto;
     transform: translate(100%);
     transition: all .3s; }
@@ -659,7 +657,7 @@ ol, ul, li {
   .ch-search-content {
     margin-left: 240px;
     width: calc(100% - 240px);
-    background-color: #F9FBFF;
+    background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35); }
     .ch-nav.collapsed ~ .ch-search .ch-search-content {
       margin-left: 60px;
@@ -668,7 +666,7 @@ ol, ul, li {
     display: flex;
     align-items: center;
     height: 65px;
-    background-color: #F9FBFF;
+    background-color: #fff;
     animation: fadeIn .1s; }
   .ch-search-form {
     display: flex;
@@ -681,7 +679,7 @@ ol, ul, li {
       font-family: inherit;
       font-size: 1.2em;
       color: #475266;
-      background-color: #F9FBFF;
+      background-color: #fff;
       border: 0; }
       .ch-search-form-input::placeholder {
         opacity: 0.5; }
@@ -709,7 +707,7 @@ ol, ul, li {
       margin: 0 5px;
       padding: 0 4px;
       font-weight: 600;
-      background: #fff;
+      background: #F9FBFF;
       border: 1px solid rgba(148, 159, 178, 0.5);
       border-radius: 3px; }
   @media screen and (max-width: 768px) {
@@ -730,7 +728,7 @@ ol, ul, li {
   display: none;
   overflow: auto;
   max-height: calc(100% - 65px);
-  background-color: #F9FBFF;
+  background-color: #fff;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 3px 3px; }
   .ch-search-results-count, .ch-search-results-label {
@@ -1733,7 +1731,7 @@ ol, ul, li {
   position: relative;
   width: 370px;
   height: 250px;
-  background-color: #F9FBFF;
+  background-color: #fff;
   text-transform: none;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 4px; }
@@ -1751,9 +1749,9 @@ ol, ul, li {
   height: 50px;
   padding-right: 15px;
   padding-left: 20px;
-  font-size: 1.2em;
-  background-color: #EDEFF2;
-  border-bottom: 1px solid #E0E2E5; }
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase; }
   .ch-account-header > .actions {
     margin-left: auto; }
 
@@ -1771,8 +1769,7 @@ ol, ul, li {
     color: #919499; }
   .ch-account-content .menu {
     width: 50%;
-    height: 100%;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
+    height: 100%; }
     .ch-account-content .menu ul {
       overflow-y: hidden;
       height: calc(100% - 40px); }
