@@ -1,6 +1,6 @@
 Chameleon.Components.Menu = function() {
-  let buttonClasses = '.ch-menu-item .ch-dropdown-button';
-  let collapseButtonClass = '.ch-collapse-button';
+  let buttonSelector = '.ch-menu-item .ch-dropdown-button';
+  let collapseButtonSelector = '.ch-expand-button > button';
 
   const toggleMenuDropdown = function() {
     let $dropdown = $(this).parent('.ch-dropdown');
@@ -16,6 +16,6 @@ Chameleon.Components.Menu = function() {
     $(this).parents('.ch-nav').toggleClass('collapsed');
   }
 
-  $(document).on('click', buttonClasses,  toggleMenuDropdown);
-  $(document).on('click', collapseButtonClass, toggleNavCollapse);
+  $(document).on('click', buttonSelector,  toggleMenuDropdown);
+  $(document).on('click', collapseButtonSelector, toggleNavCollapse);
 }

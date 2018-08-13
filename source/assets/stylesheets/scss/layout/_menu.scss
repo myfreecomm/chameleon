@@ -252,7 +252,7 @@
   }
 }
 
-.ch-collapse {
+.ch-expand-button {
   position: sticky;
   bottom: 0;
   left: 0;
@@ -262,7 +262,7 @@
   background-color: #2D394C;
   z-index: 1;
 
-  &-button {
+  > button {
     width: 100%;
     height: 50px;
     font-family: inherit;
@@ -305,14 +305,14 @@
     }
   }
 
-  &-button:hover {
+  > button:hover {
     &:after {
       opacity: 1;
       visibility: visible;
     }
   }
 
-  &-button {
+  button {
     .ch-nav.collapsed & {
       &:after {
         content: attr(data-expand)

@@ -60,8 +60,8 @@ Chameleon.Components.Dropdown = function () {
 };
 
 Chameleon.Components.Menu = function () {
-  var buttonClasses = '.ch-menu-item .ch-dropdown-button';
-  var collapseButtonClass = '.ch-collapse-button';
+  var buttonSelector = '.ch-menu-item .ch-dropdown-button';
+  var collapseButtonSelector = '.ch-expand-button > button';
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
     var $dropdown = $(this).parent('.ch-dropdown');
@@ -77,8 +77,8 @@ Chameleon.Components.Menu = function () {
     $(this).parents('.ch-nav').toggleClass('collapsed');
   };
 
-  $(document).on('click', buttonClasses, toggleMenuDropdown);
-  $(document).on('click', collapseButtonClass, toggleNavCollapse);
+  $(document).on('click', buttonSelector, toggleMenuDropdown);
+  $(document).on('click', collapseButtonSelector, toggleNavCollapse);
 };
 
 Chameleon.Components.Modal = function () {
