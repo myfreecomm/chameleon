@@ -72,6 +72,11 @@
     align-items: center;
     justify-content: center;
     transform: translateY(-50%);
+
+    > img {
+      min-width: 36px;
+      max-height: 36px;
+    }
   }
 
   &.nexaas {
@@ -79,11 +84,11 @@
     font-size: 1.5em;
     color: #fff;
 
-    .ch-logo-icon {
-      background: #00E2F6;
-      border: 4px solid #00E2F6;
-      border-radius: 100%;
-    }
+    // .ch-logo-icon {
+    //   background: #00E2F6;
+    //   border: 4px solid #00E2F6;
+    //   border-radius: 100%;
+    // }
   }
 
   @media screen and (max-width: 768px) {
