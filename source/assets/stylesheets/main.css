@@ -39238,9 +39238,6 @@ li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5em;
-  color: #fff;
 }
 
 .ch-logo-label {
@@ -39250,16 +39247,25 @@ li {
 .ch-logo-icon {
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: 12px;
   width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateY(-50%);
+}
+
+.ch-logo.nexaas {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.ch-logo.nexaas .ch-logo-icon {
   background: #00E2F6;
   border: 4px solid #00E2F6;
   border-radius: 100%;
-  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 768px) {
