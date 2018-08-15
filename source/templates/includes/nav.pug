@@ -8,18 +8,18 @@ mixin nav(activeUrl)
     ul.ch-menu
       -
         var menuItems = [
-          { name: "Painel", icon: "dashboard", href: "dashboard.html", active: true },
-          { name: "Formulários", icon: "clipboard", href: "form.html" },
-          { name: "Tabelas", icon: "table", href: "table.html" },
-          { name: "Wizard", icon: "wizard", href: "wizard.html" },
-          { name: "Notificações", icon: "comment outline", href: "wizard.html", tag: true },
-          { name: "Desabilitado", icon: "warning circle", href: "notifications.html", disabled: true },
+          { name: "Painel", icon: "fa-tachometer-alt", href: "dashboard.html", active: true },
+          { name: "Formulários", icon: "fa-clipboard", href: "form.html" },
+          { name: "Tabelas", icon: "fa-table", href: "table.html" },
+          { name: "Wizard", icon: "fa-magic", href: "wizard.html" },
+          { name: "Notificações", icon: "fa-comment", href: "wizard.html", tag: true },
+          { name: "Desabilitado", icon: "fa-exclamation-circle", href: "notifications.html", disabled: true },
         ]
 
       each item in menuItems
         li.ch-menu-item(class={active: item.active, disabled: item.disabled})
           a(href="#")
-            i(class= item.icon + " icon")
+            i(class= "far " + item.icon + " fa-icon")
             span(class="ch-menu-item-label")= item.name
 
             if item.tag
@@ -27,7 +27,7 @@ mixin nav(activeUrl)
 
       li.ch-menu-item.ch-dropdown
         a.ch-dropdown-button(href="#")
-          i.puzzle.icon
+          i.far.fa-puzzle-piece.fa-icon
           span.ch-menu-item-label Páginas
           i.icon.dropdown
 

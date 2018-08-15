@@ -120,16 +120,17 @@
     font-weight: 600;
     color: #C7D0DD;
 
-    > .icon:first-child {
+    > .fa-icon:first-child {
       position: absolute;
       top: 50%;
       left: 20px;
       width: 20px;
       height: 20px;
+      text-align: center;
       transform: translateY(-50%);
     }
 
-    > .icon:first-child, &-label {
+    > .fa-icon:first-child, &-label {
       line-height: 20px;
     }
   }
@@ -153,7 +154,7 @@
         transform: translateY(-50%);
       }
 
-      > .icon:first-child {
+      > .fa-icon:first-child {
         color: #00E2F6;
       }
     }
@@ -230,7 +231,7 @@
       align-items: flex-end;
       justify-content: center;
 
-      > .icon:first-child {
+      > .fa-icon:first-child {
         position: static;
         font-size: 1.5em;
       }
