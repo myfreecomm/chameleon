@@ -10,6 +10,14 @@
 
 @import 'base/_reset';
 
+//FONTS
+
+@import 'fonts/font_awesome/light.scss';
+@import 'fonts/font_awesome/regular.scss';
+@import 'fonts/font_awesome/solid.scss';
+@import 'fonts/font_awesome/fontawesome.scss';
+
+
 //SEMANTIC UI OVERRIDES
 
 @import 'overrides/_form';
