@@ -19,7 +19,7 @@ mixin nav(activeUrl)
       each item in menuItems
         li.ch-menu-item(class={active: item.active, disabled: item.disabled})
           a(href="#")
-            i(class= "far " + item.icon + " fa-icon")
+            i(class= "fal " + item.icon + " fa-icon")
             span(class="ch-menu-item-label")= item.name
 
             if item.tag
@@ -27,7 +27,7 @@ mixin nav(activeUrl)
 
       li.ch-menu-item.ch-dropdown
         a.ch-dropdown-button(href="#")
-          i.far.fa-puzzle-piece.fa-icon
+          i.fal.fa-puzzle-piece.fa-icon
           span.ch-menu-item-label Páginas
           i.icon.dropdown
 
