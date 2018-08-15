@@ -6158,6 +6158,7 @@ readers do not read off random characters that represent icons */
   color: #2D394C;
   background-color: #FFA719;
   border: 2px solid #2D394C;
+  border-radius: 500em;
   text-transform: uppercase; }
 
 .ch-tag--new:before {
