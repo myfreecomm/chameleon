@@ -31,7 +31,7 @@ Chameleon.Components.Dropdown = function() {
 
   $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);
 
-  $(document).on('click', '.ch-dropdown .icon.close', closeButton);
+  $(document).on('click', '.ch-dropdown .btn-close', closeButton);
 
   $(document).on('mouseup', close);
 }
