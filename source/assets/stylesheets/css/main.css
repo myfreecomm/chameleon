@@ -5351,7 +5351,8 @@ readers do not read off random characters that represent icons */
       color: #D0D8E5; }
     .ch-search-form:before {
       content: attr(data-message);
-      order: 1; }
+      order: 1;
+      margin-right: 0.625em; }
     .ch-search-form:after {
       content: 'ESC';
       margin: 0 5px;

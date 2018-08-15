@@ -75,6 +75,7 @@
     &:before {
       content: attr(data-message);
       order: 1;
+      margin-right: 0.625em;
     }
 
     &:after {
