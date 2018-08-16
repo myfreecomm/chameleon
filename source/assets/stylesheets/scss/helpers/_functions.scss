@@ -1,6 +1,6 @@
 @function color($color,$tone){
 
-  @warn map-get($colorsPalette$color);
+  @warn map-get($colorsPalette, $color);
 
   @if map-has-key($colorsPalette,$color){
     $color: map-get($colorsPalette,$color);

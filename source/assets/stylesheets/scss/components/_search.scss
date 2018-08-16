@@ -83,8 +83,8 @@
       margin: 0 5px;
       padding: 0 4px;
       font-weight: 600;
-      background: #F9FBFF;
-      border: 1px solid rgba(#949FB2, .5);
+      background: color(navy, tone-0);
+      border: 1px solid rgba(color(navy, tone-30), .5);
       border-radius: 3px;
     }
   }
@@ -109,7 +109,7 @@
     }
 
     &-input-group {
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid $borderColor;
     }
   }
 }
@@ -119,13 +119,13 @@
   overflow: auto;
   max-height: calc(100% - 65px);
   background-color: #fff;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $borderColor;
   border-radius: 0 0 3px 3px;
 
   &-count, &-label {
     display: block;
     font-size: 1em;
-    color: #949FB2;
+    color: color(navy, tone-30);
   }
 
   &-count {
@@ -134,7 +134,7 @@
   }
 
   &-show-more {
-    color: #949FB2;
+    color: color(navy, tone-30);
     font-weight: 600;
   }
 
@@ -147,7 +147,7 @@
     &:hover {
       cursor: pointer;
       color: inherit;
-      background-color: #eee;
+      background-color: #color(navy, tone-5);
     }
   }
 }

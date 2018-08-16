@@ -5373,14 +5373,14 @@ readers do not read off random characters that represent icons */
     .ch-search-form:before, .ch-search-form:after {
       content: none; }
     .ch-search-input-group {
-      border-bottom: 1px solid #e5e5e5; } }
+      border-bottom: 1px solid #EDEFF2; } }
 
 .ch-search-results {
   display: none;
   overflow: auto;
   max-height: calc(100% - 65px);
   background-color: #fff;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #EDEFF2;
   border-radius: 0 0 3px 3px; }
   .ch-search-results-count, .ch-search-results-label {
     display: block;
@@ -5400,7 +5400,7 @@ readers do not read off random characters that represent icons */
     .ch-search-results-item:hover {
       cursor: pointer;
       color: inherit;
-      background-color: #eee; }
+      background-color: #color navy, tone-5; }
 
 .ch-table-buttons .ui.icon.button {
   padding: 0.5em;
@@ -6001,7 +6001,7 @@ readers do not read off random characters that represent icons */
   padding: .7em 0;
   padding-left: 60px;
   font-weight: 600;
-  color: #C7D0DD; }
+  color: #D0D8E5; }
   .ch-menu-item a > .fa-icon:first-child {
     position: absolute;
     top: 50%;
@@ -6107,7 +6107,7 @@ readers do not read off random characters that represent icons */
     padding-left: 60px;
     text-align: left;
     font-weight: 600;
-    color: #8491A5;
+    color: #949FB2;
     background-color: transparent;
     border: 0;
     box-shadow: none;
@@ -6385,7 +6385,7 @@ readers do not read off random characters that represent icons */
     display: block;
     padding: 10px 25px;
     font-style: italic;
-    color: #919499; }
+    color: #949FB2; }
   .ch-account-content .menu {
     width: 50%;
     height: 100%; }

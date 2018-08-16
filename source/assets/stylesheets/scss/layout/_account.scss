@@ -45,7 +45,7 @@
         display: block;
         padding: 10px 25px;
         font-style: italic;
-        color: #919499;
+        color: color(navy, tone-30);
       }
     }
 
@@ -83,7 +83,7 @@
           left: 0;
           width: auto;
           height: 20px;
-          border-right: 5px solid #00E2F6;
+          border-right: 5px solid $activeColor;
           transform: translateY(-50%);
         }
       }
