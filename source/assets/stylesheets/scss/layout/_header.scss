@@ -39,14 +39,9 @@
       text-transform: uppercase;
       color: $fontColor;
 
-      .icon.dropdown {
+      .fa-icon.dropdown {
         margin-left: .25rem;
-        opacity: .65;
         font-size: .75em;
-
-        &:before {
-          content: "\f078";
-        }
       }
     }
   }

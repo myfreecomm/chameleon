@@ -177,8 +177,9 @@
       }
     }
 
-    > .ch-dropdown-button > .icon.dropdown {
+    > .ch-dropdown-button > .fa-icon.dropdown {
       position: absolute;
+      margin-right: 1em;
       font-size: .65em;
       top: 50%;
       right: 0;
@@ -196,7 +197,7 @@
         display: block;
       }
 
-      > .ch-dropdown-button > .icon.dropdown {
+      > .ch-dropdown-button > .fa-icon.dropdown {
         transform: translateY(-50%) rotate(90deg);
       }
     }

@@ -5907,12 +5907,9 @@ readers do not read off random characters that represent icons */
       font-weight: bold;
       text-transform: uppercase;
       color: #47494C; }
-      .ch-header-nav-button.ch-account .icon.dropdown {
+      .ch-header-nav-button.ch-account .fa-icon.dropdown {
         margin-left: .25rem;
-        opacity: .65;
         font-size: .75em; }
-        .ch-header-nav-button.ch-account .icon.dropdown:before {
-          content: "\f078"; }
 
 .ch-nav {
   position: fixed;
@@ -6046,21 +6043,22 @@ readers do not read off random characters that represent icons */
   .ch-menu-item.ch-dropdown > .ch-dropdown-content:before {
     content: none; }
 
-.ch-menu-item.ch-dropdown > .ch-dropdown-button > .icon.dropdown {
+.ch-menu-item.ch-dropdown > .ch-dropdown-button > .fa-icon.dropdown {
   position: absolute;
+  margin-right: 1em;
   font-size: .65em;
   top: 50%;
   right: 0;
   height: auto;
   transform: translateY(-50%);
   transition: transform .3s; }
-  .ch-menu-item.ch-dropdown > .ch-dropdown-button > .icon.dropdown:before {
+  .ch-menu-item.ch-dropdown > .ch-dropdown-button > .fa-icon.dropdown:before {
     content: "\f054"; }
 
 .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
   display: block; }
 
-.ch-menu-item.ch-dropdown.open > .ch-dropdown-button > .icon.dropdown {
+.ch-menu-item.ch-dropdown.open > .ch-dropdown-button > .fa-icon.dropdown {
   transform: translateY(-50%) rotate(90deg); }
 
 @media screen and (max-width: 768px) {
