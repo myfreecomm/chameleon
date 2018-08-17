@@ -5114,8 +5114,8 @@ readers do not read off random characters that represent icons */
     position: absolute;
     top: 0;
     left: 84px;
-    font-size: 11px;
     font-weight: 400;
+    color: #47494C;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     outline: 0;
@@ -6424,3 +6424,37 @@ readers do not read off random characters that represent icons */
 
 .ch-account .ch-dropdown-content {
   top: -5px; }
+
+.ch-user-header .avatar {
+  border-radius: 100%; }
+
+.ch-user-header .info {
+  overflow-x: hidden; }
+
+.ch-user-header .name, .ch-user-header .email {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.ch-user-container .ch-user-header,
+.ch-user-container .ch-user-action {
+  position: relative;
+  margin: 20px 0; }
+
+.ch-user-container .ch-user-header, .ch-user-container .ch-user-action a {
+  display: flex;
+  align-items: center;
+  color: #47494C; }
+
+.ch-user-container .ch-user-action a > .fa-icon,
+.ch-user-container .ch-user-header > .avatar-container {
+  width: 30%;
+  text-align: center;
+  color: inherit; }
+
+.ch-user-container .info, .ch-user-container .label {
+  width: 70%;
+  padding-right: 20px; }
+
+.ch-user .ch-dropdown-content {
+  width: 300px; }

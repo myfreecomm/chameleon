@@ -64,22 +64,29 @@ header.ch-header
                   a(href="#") Acme Factoring
 
 
-    .ch-header-nav-button.ch-dropdown.computer-only(href="#")
+    .ch-header-nav-button.ch-dropdown.computer-only.ch-user(href="#")
       .ch-avatar.ch-dropdown-toggle
         img.ui.avatar.image(src="http://i.pravatar.cc/50?img==1")
 
       .ch-dropdown-content.bottom.right(tabindex="-1")
-        span.ch-dropdown-header Contas
-        -
-          var accounts = [
-            { id: 1, name: "Chameleon", backgroundColor: "EF6C00", color: "fff", },
-            { id: 2, name: "Conta Nexaas 2", backgroundColor: "3d8af7", color: "fff", },
-            { id: 3, name: "Conta Nexaas 3", backgroundColor: "e93578", color: "fff", }
-          ];
-        ul.ch-dropdown-menu
-          each account in accounts
-            li.ch-dropdown-menu-item
-              a(href="#")
-                img.ui.avatar.image(src="http://i.pravatar.cc/50?img==" + account.id )
-                span= account.name
-                .ui.button.mini.basic Editar
+        .ch-user-container
+          .ch-user-header
+            .avatar-container
+              img.avatar(src="http://i.pravatar.cc/54?img==1")
+            .info
+              strong.name Lorem Ipsum
+              .email lorem.ipsum@myfreecomm.com.br
+          .ch-user-action
+            a(href="#")
+              i.fal.fa-user.fa-1_5x.fa-icon
+              span.label Meu Perfil
+
+          .ch-user-action
+            a(href="#")
+              i.fal.fa-sign-out.fa-1_5x.fa-icon
+              span.label Sair do Chameleon
+
+
+
+
+
