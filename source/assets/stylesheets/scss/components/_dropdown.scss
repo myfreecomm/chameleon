@@ -13,7 +13,8 @@
     font-weight: 400;
     color: $fontColor;
     background-color: #fff;
-    box-shadow: 0 0 5px rgba(#000, 0.15);
+    box-shadow: 0 4px 30px rgba(#000, 0.2);
+    border-radius: 3px;
     outline: 0;
     z-index:1;
     animation: fadeIn 0.3s;
@@ -37,7 +38,7 @@
     }
 
     &.bottom {
-      top: 100%;
+      top: calc(100% + .625em);
 
       &:before {
         content: none;

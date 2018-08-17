@@ -5117,7 +5117,8 @@ readers do not read off random characters that represent icons */
     font-weight: 400;
     color: #47494C;
     background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
     outline: 0;
     z-index: 1;
     animation: fadeIn 0.3s; }
@@ -5136,7 +5137,7 @@ readers do not read off random characters that represent icons */
     .ch-dropdown-content.visible {
       display: block; }
     .ch-dropdown-content.bottom {
-      top: 100%; }
+      top: calc(100% + .625em); }
       .ch-dropdown-content.bottom:before {
         content: none; }
       .ch-dropdown-content.bottom.right {
@@ -5914,7 +5915,7 @@ readers do not read off random characters that represent icons */
       color: #47494C; }
     .ch-header-nav-button.ch-account .fa-icon.dropdown {
       margin-left: .25rem;
-      font-size: .75em; }
+      font-size: .65em; }
 
 .ch-nav {
   position: fixed;
@@ -6010,6 +6011,7 @@ readers do not read off random characters that represent icons */
     left: 20px;
     width: 20px;
     height: 20px;
+    font-size: 1.15em;
     text-align: center;
     transform: translateY(-50%); }
   .ch-menu-item a > .fa-icon:first-child, .ch-menu-item a-label {
@@ -6350,13 +6352,8 @@ readers do not read off random characters that represent icons */
   margin-bottom: 15px; }
 
 .ch-account-container {
-  position: relative;
   width: 370px;
-  height: 250px;
-  background-color: #fff;
-  text-transform: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 4px; }
+  height: 250px; }
   @media screen and (max-width: 768px) {
     .ch-account-container {
       position: fixed;
@@ -6386,8 +6383,7 @@ readers do not read off random characters that represent icons */
   .ch-account-content .menu > .label, .ch-account-content .submenu > .label {
     display: block;
     padding: 10px 25px;
-    font-style: italic;
-    color: #949FB2; }
+    color: #777A7F; }
   .ch-account-content .menu {
     width: 50%;
     height: 100%; }
@@ -6426,10 +6422,8 @@ readers do not read off random characters that represent icons */
 .ch-account .ch-dropdown-toggle {
   white-space: nowrap; }
 
-.ch-account .ch-dropdown-content {
-  top: -5px; }
-
 .ch-user-header .avatar {
+  width: 54px;
   border-radius: 100%; }
 
 .ch-user-header .info {
@@ -6439,6 +6433,10 @@ readers do not read off random characters that represent icons */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+
+.ch-user-header .email {
+  font-size: 0.95em;
+  color: #777A7F; }
 
 .ch-user-container .ch-user-header,
 .ch-user-container .ch-user-action {
@@ -6451,14 +6449,18 @@ readers do not read off random characters that represent icons */
   color: #47494C; }
 
 .ch-user-container .ch-user-action a > .fa-icon,
-.ch-user-container .ch-user-header > .avatar-container {
-  width: 30%;
+.ch-user-container .ch-user-header > .avatar {
+  width: 54px;
+  margin-left: 20px;
+  margin-right: 10px;
   text-align: center;
   color: inherit; }
 
+.ch-user-container .ch-user-action a > .fa-icon {
+  font-size: 1.15em; }
+
 .ch-user-container .info, .ch-user-container .label {
-  width: 70%;
   padding-right: 20px; }
 
 .ch-user .ch-dropdown-content {
-  width: 300px; }
+  width: 330px; }
