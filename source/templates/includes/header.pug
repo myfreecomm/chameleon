@@ -28,65 +28,6 @@ header.ch-header
     .ch-header-nav-button(data-target="modal" data-modal="notifications")
       i.ch-notification-label.fal.fa-bell.fa-1_5x
 
-    .ch-header-nav-button.ch-dropdown.ch-account
-      .ch-dropdown-toggle MyFreecomm
-        i.fal.fa-chevron-down.fa-icon.dropdown
-      .ch-dropdown-content.bottom.right(tabindex="-1")
-        .ch-account-container
-          .ch-account-header Selecione sua conta
-            .actions
-              i.fal.fa-times.btn-close
+    include ../partials/account.pug
 
-          .ch-account-content
-            nav.menu
-              span.label Contas
-              ul
-                li.active
-                  a(href="#") Grupo Nexaas
-                  nav.submenu
-                    span.label Entidades
-                    ul
-                      li
-                        a(href="#") Myfreecomm
-                      li.active
-                        a(href="#") Empresa I
-                      li
-                        a(href="#") Empresa II
-                      li
-                        a(href="#") Empresa III
-                      li
-                        a(href="#") Empresa IV
-
-                li
-                  a(href="#") J Experts
-
-                li
-                  a(href="#") Acme Factoring
-
-
-    .ch-header-nav-button.ch-dropdown.computer-only.ch-user(href="#")
-      .ch-avatar.ch-dropdown-toggle
-        img.ui.avatar.image(src="http://i.pravatar.cc/50?img==1")
-
-      .ch-dropdown-content.bottom.right(tabindex="-1")
-        .ch-user-container
-          .ch-user-header
-            .avatar-container
-              img.avatar(src="http://i.pravatar.cc/54?img==1")
-            .info
-              strong.name Lorem Ipsum
-              .email lorem.ipsum@myfreecomm.com.br
-          .ch-user-action
-            a(href="#")
-              i.fal.fa-user.fa-1_5x.fa-icon
-              span.label Meu Perfil
-
-          .ch-user-action
-            a(href="#")
-              i.fal.fa-sign-out.fa-1_5x.fa-icon
-              span.label Sair do Chameleon
-
-
-
-
-
+    include ../partials/user.pug

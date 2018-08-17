@@ -23,7 +23,14 @@
     padding-left: 10px;
     color: currentColor;
     transition: all .3s;
-    cursor: pointer;
+
+    button {
+      font-family: $fontFamily;
+      border: none;
+      background: transparent;
+      outline: 0;
+      cursor: pointer;
+    }
 
     &:hover, &.active {
       color: darken($headerElementsColor, 10%);
@@ -35,9 +42,12 @@
     }
 
     &.ch-account {
-      font-weight: bold;
-      text-transform: uppercase;
-      color: $fontColor;
+
+      button {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $fontColor;
+      }
 
       .fa-icon.dropdown {
         margin-left: .25rem;
