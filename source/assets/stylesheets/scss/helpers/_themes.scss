@@ -25,20 +25,6 @@ $themes: (
       --main-color-light: $mainColorLight;
     }
 
-    .noUi {
-      &-horizontal .noUi-handle {
-        background-color: $mainColorDark;
-      }
-
-      &-connect {
-        background: $mainColorDark;
-      }
-
-      &-handle:active {
-        border: 8px solid rgba($mainColorDark, 0.85);
-      }
-    }
-
     .ch-login {
       &:after {
         background-color: $mainColorDark;
@@ -54,14 +40,5 @@ $themes: (
         }
       }
     }
-
-    .ch-timeline {
-      li.event {
-        &:before {
-          border-color: $mainColor;
-        }
-      }
-    }
   }
 }
-
