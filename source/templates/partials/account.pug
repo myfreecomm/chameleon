@@ -2,9 +2,11 @@
   button.ch-dropdown-toggle(type="button") MyFreecomm
     i.fal.fa-chevron-down.fa-icon.dropdown
   .ch-dropdown-content.bottom.right.ch-account-container(tabindex="-1")
-    .ch-account-header Selecione sua conta
-      //- .actions
-      //-   i.fal.fa-times.btn-close
+    .ch-account-header
+      input.ch-search-form-input(type="text" placeholder="Busque por conta ou entidade")
+      .actions
+        button
+          i.fal.fa-search
 
     .ch-account-content
       nav.menu
@@ -15,9 +17,9 @@
             nav.submenu
               span.label Entidades
               ul
-                li
-                  a(href="#") Myfreecomm
                 li.active
+                  a(href="#") MyFreecomm
+                li
                   a(href="#") Empresa I
                 li
                   a(href="#") Empresa II

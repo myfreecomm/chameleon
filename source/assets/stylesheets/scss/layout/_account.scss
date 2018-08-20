@@ -19,8 +19,11 @@
     padding-right: 15px;
     padding-left: 20px;
     font-size: 1em;
-    font-weight: bold;
-    text-transform: uppercase;
+    border-bottom: 1px solid color(neutrals, tone-5);
+
+    .ch-search-form-input {
+      font-size: 1em;
+    }
 
     > .actions {
       margin-left: auto;
@@ -88,6 +91,7 @@
       height: 100%;
       top: 0;
       left: 50%;
+      box-shadow: 10px 0px 10px -10px rgba(#000, 0.15) inset;
 
       li.active > a:before {
         content: none;

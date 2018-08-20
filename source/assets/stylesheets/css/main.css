@@ -6369,8 +6369,9 @@ readers do not read off random characters that represent icons */
   padding-right: 15px;
   padding-left: 20px;
   font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase; }
+  border-bottom: 1px solid #EDEFF2; }
+  .ch-account-header .ch-search-form-input {
+    font-size: 1em; }
   .ch-account-header > .actions {
     margin-left: auto; }
 
@@ -6415,7 +6416,8 @@ readers do not read off random characters that represent icons */
     width: 50%;
     height: 100%;
     top: 0;
-    left: 50%; }
+    left: 50%;
+    box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.15) inset; }
     .ch-account-content > .menu .submenu li.active > a:before {
       content: none; }
 
