@@ -1,0 +1,107 @@
+.ch-account {
+  &-container {
+    width: 370px;
+    height: 250px;
+
+    @media screen and (max-width: 768px) {
+      position: fixed;
+      width: 100%;
+      height: calc(100% - 60px);
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-right: 15px;
+    padding-left: 20px;
+    font-size: 1em;
+    border-bottom: 1px solid color(neutrals, tone-5);
+
+    .ch-search-form-input {
+      font-size: 1em;
+    }
+
+    > .actions {
+      margin-left: auto;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 50px);
+    bottom: 0;
+    right: 0;
+
+    .menu, .submenu {
+      > .label {
+        display: block;
+        padding: 10px 25px;
+        color: color(neutrals, tone-50);
+      }
+    }
+
+    .menu {
+      width: 50%;
+      height: 100%;
+
+      ul {
+        overflow-y: hidden;
+        height: calc(100% - 40px);
+
+        &:hover {
+          overflow-y: auto;
+        }
+      }
+    }
+
+    .menu > ul {
+      max-height: 100%;
+
+      li > a {
+        color: inherit;
+        display: block;
+        padding: 10px 25px;
+      }
+
+      li.active  > a {
+        position: relative;
+        font-weight: bold;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: auto;
+          height: 20px;
+          border-right: 5px solid $activeColor;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    > .menu .submenu {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      box-shadow: 10px 0px 10px -10px rgba(#000, 0.15) inset;
+
+      li.active > a:before {
+        content: none;
+      }
+    }
+  }
+
+  .ch-dropdown {
+    &-toggle {
+      white-space: nowrap;
+    }
+  }
+}

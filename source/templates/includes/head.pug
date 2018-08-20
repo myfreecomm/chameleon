@@ -1,3 +1,4 @@
+include ./utils.pug
 include ./nav.pug
 
 head
@@ -6,7 +7,15 @@ head
   meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
   title.
     Nexaas - Chameleon
-  link(rel="stylesheet" href="../assets/stylesheets/main.css")
+  link(href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto:300,400,500,700" rel="stylesheet")
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css")
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
+  link(rel="stylesheet" href="../assets/stylesheets/css/main.css")
+
+  script(
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous")
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js")
   script(type="text/javascript" src="../assets/javascripts/main.js")
   script(type="text/javascript" src="../assets/javascripts/init.js")
-

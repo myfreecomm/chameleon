@@ -9,69 +9,50 @@
   .ch-dropdown-content {
     min-width: 250px;
   }
-  @media screen and (min-width: 769px) {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: calc(100% - 85px);
-    box-shadow: 0px 1px 3px rgba(#aaa, 0.2);
-    z-index: 2;
-  }
 }
 
 .ch-header-nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $headerElementsColor;
 
   &-button {
     display: block;
-    padding: 5px;
-    color: $headerElementsColor;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: currentColor;
     transition: all .3s;
-    cursor: pointer;
+
+    button {
+      font-family: $fontFamily;
+      border: none;
+      background: transparent;
+      outline: 0;
+      cursor: pointer;
+    }
 
     &:hover, &.active {
       color: darken($headerElementsColor, 10%);
       border-radius: 3px;
     }
-  }
-}
 
-.ch-notification-label {
-  position: relative;
-
-  &.new {
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 4px;
-      display: block;
-      width: 7px;
-      height: 7px;
-      background-color: #bb0c0c;
-      border-radius: 100%;
+    &:last-child {
+      padding-right: 0;
     }
-  }
-}
 
-.ch-group-buttons {
+    &.ch-account {
 
-  .ui.button {
-    margin-left: 10px;
+      button {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $fontColor;
+      }
 
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-
-    .ui.button {
-      margin-left: 0;
-      margin-bottom: 0;
+      .fa-icon.dropdown {
+        margin-left: .25rem;
+        font-size: .65em;
+      }
     }
   }
 }

@@ -25,14 +25,6 @@ $themes: (
       --main-color-light: $mainColorLight;
     }
 
-    .ch-nav {
-      background-color: $mainColor;
-
-      &-logo {
-        background-color: $mainColorLight;
-      }
-    }
-
     .noUi {
       &-horizontal .noUi-handle {
         background-color: $mainColorDark;
@@ -68,12 +60,6 @@ $themes: (
         &:before {
           border-color: $mainColor;
         }
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      .ch-dropdown-content {
-        background-color: $mainColorDark;
       }
     }
   }

@@ -1,78 +1,66 @@
 mixin nav(activeUrl)
   nav.ch-nav
+    .ch-logo.nexaas
+      .ch-logo-icon
+        img(src="../assets/images/chameleon_logo.png")
+      span.ch-logo-label Chameleon
 
-    a.ch-nav-logo(href="dashboard.html")
-      img(src="../assets/images/chameleon_logo_white.png")
-      span.text Chameleon
-
-    ul.ch-nav-menu
+    ul.ch-menu
       -
-        var currentUrl = activeUrl
         var menuItems = [
-          { name: "Painel", icon: "dashboard", href: "dashboard.html" },
-          { name: "Formulários", icon: "clipboard", href: "form.html" },
-          { name: "Tabelas", icon: "table", href: "table.html" },
-          { name: "Notificações", icon: "warning circle", href: "notifications.html" },
-          { name: "Wizard", icon: "wizard", href: "wizard.html" },
+          { name: "Painel", icon: "fa-chart-line", href: "dashboard.html", active: true },
+          { name: "Formulários", icon: "fa-clipboard", href: "#" },
+          { name: "Tabelas", icon: "fa-table", href: "#" },
+          { name: "Wizard", icon: "fa-magic", href: "#" },
+          { name: "Notificações", icon: "fa-comment", href: "#", tag: true },
+          { name: "Desabilitado", icon: "fa-exclamation-circle", href: "#", disabled: true },
         ]
 
-      each option in menuItems
-        li.ch-nav-menu-item(class={active: currentUrl === option.href})
-          a(href=option.href)
-            i(class= option.icon + " large icon")
-            span(class="ch-nav-menu-item-label")= option.name
+      each item in menuItems
+        li.ch-menu-item(class={active: item.active, disabled: item.disabled})
+          a(href=item.href)
+            i(class= "fal " + item.icon + " fa-icon")
+            span(class="ch-menu-item-label")= item.name
 
-      -
-        var pages = [
-          { name: "Colaboradores", href: "employees.html" },
-          { name: "Relatórios", href: "reports.html" },
-          { name: "Filtros", href: "filters.html" },
-          { name: "Detalhe", href: "detail.html" },
-          { name: "Configurações", href: "settings.html" },
-          { name: "Mapa", href: "map.html" },
-        ]
+            if item.tag
+              span.ui.horizontal.tiny.label.ch-tag--new(data-label="Novo")
 
-      li.ch-nav-menu-item.ch-dropdown(class={active: currentUrl === 'pages.html'})
-        a.ch-dropdown-hover(href="#")
-          i.puzzle.large.icon
-          span.ch-nav-menu-item-label Páginas
+      li.ch-menu-item.ch-dropdown
+        a.ch-dropdown-button(href="#")
+          i.fal.fa-puzzle-piece.fa-icon
+          span.ch-menu-item-label Páginas
+          .fal.fa-chevron-right.fa-icon.dropdown
+
+        -
+          var pages = [
+            { name: "Colaboradores", href: "employees.html" },
+            { name: "Relatórios", href: "reports.html" },
+            { name: "Filtros", href: "filters.html" },
+            { name: "Detalhe", href: "detail.html" },
+            { name: "Configurações", href: "settings.html" },
+            { name: "Mapa", href: "map.html" },
+          ]
+
         .ch-dropdown-content
           ul.ch-dropdown-menu
             each page in pages
-              li.ch-dropdown-menu-item
+              li.ch-menu-item
                 a(href=page.href)=page.name
 
-      li.ch-nav-menu-item.show-menu
-        a(href="#")
-          i.ellipsis.large.horizontal.icon
+      li.ch-menu-item.more.mobile-only
+        a
+          i.fal.fa-ellipsis-h-alt.fa-icon
 
-    .ch-nav-menu--secondary
-      .ch-nav-menu-item.mobile-only.ch-dropdown
-        a.ch-dropdown-hover(href="#")
-          i.ch-notification-label.cog.large.icon
-          span.ch-nav-menu-item-label Configurações
+    .ch-expand-button
+      button(data-expand="Expandir" data-minimize="Minimizar")
+        svg.icon.minimize(width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+          g(id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
+            g(id="minimize" fill="#000000" fill-rule="nonzero")
+              path(d="M1.4,2.22044605e-16 L18.6,2.22044605e-16 C19.3731986,8.0010317e-17 20,0.62680135 20,1.4 L20,13.6 C20,14.3731986 19.3731986,15 18.6,15 L1.4,15 C0.62680135,15 5.38778735e-16,14.3731986 4.4408921e-16,13.6 L0,1.4 C-9.46895252e-17,0.62680135 0.62680135,1.42034288e-16 1.4,2.22044605e-16 Z M18.3,1 L9,1 L9,14 L18.3,14 C18.6865993,14 19,13.6865993 19,13.3 L19,1.7 C19,1.31340068 18.6865993,1 18.3,1 Z M6.28125,11.375 L6.5,11.15625 C6.58333375,11.0937497 6.625,11.0104172 6.625,10.90625 C6.625,10.8020828 6.58333375,10.7083337 6.5,10.625 L3.875,8.03125 L9,8.03125 L9,6.96875 L3.875,6.96875 L6.5,4.375 C6.58333375,4.29166625 6.625,4.19791719 6.625,4.09375 C6.625,3.98958281 6.58333375,3.90625031 6.5,3.84375 L6.28125,3.625 C6.19791625,3.54166625 6.10937547,3.5 6.015625,3.5 C5.92187453,3.5 5.83333375,3.54166625 5.75,3.625 L2.125,7.25 C2.04166625,7.31250031 2,7.39583281 2,7.5 C2,7.60416719 2.04166625,7.68749969 2.125,7.75 L5.75,11.375 C5.83333375,11.4583337 5.92187453,11.5 6.015625,11.5 C6.10937547,11.5 6.19791625,11.4583337 6.28125,11.375 Z" id="path-1")
 
-        .ch-dropdown-content
-          ul.ch-dropdown-menu
-            each option in ["Meu Plano", "Usuários", "Integrações", "Preferências"]
-              li(class="ch-dropdown-menu-item")
-                a(href="#")= option
 
-      .ch-nav-menu-item.mobile-only.ch-dropdown
-        a.ch-dropdown-hover(href="#")
-          i.university.large.icon
-          span.ch-nav-menu-item-label Trocar Conta
+        svg.icon.expand(width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+            g(id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
+                g(id="expand" fill="#000000" fill-rule="nonzero")
+                  path(d="M1.4,2.22044605e-16 L18.6,2.22044605e-16 C19.3731986,8.0010317e-17 20,0.62680135 20,1.4 L20,13.6 C20,14.3731986 19.3731986,15 18.6,15 L1.4,15 C0.62680135,15 5.38778735e-16,14.3731986 4.4408921e-16,13.6 L0,1.4 C-9.46895252e-17,0.62680135 0.62680135,1.42034288e-16 1.4,2.22044605e-16 Z M18.3,1 L4,1 L4,14 L18.3,14 C18.6865993,14 19,13.6865993 19,13.3 L19,1.7 C19,1.31340068 18.6865993,1 18.3,1 Z M6.71875,11.375 L6.5,11.15625 C6.41666625,11.0937497 6.375,11.0104172 6.375,10.90625 C6.375,10.8020828 6.41666625,10.7083337 6.5,10.625 L9.125,8.03125 L4,8.03125 L4,6.96875 L9.125,6.96875 L6.5,4.375 C6.41666625,4.29166625 6.375,4.19791719 6.375,4.09375 C6.375,3.98958281 6.41666625,3.90625031 6.5,3.84375 L6.71875,3.625 C6.80208375,3.54166625 6.89062453,3.5 6.984375,3.5 C7.07812547,3.5 7.16666625,3.54166625 7.25,3.625 L10.875,7.25 C10.9583337,7.31250031 11,7.39583281 11,7.5 C11,7.60416719 10.9583337,7.68749969 10.875,7.75 L7.25,11.375 C7.16666625,11.4583337 7.07812547,11.5 6.984375,11.5 C6.89062453,11.5 6.80208375,11.4583337 6.71875,11.375 Z" id="path-1")
 
-        .ch-dropdown-content
-          ul.ch-dropdown-menu
-            each account in ["Conta 1", "Conta 2", "Conta 3"]
-              li.ch-dropdown-menu-item
-                a(href="#")= account
-
-      .ch-nav-menu-item
-        a(href="#")
-          i.large.help.circle.outline.icon
-          span.ch-nav-menu-item-label Ajuda
-
-    .close-menu
-      i.large.close.icon

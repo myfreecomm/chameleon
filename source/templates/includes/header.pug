@@ -2,64 +2,32 @@ include ./message.pug
 
 header.ch-header
   .ch-breadcrumb
-    .ch-breadcrumb-section.ch-dropdown
-      a.ch-dropdown-toggle(href="#") Nome da organização
-      .ch-dropdown-content.bottom.left(tabindex="-1")
-        ul.ch-dropdown-menu
-          -
-            var entities = ["Organização 1", "Organização 2", "Organização 3"]
-          each entity in entities
-            li.ch-dropdown-menu-item
-              a(href="#")=entity
+    .ch-breadcrumb-section
+      a(href="#" title="Fluxos de Caixa") Fluxos de Caixa
 
-    i.right.chevron.icon.divider
+    span /
 
-    .ch-breadcrumb-section.ch-dropdown.active
-      a.ch-dropdown-toggle(href="#") Painel Principal
-      .ch-dropdown-content.bottom.left(tabindex="-1")
-        ul.ch-dropdown-menu
-          -
-            var contexts = ["Painel de exemplo", "Painel Modelo 1", "Painel Modelo 2"]
-          each context in contexts
-            li.ch-dropdown-menu-item
-              a(href="#")=context
+    .ch-breadcrumb-section
+      a(href="#" title="Contas a Pagar") Contas a Pagar
+
+    span /
+
+    .ch-breadcrumb-section.active
+      a(href="#" title="Nova Despesa") Nova Despesa
 
   .ch-header-nav
-    a.ch-header-nav-button(data-target="search")
-      i.search.large.icon
+    .ch-header-nav-button(data-target="search")
+      i.fal.fa-search.fa-1_5x
 
-    a.ch-header-nav-button(href="#" data-target="modal" data-modal="notifications")
-      i.ch-notification-label.bell.outline.large.icon
+    .ch-header-nav-button.ch-dropdown.computer-only(href="#")
+      .ch-dropdown-toggle
+        i.ch-notification-label.fal.fa-cog.fa-1_5x
 
-    .ch-dropdown.computer-only
-      a.ch-header-nav-button.ch-dropdown-toggle(href="#")
-        i.ch-notification-label.cog.large.icon
+      .ch-dropdown-content.bottom.right(tabindex="-1").
 
-      .ch-dropdown-content.bottom.right(tabindex="-1")
-        span.ch-dropdown-header Configurações
-        ul.ch-dropdown-menu
-          -
-            var accounts = ["Meu Plano", "Usuários", "Integrações", "Preferências"]
-          each account in accounts
-            li(class="ch-dropdown-menu-item")
-              a(href="#")= account
+    .ch-header-nav-button(data-target="modal" data-modal="notifications")
+      i.ch-notification-label.fal.fa-bell.fa-1_5x
 
-    .ch-dropdown.computer-only
-      a.ch-header-nav-button.ch-dropdown-toggle(href="#")
-        img.ui.avatar.image(src="https://ui-avatars.com/api/?background=EF6C00&color=fff&name=Chameleon&font-size=0.4")
+    include ../partials/account.pug
 
-      .ch-dropdown-content.bottom.right(tabindex="-1")
-        span.ch-dropdown-header Contas
-        ul.ch-dropdown-menu
-          -
-            var accounts = [
-              { name: "Chameleon", backgroundColor: "EF6C00", color: "fff", },
-              { name: "Conta Nexaas 2", backgroundColor: "3d8af7", color: "fff", },
-              { name: "Conta Nexaas 3", backgroundColor: "e93578", color: "fff", }
-            ]
-          each account in accounts
-            li(class="ch-dropdown-menu-item")
-              a(href="#")
-                img.ui.avatar.image(src="https://ui-avatars.com/api/?background=" + account.backgroundColor + "&color=" + account.color + "&name=" + account.name)
-                span= account.name
-                .ui.button.mini.basic Editar
+    include ../partials/user.pug

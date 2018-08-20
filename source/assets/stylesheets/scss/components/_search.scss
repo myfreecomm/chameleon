@@ -6,9 +6,15 @@
   z-index: 2;
 
   &-content {
-    margin-left: 85px;
-    width: calc(100% - 220px);
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    background-color: #fff;
     box-shadow: 0px 2px 4px rgba(#000, 0.35);
+
+    .ch-nav.collapsed ~ .ch-search & {
+      margin-left: 60px;
+      width: calc(100% - 60px);
+    }
   }
 
   &-input-group {
@@ -17,21 +23,6 @@
     height: 65px;
     background-color: #fff;
     animation: fadeIn .1s;
-  }
-
-  &-context {
-    display: flex;
-    max-width: 240px;
-    height: 100%;
-    padding: 15px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #eee;
-
-    .btn-remove-context {
-      margin-left: 15px;
-      cursor: pointer;
-    }
   }
 
   &-form {
@@ -44,8 +35,9 @@
     &-input {
       flex-grow: 1;
       font-family: inherit;
-      font-size: 18px;
+      font-size: 1.2em;
       color: $fontColor;
+      background-color: #fff;
       border: 0;
 
       &::placeholder {
@@ -58,26 +50,49 @@
     }
 
     &-icon {
+      margin-left: 5px;
+      margin-right: 10px;
       color: darken($headerElementsColor, 10%);
-      order: 1;
+      order: -1;
+      border: none;
+      background: none;
+      outline: 0;
 
       &:hover, &:active {
         color: darken($headerElementsColor, 10%);;
       }
+
+      &.btn-close {
+        order: 1;
+      }
+    }
+
+    &:before,
+    &:after {
+      color: #D0D8E5;
+    }
+
+    &:before {
+      content: attr(data-message);
+      order: 1;
+      margin-right: 0.625em;
     }
 
     &:after {
-      content: "Pressione ESC para sair";
-      font-style: italic;
+      content: 'ESC';
       margin: 0 5px;
-      opacity: 0.4;
+      padding: 0 4px;
+      font-weight: 600;
+      background: color(navy, tone-0);
+      border: 1px solid rgba(color(navy, tone-30), .5);
+      border-radius: 3px;
     }
   }
 
   @media screen and (max-width: 768px) {
     &-content {
-      margin: 0;
-      width: 100%;
+      margin: 0 !important;
+      width: 100% !important;
       height: 100%;
       flex-wrap: wrap;
       box-shadow: none;
@@ -88,42 +103,51 @@
     }
 
     &-form {
-      &:after {
-        content: "";
+      &:before, &:after {
+        content: none;
       }
     }
 
     &-input-group {
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid $borderColor;
     }
   }
 }
 
 .ch-search-results {
   display: none;
+  overflow: auto;
+  max-height: calc(100% - 65px);
   background-color: #fff;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $borderColor;
   border-radius: 0 0 3px 3px;
 
-  &-count, &-item {
-    padding: 10px 15px;
+  &-count, &-label {
+    display: block;
+    font-size: 1em;
+    color: color(navy, tone-30);
   }
 
   &-count {
-    display: block;
-    font-size: 12px;
-    color: #999;
+    padding: 24px;
+    padding-bottom: 0;
+  }
+
+  &-show-more {
+    color: color(navy, tone-30);
+    font-weight: 600;
   }
 
   &-item {
     display: block;
-    transition: all .3s;
+    padding: 10px 15px;
     color: $fontColor;
+    transition: all .3s;
 
     &:hover {
       cursor: pointer;
       color: inherit;
-      background-color: #eee;
+      background-color: #color(navy, tone-5);
     }
   }
 }

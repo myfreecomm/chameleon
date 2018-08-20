@@ -1,17 +1,17 @@
 .ch-breadcrumb {
   display: flex;
   align-items: center;
-  font-size: 22px;
+  font-size: 1.25em;
   color: $fontColor;
+  overflow-x: hidden;
 
   &-section {
     position: relative;
     padding: 5px;
-    display: flex;
-    align-items: center;
     font-weight: 300;
     color: inherit;
     border-radius: 3px;
+    @extend %overflow-ellipsis;
 
     &:hover {
       color: $fontColor;
@@ -19,17 +19,16 @@
     }
 
     a {
-      color: inherit;
+      color: currentColor;
     }
 
     &.active {
-      font-weight: 400;
+      font-weight: 600;
     }
   }
 
   .divider {
     margin: 0 5px;
-    font-size: 14px;
     opacity: .5;
   }
 

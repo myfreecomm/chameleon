@@ -10,10 +10,11 @@
     position: absolute;
     top: 0;
     left: 84px;
-    font-size: 11px;
     font-weight: 400;
+    color: $fontColor;
     background-color: #fff;
-    box-shadow: 0 0 5px rgba(#000, 0.15);
+    box-shadow: 0 4px 30px rgba(#000, 0.2);
+    border-radius: 3px;
     outline: 0;
     z-index:1;
     animation: fadeIn 0.3s;
@@ -37,7 +38,7 @@
     }
 
     &.bottom {
-      top: 100%;
+      top: calc(100% + .625em);
 
       &:before {
         content: none;
@@ -66,13 +67,10 @@
 
   &-header {
     font-weight: bold;
-    color: rgba(#000, 0.5);
-    background-color: #f7f6f6;
   }
 
   &-menu-item {
     position: relative;
-    border-top: 1px solid #f7f6f6;
 
     &:first-child {
       border-top: 0;
@@ -108,17 +106,17 @@
   @media screen and (max-width: 768px) {
 
     &-content {
-      position: fixed;
-      width: 100%;
-      top: auto;
-      bottom: 50px;
-      left: 0;
-      background-color: var(--main-color-dark);
-      border-radius: 0;
+      // position: fixed;
+      // width: 100%;
+      // top: auto;
+      // bottom: 50px;
+      // left: 0;
+      // background-color: var(--main-color-dark);
+      // border-radius: 0;
 
-      &:before {
-        content: none;
-      }
+      // &:before {
+      //   content: none;
+      // }
 
       &.collapse {
         position: static;
@@ -135,9 +133,9 @@
       border-bottom: 1px solid rgba(#fff, 0.2);
     }
 
-    &-header, &-menu-item a {
-      color: #fff;
-    }
+    // &-header, &-menu-item a {
+    //   color: #fff;
+    // }
 
   }
 }

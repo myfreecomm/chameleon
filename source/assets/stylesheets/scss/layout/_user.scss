@@ -1,0 +1,61 @@
+.ch-user {
+
+  &-header {
+
+    .avatar {
+      width: 54px;
+      border-radius: 100%;
+    }
+
+    .info {
+      overflow-x: hidden;
+    }
+
+    .name, .email {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .email {
+      font-size: 0.95em;
+      color: color(neutrals, tone-50)
+    }
+  }
+
+  &-container {
+    .ch-user-header,
+    .ch-user-action {
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .ch-user-header, .ch-user-action a {
+      display: flex;
+      align-items: center;
+      color: $fontColor;
+    }
+
+    .ch-user-action a > .fa-icon,
+    .ch-user-header > .avatar {
+      width: 54px;
+      margin-left: 20px;
+      margin-right: 10px;
+      text-align: center;
+      color: inherit;
+    }
+
+    .ch-user-action a > .fa-icon {
+      font-size: 1.15em;
+    }
+
+    .info, .label {
+      padding-right: 20px;
+    }
+  }
+
+  .ch-dropdown-content {
+    width: 330px;
+  }
+
+}

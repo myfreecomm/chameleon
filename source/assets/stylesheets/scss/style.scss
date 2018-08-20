@@ -1,7 +1,8 @@
 //HELPERS
 
-@import 'helpers/_variables';
+@import 'helpers/_functions';
 @import 'helpers/_mixins';
+@import 'helpers/_variables';
 @import 'helpers/_utils';
 @import 'helpers/_animations';
 @import 'helpers/_themes';
@@ -10,8 +11,17 @@
 
 @import 'base/_reset';
 
+//FONTS
+
+@import 'fonts/font_awesome/light.scss';
+@import 'fonts/font_awesome/regular.scss';
+@import 'fonts/font_awesome/solid.scss';
+@import 'fonts/font_awesome/fontawesome.scss';
+
+
 //SEMANTIC UI OVERRIDES
 
+@import 'overrides/_base';
 @import 'overrides/_form';
 @import 'overrides/_grid';
 @import 'overrides/_menu';
@@ -44,3 +54,6 @@
 @import 'layout/_map';
 @import 'layout/_login';
 @import 'layout/_sidebar';
+@import 'layout/_account';
+@import 'layout/_user';
+@import 'layout/_blankslate';

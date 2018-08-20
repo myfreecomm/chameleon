@@ -1,27 +1,21 @@
 Chameleon.Components.Menu = function() {
-  let $navMenuElements   = $('.ch-nav, .ch-nav-menu, .ch-nav-menu--secondary');
-  let $navDropdown       = $('.ch-nav .ch-dropdown-content');
+  let buttonSelector = '.ch-menu-item .ch-dropdown-button';
+  let collapseButtonSelector = '.ch-expand-button > button';
 
-  const open = function(e) {
-    e.preventDefault();
-    $navMenuElements.addClass('open');
-    $navDropdown.addClass('collapse');
+  const toggleMenuDropdown = function() {
+    let $dropdown = $(this).parent('.ch-dropdown');
+    let $dropdownSiblings = $dropdown.siblings();
+
+    if($dropdownSiblings.hasClass('open')) {
+      $dropdownSiblings.removeClass('open')
+    }
+    $dropdown.toggleClass('open');
   }
 
-  const close = function() {
-    $navMenuElements.removeClass('open');
-    $navDropdown.removeClass('collapse visible');
+  const toggleNavCollapse = function() {
+    $(this).parents('.ch-nav').toggleClass('collapsed');
   }
 
-  $(document).on('click', '.show-menu', open);
-
-  $(document).on('click', '.close-menu', close);
-
-  $(window).resize(function() {
-    if ( $(window).width() >= 768 ) { close(); }
-  });
-
-  return {
-    close: close
-  };
+  $(document).on('click', buttonSelector,  toggleMenuDropdown);
+  $(document).on('click', collapseButtonSelector, toggleNavCollapse);
 }
