@@ -10,7 +10,7 @@ const build = function(){
   return gulp.src(`${stylesPath }/scss/style.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('main.css'))
-    .pipe(gulp.dest(`${stylesPath}/css`))
+    .pipe(gulp.dest(stylesPath))
     .pipe(browserSync.stream());
 }
 
