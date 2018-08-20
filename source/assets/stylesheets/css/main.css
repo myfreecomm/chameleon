@@ -4945,6 +4945,10 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 
+.ui.header,
+.ui.button {
+  font-family: "Roboto", sans-serif; }
+
 @media only screen and (max-width: 767px) {
   .ui.form .fields .field {
     margin: 0 0 1em; } }
@@ -6466,3 +6470,10 @@ readers do not read off random characters that represent icons */
 
 .ch-user .ch-dropdown-content {
   width: 330px; }
+
+.ch-blankslate {
+  width: 100%;
+  min-height: calc(90vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
