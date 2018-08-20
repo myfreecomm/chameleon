@@ -73,9 +73,9 @@
     opacity: 1; } }
 
 :root [data-theme="default"] {
-  --main-color: #00BBDA;
-  --main-color-dark: #00a5c1;
-  --main-color-light: #00c8e9; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="default"] .noUi-horizontal .noUi-handle {
   background-color: #00a5c1; }
@@ -99,9 +99,9 @@
   border-color: #00BBDA; }
 
 :root [data-theme="myfinance"] {
-  --main-color: #224168;
-  --main-color-dark: #1c3555;
-  --main-color-light: #264874; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="myfinance"] .noUi-horizontal .noUi-handle {
   background-color: #1c3555; }
@@ -125,9 +125,9 @@
   border-color: #224168; }
 
 :root [data-theme="cobrato"] {
-  --main-color: #D88414;
-  --main-color-dark: #c17612;
-  --main-color-light: #e68d15; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="cobrato"] .noUi-horizontal .noUi-handle {
   background-color: #c17612; }
@@ -151,9 +151,9 @@
   border-color: #D88414; }
 
 :root [data-theme="billimatic"] {
-  --main-color: #6B180F;
-  --main-color-dark: #55130c;
-  --main-color-light: #781b11; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="billimatic"] .noUi-horizontal .noUi-handle {
   background-color: #55130c; }
@@ -177,9 +177,9 @@
   border-color: #6B180F; }
 
 :root [data-theme="contabilone"] {
-  --main-color: #832664;
-  --main-color-dark: #6f2055;
-  --main-color-light: #8f296d; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="contabilone"] .noUi-horizontal .noUi-handle {
   background-color: #6f2055; }
@@ -203,9 +203,9 @@
   border-color: #832664; }
 
 :root [data-theme="emites"] {
-  --main-color: #0C4E43;
-  --main-color-dark: #093830;
-  --main-color-light: #0e5b4e; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="emites"] .noUi-horizontal .noUi-handle {
   background-color: #093830; }
@@ -229,9 +229,9 @@
   border-color: #0C4E43; }
 
 :root [data-theme="rexpense"] {
-  --main-color: #3BB3A4;
-  --main-color-dark: #35a092;
-  --main-color-light: #3fbfaf; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="rexpense"] .noUi-horizontal .noUi-handle {
   background-color: #35a092; }
@@ -255,9 +255,9 @@
   border-color: #3BB3A4; }
 
 :root [data-theme="passaporteWeb"] {
-  --main-color: #242633;
-  --main-color-dark: #191b24;
-  --main-color-light: #2a2d3c; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="passaporteWeb"] .noUi-horizontal .noUi-handle {
   background-color: #191b24; }
@@ -4945,6 +4945,10 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 
+.ui.header,
+.ui.button {
+  font-family: "Roboto", sans-serif; }
+
 @media only screen and (max-width: 767px) {
   .ui.form .fields .field {
     margin: 0 0 1em; } }
@@ -5114,10 +5118,11 @@ readers do not read off random characters that represent icons */
     position: absolute;
     top: 0;
     left: 84px;
-    font-size: 11px;
     font-weight: 400;
+    color: #47494C;
     background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
     outline: 0;
     z-index: 1;
     animation: fadeIn 0.3s; }
@@ -5136,7 +5141,7 @@ readers do not read off random characters that represent icons */
     .ch-dropdown-content.visible {
       display: block; }
     .ch-dropdown-content.bottom {
-      top: 100%; }
+      top: calc(100% + .625em); }
       .ch-dropdown-content.bottom:before {
         content: none; }
       .ch-dropdown-content.bottom.right {
@@ -5896,23 +5901,25 @@ readers do not read off random characters that represent icons */
     padding-right: 10px;
     padding-left: 10px;
     color: currentColor;
-    transition: all .3s;
-    cursor: pointer; }
+    transition: all .3s; }
+    .ch-header-nav-button button {
+      font-family: "Roboto", sans-serif;
+      border: none;
+      background: transparent;
+      outline: 0;
+      cursor: pointer; }
     .ch-header-nav-button:hover, .ch-header-nav-button.active {
       color: #8e929a;
       border-radius: 3px; }
     .ch-header-nav-button:last-child {
       padding-right: 0; }
-    .ch-header-nav-button.ch-account {
+    .ch-header-nav-button.ch-account button {
       font-weight: bold;
       text-transform: uppercase;
       color: #47494C; }
-      .ch-header-nav-button.ch-account .icon.dropdown {
-        margin-left: .25rem;
-        opacity: .65;
-        font-size: .75em; }
-        .ch-header-nav-button.ch-account .icon.dropdown:before {
-          content: "\f078"; }
+    .ch-header-nav-button.ch-account .fa-icon.dropdown {
+      margin-left: .25rem;
+      font-size: .65em; }
 
 .ch-nav {
   position: fixed;
@@ -6008,6 +6015,7 @@ readers do not read off random characters that represent icons */
     left: 20px;
     width: 20px;
     height: 20px;
+    font-size: 1.15em;
     text-align: center;
     transform: translateY(-50%); }
   .ch-menu-item a > .fa-icon:first-child, .ch-menu-item a-label {
@@ -6046,21 +6054,22 @@ readers do not read off random characters that represent icons */
   .ch-menu-item.ch-dropdown > .ch-dropdown-content:before {
     content: none; }
 
-.ch-menu-item.ch-dropdown > .ch-dropdown-button > .icon.dropdown {
+.ch-menu-item.ch-dropdown > .ch-dropdown-button > .fa-icon.dropdown {
   position: absolute;
+  margin-right: 1em;
   font-size: .65em;
   top: 50%;
   right: 0;
   height: auto;
   transform: translateY(-50%);
   transition: transform .3s; }
-  .ch-menu-item.ch-dropdown > .ch-dropdown-button > .icon.dropdown:before {
+  .ch-menu-item.ch-dropdown > .ch-dropdown-button > .fa-icon.dropdown:before {
     content: "\f054"; }
 
 .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
   display: block; }
 
-.ch-menu-item.ch-dropdown.open > .ch-dropdown-button > .icon.dropdown {
+.ch-menu-item.ch-dropdown.open > .ch-dropdown-button > .fa-icon.dropdown {
   transform: translateY(-50%) rotate(90deg); }
 
 @media screen and (max-width: 768px) {
@@ -6347,13 +6356,8 @@ readers do not read off random characters that represent icons */
   margin-bottom: 15px; }
 
 .ch-account-container {
-  position: relative;
   width: 370px;
-  height: 250px;
-  background-color: #fff;
-  text-transform: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 4px; }
+  height: 250px; }
   @media screen and (max-width: 768px) {
     .ch-account-container {
       position: fixed;
@@ -6369,8 +6373,9 @@ readers do not read off random characters that represent icons */
   padding-right: 15px;
   padding-left: 20px;
   font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase; }
+  border-bottom: 1px solid #EDEFF2; }
+  .ch-account-header .ch-search-form-input {
+    font-size: 1em; }
   .ch-account-header > .actions {
     margin-left: auto; }
 
@@ -6379,13 +6384,11 @@ readers do not read off random characters that represent icons */
   width: 100%;
   height: calc(100% - 50px);
   bottom: 0;
-  right: 0;
-  font-size: 1.2em; }
+  right: 0; }
   .ch-account-content .menu > .label, .ch-account-content .submenu > .label {
     display: block;
     padding: 10px 25px;
-    font-style: italic;
-    color: #949FB2; }
+    color: #777A7F; }
   .ch-account-content .menu {
     width: 50%;
     height: 100%; }
@@ -6417,12 +6420,60 @@ readers do not read off random characters that represent icons */
     width: 50%;
     height: 100%;
     top: 0;
-    left: 50%; }
+    left: 50%;
+    box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.15) inset; }
     .ch-account-content > .menu .submenu li.active > a:before {
       content: none; }
 
 .ch-account .ch-dropdown-toggle {
   white-space: nowrap; }
 
-.ch-account .ch-dropdown-content {
-  top: -5px; }
+.ch-user-header .avatar {
+  width: 54px;
+  border-radius: 100%; }
+
+.ch-user-header .info {
+  overflow-x: hidden; }
+
+.ch-user-header .name, .ch-user-header .email {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.ch-user-header .email {
+  font-size: 0.95em;
+  color: #777A7F; }
+
+.ch-user-container .ch-user-header,
+.ch-user-container .ch-user-action {
+  position: relative;
+  margin: 20px 0; }
+
+.ch-user-container .ch-user-header, .ch-user-container .ch-user-action a {
+  display: flex;
+  align-items: center;
+  color: #47494C; }
+
+.ch-user-container .ch-user-action a > .fa-icon,
+.ch-user-container .ch-user-header > .avatar {
+  width: 54px;
+  margin-left: 20px;
+  margin-right: 10px;
+  text-align: center;
+  color: inherit; }
+
+.ch-user-container .ch-user-action a > .fa-icon {
+  font-size: 1.15em; }
+
+.ch-user-container .info, .ch-user-container .label {
+  padding-right: 20px; }
+
+.ch-user .ch-dropdown-content {
+  width: 330px; }
+
+.ch-blankslate {
+  width: 100%;
+  min-height: calc(90vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center; }

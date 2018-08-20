@@ -73,9 +73,9 @@
     opacity: 1; } }
 
 :root [data-theme="default"] {
-  --main-color: #00BBDA;
-  --main-color-dark: #00a5c1;
-  --main-color-light: #00c8e9; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="default"] .noUi-horizontal .noUi-handle {
   background-color: #00a5c1; }
@@ -99,9 +99,9 @@
   border-color: #00BBDA; }
 
 :root [data-theme="myfinance"] {
-  --main-color: #224168;
-  --main-color-dark: #1c3555;
-  --main-color-light: #264874; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="myfinance"] .noUi-horizontal .noUi-handle {
   background-color: #1c3555; }
@@ -125,9 +125,9 @@
   border-color: #224168; }
 
 :root [data-theme="cobrato"] {
-  --main-color: #D88414;
-  --main-color-dark: #c17612;
-  --main-color-light: #e68d15; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="cobrato"] .noUi-horizontal .noUi-handle {
   background-color: #c17612; }
@@ -151,9 +151,9 @@
   border-color: #D88414; }
 
 :root [data-theme="billimatic"] {
-  --main-color: #6B180F;
-  --main-color-dark: #55130c;
-  --main-color-light: #781b11; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="billimatic"] .noUi-horizontal .noUi-handle {
   background-color: #55130c; }
@@ -177,9 +177,9 @@
   border-color: #6B180F; }
 
 :root [data-theme="contabilone"] {
-  --main-color: #832664;
-  --main-color-dark: #6f2055;
-  --main-color-light: #8f296d; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="contabilone"] .noUi-horizontal .noUi-handle {
   background-color: #6f2055; }
@@ -203,9 +203,9 @@
   border-color: #832664; }
 
 :root [data-theme="emites"] {
-  --main-color: #0C4E43;
-  --main-color-dark: #093830;
-  --main-color-light: #0e5b4e; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="emites"] .noUi-horizontal .noUi-handle {
   background-color: #093830; }
@@ -229,9 +229,9 @@
   border-color: #0C4E43; }
 
 :root [data-theme="rexpense"] {
-  --main-color: #3BB3A4;
-  --main-color-dark: #35a092;
-  --main-color-light: #3fbfaf; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="rexpense"] .noUi-horizontal .noUi-handle {
   background-color: #35a092; }
@@ -255,9 +255,9 @@
   border-color: #3BB3A4; }
 
 :root [data-theme="passaporteWeb"] {
-  --main-color: #242633;
-  --main-color-dark: #191b24;
-  --main-color-light: #2a2d3c; }
+  --main-color: $mainColor;
+  --main-color-dark: $mainColorDark;
+  --main-color-light: $mainColorLight; }
 
 [data-theme="passaporteWeb"] .noUi-horizontal .noUi-handle {
   background-color: #191b24; }
