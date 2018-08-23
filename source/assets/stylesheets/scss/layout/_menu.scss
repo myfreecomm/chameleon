@@ -28,7 +28,6 @@
   &.collapsed:hover {
     width: $navbarSize;
     box-shadow: 0 0 25px rgba(#000, .54);
-    transition: all .2s;
 
     .ch-logo-label,
     .ch-menu-item-label,
@@ -48,9 +47,6 @@
       bottom: 0;
 
       &.collapsed:hover {
-        box-shadow: none;
-        transition: none;
-
         .ch-logo-label,
         .ch-menu-item-label,
         .ch-collapse-button-label,
@@ -62,6 +58,12 @@
 
     &.active {
       width: 100% !important;
+    }
+
+    &.collapsed,
+    &.collapsed:hover {
+      box-shadow: none;
+      transition: none;
     }
 
     &.collapsed + .ch-content {
