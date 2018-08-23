@@ -2,6 +2,7 @@ Chameleon.Components.Menu = function() {
   let buttonSelector = '.ch-menu-item .ch-dropdown-button';
   let collapseButtonSelector = '.ch-expand-button > button';
   let toogleButton = '[data-toogle="nav"]';
+  let menu = '.ch-menu';
 
   const toggleMenuDropdown = function() {
     let $dropdown = $(this).parent('.ch-dropdown');
@@ -14,6 +15,17 @@ Chameleon.Components.Menu = function() {
 
     if ( $(window).width() <= 768 && !$('.ch-nav').hasClass('active') ) {
       toggleNav()
+    }
+  }
+
+  const menuScroll = function() {
+    if ( $(window).width() <= 768 && $('.ch-nav').hasClass('active') ) {
+
+      if ( $(this).scrollTop() > 0 ) {
+        $(this).siblings('.ch-logo').addClass('has-shadow');
+      } else {
+        $(this).siblings('.ch-logo').removeClass('has-shadow');
+      }
     }
   }
 
@@ -33,4 +45,5 @@ Chameleon.Components.Menu = function() {
   $(document).on('click', buttonSelector,  toggleMenuDropdown);
   $(document).on('click', collapseButtonSelector, toggleNavCollapse);
   $(document).on('click', toogleButton, toggleNav);
+  $(menu).on('scroll', menuScroll);
 }

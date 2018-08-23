@@ -5882,6 +5882,8 @@ readers do not read off random characters that represent icons */
   display: flex;
   align-items: center;
   justify-content: flex-start; }
+  .ch-logo.has-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
   .ch-logo-label {
     white-space: nowrap; }
   .ch-logo-icon {
@@ -5903,6 +5905,7 @@ readers do not read off random characters that represent icons */
     color: #fff; }
   @media screen and (max-width: 768px) {
     .ch-logo {
+      min-height: 72px;
       padding-left: 70px; }
       .ch-logo-icon {
         left: 18px; }
