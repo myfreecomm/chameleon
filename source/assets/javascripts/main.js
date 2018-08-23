@@ -72,6 +72,10 @@ Chameleon.Components.Menu = function () {
       $dropdownSiblings.removeClass('open');
     }
     $dropdown.toggleClass('open');
+
+    if ($(window).width() <= 768 && !$('.ch-nav').hasClass('active')) {
+      toggleNav();
+    }
   };
 
   var toggleNavCollapse = function toggleNavCollapse() {
@@ -79,8 +83,12 @@ Chameleon.Components.Menu = function () {
   };
 
   var toggleNav = function toggleNav() {
-    $(this).parents('.ch-nav').toggleClass('active');
-    $(this).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
+    $('.ch-nav').toggleClass('active');
+    $(toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
+
+    if (!$('.ch-nav').hasClass('active')) {
+      $('.ch-dropdown').removeClass('open');
+    }
   };
 
   $(document).on('click', buttonSelector, toggleMenuDropdown);

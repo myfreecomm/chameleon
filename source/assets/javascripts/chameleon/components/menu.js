@@ -11,6 +11,10 @@ Chameleon.Components.Menu = function() {
       $dropdownSiblings.removeClass('open')
     }
     $dropdown.toggleClass('open');
+
+    if ( $(window).width() <= 768 && !$('.ch-nav').hasClass('active') ) {
+      toggleNav()
+    }
   }
 
   const toggleNavCollapse = function() {
@@ -18,8 +22,12 @@ Chameleon.Components.Menu = function() {
   }
 
   const toggleNav = function() {
-    $(this).parents('.ch-nav').toggleClass('active');
-    $(this).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times')
+    $('.ch-nav').toggleClass('active');
+    $(toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
+
+    if( !$('.ch-nav').hasClass('active') ) {
+      $('.ch-dropdown').removeClass('open');
+    }
   }
 
   $(document).on('click', buttonSelector,  toggleMenuDropdown);
