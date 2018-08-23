@@ -44,6 +44,18 @@
       height: 60px;
       top: auto;
       bottom: 0;
+
+      &.collapsed:hover {
+        box-shadow: none;
+        transition: none;
+
+        .ch-logo-label,
+        .ch-menu-item-label,
+        .ch-collapse-button-label,
+        .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
+          display: none;
+        }
+      }
     }
 
     &.active {
@@ -261,6 +273,26 @@
         }
       }
     }
+
+    .ch-nav.active & {
+      &.more {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        > button {
+          width: 60px;
+          height: 60px;
+          padding: 0;
+        }
+
+        > button > .fa-icon {
+          font-size: 1.5em;
+        }
+      }
+    }
   }
 }
 
@@ -399,19 +431,21 @@
   }
 
   @media screen and (max-width: 768px) {
-    &--new {
-      &.ui.label {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 12px;
-        height: 12px;
-        font-size: 0;
-        border-radius: 100%;
-        transform: translate(0, -75%);
+    .ch-nav:not(.active) & {
+      &--new {
+        &.ui.label {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 12px;
+          height: 12px;
+          font-size: 0;
+          border-radius: 100%;
+          transform: translate(0, -75%);
 
-        &:before {
-          content: '';
+          &:before {
+            content: '';
+          }
         }
       }
     }

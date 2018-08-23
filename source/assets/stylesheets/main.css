@@ -5860,6 +5860,14 @@ readers do not read off random characters that represent icons */
       height: 60px;
       top: auto;
       bottom: 0; }
+      .ch-nav:not(.active).collapsed:hover {
+        box-shadow: none;
+        transition: none; }
+        .ch-nav:not(.active).collapsed:hover .ch-logo-label,
+        .ch-nav:not(.active).collapsed:hover .ch-menu-item-label,
+        .ch-nav:not(.active).collapsed:hover .ch-collapse-button-label,
+        .ch-nav:not(.active).collapsed:hover .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
+          display: none; }
     .ch-nav.active {
       width: 100% !important; }
     .ch-nav.collapsed + .ch-content {
@@ -6009,7 +6017,19 @@ readers do not read off random characters that represent icons */
       right: 50%;
       border-right: none;
       border-bottom: 5px solid #00E2F6;
-      transform: translate(50%, 0); } }
+      transform: translate(50%, 0); }
+  .ch-nav.active .ch-menu-item.more {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px; }
+    .ch-nav.active .ch-menu-item.more > button {
+      width: 60px;
+      height: 60px;
+      padding: 0; }
+    .ch-nav.active .ch-menu-item.more > button > .fa-icon {
+      font-size: 1.5em; } }
 
 .ch-expand-button {
   position: sticky;
@@ -6102,7 +6122,7 @@ readers do not read off random characters that represent icons */
     content: ''; }
 
 @media screen and (max-width: 768px) {
-  .ch-tag--new.ui.label {
+  .ch-nav:not(.active) .ch-tag--new.ui.label {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -6111,7 +6131,7 @@ readers do not read off random characters that represent icons */
     font-size: 0;
     border-radius: 100%;
     transform: translate(0, -75%); }
-    .ch-tag--new.ui.label:before {
+    .ch-nav:not(.active) .ch-tag--new.ui.label:before {
       content: ''; } }
 
 .ch-copy-input {
