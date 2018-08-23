@@ -39,6 +39,8 @@
   }
 
   @media screen and (max-width: 768px) {
+    font-size: 1.2em;
+
     &:not(.active) {
       width: 100% !important;
       height: 60px;
@@ -104,6 +106,12 @@
   }
 
   @media screen and (max-width: 768px) {
+    padding-left: 70px;
+
+    &-icon {
+      left: 18px;
+    }
+
     .ch-nav:not(.active) & {
       display: none;
     }
@@ -228,6 +236,21 @@
   }
 
   @media screen and (max-width: 768px) {
+    .ch-nav & {
+      > a,
+      > button {
+        padding-top: 1.15em;
+        padding-bottom: 1.15em;
+        padding-left: 70px;
+
+
+        > .fa-icon:first-child{
+          font-size: 1.25em;
+        }
+      }
+    }
+
+
     .ch-nav:not(.active) & {
 
       display: none;
@@ -254,7 +277,6 @@
 
         > .fa-icon:first-child {
           position: static;
-          font-size: 1.5em;
           transform: translateY(0);
         }
       }
@@ -275,12 +297,22 @@
     }
 
     .ch-nav.active & {
+
+      > a,
+      > button {
+        > .fa-icon:first-child{
+          left: 25px;
+        }
+      }
+
       &.more {
         position: fixed;
         bottom: 0;
         right: 0;
         padding-left: 10px;
         padding-right: 10px;
+        background-color: color(navy, tone-70);
+        z-index: 2;
 
         > button {
           width: 60px;
