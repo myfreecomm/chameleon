@@ -39,10 +39,16 @@
   }
 
   @media screen and (max-width: 768px) {
-    width: 100% !important;
-    height: 60px;
-    top: auto;
-    bottom: 0;
+    &:not(.active) {
+      width: 100% !important;
+      height: 60px;
+      top: auto;
+      bottom: 0;
+    }
+
+    &.active {
+      width: 100% !important;
+    }
 
     &.collapsed + .ch-content {
       margin-left: 0;
@@ -86,7 +92,9 @@
   }
 
   @media screen and (max-width: 768px) {
-    display: none;
+    .ch-nav:not(.active) & {
+      display: none;
+    }
   }
 }
 
@@ -95,16 +103,19 @@
   overflow-x: hidden;
 
   @media screen and (max-width: 768px) {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    .ch-nav:not(.active) & {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
   }
 }
 
 .ch-menu-item {
-  a {
+  > a,
+  > button {
     display: flex;
     align-items: center;
     position: relative;
@@ -205,45 +216,49 @@
   }
 
   @media screen and (max-width: 768px) {
-    display: none;
-    height: 100%;
+    .ch-nav:not(.active) & {
 
-    &:first-child,
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4),
-    &.more
-    {
-      display: block;
-    }
-
-    &-label {
       display: none;
-    }
-
-    a {
       height: 100%;
-      padding: 10px;
-      align-items: flex-end;
-      justify-content: center;
 
-      > .fa-icon:first-child {
-        position: static;
-        font-size: 1.5em;
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &.more
+      {
+        display: block;
       }
-    }
 
-    &.active {
-      a:before {
-        width: 20px;
-        height: auto;
-        top: auto;
-        bottom: 0;
-        left: auto;
-        right: 50%;
-        border-right: none;
-        border-bottom: 5px solid $activeColor;
-        transform: translate(50%, 0);
+      &-label {
+        display: none;
+      }
+
+      > a,
+      > button {
+        height: 100%;
+        padding: 10px;
+        justify-content: center;
+
+        > .fa-icon:first-child {
+          position: static;
+          font-size: 1.5em;
+          transform: translateY(0);
+        }
+      }
+
+      &.active {
+        a:before {
+          width: 20px;
+          height: auto;
+          top: auto;
+          bottom: 0;
+          left: auto;
+          right: 50%;
+          border-right: none;
+          border-bottom: 5px solid $activeColor;
+          transform: translate(50%, 0);
+        }
       }
     }
   }
