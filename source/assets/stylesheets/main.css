@@ -5235,7 +5235,6 @@ readers do not read off random characters that represent icons */
     .ch-breadcrumb-section.active {
       font-weight: 600; }
   .ch-breadcrumb .divider {
-    margin: 0 5px;
     opacity: .5; }
   @media screen and (max-width: 768px) {
     .ch-breadcrumb-section, .ch-breadcrumb .divider {
