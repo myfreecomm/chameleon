@@ -29,6 +29,11 @@
 @import 'overrides/_segments';
 @import 'overrides/_table';
 
+//PARTIALS
+
+@import 'partials/_logo';
+@import 'partials/_menu';
+
 
 //COMPONENTS
 
@@ -41,6 +46,7 @@
 @import 'components/_segments';
 @import 'components/_slider';
 @import 'components/_tab';
+@import 'components/_tag';
 @import 'components/_timeline';
 @import 'components/_notification';
 
@@ -49,7 +55,7 @@
 @import 'layout/_content';
 @import 'layout/_dashboard';
 @import 'layout/_header';
-@import 'layout/_menu';
+@import 'layout/_nav';
 @import 'layout/_form';
 @import 'layout/_map';
 @import 'layout/_login';

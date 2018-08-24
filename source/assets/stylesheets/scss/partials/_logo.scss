@@ -1,0 +1,52 @@
+.ch-logo {
+  position: relative;
+  height: 65px;
+  padding-left: $navbarCollapsedSize;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &.has-shadow {
+    box-shadow: 0 1px 3px rgba(#000, .5);
+  }
+
+  &-label {
+    white-space: nowrap;
+  }
+
+  &-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+
+    > img {
+      min-width: 36px;
+      max-height: 36px;
+    }
+  }
+
+  &.nexaas {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-height: 72px;
+    padding-left: 70px;
+
+    &-icon {
+      left: 18px;
+    }
+
+    .ch-nav:not(.active) & {
+      display: none;
+    }
+  }
+}
