@@ -64,6 +64,7 @@ Chameleon.Components.Menu = function () {
   var collapseButtonSelector = '.ch-expand-button > button';
   var toogleButton = '[data-toogle="nav"]';
   var menu = '.ch-menu';
+  var $nav = $('.ch-nav');
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
     var $dropdown = $(this).parent('.ch-dropdown');
@@ -79,26 +80,24 @@ Chameleon.Components.Menu = function () {
     }
   };
 
-  var menuScroll = function menuScroll() {
-    if ($(window).width() <= 768 && $('.ch-nav').hasClass('active')) {
-
-      if ($(this).scrollTop() > 0) {
-        $(this).siblings('.ch-logo').addClass('has-shadow');
-      } else {
-        $(this).siblings('.ch-logo').removeClass('has-shadow');
-      }
+  var toogleLogoShadow = function toogleLogoShadow() {
+    var $logo = $('.ch-logo');
+    if ($(this).scrollTop() > 0) {
+      $logo.addClass('has-shadow');
+    } else {
+      $logo.removeClass('has-shadow');
     }
   };
 
   var toggleNavCollapse = function toggleNavCollapse() {
-    $(this).parents('.ch-nav').toggleClass('collapsed');
+    $nav.toggleClass('collapsed');
   };
 
   var toggleNav = function toggleNav() {
-    $('.ch-nav').toggleClass('active');
+    $nav.toggleClass('active');
     $(toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
 
-    if (!$('.ch-nav').hasClass('active')) {
+    if (!$nav.hasClass('active')) {
       $('.ch-dropdown').removeClass('open');
     }
   };
@@ -106,7 +105,7 @@ Chameleon.Components.Menu = function () {
   $(document).on('click', buttonSelector, toggleMenuDropdown);
   $(document).on('click', collapseButtonSelector, toggleNavCollapse);
   $(document).on('click', toogleButton, toggleNav);
-  $(menu).on('scroll', menuScroll);
+  $(menu).on('scroll', toogleLogoShadow);
 };
 
 Chameleon.Components.Modal = function () {

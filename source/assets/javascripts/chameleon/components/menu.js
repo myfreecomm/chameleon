@@ -3,6 +3,7 @@ Chameleon.Components.Menu = function() {
   let collapseButtonSelector = '.ch-expand-button > button';
   let toogleButton = '[data-toogle="nav"]';
   let menu = '.ch-menu';
+  let $nav = $('.ch-nav');
 
   const toggleMenuDropdown = function() {
     let $dropdown = $(this).parent('.ch-dropdown');
@@ -18,26 +19,24 @@ Chameleon.Components.Menu = function() {
     }
   }
 
-  const menuScroll = function() {
-    if ( $(window).width() <= 768 && $('.ch-nav').hasClass('active') ) {
-
-      if ( $(this).scrollTop() > 0 ) {
-        $(this).siblings('.ch-logo').addClass('has-shadow');
-      } else {
-        $(this).siblings('.ch-logo').removeClass('has-shadow');
-      }
+  const toogleLogoShadow = function() {
+    let $logo = $('.ch-logo');
+    if ( $(this).scrollTop() > 0 ) {
+      $logo.addClass('has-shadow');
+    } else {
+      $logo.removeClass('has-shadow');
     }
   }
 
   const toggleNavCollapse = function() {
-    $(this).parents('.ch-nav').toggleClass('collapsed');
+    $nav.toggleClass('collapsed');
   }
 
   const toggleNav = function() {
-    $('.ch-nav').toggleClass('active');
+    $nav.toggleClass('active');
     $(toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
 
-    if( !$('.ch-nav').hasClass('active') ) {
+    if( !$nav.hasClass('active') ) {
       $('.ch-dropdown').removeClass('open');
     }
   }
@@ -45,5 +44,5 @@ Chameleon.Components.Menu = function() {
   $(document).on('click', buttonSelector,  toggleMenuDropdown);
   $(document).on('click', collapseButtonSelector, toggleNavCollapse);
   $(document).on('click', toogleButton, toggleNav);
-  $(menu).on('scroll', menuScroll);
+  $(menu).on('scroll', toogleLogoShadow);
 }
