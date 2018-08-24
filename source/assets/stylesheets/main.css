@@ -113,6 +113,9 @@
     .ch-expand-button {
       display: none; } }
 
+.more button {
+  outline: 0; }
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
@@ -5210,8 +5213,7 @@ readers do not read off random characters that represent icons */
     z-index: 2; }
     .ch-nav.active .ch-menu-item.more > button {
       width: 60px;
-      height: 60px;
-      padding: 0; }
+      height: 60px; }
     .ch-nav.active .ch-menu-item.more > button > .fa-icon {
       font-size: 1.5em; } }
 
