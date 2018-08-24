@@ -5043,7 +5043,7 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: flex-start; }
   .ch-logo.has-shadow {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2); }
   .ch-logo-label {
     white-space: nowrap; }
   .ch-logo-icon {
