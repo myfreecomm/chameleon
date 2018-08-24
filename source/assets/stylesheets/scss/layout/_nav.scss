@@ -8,6 +8,7 @@
   flex-direction: column;
   background-color: color(navy, tone-70);
   z-index: 2;
+  overflow-x: hidden;
 
   &.collapsed {
     width: $navbarCollapsedSize;

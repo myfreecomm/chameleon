@@ -5073,7 +5073,8 @@ readers do not read off random characters that represent icons */
         display: none; } }
 
 .ch-menu {
-  overflow-y: auto;
+  width: calc(100% + 10px);
+  overflow-y: scroll;
   overflow-x: hidden; }
   @media screen and (max-width: 768px) {
     .ch-nav:not(.active) .ch-menu {
@@ -6116,7 +6117,8 @@ readers do not read off random characters that represent icons */
   display: flex;
   flex-direction: column;
   background-color: #2D394C;
-  z-index: 2; }
+  z-index: 2;
+  overflow-x: hidden; }
   .ch-nav.collapsed {
     width: 60px;
     transition: all .2s; }
