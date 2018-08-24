@@ -5859,7 +5859,9 @@ readers do not read off random characters that represent icons */
     border-radius: 100%;
     transform: translate(0, -75%); }
     .ch-nav:not(.active) .ch-tag--new.ui.label:before {
-      content: ''; } }
+      content: ''; }
+  .ch-nav.active .ch-tag--new.ui.label {
+    font-size: .75em; } }
 
 .ch-timeline {
   padding-bottom: 20px;

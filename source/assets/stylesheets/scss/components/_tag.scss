@@ -53,5 +53,13 @@
         }
       }
     }
+
+    .ch-nav.active & {
+      &--new {
+        &.ui.label {
+          font-size: .75em;
+        }
+      }
+    }
   }
 }
