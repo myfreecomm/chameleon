@@ -6348,8 +6348,8 @@ readers do not read off random characters that represent icons */
       position: fixed;
       width: 100%;
       height: calc(100% - 60px);
-      top: 0;
-      left: 0; } }
+      top: 0 !important;
+      left: 0 !important; } }
 
 .ch-account-header {
   display: flex;
@@ -6360,9 +6360,17 @@ readers do not read off random characters that represent icons */
   font-size: 1em;
   border-bottom: 1px solid #EDEFF2; }
   .ch-account-header .ch-search-form-input {
-    font-size: 1em; }
+    font-size: 1em;
+    margin-left: 15px; }
   .ch-account-header > .actions {
     margin-left: auto; }
+    .ch-account-header > .actions .btn-close {
+      margin-left: 15px; }
+  @media screen and (max-width: 768px) {
+    .ch-account-header {
+      height: 60px; }
+      .ch-account-header > .actions {
+        display: flex; } }
 
 .ch-account-content {
   position: absolute;
@@ -6409,6 +6417,9 @@ readers do not read off random characters that represent icons */
     box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.15) inset; }
     .ch-account-content > .menu .submenu li.active > a:before {
       content: none; }
+  @media screen and (max-width: 768px) {
+    .ch-account-content {
+      height: calc(100% - 60px); } }
 
 .ch-account .ch-dropdown-toggle {
   white-space: nowrap; }
