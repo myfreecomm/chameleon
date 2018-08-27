@@ -64,6 +64,7 @@ Chameleon.Components.Menu = function () {
   var collapseButtonSelector = '.ch-expand-button > button';
   var toogleButton = '[data-toogle="nav"]';
   var menu = '.ch-menu';
+  var buttonMoreOptions = '.btn-more-options';
   var $nav = $('.ch-nav');
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
@@ -102,9 +103,15 @@ Chameleon.Components.Menu = function () {
     }
   };
 
+  var moreOptions = function moreOptions() {
+    $('.ch-header-nav').toggleClass('active');
+    $(this).find('.fa-icon').switchClass('fa-angle-double-left', 'fa-angle-double-right');
+  };
+
   $(document).on('click', buttonSelector, toggleMenuDropdown);
   $(document).on('click', collapseButtonSelector, toggleNavCollapse);
   $(document).on('click', toogleButton, toggleNav);
+  $(document).on('click', buttonMoreOptions, moreOptions);
   $(menu).on('scroll', toogleLogoShadow);
 };
 
