@@ -23,6 +23,10 @@
     padding-left: 10px;
     color: currentColor;
     transition: all .3s;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
 
     button {
       font-family: $fontFamily;
@@ -56,3 +60,18 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .ch-header-nav-button {
+    display: none;
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: block;
+    }
+  }
+}
+
+
+

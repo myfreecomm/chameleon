@@ -1,16 +1,16 @@
 .mobile-only {
-  display: none;
+  display: none !important;
 
   @media screen and (max-width: 768px) {
-    display: block;
+    display: block !important;
   }
 }
 
 .computer-only {
-  display: none;
+  display: none !important;
 
   @media screen and (min-width: 769px) {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -161,4 +161,12 @@
 
 .more button {
   outline: 0;
+}
+
+.btn-more-options {
+
+  &.ch-header-nav-button {
+    order: 1;
+    padding-right: 0;
+  }
 }
