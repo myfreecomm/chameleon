@@ -3,6 +3,7 @@ Chameleon.Components.Menu = function() {
   let collapseButtonSelector = '.ch-expand-button > button';
   let toogleButton = '[data-toogle="nav"]';
   let menu = '.ch-menu';
+  let buttonMoreOptions = '.btn-more-options';
   let $nav = $('.ch-nav');
 
   const toggleMenuDropdown = function() {
@@ -41,8 +42,14 @@ Chameleon.Components.Menu = function() {
     }
   }
 
+  const moreOptions = function() {
+    $('.ch-header-nav').toggleClass('active');
+    $(this).find('.fa-icon').switchClass('fa-angle-double-left', 'fa-angle-double-right');
+  }
+
   $(document).on('click', buttonSelector,  toggleMenuDropdown);
   $(document).on('click', collapseButtonSelector, toggleNavCollapse);
   $(document).on('click', toogleButton, toggleNav);
+  $(document).on('click', buttonMoreOptions, moreOptions);
   $(menu).on('scroll', toogleLogoShadow);
 }

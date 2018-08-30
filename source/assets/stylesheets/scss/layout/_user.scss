@@ -58,4 +58,14 @@
     width: 330px;
   }
 
+  @media screen and (max-width: 480px) {
+    .ch-dropdown-content {
+      position: fixed;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      right: auto;
+    }
+  }
+
 }

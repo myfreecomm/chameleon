@@ -5,16 +5,16 @@
   text-overflow: ellipsis; }
 
 .mobile-only {
-  display: none; }
+  display: none !important; }
   @media screen and (max-width: 768px) {
     .mobile-only {
-      display: block; } }
+      display: block !important; } }
 
 .computer-only {
-  display: none; }
+  display: none !important; }
   @media screen and (min-width: 769px) {
     .computer-only {
-      display: block; } }
+      display: block !important; } }
 
 .grow {
   flex-grow: 1; }
@@ -116,6 +116,11 @@
 .more button {
   outline: 0; }
 
+.btn-more-options.ch-header-nav-button {
+  order: 1;
+  padding-right: 0;
+  font-size: 1.25em; }
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
@@ -129,9 +134,9 @@
     opacity: 1; } }
 
 :root [data-theme="default"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #00BBDA;
+  --main-color-dark: #00a5c1;
+  --main-color-light: #00c8e9; }
 
 [data-theme="default"] .ch-login:after {
   background-color: #00a5c1; }
@@ -143,9 +148,9 @@
   background-color: #00c8e9; }
 
 :root [data-theme="myfinance"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #224168;
+  --main-color-dark: #1c3555;
+  --main-color-light: #264874; }
 
 [data-theme="myfinance"] .ch-login:after {
   background-color: #1c3555; }
@@ -157,9 +162,9 @@
   background-color: #264874; }
 
 :root [data-theme="cobrato"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #D88414;
+  --main-color-dark: #c17612;
+  --main-color-light: #e68d15; }
 
 [data-theme="cobrato"] .ch-login:after {
   background-color: #c17612; }
@@ -171,9 +176,9 @@
   background-color: #e68d15; }
 
 :root [data-theme="billimatic"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #6B180F;
+  --main-color-dark: #55130c;
+  --main-color-light: #781b11; }
 
 [data-theme="billimatic"] .ch-login:after {
   background-color: #55130c; }
@@ -185,9 +190,9 @@
   background-color: #781b11; }
 
 :root [data-theme="contabilone"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #832664;
+  --main-color-dark: #6f2055;
+  --main-color-light: #8f296d; }
 
 [data-theme="contabilone"] .ch-login:after {
   background-color: #6f2055; }
@@ -199,9 +204,9 @@
   background-color: #8f296d; }
 
 :root [data-theme="emites"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #0C4E43;
+  --main-color-dark: #093830;
+  --main-color-light: #0e5b4e; }
 
 [data-theme="emites"] .ch-login:after {
   background-color: #093830; }
@@ -213,9 +218,9 @@
   background-color: #0e5b4e; }
 
 :root [data-theme="rexpense"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #3BB3A4;
+  --main-color-dark: #35a092;
+  --main-color-light: #3fbfaf; }
 
 [data-theme="rexpense"] .ch-login:after {
   background-color: #35a092; }
@@ -227,9 +232,9 @@
   background-color: #3fbfaf; }
 
 :root [data-theme="passaporteWeb"] {
-  --main-color: $mainColor;
-  --main-color-dark: $mainColorDark;
-  --main-color-light: $mainColorLight; }
+  --main-color: #242633;
+  --main-color-dark: #191b24;
+  --main-color-light: #2a2d3c; }
 
 [data-theme="passaporteWeb"] .ch-login:after {
   background-color: #191b24; }
@@ -5077,7 +5082,7 @@ readers do not read off random characters that represent icons */
 
 .ch-menu {
   width: calc(100% + 10px);
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden; }
   @media screen and (max-width: 768px) {
     .ch-nav:not(.active) .ch-menu {
@@ -6091,7 +6096,11 @@ readers do not read off random characters that represent icons */
     padding-right: 10px;
     padding-left: 10px;
     color: currentColor;
-    transition: all .3s; }
+    transition: all .3s;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer; }
     .ch-header-nav-button button {
       font-family: "Roboto", sans-serif;
       border: none;
@@ -6110,6 +6119,23 @@ readers do not read off random characters that represent icons */
     .ch-header-nav-button.ch-account .fa-icon.dropdown {
       margin-left: .25rem;
       font-size: .65em; }
+
+@media screen and (max-width: 768px) {
+  .ch-header-nav.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: #F9FBFF; }
+  .ch-header-nav-button {
+    display: none; }
+    .ch-header-nav-button:first-child, .ch-header-nav-button:nth-child(2), .ch-header-nav-button:nth-child(3) {
+      display: block; }
+    .ch-header-nav.active .ch-header-nav-button {
+      display: block; } }
 
 .ch-nav {
   position: fixed;
@@ -6321,9 +6347,10 @@ readers do not read off random characters that represent icons */
     .ch-account-container {
       position: fixed;
       width: 100%;
-      height: calc(100% - 60px);
-      top: 0;
-      left: 0; } }
+      height: 100%;
+      top: 0 !important;
+      left: 0 !important;
+      z-index: 2; } }
 
 .ch-account-header {
   display: flex;
@@ -6334,9 +6361,17 @@ readers do not read off random characters that represent icons */
   font-size: 1em;
   border-bottom: 1px solid #EDEFF2; }
   .ch-account-header .ch-search-form-input {
-    font-size: 1em; }
+    font-size: 1em;
+    margin-left: 15px; }
   .ch-account-header > .actions {
     margin-left: auto; }
+    .ch-account-header > .actions .btn-close {
+      margin-left: 15px; }
+  @media screen and (max-width: 768px) {
+    .ch-account-header {
+      height: 60px; }
+      .ch-account-header > .actions {
+        display: flex; } }
 
 .ch-account-content {
   position: absolute;
@@ -6383,6 +6418,9 @@ readers do not read off random characters that represent icons */
     box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.15) inset; }
     .ch-account-content > .menu .submenu li.active > a:before {
       content: none; }
+  @media screen and (max-width: 768px) {
+    .ch-account-content {
+      height: calc(100% - 60px); } }
 
 .ch-account .ch-dropdown-toggle {
   white-space: nowrap; }
@@ -6429,6 +6467,14 @@ readers do not read off random characters that represent icons */
 
 .ch-user .ch-dropdown-content {
   width: 330px; }
+
+@media screen and (max-width: 480px) {
+  .ch-user .ch-dropdown-content {
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    right: auto; } }
 
 .ch-blankslate {
   width: 100%;

@@ -6,9 +6,10 @@
     @media screen and (max-width: 768px) {
       position: fixed;
       width: 100%;
-      height: calc(100% - 60px);
-      top: 0;
-      left: 0;
+      height: 100%;
+      top: 0 !important;
+      left: 0 !important;
+      z-index: 2;
     }
   }
 
@@ -23,10 +24,23 @@
 
     .ch-search-form-input {
       font-size: 1em;
+      margin-left: 15px;
     }
 
     > .actions {
       margin-left: auto;
+
+      .btn-close {
+        margin-left: 15px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 60px;
+
+      > .actions {
+        display: flex;
+      }
     }
   }
 
@@ -96,6 +110,10 @@
       li.active > a:before {
         content: none;
       }
+    }
+
+    @media screen and (max-width: 768px) {
+      height: calc(100% - 60px);
     }
   }
 

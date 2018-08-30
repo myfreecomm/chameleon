@@ -23,6 +23,10 @@
     padding-left: 10px;
     color: currentColor;
     transition: all .3s;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
 
     button {
       font-family: $fontFamily;
@@ -56,3 +60,34 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .ch-header-nav {
+    &.active {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 65px;
+      padding: 20px;
+      justify-content: space-between;
+      background-color: color(navy, tone-0);
+    }
+  }
+
+  .ch-header-nav-button {
+    display: none;
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: block;
+    }
+
+    .ch-header-nav.active & {
+      display: block;
+    }
+  }
+}
+
+
