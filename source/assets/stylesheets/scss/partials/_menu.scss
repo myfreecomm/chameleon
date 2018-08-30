@@ -2,7 +2,7 @@
 
 .ch-menu {
   width: calc(100% + 10px);
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   @media screen and (max-width: 768px) {

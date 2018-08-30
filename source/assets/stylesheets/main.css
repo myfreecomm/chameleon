@@ -5082,7 +5082,7 @@ readers do not read off random characters that represent icons */
 
 .ch-menu {
   width: calc(100% + 10px);
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden; }
   @media screen and (max-width: 768px) {
     .ch-nav:not(.active) .ch-menu {
@@ -6129,8 +6129,7 @@ readers do not read off random characters that represent icons */
     height: 65px;
     padding: 20px;
     justify-content: space-between;
-    background-color: #F9FBFF;
-    z-index: 1; }
+    background-color: #F9FBFF; }
   .ch-header-nav-button {
     display: none; }
     .ch-header-nav-button:first-child, .ch-header-nav-button:nth-child(2), .ch-header-nav-button:nth-child(3) {
@@ -6467,6 +6466,14 @@ readers do not read off random characters that represent icons */
 
 .ch-user .ch-dropdown-content {
   width: 330px; }
+
+@media screen and (max-width: 480px) {
+  .ch-user .ch-dropdown-content {
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    right: auto; } }
 
 .ch-blankslate {
   width: 100%;
