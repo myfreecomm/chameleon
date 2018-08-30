@@ -6347,9 +6347,10 @@ readers do not read off random characters that represent icons */
     .ch-account-container {
       position: fixed;
       width: 100%;
-      height: calc(100% - 60px);
+      height: 100%;
       top: 0 !important;
-      left: 0 !important; } }
+      left: 0 !important;
+      z-index: 2; } }
 
 .ch-account-header {
   display: flex;
