@@ -78,6 +78,10 @@
     }
   }
 
+  &-label {
+    white-space: nowrap;
+  }
+
   &.ch-dropdown {
     > .ch-dropdown-content {
       display: none;
@@ -96,7 +100,7 @@
 
     > .ch-dropdown-button > .fa-icon.dropdown {
       position: absolute;
-      margin-right: 1em;
+      margin-right: 2.5em;
       font-size: .65em;
       top: 50%;
       right: 0;

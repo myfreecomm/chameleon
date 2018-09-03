@@ -5140,6 +5140,9 @@ readers do not read off random characters that represent icons */
   color: #949FB2;
   pointer-events: none; }
 
+.ch-menu-item-label {
+  white-space: nowrap; }
+
 .ch-menu-item.ch-dropdown > .ch-dropdown-content {
   display: none;
   position: relative;
@@ -5154,7 +5157,7 @@ readers do not read off random characters that represent icons */
 
 .ch-menu-item.ch-dropdown > .ch-dropdown-button > .fa-icon.dropdown {
   position: absolute;
-  margin-right: 1em;
+  margin-right: 2.5em;
   font-size: .65em;
   top: 50%;
   right: 0;
@@ -5849,6 +5852,7 @@ readers do not read off random characters that represent icons */
   left: 50%;
   width: 12px;
   height: 12px;
+  margin-left: 0;
   font-size: 0;
   border-radius: 100%;
   transform: translate(0, -75%); }
@@ -5987,7 +5991,8 @@ readers do not read off random characters that represent icons */
   @media screen and (max-width: 768px) {
     .ch-content {
       width: 100%;
-      margin: 0; } }
+      margin: 0;
+      padding-bottom: 60px; } }
 
 .ch-avatar-container {
   width: 35px; }
