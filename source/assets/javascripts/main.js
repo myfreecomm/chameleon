@@ -25,34 +25,43 @@ $(document).ready(function () {
 });
 
 Chameleon.Components.Dropdown = function () {
-  var $nav = $('.ch-nav');
-  var $dropdownContainer = $('.ch-dropdown-content');
+  var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
 
-  var dropdown = function dropdown(event) {
-    document.querySelectorAll('.ch-dropdown-toggle').forEach(function (button) {
-      var dropdownMenu = button.nextElementSibling;
-
-      if (event.target === button || event.target.parentElement === button) {
-
-        if (dropdownMenu.classList.contains('visible') === false) {
-          dropdownMenu.classList.add('visible');
-          dropdownMenu.parentElement.classList.add('active');
-        } else {
-          dropdownMenu.classList.remove('visible');
-          dropdownMenu.parentElement.classList.remove('active');
-        }
-      } else if (event.target.offsetParent === dropdownMenu) {
-
-        return;
-      } else {
-
-        dropdownMenu.classList.remove('visible');
-        dropdownMenu.parentElement.classList.remove('active');
-      }
-    });
+  var show = function show(dropdownMenu) {
+    dropdownMenu.classList.add('visible');
+    dropdownMenu.parentElement.classList.add('active');
   };
 
-  $(document).on('click', dropdown);
+  var hide = function hide(dropdownMenu) {
+    dropdownMenu.classList.remove('visible');
+    dropdownMenu.parentElement.classList.remove('active');
+  };
+
+  var toggle = function toggle(dropdownMenu) {
+    if (dropdownMenu.classList.contains('visible') === false) {
+      show(dropdownMenu);
+    } else {
+      hide(dropdownMenu);
+    }
+  };
+
+  var create = function create(button) {
+    var dropdownMenu = button.nextElementSibling;
+
+    if (event.target === button || event.target.parentElement === button) {
+      toggle(dropdownMenu);
+    } else if (event.target.offsetParent === dropdownMenu) {
+      return;
+    } else {
+      hide(dropdownMenu);
+    }
+  };
+
+  var dropdown = function dropdown(event) {
+    dropdownButtons.forEach(create);
+  };
+
+  document.addEventListener('click', dropdown);
 };
 
 Chameleon.Components.Menu = function () {

@@ -1,33 +1,39 @@
 Chameleon.Components.Dropdown = function() {
-  let $nav               = $('.ch-nav');
-  let $dropdownContainer = $('.ch-dropdown-content');
+  const dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
 
-  const dropdown = function(event) {
-    document.querySelectorAll('.ch-dropdown-toggle').forEach(function(button) {
-      var dropdownMenu = button.nextElementSibling;
-
-      if ( event.target === button || event.target.parentElement === button ) {
-
-        if ( dropdownMenu.classList.contains('visible') === false ) {
-          dropdownMenu.classList.add('visible');
-          dropdownMenu.parentElement.classList.add('active');
-        } else {
-          dropdownMenu.classList.remove('visible');
-          dropdownMenu.parentElement.classList.remove('active');
-        }
-
-      } else if ( event.target.offsetParent === dropdownMenu) {
-
-        return;
-
-      } else {
-
-        dropdownMenu.classList.remove('visible');
-        dropdownMenu.parentElement.classList.remove('active');
-
-      }
-    });
+  const show = function(dropdownMenu) {
+    dropdownMenu.classList.add('visible');
+    dropdownMenu.parentElement.classList.add('active');
   }
 
-  $(document).on('click', dropdown);
+  const hide = function(dropdownMenu) {
+    dropdownMenu.classList.remove('visible');
+    dropdownMenu.parentElement.classList.remove('active');
+  }
+
+  const toggle = function(dropdownMenu) {
+    if ( dropdownMenu.classList.contains('visible') === false ) {
+      show(dropdownMenu);
+    } else {
+      hide(dropdownMenu);
+    }
+  }
+
+  const create = function(button) {
+    let dropdownMenu = button.nextElementSibling;
+
+    if ( event.target === button || event.target.parentElement === button ) {
+      toggle(dropdownMenu)
+    } else if ( event.target.offsetParent === dropdownMenu) {
+      return;
+    } else {
+      hide(dropdownMenu);
+    }
+  }
+
+  const dropdown = function(event) {
+    dropdownButtons.forEach(create);
+  }
+
+  document.addEventListener('click', dropdown);
 }
