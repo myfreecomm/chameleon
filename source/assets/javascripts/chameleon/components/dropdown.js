@@ -4,14 +4,18 @@ Chameleon.Components.Dropdown = function() {
 
   const open = function(e) {
     if ( $(this).siblings().hasClass('visible') ) {
+      $dropdownContainer.parent().removeClass('active');
       $dropdownContainer.removeClass('visible');
     } else {
       $dropdownContainer.removeClass('visible');
-      $(this).siblings().addClass('visible')
+      $dropdownContainer.parent().removeClass('active');
+      $(this).parent().addClass('active');
+      $(this).siblings().addClass('visible');
     }
   }
 
   const closeButton = function() {
+    $(this).parents('.ch-dropdown').removeClass('active');
     $(this).parents('.ch-dropdown-content').removeClass('visible');
   }
 
@@ -20,6 +24,7 @@ Chameleon.Components.Dropdown = function() {
       $container.has(event.target).length === 0 &&
       $container.parent().has(event.target).length === 0)
     {
+      $container.parent().removeClass('active');
       $container.removeClass('visible');
       $container.unbind('mouseup');
     }

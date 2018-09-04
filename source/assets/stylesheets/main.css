@@ -5314,6 +5314,8 @@ readers do not read off random characters that represent icons */
     .ch-dropdown-menu-item:hover .ui.image.avatar ~ .ui.button {
       visibility: visible;
       opacity: 1; }
+    .ch-dropdown-menu-item:hover a {
+      color: #777A7F; }
     .ch-dropdown-menu-item .ui.image.avatar {
       margin-right: 10px; }
     .ch-dropdown-menu-item .ui.image.avatar ~ .ui.button {
@@ -5489,13 +5491,13 @@ readers do not read off random characters that represent icons */
     .ch-search-form-icon {
       margin-left: 5px;
       margin-right: 10px;
-      color: #8e929a;
+      color: #46494c;
       order: -1;
       border: none;
       background: none;
       outline: 0; }
       .ch-search-form-icon:hover, .ch-search-form-icon:active {
-        color: #8e929a; }
+        color: #46494c; }
       .ch-search-form-icon.btn-close {
         order: 1; }
     .ch-search-form:before, .ch-search-form:after {
@@ -6093,11 +6095,11 @@ readers do not read off random characters that represent icons */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #A9ACB2; }
+  color: #5F6266; }
   .ch-header-nav-button {
     display: block;
-    padding-right: 10px;
-    padding-left: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     color: currentColor;
     transition: all .3s;
     background: transparent;
@@ -6111,7 +6113,7 @@ readers do not read off random characters that represent icons */
       outline: 0;
       cursor: pointer; }
     .ch-header-nav-button:hover, .ch-header-nav-button.active {
-      color: #8e929a;
+      color: #919499;
       border-radius: 3px; }
     .ch-header-nav-button:last-child {
       padding-right: 0; }
@@ -6122,6 +6124,8 @@ readers do not read off random characters that represent icons */
     .ch-header-nav-button.ch-account .fa-icon.dropdown {
       margin-left: .25rem;
       font-size: .65em; }
+    .ch-header-nav-button.ch-account.active button {
+      color: #777A7F; }
 
 @media screen and (max-width: 768px) {
   .ch-header-nav.active {
@@ -6400,6 +6404,8 @@ readers do not read off random characters that represent icons */
       color: inherit;
       display: block;
       padding: 10px 25px; }
+    .ch-account-content .menu > ul li:hover > a {
+      color: #777A7F; }
     .ch-account-content .menu > ul li.active > a {
       position: relative;
       font-weight: bold; }

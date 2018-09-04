@@ -85,6 +85,10 @@
         visibility: visible;
         opacity: 1;
       }
+
+      a {
+        color: color(neutrals, tone-50);
+      }
     }
 
     .ui.image.avatar {

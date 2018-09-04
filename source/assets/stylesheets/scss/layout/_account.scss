@@ -82,6 +82,10 @@
         padding: 10px 25px;
       }
 
+      li:hover > a {
+        color: color(neutrals, tone-50);
+      }
+
       li.active  > a {
         position: relative;
         font-weight: bold;
