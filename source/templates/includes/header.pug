@@ -29,7 +29,14 @@ header.ch-header
       .ch-dropdown-toggle
         i.ch-notification-label.fal.fa-cog.fa-1_5x
 
-      .ch-dropdown-content.bottom.right(tabindex="-1").
+      .ch-dropdown-content.bottom.right(tabindex="-1")
+        span.ch-dropdown-header Configurações
+        ul.ch-dropdown-menu
+          -
+            var accounts = ["Minha conta", "Ajuda"]
+          each account in accounts
+            li(class="ch-dropdown-menu-item")
+              a(href="#")= account
 
     include ../partials/account.pug
 

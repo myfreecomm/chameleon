@@ -5157,7 +5157,7 @@ readers do not read off random characters that represent icons */
 
 .ch-menu-item.ch-dropdown > .ch-dropdown-button > .fa-icon.dropdown {
   position: absolute;
-  margin-right: 2.5em;
+  margin-right: 2.2em;
   font-size: .65em;
   top: 50%;
   right: 0;
@@ -5264,6 +5264,7 @@ readers do not read off random characters that represent icons */
     position: absolute;
     top: 0;
     left: 84px;
+    min-width: 200px;
     font-weight: 400;
     color: #47494C;
     background-color: #fff;
@@ -5298,19 +5299,18 @@ readers do not read off random characters that represent icons */
         left: 0; }
   .ch-dropdown-header, .ch-dropdown-menu-item a {
     display: block;
-    padding: 15px 25px;
-    font-size: inherit;
-    text-transform: uppercase;
+    padding: 10px 25px;
+    font-size: 1em;
     white-space: nowrap;
     color: #47494C; }
   .ch-dropdown-header {
-    font-weight: bold; }
+    color: #777A7F; }
   .ch-dropdown-menu-item {
     position: relative; }
     .ch-dropdown-menu-item:first-child {
       border-top: 0; }
-    .ch-dropdown-menu-item a:hover, .ch-dropdown-menu-item.active {
-      background-color: rgba(0, 0, 0, 0.02); }
+    .ch-dropdown-menu-item.active {
+      font-weight: bold; }
     .ch-dropdown-menu-item:hover .ui.image.avatar ~ .ui.button {
       visibility: visible;
       opacity: 1; }
@@ -6088,8 +6088,6 @@ readers do not read off random characters that represent icons */
   align-items: center;
   height: 65px;
   background-color: #fff; }
-  .ch-header .ch-dropdown-content {
-    min-width: 250px; }
 
 .ch-header-nav {
   display: flex;
