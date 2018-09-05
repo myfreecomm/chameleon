@@ -26,6 +26,7 @@ $(document).ready(function () {
 
 Chameleon.Components.Dropdown = function () {
   var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
+  var dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');
 
   var show = function show(dropdownMenu) {
     dropdownMenu.classList.add('visible');
@@ -56,6 +57,14 @@ Chameleon.Components.Dropdown = function () {
       hide(dropdownMenu);
     }
   };
+
+  var close = function close(button) {
+    button.addEventListener('click', function (dropdownMenu) {
+      hide(this.offsetParent);
+    });
+  };
+
+  dropdownCloseButtons.forEach(close);
 
   var dropdown = function dropdown(event) {
     dropdownButtons.forEach(create);

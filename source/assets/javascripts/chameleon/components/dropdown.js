@@ -1,5 +1,6 @@
 Chameleon.Components.Dropdown = function() {
   const dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
+  const dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');
 
   const show = function(dropdownMenu) {
     dropdownMenu.classList.add('visible');
@@ -30,6 +31,14 @@ Chameleon.Components.Dropdown = function() {
       hide(dropdownMenu);
     }
   }
+
+  const close = function(button) {
+    button.addEventListener('click', function(dropdownMenu) {
+      hide(this.offsetParent)
+    })
+  }
+
+  dropdownCloseButtons.forEach(close)
 
   const dropdown = function(event) {
     dropdownButtons.forEach(create);
