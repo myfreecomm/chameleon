@@ -35,15 +35,26 @@ Chameleon.Components.Dropdown = function() {
   }
 
   const definePosition = function(dropdownMenu) {
-    let validPositions = ['top', 'right', 'left', 'bottom'];
-    let initialPosition = dropdownMenu.dataset.position.split(" ");
+    if (dropdownMenu.dataset.position) {
+      let validPositions = ['top', 'right', 'left', 'bottom'];
+      let initialPosition = dropdownMenu.dataset.position.split(" ");
 
-    dropdownMenu.classList.remove(...validPositions);
-    dropdownMenu.classList.add(...initialPosition);
+      dropdownMenu.classList.remove(...validPositions);
+      dropdownMenu.classList.add(...initialPosition);
 
-    if ( $(dropdownMenu).offset().left < 0 ) {
+      positionLastResort(dropdownMenu);
+    }
+  }
+
+  const positionLastResort = function(dropdownMenu) {
+    if ( $(dropdownMenu).offset().left < 0 ) { //Find a better way of making this with vanilla JS
       dropdownMenu.classList.remove('right');
       dropdownMenu.classList.add('left');
+    }
+
+    if ( document.body.clientWidth < window.innerWidth ) {
+      dropdownMenu.classList.remove('left');
+      dropdownMenu.classList.add('right');
     }
   }
 

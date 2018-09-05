@@ -63,17 +63,29 @@ Chameleon.Components.Dropdown = function () {
   };
 
   var definePosition = function definePosition(dropdownMenu) {
-    var _dropdownMenu$classLi, _dropdownMenu$classLi2;
+    if (dropdownMenu.dataset.position) {
+      var _dropdownMenu$classLi, _dropdownMenu$classLi2;
 
-    var validPositions = ['top', 'right', 'left', 'bottom'];
-    var initialPosition = dropdownMenu.dataset.position.split(" ");
+      var validPositions = ['top', 'right', 'left', 'bottom'];
+      var initialPosition = dropdownMenu.dataset.position.split(" ");
 
-    (_dropdownMenu$classLi = dropdownMenu.classList).remove.apply(_dropdownMenu$classLi, validPositions);
-    (_dropdownMenu$classLi2 = dropdownMenu.classList).add.apply(_dropdownMenu$classLi2, _toConsumableArray(initialPosition));
+      (_dropdownMenu$classLi = dropdownMenu.classList).remove.apply(_dropdownMenu$classLi, validPositions);
+      (_dropdownMenu$classLi2 = dropdownMenu.classList).add.apply(_dropdownMenu$classLi2, _toConsumableArray(initialPosition));
 
+      positionLastResort(dropdownMenu);
+    }
+  };
+
+  var positionLastResort = function positionLastResort(dropdownMenu) {
     if ($(dropdownMenu).offset().left < 0) {
+      //Find a better way of making this with vanilla JS
       dropdownMenu.classList.remove('right');
       dropdownMenu.classList.add('left');
+    }
+
+    if (document.body.clientWidth < window.innerWidth) {
+      dropdownMenu.classList.remove('left');
+      dropdownMenu.classList.add('right');
     }
   };
 
