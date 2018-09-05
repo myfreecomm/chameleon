@@ -6387,14 +6387,18 @@ readers do not read off random characters that represent icons */
   height: calc(100% - 50px);
   bottom: 0;
   right: 0; }
-  .ch-account-content .menu {
+  .ch-account-content .menu, .ch-account-content .submenu {
     width: 50%;
-    height: 100%; }
-    .ch-account-content .menu ul {
-      overflow-y: hidden;
-      height: calc(100% - 40px); }
-      .ch-account-content .menu ul:hover {
-        overflow-y: auto; }
+    height: 100%;
+    overflow: hidden; }
+  .ch-account-content .menu .ch-dropdown-menu {
+    padding-right: 20px;
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow-y: hidden;
+    box-sizing: content-box; }
+    .ch-account-content .menu .ch-dropdown-menu:hover {
+      overflow-y: auto; }
   .ch-account-content .menu > .ch-dropdown-menu {
     max-height: 100%; }
     .ch-account-content .menu > .ch-dropdown-menu .ch-dropdown-menu-item {
@@ -6419,8 +6423,6 @@ readers do not read off random characters that represent icons */
         transform: translateY(-50%); }
   .ch-account-content .submenu {
     position: absolute;
-    width: 50%;
-    height: 100%;
     top: 0;
     left: 50%;
     font-weight: normal;
