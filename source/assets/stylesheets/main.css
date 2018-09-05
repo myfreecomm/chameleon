@@ -6432,7 +6432,14 @@ readers do not read off random characters that represent icons */
       height: calc(100% - 60px); } }
 
 .ch-account .ch-dropdown-toggle {
-  white-space: nowrap; }
+  white-space: nowrap;
+  display: flex;
+  align-items: center; }
+  .ch-account .ch-dropdown-toggle .fa-icon.dropdown {
+    transition: all .3s; }
+
+.ch-account.active > .ch-dropdown-toggle .fa-icon.dropdown {
+  transform: rotate(180deg); }
 
 .ch-user-header .avatar {
   width: 54px;

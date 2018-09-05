@@ -124,6 +124,18 @@
   .ch-dropdown {
     &-toggle {
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+
+      .fa-icon.dropdown {
+        transition: all .3s;
+      }
+    }
+  }
+
+  &.active > .ch-dropdown-toggle {
+    .fa-icon.dropdown {
+      transform: rotate(180deg);
     }
   }
 }
