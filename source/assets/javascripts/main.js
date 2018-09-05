@@ -1,5 +1,7 @@
 'use strict';
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 if (window.Chameleon === undefined) {
   window.Chameleon = {};
 }
@@ -31,6 +33,8 @@ Chameleon.Components.Dropdown = function () {
   var show = function show(dropdownMenu) {
     dropdownMenu.classList.add('visible');
     dropdownMenu.parentElement.classList.add('active');
+
+    definePosition(dropdownMenu);
   };
 
   var hide = function hide(dropdownMenu) {
@@ -55,6 +59,21 @@ Chameleon.Components.Dropdown = function () {
       return;
     } else {
       hide(dropdownMenu);
+    }
+  };
+
+  var definePosition = function definePosition(dropdownMenu) {
+    var _dropdownMenu$classLi, _dropdownMenu$classLi2;
+
+    var validPositions = ['top', 'right', 'left', 'bottom'];
+    var initialPosition = dropdownMenu.dataset.position.split(" ");
+
+    (_dropdownMenu$classLi = dropdownMenu.classList).remove.apply(_dropdownMenu$classLi, validPositions);
+    (_dropdownMenu$classLi2 = dropdownMenu.classList).add.apply(_dropdownMenu$classLi2, _toConsumableArray(initialPosition));
+
+    if ($(dropdownMenu).offset().left < 0) {
+      dropdownMenu.classList.remove('right');
+      dropdownMenu.classList.add('left');
     }
   };
 

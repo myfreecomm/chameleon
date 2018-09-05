@@ -5,6 +5,8 @@ Chameleon.Components.Dropdown = function() {
   const show = function(dropdownMenu) {
     dropdownMenu.classList.add('visible');
     dropdownMenu.parentElement.classList.add('active');
+
+    definePosition(dropdownMenu);
   }
 
   const hide = function(dropdownMenu) {
@@ -32,13 +34,26 @@ Chameleon.Components.Dropdown = function() {
     }
   }
 
+  const definePosition = function(dropdownMenu) {
+    let validPositions = ['top', 'right', 'left', 'bottom'];
+    let initialPosition = dropdownMenu.dataset.position.split(" ");
+
+    dropdownMenu.classList.remove(...validPositions);
+    dropdownMenu.classList.add(...initialPosition);
+
+    if ( $(dropdownMenu).offset().left < 0 ) {
+      dropdownMenu.classList.remove('right');
+      dropdownMenu.classList.add('left');
+    }
+  }
+
   const close = function(button) {
     button.addEventListener('click', function(dropdownMenu) {
-      hide(this.offsetParent)
+      hide(this.offsetParent);
     })
   }
 
-  dropdownCloseButtons.forEach(close)
+  dropdownCloseButtons.forEach(close);
 
   const dropdown = function(event) {
     dropdownButtons.forEach(create);
