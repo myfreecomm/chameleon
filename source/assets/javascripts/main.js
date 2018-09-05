@@ -26,6 +26,96 @@ $(document).ready(function () {
   Chameleon.init();
 });
 
+Chameleon.Plugins.Notification = function () {
+  var setTemplate = function setTemplate(settings) {
+    var template = '';
+
+    switch (settings.theme) {
+      case 'chameleon':
+        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li>';
+        break;
+      case 'semanticUI':
+        var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
+
+        template = '<li class="ui icon message tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
+        break;
+    }
+
+    return template;
+  };
+
+  var setContainer = function setContainer(settings) {
+
+    var container = 'ch-notification-container ' + settings.position;
+    var containerClasses = '.' + container.replace(/ +/g, '.');
+
+    if ($(containerClasses).length === 0) {
+      $('body').append('<ul class="' + container + '"></ul>');
+    }
+
+    return containerClasses;
+  };
+
+  var buildHTML = function buildHTML(settings) {
+
+    var template = setTemplate(settings);
+    var container = setContainer(settings);
+
+    return { template: template, container: container };
+  };
+
+  var destroy = function destroy(element, settings) {
+    setTimeout(function () {
+      $(element).removeClass(settings.animationEntrance);
+      $(element).addClass(settings.animationExit);
+      setTimeout(function () {
+        return $(element).remove();
+      }, 1000);
+    }, 750);
+  };
+
+  var Notification = function Notification(options) {
+
+    var settings = $.extend({
+      className: '',
+      title: '',
+      description: '',
+      type: 'default',
+      theme: 'chameleon',
+      icon: '',
+      position: 'top right',
+      timeout: 3000,
+      animationEntrance: 'bounceInDown',
+      animationExit: 'bounceOutUp'
+    }, options);
+
+    var build = function build() {
+      var notification = buildHTML(settings);
+
+      var elem = $(notification.template).appendTo(notification.container);
+
+      if (!settings.timeout == 0) {
+        setTimeout(function () {
+          return destroy(elem, settings);
+        }, settings.timeout);
+      }
+
+      $(document).on('click', '.ch-notification-button--close', function () {
+        if ($(elem).is(':visible')) {
+          destroy($(this).parent(), settings);
+        }
+      });
+    };
+
+    typeof this === 'function' ? build() : $(this).on('click', build);
+  };
+
+  var pluginName = "notify";
+
+  $[pluginName] = Notification;
+  $.fn[pluginName] = Notification;
+};
+
 Chameleon.Components.Dropdown = function () {
   var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
   var dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');
@@ -63,27 +153,31 @@ Chameleon.Components.Dropdown = function () {
   };
 
   var definePosition = function definePosition(dropdownMenu) {
+    var _dropdownMenu$classLi, _dropdownMenu$classLi2;
+
+    var validPositions = ['top', 'right', 'left', 'bottom'];
+    var initialPosition = "";
+
+    (_dropdownMenu$classLi = dropdownMenu.classList).remove.apply(_dropdownMenu$classLi, validPositions);
     if (dropdownMenu.dataset.position) {
-      var _dropdownMenu$classLi, _dropdownMenu$classLi2;
-
-      var validPositions = ['top', 'right', 'left', 'bottom'];
-      var initialPosition = dropdownMenu.dataset.position.split(" ");
-
-      (_dropdownMenu$classLi = dropdownMenu.classList).remove.apply(_dropdownMenu$classLi, validPositions);
-      (_dropdownMenu$classLi2 = dropdownMenu.classList).add.apply(_dropdownMenu$classLi2, _toConsumableArray(initialPosition));
-
-      positionLastResort(dropdownMenu);
+      initialPosition = dropdownMenu.dataset.position.split(" ");
+    } else {
+      initialPosition = ['bottom', 'right'];
     }
+
+    (_dropdownMenu$classLi2 = dropdownMenu.classList).add.apply(_dropdownMenu$classLi2, _toConsumableArray(initialPosition));
+
+    positionLastResort(dropdownMenu);
   };
 
   var positionLastResort = function positionLastResort(dropdownMenu) {
+    //TODO: Improve this
     if ($(dropdownMenu).offset().left < 0) {
-      //Find a better way of making this with vanilla JS
       dropdownMenu.classList.remove('right');
       dropdownMenu.classList.add('left');
     }
 
-    if (document.body.clientWidth < window.innerWidth) {
+    if (document.body.scrollWidth > window.innerWidth) {
       dropdownMenu.classList.remove('left');
       dropdownMenu.classList.add('right');
     }
@@ -282,93 +376,3 @@ Chameleon.Utils = function () {
     }
   };
 }();
-
-Chameleon.Plugins.Notification = function () {
-  var setTemplate = function setTemplate(settings) {
-    var template = '';
-
-    switch (settings.theme) {
-      case 'chameleon':
-        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li>';
-        break;
-      case 'semanticUI':
-        var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
-
-        template = '<li class="ui icon message tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
-        break;
-    }
-
-    return template;
-  };
-
-  var setContainer = function setContainer(settings) {
-
-    var container = 'ch-notification-container ' + settings.position;
-    var containerClasses = '.' + container.replace(/ +/g, '.');
-
-    if ($(containerClasses).length === 0) {
-      $('body').append('<ul class="' + container + '"></ul>');
-    }
-
-    return containerClasses;
-  };
-
-  var buildHTML = function buildHTML(settings) {
-
-    var template = setTemplate(settings);
-    var container = setContainer(settings);
-
-    return { template: template, container: container };
-  };
-
-  var destroy = function destroy(element, settings) {
-    setTimeout(function () {
-      $(element).removeClass(settings.animationEntrance);
-      $(element).addClass(settings.animationExit);
-      setTimeout(function () {
-        return $(element).remove();
-      }, 1000);
-    }, 750);
-  };
-
-  var Notification = function Notification(options) {
-
-    var settings = $.extend({
-      className: '',
-      title: '',
-      description: '',
-      type: 'default',
-      theme: 'chameleon',
-      icon: '',
-      position: 'top right',
-      timeout: 3000,
-      animationEntrance: 'bounceInDown',
-      animationExit: 'bounceOutUp'
-    }, options);
-
-    var build = function build() {
-      var notification = buildHTML(settings);
-
-      var elem = $(notification.template).appendTo(notification.container);
-
-      if (!settings.timeout == 0) {
-        setTimeout(function () {
-          return destroy(elem, settings);
-        }, settings.timeout);
-      }
-
-      $(document).on('click', '.ch-notification-button--close', function () {
-        if ($(elem).is(':visible')) {
-          destroy($(this).parent(), settings);
-        }
-      });
-    };
-
-    typeof this === 'function' ? build() : $(this).on('click', build);
-  };
-
-  var pluginName = "notify";
-
-  $[pluginName] = Notification;
-  $.fn[pluginName] = Notification;
-};
