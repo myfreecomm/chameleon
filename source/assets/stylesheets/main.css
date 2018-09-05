@@ -5304,7 +5304,8 @@ readers do not read off random characters that represent icons */
     white-space: nowrap;
     color: #47494C; }
   .ch-dropdown-header {
-    color: #777A7F; }
+    color: #777A7F;
+    cursor: default; }
   .ch-dropdown-menu-item {
     position: relative; }
     .ch-dropdown-menu-item:first-child {
@@ -6386,10 +6387,6 @@ readers do not read off random characters that represent icons */
   height: calc(100% - 50px);
   bottom: 0;
   right: 0; }
-  .ch-account-content .menu > .label, .ch-account-content .submenu > .label {
-    display: block;
-    padding: 10px 25px;
-    color: #777A7F; }
   .ch-account-content .menu {
     width: 50%;
     height: 100%; }
@@ -6398,18 +6395,20 @@ readers do not read off random characters that represent icons */
       height: calc(100% - 40px); }
       .ch-account-content .menu ul:hover {
         overflow-y: auto; }
-  .ch-account-content .menu > ul {
+  .ch-account-content .menu > .ch-dropdown-menu {
     max-height: 100%; }
-    .ch-account-content .menu > ul li > a {
+    .ch-account-content .menu > .ch-dropdown-menu .ch-dropdown-menu-item {
+      position: initial; }
+    .ch-account-content .menu > .ch-dropdown-menu .ch-dropdown-menu-item > a {
       color: inherit;
       display: block;
       padding: 10px 25px; }
-    .ch-account-content .menu > ul li:hover > a {
+    .ch-account-content .menu > .ch-dropdown-menu .ch-dropdown-menu-item > a:hover {
       color: #777A7F; }
-    .ch-account-content .menu > ul li.active > a {
+    .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a {
       position: relative;
       font-weight: bold; }
-      .ch-account-content .menu > ul li.active > a:before {
+      .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before {
         content: '';
         position: absolute;
         top: 50%;
@@ -6418,14 +6417,15 @@ readers do not read off random characters that represent icons */
         height: 20px;
         border-right: 5px solid #00E2F6;
         transform: translateY(-50%); }
-  .ch-account-content > .menu .submenu {
+  .ch-account-content .submenu {
     position: absolute;
     width: 50%;
     height: 100%;
     top: 0;
     left: 50%;
+    font-weight: normal;
     box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.15) inset; }
-    .ch-account-content > .menu .submenu li.active > a:before {
+    .ch-account-content .submenu .ch-dropdown-menu-item.active > a:before {
       content: none; }
   @media screen and (max-width: 768px) {
     .ch-account-content {
