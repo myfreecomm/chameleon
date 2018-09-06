@@ -10,6 +10,7 @@
     position: absolute;
     top: 0;
     left: 84px;
+    min-width: 200px;
     font-weight: 400;
     color: $fontColor;
     background-color: #fff;
@@ -58,15 +59,15 @@
 
   &-header, &-menu-item a {
     display: block;
-    padding: 15px 25px;
-    font-size: inherit;
-    text-transform: uppercase;
+    padding: 10px 25px;
+    font-size: 1em;
     white-space: nowrap;
     color: $fontColor;
   }
 
   &-header {
-    font-weight: bold;
+    color: color(neutrals, tone-50);
+    cursor: default;
   }
 
   &-menu-item {
@@ -76,14 +77,18 @@
       border-top: 0;
     }
 
-    a:hover, &.active {
-      background-color: rgba(#000, 0.02);
+    &.active {
+      font-weight: bold;
     }
 
     &:hover {
       .ui.image.avatar ~ .ui.button {
         visibility: visible;
         opacity: 1;
+      }
+
+      a {
+        color: color(neutrals, tone-50);
       }
     }
 

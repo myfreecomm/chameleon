@@ -75,7 +75,12 @@
           <button class="ch-header-nav-button" data-target="modal" data-modal="notifications"><i class="ch-notification-label fal fa-bell fa-1_5x"></i></button>
           <div class="ch-header-nav-button ch-dropdown" href="#">
             <div class="ch-dropdown-toggle"><i class="ch-notification-label fal fa-cog fa-1_5x"></i></div>
-            <div class="ch-dropdown-content bottom right" tabindex="-1"></div>
+            <div class="ch-dropdown-content" tabindex="-1" data-position="bottom right"><span class="ch-dropdown-header">Configurações</span>
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Minha conta</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Ajuda</a></li>
+              </ul>
+            </div>
           </div>
           <div class="ch-header-nav-button ch-dropdown ch-account">
             <button class="ch-dropdown-toggle" type="button">MyFreecomm<i class="fal fa-chevron-down fa-icon dropdown"></i></button>
@@ -87,21 +92,21 @@
                 </div>
               </div>
               <div class="ch-account-content">
-                <nav class="menu"><span class="label">Contas</span>
-                  <ul>
-                    <li class="active"><a href="#">Grupo Nexaas</a>
-                      <nav class="submenu"><span class="label">Entidades</span>
-                        <ul>
-                          <li class="active"><a href="#">MyFreecomm</a></li>
-                          <li><a href="#">Empresa I</a></li>
-                          <li><a href="#">Empresa II</a></li>
-                          <li><a href="#">Empresa III</a></li>
-                          <li><a href="#">Empresa IV</a></li>
+                <nav class="menu"><span class="ch-dropdown-header">Contas</span>
+                  <ul class="ch-dropdown-menu">
+                    <li class="ch-dropdown-menu-item active"><a href="#">Grupo Nexaas</a>
+                      <nav class="submenu"><span class="ch-dropdown-header">Entidades</span>
+                        <ul class="ch-dropdown-menu">
+                          <li class="ch-dropdown-menu-item active"><a href="#">MyFreecomm</a></li>
+                          <li class="ch-dropdown-menu-item"><a href="#">Empresa I</a></li>
+                          <li class="ch-dropdown-menu-item"><a href="#">Empresa II</a></li>
+                          <li class="ch-dropdown-menu-item"><a href="#">Empresa III</a></li>
+                          <li class="ch-dropdown-menu-item"><a href="#">Empresa IV</a></li>
                         </ul>
                       </nav>
                     </li>
-                    <li><a href="#">J Experts</a></li>
-                    <li><a href="#">Acme Factoring</a></li>
+                    <li class="ch-dropdown-menu-item"><a href="#">J Experts</a></li>
+                    <li class="ch-dropdown-menu-item"><a href="#">Acme Factoring</a></li>
                   </ul>
                 </nav>
               </div>

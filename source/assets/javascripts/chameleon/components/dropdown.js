@@ -1,37 +1,79 @@
 Chameleon.Components.Dropdown = function() {
-  let $nav               = $('.ch-nav');
-  let $dropdownContainer = $('.ch-dropdown-content');
+  const dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
+  const dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');
 
-  const open = function(e) {
-    if ( $(this).siblings().hasClass('visible') ) {
-      $dropdownContainer.removeClass('visible');
+  const show = function(dropdownMenu) {
+    dropdownMenu.classList.add('visible');
+    dropdownMenu.parentElement.classList.add('active');
+
+    definePosition(dropdownMenu);
+  }
+
+  const hide = function(dropdownMenu) {
+    dropdownMenu.classList.remove('visible');
+    dropdownMenu.parentElement.classList.remove('active');
+  }
+
+  const toggle = function(dropdownMenu) {
+    if ( dropdownMenu.classList.contains('visible') === false ) {
+      show(dropdownMenu);
     } else {
-      $dropdownContainer.removeClass('visible');
-      $(this).siblings().addClass('visible')
+      hide(dropdownMenu);
     }
   }
 
-  const closeButton = function() {
-    $(this).parents('.ch-dropdown-content').removeClass('visible');
-  }
+  const create = function(button) {
+    let dropdownMenu = button.nextElementSibling;
 
-  const closeOnDesktop = function(event, $container) {
-    if (!$container.is(event.target) &&
-      $container.has(event.target).length === 0 &&
-      $container.parent().has(event.target).length === 0)
-    {
-      $container.removeClass('visible');
-      $container.unbind('mouseup');
+    if ( event.target === button || event.target.parentElement === button ) {
+      toggle(dropdownMenu)
+    } else if ( event.target.offsetParent === dropdownMenu) {
+      return;
+    } else {
+      hide(dropdownMenu);
     }
   }
 
-  const close = function(e) {
-    closeOnDesktop(e, $dropdownContainer);
+  const definePosition = function(dropdownMenu) {
+    const validPositions = ['top', 'right', 'left', 'bottom'];
+    let initialPosition = "";
+
+    dropdownMenu.classList.remove(...validPositions);
+    if (dropdownMenu.dataset.position) {
+      initialPosition = dropdownMenu.dataset.position.split(" ");
+    } else {
+      initialPosition = ['bottom' , 'right']
+    }
+
+    dropdownMenu.classList.add(...initialPosition);
+
+    positionLastResort(dropdownMenu);
   }
 
-  $(document).on('click', '.ch-dropdown-toggle, .ch-dropdown-hover', open);
+  const positionLastResort = function(dropdownMenu) {
+    //TODO: Improve this
+    if ( $(dropdownMenu).offset().left < 0 ) {
+      dropdownMenu.classList.remove('right');
+      dropdownMenu.classList.add('left');
+    }
 
-  $(document).on('click', '.ch-dropdown .btn-close', closeButton);
+    if ( document.body.scrollWidth > window.innerWidth ) {
+      dropdownMenu.classList.remove('left');
+      dropdownMenu.classList.add('right');
+    }
+  }
 
-  $(document).on('mouseup', close);
+  const close = function(button) {
+    button.addEventListener('click', function(dropdownMenu) {
+      hide(this.offsetParent);
+    })
+  }
+
+  dropdownCloseButtons.forEach(close);
+
+  const dropdown = function(event) {
+    dropdownButtons.forEach(create);
+  }
+
+  document.addEventListener('click', dropdown);
 }

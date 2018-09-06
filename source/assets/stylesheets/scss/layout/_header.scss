@@ -5,10 +5,6 @@
   align-items: center;
   height: 65px;
   background-color: #fff;
-
-  .ch-dropdown-content {
-    min-width: 250px;
-  }
 }
 
 .ch-header-nav {
@@ -19,8 +15,8 @@
 
   &-button {
     display: block;
-    padding-right: 10px;
-    padding-left: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     color: currentColor;
     transition: all .3s;
     background: transparent;
@@ -37,7 +33,7 @@
     }
 
     &:hover, &.active {
-      color: darken($headerElementsColor, 10%);
+      color: $headerElementsColorActive;
       border-radius: 3px;
     }
 
@@ -56,6 +52,12 @@
       .fa-icon.dropdown {
         margin-left: .25rem;
         font-size: .65em;
+      }
+    }
+
+    &.ch-account.active {
+      button {
+        color: color(neutrals, tone-50);
       }
     }
   }
