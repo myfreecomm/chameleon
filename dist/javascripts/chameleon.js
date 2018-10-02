@@ -50,18 +50,6 @@ Chameleon.Components.Dropdown = function () {
     }
   };
 
-  var create = function create(button) {
-    var dropdownMenu = button.nextElementSibling;
-
-    if (event.target === button || event.target.parentElement === button) {
-      toggle(dropdownMenu);
-    } else if (event.target.offsetParent === dropdownMenu) {
-      return;
-    } else {
-      hide(dropdownMenu);
-    }
-  };
-
   var definePosition = function definePosition(dropdownMenu) {
     var _dropdownMenu$classLi, _dropdownMenu$classLi2;
 
@@ -102,7 +90,17 @@ Chameleon.Components.Dropdown = function () {
   dropdownCloseButtons.forEach(close);
 
   var dropdown = function dropdown(event) {
-    dropdownButtons.forEach(create);
+    dropdownButtons.forEach(function (button) {
+      var dropdownMenu = button.nextElementSibling;
+
+      if (event.target === button || event.target.parentElement === button) {
+        toggle(dropdownMenu);
+      } else if (event.target.offsetParent === dropdownMenu) {
+        return;
+      } else {
+        hide(dropdownMenu);
+      }
+    });
   };
 
   document.addEventListener('click', dropdown);
