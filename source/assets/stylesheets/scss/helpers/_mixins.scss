@@ -5,6 +5,14 @@
   color: lighten($fontColor, 10%);
 }
 
+@mixin position-sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+
 %overflow-ellipsis {
   white-space: nowrap;
   overflow-x: hidden;

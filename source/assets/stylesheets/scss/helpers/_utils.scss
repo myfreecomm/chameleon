@@ -79,7 +79,7 @@
 }
 
 .ch-expand-button {
-  position: sticky;
+  @include position-sticky;
   bottom: 0;
   left: 0;
   width: 100%;
