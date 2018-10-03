@@ -15,7 +15,7 @@
     }
   }
 
-  .ch-nav.collapsed:not(:hover) & {
+  .ch-nav.collapsed:not(.hover) & {
     &--new {
       &.ui.label {
         position: absolute;

@@ -138,6 +138,9 @@ Chameleon.Components.Menu = function () {
   };
 
   var toggleNavCollapse = function toggleNavCollapse() {
+    if ($('.ch-nav').hasClass('hover')) {
+      $nav.removeClass('hover');
+    }
     $nav.toggleClass('collapsed');
   };
 
@@ -155,10 +158,27 @@ Chameleon.Components.Menu = function () {
     $(this).find('.fa-icon').switchClass('fa-angle-double-left', 'fa-angle-double-right');
   };
 
+  var showMenu = function showMenu() {
+    if ($('.ch-nav').hasClass('collapsed')) {
+      $('.ch-nav').addClass('hover');
+    }
+  };
+
+  var hideMenu = function hideMenu() {
+    if ($('.ch-nav').hasClass('collapsed')) {
+      $('.ch-nav').removeClass('hover');
+    }
+  };
+
   $(document).on('click', buttonSelector, toggleMenuDropdown);
   $(document).on('click', collapseButtonSelector, toggleNavCollapse);
   $(document).on('click', toogleButton, toggleNav);
   $(document).on('click', buttonMoreOptions, moreOptions);
+
+  $(document).on('mouseenter', '.ch-nav, .ch-nav > .ch-menu', showMenu);
+
+  $(document).on('mouseleave', '.ch-nav', hideMenu);
+
   $(menu).on('scroll', toogleLogoShadow);
 };
 
