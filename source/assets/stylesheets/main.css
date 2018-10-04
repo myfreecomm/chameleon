@@ -5853,7 +5853,7 @@ readers do not read off random characters that represent icons */
 .ch-tag--new:before {
   content: attr(data-label); }
 
-.ch-nav.collapsed:not(:hover) .ch-tag--new.ui.label {
+.ch-nav.collapsed:not(.hover) .ch-tag--new.ui.label {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -5863,7 +5863,7 @@ readers do not read off random characters that represent icons */
   font-size: 0;
   border-radius: 100%;
   transform: translate(0, -75%); }
-  .ch-nav.collapsed:not(:hover) .ch-tag--new.ui.label:before {
+  .ch-nav.collapsed:not(.hover) .ch-tag--new.ui.label:before {
     content: ''; }
 
 @media screen and (max-width: 768px) {
@@ -6170,13 +6170,13 @@ readers do not read off random characters that represent icons */
     .ch-nav.collapsed .ch-collapse-button-label,
     .ch-nav.collapsed .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
       display: none; }
-  .ch-nav.collapsed:hover {
+  .ch-nav.collapsed.hover {
     width: 240px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.54); }
-    .ch-nav.collapsed:hover .ch-logo-label,
-    .ch-nav.collapsed:hover .ch-menu-item-label,
-    .ch-nav.collapsed:hover .ch-collapse-button-label,
-    .ch-nav.collapsed:hover .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
+    .ch-nav.collapsed.hover .ch-logo-label,
+    .ch-nav.collapsed.hover .ch-menu-item-label,
+    .ch-nav.collapsed.hover .ch-collapse-button-label,
+    .ch-nav.collapsed.hover .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
       display: initial; }
   @media screen and (max-width: 768px) {
     .ch-nav {
@@ -6186,14 +6186,14 @@ readers do not read off random characters that represent icons */
         height: 60px;
         top: auto;
         bottom: 0; }
-        .ch-nav:not(.active).collapsed:hover .ch-logo-label,
-        .ch-nav:not(.active).collapsed:hover .ch-menu-item-label,
-        .ch-nav:not(.active).collapsed:hover .ch-collapse-button-label,
-        .ch-nav:not(.active).collapsed:hover .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
+        .ch-nav:not(.active).collapsed.hover .ch-logo-label,
+        .ch-nav:not(.active).collapsed.hover .ch-menu-item-label,
+        .ch-nav:not(.active).collapsed.hover .ch-collapse-button-label,
+        .ch-nav:not(.active).collapsed.hover .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
           display: none; }
       .ch-nav.active {
         width: 100% !important; }
-      .ch-nav.collapsed, .ch-nav.collapsed:hover {
+      .ch-nav.collapsed, .ch-nav.collapsed.hover {
         box-shadow: none;
         transition: none; }
       .ch-nav.collapsed + .ch-content {

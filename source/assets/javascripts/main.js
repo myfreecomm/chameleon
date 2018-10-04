@@ -107,59 +107,92 @@ Chameleon.Components.Dropdown = function () {
 };
 
 Chameleon.Components.Menu = function () {
-  var buttonSelector = '.ch-menu-item .ch-dropdown-button';
-  var collapseButtonSelector = '.ch-expand-button > button';
-  var toogleButton = '[data-toogle="nav"]';
-  var menu = '.ch-menu';
-  var buttonMoreOptions = '.btn-more-options';
-  var $nav = $('.ch-nav');
+  var Selector = {
+    button: '.ch-menu-item .ch-dropdown-button',
+    collapseButton: '.ch-expand-button > button',
+    navContainer: '.ch-nav',
+    navMenu: '.ch-menu',
+    navHeader: '.ch-header-nav',
+    moreOptionsButton: '.btn-more-options',
+    toggleButton: '[data-toogle="nav"]',
+    dropdown: '.ch-dropdown',
+    logo: '.ch-logo',
+    navElements: '.ch-nav, .ch-nav > .ch-menu',
+    icon: '.fa-icon'
+  };
+
+  var ClassName = {
+    open: 'open',
+    active: 'active',
+    hover: 'hover',
+    collapsed: 'collapsed',
+    hasShadow: 'has-shadow'
+  };
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
-    var $dropdown = $(this).parent('.ch-dropdown');
+    var $dropdown = $(this).parent(Selector.dropdown);
     var $dropdownSiblings = $dropdown.siblings();
 
-    if ($dropdownSiblings.hasClass('open')) {
-      $dropdownSiblings.removeClass('open');
+    if ($dropdownSiblings.hasClass(ClassName.open)) {
+      $dropdownSiblings.removeClass(ClassName.open);
     }
-    $dropdown.toggleClass('open');
 
-    if ($(window).width() <= 768 && !$('.ch-nav').hasClass('active')) {
+    $dropdown.toggleClass(ClassName.open);
+
+    if ($(window).width() <= 768 && !$(Selector.navContainer).hasClass(ClassName.active)) {
       toggleNav();
     }
   };
 
   var toogleLogoShadow = function toogleLogoShadow() {
-    var $logo = $('.ch-logo');
     if ($(this).scrollTop() > 0) {
-      $logo.addClass('has-shadow');
+      $(Selector.logo).addClass(ClassName.hasShadow);
     } else {
-      $logo.removeClass('has-shadow');
+      $(Selector.logo).removeClass(ClassName.hasShadow);
     }
   };
 
   var toggleNavCollapse = function toggleNavCollapse() {
-    $nav.toggleClass('collapsed');
+    if ($(Selector.navContainer).hasClass(ClassName.hover)) {
+      $(Selector.navContainer).removeClass(ClassName.hover);
+    }
+
+    $(Selector.navContainer).toggleClass(ClassName.collapsed);
   };
 
   var toggleNav = function toggleNav() {
-    $nav.toggleClass('active');
-    $(toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
+    $(Selector.navContainer).toggleClass(ClassName.active);
+    $(Selector.toggleButton).find(Selector.icon).switchClass('fa-ellipsis-h-alt', 'fa-times');
 
-    if (!$nav.hasClass('active')) {
-      $('.ch-dropdown').removeClass('open');
+    if (!$(Selector.navContainer).hasClass(ClassName.active)) {
+      $(Selector.dropdown).removeClass(ClassName.open);
     }
   };
 
   var moreOptions = function moreOptions() {
-    $('.ch-header-nav').toggleClass('active');
-    $(this).find('.fa-icon').switchClass('fa-angle-double-left', 'fa-angle-double-right');
+    $(Selector.navHeader).toggleClass(ClassName.active);
+    $(this).find(Selector.icon).switchClass('fa-angle-double-left', 'fa-angle-double-right');
   };
 
-  $(document).on('click', buttonSelector, toggleMenuDropdown);
-  $(document).on('click', collapseButtonSelector, toggleNavCollapse);
-  $(document).on('click', toogleButton, toggleNav);
-  $(document).on('click', buttonMoreOptions, moreOptions);
-  $(menu).on('scroll', toogleLogoShadow);
+  var showMenu = function showMenu() {
+    if ($(Selector.navContainer).hasClass(ClassName.collapsed)) {
+      $(Selector.navContainer).addClass(ClassName.hover);
+    }
+  };
+
+  var hideMenu = function hideMenu() {
+    if ($(Selector.navContainer).hasClass(ClassName.collapsed)) {
+      $(Selector.navContainer).removeClass(ClassName.hover);
+    }
+  };
+
+  $(document).on('click', Selector.button, toggleMenuDropdown);
+  $(document).on('click', Selector.collapseButton, toggleNavCollapse);
+  $(document).on('click', Selector.toggleButton, toggleNav);
+  $(document).on('click', Selector.moreOptionButton, moreOptions);
+  $(document).on('mouseenter', Selector.navElements, showMenu);
+  $(document).on('mouseleave', Selector.navContainer, hideMenu);
+  $(Selector.navMenu).on('scroll', toogleLogoShadow);
 };
 
 Chameleon.Components.Modal = function () {
