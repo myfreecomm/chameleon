@@ -117,62 +117,72 @@ Chameleon.Components.Menu = function () {
     toggleButton: '[data-toogle="nav"]',
     dropdown: '.ch-dropdown',
     logo: '.ch-logo',
-    navElements: '.ch-nav, .ch-nav > .ch-menu'
+    navElements: '.ch-nav, .ch-nav > .ch-menu',
+    icon: '.fa-icon'
+  };
+
+  var ClassName = {
+    open: 'open',
+    active: 'active',
+    hover: 'hover',
+    collapsed: 'collapsed',
+    hasShadow: 'has-shadow'
   };
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
     var $dropdown = $(this).parent(Selector.dropdown);
     var $dropdownSiblings = $dropdown.siblings();
 
-    if ($dropdownSiblings.hasClass('open')) {
-      $dropdownSiblings.removeClass('open');
+    if ($dropdownSiblings.hasClass(ClassName.open)) {
+      $dropdownSiblings.removeClass(ClassName.open);
     }
-    $dropdown.toggleClass('open');
 
-    if ($(window).width() <= 768 && !$(Selector.navContainer).hasClass('active')) {
+    $dropdown.toggleClass(ClassName.open);
+
+    if ($(window).width() <= 768 && !$(Selector.navContainer).hasClass(ClassName.active)) {
       toggleNav();
     }
   };
 
   var toogleLogoShadow = function toogleLogoShadow() {
     if ($(this).scrollTop() > 0) {
-      $(Selector.logo).addClass('has-shadow');
+      $(Selector.logo).addClass(ClassName.hasShadow);
     } else {
-      $(Selector.logo).removeClass('has-shadow');
+      $(Selector.logo).removeClass(ClassName.hasShadow);
     }
   };
 
   var toggleNavCollapse = function toggleNavCollapse() {
-    if ($(Selector.navContainer).hasClass('hover')) {
-      $(Selector.navContainer).removeClass('hover');
+    if ($(Selector.navContainer).hasClass(ClassName.hover)) {
+      $(Selector.navContainer).removeClass(ClassName.hover);
     }
 
-    $(Selector.navContainer).toggleClass('collapsed');
+    $(Selector.navContainer).toggleClass(ClassName.collapsed);
   };
 
   var toggleNav = function toggleNav() {
-    $(Selector.navContainer).toggleClass('active');
-    $(Selector.toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
+    $(Selector.navContainer).toggleClass(ClassName.active);
+    $(Selector.toggleButton).find(Selector.icon).switchClass('fa-ellipsis-h-alt', 'fa-times');
 
-    if (!$(Selector.navContainer).hasClass('active')) {
-      $(Selector.dropdown).removeClass('open');
+    if (!$(Selector.navContainer).hasClass(ClassName.active)) {
+      $(Selector.dropdown).removeClass(ClassName.open);
     }
   };
 
   var moreOptions = function moreOptions() {
-    $(Selector.navHeader).toggleClass('active');
-    $(this).find('.fa-icon').switchClass('fa-angle-double-left', 'fa-angle-double-right');
+    $(Selector.navHeader).toggleClass(ClassName.active);
+    $(this).find(Selector.icon).switchClass('fa-angle-double-left', 'fa-angle-double-right');
   };
 
   var showMenu = function showMenu() {
-    if ($(Selector.navContainer).hasClass('collapsed')) {
-      $(Selector.navContainer).addClass('hover');
+    if ($(Selector.navContainer).hasClass(ClassName.collapsed)) {
+      $(Selector.navContainer).addClass(ClassName.hover);
     }
   };
 
   var hideMenu = function hideMenu() {
-    if ($(Selector.navContainer).hasClass('collapsed')) {
-      $(Selector.navContainer).removeClass('hover');
+    if ($(Selector.navContainer).hasClass(ClassName.collapsed)) {
+      $(Selector.navContainer).removeClass(ClassName.hover);
     }
   };
 
