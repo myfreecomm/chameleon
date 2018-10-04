@@ -26,6 +26,96 @@ $(document).ready(function () {
   Chameleon.init();
 });
 
+Chameleon.Plugins.Notification = function () {
+  var setTemplate = function setTemplate(settings) {
+    var template = '';
+
+    switch (settings.theme) {
+      case 'chameleon':
+        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li>';
+        break;
+      case 'semanticUI':
+        var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
+
+        template = '<li class="ui icon message tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
+        break;
+    }
+
+    return template;
+  };
+
+  var setContainer = function setContainer(settings) {
+
+    var container = 'ch-notification-container ' + settings.position;
+    var containerClasses = '.' + container.replace(/ +/g, '.');
+
+    if ($(containerClasses).length === 0) {
+      $('body').append('<ul class="' + container + '"></ul>');
+    }
+
+    return containerClasses;
+  };
+
+  var buildHTML = function buildHTML(settings) {
+
+    var template = setTemplate(settings);
+    var container = setContainer(settings);
+
+    return { template: template, container: container };
+  };
+
+  var destroy = function destroy(element, settings) {
+    setTimeout(function () {
+      $(element).removeClass(settings.animationEntrance);
+      $(element).addClass(settings.animationExit);
+      setTimeout(function () {
+        return $(element).remove();
+      }, 1000);
+    }, 750);
+  };
+
+  var Notification = function Notification(options) {
+
+    var settings = $.extend({
+      className: '',
+      title: '',
+      description: '',
+      type: 'default',
+      theme: 'chameleon',
+      icon: '',
+      position: 'top right',
+      timeout: 3000,
+      animationEntrance: 'bounceInDown',
+      animationExit: 'bounceOutUp'
+    }, options);
+
+    var build = function build() {
+      var notification = buildHTML(settings);
+
+      var elem = $(notification.template).appendTo(notification.container);
+
+      if (!settings.timeout == 0) {
+        setTimeout(function () {
+          return destroy(elem, settings);
+        }, settings.timeout);
+      }
+
+      $(document).on('click', '.ch-notification-button--close', function () {
+        if ($(elem).is(':visible')) {
+          destroy($(this).parent(), settings);
+        }
+      });
+    };
+
+    typeof this === 'function' ? build() : $(this).on('click', build);
+  };
+
+  var pluginName = "notify";
+
+  $[pluginName] = Notification;
+  $.fn[pluginName] = Notification;
+};
+
 Chameleon.Components.Dropdown = function () {
   var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
   var dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');
@@ -107,15 +197,21 @@ Chameleon.Components.Dropdown = function () {
 };
 
 Chameleon.Components.Menu = function () {
-  var buttonSelector = '.ch-menu-item .ch-dropdown-button';
-  var collapseButtonSelector = '.ch-expand-button > button';
-  var toogleButton = '[data-toogle="nav"]';
-  var menu = '.ch-menu';
-  var buttonMoreOptions = '.btn-more-options';
-  var $nav = $('.ch-nav');
+  var Selector = {
+    button: '.ch-menu-item .ch-dropdown-button',
+    collapseButton: '.ch-expand-button > button',
+    navContainer: '.ch-nav',
+    navMenu: '.ch-menu',
+    navHeader: '.ch-header-nav',
+    moreOptionsButton: '.btn-more-options',
+    toggleButton: '[data-toogle="nav"]',
+    DROPDOWN: '.ch-dropdown',
+    logo: '.ch-logo',
+    navElements: '.ch-nav, .ch-nav > .ch-menu'
+  };
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
-    var $dropdown = $(this).parent('.ch-dropdown');
+    var $dropdown = $(this).parent(Selector.dropdown);
     var $dropdownSiblings = $dropdown.siblings();
 
     if ($dropdownSiblings.hasClass('open')) {
@@ -123,63 +219,60 @@ Chameleon.Components.Menu = function () {
     }
     $dropdown.toggleClass('open');
 
-    if ($(window).width() <= 768 && !$('.ch-nav').hasClass('active')) {
+    if ($(window).width() <= 768 && !$(Selector.navContainer).hasClass('active')) {
       toggleNav();
     }
   };
 
   var toogleLogoShadow = function toogleLogoShadow() {
-    var $logo = $('.ch-logo');
     if ($(this).scrollTop() > 0) {
-      $logo.addClass('has-shadow');
+      $(Selector.logo).addClass('has-shadow');
     } else {
-      $logo.removeClass('has-shadow');
+      $(Selector.logo).removeClass('has-shadow');
     }
   };
 
   var toggleNavCollapse = function toggleNavCollapse() {
-    if ($('.ch-nav').hasClass('hover')) {
-      $nav.removeClass('hover');
+    if ($(Selector.navContainer).hasClass('hover')) {
+      $(Selector.navContainer).removeClass('hover');
     }
-    $nav.toggleClass('collapsed');
+
+    $(Selector.navContainer).toggleClass('collapsed');
   };
 
   var toggleNav = function toggleNav() {
-    $nav.toggleClass('active');
-    $(toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
+    $(Selector.navContainer).toggleClass('active');
+    $(Selector.toogleButton).find('.fa-icon').switchClass('fa-ellipsis-h-alt', 'fa-times');
 
-    if (!$nav.hasClass('active')) {
-      $('.ch-dropdown').removeClass('open');
+    if (!$(Selector.navContainer).hasClass('active')) {
+      $(Selector.dropdown).removeClass('open');
     }
   };
 
   var moreOptions = function moreOptions() {
-    $('.ch-header-nav').toggleClass('active');
+    $(Selector.navHeader).toggleClass('active');
     $(this).find('.fa-icon').switchClass('fa-angle-double-left', 'fa-angle-double-right');
   };
 
   var showMenu = function showMenu() {
-    if ($('.ch-nav').hasClass('collapsed')) {
-      $('.ch-nav').addClass('hover');
+    if ($(Selector.navContainer).hasClass('collapsed')) {
+      $(Selector.navContainer).addClass('hover');
     }
   };
 
   var hideMenu = function hideMenu() {
-    if ($('.ch-nav').hasClass('collapsed')) {
-      $('.ch-nav').removeClass('hover');
+    if ($(Selector.navContainer).hasClass('collapsed')) {
+      $(Selector.navContainer).removeClass('hover');
     }
   };
 
-  $(document).on('click', buttonSelector, toggleMenuDropdown);
-  $(document).on('click', collapseButtonSelector, toggleNavCollapse);
-  $(document).on('click', toogleButton, toggleNav);
-  $(document).on('click', buttonMoreOptions, moreOptions);
-
-  $(document).on('mouseenter', '.ch-nav, .ch-nav > .ch-menu', showMenu);
-
-  $(document).on('mouseleave', '.ch-nav', hideMenu);
-
-  $(menu).on('scroll', toogleLogoShadow);
+  $(document).on('click', Selector.button, toggleMenuDropdown);
+  $(document).on('click', Selector.collapseButton, toggleNavCollapse);
+  $(document).on('click', Selector.toggleButton, toggleNav);
+  $(document).on('click', Selector.moreOptionButton, moreOptions);
+  $(document).on('mouseenter', Selector.navElements, showMenu);
+  $(document).on('mouseleave', Selector.navContainer, hideMenu);
+  $(Selector.navMenu).on('scroll', toogleLogoShadow);
 };
 
 Chameleon.Components.Modal = function () {
@@ -304,93 +397,3 @@ Chameleon.Utils = function () {
     }
   };
 }();
-
-Chameleon.Plugins.Notification = function () {
-  var setTemplate = function setTemplate(settings) {
-    var template = '';
-
-    switch (settings.theme) {
-      case 'chameleon':
-        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li>';
-        break;
-      case 'semanticUI':
-        var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
-
-        template = '<li class="ui icon message tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
-        break;
-    }
-
-    return template;
-  };
-
-  var setContainer = function setContainer(settings) {
-
-    var container = 'ch-notification-container ' + settings.position;
-    var containerClasses = '.' + container.replace(/ +/g, '.');
-
-    if ($(containerClasses).length === 0) {
-      $('body').append('<ul class="' + container + '"></ul>');
-    }
-
-    return containerClasses;
-  };
-
-  var buildHTML = function buildHTML(settings) {
-
-    var template = setTemplate(settings);
-    var container = setContainer(settings);
-
-    return { template: template, container: container };
-  };
-
-  var destroy = function destroy(element, settings) {
-    setTimeout(function () {
-      $(element).removeClass(settings.animationEntrance);
-      $(element).addClass(settings.animationExit);
-      setTimeout(function () {
-        return $(element).remove();
-      }, 1000);
-    }, 750);
-  };
-
-  var Notification = function Notification(options) {
-
-    var settings = $.extend({
-      className: '',
-      title: '',
-      description: '',
-      type: 'default',
-      theme: 'chameleon',
-      icon: '',
-      position: 'top right',
-      timeout: 3000,
-      animationEntrance: 'bounceInDown',
-      animationExit: 'bounceOutUp'
-    }, options);
-
-    var build = function build() {
-      var notification = buildHTML(settings);
-
-      var elem = $(notification.template).appendTo(notification.container);
-
-      if (!settings.timeout == 0) {
-        setTimeout(function () {
-          return destroy(elem, settings);
-        }, settings.timeout);
-      }
-
-      $(document).on('click', '.ch-notification-button--close', function () {
-        if ($(elem).is(':visible')) {
-          destroy($(this).parent(), settings);
-        }
-      });
-    };
-
-    typeof this === 'function' ? build() : $(this).on('click', build);
-  };
-
-  var pluginName = "notify";
-
-  $[pluginName] = Notification;
-  $.fn[pluginName] = Notification;
-};
