@@ -7,7 +7,7 @@ Chameleon.Components.Menu = function() {
     navHeader         : '.ch-header-nav',
     moreOptionsButton : '.btn-more-options',
     toggleButton      : '[data-toogle="nav"]',
-    DROPDOWN          : '.ch-dropdown',
+    dropdown         : '.ch-dropdown',
     logo              : '.ch-logo',
     navElements       : '.ch-nav, .ch-nav > .ch-menu'
   }
