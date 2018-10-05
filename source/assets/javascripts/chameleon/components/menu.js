@@ -61,7 +61,7 @@ Chameleon.Components.Menu = function() {
     }
   }
 
-  const moreOptions = function() {
+  const moreOptions = function(event) {
     $(Selector.navHeader).toggleClass(ClassName.active);
     $(this).find(Selector.icon).switchClass('fa-angle-double-left', 'fa-angle-double-right');
   }
@@ -81,7 +81,7 @@ Chameleon.Components.Menu = function() {
   $(document).on('click', Selector.button,  toggleMenuDropdown);
   $(document).on('click', Selector.collapseButton, toggleNavCollapse);
   $(document).on('click', Selector.toggleButton, toggleNav);
-  $(document).on('click', Selector.moreOptionButton, moreOptions);
+  $(document).on('click', Selector.moreOptionsButton, moreOptions);
   $(document).on('mouseenter', Selector.navElements, showMenu);
   $(document).on('mouseleave', Selector.navContainer, hideMenu);
   $(Selector.navMenu).on('scroll', toogleLogoShadow);
