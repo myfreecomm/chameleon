@@ -69,7 +69,6 @@ Chameleon.Components.Dropdown = function () {
   };
 
   var positionLastResort = function positionLastResort(dropdownMenu) {
-    //TODO: Improve this
     if ($(dropdownMenu).offset().left < 0) {
       dropdownMenu.classList.remove('right');
       dropdownMenu.classList.add('left');
@@ -196,7 +195,19 @@ Chameleon.Components.Menu = function () {
 };
 
 Chameleon.Components.Modal = function () {
-  var $modal = $('.ch-dialog');
+  var Selector = {
+    dialog: '.ch-dialog',
+    dialogElements: '.ch-dialog-container, .action-dialog',
+    dialogContainer: '.ch-dialog-container',
+    modals: '[data-target="modal"]',
+    closeTargets: '.ch-overlay, .btn-close-dialog'
+  };
+
+  var ClassName = {
+    active: 'active'
+  };
+
+  var $modal = $(Selector.dialog);
 
   var open = function open(e) {
     e.preventDefault();
@@ -204,38 +215,48 @@ Chameleon.Components.Modal = function () {
         $targetModal = $('[data-modal=' + modalType);
 
     $targetModal.show(300);
-    $targetModal.find('.ch-dialog-container, .action-dialog').addClass('active');
+    $targetModal.find(Selector.dialogElements).addClass(ClassName.active);
     $targetModal.focus();
   };
 
   var close = function close() {
-    $modal.find('.ch-dialog-container, .action-dialog').removeClass('active');
+    $modal.find(Selector.dialogElements).removeClass(ClassName.active);
     $modal.hide(300);
   };
 
-  $(document).on('click', '[data-target="modal"]', open);
+  $(document).on('click', Selector.modals, open);
 
-  $(document).on('click', '.ch-overlay, .btn-close-dialog', close);
+  $(document).on('click', Selector.closeTargets, close);
 
   $modal.on('keydown', function (e) {
     $.keyboardClose(e, close);
   });
 
-  $(document).on('click', '.ch-dialog-container', function (e) {
+  $(document).on('click', Selector.dialogContainer, function (e) {
     e.stopPropagation();
   });
 };
 
 Chameleon.Components.Search = function () {
-  var $search = $('.ch-search');
-  var $searchResults = $search.find('.ch-search-results');
-  var $modal = $('.ch-sidebar');
+  var Selector = {
+    searchButtonTarget: '[data-target="search"]',
+    searchContainer: '.ch-search',
+    searchResults: '.ch-search-results',
+    searchInput: '.ch-search-form-input',
+    searchContent: '.ch-search-content',
+    modal: '.ch-sidebar',
+    closeButtonsTargets: '.ch-search .btn-close, .ch-overlay'
+  };
+
+  var $search = $(Selector.searchContainer);
+  var $searchResults = $search.find(Selector.searchResults);
+  var $modal = $(Selector.modal);
 
   var open = function open(e) {
     e.preventDefault();
     $search.show();
-    $search.find('.ch-search-results').hide();
-    $search.find('.ch-search-form-input').val('').focus();
+    $search.find(Selector.searchResults).hide();
+    $search.find(Selector.searchInput).val('').focus();
   };
 
   var close = function close() {
@@ -250,22 +271,39 @@ Chameleon.Components.Search = function () {
     $(this).val() === '' ? $searchResults.slideUp(300) : $searchResults.slideDown(300);
   };
 
-  $(document).on('click', '[data-target="search"]', open);
+  $(document).on('click', Selector.searchButtonTarget, open);
 
-  $(document).on('click', '.ch-search-content', function (e) {
+  $(document).on('click', Selector.searchContent, function (e) {
     e.stopPropagation();
   });
 
-  $(document).on('click', '.ch-search .btn-close, .ch-overlay', close);
+  $(document).on('click', Selector.closeButtonsTargets, close);
 
   $search.on('keydown', function (e) {
     $.keyboardClose(e, close);
   });
 
-  $(document).on('input', '.ch-search-form-input', toggleResults);
+  $(document).on('input', Selector.searchInput, toggleResults);
 };
 
 Chameleon.Components.Table = function () {
+  var Selector = {
+    icon: '.icon',
+    sidebar: '.ch-sidebar',
+    detailsTarget: '[data-table-detail="toggle"]',
+    rowLink: '.row-link',
+    sidebarTarget: '[data-sidebar="toggle"]'
+  };
+
+  var ClassName = {
+    right: 'right',
+    left: 'left',
+    inactive: 'inactive',
+    up: 'up',
+    down: 'down',
+    hidden: 'hidden'
+  };
+
   var clickableRow = function clickableRow() {
     var sel = getSelection().toString();
 
@@ -277,26 +315,26 @@ Chameleon.Components.Table = function () {
   var toggleDetailView = function toggleDetailView(e) {
     e.stopPropagation();
     var $detailRow = $(this).parents('tr').next('tr'),
-        $buttonIcon = $(this).find('.icon');
+        $buttonIcon = $(this).find(Selector.icon);
 
-    $detailRow.toggleClass('hidden');
-    $buttonIcon.switchClass('down', 'up');
+    $detailRow.toggleClass(ClassName.hidden);
+    $buttonIcon.switchClass(ClassName.down, ClassName.up);
   };
 
   var toggleSidebarCollapse = function toggleSidebarCollapse() {
-    var $container = $(this).prev('.ch-sidebar'),
+    var $container = $(this).prev(Selector.sidebar),
         $collapseButton = $(this);
 
-    $collapseButton.find('.icon').switchClass('right', 'left');
-    $collapseButton.toggleClass('inactive');
-    $container.toggleClass('inactive');
+    $collapseButton.find(Selector.icon).switchClass(ClassName.right, ClassName.left);
+    $collapseButton.toggleClass(ClassName.inactive);
+    $container.toggleClass(ClassName.inactive);
   };
 
-  $(document).on('click', '[data-table-detail="toggle"]', toggleDetailView);
+  $(document).on('click', Selector.detailsTarget, toggleDetailView);
 
-  $(document).on('click', '.row-link', clickableRow);
+  $(document).on('click', Selector.rowLink, clickableRow);
 
-  $(document).on('click', '[data-sidebar="toggle"]', toggleSidebarCollapse);
+  $(document).on('click', Selector.sidebarTarget, toggleSidebarCollapse);
 };
 
 Chameleon.Utils = function () {

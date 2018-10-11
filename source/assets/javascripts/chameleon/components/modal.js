@@ -1,5 +1,17 @@
 Chameleon.Components.Modal = function() {
-  let $modal = $('.ch-dialog');
+  const Selector = {
+    dialog: '.ch-dialog',
+    dialogElements: '.ch-dialog-container, .action-dialog',
+    dialogContainer: '.ch-dialog-container',
+    modals: '[data-target="modal"]',
+    closeTargets: '.ch-overlay, .btn-close-dialog'
+  }
+
+  const ClassName = {
+    active: 'active'
+  }
+
+  const $modal = $(Selector.dialog);
 
   const open = function(e) {
     e.preventDefault();
@@ -7,20 +19,20 @@ Chameleon.Components.Modal = function() {
         $targetModal = $(`[data-modal=${modalType}`);
 
     $targetModal.show(300);
-    $targetModal.find('.ch-dialog-container, .action-dialog').addClass('active');
+    $targetModal.find(Selector.dialogElements).addClass(ClassName.active);
     $targetModal.focus();
   }
 
   const close = function() {
-    $modal.find('.ch-dialog-container, .action-dialog').removeClass('active');
+    $modal.find(Selector.dialogElements).removeClass(ClassName.active);
     $modal.hide(300);
   }
 
-  $(document).on('click', '[data-target="modal"]', open);
+  $(document).on('click', Selector.modals, open);
 
-  $(document).on('click', '.ch-overlay, .btn-close-dialog', close);
+  $(document).on('click', Selector.closeTargets, close);
 
   $modal.on('keydown', function(e) { $.keyboardClose(e, close); });
 
-  $(document).on('click', '.ch-dialog-container', function(e) { e.stopPropagation(); });
+  $(document).on('click', Selector.dialogContainer, function(e) { e.stopPropagation(); });
 }
