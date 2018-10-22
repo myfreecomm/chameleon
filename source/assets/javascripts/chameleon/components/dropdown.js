@@ -39,7 +39,6 @@ Chameleon.Components.Dropdown = function() {
   }
 
   const positionLastResort = function(dropdownMenu) {
-    //TODO: Improve this
     if ( $(dropdownMenu).offset().left < 0 ) {
       dropdownMenu.classList.remove('right');
       dropdownMenu.classList.add('left');
