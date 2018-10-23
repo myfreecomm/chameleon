@@ -1515,7 +1515,7 @@ ol, ul, li {
     filter: grayscale(100%) contrast(1.2);
     z-index: -1; }
   .ch-login:after {
-    background-color: var(--main-color-dark);
+    background-color: #252C38;
     opacity: 0.85;
     z-index: 0; }
   .ch-login-container {
@@ -1529,19 +1529,31 @@ ol, ul, li {
     background-color: #fff;
     z-index: 1; }
   .ch-login-header {
-    text-align: center; }
-    .ch-login-header .logo-product {
-      width: 45px; }
+    width: 100%;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; }
+    .ch-login-header .ui.header:not(.sub) {
+      color: #47494C;
+      font-weight: 500;
+      font-size: 1.5em; }
+    .ch-login-header .ui.sub.header {
+      text-transform: none;
+      font-size: 1rem !important;
+      margin-top: .25rem;
+      color: rgba(71, 73, 76, 0.7); }
     .ch-login-header .logo-nexaas {
-      display: block;
-      margin: 5px auto; }
+      width: auto;
+      height: 1em;
+      display: block; }
     .ch-login-header .text {
       display: block;
       font-weight: 300;
       font-size: 1.3em; }
   .ch-login-form {
     max-width: 330px;
-    padding: 35px 0;
+    padding: 25px 0 35px;
     margin-left: auto;
     margin-right: auto; }
     .ch-login-form .ui.header {
@@ -1550,10 +1562,10 @@ ol, ul, li {
       text-align: center; }
     .ch-login-form .button {
       color: #fff;
-      background-color: var(--main-color); }
+      background-color: #252C38; }
       .ch-login-form .button:hover {
         color: #fff;
-        background-color: var(--main-color-light); }
+        background-color: #2f3847; }
   .ch-login-helpers {
     padding: 35px 0;
     color: #999; }
