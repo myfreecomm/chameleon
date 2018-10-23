@@ -28,7 +28,7 @@ $warningColor: #fbbd08;
 
     &.center {
       left: 50%;
-      transform: translateX(-50%);
+      @include transform(translateX(-50%));
     }
 
     &.left {
@@ -51,7 +51,7 @@ $warningColor: #fbbd08;
       left: 50% !important;
       right: auto !important;
       bottom: auto !important;
-      transform: translateX(-50%);
+      @include transform(translateX(-50%));
 
       .ui.icon.message {
         min-width: 100%;

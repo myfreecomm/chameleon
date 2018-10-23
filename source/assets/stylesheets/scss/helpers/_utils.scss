@@ -115,7 +115,7 @@
       top: 50%;
       left: 20px;
       width: 20px;
-      transform: translateY(-50%);
+      @include transform(translateY(-50%));
     }
 
     > .icon path {

@@ -100,7 +100,7 @@
           width: auto;
           height: 20px;
           border-right: 5px solid $activeColor;
-          transform: translateY(-50%);
+          @include transform(translateY(-50%));
         }
       }
     }
@@ -129,14 +129,14 @@
       align-items: center;
 
       .fa-icon.dropdown {
-        transition: all .3s;
+        @include transition(all .3s);
       }
     }
   }
 
   &.active > .ch-dropdown-toggle {
     .fa-icon.dropdown {
-      transform: rotate(180deg);
+      @include rotate(180);
     }
   }
 }

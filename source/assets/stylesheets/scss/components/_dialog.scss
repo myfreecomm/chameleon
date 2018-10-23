@@ -16,12 +16,12 @@
     padding: 20px;
     background-color: #fff;
     overflow-y: auto;
-    transform: translate(100%);
-    transition: all .3s;
+    @include transform(translate(100%));
+    @include transition(all .3s);
 
     &.active {
-      transform: translate(0);
-      transition: all .3s;
+      @include transform(translate(0));
+      @include transition(all .3s);
     }
   }
 
@@ -145,12 +145,12 @@
   color: $fontColor;
   border-top: 1px solid $borderColor;
   background-color: #fff;
-  transform: translate(100%);
-  transition: all .3s;
+  @include transform(translate(100%));
+  @include transition(all .3s);
 
   &.active {
-    transform: translate(0);
-    transition: all .3s;
+    @include transform(translate(0));
+    @include transition(all .3s);
   }
 
   @media screen and (max-width: 768px) {

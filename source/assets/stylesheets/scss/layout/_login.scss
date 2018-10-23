@@ -24,7 +24,7 @@
   }
 
   &:after {
-    background-color: var(--main-color-dark);
+    background-color: #252C38;
     opacity: 0.85;
     z-index: 0;
   }
@@ -43,15 +43,29 @@
   }
 
   &-header {
-    text-align: center;
+    width: 100%;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 
-    .logo-product {
-      width: 45px;
+    .ui.header:not(.sub) {
+      color: $fontColor;
+      font-weight: 500;
+      font-size: 1.5em;
+    }
+
+    .ui.sub.header {
+      text-transform: none;
+      font-size: 1rem !important;
+      margin-top: .25rem;
+      color: rgba($fontColor, 0.7)
     }
 
     .logo-nexaas {
+      width: auto;
+      height: 1em;
       display: block;
-      margin: 5px auto;
     }
 
     .text {
@@ -63,7 +77,7 @@
 
   &-form {
     max-width: 330px;
-    padding: 35px 0;
+    padding: 25px 0 35px;
     margin-left: auto;
     margin-right: auto;
 
@@ -75,11 +89,11 @@
 
     .button {
       color: #fff;
-      background-color: var(--main-color);
+      background-color: #252C38;
 
       &:hover {
         color: #fff;
-        background-color: var(--main-color-light);
+        background-color: lighten(#252C38, 5%);
       }
     }
   }

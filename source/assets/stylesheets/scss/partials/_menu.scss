@@ -1,5 +1,3 @@
-//TODO: Refactor this
-
 .ch-menu {
   width: calc(100% + 10px);
   overflow-y: auto;
@@ -38,7 +36,7 @@
       height: 20px;
       font-size: 1.15em;
       text-align: center;
-      transform: translateY(-50%);
+      @include transform(translateY(-50%));
     }
 
     > .fa-icon:first-child, &-label {
@@ -62,7 +60,7 @@
         width: auto;
         height: 20px;
         border-right: 5px solid $activeColor;
-        transform: translateY(-50%);
+        @include transform(translateY(-50%));
       }
 
       > .fa-icon:first-child {
@@ -105,8 +103,8 @@
       top: 50%;
       right: 0;
       height: auto;
-      transform: translateY(-50%);
-      transition: transform .3s;
+      @include transform(translateY(-50%));
+      @include transition(transform .3s);
 
       &:before {
         content: "\f054";
@@ -119,8 +117,14 @@
       }
 
       > .ch-dropdown-button > .fa-icon.dropdown {
-        transform: translateY(-50%) rotate(90deg);
+        @include transform(translateY(-50%) rotate(90deg));
       }
+    }
+  }
+
+  .ch-nav:not(.collapsed) & {
+    &.ch-dropdown.open > .ch-dropdown-button > .fa-icon.dropdown {
+      right: -10px;
     }
   }
 
@@ -166,7 +170,7 @@
 
         > .fa-icon:first-child {
           position: static;
-          transform: translateY(0);
+          @include transform(translateY(0));
         }
       }
 
@@ -180,7 +184,7 @@
           right: 50%;
           border-right: none;
           border-bottom: 5px solid $activeColor;
-          transform: translate(50%, 0);
+          @include transform(translate(50%, 0));
         }
       }
     }
