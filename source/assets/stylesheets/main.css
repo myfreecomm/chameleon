@@ -444,6 +444,9 @@ ol, ul, li {
   -webkit-transform: translateY(-50%) rotate(90deg);
   transform: translateY(-50%) rotate(90deg); }
 
+.ch-nav:not(.collapsed) .ch-menu-item.ch-dropdown.open > .ch-dropdown-button > .fa-icon.dropdown {
+  right: -10px; }
+
 @media screen and (max-width: 768px) {
   .ch-nav .ch-menu-item > a,
   .ch-nav .ch-menu-item > button {
@@ -561,11 +564,11 @@ ol, ul, li {
       position: absolute;
       top: 25px;
       left: -5px;
-      -moz-transform: rotate(45degdeg);
-      -o-transform: rotate(45degdeg);
-      -ms-transform: rotate(45degdeg);
-      -webkit-transform: rotate(45degdeg);
-      transform: rotate(45degdeg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
       box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.15);
       z-index: -1; }
     .ch-dropdown-content.visible {
@@ -606,14 +609,14 @@ ol, ul, li {
       position: absolute;
       top: 50%;
       right: 15px;
+      margin-left: auto;
+      visibility: hidden;
+      opacity: 0;
       -moz-transform: translateY(-50%);
       -o-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
-      margin-left: auto;
-      visibility: hidden;
-      opacity: 0;
       -moz-transition: all 0.2s;
       -o-transition: all 0.2s;
       -webkit-transition: all 0.2s;
@@ -1755,11 +1758,11 @@ ol, ul, li {
     transition: all 0.3s; }
 
 .ch-account.active > .ch-dropdown-toggle .fa-icon.dropdown {
-  -moz-transform: rotate(180degdeg);
-  -o-transform: rotate(180degdeg);
-  -ms-transform: rotate(180degdeg);
-  -webkit-transform: rotate(180degdeg);
-  transform: rotate(180degdeg); }
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
 
 .ch-blankslate {
   width: 100%;

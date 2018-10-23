@@ -136,7 +136,7 @@
 
   &.active > .ch-dropdown-toggle {
     .fa-icon.dropdown {
-      @include rotate(180deg);
+      @include rotate(180);
     }
   }
 }

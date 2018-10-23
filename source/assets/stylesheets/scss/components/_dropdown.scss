@@ -29,7 +29,7 @@
       position: absolute;
       top: 25px;
       left: -5px;
-      @include rotate(45deg);
+      @include rotate(45);
       box-shadow: -2px 2px 2px rgba(#000, 0.15);
       z-index: -1;
     }
@@ -100,10 +100,10 @@
       position: absolute;
       top: 50%;
       right: 15px;
-      @include transform(translateY(-50%));
       margin-left: auto;
       visibility: hidden;
       opacity: 0;
+      @include transform(translateY(-50%));
       @include transition(all .2s);
     }
   }
