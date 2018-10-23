@@ -297,7 +297,10 @@ ol, ul, li {
   padding-left: 60px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  color: #fff; }
   .ch-logo.has-shadow {
     box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2); }
   .ch-logo-label {
@@ -319,10 +322,6 @@ ol, ul, li {
     .ch-logo-icon > img {
       min-width: 36px;
       max-height: 36px; }
-  .ch-logo.nexaas {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    color: #fff; }
   @media screen and (max-width: 768px) {
     .ch-logo {
       min-height: 72px;
