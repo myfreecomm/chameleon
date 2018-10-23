@@ -1,18 +1,14 @@
 //HELPERS
-
 @import 'helpers/_functions';
 @import 'helpers/_mixins';
 @import 'helpers/_variables';
 @import 'helpers/_utils';
 @import 'helpers/_animations';
-@import 'helpers/_themes';
 
 //BASE
-
 @import 'base/_reset';
 
 //SEMANTIC UI OVERRIDES
-
 @import 'overrides/_base';
 @import 'overrides/_form';
 @import 'overrides/_grid';
@@ -22,13 +18,11 @@
 @import 'overrides/_table';
 
 //PARTIALS
-
 @import 'partials/_logo';
 @import 'partials/_menu';
 
 
 //COMPONENTS
-
 @import 'components/_breadcrumb';
 @import 'components/_dropdown';
 @import 'components/_dialog';
@@ -43,7 +37,6 @@
 @import 'components/_notification';
 
 //LAYOUT
-
 @import 'layout/_content';
 @import 'layout/_header';
 @import 'layout/_nav';
@@ -51,3 +44,4 @@
 @import 'layout/_sidebar';
 @import 'layout/_account';
 @import 'layout/_blankslate';
+@import 'layout/_user';

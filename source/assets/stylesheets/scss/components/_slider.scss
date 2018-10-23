@@ -49,8 +49,7 @@
   }
 
   &-base, &-handle {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    @include transform(translate3d(0,0,0));
   }
 
   &-horizontal {
@@ -72,7 +71,7 @@
 
   &-connect {
     background: var(--main-color-dark);
-    transition: background 450ms;
+    @include transition(background 450ms);
   }
 
   &-origin {

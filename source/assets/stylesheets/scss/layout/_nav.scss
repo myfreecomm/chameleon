@@ -12,7 +12,7 @@
 
   &.collapsed {
     width: $navbarCollapsedSize;
-    transition: all .2s;
+    @include transition(all .2s);
 
     + .ch-content {
       margin-left: $navbarCollapsedSize;
@@ -64,7 +64,7 @@
     &.collapsed,
     &.collapsed.hover {
       box-shadow: none;
-      transition: none;
+      @include transition(none);
     }
 
     &.collapsed + .ch-content {

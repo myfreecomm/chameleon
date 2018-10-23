@@ -42,3 +42,10 @@
 @mixin skew($x, $y) {
    @include transform(skew(#{$x}deg, #{$y}deg));
 }
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}

@@ -29,7 +29,7 @@
       position: absolute;
       top: 25px;
       left: -5px;
-      transform: rotate(45deg);
+      @include rotate(45deg);
       box-shadow: -2px 2px 2px rgba(#000, 0.15);
       z-index: -1;
     }
@@ -100,29 +100,16 @@
       position: absolute;
       top: 50%;
       right: 15px;
-      transform: translateY(-50%);
+      @include transform(translateY(-50%));
       margin-left: auto;
       visibility: hidden;
       opacity: 0;
-      transition: all .2s;
+      @include transition(all .2s);
     }
   }
 
   @media screen and (max-width: 768px) {
-
     &-content {
-      // position: fixed;
-      // width: 100%;
-      // top: auto;
-      // bottom: 50px;
-      // left: 0;
-      // background-color: var(--main-color-dark);
-      // border-radius: 0;
-
-      // &:before {
-      //   content: none;
-      // }
-
       &.collapse {
         position: static;
         box-shadow: none;
@@ -137,10 +124,5 @@
     &-header {
       border-bottom: 1px solid rgba(#fff, 0.2);
     }
-
-    // &-header, &-menu-item a {
-    //   color: #fff;
-    // }
-
   }
 }

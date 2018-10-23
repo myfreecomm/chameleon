@@ -142,7 +142,7 @@
     display: block;
     padding: 10px 15px;
     color: $fontColor;
-    transition: all .3s;
+    @include transition(all .3s);
 
     &:hover {
       cursor: pointer;
