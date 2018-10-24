@@ -63,7 +63,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .ch-header-nav {
     &.active {
       position: absolute;
@@ -73,7 +73,7 @@
       height: 65px;
       padding: 20px;
       justify-content: space-between;
-      background-color: color(navy, tone-0);
+      background-color: color(neutrals, tone-0);
     }
   }
 

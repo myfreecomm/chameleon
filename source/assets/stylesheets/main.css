@@ -1464,7 +1464,7 @@ ol, ul, li {
     .ch-header-nav-button.ch-account.active button {
       color: #777A7F; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .ch-header-nav.active {
     position: absolute;
     top: 0;
@@ -1473,7 +1473,7 @@ ol, ul, li {
     height: 65px;
     padding: 20px;
     justify-content: space-between;
-    background-color: #F9FBFF; }
+    background-color: #FFFFFF; }
   .ch-header-nav-button {
     display: none; }
     .ch-header-nav-button:first-child, .ch-header-nav-button:nth-child(2), .ch-header-nav-button:nth-child(3) {
