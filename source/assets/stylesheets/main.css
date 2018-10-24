@@ -461,9 +461,6 @@ ol, ul, li {
   -webkit-transform: translateY(-50%) rotate(90deg);
   transform: translateY(-50%) rotate(90deg); }
 
-.ch-nav:not(.collapsed) .ch-menu-item.ch-dropdown.open > .ch-dropdown-button > .fa-icon.dropdown {
-  right: -10px; }
-
 @media screen and (max-width: 768px) {
   .ch-nav .ch-menu-item > a,
   .ch-nav .ch-menu-item > button {

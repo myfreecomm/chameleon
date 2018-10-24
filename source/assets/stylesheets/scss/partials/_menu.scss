@@ -122,12 +122,6 @@
     }
   }
 
-  .ch-nav:not(.collapsed) & {
-    &.ch-dropdown.open > .ch-dropdown-button > .fa-icon.dropdown {
-      right: -10px;
-    }
-  }
-
   @media screen and (max-width: 768px) {
     .ch-nav & {
       > a,
