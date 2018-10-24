@@ -128,6 +128,15 @@
   padding-right: 0;
   font-size: 1.25em; }
 
+.info .description {
+  color: #5F6266; }
+
+.info .value {
+  font-size: 1.15em; }
+
+.info > .list > .value {
+  line-height: 1.5em; }
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
@@ -1379,6 +1388,19 @@ ol, ul, li {
     margin-top: 0;
     margin-left: 20px;
     align-self: center; }
+
+.ch-content-with-sidebar {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 65px); }
+  .ch-content-with-sidebar .ui.grid.padded.grid:not(.vertically):not(.horizontally) > .column:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: auto;
+    background-color: #fbfafa; }
 
 .ch-header {
   padding: 20px;

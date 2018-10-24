@@ -171,3 +171,18 @@
     font-size: 1.25em;
   }
 }
+
+.info {
+
+  .description {
+    color: color(neutrals, tone-60);
+  }
+
+  .value {
+    font-size: 1.15em;
+  }
+
+  > .list > .value {
+    line-height: 1.5em;
+  }
+}

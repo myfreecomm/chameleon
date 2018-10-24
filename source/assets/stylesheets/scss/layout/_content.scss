@@ -93,3 +93,23 @@
     }
   }
 }
+
+.ch-content-with-sidebar {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 65px);
+
+  .ui.grid.padded.grid:not(.vertically):not(.horizontally) > .column {
+
+    &:last-child {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      overflow: auto;
+      background-color: #fbfafa
+    }
+  }
+}
+
