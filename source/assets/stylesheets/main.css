@@ -299,6 +299,16 @@ ol, ul, li {
     padding: 0.5em 1em !important;
     text-align: left; } }
 
+.ui.progress.top.legend {
+  margin-top: 3em;
+  margin-bottom: .75em; }
+  .ui.progress.top.legend .label {
+    width: 100%;
+    position: absolute;
+    top: -35px;
+    font-size: 1rem;
+    font-weight: 400; }
+
 .ch-logo {
   position: relative;
   height: 65px;
@@ -1401,6 +1411,17 @@ ol, ul, li {
     height: 100%;
     overflow: auto;
     background-color: #fbfafa; }
+  @media screen and (max-width: 767px) {
+    .ch-content-with-sidebar .ui.grid.padded.grid:not(.vertically):not(.horizontally) > .column:last-child {
+      position: static;
+      width: calc(100% + 20px) !important;
+      margin-left: -0.7143em !important;
+      margin-right: -0.7143em !important;
+      margin-bottom: 2em !important;
+      height: auto;
+      border-left: 0; }
+      .ch-content-with-sidebar .ui.grid.padded.grid:not(.vertically):not(.horizontally) > .column:last-child.reverse-order {
+        order: -1; } }
 
 .ch-header {
   padding: 20px;
