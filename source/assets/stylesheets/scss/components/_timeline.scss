@@ -10,7 +10,16 @@
       align-items: center;
 
       .symbol {
+        width: 1.2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
         margin-right: .75em;
+
+        [data-theme="emites"] & {
+          color: #089f69
+        }
       }
 
       .date {
@@ -24,8 +33,12 @@
 
     > .info > .content {
       padding: 1em 1.5em;
-      margin-left: .43em;
+      margin-left: .75em;
       border-left: 1px solid #ddd;
+
+      [data-theme="emites"] & {
+        border-left-color: rgba(#089f69, .25);
+      }
     }
 
     > .info:last-child > .content {

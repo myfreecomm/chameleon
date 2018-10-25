@@ -1247,7 +1247,14 @@ ol, ul, li {
   display: flex;
   align-items: center; }
   .ch-timeline-container > .info > .header .symbol {
+    width: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
     margin-right: .75em; }
+    [data-theme="emites"] .ch-timeline-container > .info > .header .symbol {
+      color: #089f69; }
   .ch-timeline-container > .info > .header .date {
     margin-left: auto; }
     .ch-timeline-container > .info > .header .date .text-uppercase {
@@ -1255,8 +1262,10 @@ ol, ul, li {
 
 .ch-timeline-container > .info > .content {
   padding: 1em 1.5em;
-  margin-left: .43em;
+  margin-left: .75em;
   border-left: 1px solid #ddd; }
+  [data-theme="emites"] .ch-timeline-container > .info > .content {
+    border-left-color: rgba(8, 159, 105, 0.25); }
 
 .ch-timeline-container > .info:last-child > .content {
   border: none; }
