@@ -21,28 +21,20 @@
   <body>
     <div class="ch-nav">
         <div class="ch-logo">
-          <div class="ch-logo-icon"><img src="../assets/images/chameleon_logo.png"></div><span class="ch-logo-label">Chameleon</span>
+          <div class="ch-logo-icon"><img src="../assets/images/nexaas_id_logo.png"></div><span class="ch-logo-label">ID</span>
         </div>
       <ul class="ch-menu">
-        <li class="ch-menu-item active"><a href="dashboard.html"><i class="fal fa-chart-line fa-icon"></i><span class="ch-menu-item-label">Painel</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-clipboard fa-icon"></i><span class="ch-menu-item-label">Formulários</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-table fa-icon"></i><span class="ch-menu-item-label">Tabelas</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-magic fa-icon"></i><span class="ch-menu-item-label">Wizard</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-comment fa-icon"></i><span class="ch-menu-item-label">Notificações</span><span class="ui horizontal tiny label ch-tag--new" data-label="Novo"></span></a></li>
-        <li class="ch-menu-item disabled"><a href="#"><i class="fal fa-exclamation-circle fa-icon"></i><span class="ch-menu-item-label">Desabilitado</span></a></li>
-        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-puzzle-piece fa-icon"></i><span class="ch-menu-item-label">Páginas</span>
+        <li class="ch-menu-item active"><a href="#"><i class="fal fa-user fa-icon"></i><span class="ch-menu-item-label">Perfil</span></a></li>
+        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-lock-alt fa-icon"></i><span class="ch-menu-item-label">Segurança</span>
             <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
           <div class="ch-dropdown-content">
             <ul class="ch-dropdown-menu">
-              <li class="ch-menu-item"><a href="employees.html">Colaboradores</a></li>
-              <li class="ch-menu-item"><a href="reports.html">Relatórios</a></li>
-              <li class="ch-menu-item"><a href="filters.html">Filtros</a></li>
-              <li class="ch-menu-item"><a href="detail.html">Detalhe</a></li>
-              <li class="ch-menu-item"><a href="settings.html">Configurações</a></li>
-              <li class="ch-menu-item"><a href="map.html">Mapa</a></li>
+              <li class="ch-menu-item"><a href="#">Alterar Senha</a></li>
+              <li class="ch-menu-item"><a href="#">Autenticação em duas etapas</a></li>
             </ul>
           </div>
         </li>
+        <li class="ch-menu-item true"><a href="#"><i class="fal fa-code fa-icon"></i><span class="ch-menu-item-label">Área do desenvolvedor</span></a></li>
         <li class="ch-menu-item more mobile-only">
           <button data-toogle="nav"><i class="fal fa-ellipsis-h-alt fa-icon"></i></button>
         </li>
@@ -69,9 +61,7 @@
     <main class="ch-content">
       <header class="ch-header">
         <div class="ch-breadcrumb">
-          <div class="ch-breadcrumb-section"><a href="#" title="Fluxos de Caixa">Fluxos de Caixa</a></div><span class="divider">/</span>
-          <div class="ch-breadcrumb-section"><a href="#" title="Contas a Pagar">Contas a Pagar</a></div><span class="divider">/</span>
-          <div class="ch-breadcrumb-section active"><a href="#" title="Nova Despesa">Nova Despesa</a></div>
+          <div class="ch-breadcrumb-section active"><a href="#" title="Nova Perfil">Perfil</a></div>
         </div>
         <div class="ch-header-nav animated">
           <button class="ch-header-nav-button btn-more-options mobile-only"><i class="fal fa-angle-double-left fa-icon"></i></button>
@@ -132,14 +122,84 @@
           </div>
         </div>
       </header>
-      <div class="ui padded grid stackable">
-        <div class="ch-blankslate">
-          <div class="ui segment basic center aligned paddingless"><i class="fal fa-frown fa-9x"></i>
-            <h2 class="ui header">Ainda não há nada a ser mostrado
-              <div class="sub header">Comece a construir seu dashboard configurando sua conta e adicionando informações</div>
-            </h2>
+      <div class="ch-featured-content">
+        <div class="ui padded grid stackable">
+          <div class="nine wide tablet twelve wide computer column">
+            <h2 class="ui header medium">Dados Pessoais</h2>
+            <div class="ui grid two column stackable">
+              <div class="column">
+                <div class="info">
+                  <div class="description">Nome</div>
+                  <div class="value">Maria Eduarda</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Sobrenome</div>
+                  <div class="value">Ferreira</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Gênero</div>
+                  <div class="value">Feminino</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Idioma</div>
+                  <div class="value">Português</div>
+                </div>
+              </div>
+            </div>
             <div class="ui divider hidden"></div>
-            <button class="ui button primary" type="button">Iniciar configuração</button>
+            <h2 class="ui header medium">Contatos</h2>
+            <div class="ui grid one column">
+              <div class="column">
+                <div class="info">
+                  <div class="description">E-mails</div>
+                  <ul class="list">
+                    <li class="value"><a href="#">madu.ferreira@gmail.com</a></li>
+                    <li class="value"><a href="#">atendimento@stargames.com.br</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Telefones</div>
+                  <ul class="list">
+                    <li class="value">21 3520-5101</li>
+                    <li class="value">21 98604-1013</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ui divider hidden"></div>
+            <h2 class="ui header medium">Serviços Externos</h2>
+            <div class="ui grid one column">
+              <div class="column">
+                <div class="info">
+                  <div class="description">Skype</div>
+                  <div class="value">madu.ferreira</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="seven wide tablet four wide computer column sidebar reverse-order">
+            <div class="ui segment basic padded center aligned">
+              <div class="ui image small circular"><img src="http://i.pravatar.cc/200?img==5"></div>
+              <div class="ui large header">Maria Eduarda
+                <div class="sub header">atendimento@stargames.com.br</div>
+              </div>
+              <div class="ui divider hidden"></div>
+              <div class="ui divider hidden"></div>
+              <div class="ui tiny blue progress top legend" data-percent="75">
+                <div class="bar"></div>
+                <div class="label">75% do perfil preenchido</div>
+              </div>
+              <div class="ui divider hidden"></div>
+              <div class="ui fluid button basic secondary">Editar Perfil</div>
+            </div>
           </div>
         </div>
       </div>
@@ -297,5 +357,6 @@
         </div>
       </div>
     </div>
+    <script>$('.ui.progress').progress();</script>
   </body>
 </html>

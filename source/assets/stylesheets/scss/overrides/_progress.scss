@@ -1,0 +1,14 @@
+.ui.progress {
+  &.top.legend {
+    margin-top: 3em;
+    margin-bottom: .75em;
+
+    .label {
+      width: 100%;
+      position: absolute;
+      top: -35px;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}
