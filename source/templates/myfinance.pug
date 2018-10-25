@@ -107,7 +107,7 @@ html
                 th Descrição
                 th Categoria
                 th Cliente/Fornecedor
-                th Valor
+                th.right.aligned Valor
 
             tbody
               each data in data_table
@@ -119,8 +119,27 @@ html
                   td(data-info="Descrição")= data.description
                   td(data-info="Categoria")= data.category
                   td(data-info="Cliente/Fornecedor")= data.client
-                  td(data-info="Valor" class=data.value_class)
+                  td.right.aligned(data-info="Valor" class=data.value_class)
                     strong= data.value
+
+          .ui.segment.basic.paddingless.right.aligned
+            .ui.pagination.menu.ch-pagination
+              a.item
+                i.fal.fa-angle-double-left
+              a.item
+                i.fal.fa-angle-left
+              a.active.item 1
+              a.item 2
+              a.item 3
+              a.item 4
+              .disabled.item ...
+              a.item 20
+              a.item 21
+              a.item
+                i.fal.fa-angle-right
+              a.item
+                i.fal.fa-angle-double-right
+
 
     include includes/notifications.pug
     include includes/search.pug
