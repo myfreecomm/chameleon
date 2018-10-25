@@ -65,52 +65,52 @@ html
 
             h2.ui.header.medium Informações do RPS
 
-            .ui.form
-              .equal.width.fields
-                .field
-                  label Data de emissão da nota
-                  input(type="text" value="17/10/2018 às 16:29h")
+            .ui.grid.two.column.stackable
+              .column
+                .info
+                  .description Data de emissão da nota
+                  .value 17/10/2018 às 16:29h
 
-                .field
-                  label Data de emissão da nota
-                  input(type="text" value="17/10/2018 às 16:29h")
+              .column
+                .info
+                  .description Chave da NFSe
+                  .value SURI-MP8P
 
-              .equal.width.fields
-                .field
-                  label Chave da NFSe
-                  input(type="text" value="SURI-MP8P")
+              .column
+                .info
+                  .description Número da NFSe
+                  .value 9.492
 
-                .field
-                  label Número da NFSe
-                  input(type="text" value="9.492")
+              .column
+                .info
+                  .description Tipo do RPS
+                  .value RPS
 
-              .equal.width.fields
-                .field
-                  label Tipo do RPS
-                  input(type="text" value="RPS")
+              .column
+                .info
+                  .description Série do RPS
+                  .value at1
 
-                .field
-                  label Série do RPS
-                  input(type="text" value="at1")
+              .column
+                .info
+                  .description Situação do RPS
+                  .value Normal
 
-              .equal.width.fields
-                .field
-                  label Número do RPS
-                  input(type="text" value="615")
+              .column
+                .info
+                  .description Natureza da Operação
+                  .value Tributação no município
 
-                .field
-                  label Situação do RPS
-                  input(type="text" value="Normal")
+              .column
+                .info
+                  .description Regime Especial
+                  .value ---
 
-              .equal.width.fields
-                .field
-                  label Natureza da Operação
-                  input(type="text" value="Tributação no município")
-
-                .field
-                  label Regime Especial
-                  input(type="text" value="")
-
+            .ui.grid.one.column.stackable
+              .column
+                .info
+                  .description Outras informações
+                  .value Criado pelo Billimatic, contrato Lorem Ipsum, faturamento #000171
 
           .seven.wide.tablet.four.wide.computer.column.sidebar.reverse-order
             .ui.segment.basic.padded.center.aligned
@@ -134,7 +134,7 @@ html
                 ul.ch-timeline-container
                   li.info
                     .header
-                      i.fal.fa-usd-circle.symbol
+                      i.fal.fa-file-plus.symbol
                       strong.description Criado
                       span.date 17/10/18 às 16:29h
 
@@ -142,7 +142,7 @@ html
 
                   li.info
                     .header
-                      i.fal.fa-usd-circle.symbol
+                      i.fal.fa-clock.symbol
                       strong.description Agendado
                       span.date 17/10/18 às 16:30h
 
@@ -150,7 +150,7 @@ html
 
                   li.info
                     .header
-                      i.fal.fa-usd-circle.symbol
+                      i.fal.fa-cog.symbol
                       strong.description Processando
                       span.date 17/10/18 às 17:01h
 
@@ -158,8 +158,8 @@ html
 
                   li.info
                     .header
-                      i.fal.fa-usd-circle.symbol
-                      strong.description Agendado
+                      i.fal.fa-check-circle.symbol
+                      strong.description Aceito
                       span.date 17/10/18 às 17:15h
 
                     .content
