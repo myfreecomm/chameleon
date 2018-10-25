@@ -350,7 +350,7 @@ ol, ul, li {
         display: none; } }
 
 .ch-menu {
-  width: calc(100% + 10px);
+  width: 100%;
   overflow-y: auto;
   overflow-x: hidden; }
   @media screen and (max-width: 768px) {
@@ -367,6 +367,7 @@ ol, ul, li {
   align-items: center;
   position: relative;
   min-height: 40px;
+  line-height: 1.3em;
   padding: .7em 0;
   padding-left: 60px;
   font-weight: 600;
@@ -434,7 +435,7 @@ ol, ul, li {
 
 .ch-menu-item.ch-dropdown > .ch-dropdown-button > .fa-icon.dropdown {
   position: absolute;
-  margin-right: 2.2em;
+  margin-right: 1.2em;
   font-size: .65em;
   top: 50%;
   right: 0;

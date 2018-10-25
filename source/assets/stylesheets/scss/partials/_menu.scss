@@ -1,5 +1,5 @@
 .ch-menu {
-  width: calc(100% + 10px);
+  width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -21,6 +21,7 @@
     align-items: center;
     position: relative;
     min-height: 40px;
+    line-height: 1.3em;
     padding: .7em 0;
     padding-left: $navbarCollapsedSize;
     font-weight: 600;
@@ -98,7 +99,7 @@
 
     > .ch-dropdown-button > .fa-icon.dropdown {
       position: absolute;
-      margin-right: 2.2em;
+      margin-right: 1.2em;
       font-size: .65em;
       top: 50%;
       right: 0;
