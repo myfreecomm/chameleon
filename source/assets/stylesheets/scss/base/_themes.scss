@@ -9,3 +9,15 @@
     }
   }
 }
+
+[data-theme="myfinance"] {
+  .ch-menu-item.active a {
+    &:before {
+      border-right-color: #2483c4;
+    }
+
+    > .fa-icon:first-child {
+      color: #2483c4;
+    }
+  }
+}

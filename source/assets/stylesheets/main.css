@@ -172,6 +172,12 @@ ol, ul, li {
 [data-theme="emites"] .ch-menu-item.active a > .fa-icon:first-child {
   color: #089f69; }
 
+[data-theme="myfinance"] .ch-menu-item.active a:before {
+  border-right-color: #2483c4; }
+
+[data-theme="myfinance"] .ch-menu-item.active a > .fa-icon:first-child {
+  color: #2483c4; }
+
 .ui.header,
 .ui.button {
   font-family: "Roboto", sans-serif; }

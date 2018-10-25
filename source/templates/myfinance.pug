@@ -1,0 +1,33 @@
+doctype html
+html
+  include includes/head.pug
+
+  body(data-theme="myfinance")
+    .ch-nav
+      +logo('myfinance_logo.png', 'MyFinance')
+
+      ul.ch-menu
+
+        include partials/menu/myfinance.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
+
+    main.ch-content
+      include partials/header/myfinance.pug
+
+
+
+    include includes/notifications.pug
+    include includes/search.pug
+
+    script.
+      $('.ui.progress').progress();
+
+
+
+
+
