@@ -1,9 +1,9 @@
-li.ch-menu-item(class="active")
+li.ch-menu-item
   a(href="#")
     i(class= "fal fa-th-large fa-icon")
     span(class="ch-menu-item-label") Dashboard
 
-li.ch-menu-item.ch-dropdown
+li.ch-menu-item.ch-dropdown.open
   a.ch-dropdown-button(href="#")
     i.fal.fa-file-alt.fa-icon
     span.ch-menu-item-label Documentos
@@ -12,13 +12,14 @@ li.ch-menu-item.ch-dropdown
   -
     var pages = [
       { name: "NF-e", href: "#" },
+      { name: "NFSe", href: "#", active: true },
       { name: "NFC-e", href: "#" },
     ]
 
   .ch-dropdown-content
     ul.ch-dropdown-menu
       each page in pages
-        li.ch-menu-item
+        li.ch-menu-item(class={active: page.active, disabled: page.disabled})
           a(href=page.href)=page.name
 
 li.ch-menu-item.ch-dropdown

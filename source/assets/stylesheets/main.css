@@ -166,6 +166,12 @@ a {
 ol, ul, li {
   list-style: none; }
 
+[data-theme="emites"] .ch-menu-item.active a:before {
+  border-right-color: #089f69; }
+
+[data-theme="emites"] .ch-menu-item.active a > .fa-icon:first-child {
+  color: #089f69; }
+
 .ui.header,
 .ui.button {
   font-family: "Roboto", sans-serif; }
