@@ -41,6 +41,11 @@
     box-shadow: none;
   }
 
+  &.space.between {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &.paddingless {
     padding: 0;
 

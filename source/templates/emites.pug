@@ -23,73 +23,99 @@ html
       .ch-featured-content
         .ui.padded.grid.stackable
           .nine.wide.tablet.twelve.wide.computer.column
-            h2.ui.header.medium Dados Pessoais
-            .ui.grid.two.column.stackable
+            h2.ui.header.medium Resumo
+            .ui.grid.unstackable
+              .ui.twelve.wide.column
+                .ui.segment.basic.paddingless
+                  .ui.label.green.horizontal.large
+                    i.icon.check
+                    | Aprovado
+
+                  | Processado pelo Sefaz
+
+              .ui.four.wide.column
+                .ui.header.green R$ 240,67
+
+            .ui.grid.four.column.stackable
               .column
                 .info
-                  .description Nome
-                  .value Maria Eduarda
+                  .description Série
+                  .value
+                    strong at1
 
               .column
                 .info
-                  .description Sobrenome
-                  .value Ferreira
+                  .description RPS
+                  .value
+                    strong 615
 
               .column
                 .info
-                  .description Gênero
-                  .value Feminino
+                  .description NFSe
+                  .value
+                    strong 9492
 
               .column
                 .info
-                  .description Idioma
-                  .value Português
+                  .description Chave
+                  .value
+                    strong SURI-MP8P
 
             .ui.divider.hidden
 
-            h2.ui.header.medium Contatos
-            .ui.grid.one.column
-              .column
-                .info
-                  .description E-mails
-                  ul.list
-                    li.value
-                      a(href="#") madu.ferreira@gmail.com
-                    li.value
-                      a(href="#") atendimento@stargames.com.br
+            h2.ui.header.medium Informações do RPS
 
-              .column
-                .info
-                  .description Telefones
-                  ul.list
-                    li.value 21 3520-5101
-                    li.value 21 98604-1013
+            .ui.form
+              .equal.width.fields
+                .field
+                  label Data de emissão da nota
+                  input(type="text" value="17/10/2018 às 16:29h")
 
-            .ui.divider.hidden
+                .field
+                  label Data de emissão da nota
+                  input(type="text" value="17/10/2018 às 16:29h")
 
-            h2.ui.header.medium Serviços Externos
-            .ui.grid.one.column
-              .column
-                .info
-                  .description Skype
-                  .value madu.ferreira
+              .equal.width.fields
+                .field
+                  label Chave da NFSe
+                  input(type="text" value="SURI-MP8P")
+
+                .field
+                  label Número da NFSe
+                  input(type="text" value="9.492")
+
+              .equal.width.fields
+                .field
+                  label Tipo do RPS
+                  input(type="text" value="RPS")
+
+                .field
+                  label Série do RPS
+                  input(type="text" value="at1")
+
+              .equal.width.fields
+                .field
+                  label Número do RPS
+                  input(type="text" value="615")
+
+                .field
+                  label Situação do RPS
+                  input(type="text" value="Normal")
+
+              .equal.width.fields
+                .field
+                  label Natureza da Operação
+                  input(type="text" value="Tributação no município")
+
+                .field
+                  label Regime Especial
+                  input(type="text" value="")
+
+
           .seven.wide.tablet.four.wide.computer.column.sidebar.reverse-order
             .ui.segment.basic.padded.center.aligned
-              .ui.image.small.circular
-                img(src="http://i.pravatar.cc/200?img==5")
-              .ui.large.header Maria Eduarda
-                .sub.header atendimento@stargames.com.br
 
-              .ui.divider.hidden
-              .ui.divider.hidden
-
-              .ui.tiny.blue.progress.top.legend(data-percent="75")
-                .bar
-                .label 75% do perfil preenchido
-
-              .ui.divider.hidden
-
-              .ui.fluid.button.basic.secondary Editar Perfil
+              .ui.fluid.button.basic.secondary Ações
 
     include includes/notifications.pug
     include includes/search.pug

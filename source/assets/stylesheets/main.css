@@ -237,6 +237,9 @@ ol, ul, li {
     border: none;
     border-radius: 0;
     box-shadow: none; }
+  .ui.segment.space.between {
+    display: flex;
+    justify-content: space-between; }
   .ui.segment.paddingless {
     padding: 0; }
     .ui.segment.paddingless .ui.table td, .ui.segment.paddingless .ui.table th {
