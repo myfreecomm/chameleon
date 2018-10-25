@@ -936,6 +936,14 @@ ol, ul, li {
   text-transform: uppercase;
   color: #606266; }
 
+.ch-table.ui.table td.positive {
+  color: #16ab39 !important;
+  background: none !important; }
+
+.ch-table.ui.table td.negative {
+  color: #db2828 !important;
+  background: none !important; }
+
 .bind-popup + .ui.popup {
   max-width: 275px; }
   .bind-popup + .ui.popup .ui.label {
