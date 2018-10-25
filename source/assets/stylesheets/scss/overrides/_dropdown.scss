@@ -1,0 +1,12 @@
+.ui.dropdown.button.center.aligned {
+  text-align: center;
+
+  &.fluid > .dropdown.icon {
+    float: none;
+    font-family: "Font Awesome 5 Pro";
+
+    &:before {
+      content: "\f107";
+    }
+  }
+}

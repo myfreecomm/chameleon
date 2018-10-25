@@ -115,7 +115,54 @@ html
           .seven.wide.tablet.four.wide.computer.column.sidebar.reverse-order
             .ui.segment.basic.padded.center.aligned
 
-              .ui.fluid.button.basic.secondary Ações
+              .ui.fluid.button.basic.secondary.floating.dropdown.center.aligned
+                | Ações
+                i.dropdown.icon
+
+                .menu
+                  .item Exportar XML
+                  .item Exportar PDF
+                  .item Enviar e-mail para tomador
+                  .divider
+                  .item Clonar NFSe
+                  .item Deletar NFSE
+                  .item Cancelar NFSe
+
+            .ui.segment.basic.padded
+              .ui.header.medium Histórico
+              .ch-timeline
+                ul.ch-timeline-container
+                  li.info
+                    .header
+                      i.fal.fa-usd-circle.symbol
+                      strong.description Criado
+                      span.date 17/10/18 às 16:29h
+
+                    .content
+
+                  li.info
+                    .header
+                      i.fal.fa-usd-circle.symbol
+                      strong.description Agendado
+                      span.date 17/10/18 às 16:30h
+
+                    .content
+
+                  li.info
+                    .header
+                      i.fal.fa-usd-circle.symbol
+                      strong.description Processando
+                      span.date 17/10/18 às 17:01h
+
+                    .content
+
+                  li.info
+                    .header
+                      i.fal.fa-usd-circle.symbol
+                      strong.description Agendado
+                      span.date 17/10/18 às 17:15h
+
+                    .content
 
     include includes/notifications.pug
     include includes/search.pug

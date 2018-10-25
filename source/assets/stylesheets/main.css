@@ -318,6 +318,14 @@ ol, ul, li {
     font-size: 1rem;
     font-weight: 400; }
 
+.ui.dropdown.button.center.aligned {
+  text-align: center; }
+  .ui.dropdown.button.center.aligned.fluid > .dropdown.icon {
+    float: none;
+    font-family: "Font Awesome 5 Pro"; }
+    .ui.dropdown.button.center.aligned.fluid > .dropdown.icon:before {
+      content: "\f107"; }
+
 .ch-logo {
   position: relative;
   height: 65px;
@@ -1234,30 +1242,24 @@ ol, ul, li {
   .ch-nav.active .ch-tag--new.ui.label {
     font-size: .75em; } }
 
-.ch-timeline {
-  padding-bottom: 20px;
-  border-left: 3px solid #e5e5e5; }
-  .ch-timeline li {
-    position: relative;
-    left: -9px;
-    display: flex;
-    padding: 15px 0;
-    z-index: 1; }
-    .ch-timeline li:before {
-      content: '';
-      display: block;
-      margin-right: 15px;
-      min-width: 15px;
-      height: 15px;
-      background: #fff;
-      border: 3px solid #e5e5e5;
-      border-radius: 100%; }
-    .ch-timeline li.date {
-      align-items: center; }
-    .ch-timeline li.event .header {
-      margin-bottom: 5px; }
-    .ch-timeline li.event:before {
-      border-color: var(--main-color); }
+.ch-timeline-container > .info > .header {
+  width: 100%;
+  display: flex;
+  align-items: center; }
+  .ch-timeline-container > .info > .header .symbol {
+    margin-right: .75em; }
+  .ch-timeline-container > .info > .header .date {
+    margin-left: auto; }
+    .ch-timeline-container > .info > .header .date .text-uppercase {
+      text-transform: uppercase; }
+
+.ch-timeline-container > .info > .content {
+  padding: 1em 1.5em;
+  margin-left: .43em;
+  border-left: 1px solid #ddd; }
+
+.ch-timeline-container > .info:last-child > .content {
+  border: none; }
 
 .ch-notification {
   display: flex;
