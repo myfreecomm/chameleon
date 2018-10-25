@@ -256,10 +256,25 @@ ol, ul, li {
       .ui.segment.paddingless .ui.table td:last-child, .ui.segment.paddingless .ui.table th:last-child {
         padding-right: 1.6em; }
 
-.ui.table thead th {
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em; }
+.ui.table.sortable thead th {
+  color: #919499;
+  border-left: none; }
+
+.ui.table.sortable thead th:hover,
+.ui.table.sortable thead th.sorted,
+.ui.table.sortable thead th.sorted:hover {
+  background: none; }
+
+.ui.table.sortable thead th.ascending:after,
+.ui.table.sortable thead th.descending:after {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 300; }
+
+.ui.table.sortable thead th.ascending:after {
+  content: "\f30c"; }
+
+.ui.table.sortable thead th.descending:after {
+  content: "\f309"; }
 
 .paddingless .ui.table {
   border: none; }

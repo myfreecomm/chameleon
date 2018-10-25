@@ -97,12 +97,12 @@ html
 
       .ui.padded.grid.stackable
         .ui.sixteen.wide.column
-          table.ui.very.basic.table.ch-table
+          table.ui.very.basic.sortable.table.ch-table
             thead
               tr
                 th.center.aligned.checkbox
                   input(type="checkbox")
-                th Data
+                th.sorted.descending Data
                 th Documento
                 th Descrição
                 th Categoria
@@ -121,10 +121,6 @@ html
                   td(data-info="Cliente/Fornecedor")= data.client
                   td(data-info="Valor" class=data.value_class)
                     strong= data.value
-
-
-
-
 
     include includes/notifications.pug
     include includes/search.pug
