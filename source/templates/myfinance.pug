@@ -102,7 +102,7 @@ html
               tr
                 th.center.aligned.checkbox
                   input(type="checkbox")
-                th.sorted.descending Data
+                th Data
                 th Documento
                 th Descrição
                 th Categoria
@@ -143,3 +143,8 @@ html
 
     include includes/notifications.pug
     include includes/search.pug
+
+    script(src="https://semantic-ui.com/javascript/library/tablesort.js")
+    script.
+      console.log('teste')
+      $('table').tablesort();
