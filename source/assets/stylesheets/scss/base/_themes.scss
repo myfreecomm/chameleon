@@ -1,0 +1,11 @@
+[data-theme="emites"] {
+  .ch-menu-item.active a {
+    &:before {
+      border-right-color: #089f69;
+    }
+
+    > .fa-icon:first-child {
+      color: #089f69;
+    }
+  }
+}

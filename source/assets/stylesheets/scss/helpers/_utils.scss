@@ -85,7 +85,7 @@
   width: 100%;
   margin-top: auto;
   align-self: flex-start;
-  background-color: color(navy, tone-70);
+  background-color: color(navy, tone-80);
   z-index: 1;
 
   > button {
@@ -169,5 +169,20 @@
     order: 1;
     padding-right: 0;
     font-size: 1.25em;
+  }
+}
+
+.info {
+
+  .description {
+    color: color(neutrals, tone-60);
+  }
+
+  .value {
+    font-size: 1.15em;
+  }
+
+  > .list > .value {
+    line-height: 1.5em;
   }
 }

@@ -18,31 +18,41 @@
     <script type="text/javascript" src="../assets/javascripts/main.js"></script>
     <script type="text/javascript" src="../assets/javascripts/init.js"></script>
   </head>
-  <body>
+  <body data-theme="emites">
     <div class="ch-nav">
         <div class="ch-logo">
-          <div class="ch-logo-icon"><img src="../assets/images/chameleon_logo.png"></div><span class="ch-logo-label">Chameleon</span>
+          <div class="ch-logo-icon"><img src="../assets/images/emites_logo.png"></div><span class="ch-logo-label">Emites</span>
         </div>
       <ul class="ch-menu">
-        <li class="ch-menu-item active"><a href="dashboard.html"><i class="fal fa-chart-line fa-icon"></i><span class="ch-menu-item-label">Painel</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-clipboard fa-icon"></i><span class="ch-menu-item-label">Formulários</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-table fa-icon"></i><span class="ch-menu-item-label">Tabelas</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-magic fa-icon"></i><span class="ch-menu-item-label">Wizard</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-comment fa-icon"></i><span class="ch-menu-item-label">Notificações</span><span class="ui horizontal tiny label ch-tag--new" data-label="Novo"></span></a></li>
-        <li class="ch-menu-item disabled"><a href="#"><i class="fal fa-exclamation-circle fa-icon"></i><span class="ch-menu-item-label">Desabilitado</span></a></li>
-        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-puzzle-piece fa-icon"></i><span class="ch-menu-item-label">Páginas</span>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-th-large fa-icon"></i><span class="ch-menu-item-label">Dashboard</span></a></li>
+        <li class="ch-menu-item ch-dropdown open"><a class="ch-dropdown-button" href="#"><i class="fal fa-file-alt fa-icon"></i><span class="ch-menu-item-label">Documentos</span>
             <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
           <div class="ch-dropdown-content">
             <ul class="ch-dropdown-menu">
-              <li class="ch-menu-item"><a href="employees.html">Colaboradores</a></li>
-              <li class="ch-menu-item"><a href="reports.html">Relatórios</a></li>
-              <li class="ch-menu-item"><a href="filters.html">Filtros</a></li>
-              <li class="ch-menu-item"><a href="detail.html">Detalhe</a></li>
-              <li class="ch-menu-item"><a href="settings.html">Configurações</a></li>
-              <li class="ch-menu-item"><a href="map.html">Mapa</a></li>
+              <li class="ch-menu-item"><a href="#">NF-e</a></li>
+              <li class="ch-menu-item active"><a href="#">NFSe</a></li>
+              <li class="ch-menu-item"><a href="#">NFC-e</a></li>
             </ul>
           </div>
         </li>
+        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-clipboard-list fa-icon"></i><span class="ch-menu-item-label">Cadastros</span>
+            <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
+          <div class="ch-dropdown-content">
+            <ul class="ch-dropdown-menu">
+              <li class="ch-menu-item"><a href="#">Organizações</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-cogs fa-icon"></i><span class="ch-menu-item-label">Configurações</span>
+            <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
+          <div class="ch-dropdown-content">
+            <ul class="ch-dropdown-menu">
+              <li class="ch-menu-item"><a href="#">Regras de tributação</a></li>
+              <li class="ch-menu-item"><a href="#">Séries de notas fiscais</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-users-cog fa-icon"></i><span class="ch-menu-item-label">Conta</span></a></li>
         <li class="ch-menu-item more mobile-only">
           <button data-toogle="nav"><i class="fal fa-ellipsis-h-alt fa-icon"></i></button>
         </li>
@@ -69,9 +79,8 @@
     <main class="ch-content">
       <header class="ch-header">
         <div class="ch-breadcrumb">
-          <div class="ch-breadcrumb-section"><a href="#" title="Fluxos de Caixa">Fluxos de Caixa</a></div><span class="divider">/</span>
-          <div class="ch-breadcrumb-section"><a href="#" title="Contas a Pagar">Contas a Pagar</a></div><span class="divider">/</span>
-          <div class="ch-breadcrumb-section active"><a href="#" title="Nova Despesa">Nova Despesa</a></div>
+          <div class="ch-breadcrumb-section"><a href="#" title="NFSe">NFSe</a></div><span class="divider">/</span>
+          <div class="ch-breadcrumb-section active"><a href="#" title="Detalhamento de Nota at1-615">Detalhamento de Nota at1-615</a></div>
         </div>
         <div class="ch-header-nav animated">
           <button class="ch-header-nav-button btn-more-options mobile-only"><i class="fal fa-angle-double-left fa-icon"></i></button>
@@ -132,14 +141,144 @@
           </div>
         </div>
       </header>
-      <div class="ui padded grid stackable">
-        <div class="ch-blankslate">
-          <div class="ui segment basic center aligned paddingless"><i class="fal fa-frown fa-9x"></i>
-            <h2 class="ui header">Ainda não há nada a ser mostrado
-              <div class="sub header">Comece a construir seu dashboard configurando sua conta e adicionando informações</div>
-            </h2>
+      <div class="ch-featured-content">
+        <div class="ui padded grid stackable">
+          <div class="nine wide tablet twelve wide computer column">
+            <h2 class="ui header medium">Resumo</h2>
+            <div class="ui grid unstackable">
+              <div class="ui twelve wide column">
+                <div class="ui segment basic paddingless">
+                  <div class="ui label green horizontal large"><i class="icon check"></i>Aprovado</div>Processado pelo Sefaz
+                </div>
+              </div>
+              <div class="ui four wide column">
+                <div class="ui header green">R$ 240,67</div>
+              </div>
+            </div>
+            <div class="ui grid four column stackable">
+              <div class="column">
+                <div class="info">
+                  <div class="description">Série</div>
+                  <div class="value"><strong>at1</strong></div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">RPS</div>
+                  <div class="value"><strong>615</strong></div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">NFSe</div>
+                  <div class="value"><strong>9492</strong></div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Chave</div>
+                  <div class="value"><strong>SURI-MP8P</strong></div>
+                </div>
+              </div>
+            </div>
             <div class="ui divider hidden"></div>
-            <button class="ui button primary" type="button">Iniciar configuração</button>
+            <h2 class="ui header medium">Informações do RPS</h2>
+            <div class="ui grid two column stackable">
+              <div class="column">
+                <div class="info">
+                  <div class="description">Data de emissão da nota</div>
+                  <div class="value">17/10/2018 às 16:29h</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Chave da NFSe</div>
+                  <div class="value">SURI-MP8P</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Número da NFSe</div>
+                  <div class="value">9.492</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Tipo do RPS</div>
+                  <div class="value">RPS</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Série do RPS</div>
+                  <div class="value">at1</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Situação do RPS</div>
+                  <div class="value">Normal</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Natureza da Operação</div>
+                  <div class="value">Tributação no município</div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="info">
+                  <div class="description">Regime Especial</div>
+                  <div class="value">---</div>
+                </div>
+              </div>
+            </div>
+            <div class="ui grid one column stackable">
+              <div class="column">
+                <div class="info">
+                  <div class="description">Outras informações</div>
+                  <div class="value">Criado pelo Billimatic, contrato Lorem Ipsum, faturamento #000171</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="seven wide tablet four wide computer column sidebar reverse-order">
+            <div class="ui segment basic padded center aligned">
+              <div class="ui fluid button basic secondary floating dropdown center aligned">Ações<i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item">Exportar XML</div>
+                  <div class="item">Exportar PDF</div>
+                  <div class="item">Enviar e-mail para tomador</div>
+                  <div class="divider"></div>
+                  <div class="item">Clonar NFSe</div>
+                  <div class="item">Deletar NFSE</div>
+                  <div class="item">Cancelar NFSe</div>
+                </div>
+              </div>
+            </div>
+            <div class="ui segment basic padded">
+              <div class="ui header medium">Histórico</div>
+              <div class="ch-timeline">
+                <ul class="ch-timeline-container">
+                  <li class="info">
+                    <div class="header"><i class="fal fa-file-plus symbol"></i><strong class="description">Criado</strong><span class="date">17/10/18 às 16:29h</span></div>
+                    <div class="content"></div>
+                  </li>
+                  <li class="info">
+                    <div class="header"><i class="fal fa-clock symbol"></i><strong class="description">Agendado</strong><span class="date">17/10/18 às 16:30h</span></div>
+                    <div class="content"></div>
+                  </li>
+                  <li class="info">
+                    <div class="header"><i class="fal fa-cog symbol"></i><strong class="description">Processando</strong><span class="date">17/10/18 às 17:01h</span></div>
+                    <div class="content"></div>
+                  </li>
+                  <li class="info">
+                    <div class="header"><i class="fal fa-check-circle symbol"></i><strong class="description">Aceito</strong><span class="date">17/10/18 às 17:15h</span></div>
+                    <div class="content"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -297,5 +436,6 @@
         </div>
       </div>
     </div>
+    <script>$('.ui.progress').progress();</script>
   </body>
 </html>

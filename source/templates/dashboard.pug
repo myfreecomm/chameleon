@@ -1,66 +1,25 @@
--
-  var people = [
-    { name: "Rachel", photo_id: "1" },
-    { name: "Lindsay", photo_id: "2" },
-    { name: "Matthew", photo_id: "3" },
-    { name: "Jenny Hess", photo_id: "4" },
-    { name: "Veronika Ossi", photo_id: "5" }
-  ];
-
-  var groups = [
-    { name: "Marketing", photo_id: "6" },
-    { name: "Comercial", photo_id: "7" },
-    { name: "Desenvolvimento", photo_id: "8" },
-    { name: "Contabilidade", photo_id: "9" },
-    { name: "Suporte", photo_id: "10" }
-  ];
-
-  var workers = [
-    { name: "John Lilki", admission_date: "September 14, 2013", email: "jhlilk22@yahoo.com" },
-    { name: "Jamie Harington", admission_date: "January 11, 2014", email: "jamieharingonton@yahoo.com" },
-    { name: "Jill Lewis", admission_date: "May 11, 2014", email: "jilsewris22@yahoo.com" },
-    { name: "Veronika Ossi", admission_date: "September 14, 2013", email: "verossi@yahoo.com" },
-  ];
-
-mixin smallCard(name, value, date, type)
-  .four.wide.computer.eight.wide.tablet.column
-    .ui.horizontal.segments
-      .ui.segment.borderless.middle.aligned
-        .ch-metric-label=name
-      .ui.segment.borderless.right.aligned
-        .ch-metric-value(class=type)
-          i.icon.small.up.arrow
-          span=value
-        span.ch-metric-date=date
-
-mixin listSegment(title, items)
-  .ui.attached.segment.middle.aligned.ch-segment-header
-    span.ch-segment-header-title= title
-    .ui.icon.dropdown.actions
-      i.icon.ellipsis.vertical
-      .menu.fixed-position
-        for item in ["Option 1", "Option 2", "Option 3"]
-          .item=item
-
-  .ui.attached.segment
-    .ui.unstackable.divided.items.ch-list
-      each item in items
-        .item
-          img.ui.avatar.image(src="http://i.pravatar.cc/50?img=" + item.photo_id)
-          .middle.aligned.content
-            span= item.name
-            a.right.floated(href="#")
-              i.icon.pencil
-
 doctype html
 html
   include includes/head.pug
 
   body
-    +nav('dashboard.html')
+    .ch-nav
+      +logo('chameleon_logo.png', 'Chameleon')
+
+      ul.ch-menu
+
+        include partials/menu/generic.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
 
     main.ch-content
-      include includes/header.pug
+      include includes/message.pug
+      include partials/header/generic.pug
+
       .ui.padded.grid.stackable
         .ch-blankslate
           .ui.segment.basic.center.aligned.paddingless
