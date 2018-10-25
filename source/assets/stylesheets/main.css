@@ -200,6 +200,10 @@ ol, ul, li {
 .ui.grid.padded.grid:not(.vertically):not(.horizontally) {
   padding: 10px; }
 
+.ui.menu .item > i.fa-icon {
+  float: none;
+  margin: 0 .35714286em 0 0; }
+
 @media screen and (max-width: 480px) {
   .ui.menu.pagination .item {
     display: none; }
@@ -1212,6 +1216,8 @@ ol, ul, li {
 .ch-tabs {
   width: 100%;
   overflow: hidden; }
+  .ch-tabs > .ui.secondary.pointing.menu {
+    border-bottom-color: transparent; }
   @media screen and (max-width: 768px) {
     .ch-tabs {
       position: relative;
@@ -1224,18 +1230,6 @@ ol, ul, li {
         left: 0;
         padding-bottom: 10px;
         overflow-x: scroll; } }
-
-.ch-content-header ~ .ch-tabs {
-  margin-top: 0;
-  background-color: #fff; }
-  @media screen and (max-width: 768px) {
-    .ch-content-header ~ .ch-tabs .ui.menu {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      padding-bottom: 10px;
-      overflow-x: scroll; } }
 
 .ch-tag--new.ui.label {
   margin-left: 5px;

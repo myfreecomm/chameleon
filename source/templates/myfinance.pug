@@ -96,6 +96,29 @@ html
       include partials/header/myfinance.pug
 
       .ui.padded.grid.stackable
+
+        .row
+          .thirteen.wide.column
+            .ch-tabs
+              .ui.pointing.secondary.menu
+                a.active.item(data-tab="first")
+                  i.fal.fa-desktop.fa-icon
+                  | Visualizar
+                a.item(data-tab="second")
+                  i.fal.fa-cloud-download-alt.fa-icon
+                  | Importar
+                a.item(data-tab="third")
+                  i.fal.fa-print.fa-icon
+                  | Relatório
+
+                a.item(data-tab="third")
+                  i.fal.fa-filter.fa-icon
+                  | Filtros
+
+          .three.wide.column.right.aligned
+            .ui.button.primary
+              | Novo Lançamento
+
         .ui.sixteen.wide.column
           table.ui.very.basic.sortable.table.ch-table
             thead
