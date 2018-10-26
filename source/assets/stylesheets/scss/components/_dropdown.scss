@@ -126,3 +126,13 @@
     }
   }
 }
+
+.dropdown-list {
+  .ui.dropdown + .ui.dropdown {
+    margin-left: .5em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

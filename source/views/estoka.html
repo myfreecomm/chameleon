@@ -18,11 +18,44 @@
     <script type="text/javascript" src="../assets/javascripts/main.js"></script>
     <script type="text/javascript" src="../assets/javascripts/init.js"></script>
   </head>
+  <style>
+    #estoka-logo {
+      width: 36px;
+      height: 19.8px;
+      background: #FF0159;
+      position: relative;
+    }
+    #estoka-logo:before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 9px solid #FF0159;
+    }
+    #estoka-logo:after {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 9px solid #FF0159;
+    }
+    
+  </style>
   <body data-theme="estoka">
     <div class="ch-nav">
-        <div class="ch-logo">
-          <div class="ch-logo-icon"><img src="../assets/images/myfinance_logo.png"></div><span class="ch-logo-label">Estoka</span>
-        </div>
+      <div class="ch-logo">
+        <div class="ch-logo-icon">
+          <div id="estoka-logo"></div>
+        </div><span class="ch-logo-label">Estoka</span>
+      </div>
       <ul class="ch-menu">
         <li class="ch-menu-item active"><a href="dashboard.html"><i class="fal fa-shopping-cart fa-icon"></i><span class="ch-menu-item-label">Pedidos</span></a></li>
         <li class="ch-menu-item"><a href="#"><i class="fal fa-boxes fa-icon"></i><span class="ch-menu-item-label">Estoques</span></a></li>
@@ -116,6 +149,19 @@
         </div>
       </header>
       <div class="ui padded grid stackable">
+        <div class="ui sixteen wide column right aligned">
+          <div class="dropdown-list">
+            <select class="ui dropdown">
+              <option>Todos os canais de venda</option>
+            </select>
+            <select class="ui dropdown">
+              <option>Todos os status</option>
+            </select>
+            <select class="ui dropdown">
+              <option>Últimos 30 dias</option>
+            </select>
+          </div>
+        </div>
         <div class="ui sixteen wide column">
           <table class="ui very basic sortable table ch-table">
             <thead>
@@ -132,84 +178,93 @@
             <tbody>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Shoptime</td>
                 <td data-info="Cliente">Augusto Manoel dos Santos</td>
                 <td data-info="Valor">R$ 89,99</td>
-                <td class="right aligned" data-info="Status"><strong>Aguardando separação de produtos</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #E58D00;"><strong><i class="fal fa-box-open" style="margin-right: .5em;"></i><span>Aguardando separação de produtos</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Separar produtos</a>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Shoptime</td>
                 <td data-info="Cliente">Augusto Manoel dos Santos</td>
                 <td data-info="Valor">R$ 89,99</td>
-                <td class="right aligned" data-info="Status"><strong>Aguardando separação de produtos</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #E58D00;"><strong><i class="fal fa-box-open" style="margin-right: .5em;"></i><span>Aguardando separação de produtos</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Separar produtos</a>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Americanas</td>
                 <td data-info="Cliente">Augusto Manoel dos Santos</td>
                 <td data-info="Valor">R$ 89,99</td>
-                <td class="right aligned" data-info="Status"><strong>Aguardando separação de produtos</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #F73D4E;"><strong><i class="fal fa-user-clock" style="margin-right: .5em;"></i><span>Aguardando pagamento</span></strong></td>
+                <td>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Shoptime</td>
                 <td data-info="Cliente">Maria da Silva</td>
                 <td data-info="Valor">R$ 99,99</td>
-                <td class="right aligned" data-info="Status"><strong>Aguardando separação de produtos</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #F73D4E;"><strong><i class="fal fa-user-clock" style="margin-right: .5em;"></i><span>Aguardando pagamento</span></strong></td>
+                <td>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Americanas</td>
                 <td data-info="Cliente">Maria da Silva</td>
                 <td data-info="Valor">R$ 89,99</td>
-                <td class="right aligned" data-info="Status"><strong>Aguardando separação de produtos</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #E58D00;"><strong><i class="fal fa-box-open" style="margin-right: .5em;"></i><span>Aguardando separação de produtos</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Separar produtos</a>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Submarino</td>
                 <td data-info="Cliente">Augusto Manoel dos Santos</td>
                 <td data-info="Valor">R$ 89,99</td>
-                <td class="right aligned" data-info="Status"><strong>Faturado</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #6C9C35;"><strong><i class="fal fa-check" style="margin-right: .5em;"></i><span>Faturado</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Emitir etiqueta</a>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Submarino</td>
                 <td data-info="Cliente">Augusto Manoel dos Santos</td>
                 <td data-info="Valor">R$ 89,99</td>
-                <td class="right aligned" data-info="Status"><strong>Finalizado</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #6C9C35;"><strong><i class="fal fa-check-double" style="margin-right: .5em;"></i><span>Finalizado</span></strong></td>
+                <td>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Acom</td>
                 <td data-info="Cliente">Miguel dos Santos</td>
                 <td data-info="Valor">R$ 7,99</td>
-                <td class="right aligned" data-info="Status"><strong>Aguardando pagamentos</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #F73D4E;"><strong><i class="fal fa-user-clock" style="margin-right: .5em;"></i><span>Aguardando pagamento</span></strong></td>
+                <td>
+                </td>
               </tr>
               <tr>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Número">1539095437476</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
                 <td data-info="Canal">Shoptime</td>
                 <td data-info="Cliente">Augusto Manoel dos Santos</td>
                 <td data-info="Valor">R$ 89,99</td>
-                <td class="right aligned" data-info="Status"><strong>Finalizado</strong></td>
-                <td class="center aligned"></td>
+                <td data-info="Status" style="color: #6C9C35;"><strong><i class="fal fa-check-double" style="margin-right: .5em;"></i><span>Finalizado</span></strong></td>
+                <td>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -376,8 +431,8 @@
     </div>
     <script src="https://semantic-ui.com/javascript/library/tablesort.js"></script>
     <script>
-      console.log('teste')
       $('table').tablesort();
+      $('.ui.dropdown').dropdown();
     </script>
   </body>
 </html>
