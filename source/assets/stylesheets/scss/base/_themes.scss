@@ -12,6 +12,10 @@
   .ch-pagination.ui.pagination.menu .item.active {
     border-bottom-color: #089f69;
   }
+
+  @media screen and (max-width: 767px) {
+    border-bottom-color: #089f69;
+  }
 }
 
 [data-theme="myfinance"] {
@@ -27,5 +31,31 @@
 
   .ch-pagination.ui.pagination.menu .item.active {
     border-bottom-color: #2483c4;
+  }
+
+  @media screen and (max-width: 767px) {
+    border-bottom-color: #2483c4;
+  }
+}
+
+[data-theme="estoka"] {
+  .ch-menu-item.active a {
+    &:before {
+      border-right-color: #FF0159;
+    }
+
+    > .fa-icon:first-child {
+      color: #FF0159;
+    }
+  }
+
+  .ch-pagination.ui.pagination.menu .item.active {
+    border-bottom-color: #FF0159;
+  }
+
+  @media screen and (max-width: 767px) {
+    .ch-nav:not(.active) .ch-menu-item.active a:before {
+      border-bottom-color: #FF0159;
+    }
   }
 }

@@ -3,6 +3,11 @@
 
   &.fluid > .dropdown.icon {
     float: none;
+  }
+}
+
+.ui.dropdown {
+  > .dropdown.icon {
     font-family: "Font Awesome 5 Pro";
 
     &:before {

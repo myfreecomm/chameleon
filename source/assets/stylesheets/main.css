@@ -175,6 +175,10 @@ ol, ul, li {
 [data-theme="emites"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #089f69; }
 
+@media screen and (max-width: 767px) {
+  [data-theme="emites"] {
+    border-bottom-color: #089f69; } }
+
 [data-theme="myfinance"] .ch-menu-item.active a:before {
   border-right-color: #2483c4; }
 
@@ -183,6 +187,23 @@ ol, ul, li {
 
 [data-theme="myfinance"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #2483c4; }
+
+@media screen and (max-width: 767px) {
+  [data-theme="myfinance"] {
+    border-bottom-color: #2483c4; } }
+
+[data-theme="estoka"] .ch-menu-item.active a:before {
+  border-right-color: #FF0159; }
+
+[data-theme="estoka"] .ch-menu-item.active a > .fa-icon:first-child {
+  color: #FF0159; }
+
+[data-theme="estoka"] .ch-pagination.ui.pagination.menu .item.active {
+  border-bottom-color: #FF0159; }
+
+@media screen and (max-width: 767px) {
+  [data-theme="estoka"] .ch-nav:not(.active) .ch-menu-item.active a:before {
+    border-bottom-color: #FF0159; } }
 
 .ui.header,
 .ui.button {
@@ -326,6 +347,7 @@ ol, ul, li {
     text-align: right; }
     .ui.table:not(.unstackable) tr > td:before {
       content: attr(data-info);
+      color: #47494C !important;
       font-weight: 600;
       text-align: left; }
     .ui.table:not(.unstackable) tr > td.checkbox {
@@ -352,10 +374,12 @@ ol, ul, li {
 .ui.dropdown.button.center.aligned {
   text-align: center; }
   .ui.dropdown.button.center.aligned.fluid > .dropdown.icon {
-    float: none;
-    font-family: "Font Awesome 5 Pro"; }
-    .ui.dropdown.button.center.aligned.fluid > .dropdown.icon:before {
-      content: "\f107"; }
+    float: none; }
+
+.ui.dropdown > .dropdown.icon {
+  font-family: "Font Awesome 5 Pro"; }
+  .ui.dropdown > .dropdown.icon:before {
+    content: "\f107"; }
 
 .ch-logo {
   position: relative;
@@ -687,7 +711,7 @@ ol, ul, li {
       -o-transition: all 0.2s;
       -webkit-transition: all 0.2s;
       transition: all 0.2s; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .ch-dropdown-content.collapse {
       position: static;
       box-shadow: none;
@@ -696,6 +720,16 @@ ol, ul, li {
         display: none; }
     .ch-dropdown-header {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2); } }
+
+.dropdown-list .ui.dropdown + .ui.dropdown {
+  margin-left: .5em; }
+
+@media screen and (max-width: 767px) {
+  .dropdown-list .ui.dropdown {
+    width: 100%;
+    margin-bottom: 1em; }
+  .dropdown-list .ui.dropdown + .ui.dropdown {
+    margin-left: 0; } }
 
 .ch-dialog {
   display: none;

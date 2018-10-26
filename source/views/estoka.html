@@ -18,35 +18,49 @@
     <script type="text/javascript" src="../assets/javascripts/main.js"></script>
     <script type="text/javascript" src="../assets/javascripts/init.js"></script>
   </head>
-  <body data-theme="myfinance">
+  <style>
+    #estoka-logo {
+      width: 36px;
+      height: 19.8px;
+      background: #FF0159;
+      position: relative;
+    }
+    #estoka-logo:before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 9px solid #FF0159;
+    }
+    #estoka-logo:after {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 9px solid #FF0159;
+    }
+    
+  </style>
+  <body data-theme="estoka">
     <div class="ch-nav">
-        <div class="ch-logo">
-          <div class="ch-logo-icon"><img src="../assets/images/myfinance_logo.png"></div><span class="ch-logo-label">MyFinance</span>
-        </div>
+      <div class="ch-logo">
+        <div class="ch-logo-icon">
+          <div id="estoka-logo"></div>
+        </div><span class="ch-logo-label">Estoka</span>
+      </div>
       <ul class="ch-menu">
-        <li class="ch-menu-item active"><a href="#"><i class="fal fa-chart-line fa-icon"></i><span class="ch-menu-item-label">Visão consolidada</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-history fa-icon"></i><span class="ch-menu-item-label">Relatório Dinâmico</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-table fa-icon"></i><span class="ch-menu-item-label">Linha do Tempo</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-upload fa-icon"></i><span class="ch-menu-item-label">Contas a Pagar</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-download fa-icon"></i><span class="ch-menu-item-label">Contas a Receber</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-calendar-check fa-icon"></i><span class="ch-menu-item-label">Orçamentos</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-university fa-icon"></i><span class="ch-menu-item-label">Movimento Bancário</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-repeat fa-icon"></i><span class="ch-menu-item-label">Conciliação Bancária</span></a></li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-credit-card-front fa-icon"></i><span class="ch-menu-item-label">Cartões de Crédito</span></a></li>
-        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-address-book fa-icon"></i><span class="ch-menu-item-label">Cadastros</span>
-            <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
-          <div class="ch-dropdown-content">
-            <ul class="ch-dropdown-menu">
-              <li class="ch-menu-item"><a href="#">Clientes/Fornecedores</a></li>
-              <li class="ch-menu-item"><a href="#">Categorias</a></li>
-              <li class="ch-menu-item"><a href="#">Centros de Custo/Receita</a></li>
-              <li class="ch-menu-item"><a href="#">Classificadores Personalizados</a></li>
-              <li class="ch-menu-item"><a href="#">Relatórios Dinâmicos</a></li>
-              <li class="ch-menu-item"><a href="#">Regras Automáticas</a></li>
-              <li class="ch-menu-item"><a href="#">Contas de Recebíveis</a></li>
-            </ul>
-          </div>
-        </li>
+        <li class="ch-menu-item active"><a href="#"><i class="fal fa-shopping-cart fa-icon"></i><span class="ch-menu-item-label">Pedidos</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-boxes fa-icon"></i><span class="ch-menu-item-label">Estoques</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-box fa-icon"></i><span class="ch-menu-item-label">Produtos</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-cog fa-icon"></i><span class="ch-menu-item-label">Configurações</span></a></li>
         <li class="ch-menu-item more mobile-only">
           <button data-toogle="nav"><i class="fal fa-ellipsis-h-alt fa-icon"></i></button>
         </li>
@@ -73,7 +87,7 @@
     <main class="ch-content">
       <header class="ch-header">
         <div class="ch-breadcrumb">
-          <div class="ch-breadcrumb-section active"><a href="#" title="Visão consolidada">Visão consolidada</a></div>
+          <div class="ch-breadcrumb-section active"><a href="#" title="Pedidos">Pedidos</a></div>
         </div>
         <div class="ch-header-nav animated">
           <button class="ch-header-nav-button btn-more-options mobile-only"><i class="fal fa-angle-double-left fa-icon"></i></button>
@@ -135,136 +149,122 @@
         </div>
       </header>
       <div class="ui padded grid stackable">
-        <div class="row middle aligned">
-          <div class="thirteen wide column">
-            <div class="ui items">
-              <div class="item">
-                <div class="ui tiny image circular"><img src="../assets/images/logo_bradesco.png"></div>
-                <div class="middle aligned content">
-                  <div class="ui header large">Bradesco
-                    <div class="sub header">Conta Corrente - 3836-1 - 09789-0</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="three wide column right aligned">
-            <div class="ui header large blue"><small>R$</small> 272.873,56</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="thirteen wide column">
-            <div class="ch-tabs">
-              <div class="ui pointing secondary menu"><a class="active item" data-tab="first"><i class="fal fa-desktop fa-icon"></i>Visualizar</a><a class="item" data-tab="second"><i class="fal fa-cloud-download-alt fa-icon"></i>Importar</a><a class="item" data-tab="third"><i class="fal fa-print fa-icon"></i>Relatório</a><a class="item" data-tab="third"><i class="fal fa-filter fa-icon"></i>Filtros</a></div>
-            </div>
-          </div>
-          <div class="three wide column right aligned">
-            <div class="ui button primary">Novo Lançamento</div>
+        <div class="ui sixteen wide column right aligned">
+          <div class="dropdown-list">
+            <select class="ui dropdown">
+              <option>Todos os canais de venda</option>
+            </select>
+            <select class="ui dropdown">
+              <option>Todos os status</option>
+            </select>
+            <select class="ui dropdown">
+              <option>Últimos 30 dias</option>
+            </select>
           </div>
         </div>
         <div class="ui sixteen wide column">
           <table class="ui very basic sortable table ch-table">
             <thead>
               <tr>
-                <th class="center aligned checkbox">
-                  <input type="checkbox">
-                </th>
                 <th>Data</th>
-                <th>Documento</th>
-                <th>Descrição</th>
-                <th>Categoria</th>
-                <th>Cliente/Fornecedor</th>
-                <th class="right aligned">Valor</th>
+                <th>Número</th>
+                <th>Canal</th>
+                <th>Cliente</th>
+                <th>Valor</th>
+                <th>Status</th>
+                <th>Ação</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
-                </td>
                 <td data-info="Data">11/08/2017</td>
-                <td data-info="Documento">00230203</td>
-                <td data-info="Descrição">Salário de funcionários</td>
-                <td data-info="Categoria">Funcionários/Salário</td>
-                <td data-info="Cliente/Fornecedor">Maria da Silva</td>
-                <td class="right aligned negative" data-info="Valor"><strong>R$ -2.809.102.269,82</strong></td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Shoptime</td>
+                <td data-info="Cliente">Augusto Manoel dos Santos</td>
+                <td data-info="Valor">R$ 89,99</td>
+                <td data-info="Status" style="color: #E58D00;"><strong><i class="fal fa-box-open" style="margin-right: .5em;"></i><span>Aguardando separação de produtos</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Separar produtos</a>
+                </td>
               </tr>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Shoptime</td>
+                <td data-info="Cliente">Augusto Manoel dos Santos</td>
+                <td data-info="Valor">R$ 89,99</td>
+                <td data-info="Status" style="color: #E58D00;"><strong><i class="fal fa-box-open" style="margin-right: .5em;"></i><span>Aguardando separação de produtos</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Separar produtos</a>
                 </td>
-                <td data-info="Data">07/08/2017</td>
-                <td data-info="Documento">00000000</td>
-                <td data-info="Descrição">Conta de Telefone - GVTTelecomuniações</td>
-                <td data-info="Categoria">Serviços</td>
-                <td data-info="Cliente/Fornecedor">GVT</td>
-                <td class="right aligned negative" data-info="Valor"><strong>R$ -1.815,36</strong></td>
               </tr>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Americanas</td>
+                <td data-info="Cliente">Augusto Manoel dos Santos</td>
+                <td data-info="Valor">R$ 89,99</td>
+                <td data-info="Status" style="color: #F73D4E;"><strong><i class="fal fa-user-clock" style="margin-right: .5em;"></i><span>Aguardando pagamento</span></strong></td>
+                <td>
                 </td>
-                <td data-info="Data">01/03/2017</td>
-                <td data-info="Documento">00410203</td>
-                <td data-info="Descrição">CR COB BlOQ COMP CONF RECEBIMENTO</td>
-                <td data-info="Categoria"></td>
-                <td data-info="Cliente/Fornecedor"></td>
-                <td class="right aligned positive" data-info="Valor"><strong>R$ 20.823,11</strong></td>
               </tr>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Shoptime</td>
+                <td data-info="Cliente">Maria da Silva</td>
+                <td data-info="Valor">R$ 99,99</td>
+                <td data-info="Status" style="color: #F73D4E;"><strong><i class="fal fa-user-clock" style="margin-right: .5em;"></i><span>Aguardando pagamento</span></strong></td>
+                <td>
                 </td>
-                <td data-info="Data">01/03/2017</td>
-                <td data-info="Documento">00410203</td>
-                <td data-info="Descrição">CR COB DINHEIRO CONF RECEBIMENTO</td>
-                <td data-info="Categoria"></td>
-                <td data-info="Cliente/Fornecedor"></td>
-                <td class="right aligned positive" data-info="Valor"><strong>R$ 999,92</strong></td>
               </tr>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Americanas</td>
+                <td data-info="Cliente">Maria da Silva</td>
+                <td data-info="Valor">R$ 89,99</td>
+                <td data-info="Status" style="color: #E58D00;"><strong><i class="fal fa-box-open" style="margin-right: .5em;"></i><span>Aguardando separação de produtos</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Separar produtos</a>
                 </td>
-                <td data-info="Data">24/02/2017</td>
-                <td data-info="Documento">00000000</td>
-                <td data-info="Descrição">PGTO TITULO OUTRO BCO - INTER</td>
-                <td data-info="Categoria"></td>
-                <td data-info="Cliente/Fornecedor"></td>
-                <td class="right aligned negative" data-info="Valor"><strong>R$ -1.815,36</strong></td>
               </tr>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Submarino</td>
+                <td data-info="Cliente">Augusto Manoel dos Santos</td>
+                <td data-info="Valor">R$ 89,99</td>
+                <td data-info="Status" style="color: #6C9C35;"><strong><i class="fal fa-check" style="margin-right: .5em;"></i><span>Faturado</span></strong></td>
+                <td><a class="ui button basic secondary small fluid" href="#">Emitir etiqueta</a>
                 </td>
-                <td data-info="Data">10/02/2017</td>
-                <td data-info="Documento">00000000</td>
-                <td data-info="Descrição">FGTS</td>
-                <td data-info="Categoria">Impostos/FGTS</td>
-                <td data-info="Cliente/Fornecedor">Governo Federal</td>
-                <td class="right aligned negative" data-info="Valor"><strong>R$ -3.593,22</strong></td>
               </tr>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Submarino</td>
+                <td data-info="Cliente">Augusto Manoel dos Santos</td>
+                <td data-info="Valor">R$ 89,99</td>
+                <td data-info="Status" style="color: #6C9C35;"><strong><i class="fal fa-check-double" style="margin-right: .5em;"></i><span>Finalizado</span></strong></td>
+                <td>
                 </td>
-                <td data-info="Data">06/02/2017</td>
-                <td data-info="Documento">89250200</td>
-                <td data-info="Descrição">Projeto X</td>
-                <td data-info="Categoria">Serviços</td>
-                <td data-info="Cliente/Fornecedor">YanYan Cat</td>
-                <td class="right aligned positive" data-info="Valor"><strong>R$ 5.000.792.035,00</strong></td>
               </tr>
               <tr>
-                <td class="center aligned checkbox">
-                  <input type="checkbox">
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Acom</td>
+                <td data-info="Cliente">Miguel dos Santos</td>
+                <td data-info="Valor">R$ 7,99</td>
+                <td data-info="Status" style="color: #F73D4E;"><strong><i class="fal fa-user-clock" style="margin-right: .5em;"></i><span>Aguardando pagamento</span></strong></td>
+                <td>
                 </td>
-                <td data-info="Data">06/02/2017</td>
-                <td data-info="Documento">0000000</td>
-                <td data-info="Descrição">Conta de Luz</td>
-                <td data-info="Categoria"></td>
-                <td data-info="Cliente/Fornecedor">Light</td>
-                <td class="right aligned negative" data-info="Valor"><strong>R$ -1.000,00</strong></td>
+              </tr>
+              <tr>
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Número"><a href="#">1539095437476</a></td>
+                <td data-info="Canal">Shoptime</td>
+                <td data-info="Cliente">Augusto Manoel dos Santos</td>
+                <td data-info="Valor">R$ 89,99</td>
+                <td data-info="Status" style="color: #6C9C35;"><strong><i class="fal fa-check-double" style="margin-right: .5em;"></i><span>Finalizado</span></strong></td>
+                <td>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -431,8 +431,8 @@
     </div>
     <script src="https://semantic-ui.com/javascript/library/tablesort.js"></script>
     <script>
-      console.log('teste')
       $('table').tablesort();
+      $('.ui.dropdown').dropdown();
     </script>
   </body>
 </html>
