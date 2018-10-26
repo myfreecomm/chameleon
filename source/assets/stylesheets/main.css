@@ -699,7 +699,7 @@ ol, ul, li {
       -o-transition: all 0.2s;
       -webkit-transition: all 0.2s;
       transition: all 0.2s; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .ch-dropdown-content.collapse {
       position: static;
       box-shadow: none;
@@ -711,8 +711,13 @@ ol, ul, li {
 
 .dropdown-list .ui.dropdown + .ui.dropdown {
   margin-left: .5em; }
-  .dropdown-list .ui.dropdown + .ui.dropdown:first-child {
-    margin-left: 0; }
+
+@media screen and (max-width: 767px) {
+  .dropdown-list .ui.dropdown {
+    width: 100%;
+    margin-bottom: 1em; }
+  .dropdown-list .ui.dropdown + .ui.dropdown {
+    margin-left: 0; } }
 
 .ch-dialog {
   display: none;

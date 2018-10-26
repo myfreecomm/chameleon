@@ -108,7 +108,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     &-content {
       &.collapse {
         position: static;
@@ -130,8 +130,15 @@
 .dropdown-list {
   .ui.dropdown + .ui.dropdown {
     margin-left: .5em;
+  }
 
-    &:first-child {
+  @media screen and (max-width: 767px) {
+    .ui.dropdown {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    .ui.dropdown + .ui.dropdown {
       margin-left: 0;
     }
   }
