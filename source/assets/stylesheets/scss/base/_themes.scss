@@ -8,4 +8,24 @@
       color: #089f69;
     }
   }
+
+  .ch-pagination.ui.pagination.menu .item.active {
+    border-bottom-color: #089f69;
+  }
+}
+
+[data-theme="myfinance"] {
+  .ch-menu-item.active a {
+    &:before {
+      border-right-color: #2483c4;
+    }
+
+    > .fa-icon:first-child {
+      color: #2483c4;
+    }
+  }
+
+  .ch-pagination.ui.pagination.menu .item.active {
+    border-bottom-color: #2483c4;
+  }
 }

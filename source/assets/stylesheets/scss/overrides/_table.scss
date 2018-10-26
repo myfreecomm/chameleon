@@ -1,8 +1,36 @@
 .ui.table {
-  thead th {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+
+  &.sortable {
+    thead th {
+      color: color(neutrals, tone-40);
+      border-left: none;
+    }
+
+    thead th:hover,
+    thead th.sorted,
+    thead th.sorted:hover {
+      background: none;
+    }
+
+    thead th.ascending,
+    thead th.descending, {
+      &:after {
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+      }
+    }
+
+    thead th.ascending {
+      &:after {
+        content: "\f30c";
+      }
+    }
+
+    thead th.descending {
+      &:after {
+        content: "\f309";
+      }
+    }
   }
 
   .paddingless & {

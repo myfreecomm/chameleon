@@ -2,6 +2,10 @@
   width: 100%;
   overflow: hidden;
 
+  > .ui.secondary.pointing.menu {
+    border-bottom-color: transparent;
+  }
+
   @media screen and (max-width: 768px) {
     position: relative;
     height: 40px;
@@ -17,21 +21,4 @@
     }
   }
 
-}
-
-.ch-content-header ~ .ch-tabs {
-  margin-top: 0;
-  background-color: #fff;
-
-  @media screen and (max-width: 768px) {
-
-    .ui.menu {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      padding-bottom: 10px;
-      overflow-x: scroll;
-    }
-  }
 }

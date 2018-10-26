@@ -19,6 +19,18 @@
       @include title();
     }
   }
+
+  &.ui.table td {
+    &.positive {
+      color: #16ab39 !important;
+      background: none !important;
+    }
+
+    &.negative {
+      color: #db2828 !important;
+      background: none !important;
+    }
+  }
 }
 
 .bind-popup + .ui.popup {
