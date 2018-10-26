@@ -335,6 +335,7 @@ ol, ul, li {
     text-align: right; }
     .ui.table:not(.unstackable) tr > td:before {
       content: attr(data-info);
+      color: #47494C !important;
       font-weight: 600;
       text-align: left; }
     .ui.table:not(.unstackable) tr > td.checkbox {
