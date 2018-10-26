@@ -175,6 +175,10 @@ ol, ul, li {
 [data-theme="emites"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #089f69; }
 
+@media screen and (max-width: 767px) {
+  [data-theme="emites"] {
+    border-bottom-color: #089f69; } }
+
 [data-theme="myfinance"] .ch-menu-item.active a:before {
   border-right-color: #2483c4; }
 
@@ -184,6 +188,10 @@ ol, ul, li {
 [data-theme="myfinance"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #2483c4; }
 
+@media screen and (max-width: 767px) {
+  [data-theme="myfinance"] {
+    border-bottom-color: #2483c4; } }
+
 [data-theme="estoka"] .ch-menu-item.active a:before {
   border-right-color: #FF0159; }
 
@@ -192,6 +200,10 @@ ol, ul, li {
 
 [data-theme="estoka"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #FF0159; }
+
+@media screen and (max-width: 767px) {
+  [data-theme="estoka"] .ch-nav:not(.active) .ch-menu-item.active a:before {
+    border-bottom-color: #FF0159; } }
 
 .ui.header,
 .ui.button {
