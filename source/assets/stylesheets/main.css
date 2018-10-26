@@ -166,9 +166,11 @@ a {
 ol, ul, li {
   list-style: none; }
 
+[data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="emites"] .ch-menu-item.active a:before {
   border-right-color: #089f69; }
 
+[data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a > .fa-icon:first-child,
 [data-theme="emites"] .ch-menu-item.active a > .fa-icon:first-child {
   color: #089f69; }
 
@@ -179,9 +181,11 @@ ol, ul, li {
   [data-theme="emites"] {
     border-bottom-color: #089f69; } }
 
+[data-theme="myfinance"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="myfinance"] .ch-menu-item.active a:before {
   border-right-color: #2483c4; }
 
+[data-theme="myfinance"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a > .fa-icon:first-child,
 [data-theme="myfinance"] .ch-menu-item.active a > .fa-icon:first-child {
   color: #2483c4; }
 
@@ -192,9 +196,11 @@ ol, ul, li {
   [data-theme="myfinance"] {
     border-bottom-color: #2483c4; } }
 
+[data-theme="estoka"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="estoka"] .ch-menu-item.active a:before {
   border-right-color: #FF0159; }
 
+[data-theme="estoka"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a > .fa-icon:first-child,
 [data-theme="estoka"] .ch-menu-item.active a > .fa-icon:first-child {
   color: #FF0159; }
 

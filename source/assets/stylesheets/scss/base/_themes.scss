@@ -1,4 +1,5 @@
 [data-theme="emites"] {
+  .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
   .ch-menu-item.active a {
     &:before {
       border-right-color: #089f69;
@@ -19,6 +20,7 @@
 }
 
 [data-theme="myfinance"] {
+  .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
   .ch-menu-item.active a {
     &:before {
       border-right-color: #2483c4;
@@ -39,6 +41,7 @@
 }
 
 [data-theme="estoka"] {
+  .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
   .ch-menu-item.active a {
     &:before {
       border-right-color: #FF0159;
