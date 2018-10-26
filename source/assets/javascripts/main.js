@@ -126,7 +126,8 @@ Chameleon.Components.Menu = function () {
     active: 'active',
     hover: 'hover',
     collapsed: 'collapsed',
-    hasShadow: 'has-shadow'
+    hasShadow: 'has-shadow',
+    sticky: 'sticky'
   };
 
   var toggleMenuDropdown = function toggleMenuDropdown() {
@@ -188,9 +189,9 @@ Chameleon.Components.Menu = function () {
 
   var stickyHeader = function stickyHeader() {
     if ($(window).scrollTop() > 0) {
-      $(Selector.header).addClass('sticky');
+      $(Selector.header).addClass(ClassName.sticky);
     } else {
-      $(Selector.header).removeClass('sticky');
+      $(Selector.header).removeClass(ClassName.sticky);
     }
   };
 

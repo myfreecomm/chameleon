@@ -19,7 +19,8 @@ Chameleon.Components.Menu = function() {
     active    : 'active',
     hover     : 'hover',
     collapsed : 'collapsed',
-    hasShadow : 'has-shadow'
+    hasShadow : 'has-shadow',
+    sticky    : 'sticky',
   }
 
   const toggleMenuDropdown = function() {
@@ -81,9 +82,9 @@ Chameleon.Components.Menu = function() {
 
   const stickyHeader = function() {
     if ( $(window).scrollTop() > 0 ) {
-      $(Selector.header).addClass('sticky');
+      $(Selector.header).addClass(ClassName.sticky);
     } else {
-      $(Selector.header).removeClass('sticky');
+      $(Selector.header).removeClass(ClassName.sticky);
     }
   }
 
