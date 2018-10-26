@@ -1507,6 +1507,17 @@ ol, ul, li {
   align-items: center;
   height: 65px;
   background-color: #fff; }
+  .ch-header.sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1; }
 
 .ch-header-nav {
   display: flex;

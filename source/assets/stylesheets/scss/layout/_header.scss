@@ -5,6 +5,15 @@
   align-items: center;
   height: 65px;
   background-color: #fff;
+
+  &.sticky {
+    @include position-sticky;
+    top: 0;
+    left: 0;
+    background-color: rgba(#fff, .95);
+    box-shadow: 0 -5px 20px rgba(#000, .15);
+    z-index: 1;
+  }
 }
 
 .ch-header-nav {
