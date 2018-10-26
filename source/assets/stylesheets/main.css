@@ -360,6 +360,7 @@ ol, ul, li {
 .ch-logo {
   position: relative;
   height: 65px;
+  min-height: 65px;
   padding-left: 60px;
   display: flex;
   align-items: center;
