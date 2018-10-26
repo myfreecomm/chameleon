@@ -361,10 +361,12 @@ ol, ul, li {
 .ui.dropdown.button.center.aligned {
   text-align: center; }
   .ui.dropdown.button.center.aligned.fluid > .dropdown.icon {
-    float: none;
-    font-family: "Font Awesome 5 Pro"; }
-    .ui.dropdown.button.center.aligned.fluid > .dropdown.icon:before {
-      content: "\f107"; }
+    float: none; }
+
+.ui.dropdown > .dropdown.icon {
+  font-family: "Font Awesome 5 Pro"; }
+  .ui.dropdown > .dropdown.icon:before {
+    content: "\f107"; }
 
 .ch-logo {
   position: relative;
@@ -706,6 +708,11 @@ ol, ul, li {
         display: none; }
     .ch-dropdown-header {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2); } }
+
+.dropdown-list .ui.dropdown + .ui.dropdown {
+  margin-left: .5em; }
+  .dropdown-list .ui.dropdown + .ui.dropdown:first-child {
+    margin-left: 0; }
 
 .ch-dialog {
   display: none;
