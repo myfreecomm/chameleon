@@ -1507,6 +1507,7 @@ ol, ul, li {
   justify-content: space-between;
   align-items: center;
   height: 65px;
+  min-height: 65px;
   background-color: #fff; }
   .ch-header.sticky {
     position: -webkit-sticky;
