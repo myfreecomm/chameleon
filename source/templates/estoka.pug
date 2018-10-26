@@ -1,0 +1,158 @@
+-
+  var data_table = [
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Aguardando separação de produtos",
+      action: "Separar produtos",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Aguardando separação de produtos",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Americanas",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Aguardando separação de produtos",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Maria da Silva",
+      value: "R$ 99,99",
+      status: "Aguardando separação de produtos",
+      action: "Separar produtos",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Americanas",
+      client: "Maria da Silva",
+      value: "R$ 89,99",
+      status: "Aguardando separação de produtos",
+      action: "Separar produtos",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Submarino",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Faturado",
+      action: "Emitir etiqueta",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Submarino",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Finalizado",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Acom",
+      client: "Miguel dos Santos",
+      value: "R$ 7,99",
+      status: "Aguardando pagamentos",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Finalizado",
+      action: "",
+    },
+  ];
+
+doctype html
+html
+  include includes/head.pug
+
+  body(data-theme="estoka")
+    .ch-nav
+      +logo('myfinance_logo.png', 'Estoka')
+
+      ul.ch-menu
+
+        include partials/menu/generic.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
+
+    main.ch-content
+      include partials/header/estoka.pug
+
+      .ui.padded.grid.stackable
+        .ui.sixteen.wide.column
+          table.ui.very.basic.sortable.table.ch-table
+            thead
+              tr
+                th Data
+                th Número
+                th Canal
+                th Cliente
+                th Valor
+                th Status
+                th Ação
+
+            tbody
+              each data in data_table
+                tr
+                  td(data-info="Data")= data.date
+                  td(data-info="Número")= data.document
+                  td(data-info="Canal")= data.channel
+                  td(data-info="Cliente")= data.client
+                  td(data-info="Valor")= data.value
+                  td.right.aligned(data-info="Status")
+                    strong= data.status
+                  td.center.aligned
+
+
+          .ui.segment.basic.paddingless.right.aligned
+            .ui.pagination.menu.ch-pagination
+              a.item
+                i.fal.fa-angle-double-left
+              a.item
+                i.fal.fa-angle-left
+              a.active.item 1
+              a.item 2
+              a.item 3
+              a.item 4
+              .disabled.item ...
+              a.item 20
+              a.item 21
+              a.item
+                i.fal.fa-angle-right
+              a.item
+                i.fal.fa-angle-double-right
+
+
+    include includes/notifications.pug
+    include includes/search.pug
+
+    script(src="https://semantic-ui.com/javascript/library/tablesort.js")
+    script.
+      console.log('teste')
+      $('table').tablesort();
