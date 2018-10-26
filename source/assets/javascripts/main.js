@@ -117,7 +117,8 @@ Chameleon.Components.Menu = function () {
     dropdown: '.ch-dropdown',
     logo: '.ch-logo',
     navElements: '.ch-nav, .ch-nav > .ch-menu',
-    icon: '.fa-icon'
+    icon: '.fa-icon',
+    header: '.ch-header'
   };
 
   var ClassName = {
@@ -185,6 +186,14 @@ Chameleon.Components.Menu = function () {
     }
   };
 
+  var stickyHeader = function stickyHeader() {
+    if ($(window).scrollTop() > 0) {
+      $(Selector.header).addClass('sticky');
+    } else {
+      $(Selector.header).removeClass('sticky');
+    }
+  };
+
   $(document).on('click', Selector.button, toggleMenuDropdown);
   $(document).on('click', Selector.collapseButton, toggleNavCollapse);
   $(document).on('click', Selector.toggleButton, toggleNav);
@@ -192,6 +201,7 @@ Chameleon.Components.Menu = function () {
   $(document).on('mouseenter', Selector.navElements, showMenu);
   $(document).on('mouseleave', Selector.navContainer, hideMenu);
   $(Selector.navMenu).on('scroll', toogleLogoShadow);
+  $(document).on('scroll', stickyHeader);
 };
 
 Chameleon.Components.Modal = function () {
