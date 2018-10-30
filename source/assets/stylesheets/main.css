@@ -166,20 +166,8 @@ a {
 ol, ul, li {
   list-style: none; }
 
-[data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
-[data-theme="emites"] .ch-menu-item.active a:before {
-  border-right-color: #089f69; }
-
-[data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a > .fa-icon:first-child,
-[data-theme="emites"] .ch-menu-item.active a > .fa-icon:first-child {
-  color: #089f69; }
-
-[data-theme="emites"] .ch-pagination.ui.pagination.menu .item.active {
-  border-bottom-color: #089f69; }
-
-@media screen and (max-width: 767px) {
-  [data-theme="emites"] {
-    border-bottom-color: #089f69; } }
+:root [data-theme="myfinance"] {
+  --main-color: #2483c4; }
 
 [data-theme="myfinance"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="myfinance"] .ch-menu-item.active a:before {
@@ -193,23 +181,44 @@ ol, ul, li {
   border-bottom-color: #2483c4; }
 
 @media screen and (max-width: 767px) {
-  [data-theme="myfinance"] {
+  [data-theme="myfinance"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #2483c4; } }
+
+:root [data-theme="emites"] {
+  --main-color: #089f69; }
+
+[data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
+[data-theme="emites"] .ch-menu-item.active a:before {
+  border-right-color: #089f69; }
+
+[data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a > .fa-icon:first-child,
+[data-theme="emites"] .ch-menu-item.active a > .fa-icon:first-child {
+  color: #089f69; }
+
+[data-theme="emites"] .ch-pagination.ui.pagination.menu .item.active {
+  border-bottom-color: #089f69; }
+
+@media screen and (max-width: 767px) {
+  [data-theme="emites"] .ch-nav:not(.active) .ch-menu-item.active a:before {
+    border-bottom-color: #089f69; } }
+
+:root [data-theme="estoka"] {
+  --main-color: #2483c4; }
 
 [data-theme="estoka"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="estoka"] .ch-menu-item.active a:before {
-  border-right-color: #F2377A; }
+  border-right-color: #2483c4; }
 
 [data-theme="estoka"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a > .fa-icon:first-child,
 [data-theme="estoka"] .ch-menu-item.active a > .fa-icon:first-child {
-  color: #F2377A; }
+  color: #2483c4; }
 
 [data-theme="estoka"] .ch-pagination.ui.pagination.menu .item.active {
-  border-bottom-color: #F2377A; }
+  border-bottom-color: #2483c4; }
 
 @media screen and (max-width: 767px) {
   [data-theme="estoka"] .ch-nav:not(.active) .ch-menu-item.active a:before {
-    border-bottom-color: #F2377A; } }
+    border-bottom-color: #2483c4; } }
 
 .ui.header,
 .ui.button {
