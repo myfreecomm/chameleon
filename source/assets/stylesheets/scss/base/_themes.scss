@@ -44,21 +44,21 @@
   .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
   .ch-menu-item.active a {
     &:before {
-      border-right-color: #FF0159;
+      border-right-color: #F2377A;
     }
 
     > .fa-icon:first-child {
-      color: #FF0159;
+      color: #F2377A;
     }
   }
 
   .ch-pagination.ui.pagination.menu .item.active {
-    border-bottom-color: #FF0159;
+    border-bottom-color: #F2377A;
   }
 
   @media screen and (max-width: 767px) {
     .ch-nav:not(.active) .ch-menu-item.active a:before {
-      border-bottom-color: #FF0159;
+      border-bottom-color: #F2377A;
     }
   }
 }
