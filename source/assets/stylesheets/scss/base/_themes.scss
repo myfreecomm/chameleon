@@ -1,9 +1,11 @@
 $mainColor: #00E2F6;
 
 $themes: (
-  myfinance: #2483c4,
-  emites: #089f69,
-  estoka: #2483c4
+  billimatic: #F24242,
+  cobrato: #F89137,
+  emites: #13B782,
+  estoka: #F2377A,
+  myfinance: #2483c4
 );
 
 @each $name, $color in $themes {
