@@ -2022,6 +2022,9 @@ ol, ul, li {
     font-size: 10em;
     line-height: 1em; }
     .error-number-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       top: 0;
       right: -30px;
@@ -2035,12 +2038,13 @@ ol, ul, li {
     font-size: 2.15em;
     line-height: 1.5em; }
   .error-message {
-    font-size: 1em; }
+    font-size: 1.15em; }
   .error-cta {
     display: inline-block;
     margin-top: 3em;
     font-size: 1.2em;
     font-weight: 600;
+    text-decoration: none;
     color: #fff;
     padding: 10px 40px;
     background: #00CAE5;
