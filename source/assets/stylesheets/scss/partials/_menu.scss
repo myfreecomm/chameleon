@@ -43,6 +43,10 @@
     > .fa-icon:first-child, &-label {
       line-height: 20px;
     }
+
+    .ch-nav:not(.collapsed) & {
+      padding-right: 1em;
+    }
   }
 
   a:hover {
@@ -75,10 +79,6 @@
       color: #949FB2;
       pointer-events: none;
     }
-  }
-
-  &-label {
-    white-space: nowrap;
   }
 
   &.ch-dropdown {
@@ -211,6 +211,7 @@
         > button {
           width: 60px;
           height: 60px;
+          padding-right: 0 !important;
         }
 
         > button > .fa-icon {
