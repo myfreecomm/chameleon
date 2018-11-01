@@ -1,64 +1,41 @@
-[data-theme="emites"] {
-  .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
-  .ch-menu-item.active a {
-    &:before {
-      border-right-color: #089f69;
+$mainColor: #00E2F6;
+
+$themes: (
+  billimatic: #F24242,
+  cobrato: #F89137,
+  emites: #13B782,
+  estoka: #F2377A,
+  myfinance: #2483c4
+);
+
+@each $name, $color in $themes {
+  [data-theme="#{$name}"] {
+
+    :root & {
+        $mainColor: $color;
+      --main-color: $mainColor;
     }
 
-    > .fa-icon:first-child {
-      color: #089f69;
-    }
-  }
 
-  .ch-pagination.ui.pagination.menu .item.active {
-    border-bottom-color: #089f69;
-  }
+    .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
+    .ch-menu-item.active a {
+      &:before {
+        border-right-color: $mainColor;
+      }
 
-  @media screen and (max-width: 767px) {
-    border-bottom-color: #089f69;
-  }
-}
-
-[data-theme="myfinance"] {
-  .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
-  .ch-menu-item.active a {
-    &:before {
-      border-right-color: #2483c4;
+      > .fa-icon:first-child {
+        color: $mainColor;
+      }
     }
 
-    > .fa-icon:first-child {
-      color: #2483c4;
-    }
-  }
-
-  .ch-pagination.ui.pagination.menu .item.active {
-    border-bottom-color: #2483c4;
-  }
-
-  @media screen and (max-width: 767px) {
-    border-bottom-color: #2483c4;
-  }
-}
-
-[data-theme="estoka"] {
-  .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
-  .ch-menu-item.active a {
-    &:before {
-      border-right-color: #F2377A;
+    .ch-pagination.ui.pagination.menu .item.active {
+      border-bottom-color: $mainColor;
     }
 
-    > .fa-icon:first-child {
-      color: #F2377A;
-    }
-  }
-
-  .ch-pagination.ui.pagination.menu .item.active {
-    border-bottom-color: #F2377A;
-  }
-
-  @media screen and (max-width: 767px) {
-    .ch-nav:not(.active) .ch-menu-item.active a:before {
-      border-bottom-color: #F2377A;
+    @media screen and (max-width: 767px) {
+      .ch-nav:not(.active) .ch-menu-item.active a:before {
+        border-bottom-color: $mainColor;
+      }
     }
   }
 }
