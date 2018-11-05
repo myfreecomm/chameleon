@@ -26,8 +26,10 @@ html
             .ui.form
               h2.ui.header.medium Informações da Cobrança
 
-              .equal.width.fields
-                .field.required
+              .ui.divider.hidden
+
+              .fields
+                .eight.wide.field.required
                   label Configuração de Cobrança
                   select.ui.dropdown.selection
                     option Selecione Config. de Cobrança
@@ -37,33 +39,28 @@ html
                   select.ui.dropdown.selection
                     option Selecione Config. de Cobrança
 
-              .equal.width.fields
-                .field
-                  label Cobrança registrável ?
-                  select.ui.dropdown.selection.disabled
-                    option Sim
+              .field
+                label Cobrança registrável ?
+                .ui.toggle.checkbox
+                  input(type="checkbox")
+                  label Sim
 
+              .fields
                 .field
                   label Espécie do documento
                   select.ui.dropdown.selection
                     option Duplicata Mercantil
 
-                .field
+                .eight.wide.field
                   label Número do documento
                   input(type="text")
 
+              .fields
                 .field
                   label Data do documento
                   .ui.left.icon.input
                     input(type="text" placeholder="dd/mm/aaaa")
                     i.icon.calendar.alternate.outline
-
-              .equal.width.fields
-                .field.required
-                  label Valor cobrado
-                  .ui.left.icon.input
-                    input(type="text" placeholder="0,00")
-                    i.icon.money.outline
 
                 .field.required
                   label Data de vencimento
@@ -71,74 +68,79 @@ html
                     input(type="text" placeholder="dd/mm/aaaa")
                     i.icon.calendar.alternate.outline
 
-              .equal.width.fields
-                .field
-                  label Instruções
-                  textarea(rows="2")
-                  small Você pode adicionar 9 linhas de 65 caracteres
 
-                .field
-                  label Demonstrativo
-                  textarea(rows="2")
-                  small Você pode adicionar 9 linhas de 65 caracteres
-
-              .ui.divider.hidden
-
-              h2.ui.header.medium Informações do cliente/Fornecedor
-
-              .equal.width.fields
-                .field.required
-                  label CPF ou CNPJ ?
-                  select.ui.dropdown.selection
-                    option CPF
-
-                .field.required
-                  label CPF/CNPJ
-                  input(type="text" placeholder="000.000.000-00")
-
-              .field.required
-                label Nome
-                input(type="text")
-
-              .equal.width.fields
-                .field
-                  label CEP
-                  input(type="text" placeholder="00000-000")
-
-                .field
-                  label Estado
-                  select.ui.dropdown.selection
-                    option Selecione a UF
-
-                .field
-                  label Estado
-                  select.ui.dropdown.selection
-
-                .field
-                  label Bairro
-                  input(type="text")
 
               .fields
-                .eight.wide.field
-                  label Logradouro
-                  input(type="text")
+                .field.required
+                  label Valor cobrado
+                  .ui.left.icon.input
+                    input(type="text" placeholder="0,00")
+                    i.icon.money.outline
 
-                .four.wide.field
-                  label Número
-                  input(type="text")
+              .sixteen.wide.field
+                label Instruções
+                textarea(rows="2")
+                small Você pode adicionar 9 linhas de 65 caracteres
 
-                .four.wide.field
-                  label Complemento
-                  input(type="text")
+              .sixteen.wide.field
+                label Demonstrativo
+                textarea(rows="2")
+                small Você pode adicionar 9 linhas de 65 caracteres
 
-              .ui.divider.hidden
+              .ui.divider.hidden.doubled
 
-              .ui.segment.basic.paddingless.right.aligned
-                a.ui.button.basic Cancelar
+              //- h2.ui.header.medium Informações do cliente/Fornecedor
+
+              //- .equal.width.fields
+              //-   .field.required
+              //-     label CPF ou CNPJ ?
+              //-     select.ui.dropdown.selection
+              //-       option CPF
+
+              //-   .field.required
+              //-     label CPF/CNPJ
+              //-     input(type="text" placeholder="000.000.000-00")
+
+              //- .field.required
+              //-   label Nome
+              //-   input(type="text")
+
+              //- .equal.width.fields
+              //-   .field
+              //-     label CEP
+              //-     input(type="text" placeholder="00000-000")
+
+              //-   .field
+              //-     label Estado
+              //-     select.ui.dropdown.selection
+              //-       option Selecione a UF
+
+              //-   .field
+              //-     label Estado
+              //-     select.ui.dropdown.selection
+
+              //-   .field
+              //-     label Bairro
+              //-     input(type="text")
+
+              //- .fields
+              //-   .eight.wide.field
+              //-     label Logradouro
+              //-     input(type="text")
+
+              //-   .four.wide.field
+              //-     label Número
+              //-     input(type="text")
+
+              //-   .four.wide.field
+              //-     label Complemento
+              //-     input(type="text")
+
+              .ui.divider
+
+              .ui.segment.basic.paddingless
                 input(type="submit" value="Salvar" class="ui button primary small")
-
-
-
+                a.ui.button.basic Cancelar
 
     include includes/notifications.pug
     include includes/search.pug

@@ -143,8 +143,9 @@
           <div class="sixteen wide tablet twelve wide computer column">
             <div class="ui form">
               <h2 class="ui header medium">Informações da Cobrança</h2>
-              <div class="equal width fields">
-                <div class="field required">
+              <div class="ui divider hidden"></div>
+              <div class="fields">
+                <div class="eight wide field required">
                   <label>Configuração de Cobrança</label>
                   <select class="ui dropdown selection">
                     <option>Selecione Config. de Cobrança</option>
@@ -157,35 +158,30 @@
                   </select>
                 </div>
               </div>
-              <div class="equal width fields">
-                <div class="field">
-                  <label>Cobrança registrável ?</label>
-                  <select class="ui dropdown selection disabled">
-                    <option>Sim</option>
-                  </select>
+              <div class="field">
+                <label>Cobrança registrável ?</label>
+                <div class="ui toggle checkbox">
+                  <input type="checkbox">
+                  <label>Sim</label>
                 </div>
+              </div>
+              <div class="fields">
                 <div class="field">
                   <label>Espécie do documento</label>
                   <select class="ui dropdown selection">
                     <option>Duplicata Mercantil</option>
                   </select>
                 </div>
-                <div class="field">
+                <div class="eight wide field">
                   <label>Número do documento</label>
                   <input type="text">
                 </div>
+              </div>
+              <div class="fields">
                 <div class="field">
                   <label>Data do documento</label>
                   <div class="ui left icon input">
                     <input type="text" placeholder="dd/mm/aaaa"><i class="icon calendar alternate outline"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="equal width fields">
-                <div class="field required">
-                  <label>Valor cobrado</label>
-                  <div class="ui left icon input">
-                    <input type="text" placeholder="0,00"><i class="icon money outline"></i>
                   </div>
                 </div>
                 <div class="field required">
@@ -195,71 +191,26 @@
                   </div>
                 </div>
               </div>
-              <div class="equal width fields">
-                <div class="field">
-                  <label>Instruções</label>
-                  <textarea rows="2"></textarea><small>Você pode adicionar 9 linhas de 65 caracteres</small>
-                </div>
-                <div class="field">
-                  <label>Demonstrativo</label>
-                  <textarea rows="2"></textarea><small>Você pode adicionar 9 linhas de 65 caracteres</small>
-                </div>
-              </div>
-              <div class="ui divider hidden"></div>
-              <h2 class="ui header medium">Informações do cliente/Fornecedor</h2>
-              <div class="equal width fields">
-                <div class="field required">
-                  <label>CPF ou CNPJ ?</label>
-                  <select class="ui dropdown selection">
-                    <option>CPF</option>
-                  </select>
-                </div>
-                <div class="field required">
-                  <label>CPF/CNPJ</label>
-                  <input type="text" placeholder="000.000.000-00">
-                </div>
-              </div>
-              <div class="field required">
-                <label>Nome</label>
-                <input type="text">
-              </div>
-              <div class="equal width fields">
-                <div class="field">
-                  <label>CEP</label>
-                  <input type="text" placeholder="00000-000">
-                </div>
-                <div class="field">
-                  <label>Estado</label>
-                  <select class="ui dropdown selection">
-                    <option>Selecione a UF</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label>Estado</label>
-                  <select class="ui dropdown selection"></select>
-                </div>
-                <div class="field">
-                  <label>Bairro</label>
-                  <input type="text">
-                </div>
-              </div>
               <div class="fields">
-                <div class="eight wide field">
-                  <label>Logradouro</label>
-                  <input type="text">
-                </div>
-                <div class="four wide field">
-                  <label>Número</label>
-                  <input type="text">
-                </div>
-                <div class="four wide field">
-                  <label>Complemento</label>
-                  <input type="text">
+                <div class="field required">
+                  <label>Valor cobrado</label>
+                  <div class="ui left icon input">
+                    <input type="text" placeholder="0,00"><i class="icon money outline"></i>
+                  </div>
                 </div>
               </div>
-              <div class="ui divider hidden"></div>
-              <div class="ui segment basic paddingless right aligned"><a class="ui button basic">Cancelar</a>
-                <input class="ui button primary small" type="submit" value="Salvar">
+              <div class="sixteen wide field">
+                <label>Instruções</label>
+                <textarea rows="2"></textarea><small>Você pode adicionar 9 linhas de 65 caracteres</small>
+              </div>
+              <div class="sixteen wide field">
+                <label>Demonstrativo</label>
+                <textarea rows="2"></textarea><small>Você pode adicionar 9 linhas de 65 caracteres</small>
+              </div>
+              <div class="ui divider hidden doubled"></div>
+              <div class="ui divider"></div>
+              <div class="ui segment basic paddingless">
+                <input class="ui button primary small" type="submit" value="Salvar"><a class="ui button basic">Cancelar</a>
               </div>
             </div>
           </div>
