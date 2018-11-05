@@ -16,7 +16,7 @@ Chameleon.Components.Modal = function() {
   const open = function(e) {
     e.preventDefault();
     let modalType = $(this).data('modal'),
-        $targetModal = $(`[data-modal=${modalType}`);
+        $targetModal = $(`[data-modal='${modalType}']`);
 
     $targetModal.show(300);
     $targetModal.find(Selector.dialogElements).addClass(ClassName.active);
