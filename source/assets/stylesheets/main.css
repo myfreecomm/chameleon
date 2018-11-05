@@ -1610,6 +1610,7 @@ ol, ul, li {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
   color: #5F6266; }
   .ch-header-nav-button {
     display: block;
