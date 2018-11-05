@@ -166,6 +166,24 @@ a {
 ol, ul, li {
   list-style: none; }
 
+:root [data-theme="default"] {
+  --main-color: #00E2F6; }
+
+[data-theme="default"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
+[data-theme="default"] .ch-menu-item.active a:before {
+  border-right-color: #00E2F6; }
+
+[data-theme="default"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a > .fa-icon:first-child,
+[data-theme="default"] .ch-menu-item.active a > .fa-icon:first-child {
+  color: #00E2F6; }
+
+[data-theme="default"] .ch-pagination.ui.pagination.menu .item.active {
+  border-bottom-color: #00E2F6; }
+
+@media screen and (max-width: 767px) {
+  [data-theme="default"] .ch-nav:not(.active) .ch-menu-item.active a:before {
+    border-bottom-color: #00E2F6; } }
+
 :root [data-theme="billimatic"] {
   --main-color: #F24242; }
 
