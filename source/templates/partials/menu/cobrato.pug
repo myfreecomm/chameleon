@@ -1,0 +1,55 @@
+-
+  var menuItems = [
+    { name: "Painel", icon: "fa-chart-line", href: "#", active: true },
+    { name: "Cobranças", icon: "fa-clipboard", href: "#" },
+    { name: "Pagamentos", icon: "fa-table", href: "#" },
+  ]
+
+each item in menuItems
+  li.ch-menu-item(class={active: item.active, disabled: item.disabled})
+    a(href=item.href)
+      i(class= "fal " + item.icon + " fa-icon")
+      span(class="ch-menu-item-label")= item.name
+
+      if item.tag
+        span.ui.horizontal.tiny.label.ch-tag--new(data-label="Novo")
+
+li.ch-menu-item.ch-dropdown
+  a.ch-dropdown-button(href="#")
+    i.fal.fa-puzzle-piece.fa-icon
+    span.ch-menu-item-label CNAB
+    .fal.fa-chevron-right.fa-icon.dropdown
+
+  -
+    var pages = [
+      { name: "Arquivos de remessa", href: "#" },
+      { name: "Arquivos de retorno", href: "#" },
+    ]
+
+  .ch-dropdown-content
+    ul.ch-dropdown-menu
+      each page in pages
+        li.ch-menu-item
+          a(href=page.href)=page.name
+
+li.ch-menu-item.ch-dropdown
+  a.ch-dropdown-button(href="#")
+    i.fal.fa-puzzle-piece.fa-icon
+    span.ch-menu-item-label Cadastros
+    .fal.fa-chevron-right.fa-icon.dropdown
+
+  -
+    var pages = [
+      { name: "Modelos de cobrança", href: "#" },
+      { name: "Configurações de cobrança", href: "#" },
+      { name: "Configurações de pagamento", href: "#" },
+      { name: "Clientes/Fornecedores", href: "#" },
+      { name: "Cartões", href: "#" },
+      { name: "Webhooks", href: "#" },
+    ]
+
+  .ch-dropdown-content
+    ul.ch-dropdown-menu
+      each page in pages
+        li.ch-menu-item
+          a(href=page.href)=page.name
