@@ -278,6 +278,17 @@ ol, ul, li {
 .ui.button {
   font-family: "Roboto", sans-serif; }
 
+.ui.form .field > label {
+  font-weight: normal;
+  font-size: 1em;
+  color: #5F6266; }
+
+.ui.form .fields {
+  margin: 0 -.5em 1.5em; }
+
+.ui.form .field {
+  margin: 0 0 1.5em; }
+
 @media only screen and (max-width: 767px) {
   .ui.form .fields .field {
     margin: 0 0 1em; } }
