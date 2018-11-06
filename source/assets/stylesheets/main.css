@@ -298,8 +298,7 @@ ol, ul, li {
 
 .ui.form .field > label {
   font-weight: normal;
-  font-size: 1em;
-  color: #5F6266; }
+  color: #5F6B7F; }
 
 .ui.form .fields {
   margin: 0 -.5em 1.5em; }
@@ -307,9 +306,35 @@ ol, ul, li {
 .ui.form .field {
   margin: 0 0 1.5em; }
 
+.ui.form input:not([type]),
+.ui.form input[type=date],
+.ui.form input[type=datetime-local],
+.ui.form input[type=email],
+.ui.form input[type=file],
+.ui.form input[type=number],
+.ui.form input[type=password],
+.ui.form input[type=search],
+.ui.form input[type=tel],
+.ui.form input[type=text],
+.ui.form input[type=time],
+.ui.form input[type=url],
+.ui.form textarea {
+  border-color: #E6EAF2; }
+
+.ui.form .ui.checkbox label,
+.ui.form .ui.checkbox + label {
+  color: #475266; }
+
+.ui.form .ui.checkbox .box:before,
+.ui.form .ui.checkbox label:before {
+  border-color: #D0D8E5; }
+
 @media only screen and (max-width: 767px) {
   .ui.form .fields .field {
     margin: 0 0 1em; } }
+
+.ui.icon.input > i.icon:not(.link) {
+  color: #949FB2; }
 
 .ui.grid > .white.column,
 .ui.grid > .white.row,
@@ -478,6 +503,9 @@ ol, ul, li {
   font-family: "Font Awesome 5 Pro"; }
   .ui.dropdown > .dropdown.icon:before {
     content: "\f107"; }
+
+.ui.dropdown.selection {
+  border-color: #E6EAF2; }
 
 .ch-logo {
   position: relative;

@@ -14,4 +14,8 @@
       content: "\f107";
     }
   }
+
+  &.selection {
+    border-color: color(navy, tone-5);
+  }
 }
