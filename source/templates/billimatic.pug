@@ -20,7 +20,32 @@ html
       include includes/message.pug
       include partials/header/billimatic.pug
 
-      .ch-featured-content
+      .ui.padded.grid.stackable
+
+        .row
+          .six.wide.column
+            .ch-tabs
+              .ui.pointing.secondary.menu
+                a.active.item(data-tab="first")
+                  i.fal.fa-desktop.fa-icon
+                  | Faturamentos
+                a.item(data-tab="second")
+                  i.fal.fa-cloud-download-alt.fa-icon
+                  | Recebimentos
+                a.item(data-tab="third")
+                  i.fal.fa-print.fa-icon
+                  | Pagamentos
+
+          .ten.wide.column.right.aligned
+            .dropdown-list
+              select.ui.dropdown
+                option Todos os canais de venda
+
+              select.ui.dropdown
+                option Todos os status
+
+              select.ui.dropdown
+                option Últimos 30 dias
 
     include includes/notifications.pug
     include includes/search.pug
