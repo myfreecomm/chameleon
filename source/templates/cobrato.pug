@@ -51,7 +51,7 @@ html
                   select.ui.dropdown.selection
                     option Duplicata Mercantil
 
-                .eight.wide.field
+                .seven.wide.field
                   label Número do documento
                   input(type="text")
 
@@ -67,8 +67,6 @@ html
                   .ui.left.icon.input
                     input(type="text" placeholder="dd/mm/aaaa")
                     i.icon.calendar.alternate.outline
-
-
 
               .fields
                 .field.required
@@ -89,54 +87,64 @@ html
 
               .ui.divider.hidden.doubled
 
-              //- h2.ui.header.medium Informações do cliente/Fornecedor
+              h2.ui.header.medium Informações do cliente/Fornecedor
 
-              //- .equal.width.fields
-              //-   .field.required
-              //-     label CPF ou CNPJ ?
-              //-     select.ui.dropdown.selection
-              //-       option CPF
+              .ui.divider.hidden
 
-              //-   .field.required
-              //-     label CPF/CNPJ
-              //-     input(type="text" placeholder="000.000.000-00")
+              .inline.fields
+                .field
+                  .ui.radio.checkbox
+                    input(type="radio")
+                    label CPF
 
-              //- .field.required
-              //-   label Nome
-              //-   input(type="text")
+                .field
+                  .ui.radio.checkbox
+                    input(type="radio")
+                    label CNPJ
 
-              //- .equal.width.fields
-              //-   .field
-              //-     label CEP
-              //-     input(type="text" placeholder="00000-000")
+              .fields
+                .field.required
+                  label CPF/CNPJ
+                  input(type="text" placeholder="000.000.000-00")
 
-              //-   .field
-              //-     label Estado
-              //-     select.ui.dropdown.selection
-              //-       option Selecione a UF
+                .eight.wide.field.required
+                  label Nome
+                  input(type="text")
 
-              //-   .field
-              //-     label Estado
-              //-     select.ui.dropdown.selection
+              .ui.divider.hidden
 
-              //-   .field
-              //-     label Bairro
-              //-     input(type="text")
+              .four.wide.field
+                label CEP
+                input(type="text" placeholder="00000-000")
 
-              //- .fields
-              //-   .eight.wide.field
-              //-     label Logradouro
-              //-     input(type="text")
+              .fields
+                .field
+                  label Cidade
+                  select.ui.dropdown.selection
+                    option Selecione a cidade
 
-              //-   .four.wide.field
-              //-     label Número
-              //-     input(type="text")
+                .two.wide.field
+                  label Estado
+                  select.ui.dropdown.selection.compact
 
-              //-   .four.wide.field
-              //-     label Complemento
-              //-     input(type="text")
+                .four.wide.field
+                  label Bairro
+                  input(type="text")
 
-              .ui.divider
+              .fields
+                .eight.wide.field
+                  label Logradouro
+                  input(type="text")
+
+                .two.wide.field
+                  label Número
+                  input(type="text")
+
+              .eight.wide.field
+                label Complemento
+                input(type="text")
+
+              .ui.divider.section
 
               .ui.segment.basic.paddingless
                 input(type="submit" value="Salvar" class="ui button primary small")
