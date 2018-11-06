@@ -18,20 +18,21 @@
     <script type="text/javascript" src="../assets/javascripts/main.js"></script>
     <script type="text/javascript" src="../assets/javascripts/init.js"></script>
   </head>
-  <body data-theme="emites">
+  <body data-theme="cobrato">
     <div class="ch-nav">
         <div class="ch-logo">
-          <div class="ch-logo-icon"><img src="../assets/images/emites_logo.png"></div><span class="ch-logo-label">Emites</span>
+          <div class="ch-logo-icon"><img src="../assets/images/cobrato_logo.png"></div><span class="ch-logo-label">Cobrato</span>
         </div>
       <ul class="ch-menu">
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-th-large fa-icon"></i><span class="ch-menu-item-label">Dashboard</span></a></li>
-        <li class="ch-menu-item ch-dropdown active open"><a class="ch-dropdown-button" href="#"><i class="fal fa-file-alt fa-icon"></i><span class="ch-menu-item-label">Documentos</span>
+        <li class="ch-menu-item active"><a href="#"><i class="fal fa-chart-line fa-icon"></i><span class="ch-menu-item-label">Painel</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-file-invoice-dollar fa-icon"></i><span class="ch-menu-item-label">Cobranças</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-barcode-scan fa-icon"></i><span class="ch-menu-item-label">Pagamentos</span></a></li>
+        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-exchange fa-icon"></i><span class="ch-menu-item-label">CNAB</span>
             <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
           <div class="ch-dropdown-content">
             <ul class="ch-dropdown-menu">
-              <li class="ch-menu-item"><a href="#">NF-e</a></li>
-              <li class="ch-menu-item active"><a href="#">NFSe</a></li>
-              <li class="ch-menu-item"><a href="#">NFC-e</a></li>
+              <li class="ch-menu-item"><a href="#">Arquivos de remessa</a></li>
+              <li class="ch-menu-item"><a href="#">Arquivos de retorno</a></li>
             </ul>
           </div>
         </li>
@@ -39,20 +40,15 @@
             <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
           <div class="ch-dropdown-content">
             <ul class="ch-dropdown-menu">
-              <li class="ch-menu-item"><a href="#">Organizações</a></li>
+              <li class="ch-menu-item"><a href="#">Modelos de cobrança</a></li>
+              <li class="ch-menu-item"><a href="#">Configurações de cobrança</a></li>
+              <li class="ch-menu-item"><a href="#">Configurações de pagamento</a></li>
+              <li class="ch-menu-item"><a href="#">Clientes/Fornecedores</a></li>
+              <li class="ch-menu-item"><a href="#">Cartões</a></li>
+              <li class="ch-menu-item"><a href="#">Webhooks</a></li>
             </ul>
           </div>
         </li>
-        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-cogs fa-icon"></i><span class="ch-menu-item-label">Configurações</span>
-            <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
-          <div class="ch-dropdown-content">
-            <ul class="ch-dropdown-menu">
-              <li class="ch-menu-item"><a href="#">Regras de tributação</a></li>
-              <li class="ch-menu-item"><a href="#">Séries de notas fiscais</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="ch-menu-item"><a href="#"><i class="fal fa-users-cog fa-icon"></i><span class="ch-menu-item-label">Conta</span></a></li>
         <li class="ch-menu-item more mobile-only">
           <button data-toogle="nav"><i class="fal fa-ellipsis-h-alt fa-icon"></i></button>
         </li>
@@ -79,8 +75,9 @@
     <main class="ch-content">
       <header class="ch-header">
         <div class="ch-breadcrumb">
-          <div class="ch-breadcrumb-section"><a href="#" title="NFSe">NFSe</a></div><span class="divider">/</span>
-          <div class="ch-breadcrumb-section active"><a href="#" title="Detalhamento de Nota at1-615">Detalhamento de Nota at1-615</a></div>
+          <div class="ch-breadcrumb-section"><a href="#" title="Cobranças">Cobranças</a></div><span class="divider">/</span>
+          <div class="ch-breadcrumb-section"><a href="#" title="Nova Cobrança">Nova cobrança</a></div><span class="divider">/</span>
+          <div class="ch-breadcrumb-section active"><a href="#" title="Boleto via banco">Boleto via banco</a></div>
         </div>
         <div class="ch-header-nav animated">
           <button class="ch-header-nav-button btn-more-options mobile-only"><i class="fal fa-angle-double-left fa-icon"></i></button>
@@ -143,140 +140,138 @@
       </header>
       <div class="ch-featured-content">
         <div class="ui padded grid stackable">
-          <div class="nine wide tablet twelve wide computer column">
-            <h2 class="ui header medium">Resumo</h2>
-            <div class="ui grid unstackable">
-              <div class="ui twelve wide column">
-                <div class="ui segment basic paddingless">
-                  <div class="ui label green horizontal large"><i class="icon check"></i>Aprovado</div>Processado pelo Sefaz
+          <div class="sixteen wide tablet twelve wide computer column">
+            <div class="ui form">
+              <h2 class="ui header medium">Informações da Cobrança</h2>
+              <div class="ui divider hidden"></div>
+              <div class="fields">
+                <div class="five wide field required">
+                  <label>Configuração de Cobrança</label>
+                  <select class="ui dropdown selection">
+                    <option>Selecione Config. de Cobrança</option>
+                  </select>
+                </div>
+                <div class="four wide field">
+                  <label>Modelo de Cobrança</label>
+                  <select class="ui dropdown selection">
+                    <option>Selecione Config. de Cobrança</option>
+                  </select>
                 </div>
               </div>
-              <div class="ui four wide column">
-                <div class="ui header green">R$ 240,67</div>
-              </div>
-            </div>
-            <div class="ui grid four column stackable">
-              <div class="column">
-                <div class="info">
-                  <div class="description">Série</div>
-                  <div class="value"><strong>at1</strong></div>
+              <div class="field">
+                <label>Cobrança registrável ?</label>
+                <div class="ui toggle checkbox">
+                  <input type="checkbox">
+                  <label>Sim</label>
                 </div>
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">RPS</div>
-                  <div class="value"><strong>615</strong></div>
+              <div class="fields">
+                <div class="field">
+                  <label>Espécie do documento</label>
+                  <select class="ui dropdown selection">
+                    <option>Duplicata Mercantil</option>
+                  </select>
+                </div>
+                <div class="seven wide field">
+                  <label>Número do documento</label>
+                  <input type="text">
                 </div>
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">NFSe</div>
-                  <div class="value"><strong>9492</strong></div>
+              <div class="fields">
+                <div class="field">
+                  <label>Data do documento</label>
+                  <div class="ui left icon input">
+                    <input type="text" placeholder="dd/mm/aaaa"><i class="icon calendar alternate outline"></i>
+                  </div>
+                </div>
+                <div class="field required">
+                  <label>Data de vencimento</label>
+                  <div class="ui left icon input">
+                    <input type="text" placeholder="dd/mm/aaaa"><i class="icon calendar alternate outline"></i>
+                  </div>
                 </div>
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Chave</div>
-                  <div class="value"><strong>SURI-MP8P</strong></div>
+              <div class="fields">
+                <div class="field required">
+                  <label>Valor cobrado</label>
+                  <div class="ui left icon input">
+                    <input type="text" placeholder="0,00"><i class="icon money outline"></i>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="ui divider hidden"></div>
-            <h2 class="ui header medium">Informações do RPS</h2>
-            <div class="ui grid two column stackable">
-              <div class="column">
-                <div class="info">
-                  <div class="description">Data de emissão da nota</div>
-                  <div class="value">17/10/2018 às 16:29h</div>
+              <div class="ten wide field">
+                <label>Instruções</label>
+                <textarea rows="2"></textarea><small>Você pode adicionar 9 linhas de 65 caracteres</small>
+              </div>
+              <div class="ten wide field">
+                <label>Demonstrativo</label>
+                <textarea rows="2"></textarea><small>Você pode adicionar 9 linhas de 65 caracteres</small>
+              </div>
+              <div class="ui divider hidden doubled"></div>
+              <h2 class="ui header medium">Informações do cliente/Fornecedor</h2>
+              <div class="ui divider hidden"></div>
+              <div class="inline fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio">
+                    <label>CPF</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio">
+                    <label>CNPJ</label>
+                  </div>
                 </div>
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Chave da NFSe</div>
-                  <div class="value">SURI-MP8P</div>
+              <div class="fields">
+                <div class="three wide field required">
+                  <label>CPF/CNPJ</label>
+                  <input type="text" placeholder="000.000.000-00">
+                </div>
+                <div class="seven wide field required">
+                  <label>Nome</label>
+                  <input type="text">
                 </div>
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Número da NFSe</div>
-                  <div class="value">9.492</div>
+              <div class="ui divider hidden"></div>
+              <div class="three wide field">
+                <label>CEP</label>
+                <input type="text" placeholder="00000-000">
+              </div>
+              <div class="fields">
+                <div class="three wide field">
+                  <label>Cidade</label>
+                  <select class="ui dropdown selection">
+                    <option>Selecione a cidade</option>
+                  </select>
+                </div>
+                <div class="two wide field">
+                  <label>Estado</label>
+                  <select class="ui dropdown selection compact"></select>
+                </div>
+                <div class="five wide field">
+                  <label>Bairro</label>
+                  <input type="text">
                 </div>
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Tipo do RPS</div>
-                  <div class="value">RPS</div>
+              <div class="fields">
+                <div class="eight wide field">
+                  <label>Logradouro</label>
+                  <input type="text">
+                </div>
+                <div class="two wide field">
+                  <label>Número</label>
+                  <input type="text">
                 </div>
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Série do RPS</div>
-                  <div class="value">at1</div>
-                </div>
+              <div class="ten wide field">
+                <label>Complemento</label>
+                <input type="text">
               </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Situação do RPS</div>
-                  <div class="value">Normal</div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Natureza da Operação</div>
-                  <div class="value">Tributação no município</div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="info">
-                  <div class="description">Regime Especial</div>
-                  <div class="value">---</div>
-                </div>
-              </div>
-            </div>
-            <div class="ui grid one column stackable">
-              <div class="column">
-                <div class="info">
-                  <div class="description">Outras informações</div>
-                  <div class="value">Criado pelo Billimatic, contrato Lorem Ipsum, faturamento #000171</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="seven wide tablet four wide computer column sidebar reverse-order">
-            <div class="ui segment basic padded center aligned">
-              <div class="ui fluid button basic secondary floating dropdown center aligned">Ações<i class="dropdown icon"></i>
-                <div class="menu">
-                  <div class="item">Exportar XML</div>
-                  <div class="item">Exportar PDF</div>
-                  <div class="item">Enviar e-mail para tomador</div>
-                  <div class="divider"></div>
-                  <div class="item">Clonar NFSe</div>
-                  <div class="item">Deletar NFSE</div>
-                  <div class="item">Cancelar NFSe</div>
-                </div>
-              </div>
-            </div>
-            <div class="ui segment basic padded">
-              <div class="ui header medium">Histórico</div>
-              <div class="ch-timeline">
-                <ul class="ch-timeline-container">
-                  <li class="info">
-                    <div class="header"><i class="fal fa-file-plus symbol"></i><strong class="description">Criado</strong><span class="date">17/10/18 às 16:29h</span></div>
-                    <div class="content"></div>
-                  </li>
-                  <li class="info">
-                    <div class="header"><i class="fal fa-clock symbol"></i><strong class="description">Agendado</strong><span class="date">17/10/18 às 16:30h</span></div>
-                    <div class="content"></div>
-                  </li>
-                  <li class="info">
-                    <div class="header"><i class="fal fa-cog symbol"></i><strong class="description">Processando</strong><span class="date">17/10/18 às 17:01h</span></div>
-                    <div class="content"></div>
-                  </li>
-                  <li class="info">
-                    <div class="header"><i class="fal fa-check-circle symbol"></i><strong class="description">Aceito</strong><span class="date">17/10/18 às 17:15h</span></div>
-                    <div class="content"></div>
-                  </li>
-                </ul>
+              <div class="ui divider section"></div>
+              <div class="ui segment basic paddingless">
+                <input class="ui button primary small" type="submit" value="Salvar"><a class="ui button basic">Cancelar</a>
               </div>
             </div>
           </div>

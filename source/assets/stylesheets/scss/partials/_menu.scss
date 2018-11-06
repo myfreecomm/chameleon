@@ -54,7 +54,7 @@
   }
 
   &.active {
-    a {
+    > a {
       color: #fff;
 
       &:before {
@@ -75,7 +75,7 @@
   }
 
   &.disabled {
-    a {
+    > a {
       color: #949FB2;
       pointer-events: none;
     }
@@ -109,6 +109,15 @@
 
       &:before {
         content: "\f054";
+      }
+    }
+
+    &.open.active {
+      .ch-nav:not(.collapsed) &,
+      .ch-nav.collapsed.hover & {
+        > a:before {
+          border-right-color: transparent;
+        }
       }
     }
 

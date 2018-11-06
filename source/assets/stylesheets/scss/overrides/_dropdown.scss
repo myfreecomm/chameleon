@@ -8,10 +8,15 @@
 
 .ui.dropdown {
   > .dropdown.icon {
+    color: color(navy, tone-40);
     font-family: "Font Awesome 5 Pro";
 
     &:before {
       content: "\f107";
     }
+  }
+
+  &.selection {
+    border-color: color(navy, tone-5);
   }
 }

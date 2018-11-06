@@ -29,6 +29,16 @@ $themes: (
       }
     }
 
+    .ch-menu-item.ch-dropdown {
+      &.open {
+        > .ch-dropdown-button {
+          > .fa-icon:first-child {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+
     .ch-pagination.ui.pagination.menu .item.active {
       border-bottom-color: $mainColor;
     }
