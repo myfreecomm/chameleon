@@ -24,17 +24,18 @@
 
           -
             var notifications = [
-              { name: "Myfinance", backgroundColor: "00E2F6", color: "00E2F6", unread: true },
-              { name: "Billimatic", backgroundColor: "D0021B", color: "D0021B", unread: true },
-              { name: "Siinco", backgroundColor: "B1C5CF", color: "B1C5CF", unread: true },
-              { name: "Siinco", backgroundColor: "B1C5CF", color: "B1C5CF" }
+              { name: "Myfinance", img_src: "../assets/images/myfinance_logo.png", unread: true },
+              { name: "Cobrato", img_src: "../assets/images/cobrato_logo.png", unread: true },
+              { name: "Estoka", img_src: "../assets/images/estoka_logo.png", unread: true },
+              { name: "Emites", img_src: "../assets/images/emites_logo.png" },
+              { name: "Nexaas ID", img_src: "../assets/images/nexaas_id_logo.png" }
             ];
 
           each notification in notifications
             .item.ch-dialog-message(class={unread: notification.unread})
               .content
                 a.header
-                  img.ui.avatar.image.symbol(src="https://ui-avatars.com/api/?background=" + notification.backgroundColor + "&color=" + notification.color)
+                  img.ui.avatar.image.symbol(src=notification.img_src)
                   span= notification.name
                 .description
                   p.
