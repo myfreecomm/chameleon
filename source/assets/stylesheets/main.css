@@ -500,6 +500,7 @@ ol, ul, li {
     float: none; }
 
 .ui.dropdown > .dropdown.icon {
+  color: #7A8699;
   font-family: "Font Awesome 5 Pro"; }
   .ui.dropdown > .dropdown.icon:before {
     content: "\f107"; }
