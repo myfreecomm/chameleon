@@ -1,0 +1,26 @@
+doctype html
+html
+  include includes/head.pug
+
+  body(data-theme="billimatic")
+    .ch-nav
+      +logo('billimatic_logo.png', 'Billimatic')
+
+      ul.ch-menu
+
+        include partials/menu/billimatic.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
+
+    main.ch-content
+      include includes/message.pug
+      include partials/header/billimatic.pug
+
+      .ch-featured-content
+
+    include includes/notifications.pug
+    include includes/search.pug
