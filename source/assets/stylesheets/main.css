@@ -2131,7 +2131,7 @@ ol, ul, li {
     left: 0;
     right: auto; } }
 
-.error {
+.ch-error-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2143,11 +2143,11 @@ ol, ul, li {
   font-family: 'Roboto', sans-serif;
   text-align: center;
   background: #F9F9F9; }
-  .error-number {
+  .ch-error-page-number {
     position: relative;
     font-size: 10em;
     line-height: 1em; }
-    .error-number-icon {
+    .ch-error-page-number-icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2159,13 +2159,13 @@ ol, ul, li {
       color: #fff;
       background: #00CAE5;
       border-radius: 100%; }
-  .error-header {
+  .ch-error-page-header {
     font-weight: 600;
     font-size: 2.15em;
     line-height: 1.5em; }
-  .error-message {
+  .ch-error-page-message {
     font-size: 1.15em; }
-  .error-cta {
+  .ch-error-page-cta {
     display: inline-block;
     margin-top: 3em;
     font-size: 1.2em;
@@ -2175,9 +2175,9 @@ ol, ul, li {
     padding: 10px 40px;
     background: #00CAE5;
     border-radius: 2px; }
-    .error-cta:hover, .error-cta:active {
+    .ch-error-page-cta:hover, .ch-error-page-cta:active {
       color: #fff; }
-  .error-footer {
+  .ch-error-page-footer {
     position: absolute;
     width: 100%;
     height: 65px;
@@ -2188,12 +2188,12 @@ ol, ul, li {
     justify-content: center;
     background-color: #F9F9F9;
     border-top: 1px solid #E0E0E0; }
-    .error-footer-logo {
+    .ch-error-page-footer-logo {
       width: auto;
       height: 30px;
       opacity: .2; }
   @media screen and (max-width: 767px) {
-    .error {
+    .ch-error-page {
       font-size: 11px; }
-      .error-message {
+      .ch-error-page-message {
         font-size: 1.2em; } }
