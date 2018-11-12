@@ -26,7 +26,26 @@ $(document).ready(function () {
   Chameleon.init();
 });
 
-Chameleon.Components.Account = function () {};
+Chameleon.Components.Account = function () {
+
+  var Selector = {
+    accountContent: '.ch-account-content',
+    dropdownButton: '.ch-account-content .ch-dropdown-button',
+    dropdownMenuItem: '.ch-dropdown-menu-item'
+  };
+
+  var ClassName = {
+    open: 'open'
+  };
+
+  var toggle = function toggle(e) {
+    e.preventDefault();
+    $(Selector.accountContent).find(Selector.dropdownMenuItem).removeClass(ClassName.open);
+    $(this).parent(Selector.dropdownMenuItem).addClass(ClassName.open);
+  };
+
+  $(document).on('click', Selector.dropdownButton, toggle);
+};
 
 Chameleon.Components.Dropdown = function () {
   var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
