@@ -26,6 +26,10 @@ $(document).ready(function () {
   Chameleon.init();
 });
 
+Chameleon.Components.Account = function () {
+  console.log('teste');
+};
+
 Chameleon.Components.Dropdown = function () {
   var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
   var dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');

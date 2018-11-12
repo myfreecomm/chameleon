@@ -47,7 +47,7 @@
   &-content {
     position: absolute;
     width: 100%;
-    height: calc(100% - 50px);
+    height: 100%;
     bottom: 0;
     right: 0;
 
@@ -122,6 +122,10 @@
     }
   }
 
+  &-header + &-content {
+    height: calc(100% - 50px);
+  }
+
   .ch-dropdown {
     &-toggle {
       white-space: nowrap;
@@ -131,6 +135,14 @@
       .fa-icon.dropdown {
         @include transition(all .3s);
       }
+    }
+
+    &-menu-item .submenu {
+      display: none;
+    }
+
+    &-menu-item.active .submenu {
+      display: block;
     }
   }
 

@@ -167,7 +167,7 @@ ol, ul, li {
   list-style: none; }
 
 :root [data-theme="default"] {
-  --main-color: $mainColor; }
+  --main-color: #00E2F6; }
 
 [data-theme="default"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="default"] .ch-menu-item.active a:before {
@@ -188,7 +188,7 @@ ol, ul, li {
     border-bottom-color: #00E2F6; } }
 
 :root [data-theme="billimatic"] {
-  --main-color: $mainColor; }
+  --main-color: #F24242; }
 
 [data-theme="billimatic"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="billimatic"] .ch-menu-item.active a:before {
@@ -209,7 +209,7 @@ ol, ul, li {
     border-bottom-color: #F24242; } }
 
 :root [data-theme="cobrato"] {
-  --main-color: $mainColor; }
+  --main-color: #F89137; }
 
 [data-theme="cobrato"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="cobrato"] .ch-menu-item.active a:before {
@@ -230,7 +230,7 @@ ol, ul, li {
     border-bottom-color: #F89137; } }
 
 :root [data-theme="emites"] {
-  --main-color: $mainColor; }
+  --main-color: #13B782; }
 
 [data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="emites"] .ch-menu-item.active a:before {
@@ -251,7 +251,7 @@ ol, ul, li {
     border-bottom-color: #13B782; } }
 
 :root [data-theme="estoka"] {
-  --main-color: $mainColor; }
+  --main-color: #F2377A; }
 
 [data-theme="estoka"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="estoka"] .ch-menu-item.active a:before {
@@ -272,7 +272,7 @@ ol, ul, li {
     border-bottom-color: #F2377A; } }
 
 :root [data-theme="myfinance"] {
-  --main-color: $mainColor; }
+  --main-color: #2483c4; }
 
 [data-theme="myfinance"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="myfinance"] .ch-menu-item.active a:before {
@@ -2003,7 +2003,7 @@ ol, ul, li {
 .ch-account-content {
   position: absolute;
   width: 100%;
-  height: calc(100% - 50px);
+  height: 100%;
   bottom: 0;
   right: 0; }
   .ch-account-content .menu, .ch-account-content .submenu {
@@ -2056,6 +2056,9 @@ ol, ul, li {
     .ch-account-content {
       height: calc(100% - 60px); } }
 
+.ch-account-header + .ch-account-content {
+  height: calc(100% - 50px); }
+
 .ch-account .ch-dropdown-toggle {
   white-space: nowrap;
   display: flex;
@@ -2065,6 +2068,12 @@ ol, ul, li {
     -o-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
+
+.ch-account .ch-dropdown-menu-item .submenu {
+  display: none; }
+
+.ch-account .ch-dropdown-menu-item.active .submenu {
+  display: block; }
 
 .ch-account.active > .ch-dropdown-toggle .fa-icon.dropdown {
   -moz-transform: rotate(180deg);
