@@ -64,7 +64,7 @@ Chameleon.Components.Dropdown = function() {
 
       if ( event.target === button || event.target.parentElement === button ) {
         toggle(dropdownMenu)
-      } else if ( event.target.offsetParent === dropdownMenu) {
+      } else if ($(event.target).parents('.ch-dropdown-content')[0] === dropdownMenu) {
         return;
       } else {
         hide(dropdownMenu);
