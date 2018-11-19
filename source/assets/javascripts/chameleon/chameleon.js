@@ -9,8 +9,6 @@ Chameleon.init = function() {
     Chameleon[key.toLowerCase()] = new component();
   });
 
-  Chameleon.notifications = new Chameleon.Plugins.Notification();
-
 }
 
 $(document).ready(function() {

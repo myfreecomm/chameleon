@@ -1,7 +1,11 @@
 .ch-account {
   &-container {
     width: 370px;
-    height: 250px;
+    height: 215px;
+
+    &.has-search {
+      height: 250px;
+    }
 
     @media screen and (max-width: 768px) {
       position: fixed;
@@ -47,7 +51,7 @@
   &-content {
     position: absolute;
     width: 100%;
-    height: calc(100% - 50px);
+    height: 100%;
     bottom: 0;
     right: 0;
 
@@ -88,7 +92,7 @@
         color: color(neutrals, tone-50);
       }
 
-      > .ch-dropdown-menu-item.active  > a {
+      > .ch-dropdown-menu-item.active > a {
         position: relative;
         font-weight: bold;
 
@@ -103,6 +107,10 @@
           @include transform(translateY(-50%));
         }
       }
+
+      > .ch-dropdown-menu-item.open > a {
+        font-weight: bold;
+      }
     }
 
     .submenu {
@@ -112,7 +120,7 @@
       font-weight: normal;
       box-shadow: 10px 0px 10px -10px rgba(#000, 0.15) inset;
 
-      .ch-dropdown-menu-item.active > a:before {
+      .ch-dropdown-menu-item.open > a:before {
         content: none;
       }
     }
@@ -120,6 +128,10 @@
     @media screen and (max-width: 768px) {
       height: calc(100% - 60px);
     }
+  }
+
+  &-header + &-content {
+    height: calc(100% - 50px);
   }
 
   .ch-dropdown {
@@ -131,6 +143,14 @@
       .fa-icon.dropdown {
         @include transition(all .3s);
       }
+    }
+
+    &-menu-item .submenu {
+      display: none;
+    }
+
+    &-menu-item.open .submenu {
+      display: block;
     }
   }
 

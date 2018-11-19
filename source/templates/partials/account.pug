@@ -1,7 +1,7 @@
 .ch-header-nav-button.ch-dropdown.ch-account
   button.ch-dropdown-toggle(type="button") StarGames
     i.fal.fa-chevron-down.fa-icon.dropdown
-  .ch-dropdown-content.bottom.right.ch-account-container(tabindex="-1")
+  .ch-dropdown-content.bottom.right.ch-account-container.has-search(tabindex="-1")
     .ch-account-header
       i.fal.fa-search
       input.ch-search-form-input(type="text" placeholder="Busque por conta ou entidade")
@@ -13,8 +13,8 @@
       nav.menu
         span.ch-dropdown-header Contas
         ul.ch-dropdown-menu
-          li.ch-dropdown-menu-item.active
-            a(href="#") Grupo Nexaas
+          li.ch-dropdown-menu-item.active.open
+            a.ch-dropdown-button(href="#") Grupo Nexaas
             nav.submenu
               span.ch-dropdown-header Entidades
               ul.ch-dropdown-menu
@@ -30,7 +30,31 @@
                   a(href="#") Empresa IV
 
           li.ch-dropdown-menu-item
-            a(href="#") J Experts
+            a.ch-dropdown-button(href="#") J Experts
+            nav.submenu
+              span.ch-dropdown-header Entidades
+              ul.ch-dropdown-menu
+                li.ch-dropdown-menu-item
+                  a(href="#") Nexaas I
+                li.ch-dropdown-menu-item
+                  a(href="#") Nexaas II
+                li.ch-dropdown-menu-item
+                  a(href="#") Nexaas III
 
           li.ch-dropdown-menu-item
-            a(href="#") Acme Factoring
+            a.ch-dropdown-button(href="#") Acme Factoring
+            nav.submenu
+              span.ch-dropdown-header Entidades
+              ul.ch-dropdown-menu
+                li.ch-dropdown-menu-item
+                  a(href="#") Lorem Ipsum I
+                li.ch-dropdown-menu-item
+                  a(href="#") Lorem Ipsum II
+                li.ch-dropdown-menu-item
+                  a(href="#") Lorem Ipsum III
+                li.ch-dropdown-menu-item
+                  a(href="#") Lorem Ipsum IV
+                li.ch-dropdown-menu-item
+                  a(href="#") Lorem Ipsum V
+                li.ch-dropdown-menu-item
+                  a(href="#") Lorem Ipsum VI
