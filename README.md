@@ -1,9 +1,9 @@
 # Chameleon
-Framework de interface para os projetos da Myfreecomm
+Framework CSS projetado para a padronização das interfaces de produtos Nexaas.
 ___
 
-## Conceito
-O Framework é baseado em uma estrutura totalmente modular, com todos os seus atributos armazenados no CSS, tornando o HTML mais enxuto e semântico.
+## Rodando localmente
+
 
 ### Dependências
 
@@ -36,3 +36,20 @@ Para geração dos arquivos HTML estamos utilizando o [PugJs](https://pugjs.org/
 ```
 source/templates
 ```
+
+### Utilizando no meu projeto
+
+O primeiro passo para utilizar o Chameleon é baixar os arquivos de [CSS](dist/stylesheets) e [JS](dist/javascripts) que se encontram na pasta dist. Para que funcione corretamente necessitamos incluir no nosso HTML o Font Awesome Pro([link aqui](https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css)), [Semantic UI](https://github.com/Semantic-Org/Semantic-UI) e [JQuery](https://jquery.com/download/). Veja no exemplo abaixo:
+
+```html
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+<link rel="stylesheet" href="chameleon.min.css">
+
+<!-- JAVASCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+<script type="text/javascript" src="chameleon.min.js"></script>
+``` 
