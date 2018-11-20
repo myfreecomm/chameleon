@@ -1,0 +1,28 @@
+.ch-content-message {
+  padding: 1.875em 0.625em;
+
+  &.notify-info {
+    background: #BDE5F8;
+    color: #00529B;
+    border: 1px solid #00529B;
+  }
+
+  &.notify-success {
+    background: #DFF2BF;
+    color: #4F8A10;
+    border: 1px solid #4F8A10;
+  }
+
+  &.notify-warning {
+    background: #FEEFB3;
+    color: #9F6000;
+    border: 1px solid #9F6000;
+  }
+
+  &.notify-error {
+    background: #FFD2D2;
+    color: #D8000C;
+    border: 1px solid #D8000C;
+  }
+
+}
