@@ -1,5 +1,5 @@
 # Chameleon
-Framework CSS projetado para a padronização das interfaces de produtos Nexaas.
+Framework front-end projetado para a padronização das interfaces de produtos Nexaas.
 ___
 
 ## Rodando localmente
@@ -37,19 +37,22 @@ Para geração dos arquivos HTML estamos utilizando o [PugJs](https://pugjs.org/
 source/templates
 ```
 
-### Utilizando no meu projeto
+### Use o Chameleon
 
-O primeiro passo para utilizar o Chameleon é baixar os arquivos de [CSS](dist/stylesheets) e [JS](dist/javascripts) que se encontram na pasta dist. Para que funcione corretamente necessitamos incluir no nosso HTML o Font Awesome Pro([link aqui](https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css)), [Semantic UI](https://github.com/Semantic-Org/Semantic-UI) e [JQuery](https://jquery.com/download/). Veja no exemplo abaixo:
+O primeiro passo para utilizar o Chameleon é baixar os assets([CSS](dist/stylesheets) / [JS](dist/javascripts)) que se encontram na pasta dist. Para que funcione corretamente necessitamos incluir no nosso HTML o Font Awesome Pro([link aqui](https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css)), [Semantic UI](https://github.com/Semantic-Org/Semantic-UI) e [JQuery](https://jquery.com/download/). Veja no exemplo abaixo:
 
 ```html
 
-<!-- STYLESHEETS -->
+<!-- CSS dependecies -->
 <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
-<link rel="stylesheet" href="chameleon.min.css">
 
-<!-- JAVASCRIPTS -->
+<!-- JS dependecies  -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+
+<!-- Insert Chameleon's CSS/JS below dependecies -->
+<link rel="stylesheet" href="chameleon.min.css">
 <script type="text/javascript" src="chameleon.min.js"></script>
 ``` 
+Para saber mais sobre a estrutura principal do Chameleon, [clique aqui](docs/getting-started)
