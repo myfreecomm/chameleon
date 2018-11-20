@@ -1,6 +1,6 @@
 ## Começando a utilizar o Chameleon
 
-Nosso boilerplate responsivo é composto de uma navegação lateral e uma estrutura principal que contém o header e conteúdo da página.
+Nosso boilerplate responsivo é composto de uma navegação lateral e uma contâiner principal.
 
 ___
 
@@ -118,4 +118,20 @@ Essa área contém três partes essenciais, são elas: logo, menu e botão para 
   </div>
 </div>
 
+```
+___
+
+### Container Principal
+
+```html
+<body>
+  <div class="ch-nav">
+    ...
+  </div>
+  <div class="ch-content">
+    <div class="ui padded grid stackable">
+      <!-- Insert your app HTML markup here -->
+    </div>
+  </div>
+</body
 ```
