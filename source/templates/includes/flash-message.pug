@@ -2,20 +2,7 @@ doctype html
 
 html
 	body
-		.ui(class='grid')
-			.row
-				.eight(class='wide column right floated')
-					.ch-content-message(class='notify-info')
-						p just say info
-			.row
-				.eight(class='wide column right floated')
-					.ch-content-message(class='notify-success')
-						p just say success
-			.row
-				.eight(class='wide column right floated')
-					.ch-content-message(class='notify-warning')
-						p just say warning
-			.row
-				.eight(class='wide column right floated')
-					.ch-content-message(class='notify-error')
-						p just say error					
+		.ch-content-message(class='ch-message-icon--success')
+			i(class='fal fa-times ch-close-message')
+			i(class='ch-message-icon fal fa-info-circle')
+			p(class='ch-message--text') Autenticação em duas etapas habilitada com sucesso					

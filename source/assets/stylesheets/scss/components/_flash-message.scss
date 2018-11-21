@@ -1,28 +1,57 @@
+@import 'mixins/border-radius';
+
 .ch-content-message {
-  padding: 1.875em 0.625em;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  background: #232323;
+  padding: 1.875em 0em 1.875em 1.250em;
+  min-width: 28.125em;
+  max-width: 37.500em;
+  margin-right: 0.625em;
+  @include border-radius(5px);
+  animation: ch-AnimationMessage 1s ease-in-out 0s 1 alternate-reverse;
+  @keyframes ch-AnimationMessage {
+    0% { right: 0px; }
+    100% { right: 200px; }
+  }
 
-  &.notify-info {
-    background: #BDE5F8;
+  .ch-message--text {
+    font-weight:bold;
+    text-align:center;
+    font-variant:normal;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0.938em;
+    color: #fffffF;
+  }  
+
+  .ch-message-icon {
+    font-weight: bold;
+    font-size: 1.563em;
+    display: inline-block;
+    vertical-align: top
+  }
+
+
+  .ch-close-message {
+    color: #cccccc;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+    margin: -14px 12px;
+  }
+
+  &.ch-message-icon--info {
     color: #00529B;
-    border: 1px solid #00529B;
   }
 
-  &.notify-success {
-    background: #DFF2BF;
-    color: #4F8A10;
-    border: 1px solid #4F8A10;
+  &.ch-message-icon--success {
+    color: #21ba4d;
   }
 
-  &.notify-warning {
-    background: #FEEFB3;
-    color: #9F6000;
-    border: 1px solid #9F6000;
-  }
-
-  &.notify-error {
-    background: #FFD2D2;
-    color: #D8000C;
-    border: 1px solid #D8000C;
+  &.ch-message-icon--error {
+    color: #db2828;
   }
 
 }
