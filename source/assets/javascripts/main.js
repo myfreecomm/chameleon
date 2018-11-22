@@ -224,6 +224,20 @@ Chameleon.Components.Menu = function () {
   $(document).on('scroll', stickyHeader);
 };
 
+Chameleon.Components.Message = function () {
+
+  var iconClose = document.querySelector('[data-js="close"]');
+
+  var handleCloseMessage = function handleCloseMessage(element, event, attr) {
+    element.addEventListener(event, function (e) {
+      e.preventDefault();
+      element.parentNode.classList.toggle(attr);
+    });
+  };
+
+  handleCloseMessage(iconClose, 'click', 'ch-hide--message');
+};
+
 Chameleon.Components.Modal = function () {
   var Selector = {
     dialog: '.ch-dialog',

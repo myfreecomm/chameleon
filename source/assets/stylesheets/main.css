@@ -1581,6 +1581,11 @@ ol, ul, li {
   .ch-pagination.ui.pagination.menu .item:before {
     content: none; }
 
+.ch-breadcrumb-section {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis; }
+
 .ch-content-message {
   position: fixed;
   right: 0;
@@ -1600,6 +1605,12 @@ ol, ul, li {
     right: 0px; }
   100% {
     right: 200px; } }
+  .ch-content-message.ch-hide--message {
+    opacity: 0;
+    -moz-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    -webkit-transition: all 0.75s ease;
+    transition: all 0.75s ease; }
   .ch-content-message .ch-message--text {
     font-weight: bold;
     text-align: center;
