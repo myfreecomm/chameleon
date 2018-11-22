@@ -18,9 +18,9 @@
 
   &.ch-hide--message {
     opacity: 0;
-    @include transition(all .75s ease)
+    @include transition(all .75s ease);
   }
-
+  
   .ch-message--text {
     font-weight:bold;
     text-align:center;
