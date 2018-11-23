@@ -1598,19 +1598,147 @@ ol, ul, li {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  animation: ch-AnimationMessage 1s ease-in-out 0s 1 alternate-reverse; }
+  -o-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -o-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -o-animation-name: bounceInUp;
+  -moz-animation-name: bounceInUp;
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
 
-@keyframes ch-AnimationMessage {
+@-o-keyframes $name {
   0% {
-    right: 0px; }
-  100% {
-    right: 200px; } }
-  .ch-content-message.ch-hide--message {
     opacity: 0;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease; }
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); }
+  60% {
+    opacity: 1;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px); }
+  80% {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px); }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes $name {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); }
+  60% {
+    opacity: 1;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px); }
+  80% {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px); }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); } }
+
+@-webkit-keyframes $name {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); }
+  60% {
+    opacity: 1;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px); }
+  80% {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px); }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); } }
+
+@-keyframes $name {
+  .ch-content-message 0% {
+    opacity: 0;
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); }
+  .ch-content-message 60% {
+    opacity: 1;
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px); }
+  .ch-content-message 80% {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px); }
+  .ch-content-message 100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); } }
+  .ch-content-message.ch-hide--message {
+    -o-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -o-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -o-animation-name: bounceOutDown;
+    -moz-animation-name: bounceOutDown;
+    -webkit-animation-name: bounceOutDown;
+    animation-name: bounceOutDown; }
+
+@-o-keyframes $name {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px); }
+  100% {
+    opacity: 0;
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes $name {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px); }
+  100% {
+    opacity: 0;
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); } }
+
+@-webkit-keyframes $name {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px); }
+  100% {
+    opacity: 0;
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); } }
+
+@-keyframes $name {
+  .ch-content-message.ch-hide--message 0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0); }
+  .ch-content-message.ch-hide--message 20% {
+    opacity: 1;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px); }
+  .ch-content-message.ch-hide--message 100% {
+    opacity: 0;
+    transform: translateY(2000px);
+    -webkit-transform: translateY(2000px); } }
   .ch-content-message .ch-message--text {
     font-weight: bold;
     text-align: center;

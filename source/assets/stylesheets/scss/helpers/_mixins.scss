@@ -55,3 +55,47 @@
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
 }
+
+@mixin animation($animation...) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+@mixin animation-name($name...){
+  -o-animation-name: $name;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+
+@mixin animation-duration($duration...) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin animation-fill-mode($fill...) {
+  -o-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -webkit-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+
+
+@mixin animation-direction($direction...) {
+  -o-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  animation-direction: $direction;
+}
+
+@mixin keyframes($name) {
+  @-o-keyframes $name { @content };
+  @-moz-keyframes $name { @content };
+  @-webkit-keyframes $name { @content }; 
+  @-keyframes $name { @content };
+}
+

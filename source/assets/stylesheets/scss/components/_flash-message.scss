@@ -10,17 +10,52 @@
   max-width: 37.500em;
   margin-right: 0.625em;
   @include border-radius(5px);
-  animation: ch-AnimationMessage 1s ease-in-out 0s 1 alternate-reverse;
-  @keyframes ch-AnimationMessage {
-    0% { right: 0px; }
-    100% { right: 200px; }
+  @include animation-duration(2s);
+  @include animation-fill-mode(both);
+  @include animation-name(bounceInUp);
+  @include keyframes(bounceInUp){
+    0% {
+       opacity: 0;
+       transform: translateY(2000px);
+       -webkit-transform: translateY(2000px);
+    }
+    60% {
+       opacity: 1;
+       transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+    }
+    80% {
+       transform: translateY(10px);
+       -webkit-transform: translateY(10px);
+    }
+    100% {
+       transform: translateY(0);
+       -webkit-transform: translateY(0);
+    }
+  }      
+  
+  &.ch-hide--message {
+    @include animation-duration(2s);         
+    @include animation-fill-mode(both);
+    @include animation-name(bounceOutDown);
+    @include keyframes(bounceOutDown){
+      0% {
+         transform: translateY(0);
+         -webkit-transform: translateY(0);
+      }
+      20% {
+         opacity: 1;
+         transform: translateY(-20px);
+         -webkit-transform: translateY(-20px);
+      }
+      100% {
+         opacity: 0;
+         transform: translateY(2000px);
+         -webkit-transform: translateY(2000px);
+      }
+    }       
   }
 
-  &.ch-hide--message {
-    opacity: 0;
-    @include transition(all .75s ease);
-  }
-  
   .ch-message--text {
     font-weight:bold;
     text-align:center;
