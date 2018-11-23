@@ -1598,7 +1598,7 @@ ol, ul, li {
   padding-left: 1.5em;
   padding-right: 3.25em;
   min-width: 28.125em;
-  max-width: 37.500em;
+  max-width: 37.5em;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1678,7 +1678,7 @@ ol, ul, li {
   .ch-message 100% {
     transform: translateY(0);
     -webkit-transform: translateY(0); } }
-  .ch-message.ch-hide--message {
+  .ch-message.ch-message--hide {
     -o-animation-duration: 2s;
     -moz-animation-duration: 2s;
     -webkit-animation-duration: 2s;
@@ -1732,14 +1732,14 @@ ol, ul, li {
     -webkit-transform: translateY(2000px); } }
 
 @-keyframes $name {
-  .ch-message.ch-hide--message 0% {
+  .ch-message.ch-message--hide 0% {
     transform: translateY(0);
     -webkit-transform: translateY(0); }
-  .ch-message.ch-hide--message 20% {
+  .ch-message.ch-message--hide 20% {
     opacity: 1;
     transform: translateY(-20px);
     -webkit-transform: translateY(-20px); }
-  .ch-message.ch-hide--message 100% {
+  .ch-message.ch-message--hide 100% {
     opacity: 0;
     transform: translateY(2000px);
     -webkit-transform: translateY(2000px); } }
@@ -1781,10 +1781,9 @@ ol, ul, li {
     min-width: 100%;
     margin-bottom: 3em;
     right: 0px; }
-    .ch-message .ch-message-icon,
-    .ch-message .ch-message-close {
+    .ch-message-icon, .ch-message-close {
       font-size: 0.938em; }
-    .ch-message .ch-message-text {
+    .ch-message-text {
       font-size: 0.938em; } }
 
 .ch-content {
