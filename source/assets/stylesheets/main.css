@@ -1588,13 +1588,13 @@ ol, ul, li {
 
 .ch-content-message {
   position: fixed;
-  right: 0;
-  bottom: 10px;
+  right: 1.875em;
+  bottom: 4.375em;
+  z-index: 10;
   background: #232323;
-  padding: 1.875em 0em 1.875em 1.250em;
+  padding: 0.625em 0.625em 1.250em;
   min-width: 28.125em;
   max-width: 37.500em;
-  margin-right: 0.625em;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1740,30 +1740,39 @@ ol, ul, li {
     transform: translateY(2000px);
     -webkit-transform: translateY(2000px); } }
   .ch-content-message .ch-message--text {
+    font-size: 1.000em;
     font-weight: bold;
     text-align: center;
     font-variant: normal;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0 0.938em;
+    padding: 0;
     color: #fffffF; }
   .ch-content-message .ch-message-icon {
     font-weight: bold;
-    font-size: 1.563em;
-    display: inline-block;
-    vertical-align: top; }
+    font-size: 1.250em;
+    float: left; }
   .ch-content-message .ch-close-message {
     color: #cccccc;
     font-weight: bold;
-    float: right;
-    cursor: pointer;
-    margin: -14px 12px; }
+    font-size: 1.250em;
+    text-align: right;
+    display: block;
+    cursor: pointer; }
   .ch-content-message.ch-message-icon--info {
     color: #00529B; }
   .ch-content-message.ch-message-icon--success {
     color: #21ba4d; }
   .ch-content-message.ch-message-icon--error {
     color: #db2828; }
+
+@media only screen and (max-width: 60em) {
+  .ch-content-message {
+    min-width: 100%;
+    right: 0px; }
+    .ch-content-message .ch-message-icon,
+    .ch-content-message .ch-close-message {
+      font-size: 0.938em; }
+    .ch-content-message .ch-message--text {
+      font-size: 0.938em; } }
 
 .ch-content {
   margin-left: 240px;
