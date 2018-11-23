@@ -1602,10 +1602,10 @@ ol, ul, li {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -o-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+  -o-animation-duration: 0.65s;
+  -moz-animation-duration: 0.65s;
+  -webkit-animation-duration: 0.65s;
+  animation-duration: 0.65s;
   -o-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
@@ -1679,10 +1679,10 @@ ol, ul, li {
     transform: translateY(0);
     -webkit-transform: translateY(0); } }
   .ch-message.ch-message--hide {
-    -o-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
+    -o-animation-duration: 0.65s;
+    -moz-animation-duration: 0.65s;
+    -webkit-animation-duration: 0.65s;
+    animation-duration: 0.65s;
     -o-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     -webkit-animation-fill-mode: both;

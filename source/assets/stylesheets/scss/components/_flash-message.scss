@@ -14,7 +14,7 @@
   min-width: 28.125em;
   max-width: 37.5em;
   @include border-radius(5px);
-  @include animation-duration(2s);
+  @include animation-duration(.65s);
   @include animation-fill-mode(both);
   @include animation-name(bounceInUp);
   @include keyframes(bounceInUp){
@@ -39,7 +39,7 @@
   }
 
   &.ch-message--hide {
-    @include animation-duration(2s);
+    @include animation-duration(.65s);
     @include animation-fill-mode(both);
     @include animation-name(bounceOutDown);
     @include keyframes(bounceOutDown){
