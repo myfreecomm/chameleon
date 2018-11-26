@@ -1,5 +1,9 @@
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 if (window.Chameleon === undefined) {
@@ -18,13 +22,32 @@ Chameleon.init = function () {
     var component = Chameleon.Components[key];
     Chameleon[key.toLowerCase()] = new component();
   });
-
-  Chameleon.notifications = new Chameleon.Plugins.Notification();
 };
 
 $(document).ready(function () {
   Chameleon.init();
 });
+
+Chameleon.Components.Account = function () {
+
+  var Selector = {
+    accountContent: '.ch-account-content',
+    dropdownButton: '.ch-account-content .ch-dropdown-button',
+    dropdownMenuItem: '.ch-dropdown-menu-item'
+  };
+
+  var ClassName = {
+    open: 'open'
+  };
+
+  var toggle = function toggle(e) {
+    e.preventDefault();
+    $(Selector.accountContent).find(Selector.dropdownMenuItem).removeClass(ClassName.open);
+    $(this).parent(Selector.dropdownMenuItem).addClass(ClassName.open);
+  };
+
+  $(document).on('click', Selector.dropdownButton, toggle);
+};
 
 Chameleon.Components.Dropdown = function () {
   var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
@@ -94,7 +117,7 @@ Chameleon.Components.Dropdown = function () {
 
       if (event.target === button || event.target.parentElement === button) {
         toggle(dropdownMenu);
-      } else if (event.target.offsetParent === dropdownMenu) {
+      } else if ($(event.target).parents('.ch-dropdown-content')[0] === dropdownMenu) {
         return;
       } else {
         hide(dropdownMenu);
@@ -203,6 +226,43 @@ Chameleon.Components.Menu = function () {
   $(document).on('mouseleave', Selector.navContainer, hideMenu);
   $(Selector.navMenu).on('scroll', toogleLogoShadow);
   $(document).on('scroll', stickyHeader);
+};
+
+Chameleon.Components.Message = function () {
+  var handleCloseMessage = function () {
+    function handleCloseMessage() {
+      _classCallCheck(this, handleCloseMessage);
+
+      var $ = document.querySelector.bind(document);
+      this.closeButton = $('[data-action="close"]');
+      this.contentFlashMessage = $('[data-type="flash_message"]');
+    }
+
+    _createClass(handleCloseMessage, [{
+      key: '_addEventToClose',
+      value: function _addEventToClose() {
+        this.closeButton.addEventListener('click', function () {
+          this.parentNode.classList.add('ch-message--hide');
+        });
+      }
+    }, {
+      key: '_addTimerToClose',
+      value: function _addTimerToClose() {
+        var _this = this;
+
+        setTimeout(function () {
+          _this.contentFlashMessage.classList.add('ch-message--hide');
+        }, 4000);
+      }
+    }]);
+
+    return handleCloseMessage;
+  }();
+
+  var callCloseMessage = new handleCloseMessage();
+
+  callCloseMessage._addEventToClose();
+  callCloseMessage._addTimerToClose();
 };
 
 Chameleon.Components.Modal = function () {
@@ -366,93 +426,3 @@ Chameleon.Utils = function () {
     }
   };
 }();
-
-Chameleon.Plugins.Notification = function () {
-  var setTemplate = function setTemplate(settings) {
-    var template = '';
-
-    switch (settings.theme) {
-      case 'chameleon':
-        template = '<li class="ch-notification ch-notification--' + settings.type + ' ' + settings.animationEntrance + ' animated">\n            <div class="ch-notification-icon">\n              <i class="icon circular large ' + settings.icon + '"></i>\n            </div>\n            <div class="ch-notification-content">\n              <span class="ch-notification-title">' + settings.title + '</span>\n              <p class="ch-notification-message">' + settings.description + '</p>\n            </div>\n            <button class="ch-notification-button--close">\n              <i class="icon close large"></i>\n            </button>\n          </li>';
-        break;
-      case 'semanticUI':
-        var icon = settings.icon !== '' ? '<i class="' + settings.icon + ' tiny icon"></i>' : '';
-
-        template = '<li class="ui icon message tiny ' + settings.className + ' ' + settings.animationEntrance + ' animated">\n            ' + icon + '\n            <div class="content">\n              <div class="header">' + settings.title + '</div>\n              ' + settings.description + '\n            </div>\n          </li>';
-        break;
-    }
-
-    return template;
-  };
-
-  var setContainer = function setContainer(settings) {
-
-    var container = 'ch-notification-container ' + settings.position;
-    var containerClasses = '.' + container.replace(/ +/g, '.');
-
-    if ($(containerClasses).length === 0) {
-      $('body').append('<ul class="' + container + '"></ul>');
-    }
-
-    return containerClasses;
-  };
-
-  var buildHTML = function buildHTML(settings) {
-
-    var template = setTemplate(settings);
-    var container = setContainer(settings);
-
-    return { template: template, container: container };
-  };
-
-  var destroy = function destroy(element, settings) {
-    setTimeout(function () {
-      $(element).removeClass(settings.animationEntrance);
-      $(element).addClass(settings.animationExit);
-      setTimeout(function () {
-        return $(element).remove();
-      }, 1000);
-    }, 750);
-  };
-
-  var Notification = function Notification(options) {
-
-    var settings = $.extend({
-      className: '',
-      title: '',
-      description: '',
-      type: 'default',
-      theme: 'chameleon',
-      icon: '',
-      position: 'top right',
-      timeout: 3000,
-      animationEntrance: 'bounceInDown',
-      animationExit: 'bounceOutUp'
-    }, options);
-
-    var build = function build() {
-      var notification = buildHTML(settings);
-
-      var elem = $(notification.template).appendTo(notification.container);
-
-      if (!settings.timeout == 0) {
-        setTimeout(function () {
-          return destroy(elem, settings);
-        }, settings.timeout);
-      }
-
-      $(document).on('click', '.ch-notification-button--close', function () {
-        if ($(elem).is(':visible')) {
-          destroy($(this).parent(), settings);
-        }
-      });
-    };
-
-    typeof this === 'function' ? build() : $(this).on('click', build);
-  };
-
-  var pluginName = "notify";
-
-  $[pluginName] = Notification;
-  $.fn[pluginName] = Notification;
-};
