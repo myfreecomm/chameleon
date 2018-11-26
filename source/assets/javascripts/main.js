@@ -229,16 +229,16 @@ Chameleon.Components.Menu = function () {
 };
 
 Chameleon.Components.Message = function () {
-  var handleCloseMessage = function () {
-    function handleCloseMessage() {
-      _classCallCheck(this, handleCloseMessage);
+  var Message = function () {
+    function Message() {
+      _classCallCheck(this, Message);
 
       var $ = document.querySelector.bind(document);
       this.closeButton = $('[data-action="close"]');
       this.contentFlashMessage = $('[data-type="flash_message"]');
     }
 
-    _createClass(handleCloseMessage, [{
+    _createClass(Message, [{
       key: '_addEventToClose',
       value: function _addEventToClose() {
         this.closeButton.addEventListener('click', function () {
@@ -254,15 +254,22 @@ Chameleon.Components.Message = function () {
           _this.contentFlashMessage.classList.add('ch-message--hide');
         }, 4000);
       }
+    }, {
+      key: '_handleCloseMessage',
+      value: function _handleCloseMessage() {
+        if (this.contentFlashMessage !== null) {
+          this._addEventToClose();
+          this._addTimerToClose();
+        }
+      }
     }]);
 
-    return handleCloseMessage;
+    return Message;
   }();
 
-  var callCloseMessage = new handleCloseMessage();
+  var flashMessage = new Message();
 
-  callCloseMessage._addEventToClose();
-  callCloseMessage._addTimerToClose();
+  flashMessage._handleCloseMessage();
 };
 
 Chameleon.Components.Modal = function () {
