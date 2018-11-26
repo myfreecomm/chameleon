@@ -1,6 +1,6 @@
 Chameleon.Components.Message = function() {
 
-	class handleCloseMessage {
+	class Message {
 
 		constructor(){
 			let $ = document.querySelector.bind(document);
@@ -9,21 +9,27 @@ Chameleon.Components.Message = function() {
 		}
 
 		 _addEventToClose(){
-			this.closeButton.addEventListener('click', function(){
-				this.parentNode.classList.add('ch-message--hide');
-			})
+	 		this.closeButton.addEventListener('click', function(){
+	 			this.parentNode.classList.add('ch-message--hide');
+	 		})
 		}
 
 		 _addTimerToClose(){
-			setTimeout(() =>{
+			setTimeout(() => {
 				this.contentFlashMessage.classList.add('ch-message--hide');
 			}, 4000);
 		}
+
+		_handleCloseMessage() {
+			if(this.contentFlashMessage !== null) {
+				this._addEventToClose();
+				this._addTimerToClose();
+			}
+		}
 	}
 
+	let flashMessage = new Message();
 
-	let callCloseMessage = new handleCloseMessage();
+	flashMessage._handleCloseMessage();
 
-	callCloseMessage._addEventToClose();
-	callCloseMessage._addTimerToClose();
 }
