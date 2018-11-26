@@ -235,7 +235,7 @@ Chameleon.Components.Message = function () {
 
       var $ = document.querySelector.bind(document);
       this.closeButton = $('[data-action="close"]');
-      this.contentFlashMessage = $('[data-action="content"]');
+      this.contentFlashMessage = $('[data-type="flash_message"]');
     }
 
     _createClass(handleCloseMessage, [{
@@ -264,6 +264,7 @@ Chameleon.Components.Message = function () {
   callCloseMessage._addEventToClose();
   callCloseMessage._addTimerToClose();
 };
+
 Chameleon.Components.Modal = function () {
   var Selector = {
     dialog: '.ch-dialog',

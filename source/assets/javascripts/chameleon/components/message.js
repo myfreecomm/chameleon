@@ -5,7 +5,7 @@ Chameleon.Components.Message = function() {
 		constructor(){
 			let $ = document.querySelector.bind(document);
 			this.closeButton = $('[data-action="close"]');
-			this.contentFlashMessage = $('[data-action="content"]');
+			this.contentFlashMessage = $('[data-type="flash_message"]');
 		}
 
 		 _addEventToClose(){
@@ -15,7 +15,7 @@ Chameleon.Components.Message = function() {
 		}
 
 		 _addTimerToClose(){
-			setTimeout(() =>{ 
+			setTimeout(() =>{
 				this.contentFlashMessage.classList.add('ch-message--hide');
 			}, 4000);
 		}
@@ -23,7 +23,7 @@ Chameleon.Components.Message = function() {
 
 
 	let callCloseMessage = new handleCloseMessage();
-	
+
 	callCloseMessage._addEventToClose();
 	callCloseMessage._addTimerToClose();
 }
