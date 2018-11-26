@@ -1,5 +1,3 @@
-@import 'helpers/mixins';
-
 .ch-message {
   position: fixed;
   display: flex;
@@ -17,47 +15,11 @@
   @include animation-duration(.65s);
   @include animation-fill-mode(both);
   @include animation-name(bounceInUp);
-  @include keyframes(bounceInUp){
-    0% {
-       opacity: 0;
-       transform: translateY(2000px);
-       -webkit-transform: translateY(2000px);
-    }
-    60% {
-       opacity: 1;
-       transform: translateY(-30px);
-        -webkit-transform: translateY(-30px);
-    }
-    80% {
-       transform: translateY(10px);
-       -webkit-transform: translateY(10px);
-    }
-    100% {
-       transform: translateY(0);
-       -webkit-transform: translateY(0);
-    }
-  }
 
   &.ch-message--hide {
     @include animation-duration(.65s);
     @include animation-fill-mode(both);
     @include animation-name(bounceOutDown);
-    @include keyframes(bounceOutDown){
-      0% {
-         transform: translateY(0);
-         -webkit-transform: translateY(0);
-      }
-      20% {
-         opacity: 1;
-         transform: translateY(-20px);
-         -webkit-transform: translateY(-20px);
-      }
-      100% {
-         opacity: 0;
-         transform: translateY(2000px);
-         -webkit-transform: translateY(2000px);
-      }
-    }
   }
 
   &-text {
@@ -103,7 +65,6 @@
     border: none;
     box-shadow: none;
   }
-
 }
 
 @media only screen and(max-width: 767px) {

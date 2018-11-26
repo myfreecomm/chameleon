@@ -21,14 +21,6 @@ gulp.task('serve', ['templates', 'styles', 'scripts'], browserSync.watch);
 
 gulp.task('default', ['serve']);
 
-// DEPLOY WITH ALL DEPENDENCIES
-
-gulp.task('deployAllJS', ['babel'], scripts.deployAll);
-
-gulp.task('deployAllCSS', ['css'], styles.deployAll);
-
-gulp.task('deployAll', ['deployAllJS', 'deployAllCSS']);
-
 // DEPLOY WITHOUT DEPENDENCIES
 
 gulp.task('deploy', ['deployJS', 'deployCSS']);
