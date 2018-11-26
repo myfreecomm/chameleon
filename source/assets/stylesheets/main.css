@@ -1757,11 +1757,11 @@ ol, ul, li {
     font-size: 1.250em;
     float: left; }
     .ch-message-icon--info {
-      color: #00529B; }
+      color: #54c8ff; }
     .ch-message-icon--success {
-      color: #21ba4d; }
+      color: #2ecc40; }
     .ch-message-icon--error {
-      color: #db2828; }
+      color: #ff695e; }
   .ch-message-close {
     position: absolute;
     top: 50%;
