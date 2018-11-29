@@ -26,15 +26,16 @@ const build = function(){
 }
 
 const deploy = function() {
+
   return gulp.src(`${stylesPath }/scss/style.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('chameleon.css'))
     .pipe(header(banner, { pkg : pkg } ))
-    .pipe(gulp.dest('dist/stylesheets'))
+    .pipe(gulp.dest(`dist/${pkg.version}/stylesheets`))
     .pipe(minifyCSS())
     .pipe(rename('chameleon.min.css'))
     .pipe(header(banner, { pkg : pkg } ))
-    .pipe(gulp.dest('dist/stylesheets'))
+    .pipe(gulp.dest(`dist/${pkg.version}/stylesheets`))
 }
 
 module.exports = { build, deploy };

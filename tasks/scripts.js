@@ -39,11 +39,11 @@ const deploy = function() {
     .pipe(babel())
     .pipe(rename('chameleon.js'))
     .pipe(header(banner, { pkg : pkg } ))
-    .pipe(gulp.dest('dist/javascripts'))
+    .pipe(gulp.dest(`dist/${pkg.version}/javascripts`))
     .pipe(uglify())
     .pipe(rename('chameleon.min.js'))
     .pipe(header(banner, { pkg : pkg } ))
-    .pipe(gulp.dest('dist/javascripts'))
+    .pipe(gulp.dest(`dist/${pkg.version}/javascripts`))
 }
 
 const cleanFiles = function () {
