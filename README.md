@@ -36,3 +36,7 @@ Para geração dos arquivos HTML estamos utilizando o [PugJs](https://pugjs.org/
 ```
 source/templates
 ```
+
+## Documentação
+
+Gostaria de utilizar Chameleon na sua aplicação ? Visite a página de nossa documentação. [Saiba Mais](http://docs.chameleon.nexaas.com/)
