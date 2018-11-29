@@ -4,9 +4,20 @@ let gulp = require('gulp'),
     babel = require('gulp-babel'),
     clean = require('gulp-clean'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    header = require('gulp-header');
 
 let scriptsPath = 'source/assets/javascripts';
+
+let pkg = require('../package.json');
+
+let banner = ['/**',
+  ' * <%= pkg.name %> - <%= pkg.description %>',
+  ' * Version: <%= pkg.version %>',
+  ' * Homepage: <%= pkg.homepage %>',
+  ' * Licensed under <%= pkg.license %>',
+  ' */',
+  ''].join('\n');
 
 const compile = function() {
   return gulp.src([`${scriptsPath}/chameleon/**/*.js`, `!${scriptsPath}/chameleon/tmp/**`])
@@ -27,9 +38,11 @@ const deploy = function() {
     .pipe(concat('bundle.js'))
     .pipe(babel())
     .pipe(rename('chameleon.js'))
+    .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('dist/javascripts'))
     .pipe(uglify())
     .pipe(rename('chameleon.min.js'))
+    .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('dist/javascripts'))
 }
 

@@ -1,14 +1,15 @@
 {
   "name": "Chameleon",
   "version": "1.0.0",
-  "description": "A theme for Nexaas products apps",
+  "description": "Soluções visuais para projetos da Nexaas",
   "main": "index.js",
+  "homepage": "http://docs.chameleon.nexaas.com/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "yarn run gulp"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -19,6 +20,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^3.0.0",
     "gulp-csso": "^3.0.0",
+    "gulp-header": "^2.0.5",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
