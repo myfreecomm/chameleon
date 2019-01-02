@@ -4,6 +4,18 @@
     thead th {
       color: color(neutrals, tone-40);
       border-left: none;
+
+      a {
+        color: color(neutrals, tone-40);
+      }
+
+      &.sorted a {
+        color: rgba(0,0,0,.95);
+      }
+
+      &.sorted:after {
+        display: none;
+      }
     }
 
     thead th:hover,
@@ -13,23 +25,21 @@
     }
 
     thead th.ascending,
-    thead th.descending, {
-      &:after {
+    thead th.descending {
+
+      a:after {
+        margin: 0 0 0 .5em;
         font-family: "Font Awesome 5 Pro";
         font-weight: 300;
       }
     }
 
-    thead th.ascending {
-      &:after {
-        content: "\f30c";
-      }
+    thead th.ascending a:after {
+      content: "\f30c";
     }
 
-    thead th.descending {
-      &:after {
-        content: "\f309";
-      }
+    thead th.descending a:after {
+      content: "\f309";
     }
   }
 
