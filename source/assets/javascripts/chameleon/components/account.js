@@ -2,7 +2,7 @@ Chameleon.Components.Account = function() {
 
   const Selector = {
     accountContent   : '.ch-account-content',
-    dropdownButton           : '.ch-account-content .ch-dropdown-button',
+    dropdownButton   : '.ch-account-content .ch-dropdown-button',
     dropdownMenuItem : '.ch-dropdown-menu-item',
   }
 
