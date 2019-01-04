@@ -62,4 +62,24 @@
       }
     }
   }
+
+  &.space.around {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &.space.around > .right.content {
+    margin-left: auto;
+  }
+
+  &.space.around.separator {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+  }
+  @media only screen and (max-width: 768px) {
+    &.space.around.reverse.order .right.content {
+      order: -1;
+    }
+  }
 }
