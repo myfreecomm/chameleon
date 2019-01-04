@@ -24,6 +24,10 @@
     .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
       display: none;
     }
+
+    .ch-menu-item-label {
+      white-space: nowrap;
+    }
   }
 
   &.collapsed.hover {
@@ -35,6 +39,18 @@
     .ch-collapse-button-label,
     .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
       display: block;
+    }
+
+    .ch-logo-label,
+    .ch-menu-item-label {
+      white-space: normal;
+      animation: fadeIn .75s;
+    }
+
+    .ch-logo-icon,
+    .ch-menu-item > a > .fa-icon:first-child,
+    .ch-menu-item.active > a:before {
+      animation: fadeIn 1s;
     }
   }
 
