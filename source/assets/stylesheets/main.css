@@ -537,40 +537,71 @@ ol, ul, li {
   width: 20px; }
 
 @media only screen and (max-width: 768px) {
-  .ui.table:not(.unstackable) td:first-child,
-  .ui.table:not(.unstackable) th:first-child {
-    font-weight: normal; }
-  .ui.table:not(.unstackable) thead {
-    display: none; }
-  .ui.table:not(.unstackable) tr {
-    display: flex !important;
-    flex-direction: column; }
-    .ui.table:not(.unstackable) tr.ch-table-details.hidden {
-      display: none !important; }
-    .ui.table:not(.unstackable) tr.ch-table-details .column {
-      display: flex;
+  .ui.table {
+    /* Definition Table */ }
+    .ui.table:not(.unstackable) td:first-child,
+    .ui.table:not(.unstackable) th:first-child {
+      font-weight: normal; }
+    .ui.table:not(.unstackable) thead {
+      display: none; }
+    .ui.table:not(.unstackable) tr {
+      display: flex !important;
+      flex-direction: column; }
+      .ui.table:not(.unstackable) tr.ch-table-details.hidden {
+        display: none !important; }
+      .ui.table:not(.unstackable) tr.ch-table-details .column {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.7em; }
+    .ui.table:not(.unstackable) tr > td {
+      display: flex !important;
       justify-content: space-between;
-      padding: 0.7em; }
-  .ui.table:not(.unstackable) tr > td {
-    display: flex !important;
-    justify-content: space-between;
-    padding: 5px;
-    text-align: right; }
-    .ui.table:not(.unstackable) tr > td:before {
-      content: attr(data-info);
-      color: #47494C !important;
-      font-weight: 600;
+      padding: 5px;
+      text-align: right; }
+      .ui.table:not(.unstackable) tr > td:before {
+        content: attr(data-info);
+        color: #47494C !important;
+        font-weight: 600;
+        text-align: left; }
+      .ui.table:not(.unstackable) tr > td.checkbox {
+        justify-content: flex-start; }
+      .ui.table:not(.unstackable) tr > td.ch-table-buttons {
+        justify-content: center; }
+      .ui.table:not(.unstackable) tr > td.ch-table-buttons:before {
+        content: ''; }
+    .ui.table.actions:not(.unstackable) tr > td,
+    .ui.table.actions:not(.unstackable) tr > th {
+      padding: 0.5em 1em !important;
       text-align: left; }
-    .ui.table:not(.unstackable) tr > td.checkbox {
-      justify-content: flex-start; }
-    .ui.table:not(.unstackable) tr > td.ch-table-buttons {
-      justify-content: center; }
-    .ui.table:not(.unstackable) tr > td.ch-table-buttons:before {
-      content: ''; }
-  .ui.table.actions:not(.unstackable) tr > td,
-  .ui.table.actions:not(.unstackable) tr > th {
-    padding: 0.5em 1em !important;
-    text-align: left; } }
+    .ui.table:not(.unstackable) {
+      width: 100%; }
+    .ui.table:not(.unstackable) tbody,
+    .ui.table:not(.unstackable) tr,
+    .ui.table:not(.unstackable) tr > th,
+    .ui.table:not(.unstackable) tr > td {
+      width: auto !important; }
+    .ui.table:not(.unstackable) {
+      padding: 0em; }
+    .ui.table:not(.unstackable) tfoot {
+      display: block; }
+    .ui.table:not(.unstackable) tr {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important; }
+    .ui.table:not(.unstackable) tr > th,
+    .ui.table:not(.unstackable) tr > td {
+      background: none;
+      border: none !important;
+      padding: 0.25em 0.75em !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important; }
+    .ui.table:not(.unstackable) th:first-child,
+    .ui.table:not(.unstackable) td:first-child {
+      font-weight: bold; }
+    .ui.table.ui.definition:not(.unstackable) thead th:first-child {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important; } }
 
 .ui.progress.top.legend {
   margin-top: 3em;
