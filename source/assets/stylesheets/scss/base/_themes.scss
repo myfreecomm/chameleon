@@ -43,7 +43,7 @@ $themes: (
       border-bottom-color: $mainColor;
     }
 
-    @media screen and (max-width: 767px) {
+    @include respond-to($tablet-portrait) {
       .ch-nav:not(.active) .ch-menu-item.active a:before {
         border-bottom-color: $mainColor;
       }

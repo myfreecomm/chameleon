@@ -64,7 +64,7 @@
     width: 20px;
   }
 
-  @media only screen and (max-width: 767px) {
+  @include respond-to($tablet-portrait) {
     &:not(.unstackable) td:first-child,
     &:not(.unstackable) th:first-child {
       font-weight: normal;
@@ -124,6 +124,53 @@
         padding: 0.5em 1em !important;
         text-align: left;
       }
+    }
+
+    &:not(.unstackable) {
+      width: 100%;
+    }
+
+    &:not(.unstackable) tbody,
+    &:not(.unstackable) tr,
+    &:not(.unstackable) tr > th,
+    &:not(.unstackable) tr > td {
+      width: auto !important;
+    }
+
+    &:not(.unstackable) {
+      padding: 0em;
+    }
+
+    &:not(.unstackable) tfoot {
+      display: block;
+    }
+
+    &:not(.unstackable) tr {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+    }
+
+    &:not(.unstackable) tr > th,
+    &:not(.unstackable) tr > td {
+      background: none;
+      border: none !important;
+      padding: 0.25em 0.75em !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+    &:not(.unstackable) th:first-child,
+    &:not(.unstackable) td:first-child {
+      font-weight: bold;
+    }
+
+    /* Definition Table */
+
+    &.ui.definition:not(.unstackable) thead th:first-child {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
     }
   }
 }
