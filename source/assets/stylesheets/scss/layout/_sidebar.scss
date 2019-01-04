@@ -20,7 +20,7 @@
       @include transform(translateX(320px));
     }
 
-    @media screen and (max-width: 768px) {
+    @include respond-to($tablet-portrait) {
       width: 100%;
       top: 50%;
       min-height: 50%;

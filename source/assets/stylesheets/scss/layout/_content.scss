@@ -9,7 +9,7 @@
     box-shadow: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     width: 100%;
     margin: 0;
     padding-bottom: 60px;
@@ -112,7 +112,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @include respond-to($tablet-portrait) {
     .ui.grid.padded.grid:not(.vertically):not(.horizontally) {
       > .column.sidebar  {
         position: static;

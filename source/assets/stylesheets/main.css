@@ -5,13 +5,13 @@
 
 .mobile-only {
   display: none !important; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .mobile-only {
       display: block !important; } }
 
 .computer-only {
   display: none !important; }
-  @media screen and (min-width: 769px) {
+  @media only screen and (max-width: 769px) {
     .computer-only {
       display: block !important; } }
 
@@ -32,7 +32,7 @@
     background-color: rgba(0, 0, 0, 0.05); }
     .ch-overlay.inside .ch-sidebar-container {
       border-top: 1px solid #eee; }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     .ch-overlay {
       background-color: #fff; }
       .ch-overlay.inside {
@@ -43,7 +43,7 @@
   .hidden.ui.divider {
     display: block !important; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .hidden-mobile {
     display: none !important; } }
 
@@ -116,7 +116,7 @@
     display: none; }
   .ch-nav.collapsed .ch-expand-button button > .icon.expand {
     display: block; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-expand-button {
       display: none; } }
 
@@ -255,7 +255,7 @@ ol, ul, li {
   list-style: none; }
 
 :root [data-theme="default"] {
-  --main-color: #00E2F6; }
+  --main-color: $mainColor; }
 
 [data-theme="default"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="default"] .ch-menu-item.active a:before {
@@ -271,12 +271,12 @@ ol, ul, li {
 [data-theme="default"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #00E2F6; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   [data-theme="default"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #00E2F6; } }
 
 :root [data-theme="billimatic"] {
-  --main-color: #F24242; }
+  --main-color: $mainColor; }
 
 [data-theme="billimatic"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="billimatic"] .ch-menu-item.active a:before {
@@ -292,12 +292,12 @@ ol, ul, li {
 [data-theme="billimatic"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #F24242; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   [data-theme="billimatic"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #F24242; } }
 
 :root [data-theme="cobrato"] {
-  --main-color: #F89137; }
+  --main-color: $mainColor; }
 
 [data-theme="cobrato"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="cobrato"] .ch-menu-item.active a:before {
@@ -313,12 +313,12 @@ ol, ul, li {
 [data-theme="cobrato"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #F89137; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   [data-theme="cobrato"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #F89137; } }
 
 :root [data-theme="emites"] {
-  --main-color: #13B782; }
+  --main-color: $mainColor; }
 
 [data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="emites"] .ch-menu-item.active a:before {
@@ -334,12 +334,12 @@ ol, ul, li {
 [data-theme="emites"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #13B782; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   [data-theme="emites"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #13B782; } }
 
 :root [data-theme="estoka"] {
-  --main-color: #F2377A; }
+  --main-color: $mainColor; }
 
 [data-theme="estoka"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="estoka"] .ch-menu-item.active a:before {
@@ -355,12 +355,12 @@ ol, ul, li {
 [data-theme="estoka"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #F2377A; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   [data-theme="estoka"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #F2377A; } }
 
 :root [data-theme="myfinance"] {
-  --main-color: #2483c4; }
+  --main-color: $mainColor; }
 
 [data-theme="myfinance"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="myfinance"] .ch-menu-item.active a:before {
@@ -376,7 +376,7 @@ ol, ul, li {
 [data-theme="myfinance"] .ch-pagination.ui.pagination.menu .item.active {
   border-bottom-color: #2483c4; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   [data-theme="myfinance"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #2483c4; } }
 
@@ -436,7 +436,7 @@ ol, ul, li {
   float: none;
   margin: 0 .35714286em 0 0; }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .ui.menu.pagination .item {
     display: none; }
     .ui.menu.pagination .item:first-child, .ui.menu.pagination .item:last-child {
@@ -536,7 +536,7 @@ ol, ul, li {
 .ui.table .checkbox-column {
   width: 20px; }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .ui.table:not(.unstackable) td:first-child,
   .ui.table:not(.unstackable) th:first-child {
     font-weight: normal; }
@@ -628,7 +628,7 @@ ol, ul, li {
     .ch-logo-icon > img {
       min-width: 36px;
       max-height: 36px; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-logo {
       min-height: 72px;
       padding-left: 70px; }
@@ -641,7 +641,7 @@ ol, ul, li {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-nav:not(.active) .ch-menu {
       width: 100%;
       height: 100%;
@@ -754,7 +754,7 @@ ol, ul, li {
   -webkit-transform: translateY(-50%) rotate(90deg);
   transform: translateY(-50%) rotate(90deg); }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .ch-nav .ch-menu-item > a,
   .ch-nav .ch-menu-item > button {
     padding-top: 1.15em;
@@ -839,7 +839,7 @@ ol, ul, li {
       font-weight: 600; }
   .ch-breadcrumb .divider {
     opacity: .5; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-breadcrumb-section, .ch-breadcrumb .divider {
       display: none;
       white-space: nowrap; }
@@ -931,7 +931,7 @@ ol, ul, li {
       -o-transition: all 0.2s;
       -webkit-transition: all 0.2s;
       transition: all 0.2s; }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     .ch-dropdown-content.collapse {
       position: static;
       box-shadow: none;
@@ -944,7 +944,7 @@ ol, ul, li {
 .dropdown-list .ui.dropdown + .ui.dropdown {
   margin-left: .5em; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .dropdown-list .ui.dropdown {
     width: 100%;
     margin-bottom: 1em; }
@@ -1043,7 +1043,7 @@ ol, ul, li {
     .ch-dialog .ui.items > .item > .content .time {
       text-transform: uppercase;
       color: #606266; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-dialog-container {
       width: 100%;
       animation: fadeIn .3s; }
@@ -1083,7 +1083,7 @@ ol, ul, li {
     -o-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .action-dialog {
       max-width: 100%; } }
 
@@ -1156,7 +1156,7 @@ ol, ul, li {
       background: #F9FBFF;
       border: 1px solid rgba(148, 159, 178, 0.5);
       border-radius: 3px; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-search-content {
       margin: 0 !important;
       width: 100% !important;
@@ -1278,7 +1278,7 @@ ol, ul, li {
         visibility: visible; }
     .ch-wizard--vertical > .ch-wizard-step.done {
       color: #2b4; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-wizard--vertical > .ch-wizard-step.done > .step-content,
     .ch-wizard--vertical > .ch-wizard-step.current > .step-content {
       border: none; } }
@@ -1325,7 +1325,7 @@ ol, ul, li {
         color: #47494C; }
       .ch-wizard--horizontal > .ch-wizard-step.done a {
         color: #2b4; }
-    @media screen and (max-width: 1120px) {
+    @media only screen and (min-width: 769px) and (max-width: 1366px) {
       .ch-wizard--horizontal {
         width: 100%;
         margin-top: 30px; } }
@@ -1472,7 +1472,7 @@ ol, ul, li {
   overflow: hidden; }
   .ch-tabs > .ui.secondary.pointing.menu {
     border-bottom-color: transparent; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-tabs {
       position: relative;
       height: 40px;
@@ -1510,7 +1510,7 @@ ol, ul, li {
   .ch-nav.collapsed:not(.hover) .ch-tag--new.ui.label:before {
     content: ''; }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .ch-nav:not(.active) .ch-tag--new.ui.label {
     position: absolute;
     top: 50%;
@@ -1582,7 +1582,7 @@ ol, ul, li {
       bottom: 35px; }
     .ch-notification-container .ui.icon.message > .icon:not(.close) {
       font-size: 2em; }
-    @media screen and (max-width: 768px) {
+    @media only screen and (max-width: 768px) {
       .ch-notification-container {
         width: 90%;
         top: 65px !important;
@@ -1636,7 +1636,7 @@ ol, ul, li {
     cursor: pointer; }
     .ch-notification-button--close .icon.close {
       color: #d6d6d6; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-notification {
       min-width: 100%;
       max-width: 100%;
@@ -1743,7 +1743,7 @@ ol, ul, li {
     border: none;
     box-shadow: none; }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .ch-message {
     min-width: 100%;
     margin-bottom: 3em;
@@ -1761,7 +1761,7 @@ ol, ul, li {
     width: 100%;
     background: none;
     box-shadow: none; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-content {
       width: 100%;
       margin: 0;
@@ -1826,7 +1826,7 @@ ol, ul, li {
     height: 100%;
     overflow: auto;
     background-color: #fbfafa; }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     .ch-featured-content .ui.grid.padded.grid:not(.vertically):not(.horizontally) > .column.sidebar {
       position: static;
       width: calc(100% + 20px) !important;
@@ -1895,7 +1895,7 @@ ol, ul, li {
     .ch-header-nav-button.ch-account.active button {
       color: #777A7F; }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .ch-header-nav.active {
     position: absolute;
     top: 0;
@@ -1944,7 +1944,7 @@ ol, ul, li {
     .ch-nav.collapsed.hover .ch-collapse-button-label,
     .ch-nav.collapsed.hover .ch-menu-item.ch-dropdown.open > .ch-dropdown-content {
       display: block; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-nav {
       font-size: 1.2em; }
       .ch-nav:not(.active) {
@@ -2061,7 +2061,7 @@ ol, ul, li {
       color: #999;
       display: block;
       padding: 10px; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-login-container {
       width: 100%;
       padding: 20px; }
@@ -2092,7 +2092,7 @@ ol, ul, li {
     -ms-transform: translateX(320px);
     -webkit-transform: translateX(320px);
     transform: translateX(320px); }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-sidebar--fixed {
       width: 100%;
       top: 50%;
@@ -2144,7 +2144,7 @@ ol, ul, li {
   height: 215px; }
   .ch-account-container.has-search {
     height: 250px; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-account-container {
       position: fixed;
       width: 100%;
@@ -2168,7 +2168,7 @@ ol, ul, li {
     margin-left: auto; }
     .ch-account-header > .actions .btn-close {
       margin-left: 15px; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-account-header {
       height: 60px; }
       .ch-account-header > .actions {
@@ -2228,7 +2228,7 @@ ol, ul, li {
     box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.15) inset; }
     .ch-account-content .submenu .ch-dropdown-menu-item.open > a:before {
       content: none; }
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .ch-account-content {
       height: calc(100% - 60px); } }
 
@@ -2308,7 +2308,7 @@ ol, ul, li {
 .ch-user .ch-dropdown-content {
   width: 330px; }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .ch-user .ch-dropdown-content {
     position: fixed;
     width: 100%;
@@ -2377,7 +2377,7 @@ ol, ul, li {
       width: auto;
       height: 30px;
       opacity: .2; }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     .ch-error-page {
       font-size: 11px; }
       .ch-error-page-message {

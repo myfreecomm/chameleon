@@ -45,7 +45,7 @@ $warningColor: #fbbd08;
       }
     }
 
-    @media screen and (max-width: 768px) {
+    @include respond-to($tablet-portrait) {
       width: 90%;
       top: 65px !important;
       left: 50% !important;
@@ -137,7 +137,7 @@ $warningColor: #fbbd08;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     min-width: 100%;
     max-width: 100%;
     padding: 20px;

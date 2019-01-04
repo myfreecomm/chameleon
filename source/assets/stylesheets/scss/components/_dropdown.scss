@@ -107,7 +107,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @include respond-to($tablet-portrait) {
     &-content {
       &.collapse {
         position: static;
@@ -131,7 +131,7 @@
     margin-left: .5em;
   }
 
-  @media screen and (max-width: 767px) {
+  @include respond-to($tablet-portrait) {
     .ui.dropdown {
       width: 100%;
       margin-bottom: 1em;

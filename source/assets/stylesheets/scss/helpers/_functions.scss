@@ -10,11 +10,9 @@
         @return $tone;
     }
 
-    @warn "unknown tone `#{$tone}` in color";
     @return null;
   }
 
-  @warn "unknown color `#{$color}` in palette";
   @return null;
 
 }

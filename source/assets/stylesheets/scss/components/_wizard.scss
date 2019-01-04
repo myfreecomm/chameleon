@@ -81,7 +81,7 @@
       }
     }
 
-    @media screen and (max-width: 768px) {
+    @include respond-to($tablet-portrait) {
       > .ch-wizard-step.done,
       > .ch-wizard-step.current
       {
@@ -163,7 +163,7 @@
       }
     }
 
-    @media screen and (max-width: 1120px) {
+    @include respond-to($notebook) {
       width: 100%;
       margin-top: 30px;
     }
