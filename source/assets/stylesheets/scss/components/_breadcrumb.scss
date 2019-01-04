@@ -31,7 +31,7 @@
     opacity: .5;
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
 
     &-section, .divider {
       display: none;

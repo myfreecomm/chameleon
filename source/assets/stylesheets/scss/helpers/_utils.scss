@@ -1,7 +1,7 @@
 .mobile-only {
   display: none !important;
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     display: block !important;
   }
 }
@@ -9,7 +9,7 @@
 .computer-only {
   display: none !important;
 
-  @media screen and (min-width: 769px) {
+  @include respond-to($desktop) {
     display: block !important;
   }
 }
@@ -40,7 +40,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @include respond-to($tablet-portrait) {
     background-color: #fff;
 
     &.inside {
@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@include respond-to($tablet-portrait) {
   .hidden-mobile {
     display: none !important;
   }
@@ -154,7 +154,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     display: none;
   }
 }
@@ -183,5 +183,11 @@
 
   > .list > .value {
     line-height: 1.5em;
+  }
+}
+
+@include respond-to($tablet-portrait) {
+  .h-text-center--mobile {
+    text-align: center !important;
   }
 }
