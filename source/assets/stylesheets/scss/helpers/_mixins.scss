@@ -1,7 +1,7 @@
 $phone : '(max-width: 480px)';
 $tablet-portrait: '(max-width: 768px)';
 $tablet-landscape: '(min-width: 769px) and (max-width: 979px)';
-$desktop: '(max-width: 769px)';
+$desktop: '(min-width: 769px)';
 $notebook: '(min-width: 769px) and (max-width: 1366px)';
 $large-desktop: '(min-width: 1200px)';
 $non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)';

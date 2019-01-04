@@ -54,7 +54,7 @@
 
     &.ch-account {
 
-      button {
+      > button {
         font-weight: bold;
         text-transform: uppercase;
         color: $fontColor;
