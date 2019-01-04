@@ -19,6 +19,8 @@
 @import 'overrides/_table';
 @import 'overrides/_progress';
 @import 'overrides/_dropdown';
+@import 'overrides/_icon';
+@import 'overrides/_divider';
 
 //PARTIALS
 @import 'partials/_logo';
@@ -40,6 +42,7 @@
 @import 'components/_notification';
 @import 'components/_pagination';
 @import 'components/_flash-message';
+@import 'components/_input';
 
 //LAYOUT
 @import 'layout/_content';

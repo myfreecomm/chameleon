@@ -123,8 +123,14 @@ html
       include partials/header/estoka.pug
 
       .ui.padded.grid.stackable
+        .ui.three.wide.computer.sixteen.wide.tablet.column
+          .ui.action.input.fluid.ch-inline-search
+            input.ch-inline-search-input(type="text" placeholder="Encontre seu produto...")
+            label.ui.icon.button.basic(for="submit-search").ch-inline-search-button
+              i.icon.search
+              input(type="submit" value="Pesquisar" class="hidden")
 
-        .ui.sixteen.wide.column.right.aligned
+        .ui.thirteen.wide.computer.sixteen.wide.tablet.column.right.aligned
           .dropdown-list
             select.ui.dropdown
               option Todos os canais de venda
@@ -173,8 +179,6 @@ html
                 i.fal.fa-angle-left
               a.active.item 1
               a.item 2
-              a.item 3
-              a.item 4
               .disabled.item ...
               a.item 20
               a.item 21

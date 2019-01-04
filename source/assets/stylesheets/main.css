@@ -255,7 +255,7 @@ ol, ul, li {
   list-style: none; }
 
 :root [data-theme="default"] {
-  --main-color: #00E2F6; }
+  --main-color: $mainColor; }
 
 [data-theme="default"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="default"] .ch-menu-item.active a:before {
@@ -276,7 +276,7 @@ ol, ul, li {
     border-bottom-color: #00E2F6; } }
 
 :root [data-theme="billimatic"] {
-  --main-color: #F24242; }
+  --main-color: $mainColor; }
 
 [data-theme="billimatic"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="billimatic"] .ch-menu-item.active a:before {
@@ -297,7 +297,7 @@ ol, ul, li {
     border-bottom-color: #F24242; } }
 
 :root [data-theme="cobrato"] {
-  --main-color: #F89137; }
+  --main-color: $mainColor; }
 
 [data-theme="cobrato"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="cobrato"] .ch-menu-item.active a:before {
@@ -318,7 +318,7 @@ ol, ul, li {
     border-bottom-color: #F89137; } }
 
 :root [data-theme="emites"] {
-  --main-color: #13B782; }
+  --main-color: $mainColor; }
 
 [data-theme="emites"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="emites"] .ch-menu-item.active a:before {
@@ -339,7 +339,7 @@ ol, ul, li {
     border-bottom-color: #13B782; } }
 
 :root [data-theme="estoka"] {
-  --main-color: #F2377A; }
+  --main-color: $mainColor; }
 
 [data-theme="estoka"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="estoka"] .ch-menu-item.active a:before {
@@ -360,7 +360,7 @@ ol, ul, li {
     border-bottom-color: #F2377A; } }
 
 :root [data-theme="myfinance"] {
-  --main-color: #2483c4; }
+  --main-color: $mainColor; }
 
 [data-theme="myfinance"] .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a:before,
 [data-theme="myfinance"] .ch-menu-item.active a:before {
@@ -497,6 +497,18 @@ ol, ul, li {
         padding-left: 1.6em; }
       .ui.segment.paddingless .ui.table td:last-child, .ui.segment.paddingless .ui.table th:last-child {
         padding-right: 1.6em; }
+  .ui.segment.space.around {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; }
+  .ui.segment.space.around > .right.content {
+    margin-left: auto; }
+  .ui.segment.space.around.separator {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ddd; }
+  @media only screen and (max-width: 768px) {
+    .ui.segment.space.around.reverse.order .right.content {
+      order: -1; } }
 
 .ui.table.sortable thead th {
   color: #919499;
@@ -595,6 +607,34 @@ ol, ul, li {
 
 .ui.dropdown.selection {
   border-color: #E6EAF2; }
+
+i.icon.fa:before {
+  content: inherit; }
+
+i.icon {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal; }
+
+i.icon.light {
+  font-weight: 300 !important; }
+
+i.icon.solid {
+  font-weight: 900 !important; }
+
+i.icon.regular {
+  font-weight: 400 !important; }
+
+.ui.divider.hidden.mini {
+  margin: .25em; }
+
+.ui.divider.hidden.small {
+  margin: .5em; }
+
+.ui.divider.hidden.large {
+  margin: 1.5em; }
+
+.ui.divider.hidden.huge {
+  margin: 2.5em; }
 
 .ch-logo {
   position: relative;
@@ -1752,6 +1792,25 @@ ol, ul, li {
       font-size: 0.938em; }
     .ch-message-text {
       font-size: 0.938em; } }
+
+.ch-inline-search.ui.input > .ch-inline-search-input {
+  border-radius: 500em;
+  border: 1px solid #e6eaf2;
+  border-right: none; }
+
+.ch-inline-search.ui.input > .ui.icon.button.basic.ch-inline-search-button {
+  border: 1px solid #e6eaf2;
+  border-left: none;
+  border-radius: 0 500em 500em 0;
+  box-shadow: none; }
+
+.ch-inline-search.ui.input > .ch-inline-search-input:active,
+.ch-inline-search.ui.input > .ui.icon.button.basic.ch-inline-search-button:active {
+  background: none !important; }
+
+.ch-inline-search.ui.input > .ch-inline-search-input:focus,
+.ch-inline-search.ui.input > .ch-inline-search-input:focus + .ui.icon.button.basic {
+  border-color: #85B7D9; }
 
 .ch-content {
   margin-left: 240px;
