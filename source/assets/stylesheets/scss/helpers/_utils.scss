@@ -186,3 +186,9 @@
     line-height: 1.5em;
   }
 }
+
+@include respond-to($tablet-portrait) {
+  .h-text-center--mobile {
+    text-align: center !important;
+  }
+}

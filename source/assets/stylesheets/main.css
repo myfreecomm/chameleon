@@ -137,6 +137,10 @@
 .info > .list > .value {
   line-height: 1.5em; }
 
+@media only screen and (max-width: 768px) {
+  .h-text-center--mobile {
+    text-align: center !important; } }
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
