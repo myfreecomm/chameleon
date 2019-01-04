@@ -89,7 +89,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     &-content {
       margin: 0 !important;
       width: 100% !important;

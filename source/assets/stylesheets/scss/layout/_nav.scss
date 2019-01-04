@@ -54,7 +54,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     font-size: 1.2em;
 
     &:not(.active) {

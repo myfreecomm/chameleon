@@ -4,7 +4,7 @@
     margin: 0 .35714286em 0 0;
   }
 
-  @media screen and (max-width: 480px) {
+  @include respond-to($phone) {
     &.pagination {
       .item {
         display: none;

@@ -13,12 +13,12 @@ $themes: (
   [data-theme="#{$name}"] {
 
     :root & {
-        $mainColor: $color;
+      $mainColor: $color;
       --main-color: $mainColor;
     }
 
 
-    .ch-account-content .menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > a,
+    .ch-account-content-menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > .ch-dropdown-menu-item-label,
     .ch-menu-item.active a {
       &:before {
         border-right-color: $mainColor;
@@ -43,7 +43,7 @@ $themes: (
       border-bottom-color: $mainColor;
     }
 
-    @media screen and (max-width: 767px) {
+    @include respond-to($tablet-portrait) {
       .ch-nav:not(.active) .ch-menu-item.active a:before {
         border-bottom-color: $mainColor;
       }

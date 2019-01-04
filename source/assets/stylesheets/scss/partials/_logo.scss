@@ -35,7 +35,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     min-height: 72px;
     padding-left: 70px;
 
