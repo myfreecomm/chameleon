@@ -6,7 +6,7 @@
     border-bottom-color: transparent;
   }
 
-  @media screen and (max-width: 768px) {
+  @include respond-to($tablet-portrait) {
     position: relative;
     height: 40px;
     overflow: hidden;

@@ -3,13 +3,13 @@
     width: 370px;
     height: 215px;
 
-    @media screen and (min-width: 768px) {
+    @include respond-to($desktop) {
       &.has-search {
         height: 250px;
       }
     }
 
-    @media screen and (max-width: 767px) {
+    @include respond-to($tablet-portrait) {
       &.has-search {
         top: 0 !important;
       }
@@ -45,7 +45,7 @@
       }
     }
 
-    @media screen and (max-width: 768px) {
+    @include respond-to($tablet-portrait) {
       height: 60px;
 
       > .actions {
@@ -134,7 +134,7 @@
       }
     }
 
-    @media screen and (max-width: 767px) {
+    @include respond-to($tablet-portrait) {
       height: 100%;
     }
   }
@@ -142,7 +142,7 @@
   &-header + &-content {
     height: calc(100% - 50px);
 
-    @media screen and (max-width: 767px) {
+    @include respond-to($tablet-portrait) {
       height: calc(100% - 65px);
     }
   }

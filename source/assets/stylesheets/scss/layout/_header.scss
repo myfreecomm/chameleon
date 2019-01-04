@@ -74,7 +74,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@include respond-to($tablet-portrait) {
   .ch-header-nav {
     &.active {
       position: absolute;
