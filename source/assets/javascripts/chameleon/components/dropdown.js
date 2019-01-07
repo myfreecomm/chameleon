@@ -1,6 +1,9 @@
 Chameleon.Components.Dropdown = function() {
-  const dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
-  const dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');
+  const Selector = {
+    closeButton      : '.ch-dropdown .btn-close',
+    dropdownButton   : '.ch-dropdown-toggle',
+    dropdownContent  : '.ch-dropdown-content'
+  }
 
   const show = function(dropdownMenu) {
     dropdownMenu.classList.add('visible');
@@ -23,10 +26,11 @@ Chameleon.Components.Dropdown = function() {
   }
 
   const definePosition = function(dropdownMenu) {
-    const validPositions = ['top', 'right', 'left', 'bottom'];
     let initialPosition = "";
+    let validPositions = ['top', 'right', 'left', 'bottom'];
 
     dropdownMenu.classList.remove(...validPositions);
+
     if (dropdownMenu.dataset.position) {
       initialPosition = dropdownMenu.dataset.position.split(" ");
     } else {
@@ -50,27 +54,34 @@ Chameleon.Components.Dropdown = function() {
     }
   }
 
+  const dropdown = function(button) {
+    let dropdownMenu = button.nextElementSibling;
+
+    if ( event.target === button || event.target.parentElement === button ) {
+      toggle(dropdownMenu)
+    } else if ($(event.target).parents(Selector.dropdownContent)[0] === dropdownMenu) {
+      return;
+    } else {
+      hide(dropdownMenu);
+    }
+  }
+
   const close = function(button) {
-    button.addEventListener('click', function(dropdownMenu) {
-      hide(this.offsetParent);
-    })
+    if ( event.target === button || event.target.parentElement === button ) {
+      hide(button.offsetParent);
+    }
   }
 
-  dropdownCloseButtons.forEach(close);
-
-  const dropdown = function(event) {
-    dropdownButtons.forEach(function(button) {
-      let dropdownMenu = button.nextElementSibling;
-
-      if ( event.target === button || event.target.parentElement === button ) {
-        toggle(dropdownMenu)
-      } else if ($(event.target).parents('.ch-dropdown-content')[0] === dropdownMenu) {
-        return;
-      } else {
-        hide(dropdownMenu);
-      }
-    });
+  const handleDropdown = function(event) {
+    let dropdownButtons = document.querySelectorAll(Selector.dropdownButton);
+    dropdownButtons.forEach(dropdown);
   }
 
-  document.addEventListener('click', dropdown);
+  const handleDropdownClose = function(e) {
+    let dropdownCloseButtons = document.querySelectorAll(Selector.closeButton);
+    dropdownCloseButtons.forEach(close);
+  }
+
+  document.addEventListener('click', handleDropdown);
+  document.addEventListener('click', handleDropdownClose);
 }
