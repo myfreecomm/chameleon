@@ -56,20 +56,25 @@ Chameleon.Components.Dropdown = function () {
     dropdownContent: '.ch-dropdown-content'
   };
 
+  var ClassName = {
+    active: 'active',
+    visible: 'visible'
+  };
+
   var show = function show(dropdownMenu) {
-    dropdownMenu.classList.add('visible');
-    dropdownMenu.parentElement.classList.add('active');
+    dropdownMenu.classList.add(ClassName.visible);
+    dropdownMenu.parentElement.classList.add(ClassName.active);
 
     definePosition(dropdownMenu);
   };
 
   var hide = function hide(dropdownMenu) {
-    dropdownMenu.classList.remove('visible');
-    dropdownMenu.parentElement.classList.remove('active');
+    dropdownMenu.classList.remove(ClassName.visible);
+    dropdownMenu.parentElement.classList.remove(ClassName.active);
   };
 
   var toggle = function toggle(dropdownMenu) {
-    if (dropdownMenu.classList.contains('visible') === false) {
+    if (dropdownMenu.classList.contains(ClassName.visible) === false) {
       show(dropdownMenu);
     } else {
       hide(dropdownMenu);
@@ -83,13 +88,7 @@ Chameleon.Components.Dropdown = function () {
     var validPositions = ['top', 'right', 'left', 'bottom'];
 
     (_dropdownMenu$classLi = dropdownMenu.classList).remove.apply(_dropdownMenu$classLi, validPositions);
-
-    if (dropdownMenu.dataset.position) {
-      initialPosition = dropdownMenu.dataset.position.split(" ");
-    } else {
-      initialPosition = ['bottom', 'right'];
-    }
-
+    initialPosition = dropdownMenu.dataset.position ? dropdownMenu.dataset.position.split(" ") : ['bottom', 'right'];
     (_dropdownMenu$classLi2 = dropdownMenu.classList).add.apply(_dropdownMenu$classLi2, _toConsumableArray(initialPosition));
 
     positionLastResort(dropdownMenu);
@@ -130,13 +129,13 @@ Chameleon.Components.Dropdown = function () {
     dropdownButtons.forEach(dropdown);
   };
 
-  var handleDropdownClose = function handleDropdownClose(e) {
+  var handleCloseDropdown = function handleCloseDropdown(e) {
     var dropdownCloseButtons = document.querySelectorAll(Selector.closeButton);
     dropdownCloseButtons.forEach(close);
   };
 
   document.addEventListener('click', handleDropdown);
-  document.addEventListener('click', handleDropdownClose);
+  document.addEventListener('click', handleCloseDropdown);
 };
 
 Chameleon.Components.Menu = function () {

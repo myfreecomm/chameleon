@@ -5,20 +5,25 @@ Chameleon.Components.Dropdown = function() {
     dropdownContent  : '.ch-dropdown-content'
   }
 
+  const ClassName = {
+    active  : 'active',
+    visible : 'visible'
+  }
+
   const show = function(dropdownMenu) {
-    dropdownMenu.classList.add('visible');
-    dropdownMenu.parentElement.classList.add('active');
+    dropdownMenu.classList.add(ClassName.visible);
+    dropdownMenu.parentElement.classList.add(ClassName.active);
 
     definePosition(dropdownMenu);
   }
 
   const hide = function(dropdownMenu) {
-    dropdownMenu.classList.remove('visible');
-    dropdownMenu.parentElement.classList.remove('active');
+    dropdownMenu.classList.remove(ClassName.visible);
+    dropdownMenu.parentElement.classList.remove(ClassName.active);
   }
 
   const toggle = function(dropdownMenu) {
-    if ( dropdownMenu.classList.contains('visible') === false ) {
+    if ( dropdownMenu.classList.contains(ClassName.visible) === false ) {
       show(dropdownMenu);
     } else {
       hide(dropdownMenu);
@@ -30,25 +35,19 @@ Chameleon.Components.Dropdown = function() {
     let validPositions = ['top', 'right', 'left', 'bottom'];
 
     dropdownMenu.classList.remove(...validPositions);
-
-    if (dropdownMenu.dataset.position) {
-      initialPosition = dropdownMenu.dataset.position.split(" ");
-    } else {
-      initialPosition = ['bottom' , 'right']
-    }
-
+    initialPosition = dropdownMenu.dataset.position ? dropdownMenu.dataset.position.split(" ") : ['bottom' , 'right'];
     dropdownMenu.classList.add(...initialPosition);
 
     positionLastResort(dropdownMenu);
   }
 
   const positionLastResort = function(dropdownMenu) {
-    if ( $(dropdownMenu).offset().left < 0 ) {
+    if ($(dropdownMenu).offset().left < 0) {
       dropdownMenu.classList.remove('right');
       dropdownMenu.classList.add('left');
     }
 
-    if ( document.body.scrollWidth > window.innerWidth ) {
+    if (document.body.scrollWidth > window.innerWidth) {
       dropdownMenu.classList.remove('left');
       dropdownMenu.classList.add('right');
     }
@@ -57,7 +56,7 @@ Chameleon.Components.Dropdown = function() {
   const dropdown = function(button) {
     let dropdownMenu = button.nextElementSibling;
 
-    if ( event.target === button || event.target.parentElement === button ) {
+    if (event.target === button || event.target.parentElement === button) {
       toggle(dropdownMenu)
     } else if ($(event.target).parents(Selector.dropdownContent)[0] === dropdownMenu) {
       return;
@@ -67,7 +66,7 @@ Chameleon.Components.Dropdown = function() {
   }
 
   const close = function(button) {
-    if ( event.target === button || event.target.parentElement === button ) {
+    if (event.target === button || event.target.parentElement === button) {
       hide(button.offsetParent);
     }
   }
@@ -77,11 +76,11 @@ Chameleon.Components.Dropdown = function() {
     dropdownButtons.forEach(dropdown);
   }
 
-  const handleDropdownClose = function(e) {
+  const handleCloseDropdown = function(e) {
     let dropdownCloseButtons = document.querySelectorAll(Selector.closeButton);
     dropdownCloseButtons.forEach(close);
   }
 
   document.addEventListener('click', handleDropdown);
-  document.addEventListener('click', handleDropdownClose);
+  document.addEventListener('click', handleCloseDropdown);
 }
