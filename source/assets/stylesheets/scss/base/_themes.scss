@@ -48,5 +48,9 @@ $themes: (
         border-bottom-color: $mainColor;
       }
     }
+
+    .ch-loader:before {
+      background-color: $mainColor;
+    }
   }
 }

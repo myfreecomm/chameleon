@@ -1,0 +1,34 @@
+.ch-loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  z-index: 2;
+
+  &.is-active {
+    display: block;
+  }
+
+  &:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    @include animation(progress-active 2s ease infinite);
+  }
+
+  &:after {
+    content:'';
+    opacity: 0;
+    background: #fff;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include animation(progress-overlay 2s ease infinite);
+  }
+}
