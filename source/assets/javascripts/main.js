@@ -50,23 +50,31 @@ Chameleon.Components.Account = function () {
 };
 
 Chameleon.Components.Dropdown = function () {
-  var dropdownButtons = document.querySelectorAll('.ch-dropdown-toggle');
-  var dropdownCloseButtons = document.querySelectorAll('.ch-dropdown .btn-close');
+  var Selector = {
+    closeButton: '.ch-dropdown .btn-close',
+    dropdownButton: '.ch-dropdown-toggle',
+    dropdownContent: '.ch-dropdown-content'
+  };
+
+  var ClassName = {
+    active: 'active',
+    visible: 'visible'
+  };
 
   var show = function show(dropdownMenu) {
-    dropdownMenu.classList.add('visible');
-    dropdownMenu.parentElement.classList.add('active');
+    dropdownMenu.classList.add(ClassName.visible);
+    dropdownMenu.parentElement.classList.add(ClassName.active);
 
     definePosition(dropdownMenu);
   };
 
   var hide = function hide(dropdownMenu) {
-    dropdownMenu.classList.remove('visible');
-    dropdownMenu.parentElement.classList.remove('active');
+    dropdownMenu.classList.remove(ClassName.visible);
+    dropdownMenu.parentElement.classList.remove(ClassName.active);
   };
 
   var toggle = function toggle(dropdownMenu) {
-    if (dropdownMenu.classList.contains('visible') === false) {
+    if (dropdownMenu.classList.contains(ClassName.visible) === false) {
       show(dropdownMenu);
     } else {
       hide(dropdownMenu);
@@ -76,16 +84,11 @@ Chameleon.Components.Dropdown = function () {
   var definePosition = function definePosition(dropdownMenu) {
     var _dropdownMenu$classLi, _dropdownMenu$classLi2;
 
-    var validPositions = ['top', 'right', 'left', 'bottom'];
     var initialPosition = "";
+    var validPositions = ['top', 'right', 'left', 'bottom'];
 
     (_dropdownMenu$classLi = dropdownMenu.classList).remove.apply(_dropdownMenu$classLi, validPositions);
-    if (dropdownMenu.dataset.position) {
-      initialPosition = dropdownMenu.dataset.position.split(" ");
-    } else {
-      initialPosition = ['bottom', 'right'];
-    }
-
+    initialPosition = dropdownMenu.dataset.position ? dropdownMenu.dataset.position.split(" ") : ['bottom', 'right'];
     (_dropdownMenu$classLi2 = dropdownMenu.classList).add.apply(_dropdownMenu$classLi2, _toConsumableArray(initialPosition));
 
     positionLastResort(dropdownMenu);
@@ -103,29 +106,36 @@ Chameleon.Components.Dropdown = function () {
     }
   };
 
+  var dropdown = function dropdown(button) {
+    var dropdownMenu = button.nextElementSibling;
+
+    if (event.target === button || event.target.parentElement === button) {
+      toggle(dropdownMenu);
+    } else if ($(event.target).parents(Selector.dropdownContent)[0] === dropdownMenu) {
+      return;
+    } else {
+      hide(dropdownMenu);
+    }
+  };
+
   var close = function close(button) {
-    button.addEventListener('click', function (dropdownMenu) {
-      hide(this.offsetParent);
-    });
+    if (event.target === button || event.target.parentElement === button) {
+      hide(button.offsetParent);
+    }
   };
 
-  dropdownCloseButtons.forEach(close);
-
-  var dropdown = function dropdown(event) {
-    dropdownButtons.forEach(function (button) {
-      var dropdownMenu = button.nextElementSibling;
-
-      if (event.target === button || event.target.parentElement === button) {
-        toggle(dropdownMenu);
-      } else if ($(event.target).parents('.ch-dropdown-content')[0] === dropdownMenu) {
-        return;
-      } else {
-        hide(dropdownMenu);
-      }
-    });
+  var handleDropdown = function handleDropdown(event) {
+    var dropdownButtons = document.querySelectorAll(Selector.dropdownButton);
+    dropdownButtons.forEach(dropdown);
   };
 
-  document.addEventListener('click', dropdown);
+  var handleCloseDropdown = function handleCloseDropdown(e) {
+    var dropdownCloseButtons = document.querySelectorAll(Selector.closeButton);
+    dropdownCloseButtons.forEach(close);
+  };
+
+  document.addEventListener('click', handleDropdown);
+  document.addEventListener('click', handleCloseDropdown);
 };
 
 Chameleon.Components.Menu = function () {
