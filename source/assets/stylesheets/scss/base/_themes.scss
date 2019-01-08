@@ -50,3 +50,38 @@ $themes: (
     }
   }
 }
+
+[data-staff] {
+  .ch-nav,
+  .ch-expand-button,
+  .ch-nav.active .ch-menu-item.more {
+    background-color: #A40014;
+  }
+
+  .ch-menu-item.active > a > .fa-icon:first-child {
+    color: #fff;
+  }
+
+  .ch-menu-item.active > a:before {
+    border-right-color: #fff;
+  }
+
+  .ch-menu-item > a,
+  .ch-menu-item > button,
+  .ch-expand-button > button {
+    color: rgba(#fff, .7);
+  }
+
+  .ch-expand-button > button > .icon path {
+    fill: rgba(#fff, .7);
+  }
+
+  .ch-logo-label:after {
+    content: 'Staff';
+    margin-left: .5em;
+    font-size: .75rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    color: rgba(#fff, .7);
+  }
+}
