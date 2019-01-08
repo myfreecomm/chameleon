@@ -1,32 +1,34 @@
 .ch-loader {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: transparent;
-  z-index: 2;
-
-  &.is-active {
-    display: block;
-  }
-
-  &:before, &:after {
-    content:'';
-    position: absolute;
+  &-progress {
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
     height: 5px;
-    opacity: 0;
-  }
+    background: transparent;
+    z-index: 2;
 
-  &:before {
-    @include animation(progress-active 2s ease infinite);
-  }
+    &.is-active {
+      display: block;
+    }
 
-  &:after {
-    background: #fff;
-    @include animation(progress-overlay 2s ease infinite);
+    &:before, &:after {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 5px;
+      opacity: 0;
+    }
+
+    &:before {
+      @include animation(progress-active 2s ease infinite);
+    }
+
+    &:after {
+      background: #fff;
+      @include animation(progress-overlay 2s ease infinite);
+    }
   }
 }
