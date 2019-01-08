@@ -3,6 +3,8 @@ html
   include includes/head.pug
 
   body(data-theme="default")
+    include includes/loader
+
     .ch-nav
       +logo('nexaas_guidelines_logo.png', 'Chameleon')
 
@@ -17,7 +19,6 @@ html
       include partials/expandButton.pug
 
     main.ch-content
-      include includes/loader
       include includes/message.pug
       include partials/header/generic.pug
       include includes/flash-message.pug

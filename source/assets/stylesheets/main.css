@@ -1959,24 +1959,20 @@ i.icon.regular {
   z-index: 2; }
   .ch-loader.is-active {
     display: block; }
-  .ch-loader:before {
+  .ch-loader:before, .ch-loader:after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: 5px;
+    opacity: 0; }
+  .ch-loader:before {
     -o-animation: progress-active 2s ease infinite;
     -moz-animation: progress-active 2s ease infinite;
     -webkit-animation: progress-active 2s ease infinite;
     animation: progress-active 2s ease infinite; }
   .ch-loader:after {
-    content: '';
-    opacity: 0;
     background: #fff;
-    height: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
     -o-animation: progress-overlay 2s ease infinite;
     -moz-animation: progress-overlay 2s ease infinite;
     -webkit-animation: progress-overlay 2s ease infinite;
