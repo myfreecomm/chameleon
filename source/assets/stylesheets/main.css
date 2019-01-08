@@ -2343,6 +2343,8 @@ i.icon.regular {
     left: 50%;
     font-weight: normal;
     box-shadow: 10px 0px 10px -10px rgba(0, 0, 0, 0.15) inset; }
+    .ch-account-content-submenu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > .ch-dropdown-menu-item-label {
+      font-weight: bold; }
     .ch-account-content-submenu .ch-dropdown-menu-item.open > .ch-dropdown-menu-item-label:before {
       content: none; }
   @media only screen and (max-width: 768px) {
