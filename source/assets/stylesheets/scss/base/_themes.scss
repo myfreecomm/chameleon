@@ -12,12 +12,10 @@ $themes: (
 
 @each $name, $color in $themes {
   [data-theme="#{$name}"] {
-
     :root & {
       $mainColor: $color;
       --main-color: $mainColor;
     }
-
 
     .ch-account-content-menu > .ch-dropdown-menu > .ch-dropdown-menu-item.active > .ch-dropdown-menu-item-label,
     .ch-menu-item.active a {
@@ -48,6 +46,10 @@ $themes: (
       .ch-nav:not(.active) .ch-menu-item.active a:before {
         border-bottom-color: $mainColor;
       }
+    }
+
+    .ch-loader-progress:before {
+      background-color: $mainColor;
     }
   }
 }

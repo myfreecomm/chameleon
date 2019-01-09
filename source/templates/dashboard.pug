@@ -2,7 +2,9 @@ doctype html
 html
   include includes/head.pug
 
-  body
+  body(data-theme="default")
+    include includes/loader
+
     .ch-nav
       +logo('nexaas_guidelines_logo.png', 'Chameleon')
 
@@ -28,8 +30,13 @@ html
             h2.ui.header Ainda não há nada a ser mostrado
               .sub.header Comece a construir seu dashboard configurando sua conta e adicionando informações
             .ui.divider.hidden
-            button.ui.button.primary(type="button") Iniciar configuração
+            button.ui.button.primary(type="button" onclick="showLoader()") Iniciar configuração
 
 
     include includes/notifications.pug
     include includes/search.pug
+
+    script.
+      var showLoader = function() {
+        document.querySelector('.ch-loader-progress').classList.add('is-active')
+      }

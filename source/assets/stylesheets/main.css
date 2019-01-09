@@ -241,6 +241,82 @@
   100% {
     transform: translateY(0); } }
 
+@-o-keyframes progress-active {
+  0% {
+    width: 0;
+    opacity: .3; }
+  50% {
+    opacity: 0.8; }
+  100% {
+    opacity: .1;
+    width: 100%; } }
+
+@-moz-keyframes progress-active {
+  0% {
+    width: 0;
+    opacity: .3; }
+  50% {
+    opacity: 0.8; }
+  100% {
+    opacity: .1;
+    width: 100%; } }
+
+@-webkit-keyframes progress-active {
+  0% {
+    width: 0;
+    opacity: .3; }
+  50% {
+    opacity: 0.8; }
+  100% {
+    opacity: .1;
+    width: 100%; } }
+
+@keyframes progress-active {
+  0% {
+    width: 0;
+    opacity: .3; }
+  50% {
+    opacity: 0.8; }
+  100% {
+    opacity: .1;
+    width: 100%; } }
+
+@-o-keyframes progress-overlay {
+  0% {
+    opacity: .7;
+    width: 0; }
+  90% { }
+  100% {
+    opacity: 0;
+    width: 100%; } }
+
+@-moz-keyframes progress-overlay {
+  0% {
+    opacity: .7;
+    width: 0; }
+  90% { }
+  100% {
+    opacity: 0;
+    width: 100%; } }
+
+@-webkit-keyframes progress-overlay {
+  0% {
+    opacity: .7;
+    width: 0; }
+  90% { }
+  100% {
+    opacity: 0;
+    width: 100%; } }
+
+@keyframes progress-overlay {
+  0% {
+    opacity: .7;
+    width: 0; }
+  90% { }
+  100% {
+    opacity: 0;
+    width: 100%; } }
+
 * {
   margin: 0;
   padding: 0;
@@ -279,6 +355,9 @@ ol, ul, li {
   [data-theme="default"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #00E2F6; } }
 
+[data-theme="default"] .ch-loader-progress:before {
+  background-color: #00E2F6; }
+
 :root [data-theme="billimatic"] {
   --main-color: $mainColor; }
 
@@ -299,6 +378,9 @@ ol, ul, li {
 @media only screen and (max-width: 768px) {
   [data-theme="billimatic"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #F24242; } }
+
+[data-theme="billimatic"] .ch-loader-progress:before {
+  background-color: #F24242; }
 
 :root [data-theme="cobrato"] {
   --main-color: $mainColor; }
@@ -321,6 +403,9 @@ ol, ul, li {
   [data-theme="cobrato"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #F89137; } }
 
+[data-theme="cobrato"] .ch-loader-progress:before {
+  background-color: #F89137; }
+
 :root [data-theme="emites"] {
   --main-color: $mainColor; }
 
@@ -341,6 +426,9 @@ ol, ul, li {
 @media only screen and (max-width: 768px) {
   [data-theme="emites"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #13B782; } }
+
+[data-theme="emites"] .ch-loader-progress:before {
+  background-color: #13B782; }
 
 :root [data-theme="estoka"] {
   --main-color: $mainColor; }
@@ -363,6 +451,9 @@ ol, ul, li {
   [data-theme="estoka"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #F2377A; } }
 
+[data-theme="estoka"] .ch-loader-progress:before {
+  background-color: #F2377A; }
+
 :root [data-theme="myfinance"] {
   --main-color: $mainColor; }
 
@@ -383,6 +474,9 @@ ol, ul, li {
 @media only screen and (max-width: 768px) {
   [data-theme="myfinance"] .ch-nav:not(.active) .ch-menu-item.active a:before {
     border-bottom-color: #2483c4; } }
+
+[data-theme="myfinance"] .ch-loader-progress:before {
+  background-color: #2483c4; }
 
 [data-staff] .ch-nav,
 [data-staff] .ch-expand-button,
@@ -1883,6 +1977,36 @@ i.icon.regular {
 .ch-inline-search.ui.input > .ch-inline-search-input:focus,
 .ch-inline-search.ui.input > .ch-inline-search-input:focus + .ui.icon.button.basic {
   border-color: #85B7D9; }
+
+.ch-loader-progress {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  z-index: 2; }
+  .ch-loader-progress.is-active {
+    display: block; }
+  .ch-loader-progress:before, .ch-loader-progress:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    opacity: 0; }
+  .ch-loader-progress:before {
+    -o-animation: progress-active 2s ease infinite;
+    -moz-animation: progress-active 2s ease infinite;
+    -webkit-animation: progress-active 2s ease infinite;
+    animation: progress-active 2s ease infinite; }
+  .ch-loader-progress:after {
+    background: #fff;
+    -o-animation: progress-overlay 2s ease infinite;
+    -moz-animation: progress-overlay 2s ease infinite;
+    -webkit-animation: progress-overlay 2s ease infinite;
+    animation: progress-overlay 2s ease infinite; }
 
 .ch-content {
   margin-left: 240px;

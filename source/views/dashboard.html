@@ -18,7 +18,8 @@
     <script type="text/javascript" src="../assets/javascripts/main.js"></script>
     <script type="text/javascript" src="../assets/javascripts/init.js"></script>
   </head>
-  <body>
+  <body data-theme="default">
+    <div class="ch-loader-progress"></div>
     <div class="ch-nav">
         <div class="ch-logo">
           <div class="ch-logo-icon"><img src="../assets/images/nexaas_guidelines_logo.png"></div><span class="ch-logo-label">Chameleon</span>
@@ -168,7 +169,7 @@
               <div class="sub header">Comece a construir seu dashboard configurando sua conta e adicionando informações</div>
             </h2>
             <div class="ui divider hidden"></div>
-            <button class="ui button primary" type="button">Iniciar configuração</button>
+            <button class="ui button primary" type="button" onclick="showLoader()">Iniciar configuração</button>
           </div>
         </div>
       </div>
@@ -333,5 +334,10 @@
         </div>
       </div>
     </div>
+    <script>
+      var showLoader = function() {
+        document.querySelector('.ch-loader-progress').classList.add('is-active')
+      }
+    </script>
   </body>
 </html>

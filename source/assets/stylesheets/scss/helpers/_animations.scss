@@ -37,3 +37,33 @@
     transform: translateY(0);
   }
 }
+
+@include keyframes(progress-active) {
+  0% {
+    width: 0;
+    opacity: .3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: .1;
+    width: 100%;
+  }
+}
+
+@include keyframes(progress-overlay) {
+  0% {
+    opacity: .7;
+    width: 0;
+  }
+  90% {
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
