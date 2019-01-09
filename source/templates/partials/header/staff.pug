@@ -9,4 +9,27 @@ header.ch-header
       a(href="#" title="Usuários") Usuários
 
 
-  include ../headerNav.pug
+  .ch-header-nav.animated
+    button.ch-header-nav-button.btn-more-options.mobile-only
+      i.fal.fa-angle-double-left.fa-icon
+
+    button.ch-header-nav-button(data-target="search")
+      i.fal.fa-search.fa-1_5x
+
+    button.ch-header-nav-button(data-target="modal" data-modal="notifications")
+      i.ch-notification-label.fal.fa-bell.fa-1_5x
+
+    .ch-header-nav-button.ch-dropdown(href="#")
+      .ch-dropdown-toggle
+        i.ch-notification-label.fal.fa-cog.fa-1_5x
+
+      .ch-dropdown-content(tabindex="-1" data-position="bottom right")
+        span.ch-dropdown-header Configurações
+        ul.ch-dropdown-menu
+          -
+            var accounts = ["Minha conta", "Ajuda"]
+          each account in accounts
+            li(class="ch-dropdown-menu-item")
+              a(href="#")= account
+
+    include ../user.pug

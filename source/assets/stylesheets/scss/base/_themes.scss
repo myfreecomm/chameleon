@@ -78,6 +78,10 @@ $themes: (
   .ch-expand-button > button > .icon path {
     fill: rgba(#fff, .7);
   }
+
+  .ch-nav:not(.active) .ch-menu-item.active a:before {
+    border-bottom-color: #fff;
+  }
 }
 
 [data-staff-label="true"] {

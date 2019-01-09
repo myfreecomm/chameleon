@@ -403,6 +403,9 @@ ol, ul, li {
 [data-staff] .ch-expand-button > button > .icon path {
   fill: rgba(255, 255, 255, 0.7); }
 
+[data-staff] .ch-nav:not(.active) .ch-menu-item.active a:before {
+  border-bottom-color: #fff; }
+
 [data-staff-label="true"] .ch-logo-label:after {
   content: 'Staff';
   margin-left: .5em;
