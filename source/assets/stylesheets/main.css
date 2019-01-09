@@ -735,7 +735,7 @@ i.icon.regular {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
     .ch-logo-icon > img {
-      min-width: 36px;
+      max-width: 36px;
       max-height: 36px; }
   @media only screen and (max-width: 768px) {
     .ch-logo {
