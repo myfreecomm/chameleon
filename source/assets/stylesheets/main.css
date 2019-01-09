@@ -389,11 +389,11 @@ ol, ul, li {
 [data-staff] .ch-nav.active .ch-menu-item.more {
   background-color: #A40014; }
 
-[data-staff] .ch-menu-item.active > a > .fa-icon:first-child {
-  color: #fff; }
-
 [data-staff] .ch-menu-item.active > a:before {
   border-right-color: #fff; }
+
+[data-staff] .ch-menu-item.active > a > .fa-icon:first-child {
+  color: #fff; }
 
 [data-staff] .ch-menu-item > a,
 [data-staff] .ch-menu-item > button,
@@ -403,7 +403,7 @@ ol, ul, li {
 [data-staff] .ch-expand-button > button > .icon path {
   fill: rgba(255, 255, 255, 0.7); }
 
-[data-staff] .ch-logo-label:after {
+[data-staff-label="true"] .ch-logo-label:after {
   content: 'Staff';
   margin-left: .5em;
   font-size: .75rem;

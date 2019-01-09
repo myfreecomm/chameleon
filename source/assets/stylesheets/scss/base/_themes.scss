@@ -1,4 +1,5 @@
 $mainColor: #00E2F6;
+$staffMainColor: #A40014;
 
 $themes: (
   default: #00E2F6,
@@ -55,15 +56,17 @@ $themes: (
   .ch-nav,
   .ch-expand-button,
   .ch-nav.active .ch-menu-item.more {
-    background-color: #A40014;
+    background-color: $staffMainColor;
   }
 
-  .ch-menu-item.active > a > .fa-icon:first-child {
-    color: #fff;
-  }
+  .ch-menu-item.active > a  {
+    &:before {
+      border-right-color: #fff;
+    }
 
-  .ch-menu-item.active > a:before {
-    border-right-color: #fff;
+    > .fa-icon:first-child {
+      color: #fff;
+    }
   }
 
   .ch-menu-item > a,
@@ -75,7 +78,9 @@ $themes: (
   .ch-expand-button > button > .icon path {
     fill: rgba(#fff, .7);
   }
+}
 
+[data-staff-label="true"] {
   .ch-logo-label:after {
     content: 'Staff';
     margin-left: .5em;

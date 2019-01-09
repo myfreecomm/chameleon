@@ -2,7 +2,7 @@ doctype html
 html
   include includes/head.pug
 
-  body(data-staff="")
+  body(data-staff="" data-staff-label="true")
     .ch-nav
       +logo('nexaas_id_negative_logo.png', 'ID')
 
@@ -19,7 +19,6 @@ html
     main.ch-content
       include includes/message.pug
       include partials/header/staff.pug
-      include includes/flash-message.pug
 
       .ui.padded.grid.stackable
         .ch-blankslate
