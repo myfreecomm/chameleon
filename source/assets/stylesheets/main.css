@@ -478,6 +478,36 @@ ol, ul, li {
 [data-theme="myfinance"] .ch-loader-progress:before {
   background-color: #2483c4; }
 
+[data-staff] .ch-nav,
+[data-staff] .ch-expand-button,
+[data-staff] .ch-nav.active .ch-menu-item.more {
+  background-color: #A40014; }
+
+[data-staff] .ch-menu-item.active > a:before {
+  border-right-color: #fff; }
+
+[data-staff] .ch-menu-item.active > a > .fa-icon:first-child {
+  color: #fff; }
+
+[data-staff] .ch-menu-item > a,
+[data-staff] .ch-menu-item > button,
+[data-staff] .ch-expand-button > button {
+  color: rgba(255, 255, 255, 0.7); }
+
+[data-staff] .ch-expand-button > button > .icon path {
+  fill: rgba(255, 255, 255, 0.7); }
+
+[data-staff] .ch-nav:not(.active) .ch-menu-item.active a:before {
+  border-bottom-color: #fff; }
+
+[data-staff-label="true"] .ch-logo-label:after {
+  content: 'Staff';
+  margin-left: .5em;
+  font-size: .75rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color: rgba(255, 255, 255, 0.7); }
+
 .ui.header,
 .ui.button {
   font-family: "Roboto", sans-serif; }
@@ -802,7 +832,7 @@ i.icon.regular {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
     .ch-logo-icon > img {
-      min-width: 36px;
+      max-width: 36px;
       max-height: 36px; }
   @media only screen and (max-width: 768px) {
     .ch-logo {
