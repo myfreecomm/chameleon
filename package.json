@@ -6,7 +6,10 @@
   "homepage": "http://docs.chameleon.nexaas.com/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "yarn run gulp"
+    "start": "yarn run gulp",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "webpack-start": "webpack-dev-server --open"
   },
   "author": "",
   "license": "MIT",
@@ -24,6 +27,17 @@
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
