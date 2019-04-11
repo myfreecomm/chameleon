@@ -1,5 +1,5 @@
 mixin logo(image, app_name)
   .ch-logo
     .ch-logo-icon
-      img(src="../assets/images/" + image)
+      img(src=require(`../assets/images/${image}`))
     span.ch-logo-label= app_name
