@@ -2,6 +2,29 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const pages = [
+  'billimatic',
+  'cobrato',
+  'dashboard',
+  'emites',
+  'error',
+  'estoka',
+  'index',
+  'myfinance',
+  'nexaas-id',
+  'staff'
+];
+
+const generateHWPP = function(sources) {
+  return sources.map(src => {
+    const page = {
+      template: `./source/templates/${src}.pug`,
+      filename: `${src}.html`
+    }
+    return new HtmlWebpackPlugin(page)
+  })
+}
+
 const config = {
   mode: 'development',
   entry: './examples/index.js',
@@ -14,9 +37,7 @@ const config = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-    new HtmlWebpackPlugin({
-      template: './source/templates/dashboard.pug'
-    }),
+    ...generateHWPP(pages)
   ],
   module: {
     rules: [
