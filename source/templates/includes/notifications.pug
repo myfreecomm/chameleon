@@ -31,13 +31,11 @@
               { name: "Nexaas ID", img_src: "nexaas_id_logo.png" }
             ];
 
-            console.log('teste')
-
           each notification in notifications
             .item.ch-dialog-message(class={unread: notification.unread})
               .content
                 a.header
-                  // img.ui.avatar.image.symbol(src=require(`../assets/images/${notifications.img_src}`))
+                  img.ui.avatar.image.symbol(src=require(`../../assets/images/${notification.img_src}`))
                   span= notification.name
                 .description
                   p.
