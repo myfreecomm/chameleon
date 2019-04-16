@@ -18,7 +18,7 @@ const pages = [
 const generateHWPP = function(sources) {
   return sources.map(src => {
     const page = {
-      template: `./source/templates/${src}.pug`,
+      template: `./examples/templates/${src}.pug`,
       filename: `${src}.html`
     }
     return new HtmlWebpackPlugin(page)
@@ -27,7 +27,7 @@ const generateHWPP = function(sources) {
 
 const config = {
   mode: 'development',
-  entry: './examples/index.js',
+  entry: './index.js',
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'examples')
@@ -58,9 +58,6 @@ const config = {
         use: [
           {
             loader: 'file-loader',
-            options: {
-              outputPath: 'assets/images'
-            }
           }
         ]
       },
@@ -77,7 +74,7 @@ const config = {
     ]
   },
   devServer: {
-    contentBase: './examples'
+    contentBase: '.'
   },
 };
 
