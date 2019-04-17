@@ -1,4 +1,4 @@
 import './src/stylesheets/scss/style.scss'
-import './src/javascripts/main'
+import { menu } from './src/menu/index'
 
-console.log('teste')
+menu.init()
