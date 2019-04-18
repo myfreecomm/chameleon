@@ -226,6 +226,11 @@
         > button > .fa-icon {
           font-size: 1.5em;
         }
+
+        > button > .fa-icon:before {
+          content: "\f00d"
+        }
+
       }
     }
   }

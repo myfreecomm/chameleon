@@ -1,3 +1,5 @@
 import { toggleMenuDropdown } from './toggleMenuDropdown'
+import { toggleNavCollapse } from './toggleNavCollapse'
+import { toggleNav } from './toggleNav'
 
-export { toggleMenuDropdown }
+export { toggleMenuDropdown, toggleNavCollapse, toggleNav }
