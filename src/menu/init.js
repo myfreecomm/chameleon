@@ -1,5 +1,9 @@
 import { Query } from '../utils/index'
-import { toggleMenuDropdown, toggleNavCollapse, toggleNav } from './callbacks/index'
+import {
+  toggleMenuDropdown,
+  toggleNavCollapse,
+  toggleNav,
+  toggleLogoShadow } from './callbacks/index'
 
 const Selectors = {
   button            : '.ch-menu-item .ch-dropdown-button',
@@ -31,7 +35,7 @@ function init() {
   // dom.$moreOptionsButton.send('addEventListener', 'click', moreOptions, false)
   // dom.$navElements.send('addEventListener', 'mouseenter', showMenu, false)
   // dom.$navContainer.send('addEventListener', 'mouseleave', hideMenu, false)
-  // dom.$navMenu.send('addEventListener', 'scroll', toogleLogoShadow, false)
+  dom.$navMenu.send('addEventListener', 'scroll', toggleLogoShadow, false)
 }
 
 export { init }
