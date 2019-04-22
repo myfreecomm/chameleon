@@ -17,6 +17,8 @@
 .ch-menu-item {
   > a,
   > button {
+    width: 100%;
+    margin: 0;
     display: flex;
     align-items: center;
     position: relative;
@@ -24,10 +26,14 @@
     line-height: 1.3em;
     padding: .7em 0;
     padding-left: $navbarCollapsedSize;
+    font-size: 1em;
     font-weight: 600;
+    font-family: inherit;
     color: color(navy, tone-10);
     background: none;
     border: none;
+    outline: 0;
+    cursor: pointer;
 
     > .fa-icon:first-child {
       position: absolute;
@@ -49,12 +55,14 @@
     }
   }
 
-  a:hover {
+  a:hover,
+  button:hover {
     color: #fff;
   }
 
   &.active {
-    > a {
+    > a,
+    > button {
       color: #fff;
 
       &:before {
@@ -75,7 +83,8 @@
   }
 
   &.disabled {
-    > a {
+    > a,
+    > button {
       color: #949FB2;
       pointer-events: none;
     }
@@ -178,7 +187,8 @@
       }
 
       &.active {
-        a:before {
+        a:before,
+        button:before {
           width: 20px;
           height: auto;
           top: auto;
