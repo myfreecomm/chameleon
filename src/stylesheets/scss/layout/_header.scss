@@ -97,10 +97,22 @@
       display: block;
     }
 
+    &--moreOptions {
+      order: 1;
+      padding-right: 0;
+      font-size: 1.25em;
+
+      .fa-icon:before {
+        content: "\f100";
+
+        .ch-header-nav.active & {
+          content: "\f101"
+        }
+      }
+    }
+
     .ch-header-nav.active & {
       display: block;
     }
   }
 }
-
-
