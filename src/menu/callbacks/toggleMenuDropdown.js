@@ -11,10 +11,6 @@ const toggleMenuDropdown = function() {
   })
 
   $dropdown.classList.toggle('open');
-
-  // if ($(window).width() <= 768 && !$('.ch-nav').hasClass('active') ) {
-  //   toggleNav()
-  // }
 }
 
 export { toggleMenuDropdown }
