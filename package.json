@@ -1,29 +1,41 @@
 {
-  "name": "Chameleon",
-  "version": "1.1.0",
-  "description": "Soluções visuais para projetos da Nexaas",
-  "main": "index.js",
-  "homepage": "http://docs.chameleon.nexaas.com/",
+  "name": "chameleon",
+  "version": "1.0.0-alpha.0.1.0",
+  "description": "Nexaas web framework",
+  "main": "src/index.js",
+  "files": [
+    "./src"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "yarn run gulp"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors",
+    "doc": "jsdoc -c jsdoc.conf.json",
+    "build:watch": "standard \"src/**/*.js\" \"test/**/*.js\" && webpack -w --mode development",
+    "build:prod": "standard \"src/**/*.js\" \"test/**/*.js\" && webpack --mode production"
   },
-  "author": "",
+  "keywords": [
+    "UI",
+    "Design system"
+  ],
+  "author": "The Chameleon authors (https://github.com/myfreecomm/chameleon/graphs/contributors)",
   "license": "MIT",
+  "jest": {
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    }
+  },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-concat-css": "^3.0.0",
-    "gulp-csso": "^3.0.0",
-    "gulp-header": "^2.0.5",
-    "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
-  }
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "docdash": "^1.1.1",
+    "jest": "^24.8.0",
+    "jsdoc": "^3.6.2",
+    "standard": "^12.0.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3"
+  },
+  "dependencies": {}
 }
