@@ -1,1 +1,1 @@
-import './src/main.scss'
+import './dist/css/chameleon.css'

@@ -2,7 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
 
-module.exports = (env, argv) => {
+module.exports = (_, argv) => {
   const devMode = argv.mode !== 'production'
 
   return {
@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
     mode: argv.mode,
 
     // Webpack needs to know where to start the bundling process,
-    // so we define the Sass file under './Styles' directory
+    // so we define the Sass file under './src' directory
     entry: ['./src/main.scss'],
 
     // This is where we define the path where Webpack will place
@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
       publicPath: '/css',
 
       // The name of the output bundle. Path is also relative
-      // to the output path, so './wwwroot/js'
+      // to the output path, so './dist/js'
       filename: 'js/chameleon.js'
     },
     module: {
@@ -80,15 +80,13 @@ module.exports = (env, argv) => {
               }
             },
             {
-              // Adds support for Sass files, if using Less, then
-              // use the less-loader
+              // Adds support for Sass files
               loader: 'sass-loader'
             }
           ]
         },
         {
-          // Adds support to load images in your CSS rules. It looks for
-          // .png, .jpg, .jpeg and .gif
+          // Adds support to load images in your CSS rules.
           test: /\.(svg|png|jpe?g|gif)$/,
           use: [
             {
@@ -101,10 +99,10 @@ module.exports = (env, argv) => {
                 // Indicates where the images are stored and will use
                 // this path when generating the CSS files.
                 // Example, in site.scss I have
-                // url('../wwwroot/images/pattern.png') and when generating
+                // url('../dist/images/pattern.png') and when generating
                 // the CSS file, file-loader will output as
                 // url(../images/pattern.png), which is relative
-                // to '/css/site.css'
+                // to '/css/chameleon.css'
                 publicPath: '../images',
 
                 // When this option is 'true', the loader will emit the
