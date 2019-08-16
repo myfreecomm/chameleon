@@ -4,6 +4,7 @@
   "description": "Nexaas web framework",
   "main": "index.js",
   "files": [
+    "dist/**/*.{css,js,map}",
     "scss/**/*.{css,js,map}"
   ],
   "scripts": {
