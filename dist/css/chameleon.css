@@ -1,3 +1,7 @@
+:root {
+  --ch-breakpoint-tablet:  769px;
+  --ch-breakpoint-desktop: 1024px; }
+
 body {
-  background: red; }
+  width: var(--ch-breakpoint-desktop); }
 
