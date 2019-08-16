@@ -11,8 +11,8 @@ module.exports = (_, argv) => {
     mode: argv.mode,
 
     // Webpack needs to know where to start the bundling process,
-    // so we define the Sass file under './src' directory
-    entry: ['./src/main.scss'],
+    // so we define the Sass file under './scss' directory
+    entry: ['./scss'],
 
     // This is where we define the path where Webpack will place
     // a bundled JS file. Webpack needs to produce this file,

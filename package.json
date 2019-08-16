@@ -1,10 +1,10 @@
 {
-  "name": "chameleon",
+  "name": "@nexaas/chameleon",
   "version": "1.0.0-alpha.0.1.0",
   "description": "Nexaas web framework",
   "main": "index.js",
   "files": [
-    "./src"
+    "scss/**/*.{css,js,map}"
   ],
   "scripts": {
     "build:watch": "standard \"src/**/*.js\" && sass-lint \"src/**/*.scss\" -v -q && webpack -w --mode=development",
