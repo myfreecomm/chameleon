@@ -1,8 +1,6 @@
 {
   "options": {
     "merge-default-rules": false,
-    "formatter": "html",
-    "output-file": "linters/sass-lint.html",
     "max-warnings": 50
   },
   "files": {
