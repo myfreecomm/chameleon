@@ -2,6 +2,3 @@
   --ch-breakpoint-tablet:  769px;
   --ch-breakpoint-desktop: 1024px; }
 
-body {
-  width: var(--ch-breakpoint-desktop); }
-

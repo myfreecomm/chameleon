@@ -1,0 +1,7 @@
+@import './function-get-breakpoint';
+
+@mixin ch-desktop {
+  @media screen and (min-width: get-breakpoint(desktop)) {
+    @content;
+  }
+}
