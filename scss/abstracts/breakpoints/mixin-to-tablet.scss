@@ -1,6 +1,6 @@
 @import './function-get-breakpoint';
 
-@mixin ch-up-to-tablet {
+@mixin ch-to-tablet {
   $width: calc(#{ch-get-breakpoint(desktop)} - 1px);
 
   @media screen and (max-width: $width) {
