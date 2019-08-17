@@ -1,7 +1,7 @@
 @import './function-get-breakpoint';
 
 @mixin ch-tablet {
-  @media screen and (min-width: get-breakpoint(tablet)) {
+  @media screen and (min-width: ch-get-breakpoint(tablet)) {
     @content;
   }
 }
