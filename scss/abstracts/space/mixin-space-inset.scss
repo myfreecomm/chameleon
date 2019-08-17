@@ -1,0 +1,34 @@
+@import './function-get-space';
+@import './function-get-prev-space';
+@import './function-get-next-space';
+
+@mixin ch-space-inset ($type: default, $size: m) {
+  @if ($type == default) {
+    $space: ch-get-space($size);
+
+    padding-top:    $space;
+    padding-right:  $space;
+    padding-bottom: $space;
+    padding-left:   $space;
+  }
+
+  @else {
+    $vertical-space:   ch-get-space(m);
+    $horizontal-space: ch-get-space(m);
+
+    @if ($type == squish) {
+      $vertical-space:   ch-get-prev-space($size);
+      $horizontal-space: ch-get-space($size);
+    }
+
+    @else if ($type == stretch) {
+      $vertical-space:   ch-get-next-space($size);
+      $horizontal-space: ch-get-space($size);
+    }
+
+    padding-top:    $vertical-space;
+    padding-right:  $horizontal-space;
+    padding-bottom: $vertical-space;
+    padding-left:   $horizontal-space;
+  }
+}
