@@ -32,5 +32,8 @@
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6"
   },
-  "sasslintConfig": ".sasslintrc"
+  "sasslintConfig": ".sasslintrc",
+  "dependencies": {
+    "destyle.css": "^1.0.9"
+  }
 }
