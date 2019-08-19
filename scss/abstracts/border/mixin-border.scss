@@ -1,5 +1,5 @@
 @import './variables.scss';
-// @import 'src/abstracts/color/stylesheets/main.scss'; // This path should be changed to new module of color
+@import '../colors';
 
 @mixin ch-border (
   $rules: box,
