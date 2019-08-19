@@ -2,11 +2,11 @@
 
 @mixin ch-border (
   $rules: box,
-  $width: $ch-border-width,
   $style: solid,
   $color: border
 ) {
 
+  $width: $ch-border-width;
   $color: ch-get-color($color...);
 
   @each $rule in $rules {
