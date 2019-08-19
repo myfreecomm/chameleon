@@ -1,13 +1,13 @@
 @function ch-get-text-font-family ($type: default) {
-  @if ($type == default) {
+  @if $type == default {
     @return unquote("var(--ch-text-font-family)");
   }
 
-  @else if ($type == brand) {
+  @else if $type == brand {
     @return unquote("var(--ch-text-font-family-brand)");
   }
 
-  @else if ($type == code) {
+  @else if $type == code {
     @return unquote("var(--ch-text-font-family-code)");
   }
 }
