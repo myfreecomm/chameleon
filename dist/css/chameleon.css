@@ -69,13 +69,14 @@
   --ch-color-border-active-inverse:    #e4e5e7; }
 
 :root {
-  --ch-icon-size:      16px;
-  --ch-icon-size-unit: 1em;
-  --ch-icon-size-xs:   calc(1    * var(--ch-icon-size-unit));
-  --ch-icon-size-s:    calc(1.25 * var(--ch-icon-size-unit));
-  --ch-icon-size-m:    calc(1.5  * var(--ch-icon-size-unit));
-  --ch-icon-size-l:    calc(1.75 * var(--ch-icon-size-unit));
-  --ch-icon-size-xl:   calc(2    * var(--ch-icon-size-unit)); }
+  --em-icon-size:      16px;
+  --em-icon-size-unit: 1em;
+
+  --em-icon-size-xs:   calc(1    * var(--em-icon-size-unit));
+  --em-icon-size-s:    calc(1.25 * var(--em-icon-size-unit));
+  --em-icon-size-m:    calc(1.5  * var(--em-icon-size-unit));
+  --em-icon-size-l:    calc(1.75 * var(--em-icon-size-unit));
+  --em-icon-size-xl:   calc(2    * var(--em-icon-size-unit)); }
 
 :root {
   --ch-space-unit:  1rem;
@@ -92,6 +93,7 @@
   --ch-space-m-xl:  calc(3     * var(--ch-space-unit));
   --ch-space-l-xl:  calc(6     * var(--ch-space-unit));
   --ch-space-l-xxl: calc(10    * var(--ch-space-unit)); }
+
 
 .ch-spaceInline--xxs {
   margin-right: var(--ch-space-xxs);
@@ -1615,4 +1617,3 @@
     margin-bottom: var(--ch-space-xxl); }
   .ch-spaceStackGroup--xxlDesktop > *:last-child {
     margin-bottom: 0; } }
-
