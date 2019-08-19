@@ -1,0 +1,6 @@
+@import '../../abstracts/breakpoints';
+
+:root {
+  --ch-breakpoint-tablet:  #{$ch-breakpoint-tablet};
+  --ch-breakpoint-desktop: #{$ch-breakpoint-desktop};
+}

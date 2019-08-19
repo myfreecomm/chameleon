@@ -8,8 +8,8 @@
     "scss/**/*.{css,js,map}"
   ],
   "scripts": {
-    "build:watch": "standard \"src/**/*.js\" && sass-lint \"src/**/*.scss\" -v -q && webpack -w --mode=development",
-    "build:prod": "standard \"src/**/*.js\" && sass-lint \"src/**/*.scss\" -v -q && webpack --mode=development && webpack --mode=production"
+    "build:watch": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack -w --mode=development",
+    "build:prod":  "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack --mode=development && webpack --mode=production"
   },
   "keywords": [
     "UI",
@@ -32,5 +32,5 @@
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6"
   },
-  "sasslintConfig": "./.sass-lint.yml"
+  "sasslintConfig": ".sasslintrc"
 }
