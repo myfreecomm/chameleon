@@ -1,0 +1,16 @@
+@import '../colors/';
+@import './function-get-text-font-family';
+@import './function-get-text-size';
+@import './function-get-text-weight';
+@import './function-get-text-line-height';
+
+@mixin ch-text-title ($hierarchy: 3, $type) {
+  $hierarchy-sizes: (8, 7, 6, 5, 4, 3);
+  $size: nth($hierarchy-sizes, $hierarchy);
+
+  color: ch-get-color(text, 1, $type);
+  font-family: ch-get-text-font-family();
+  font-size: ch-get-text-size($size);
+  font-weight: ch-get-text-weight(bold);
+  line-height: ch-get-text-line-height();
+}
