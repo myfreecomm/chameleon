@@ -1,4 +1,3 @@
-@import './variables.scss';
 @import '../colors';
 
 @mixin ch-border (
@@ -7,7 +6,7 @@
   $style: solid,
   $color: border
 ) {
-  @warn $color;
+
   $color: ch-get-color($color...);
 
   @each $rule in $rules {
