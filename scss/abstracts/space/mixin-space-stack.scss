@@ -1,0 +1,7 @@
+@import './function-get-space';
+
+@mixin ch-space-stack ($size: m) {
+  $space: ch-get-space($size);
+
+  margin-bottom: $space;
+}

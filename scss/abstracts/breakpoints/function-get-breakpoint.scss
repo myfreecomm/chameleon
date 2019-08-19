@@ -1,3 +1,3 @@
-@function ch-get-breakpoint($type) {
-  @return unquote("var(--ch-breakpoint-#{$type})");
+@function ch-get-breakpoint($screen) {
+  @return unquote("var(--ch-breakpoint-#{$screen})");
 }
