@@ -68,3 +68,12 @@
   --ch-color-border-focus-inverse:     #d7d8db;
   --ch-color-border-active-inverse:    #e4e5e7; }
 
+:root {
+  --ch-icon-size:      16px;
+  --ch-icon-size-unit: 1em;
+  --ch-icon-size-xs:   calc(1    * var(--ch-icon-size-unit));
+  --ch-icon-size-s:    calc(1.25 * var(--ch-icon-size-unit));
+  --ch-icon-size-m:    calc(1.5  * var(--ch-icon-size-unit));
+  --ch-icon-size-l:    calc(1.75 * var(--ch-icon-size-unit));
+  --ch-icon-size-xl:   calc(2    * var(--ch-icon-size-unit)); }
+
