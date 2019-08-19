@@ -1,6 +1,7 @@
 @import '../../abstracts/border';
 
 :root {
-  --ch-breakpoint-tablet:  #{$ch-breakpoint-tablet};
-  --ch-breakpoint-desktop: #{$ch-breakpoint-desktop};
+  --ch-border-radius-1: 2px;
+  --ch-border-radius-2: 4px;
+  --ch-border-radius-3: 8px;
 }
