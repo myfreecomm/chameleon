@@ -1,0 +1,21 @@
+// sass-lint:disable no-important
+
+@import '../abstracts/helpers';
+
+.ch-text {
+  &--left {
+    text-align: left !important;
+  }
+
+  &--right {
+    text-align: right !important;
+  }
+
+  &--center {
+    text-align: center !important;
+  }
+
+  &--truncate {
+    @include ch-truncate;
+  }
+}

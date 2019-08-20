@@ -43,7 +43,9 @@
       {
         "properties": [
           "margin",
-          "content"
+          "padding",
+          "content",
+          "color"
         ]
       }
     ]
