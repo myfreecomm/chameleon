@@ -1,0 +1,32 @@
+@import '../../scss/abstracts/space';
+
+.has-icon,
+.has-rightIcon {
+  position: relative;
+
+  > .ch-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    margin: 0;
+    height: auto;
+    width: calc(1em + #{ch-get-space()});
+  }
+}
+
+.has-icon {
+  padding-left: calc(1em + #{ch-get-space()}) !important;
+
+  > .em-icon {
+    left: 0;
+  }
+}
+
+.has-rightIcon {
+  padding-right:calc(1em + #{ch-get-space()}) !important;
+
+  > .em-icon {
+    right: 0;
+  }
+}

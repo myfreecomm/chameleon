@@ -1,0 +1,17 @@
+@import '/variables.scss';
+
+.em-icon {
+
+  // 1. Base
+
+  font-size: #{ch-get-icon-size(s)};
+  text-align: center;
+
+  // 2. Size variations
+
+  @each $size in $sizes {
+    &--#{$size} {
+      font-size: #{ch-get-icon-size($size)};
+    }
+  }
+}
