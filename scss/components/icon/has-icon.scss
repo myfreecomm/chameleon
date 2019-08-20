@@ -1,4 +1,4 @@
-@import '../../scss/abstracts/space';
+@import '../../scss/abstracts/space/index.scss';
 
 .has-icon,
 .has-rightIcon {
@@ -18,7 +18,7 @@
 .has-icon {
   padding-left: calc(1em + #{ch-get-space()}) !important;
 
-  > .em-icon {
+  > .ch-icon {
     left: 0;
   }
 }
@@ -26,7 +26,7 @@
 .has-rightIcon {
   padding-right:calc(1em + #{ch-get-space()}) !important;
 
-  > .em-icon {
+  > .ch-icon {
     right: 0;
   }
 }
