@@ -1,0 +1,3 @@
+@function ch-get-text-line-height () {
+  @return unquote("var(--ch-text-line-height)");
+}
