@@ -3,6 +3,11 @@
   --ch-breakpoint-desktop: 1024px; }
 
 :root {
+  --ch-border-radius-1: 2px;
+  --ch-border-radius-2: 4px;
+  --ch-border-radius-3: 8px; }
+
+:root {
   --ch-color-brand-1:                  #00BBDA;
   --ch-color-brand-1-focus:            #00a5c1;
   --ch-color-brand-1-active:           #008fa7;
@@ -83,6 +88,10 @@
   --ch-space-m-xl:  calc(3     * var(--ch-space-unit));
   --ch-space-l-xl:  calc(6     * var(--ch-space-unit));
   --ch-space-l-xxl: calc(10    * var(--ch-space-unit)); }
+
+:root {
+  --ch-dimension-1:  60px;
+  --ch-dimension-2: 240px; }
 
 /* Normalization of HTML elements, manually forked from destyle.css to remove
   styles targeting irrelevant browsers while applying new styles. */
