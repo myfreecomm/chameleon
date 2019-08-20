@@ -86,20 +86,18 @@
   --ch-icon-size-xl:   calc(2    * var(--ch-icon-size-unit)); }
 
 :root {
-  --ch-space-unit:  1rem;
-  --ch-space-xxs:   calc(0.25 * var(--ch-space-unit));
-  --ch-space-xs:    calc(0.5  * var(--ch-space-unit));
-  --ch-space-s:     calc(0.75 * var(--ch-space-unit));
-  --ch-space-m:     calc(1    * var(--ch-space-unit));
-  --ch-space-l:     calc(2    * var(--ch-space-unit));
-  --ch-space-xl:    calc(4    * var(--ch-space-unit));
-  --ch-space-xxl:   calc(8    * var(--ch-space-unit));
-  --ch-space-xs-s:  calc(0.75 * var(--ch-space-unit));
-  --ch-space-s-m:   calc(1.5  * var(--ch-space-unit));
-  --ch-space-s-l:   calc(2.5  * var(--ch-space-unit));
-  --ch-space-m-xl:  calc(3    * var(--ch-space-unit));
-  --ch-space-l-xl:  calc(6    * var(--ch-space-unit));
-  --ch-space-l-xxl: calc(10   * var(--ch-space-unit)); }
+  --ch-space-unit:   1rem;
+  --ch-space-xxs:    calc(0.25 * var(--ch-space-unit));
+  --ch-space-xs:     calc(0.5  * var(--ch-space-unit));
+  --ch-space-s:      calc(0.75 * var(--ch-space-unit));
+  --ch-space-m:      calc(1    * var(--ch-space-unit));
+  --ch-space-l:      calc(1.25 * var(--ch-space-unit));
+  --ch-space-xl:     calc(2    * var(--ch-space-unit));
+  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit));
+  --ch-space-xxs-l:  calc(1.5  * var(--ch-space-unit));
+  --ch-space-xs-xl:  calc(2.5  * var(--ch-space-unit));
+  --ch-space-m-xl:   calc(3    * var(--ch-space-unit));
+  --ch-space-xl-xxl: calc(6    * var(--ch-space-unit)); }
 
 :root {
   --ch-text-font-family:       'Roboto', sans-serif;
