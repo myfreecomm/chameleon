@@ -3,6 +3,11 @@
   --ch-breakpoint-desktop: 1024px; }
 
 :root {
+  --ch-border-radius-1: 2px;
+  --ch-border-radius-2: 4px;
+  --ch-border-radius-3: 8px; }
+
+:root {
   --ch-color-brand-1:                  #00BBDA;
   --ch-color-brand-1-focus:            #00a5c1;
   --ch-color-brand-1-active:           #008fa7;
