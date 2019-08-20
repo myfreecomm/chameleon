@@ -38,7 +38,7 @@ html {
 */
 
 body {
-  margin: map-get($reset, "margin");
+  margin: map-get($ch-reset, margin);
 }
 
 /**
@@ -61,7 +61,7 @@ iframe,
 form,
 figure,
 dl {
-  margin: map-get($reset, "margin");
+  margin: map-get($ch-reset, margin);
 }
 
 /* Headings
@@ -76,7 +76,7 @@ h6 {
   font-size: inherit;
   line-height: inherit;
   font-weight: inherit;
-  margin: map-get($reset, "margin");
+  margin: map-get($ch-reset, margin);
 }
 
 /* Lists (enumeration)
@@ -84,8 +84,8 @@ h6 {
 
 ul,
 ol {
-  margin: map-get($reset, "margin");
-  padding: map-get($reset, "padding");
+  margin: map-get($ch-reset, margin);
+  padding: map-get($ch-reset, padding);
   list-style: none;
 }
 
@@ -97,7 +97,7 @@ dt {
 }
 
 dd {
-  margin-left: 0;
+  margin-left: map-get($ch-reset, margin);
 }
 
 /* Grouping content
@@ -112,9 +112,9 @@ hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
-  border: 0;
+  border: map-get($ch-reset, border);
   border-top: 1px solid;
-  margin: map-get($reset, "margin");
+  margin: map-get($ch-reset, margin);
   clear: both;
 }
 
@@ -245,8 +245,8 @@ textarea {
   font: inherit;
   border: inherit;
   background: transparent;
-  padding: map-get($reset, "padding");
-  margin: map-get($reset, "margin");
+  padding: map-get($ch-reset, padding);
+  margin: map-get($ch-reset, margin);
   outline: 0;
   border-radius: 0;
   text-align: inherit;
@@ -315,7 +315,7 @@ button::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner {
   border-style: none;
-  padding: map-get($reset, "padding");
+  padding: map-get($ch-reset, padding);
 }
 
 /**
@@ -334,8 +334,8 @@ button:-moz-focusring,
 */
 
 fieldset {
-  margin: map-get($reset, "margin");
-  padding: map-get($reset, "padding");
+  margin: map-get($ch-reset, margin);
+  padding: map-get($ch-reset, padding);
   border: 0;
   min-width: 0;
 }
@@ -351,7 +351,7 @@ legend {
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
-  padding: map-get($reset, "padding"); /* 3 */
+  padding: map-get($ch-reset, padding); /* 3 */
   white-space: normal; /* 1 */
 }
 
@@ -377,7 +377,7 @@ textarea {
 
 [type='checkbox'],
 [type='radio'] {
-  padding: map-get($reset, "padding"); /* 1 */
+  padding: map-get($ch-reset, padding); /* 1 */
 }
 
 /**
