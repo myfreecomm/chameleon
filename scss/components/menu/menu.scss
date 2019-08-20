@@ -1,0 +1,7 @@
+@import '../../abstracts/box-model';
+
+.ch-menu {
+  &-item {
+    @include ch-box-model(m, squish);
+  }
+}
