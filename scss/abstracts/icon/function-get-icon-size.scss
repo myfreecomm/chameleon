@@ -1,0 +1,3 @@
+@function ch-get-icon-size ($size: s) {
+  @return unquote("var(--ch-icon-size-#{$size})");
+}
