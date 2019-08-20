@@ -4,7 +4,7 @@
 @import './function-get-text-weight';
 @import './function-get-text-line-height';
 
-@mixin ch-label ($type) {
+@mixin ch-text-label ($type: '') {
   color: #{ch-get-color(text, 2, $type)};
   font-family: #{ch-get-text-font-family()};
   font-size: #{ch-get-text-size(1)};

@@ -117,7 +117,10 @@ html {
 * Remove the margin in all browsers.
 */
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: var(--ch-text-font-family);
+  font-size: var(--ch-text-size-2);
+  line-height: var(--ch-text-line-height); }
 
 /**
 * Render the `main` element consistently in IE.

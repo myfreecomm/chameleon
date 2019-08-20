@@ -1,3 +1,5 @@
+@import '../../abstracts/typography';
+
 /* Normalization of HTML elements, manually forked from destyle.css to remove
   styles targeting irrelevant browsers while applying new styles. */
 
@@ -39,6 +41,9 @@ html {
 
 body {
   margin: map-get($ch-reset, margin);
+  font-family: #{ch-get-text-font-family()};
+  font-size: #{ch-get-text-size()};
+  line-height: #{ch-get-text-line-height()};
 }
 
 /**
