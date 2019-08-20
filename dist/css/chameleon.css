@@ -89,6 +89,10 @@
   --ch-space-l-xl:  calc(6     * var(--ch-space-unit));
   --ch-space-l-xxl: calc(10    * var(--ch-space-unit)); }
 
+:root {
+  --ch-dimension-1:  60px;
+  --ch-dimension-2: 240px; }
+
 .ch-spaceInline--xxs {
   margin-right: var(--ch-space-xxs);
   margin-left: 0; }
