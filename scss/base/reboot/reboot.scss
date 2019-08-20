@@ -41,9 +41,10 @@ html {
 
 body {
   margin: map-get($ch-reset, margin);
-  font-family: #{ch-get-text-font-family()};
-  font-size: #{ch-get-text-size()};
-  line-height: #{ch-get-text-line-height()};
+  color: #{ch-get-color(text, 1)};
+  font-family: ch-get-text-font-family();
+  font-size: ch-get-text-size();
+  line-height: ch-get-text-line-height();
 }
 
 /**
