@@ -10,7 +10,7 @@
 
   // 2. Size variations
 
-  @each $size in $sizes {
+  @each $size in $ch-icon-sizes {
     &--#{$size} {
       font-size: #{ch-get-icon-size($size)};
     }
