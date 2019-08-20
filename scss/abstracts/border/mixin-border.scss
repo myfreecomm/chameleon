@@ -2,8 +2,8 @@
 
 @mixin ch-border (
   $rules: box,
-  $style: solid,
   $color: border,
+  $style: solid,
   $width: $ch-border-width
 ) {
   $color: ch-get-color($color...);
@@ -37,6 +37,10 @@
 
     @else if $rule == left {
       border-left: $width $style $color;
+    }
+
+    @else if $rule == none {
+      border: 0;
     }
 
     @else if $rule == list {
