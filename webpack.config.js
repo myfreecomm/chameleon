@@ -124,7 +124,7 @@ module.exports = (_, argv) => {
     ],
     devServer: {
       contentBase: __dirname,
-      compress: true,
+      compress: false,
       liveReload: true,
       port: 9000
     }
