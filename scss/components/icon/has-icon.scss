@@ -1,32 +1,27 @@
 // sass-lint:disable no-important
 
-@import '../../abstracts/space';
 @import '../../abstracts/typography';
 @import '../../abstracts/icon';
 
 .has-icon {
-  $vertical-padding: (2 * #{ch-get-space(s)});
-  $icon-size: ch-get-icon-size();
-  $right-space: ch-get-space(xs);
-
   position: relative;
-  padding-left: calc(#{$vertical-padding} + #{$icon-size} + #{$right-space}) !important;
-  
+  padding-left: #{ch-get-icon-container-width(m)} !important;
+
   > .ch-icon:first-child {
     position: absolute;
     top: 50%;
-    left: calc((#{$vertical-padding} + #{$icon-size}) / 2);
+    left: calc((#{ch-get-icon-container-width(m, false)}) / 2);
     transform: translate(-50%, -50%);
   }
 
   @at-root &Right {
     position: relative;
-    padding-right: calc(#{$vertical-padding} + #{$icon-size} + #{$right-space}) !important;
+    padding-right: #{ch-get-icon-container-width(m)} !important;
 
     > .ch-icon:last-child {
       position: absolute;
       top: 50%;
-      right: calc((#{$vertical-padding} + #{$icon-size}) / 2);
+      right: calc((#{ch-get-icon-container-width(m, false)}) / 2);
       transform: translate(50%, -50%);
     }
   }
