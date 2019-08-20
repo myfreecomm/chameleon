@@ -1,0 +1,20 @@
+@import '../abstracts/helpers';
+@import '../abstracts/tipography';
+
+// 1. Base
+
+.ch-title {
+  @for $i from 1 to 6 {
+    @each $type in (normal, inverse) {
+      $sufix: ch-generate-variation(($i, $type), (3, normal));
+
+      #{&}#{$sifix} {
+        @include ch-title($i);
+  
+        > .ch-title-sub {
+          @include ch-subtitle($i);
+        }
+      }
+    } // @each $type in (normal, inverse)
+  } // @for $i from 1 to 6
+}

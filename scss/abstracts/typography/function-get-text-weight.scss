@@ -1,0 +1,3 @@
+@function ch-get-text-weight ($weight: regular) {
+  @return unquote("var(--ch-text-weight-#{$weight})");
+}
