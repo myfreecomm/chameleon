@@ -2,6 +2,7 @@
 @import '../../abstracts/colors';
 @import '../../abstracts/border';
 @import '../../abstracts/space';
+@import '../../abstracts/layers';
 
 .ch-card {
   @include ch-box-model(m, default, box, ch-get-color(border));
@@ -38,27 +39,19 @@
       }
     }
   }
-  // &--interactive {
-  //   &:hover:focus,
-  //   &:hover,
-  //   &:focus {
-  //     cursor: pointer;
-  //     @extend %ch-card-focus;
-  //   }
-  //   &:active {
-  //     @extend %ch-card-active;
-  //   }
-  // }
 
-  // &.is-active {
-  //   &:hover:focus,
-  //   &:hover,
-  //   &:focus {
-  //     @extend %ch-card-primary-focus;
-  //   }
+  &--interactive {
+    @include ch-shadow;
+    cursor: pointer;
 
-  //   &:active {
-  //     @extend %ch-card-primary-active;
-  //   }
-  // }
+    &:focus,
+    &:hover,
+    &:focus:hover {
+      @include ch-shadow(3);
+    }
+  }
+
+  &.is-active {
+    border-color: ch-get-color(primary);
+  }
 }
