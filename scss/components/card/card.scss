@@ -1,15 +1,43 @@
 @import '../../abstracts/box-model';
 @import '../../abstracts/colors';
 @import '../../abstracts/border';
+@import '../../abstracts/space';
 
 .ch-card {
   @include ch-box-model(m, default, box, ch-get-color(border));
   @include ch-border-radius(2);
 
-  &--paddingless {
-    padding: 0;
+  &-header:not(:last-child) {
+    @include ch-space-stack;
   }
 
+  &-content {
+    * + &:not(:last-child) {
+      @include ch-space-stack;
+    }
+  }
+
+  &.ch-paddingless {
+    > .ch-card-header,
+    > .ch-card-content,
+    > .ch-card-footer {
+      padding-right: ch-get-space(m);
+      padding-left: ch-get-space(m);
+
+      &:only-child {
+        padding-top: ch-get-space(m);
+        padding-bottom: ch-get-space(m);
+      }
+
+      &:last-child {
+        padding-bottom: ch-get-space(m);
+      }
+
+      &:first-child {
+        padding-top: ch-get-space(m);
+      }
+    }
+  }
   // &--interactive {
   //   &:hover:focus,
   //   &:hover,
