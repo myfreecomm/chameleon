@@ -1,24 +1,15 @@
 :root {
   // 1. Unit
 
-  --ch-space-unit:  1rem;                               //  16px
+  --ch-space-unit:   1rem;                              // 16px
 
   // 2. Base
 
-  --ch-space-xxs:   calc(0.125 * var(--ch-space-unit)); //   2px
-  --ch-space-xs:    calc(0.25  * var(--ch-space-unit)); //   4px
-  --ch-space-s:     calc(0.5   * var(--ch-space-unit)); //   8px  
-  --ch-space-m:     calc(1     * var(--ch-space-unit)); //  16px
-  --ch-space-l:     calc(2     * var(--ch-space-unit)); //  32px
-  --ch-space-xl:    calc(4     * var(--ch-space-unit)); //  64px
-  --ch-space-xxl:   calc(8     * var(--ch-space-unit)); // 128px
-
-  // 3. Extended
-
-  --ch-space-xs-s:  calc(0.75  * var(--ch-space-unit)); //  12px
-  --ch-space-s-m:   calc(1.5   * var(--ch-space-unit)); //  24px
-  --ch-space-s-l:   calc(2.5   * var(--ch-space-unit)); //  40px
-  --ch-space-m-xl:  calc(3     * var(--ch-space-unit)); //  48px
-  --ch-space-l-xl:  calc(6     * var(--ch-space-unit)); //  96px
-  --ch-space-l-xxl: calc(10    * var(--ch-space-unit)); // 160px
+  --ch-space-xxs:    calc(0.25 * var(--ch-space-unit)); //  4px
+  --ch-space-xs:     calc(0.5  * var(--ch-space-unit)); //  8px
+  --ch-space-s:      calc(0.75 * var(--ch-space-unit)); // 12px
+  --ch-space-m:      calc(1    * var(--ch-space-unit)); // 16px
+  --ch-space-l:      calc(1.25 * var(--ch-space-unit)); // 20px
+  --ch-space-xl:     calc(2    * var(--ch-space-unit)); // 32px
+  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit)); // 52px
 }

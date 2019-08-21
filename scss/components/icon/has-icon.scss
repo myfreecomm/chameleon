@@ -1,0 +1,28 @@
+// sass-lint:disable no-important
+
+@import '../../abstracts/typography';
+@import '../../abstracts/icon';
+
+.has-icon {
+  position: relative;
+  padding-left: #{ch-get-icon-container-width(m)} !important;
+
+  > .ch-icon:first-child {
+    position: absolute;
+    top: 50%;
+    left: calc((#{ch-get-icon-container-width(m, false)}) / 2);
+    transform: translate(-50%, -50%);
+  }
+
+  @at-root &Right {
+    position: relative;
+    padding-right: #{ch-get-icon-container-width(m)} !important;
+
+    > .ch-icon:last-child {
+      position: absolute;
+      top: 50%;
+      right: calc((#{ch-get-icon-container-width(m, false)}) / 2);
+      transform: translate(50%, -50%);
+    }
+  }
+}

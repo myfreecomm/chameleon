@@ -45,7 +45,8 @@
           "margin",
           "padding",
           "content",
-          "color"
+          "color",
+          "background",
         ]
       }
     ]

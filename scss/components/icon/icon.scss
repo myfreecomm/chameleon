@@ -1,18 +1,18 @@
-@import './variables.scss';
-@import '../../scss/abstracts/icon/index.scss';
+@import './variables';
+@import '../../abstracts/icon';
 
 .ch-icon {
 
   // 1. Base
 
-  font-size: #{ch-get-icon-size(s)};
+  font-size: ch-get-icon-size(m);
   text-align: center;
 
   // 2. Size variations
 
   @each $size in $ch-icon-sizes {
     &--#{$size} {
-      font-size: #{ch-get-icon-size($size)};
+      font-size: ch-get-icon-size($size);
     }
   }
 }

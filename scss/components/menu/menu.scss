@@ -1,0 +1,94 @@
+@import '../../abstracts/colors';
+@import '../../abstracts/box-model';
+@import '../../abstracts/icon';
+
+.ch-menu {
+
+  // 1. item
+
+  &-item {
+    @include ch-box-model(m, squish);
+  
+    display: block;
+    position: relative;
+
+    cursor: pointer;
+    color: #{ch-get-color(text, 1)};
+
+    // 1.1. Focus interaction
+
+    &:focus:hover,
+    &:hover,
+    &:focus {
+      background: #{ch-get-color(neutral, 2)};
+    }
+
+    // 1.2. Active state/Sidebar
+
+    &.is-active:before {
+      $empty-content: '';
+
+      display: block;
+      content: $empty-content;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: ch-get-space(xxs);
+      height: ch-get-icon-size();
+      transform: translate(0, -50%);
+
+      background: #{ch-get-color(brand, 1)};
+    }
+  }
+
+  // 2. Submenu
+
+  &-submenu {
+
+    // 2.1. Menu
+
+    > .ch-menu {
+      display: none;
+
+      // 2.1.1. Item
+
+      .ch-menu-item {
+        padding-left: #{ch-get-icon-container-width()};
+      }
+    }
+
+    // 2.2. Arrow
+
+    > .ch-menu-item > .ch-menu-item-arrow {
+      transform: translate(50%, -50%) scale(0.6);
+    }
+
+    // 2.3. Open state
+
+    &.is-open {
+
+      // 2.3.1. Menu
+  
+      > .ch-menu {
+        display: block;
+      }
+
+      // 2.3.2. Item
+
+      > .ch-menu-item {
+
+        // 2.3.2.1. Sidebar
+
+        &.is-active:before {
+          content: none;
+        }
+
+        // 2.3.2.2. Arrow
+
+        > .ch-menu-item-arrow {
+          transform: translate(50%, -50%) scale(0.6) rotate(90deg);
+        }
+      }
+    }
+  }
+}

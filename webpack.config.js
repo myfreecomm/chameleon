@@ -121,6 +121,12 @@ module.exports = (_, argv) => {
       new MiniCssExtractPlugin({
         filename: devMode ? 'css/chameleon.css' : 'css/chameleon.min.css'
       })
-    ]
+    ],
+    devServer: {
+      contentBase: __dirname,
+      compress: false,
+      liveReload: true,
+      port: 9000
+    }
   }
 }

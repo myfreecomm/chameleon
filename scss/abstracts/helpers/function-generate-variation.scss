@@ -6,7 +6,7 @@
   @each $variation, $default in $combinations {
     @if $variation != $default {
       @if str-length($outcome) == 0 {
-        $outcome: to-lower-case($variation);
+        $outcome: to-lower-case(inspect($variation));
       }
   
       @else {

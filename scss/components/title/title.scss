@@ -1,5 +1,5 @@
-@import '../abstracts/helpers';
-@import '../abstracts/tipography';
+@import '../../abstracts/helpers';
+@import '../../abstracts/typography';
 
 // 1. Base
 
@@ -8,11 +8,11 @@
     @each $type in (normal, inverse) {
       $sufix: ch-generate-variation(($i, $type), (3, normal));
 
-      #{&}#{$sifix} {
-        @include ch-title($i);
+      #{&}#{$sufix} {
+        @include ch-text-title($i);
   
         > .ch-title-sub {
-          @include ch-subtitle($i);
+          @include ch-text-subtitle($i);
         }
       }
     } // @each $type in (normal, inverse)
