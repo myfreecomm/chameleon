@@ -2067,8 +2067,15 @@ template {
   .ch-template-nav-menu {
     width: 80%; }
     .ch-template-nav-menu > .ch-menu-item > .ch-menu-item-label,
+    .ch-template-nav-menu > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-arrow,
     .ch-template-nav-menu > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-label {
       display: none; }
+    .ch-template-nav-menu > .ch-menu-item,
+    .ch-template-nav-menu > .ch-menu-submenu > .ch-menu-item {
+      padding-left: var(--ch-space-m) !important; }
+      .ch-template-nav-menu > .ch-menu-item > .ch-icon:first-child,
+      .ch-template-nav-menu > .ch-menu-submenu > .ch-menu-item > .ch-icon:first-child {
+        left: 50%; }
 
 .has-icon {
   position: relative;

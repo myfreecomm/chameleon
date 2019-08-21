@@ -22,8 +22,18 @@
       width: 80%;
 
       > .ch-menu-item > .ch-menu-item-label,
+      > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-arrow,
       > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-label {
         display: none;
+      }
+
+      > .ch-menu-item,
+      > .ch-menu-submenu > .ch-menu-item {
+        padding-left: ch-get-space(m) !important;
+
+        > .ch-icon:first-child {
+          left: 50%;
+        }
       }
     }
   }
