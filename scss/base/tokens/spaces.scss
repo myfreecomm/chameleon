@@ -12,11 +12,4 @@
   --ch-space-l:      calc(1.25 * var(--ch-space-unit)); // 20px
   --ch-space-xl:     calc(2    * var(--ch-space-unit)); // 32px
   --ch-space-xxl:    calc(3.25 * var(--ch-space-unit)); // 52px
-
-  // 3. Extended
-
-  --ch-space-xxs-l:  calc(1.5  * var(--ch-space-unit)); // 24px
-  --ch-space-xs-xl:  calc(2.5  * var(--ch-space-unit)); // 40px
-  --ch-space-m-xl:   calc(3    * var(--ch-space-unit)); // 48px
-  --ch-space-xl-xxl: calc(6    * var(--ch-space-unit)); // 84px
 }
