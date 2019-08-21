@@ -1,0 +1,36 @@
+@import '../../abstracts/box-model';
+@import '../../abstracts/colors';
+@import '../../abstracts/border';
+
+.ch-card {
+  @include ch-box-model(m, default, box, ch-get-color(border));
+  @include ch-border-radius(2);
+
+  &--paddingless {
+    padding: 0;
+  }
+
+  // &--interactive {
+  //   &:hover:focus,
+  //   &:hover,
+  //   &:focus {
+  //     cursor: pointer;
+  //     @extend %ch-card-focus;
+  //   }
+  //   &:active {
+  //     @extend %ch-card-active;
+  //   }
+  // }
+
+  // &.is-active {
+  //   &:hover:focus,
+  //   &:hover,
+  //   &:focus {
+  //     @extend %ch-card-primary-focus;
+  //   }
+
+  //   &:active {
+  //     @extend %ch-card-primary-active;
+  //   }
+  // }
+}
