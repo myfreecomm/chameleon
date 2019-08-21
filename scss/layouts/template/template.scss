@@ -1,0 +1,30 @@
+@import '../../abstracts/colors';
+
+.ch-template {
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: ch-get-color(neutral, 1, inverse);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width:100%;
+
+    &-brand {
+      display: none;
+    }
+
+    &-toggle {
+      width: 20%;
+    }
+
+    &-menu {
+      width: 80%;
+
+      > .ch-menu-item > .ch-menu-item-label,
+      > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-label {
+        display: none;
+      }
+    }
+  }
+}

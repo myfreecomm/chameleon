@@ -93,11 +93,7 @@
   --ch-space-m:      calc(1    * var(--ch-space-unit));
   --ch-space-l:      calc(1.25 * var(--ch-space-unit));
   --ch-space-xl:     calc(2    * var(--ch-space-unit));
-  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit));
-  --ch-space-xxs-l:  calc(1.5  * var(--ch-space-unit));
-  --ch-space-xs-xl:  calc(2.5  * var(--ch-space-unit));
-  --ch-space-m-xl:   calc(3    * var(--ch-space-unit));
-  --ch-space-xl-xxl: calc(6    * var(--ch-space-unit)); }
+  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit)); }
 
 :root {
   --ch-text-font-family:       'Roboto', sans-serif;
@@ -2056,6 +2052,24 @@ template {
   .ch-spaceStackGroup--xxlDesktop > *:last-child {
     margin-bottom: 0; } }
 
+.ch-template-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--ch-color-neutral-1-inverse);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+  .ch-template-nav-brand {
+    display: none; }
+  .ch-template-nav-toggle {
+    width: 20%; }
+  .ch-template-nav-menu {
+    width: 80%; }
+    .ch-template-nav-menu > .ch-menu-item > .ch-menu-item-label,
+    .ch-template-nav-menu > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-label {
+      display: none; }
+
 .has-icon {
   position: relative;
   padding-left: calc(2 * var(--ch-space-m) + var(--ch-icon-size-m) + var(--ch-space-xxs)) !important; }
@@ -2086,6 +2100,29 @@ template {
     font-size: var(--ch-icon-size-xl); }
   .ch-icon--xxl {
     font-size: var(--ch-icon-size-xxl); }
+
+.ch-menu--horizontal {
+  display: flex;
+  align-items: center; }
+  .ch-menu--horizontal > .ch-menu-item,
+  .ch-menu--horizontal > .ch-menu-submenu > .ch-menu-item {
+    padding-top: var(--ch-space-l);
+    padding-right: var(--ch-space-m);
+    padding-bottom: var(--ch-space-l);
+    padding-left: var(--ch-space-m);
+    border: 0; }
+  .ch-menu--horizontal > .ch-menu-submenu > .ch-menu,
+  .ch-menu--horizontal > .ch-menu-submenu.is-open > .ch-menu {
+    display: none; }
+  .ch-menu--horizontal > .is-active:before,
+  .ch-menu--horizontal > .ch-menu-submenu > .is-active:before {
+    content: '' !important;
+    top: auto;
+    left: var(--ch-space-m);
+    bottom: 0;
+    width: calc(100% - 2 * var(--ch-space-m));
+    height: var(--ch-space-xxs);
+    transform: none; }
 
 .ch-menu-item {
   padding-top: var(--ch-space-s);

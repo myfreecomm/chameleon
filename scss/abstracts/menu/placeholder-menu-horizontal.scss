@@ -1,0 +1,29 @@
+@import '../space';
+
+%ch-menu-horizontal {
+  display: flex;
+  align-items: center;
+
+  > .ch-menu-item,
+  > .ch-menu-submenu > .ch-menu-item {
+    @include ch-box-model(m, stretch);
+  }
+
+  > .ch-menu-submenu {
+    > .ch-menu,
+    &.is-open > .ch-menu {
+      display: none;
+    }
+  }
+
+  > .is-active:before,
+  > .ch-menu-submenu > .is-active:before {
+    content: '' !important;
+    top: auto;
+    left: ch-get-space(m);
+    bottom: 0;
+    width: calc(100% - 2 * #{ch-get-space(m)});
+    height: ch-get-space(xxs);
+    transform: none;
+  }
+}

@@ -1,14 +1,14 @@
 @import '../../abstracts/colors';
 @import '../../abstracts/box-model';
 @import '../../abstracts/icon';
+@import '../../abstracts/menu';
 
 .ch-menu {
-
   // 1. item
 
   &-item {
     @include ch-box-model(m, squish);
-  
+
     display: block;
     position: relative;
 
@@ -68,7 +68,7 @@
     &.is-open {
 
       // 2.3.1. Menu
-  
+
       > .ch-menu {
         display: block;
       }
@@ -90,5 +90,9 @@
         }
       }
     }
+  }
+
+  &--horizontal {
+    @extend %ch-menu-horizontal;
   }
 }
