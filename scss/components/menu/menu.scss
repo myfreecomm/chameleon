@@ -1,6 +1,6 @@
 @import '../../abstracts/colors';
 @import '../../abstracts/box-model';
-@import '../../abstracts/icon';
+@import '../../abstracts/dimensions';
 @import '../../abstracts/menu';
 
 .ch-menu {
@@ -53,7 +53,7 @@
       // 2.1.1. Item
 
       .ch-menu-item {
-        padding-left: #{ch-get-icon-container-width()};
+        padding-left: #{ch-get-dimension(1)};
       }
     }
 
