@@ -18,7 +18,9 @@
 
   > .is-active:before,
   > .ch-menu-submenu > .is-active:before {
-    content: '' !important;
+    $empty: '';
+    // sass-lint:disable no-important
+    content: $empty !important;
     top: auto;
     left: ch-get-space(m);
     bottom: 0;

@@ -1,4 +1,5 @@
 @import '../../abstracts/colors';
+@import '../../abstracts/icon';
 
 .ch-template {
   &-nav {
@@ -8,7 +9,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width:100%;
+    width: 100%;
 
     &-brand {
       display: none;
@@ -20,6 +21,7 @@
 
     &-menu {
       width: 80%;
+      justify-content: space-around;
 
       > .ch-menu-item > .ch-menu-item-label,
       > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-arrow,
@@ -27,12 +29,38 @@
         display: none;
       }
 
+      > .ch-menu-item > .ch-menu-item-label,
+      > .ch-menu-item > .ch-icon,
+      > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-label,
+      > .ch-menu-submenu > .ch-menu-item > .ch-icon {
+        color: $ch-color-navy-10;
+      }
+
       > .ch-menu-item,
       > .ch-menu-submenu > .ch-menu-item {
-        padding-left: ch-get-space(m) !important;
+        // sass-lint:disable no-important
+        padding-left: ch-get-space(l) !important;
+        padding-right: ch-get-space(l) !important;
+
+        &:hover {
+          background: transparent;
+        }
 
         > .ch-icon:first-child {
           left: 50%;
+        }
+      }
+
+      &.ch-menu--horizontal > .is-active,
+      &.ch-menu--horizontal > .ch-menu-submenu > .is-active {
+        .ch-icon:first-child {
+          color: ch-get-color(brand, 1);
+        }
+
+        &:before {
+          width: ch-get-icon-size();
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
