@@ -1,0 +1,35 @@
+@import '../../abstracts/colors';
+@import '../../abstracts/icon';
+
+.ch-template-nav {
+
+  // 1. Base
+
+  &-open {
+    position: relative;
+
+    width: 20%;
+    color: #{ch-get-color(text, 2, inverse)};
+
+    // 1.1. Input
+
+    > * {
+      display: none;
+    }
+
+    // 1.2. Icon
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      content: '';
+      width: #{ch-get-icon-size()};
+      height: #{ch-get-icon-size()};
+      background: red;
+    }
+  }
+}
