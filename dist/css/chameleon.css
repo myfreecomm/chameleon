@@ -93,11 +93,7 @@
   --ch-space-m:      calc(1    * var(--ch-space-unit));
   --ch-space-l:      calc(1.25 * var(--ch-space-unit));
   --ch-space-xl:     calc(2    * var(--ch-space-unit));
-  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit));
-  --ch-space-xxs-l:  calc(1.5  * var(--ch-space-unit));
-  --ch-space-xs-xl:  calc(2.5  * var(--ch-space-unit));
-  --ch-space-m-xl:   calc(3    * var(--ch-space-unit));
-  --ch-space-xl-xxl: calc(6    * var(--ch-space-unit)); }
+  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit)); }
 
 :root {
   --ch-text-font-family:       'Roboto', sans-serif;
@@ -2256,4 +2252,76 @@ template {
     font-size: var(--ch-text-size-2);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height); }
+
+.ch-button {
+  display: inline-block;
+  font-weight: var(--ch-text-weight-bold);
+  cursor: pointer;
+  text-align: center; }
+  .ch-button:hover:focus,
+  .ch-button:hover .ch-button--primary {
+    border-color: var(--ch-color-primary);
+    background: var(--ch-color-primary); }
+    .ch-button:hover:focus, .ch-button:hover:focus:hover:focus, .ch-button:hover:focus:hover, .ch-button:hover:focus:focus, .ch-button:hover:focus:active,
+    .ch-button:hover .ch-button--primary,
+    .ch-button:hover .ch-button--primary:hover:focus,
+    .ch-button:hover .ch-button--primary:hover,
+    .ch-button:hover .ch-button--primary:focus,
+    .ch-button:hover .ch-button--primary:active {
+      color: var(--ch-color-1-inverse);
+      font-weight: var(--ch-text-weight-bold); }
+    .ch-button:hover:focus:hover:focus, .ch-button:hover:focus:hover, .ch-button:hover:focus:focus,
+    .ch-button:hover .ch-button--primary:hover:focus,
+    .ch-button:hover .ch-button--primary:hover,
+    .ch-button:hover .ch-button--primary:focus {
+      border-color: var(--ch-color-primary-focus);
+      background: var(--ch-color-primary-focus); }
+    .ch-button:hover:focus:active,
+    .ch-button:hover .ch-button--primary:active {
+      border-color: var(--ch-color-primary);
+      background: var(--ch-color-primary-active); }
+  .ch-button--secondary {
+    border-color: var(--ch-color-primary-active);
+    color: var(--ch-color-primary-active); }
+    .ch-button--secondary:hover:focus, .ch-button--secondary:hover, .ch-button--secondary:focus {
+      border-color: var(--ch-color-primary-focus);
+      color: var(--ch-color-primary-focus); }
+    .ch-button--secondary:active {
+      border-color: var(--ch-color-primary-focus);
+      color: var(--ch-color-primary-focus); }
+  .ch-button--negative {
+    border-color: var(--ch-color-negative);
+    color: var(--ch-color-negative); }
+    .ch-button--negative:hover:focus, .ch-button--negative:hover, .ch-button--negative:focus {
+      border-color: var(--ch-color-negative-focus);
+      color: var(--ch-color-negative-focus); }
+    .ch-button--negative:active {
+      border-color: var(--ch-color-negative-active);
+      color: var(--ch-color-negative-active); }
+  .ch-button--ghost, .ch-button--ghost:hover:focus, .ch-button--ghost:hover, .ch-button--ghost:focus, .ch-button--ghost:active {
+    border-color: transparent;
+    background: transparent; }
+  .ch-button--icon {
+    padding-top: var(--ch-space-m);
+    padding-right: var(--ch-space-m);
+    padding-bottom: var(--ch-space-m);
+    padding-left: var(--ch-space-m);
+    border: 0;
+    width: 36px; }
+  .ch-button--inverse {
+    color: var(--ch-color-1-inverse);
+    font-weight: var(--ch-text-weight-bold); }
+  .ch-button--small {
+    padding-top: var(--ch-space-m);
+    padding-right: var(--ch-space-m);
+    padding-bottom: var(--ch-space-m);
+    padding-left: var(--ch-space-m);
+    border: 0; }
+    .ch-button--small.ch-button--icon {
+      padding-top: var(--ch-space-m);
+      padding-right: var(--ch-space-m);
+      padding-bottom: var(--ch-space-m);
+      padding-left: var(--ch-space-m);
+      border: 0;
+      width: 24px; }
 

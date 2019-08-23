@@ -1,5 +1,5 @@
-@import '../../abstracts/border';
 @import '../../abstracts/box-model';
+@import '../../abstracts/border';
 @import '../../abstracts/typography';
 @import '../../abstracts/colors';
 @import '../../abstracts/helpers';
@@ -8,11 +8,11 @@
   // 1. Base
 
   display: inline-block;
-
+  font-weight: #{ch-get-text-weight(bold)};
   cursor: pointer;
   text-align: center;
+  @include ch-box-model((border: $ch-border-box, border-radius: 2, inset: squish, background: transparent));
 
-  @include ch-box-model((text: $ch-text-bold, border: $ch-border-box, border-radius: 2, inset: squish, background: transparent));
 
   // 1.1. Focus interaction
 
@@ -45,7 +45,10 @@
     &:hover:focus,
     &:hover,
     &:focus,
-    &:active {color: #{ch-get-color(text, 1, inverse)}};
+    &:active {
+      color: #{ch-get-color(1, inverse)};
+      font-weight: #{ch-get-text-weight(bold)};
+    };
 
     // 2.1. Focus interaction
 
@@ -126,7 +129,7 @@
   // 6. Icon variation
 
   &--icon {
-    @include ch-box-model(( inset: (default, s)));
+    @include ch-box-model(default, s);
 
     width: 36px;
   }
@@ -134,16 +137,17 @@
   // 7. Inverse variation
 
   &--inverse {
-    color: #{ch-get-color(text, 1, inverse)};
+    color: #{ch-get-color(1, inverse)};
+    font-weight: #{ch-get-text-weight(bold)};
   }
 
   // 8. Small variation
 
   &--small {
-    @include ch-box-model(( inset: (squish, s)));
+    @include ch-box-model(squish, s);
 
     &.ch-button--icon {
-      @include ch-box-model(( inset: (default, xxs)));
+      @include ch-box-model(default, xxs);
 
       width: 24px;
     }
