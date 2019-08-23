@@ -1,0 +1,30 @@
+// sass-lint:disable no-important
+
+@import '../../abstracts/dimensions';
+
+@mixin ch-has-icon ($type: left) {
+  position: relative;
+
+  > .ch-icon:first-child {
+    position: absolute;
+    top: 50%;
+  }
+
+  @if ($type == left) {
+    padding-left: #{ch-get-dimension(1)} !important;
+
+    > .ch-icon:first-child {
+      left: calc((#{ch-get-dimension(1)}) / 2);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @else if ($type == right) {
+    padding-right: #{ch-get-dimension(1)} !important;
+
+    > .ch-icon:last-child {
+      right: calc((#{ch-get-dimension(1)}) / 2);
+      transform: translate(50%, -50%);
+    }
+  }
+}
