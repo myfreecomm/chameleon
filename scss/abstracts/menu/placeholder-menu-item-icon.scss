@@ -1,0 +1,13 @@
+@import '../icon';
+
+%ch-menu-item-icon {
+  @extend %ch-has-icon;
+
+  padding-right: 0;
+
+  > .ch-menu-item-label {
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+  }
+}
