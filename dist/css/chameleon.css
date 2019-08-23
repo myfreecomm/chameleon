@@ -2258,26 +2258,18 @@ template {
   font-weight: var(--ch-text-weight-bold);
   cursor: pointer;
   text-align: center; }
-  .ch-button:hover:focus,
-  .ch-button:hover .ch-button--primary {
+  .ch-button:disabled, .ch-button.is-disabled {
+    opacity: .5; }
+  .ch-button--primary {
     border-color: var(--ch-color-primary);
     background: var(--ch-color-primary); }
-    .ch-button:hover:focus, .ch-button:hover:focus:hover:focus, .ch-button:hover:focus:hover, .ch-button:hover:focus:focus, .ch-button:hover:focus:active,
-    .ch-button:hover .ch-button--primary,
-    .ch-button:hover .ch-button--primary:hover:focus,
-    .ch-button:hover .ch-button--primary:hover,
-    .ch-button:hover .ch-button--primary:focus,
-    .ch-button:hover .ch-button--primary:active {
+    .ch-button--primary, .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus, .ch-button--primary:active {
       color: var(--ch-color-1-inverse);
       font-weight: var(--ch-text-weight-bold); }
-    .ch-button:hover:focus:hover:focus, .ch-button:hover:focus:hover, .ch-button:hover:focus:focus,
-    .ch-button:hover .ch-button--primary:hover:focus,
-    .ch-button:hover .ch-button--primary:hover,
-    .ch-button:hover .ch-button--primary:focus {
+    .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus {
       border-color: var(--ch-color-primary-focus);
       background: var(--ch-color-primary-focus); }
-    .ch-button:hover:focus:active,
-    .ch-button:hover .ch-button--primary:active {
+    .ch-button--primary:active {
       border-color: var(--ch-color-primary);
       background: var(--ch-color-primary-active); }
   .ch-button--secondary {
