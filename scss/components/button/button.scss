@@ -1,8 +1,8 @@
 @import '../../abstracts/border';
-@import '../../abstracts/helpers';
+@import '../../abstracts/box-model';
 @import '../../abstracts/typography';
 @import '../../abstracts/colors';
-@import '../../abstracts/box-model';
+@import '../../abstracts/helpers';
 
 .ch-button {
   // 1. Base
@@ -12,13 +12,7 @@
   cursor: pointer;
   text-align: center;
 
-  @include ch-box-model((
-    text:          $ch-text-bold,
-    border:        $ch-border-box,
-    border-radius: 2,
-    inset:         squish,
-    background:    transparent
-  ));
+  @include ch-box-model((text: $ch-text-bold, border: $ch-border-box, border-radius: 2, inset: squish, background: transparent));
 
   // 1.1. Focus interaction
 
@@ -51,24 +45,22 @@
     &:hover:focus,
     &:hover,
     &:focus,
-    &:active {
-  color: #{ch-get-color(text, 1, inverse)};
-    }
+    &:active {color: #{ch-get-color(text, 1, inverse)}};
 
     // 2.1. Focus interaction
 
     &:hover:focus,
     &:hover,
     &:focus {
-  border-color: #{ch-get-color(primary, focus)};
-  background: #{ch-get-color(primary, focus)};
+      border-color: #{ch-get-color(primary, focus)};
+      background: #{ch-get-color(primary, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
-  border-color: #{ch-get-color(primary, acitve)};
-  background: #{ch-get-color(primary, active)};
+      border-color: #{ch-get-color(primary, acitve)};
+      background: #{ch-get-color(primary, active)};
     }
   }
 
@@ -83,15 +75,15 @@
     &:hover:focus,
     &:hover,
     &:focus {
-  border-color: #{ch-get-color(primary, focus)};
-  color: #{ch-get-color(primary, focus)};
+      border-color: #{ch-get-color(primary, focus)};
+      color: #{ch-get-color(primary, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
-  border-color: #{ch-get-color(primary, focus)};
-  color: #{ch-get-color(primary, focus)};
+      border-color: #{ch-get-color(primary, focus)};
+      color: #{ch-get-color(primary, focus)};
     }
   }
 
@@ -106,15 +98,15 @@
     &:hover:focus,
     &:hover,
     &:focus {
-  border-color: #{ch-get-color(negative, focus)};
-  color: #{ch-get-color(negative, focus)};
+      border-color: #{ch-get-color(negative, focus)};
+      color: #{ch-get-color(negative, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
-  border-color: #{ch-get-color(negative, active)};
-  color:  #{ch-get-color(negative, active)};
+      border-color: #{ch-get-color(negative, active)};
+      color:  #{ch-get-color(negative, active)};
     }
   }
 
@@ -126,17 +118,15 @@
     &:hover,
     &:focus,
     &:active {
-  border-color: transparent;
-  background: transparent;
+      border-color: transparent;
+      background: transparent;
     }
   }
 
   // 6. Icon variation
 
   &--icon {
-    @include ch-box-model((
-  inset: (default, s)
-    ));
+    @include ch-box-model(( inset: (default, s)));
 
     width: 36px;
   }
@@ -150,16 +140,12 @@
   // 8. Small variation
 
   &--small {
-    @include ch-box-model((
-  inset: (squish, s)
-    ));
+    @include ch-box-model(( inset: (squish, s)));
 
     &.ch-button--icon {
-  @include ch-box-model((
-    inset: (default, xxs)
-  ));
+      @include ch-box-model(( inset: (default, xxs)));
 
-  width: 24px;
+      width: 24px;
     }
   }
 }
