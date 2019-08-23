@@ -1,35 +1,34 @@
+@import '../../abstracts/box-model';
 @import '../../abstracts/border';
-@import '../../abstracts/helpers';
 @import '../../abstracts/typography';
+@import '../../abstracts/colors';
+@import '../../abstracts/space';
+@import '../../abstracts/helpers';
 
 .ch-button {
   // 1. Base
+  @include ch-box-model(box, $ch-border-box, squish);
+  @include ch-border-radius(2, box);
 
+  background: transparent;
   display: inline-block;
-
+  font-weight: #{ch-get-text-weight(bold)};
   cursor: pointer;
   text-align: center;
 
-  @include ch-box((
-    text:          $ch-text-bold,
-    border:        $ch-border-box,
-    border-radius: 2,
-    inset:         squish,
-    background:    transparent
-  ));
 
   // 1.1. Focus interaction
 
   &:hover:focus,
   &:hover,
   &:focus {
-    @include ch-box((border: $ch-border-box-focus));
+    @include ch-box-model(box, $ch-border-box-focus);
   }
 
   // 1.2. Active interaction
 
   &:active {
-    @include ch-box((border: $ch-border-box-active));
+    @include ch-box-model(box, $ch-border-box-active);
   }
 
   // 1.3. Disabled interaction
@@ -42,77 +41,78 @@
   // 2. Primary variation
 
   &--primary {
-    border-color: ch-get-color(primary);
-    background: ch-get-color(primary);
+    border-color: #{ch-get-color(primary)};
+    background: #{ch-get-color(primary)};
 
     &,
     &:hover:focus,
     &:hover,
     &:focus,
     &:active {
-	color: ch-get-color(text, 1, inverse);
-    }
+      color: #{ch-get-color(1, inverse)};
+      font-weight: #{ch-get-text-weight(bold)};
+    };
 
     // 2.1. Focus interaction
 
     &:hover:focus,
     &:hover,
     &:focus {
-	border-color: ch-get-color(primary, focus);
-	background: ch-get-color(primary, focus);
+      border-color: #{ch-get-color(primary, focus)};
+      background: #{ch-get-color(primary, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
-	border-color: ch-get-color(primary, active);
-	background: ch-get-color(primary, active);
+      border-color: #{ch-get-color(primary, acitve)};
+      background: #{ch-get-color(primary, active)};
     }
   }
 
   // 3. Secondary variation
 
   &--secondary {
-    border-color: ch-get-color(primary);
-    color: ch-get-color(primary);
+    border-color: #{ch-get-color(primary, active)};
+    color: #{ch-get-color(primary, active)};
 
     // 2.1. Focus interaction
 
     &:hover:focus,
     &:hover,
     &:focus {
-	border-color: ch-get-color(primary, focus);
-	color: ch-get-color(primary, focus);
+      border-color: #{ch-get-color(primary, focus)};
+      color: #{ch-get-color(primary, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
-	border-color: ch-get-color(primary, active);
-	color: ch-get-color(primary, active);
+      border-color: #{ch-get-color(primary, focus)};
+      color: #{ch-get-color(primary, focus)};
     }
   }
 
   // 4. Negative variation
 
   &--negative {
-    border-color: ch-get-color(negative);
-    color: ch-get-color(negative);
+    border-color: #{ch-get-color(negative)};
+    color: #{ch-get-color(negative)};
 
     // 2.1. Focus interaction
 
     &:hover:focus,
     &:hover,
     &:focus {
-	border-color: ch-get-color(negative, focus);
-	color: ch-get-color(negative, focus);
+      border-color: #{ch-get-color(negative, focus)};
+      color: #{ch-get-color(negative, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
-	border-color: ch-get-color(negative, active);
-	color: ch-get-color(negative, active);
+      border-color: #{ch-get-color(negative, active)};
+      color:  #{ch-get-color(negative, active)};
     }
   }
 
@@ -124,17 +124,15 @@
     &:hover,
     &:focus,
     &:active {
-	border-color: transparent;
-	background: transparent;
+      border-color: transparent;
+      background: transparent;
     }
   }
 
   // 6. Icon variation
 
   &--icon {
-    @include ch-box((
-	inset: (default, s)
-    ));
+    @include ch-box-model(default, s);
 
     width: 36px;
   }
@@ -142,22 +140,19 @@
   // 7. Inverse variation
 
   &--inverse {
-    color: ch-get-color(text, 1, inverse);
+    color: #{ch-get-color(1, inverse)};
+    font-weight: #{ch-get-text-weight(bold)};
   }
 
   // 8. Small variation
 
   &--small {
-    @include ch-box((
-	inset: (squish, s)
-    ));
+    @include ch-box-model(squish, s);
 
     &.ch-button--icon {
-	@include ch-box((
-	  inset: (default, xxs)
-	));
+      @include ch-box-model(default, xxs);
 
-	width: 24px;
+      width: 24px;
     }
   }
 }

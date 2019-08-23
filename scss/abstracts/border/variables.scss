@@ -1,1 +1,7 @@
 $ch-border-width: 1px;
+
+$ch-border-box:         (box,    $ch-border-width, solid, border);
+$ch-border-box-focus:   (box,    $ch-border-width, solid, (border focus));
+$ch-border-box-active:  (box,    $ch-border-width, solid, (border active));
+
+
