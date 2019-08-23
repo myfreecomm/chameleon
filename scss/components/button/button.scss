@@ -7,12 +7,14 @@
 
 .ch-button {
   // 1. Base
+  @include ch-box-model(box, $ch-border-box, squish);
+  @include ch-border-radius(2, box);
 
+  background: transparent;
   display: inline-block;
   font-weight: #{ch-get-text-weight(bold)};
   cursor: pointer;
   text-align: center;
-  @include ch-box-model((border: $ch-border-box, border-radius: 2, inset: squish, background: transparent));
 
 
   // 1.1. Focus interaction
@@ -20,13 +22,13 @@
   &:hover:focus,
   &:hover,
   &:focus {
-    @include ch-box-model((border: $ch-border-box-focus));
+    @include ch-box-model(box, $ch-border-box-focus);
   }
 
   // 1.2. Active interaction
 
   &:active {
-    @include ch-box-model((border: $ch-border-box-active));
+    @include ch-box-model(box, $ch-border-box-active);
   }
 
   // 1.3. Disabled interaction
