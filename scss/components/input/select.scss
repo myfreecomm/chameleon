@@ -1,0 +1,12 @@
+@import '../../abstracts/space';
+
+.ch-select {
+  position: relative;
+  display: inline-block;
+
+  > select {
+    @extend %ch-input;
+    width: 100%;
+    padding-right: ch-get-space(xl);
+  }
+}
