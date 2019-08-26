@@ -1,0 +1,20 @@
+@import '../../abstracts/space';
+@import '../../abstracts/border';
+
+.ch-radio {
+  @include ch-input-disabled;
+  @include ch-border;
+  -webkit-appearance: none;
+  appearance: none;
+  width: ch-get-space();
+  height: ch-get-space();
+  background-color: ch-get-color(neutral, 1);
+  border-radius: ch-get-border-radius(circle);
+
+  &:checked {
+    background: radial-gradient(circle,
+      ch-get-color(text, 1) 35%,
+      ch-get-color(neutral, 1) 15%,
+      ch-get-color(neutral, 1) 85%);
+  }
+}
