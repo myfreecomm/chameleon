@@ -7,5 +7,5 @@
   $end-value: nth($layer, 2);
   $z-index: $initial-value + $number;
 
-  @return if(z-index > $end-value, $end-value, $z-index);
+  @return if($z-index > $end-value, $end-value, $z-index);
 }
