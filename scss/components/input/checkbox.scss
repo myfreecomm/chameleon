@@ -1,0 +1,62 @@
+@import '../../abstracts/space';
+@import '../../abstracts/border';
+@import '../../abstracts/layers';
+@import '../../abstracts/typography';
+
+.ch-checkbox {
+  position: relative;
+  display: inline-block;
+
+  > input[type="checkbox"],
+  > input[type="checkbox"] + label:before,
+  > input[type="checkbox"] + label:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: ch-get-space();
+    height: ch-get-space();
+  }
+
+  > input[type="checkbox"] {
+    z-index: ch-get-z-index(1, 1);
+    opacity: 0;
+    cursor: pointer;
+
+    + label {
+      padding-left: ch-get-space(l);
+
+      &:before,
+      &:after {
+        content: '';
+      }
+
+      &:before {
+        @include ch-border;
+        background-color: ch-get-color(neutral, 1);
+        border-radius: ch-get-border-radius();
+      }
+    }
+
+    &:checked + label {
+      &:after {
+        content: '\f00c';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Font Awesome 5 Pro";
+        font-weight: ch-get-text-size(regular);
+        font-size: ch-get-text-size(1);
+        color: #{ch-get-color(text, 1)};
+      }
+    }
+
+    &:active + label:before {
+      border-color: #{ch-get-color(primary, active)};
+    }
+
+    &:focus + label:before {
+      border-color: #{ch-get-color(primary, focus)};
+    }
+  }
+}
