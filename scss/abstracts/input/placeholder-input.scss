@@ -1,0 +1,17 @@
+@import '../../abstracts/box-model';
+@import '../../abstracts/border';
+@import '../../abstracts/colors';
+
+%ch-input {
+  @include ch-box-model(s, squish, box, border);
+  @include ch-border-radius(2, box);
+  background-color: #{ch-get-color(neutral, 1)};
+
+  &:active {
+    border-color: #{ch-get-color(primary, active)};
+  }
+
+  &:focus {
+    border-color: #{ch-get-color(primary, focus)};
+  }
+}
