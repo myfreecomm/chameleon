@@ -1,8 +1,10 @@
 @import '../../abstracts/box-model';
 @import '../../abstracts/border';
 @import '../../abstracts/colors';
+@import './mixin-input-disabled';
 
 %ch-input {
+  @include ch-input-disabled;
   @include ch-box-model(s, squish, box, border);
   @include ch-border-radius(2, box);
   background-color: #{ch-get-color(neutral, 1)};
@@ -13,13 +15,6 @@
 
   &:focus {
     border-color: #{ch-get-color(primary, focus)};
-  }
-
-  &:disabled,
-  &.is-disabled {
-    opacity: .75;
-    background-color: #{ch-get-color(neutral, 2)};
-    pointer-events: none;
   }
 
   &::placeholder {
