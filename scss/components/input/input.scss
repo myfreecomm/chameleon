@@ -1,36 +1,23 @@
 @import '../../abstracts/input';
 
-.ch-input {
+.ch-input, .ch-textarea {
   @extend %ch-input;
 
-  &--negative {
-    border-color: #{ch-get-color(negative)};
-
-    &:active {
-      border-color: #{ch-get-color(negative, active)};
-    }
-
-    &:focus {
-      border-color: #{ch-get-color(negative, focus)};
-    }
+  &--fluid {
+    width: 100%;
   }
 
-  &--positive {
-    border-color: #{ch-get-color(positive)};
+  @each $type in (negative, positive) {
+    &--#{$type} {
+      border-color: #{ch-get-color($type)};
 
-    &:active {
-      border-color: #{ch-get-color(positive, active)};
+      &:active {
+        border-color: #{ch-get-color($type, active)};
+      }
+
+      &:focus {
+        border-color: #{ch-get-color($type, focus)};
+      }
     }
-
-    &:focus {
-      border-color: #{ch-get-color(positive, focus)};
-    }
-  }
-
-  &:disabled,
-  &.is-disabled {
-    opacity: .75;
-    background-color: #{ch-get-color(neutral, 2)};
-    pointer-events: none;
   }
 }

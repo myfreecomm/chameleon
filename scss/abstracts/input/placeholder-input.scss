@@ -14,4 +14,16 @@
   &:focus {
     border-color: #{ch-get-color(primary, focus)};
   }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: .75;
+    background-color: #{ch-get-color(neutral, 2)};
+    pointer-events: none;
+  }
+
+  &::placeholder {
+    color: #{ch-get-color(text, 2)};
+    opacity: .75;
+  }
 }
