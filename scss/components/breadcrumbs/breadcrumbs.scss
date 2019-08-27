@@ -1,0 +1,50 @@
+@import '../../abstracts/colors';
+@import '../../abstracts/space';
+@import '../../abstracts/typography';
+
+.ch-breadcrumbs {
+
+  // 1. Base
+
+  @include ch-space-inline-group;
+
+  display: flex;
+  align-items: baseline;
+
+  // 2. Item
+
+  &-item {
+    position: relative;
+
+    &:not(:last-child) {
+      display: none;
+
+      color: #{ch-get-color(text, 2)};
+      font-weight: #{ch-get-text-weight(light)};
+
+      &:hover:focus,
+      &:hover,
+      &:focus {
+        color: #{ch-get-color(text, 1)};
+      }
+    }
+
+    &:not(:last-child):after {
+      $separator: '/';
+
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(-1 * #{ch-get-space(m)});
+      transform: translate(0, -50%);
+
+      width: #{ch-get-space(m)};
+      content: $separator;
+      text-align: center;
+    }
+
+    &:last-child {
+      font-weight: #{ch-get-text-weight(bold)};
+    }
+  }
+}
