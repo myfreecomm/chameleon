@@ -140,13 +140,7 @@
     }
   }
 
-  // 6. Icon variation
-
-  &--icon {
-
-  }
-
-  // 7. Inverse variation
+  // 6. Inverse variation
 
   &--inverse {
     color: #{ch-get-color(text, 2)};
@@ -160,15 +154,40 @@
     }
   }
 
-  // 8. Small variation
+  // 7. Small variation
 
   &--small {
     @include ch-space-inset(squish, xs);
+  }
 
-    &.ch-button--icon {
-      @include ch-box-model(xxs, default);
+  // 8. Icon variation
 
-      width: 24px;
+  &--icon {
+    $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
+
+    position: relative;
+
+    width: #{$size};
+    min-width: #{$size};
+    min-height: #{$size};
+
+    > .ch-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(.75);
+    }
+
+    &.ch-button--small {
+      $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
+
+      width: #{$size};
+      min-width: #{$size};
+      min-height: #{$size};
+
+      > .ch-icon {
+        transform: translate(-50%, -50%) scale(.65);
+      }
     }
   }
 }
