@@ -59,7 +59,7 @@
 
   <form class="" style="padding: 20px 0; width: 600px;">
     <div class="ch-field">
-      <label for="">
+      <label class="ch-field-label" for="">
         Common input
         <i class="fal fa-info-circle" title="This is a hint"></i>
       </label>
@@ -67,34 +67,34 @@
     </div>
 
     <div class="ch-field">
-      <label for="">Negative</label>
+      <label class="ch-field-label" for="">Negative</label>
       <input type="text" class="ch-input ch-input--negative" placeholder="Negative input"/>
-      <span style="color: red; font-size: 12px;">Error message</span>
+      <span class="ch-field-label ch-field-label--negative">Error message</span>
     </div>
 
     <div class="ch-field">
-      <label for="">Positive</label>
+      <label class="ch-field-label" for="">Positive</label>
       <input type="text" class="ch-input ch-input--positive" placeholder="Positive input"/>
-      <span style="color: green; font-size: 12px;">Success message</span>
+      <span class="ch-field-label ch-field-label--positive">Success message</span>
     </div>
 
     <div class="ch-field">
-        <label for="">Readonly</label>
+        <label class="ch-field-label" for="">Readonly</label>
       <input type="text" class="ch-input" readonly value="Readonly input" />
     </div>
 
     <div class="ch-field">
-      <label for="">Disabled</label>
+      <label class="ch-field-label" for="">Disabled</label>
       <input type="text" class="ch-input" placeholder="Disabled input" disabled />
     </div>
 
     <div class="ch-field">
-        <label for="">Textarea</label>
+      <label class="ch-field-label" for="">Textarea</label>
       <textarea class="ch-textarea ch-textarea--fluid" placeholder="Textarea example"></textarea>
     </div>
 
     <div class="ch-field ch-field--inline">
-      <label for="">Select</label>
+      <label class="ch-field-label" for="">Select</label>
       <div class="ch-select">
         <select>
           <option value="">Select an option</option>
@@ -106,7 +106,7 @@
     </div>
 
     <div class="ch-field ch-field--inline">
-      <label for="">Disabled Select</label>
+      <label class="ch-field-label" for="">Disabled Select</label>
       <div class="ch-select">
         <select disabled>
           <option value="1">Example 1</option>
@@ -120,7 +120,7 @@
     <div class="ch-field">
       <div class="ch-checkbox">
           <input type="checkbox" name="" />
-          <label>
+          <label class="ch-field-label">
             I agree to the <a href="#">terms and conditions</a>
           </label>
         </div>
@@ -129,12 +129,12 @@
     <div class="ch-field ch-field--inline">
       <div class="ch-radio-group">
         <input type="radio" class="ch-radio" name="radio" checked id="radio1" />
-        <label for="radio1">Option 1</label>
+        <label class="ch-field-label" for="radio1">Option 1</label>
       </div>
 
       <div class="ch-radio-group">
         <input type="radio" class="ch-radio" name="radio" id="radio2" />
-        <label for="radio2">Option 2</label>
+        <label class="ch-field-label" for="radio2">Option 2</label>
       </div>
     </div>
   </form>

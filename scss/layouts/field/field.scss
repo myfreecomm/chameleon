@@ -1,4 +1,6 @@
 @import '../../abstracts/space';
+@import '../../abstracts/colors';
+@import '../../abstracts/typography';
 
 .ch-field {
   @include ch-space-stack();
@@ -17,6 +19,18 @@
 
     > * {
       display: inline-block;
+    }
+  }
+
+  &-label {
+    display: inline-block;
+    color: #{ch-get-color(text, 1)};
+
+    @each $type in (negative, positive) {
+      &--#{$type} {
+        color: #{ch-get-color(#{$type})};
+        font-size: ch-get-text-size(1);
+      }
     }
   }
 }
