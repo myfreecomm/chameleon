@@ -8,63 +8,129 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="dist/css/chameleon.css">
 </head>
-<body style="padding: 40px">
-
+<body>
   <div class="ch-template">
+    
+    <!-- NAV BEGIN -->
     <nav class="ch-template-nav">
+
+      <!-- BRAND BEGIN -->
       <div class="ch-template-nav-brand">
         <img src="https://via.placeholder.com/72" class="ch-template-nav-brand-icon">
         <h1 class="ch-template-nav-brand-name">Chameleon</h1>
       </div>
+      <!-- BRAND END -->
 
-      <ul class="ch-template-nav-menu ch-menu" style="color: #fff">
+      <!-- MENU BEGIN -->
+      <ul class="ch-menu">
         <li class="ch-menu-submenu is-open">
           <a href="#" class="ch-menu-item has-icon has-iconRight is-active">
             <i class="ch-icon fal fa-chart-line"></i>
             <span class="ch-menu-item-label">Item 1</span>
             <i class="ch-menu-item-arrow ch-icon fal fa-chevron-right"></i>
           </a>
-
+          
           <ul class="ch-menu">
             <li class="ch-menu-item">
               <span class="ch-menu-item-label">Item 2</span>
             </li>
-
+            
             <li class="ch-menu-item is-active">
               <span class="ch-menu-item-label">Item 3</span>
             </li>
-
+            
             <li class="ch-menu-item">
               <span class="ch-menu-item-label">Item 4</span>
             </li>
           </ul>
         </li>
-
+        
         <li class="ch-menu-item has-icon">
           <i class="ch-icon fal fa-table"></i>
           <span class="ch-menu-item-label">Item 3</span>
         </li>
-
+        
         <li class="ch-menu-item has-icon">
           <i class="ch-icon fal fa-magic"></i>
           <span class="ch-menu-item-label">Item 4</span>
         </li>
-
+        
         <li class="ch-menu-item has-icon">
           <i class="ch-icon fal fa-clipboard"></i>
           <span class="ch-menu-item-label">Item 5</span>
         </li>
-
+        
         <li class="ch-menu-item has-icon">
           <i class="ch-icon fal fa-chart-line"></i>
           <span class="ch-menu-item-label">Item 6</span>
         </li>
       </ul>
+      <!-- MENU END -->
 
-      <label class="ch-template-nav-open" for="templateOpen">
-        <input id="templateOpen" type="checkbox">
+      <!-- TOGGLE BEGIN -->
+      <label class="ch-more">
+        <input type="checkbox" class="ch-more-toggle">
+        <span class="ch-more-icon"></span>
       </label>
+      <!-- TOGGLE END -->
+
     </nav>
+    <!-- NAV END -->
+
+    <!-- HEADER BEGIN -->
+    <header class="ch-template-header is-sticky">
+      <!-- MENU BEGIN -->
+      <nav class="ch-menu">
+        <label class="ch-menu-item ch-menu-item--icon ch-more">
+          <input class="ch-more-toggle" type="checkbox">
+          <i class="ch-more-icon"></i>
+        </label>
+        
+        <button class="ch-menu-item ch-menu-item--icon">
+          <i class="ch-icon fal fa-search"></i>
+          <span class="ch-menu-item-label">Buscar</span>
+        </button>
+        
+        <button class="ch-menu-item ch-menu-item--icon">
+          <i class="ch-icon fal fa-bell"></i>
+          <span class="ch-menu-item-label">Notificações</span>
+        </button>
+        
+        <button class="ch-menu-item ch-menu-item--icon">
+          <i class="ch-icon fal fa-cog"></i>
+          <span class="ch-menu-item-label">Configurações</span>
+        </button>
+        
+        <button class="ch-menu-item">
+          <span class="ch-menu-item-label">
+            Nome da conta
+            <i class="ch-icon ch-icon--xs fal fa-chevron-down"></i>
+          </span>
+        </button>
+
+        <button class="ch-menu-item ch-menu-item--icon">
+          <div class="ch-avatar" title="Max Salles">
+          </div>
+        </button>
+      </nav>
+      <!-- MENU END -->
+
+      <!-- BREADCRUMBS BEGIN -->
+      <nav class="ch-breadcrumbs">
+        <a class="ch-breadcrumbs-item" href="#">Fluxo de caixa</a>
+        <a class="ch-breadcrumbs-item" href="#">Contas a pagar</a>
+        <span class="ch-breadcrumbs-item">Nova despesa despesa despesa</span>
+      </nav>
+      <!-- BREADCRUMBS END -->
+    </header>
+    <!-- HEADER END -->
+
+
+    <!-- CONTENT BEGIN -->
+    <div class="ch-template-content">
+      <div style="width: 80%; margin: 0 auto; background: #ccc; height: 1000px;"></div>
+    </div>
+    <!-- CONTENT END -->
   </div>
 </body>
 </html>
