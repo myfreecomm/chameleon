@@ -1,10 +1,9 @@
-@import './function-get-breakpoint';
+@import './variables';
 
 @mixin ch-tablet-only {
-  $from: ch-get-breakpoint(tablet);
-  $to:   calc(#{ch-get-breakpoint(desktop)} - 1px);
+  $to: calc(#{$ch-breakpoint-desktop} - 1px);
 
-  @media screen and (max-width: $from) and (max-width: $to) {
+  @media screen and (max-width: $ch-breakpoint-desktop) and (max-width: $to) {
     @content;
   }
 }
