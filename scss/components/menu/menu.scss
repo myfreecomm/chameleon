@@ -2,6 +2,7 @@
 @import '../../abstracts/box-model';
 @import '../../abstracts/dimensions';
 @import '../../abstracts/menu';
+@import '../../abstracts/border';
 
 .ch-menu {
   // 1. item
@@ -10,6 +11,7 @@
     @include ch-box-model(m, squish);
 
     display: block;
+    width: 100%;
     position: relative;
 
     cursor: pointer;
@@ -28,11 +30,13 @@
     &.is-active:before {
       $empty-content: '';
 
+      @include ch-border-radius(circle);
+
       display: block;
       content: $empty-content;
       position: absolute;
       top: 50%;
-      left: 0;
+      left: ch-get-space(xxs);
       width: ch-get-space(xxs);
       height: ch-get-icon-size();
       transform: translate(0, -50%);
@@ -44,6 +48,12 @@
 
     &#{&}--icon {
       @extend %ch-menu-item-icon;
+    }
+
+    // 1.4. Label
+
+    &-label {
+      display: block;  
     }
   }
 

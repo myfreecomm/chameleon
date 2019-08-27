@@ -1,13 +1,27 @@
-@import '../icon';
+// sass-lint:disable no-important
+
+@import '../helpers';
 
 %ch-menu-item-icon {
-  @extend %ch-has-icon;
+  $size: ch-calc-box-height();
 
-  padding-right: 0;
+  position: relative;
 
-  > .ch-menu-item-label {
-    overflow: hidden;
-    width: 0;
-    white-space: nowrap;
+  padding: 0;
+  width: #{$size};
+  min-height: #{$size};
+
+  > * {
+    display: none;
+  }
+
+  > .ch-icon:first-child,
+  > .ch-avatar,
+  > .ch-more-icon {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

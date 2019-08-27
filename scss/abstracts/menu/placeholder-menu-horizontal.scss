@@ -5,11 +5,16 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  align-items: center;
+  align-items: stretch;
 
-  > .ch-menu-item,
-  > .ch-menu-submenu > .ch-menu-item {
-    @include ch-box-model(m, stretch);
+  > .ch-menu-item:not(.ch-menu-item--icon),
+  > .ch-menu-submenu {
+    width: auto;
+  }
+
+  > .ch-menu-item:not(.ch-menu-item--icon),
+  > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
+    @include ch-box-model(xs, stretch);
   }
 
   > .ch-menu-submenu {
@@ -25,10 +30,11 @@
     // sass-lint:disable no-important
     content: $empty !important;
     top: auto;
-    left: ch-get-space(m);
-    bottom: 0;
+    left: 50%;
+    bottom: ch-get-space(xxs);
     width: calc(100% - 2 * #{ch-get-space(m)});
-    height: ch-get-space(xxs);
-    transform: none;
+    min-width: #{ch-get-icon-size(m)};
+    height: #{ch-get-space(xxs)};
+    transform: translate(-50%, 0);
   }
 }
