@@ -163,30 +163,17 @@
   // 8. Icon variation
 
   &--icon {
-    $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
-
-    position: relative;
-
-    width: #{$size};
-    min-width: #{$size};
-    min-height: #{$size};
+    @include ch-icon-only(xs);
 
     > .ch-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(.75);
+      font-size: #{ch-get-icon-size(s)};
     }
 
     &.ch-button--small {
-      $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
-
-      width: #{$size};
-      min-width: #{$size};
-      min-height: #{$size};
+      @include ch-icon-only(xxs);
 
       > .ch-icon {
-        transform: translate(-50%, -50%) scale(.65);
+        font-size: #{ch-get-icon-size(xs)};
       }
     }
   }
