@@ -1,11 +1,10 @@
-// sass-lint:disable no-important
-
-@import '../../abstracts/colors';
-@import '../../abstracts/typography';
-@import '../../abstracts/menu';
-@import '../../abstracts/icon';
 @import '../../abstracts/box-model';
+@import '../../abstracts/colors';
 @import '../../abstracts/dimensions';
+@import '../../abstracts/helpers';
+@import '../../abstracts/icon';
+@import '../../abstracts/menu';
+@import '../../abstracts/typography';
 
 .ch-template-nav {
 
@@ -79,9 +78,8 @@
 
     > .ch-menu-item,
     > .ch-menu-submenu > .ch-menu-item {
-      // TODO
-      padding-left: 0 !important;
-      padding-right: 0 !important;
+      @include ch-paddingless(true, horizontal);
+
       height: #{ch-get-dimension(1)};
 
       // 2.2.1. Icon
