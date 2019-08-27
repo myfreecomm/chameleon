@@ -26,16 +26,16 @@
   // 2. Abbreviation
   
   &:before {
-    content: attr(title);
+    content: #{attr(title)};
     font-size: 0;
   }
-  
+
   &:first-letter {
     color: #{ch-get-color(text, 2)};
     font-size: #{ch-get-text-size(3)};
     line-height: #{$avatar-width};
   }
-  
+
   // 3. Image
 
   > #{&}-image,
