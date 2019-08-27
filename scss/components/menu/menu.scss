@@ -28,12 +28,12 @@
     // 1.2. Active state/Sidebar
 
     &.is-active:before {
-      $empty-content: '';
+      $empty: '';
 
       @include ch-border-radius(circle);
 
       display: block;
-      content: $empty-content;
+      content: $empty;
       position: absolute;
       top: 50%;
       left: ch-get-space(xxs);
