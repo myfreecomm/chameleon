@@ -13,10 +13,10 @@
   cursor: pointer;
 
   &:checked {
-    background: radial-gradient(circle,
-      ch-get-color(text, 1) 35%,
-      ch-get-color(neutral, 1) 15%,
-      ch-get-color(neutral, 1) 85%);
+    background: #{radial-gradient(circle,
+      #{ch-get-color(text, 1)} 35%,
+      #{ch-get-color(neutral, 1)} 15%,
+      #{ch-get-color(neutral, 1)} 85%)};
   }
 
   &:active {

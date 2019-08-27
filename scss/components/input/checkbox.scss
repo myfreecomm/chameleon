@@ -28,7 +28,8 @@
 
       &:before,
       &:after {
-        content: '';
+        $empty: '';
+        content: $empty;
       }
 
       &:before {
@@ -40,7 +41,8 @@
 
     &:checked + label {
       &:after {
-        content: '\f00c';
+        $icon: '\f00c';
+        content: $icon;
         display: flex;
         align-items: center;
         justify-content: center;
