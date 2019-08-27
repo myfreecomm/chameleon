@@ -24,7 +24,7 @@
     cursor: pointer;
 
     + label {
-      padding-left: ch-get-space(l);
+      padding-left: calc(2 * #{ch-get-space(s)});
 
       &:before,
       &:after {
