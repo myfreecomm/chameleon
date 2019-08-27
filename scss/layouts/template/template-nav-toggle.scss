@@ -7,4 +7,8 @@
     width: 20%;
     height: #{ch-get-dimension(1)};
   }
+  
+  &.is-open > .ch-more {
+    margin-left: 80%;
+  }
 }
