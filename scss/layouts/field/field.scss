@@ -1,0 +1,22 @@
+@import '../../abstracts/space';
+
+.ch-field {
+  @include ch-space-stack();
+
+  &:not(&--inline) {
+    @include ch-space-stack-group(xxs);
+  }
+
+  > * {
+    display: block;
+  }
+
+  &--inline {
+    @include ch-space-inline-group(left, s);
+    align-items: center;
+
+    > * {
+      display: inline-block;
+    }
+  }
+}
