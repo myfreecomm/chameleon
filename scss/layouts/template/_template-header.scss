@@ -1,0 +1,82 @@
+@import '../../abstracts/helpers';
+@import '../../abstracts/space';
+@import '../../abstracts/typography';
+@import '../../abstracts/menu';
+@import '../../abstracts/layers';
+
+.ch-template-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > .ch-breadcrumbs {
+    order: 1;
+
+    max-width: calc(100% - #{ch-calc-box-height()} * 3);
+    padding-right: #{ch-get-space(s)};
+    padding-left: #{ch-get-space(s)};
+    font-size: #{ch-get-text-size(3)};
+
+    .ch-breadcrumbs-item:last-child {
+      @include ch-truncate;
+    }
+  }
+
+  > .ch-menu {
+    @extend %ch-menu-horizontal;
+
+    order: 2;
+
+    max-width: calc(#{ch-calc-box-height()} * 3);
+
+    > .ch-menu-item {
+      opacity: 0.8;
+  
+      &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+        display: none;
+      }
+  
+      &:hover:focus,
+      &:hover,
+      &:focus {
+        opacity: 1;
+        background: transparent;
+      }
+
+      > .ch-menu-item-label {
+        text-transform: uppercase;
+        font-weight: #{ch-get-text-weight(bold)};
+      }
+    }
+
+    &.is-expanded {
+      max-width: 100%;
+      margin-left: #{ch-calc-box-height()};
+
+      > .ch-menu-item {
+        &.ch-more {
+          position: fixed;
+          left: 0;
+        }
+
+        &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+          display: block;
+        }
+
+        &:not(.ch-menu-item--icon) > .ch-menu-item-label {
+          width: max-content;
+        }
+      }
+
+      + .ch-breadcrumbs {
+        display: none;
+      }
+    }
+  }
+
+  &.is-sticky {
+    position: sticky;
+
+    @include ch-shadow(2, top-bottom);
+  }
+}
