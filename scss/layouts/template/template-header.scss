@@ -1,3 +1,4 @@
+@import '../../abstracts/dimensions';
 @import '../../abstracts/helpers';
 @import '../../abstracts/layers';
 @import '../../abstracts/menu';
@@ -7,6 +8,10 @@
 .ch-template-header {
 
   // 1. Base
+
+  @include ch-media(from, tablet) {
+    height: #{ch-get-dimension(1)};
+  }
 
   display: flex;
   align-items: center;
@@ -35,6 +40,11 @@
   // 3. Breadcrumbs
 
   > .ch-breadcrumbs {
+    @include ch-media(from, desktop) {
+      max-width: calc(100% / 3);
+      padding-left: #{ch-get-space(l)};
+    }
+  
     order: 1;
 
     max-width: calc(100% - #{ch-calc-box-height()} * 3);
@@ -54,6 +64,11 @@
   > .ch-menu {
     @extend %ch-menu-horizontal;
 
+    @include ch-media(from, desktop) {
+      max-width: calc(100% / 3 * 2);
+      margin-right: #{ch-get-space(l)};
+    }
+    
     order: 2;
 
     max-width: calc(#{ch-calc-box-height()} * 3);
@@ -64,6 +79,10 @@
       opacity: 0.8;
 
       &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+        @include ch-media(from, desktop) {
+          display: block;
+        }
+
         display: none;
       }
   
@@ -74,15 +93,38 @@
         background: transparent;
       }
 
+      &.ch-more {
+        @include ch-media(from, desktop) {
+          display: none;
+        }
+      }
+
+      &:not(.ch-menu-item--icon) > .ch-menu-item-label {
+        width: max-content;
+      }
+
       > .ch-menu-item-label {
         text-transform: uppercase;
         font-weight: #{ch-get-text-weight(bold)};
+      }
+
+      > .ch-avatar {
+        @include ch-media(from, desktop) {
+          width: #{ch-calc-box-height()};
+          height: #{ch-calc-box-height()};
+          line-height: #{ch-calc-box-height()};
+        }
       }
     }
 
     // 4.2. Expanded state
 
-    &.is-expanded {
+    &.is-expanded {      
+      @include ch-media(from, desktop) {
+        max-width: calc(100% / 3 * 2);
+        margin-left: initial;
+      }
+
       max-width: 100%;
       margin-left: #{ch-calc-box-height()};
 
@@ -95,13 +137,13 @@
         &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
           display: block;
         }
-
-        &:not(.ch-menu-item--icon) > .ch-menu-item-label {
-          width: max-content;
-        }
       }
 
       + .ch-breadcrumbs {
+        @include ch-media(from, desktop) {
+          display: flex;
+        }
+
         display: none;
       }
     }

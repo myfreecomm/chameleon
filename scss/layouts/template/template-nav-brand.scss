@@ -1,3 +1,4 @@
+@import '../../abstracts/breakpoints';
 @import '../../abstracts/colors';
 @import '../../abstracts/typography';
 @import '../../abstracts/dimensions';
@@ -40,6 +41,18 @@
   &.is-open {
     > .ch-template-nav-brand {
       display: block;
+    }
+  }
+
+  // 5. From tablet
+
+  @include ch-media(from, tablet) {
+    .ch-template-nav-brand {
+      display: block;
+
+      .ch-template-nav-brand-name {
+        overflow: hidden;
+      }
     }
   }
 }

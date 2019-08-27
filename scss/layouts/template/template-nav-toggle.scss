@@ -1,3 +1,4 @@
+@import '../../abstracts/breakpoints';
 @import '../../abstracts/colors';
 @import '../../abstracts/icon';
 @import '../../abstracts/dimensions';
@@ -6,9 +7,27 @@
   > .ch-more {
     width: 20%;
     height: #{ch-get-dimension(1)};
+
+    & + .ch-more {
+      display: none;
+    }
   }
-  
+
   &.is-open > .ch-more {
     margin-left: 80%;
+  }
+
+  // 1. From tablet
+
+  @include ch-media(from, tablet) {
+    > .ch-more {
+      display: none;
+  
+      & + .ch-more {
+        display: block;
+
+        width: #{ch-get-dimension(1)};
+      }
+    }
   }
 }

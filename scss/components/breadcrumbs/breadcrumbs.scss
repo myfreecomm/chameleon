@@ -1,4 +1,6 @@
+@import '../../abstracts/breakpoints';
 @import '../../abstracts/colors';
+@import '../../abstracts/helpers';
 @import '../../abstracts/space';
 @import '../../abstracts/typography';
 
@@ -6,9 +8,8 @@
 
   // 1. Base
 
-  @include ch-space-inline-group;
-
   display: flex;
+  flex-wrap: nowrap;
   align-items: baseline;
 
   // 2. Item
@@ -21,11 +22,16 @@
 
       color: #{ch-get-color(text, 2)};
       font-weight: #{ch-get-text-weight(light)};
+      padding-right: #{ch-get-space()};
 
       &:hover:focus,
       &:hover,
       &:focus {
         color: #{ch-get-color(text, 1)};
+      }
+
+      @include ch-media(from, tablet) {
+        display: block;
       }
     }
 
@@ -35,7 +41,7 @@
       display: block;
       position: absolute;
       top: 50%;
-      right: calc(-1 * #{ch-get-space(m)});
+      right: 0;
       transform: translate(0, -50%);
 
       width: #{ch-get-space(m)};
@@ -45,6 +51,10 @@
 
     &:last-child {
       font-weight: #{ch-get-text-weight(bold)};
+    }
+
+    @include ch-media(from, tablet) {
+      @include ch-truncate;
     }
   }
 }
