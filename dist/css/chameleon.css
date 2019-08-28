@@ -4,10 +4,6 @@
   --ch-border-radius-3: 8px; }
 
 :root {
-  --ch-breakpoint-tablet:  769px;
-  --ch-breakpoint-desktop: 1024px; }
-
-:root {
   --ch-color-brand-1:                  #00BBDA;
   --ch-color-brand-1-focus:            #00a5c1;
   --ch-color-brand-1-active:           #008fa7;
@@ -570,32 +566,36 @@ template {
 
 .ch-breadcrumbs {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  display: flex;
+  flex-wrap: nowrap;
   align-items: baseline; }
-  .ch-breadcrumbs > *:not(:last-child) {
-    margin-right: var(--ch-space-m);
-    margin-left: 0; }
   .ch-breadcrumbs-item {
     position: relative; }
     .ch-breadcrumbs-item:not(:last-child) {
       display: none;
       color: var(--ch-color-text-2);
-      font-weight: var(--ch-text-weight-light); }
+      font-weight: var(--ch-text-weight-light);
+      padding-right: var(--ch-space-m); }
       .ch-breadcrumbs-item:not(:last-child):hover:focus, .ch-breadcrumbs-item:not(:last-child):hover, .ch-breadcrumbs-item:not(:last-child):focus {
         color: var(--ch-color-text-1); }
+      @media screen and (min-width: 769px) {
+        .ch-breadcrumbs-item:not(:last-child) {
+          display: block; } }
     .ch-breadcrumbs-item:not(:last-child):after {
       display: block;
       position: absolute;
       top: 50%;
-      right: calc(-1 * var(--ch-space-m));
+      right: 0;
       transform: translate(0, -50%);
       width: var(--ch-space-m);
       content: "/";
       text-align: center; }
     .ch-breadcrumbs-item:last-child {
       font-weight: var(--ch-text-weight-bold); }
+    @media screen and (min-width: 769px) {
+      .ch-breadcrumbs-item {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; } }
 
 .has-icon {
   position: relative;
@@ -929,12 +929,12 @@ template {
   margin-right: var(--ch-space-xxs);
   margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xxsTablet {
     margin-right: var(--ch-space-xxs);
     margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xxsDesktop {
     margin-right: var(--ch-space-xxs);
     margin-left: 0; } }
@@ -943,12 +943,12 @@ template {
   margin-right: 0;
   margin-left: var(--ch-space-xxs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xxsRightTablet {
     margin-right: 0;
     margin-left: var(--ch-space-xxs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xxsRightDesktop {
     margin-right: 0;
     margin-left: var(--ch-space-xxs); } }
@@ -957,12 +957,12 @@ template {
   margin-right: var(--ch-space-xs);
   margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xsTablet {
     margin-right: var(--ch-space-xs);
     margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xsDesktop {
     margin-right: var(--ch-space-xs);
     margin-left: 0; } }
@@ -971,12 +971,12 @@ template {
   margin-right: 0;
   margin-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xsRightTablet {
     margin-right: 0;
     margin-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xsRightDesktop {
     margin-right: 0;
     margin-left: var(--ch-space-xs); } }
@@ -985,12 +985,12 @@ template {
   margin-right: var(--ch-space-s);
   margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--sTablet {
     margin-right: var(--ch-space-s);
     margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--sDesktop {
     margin-right: var(--ch-space-s);
     margin-left: 0; } }
@@ -999,12 +999,12 @@ template {
   margin-right: 0;
   margin-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--sRightTablet {
     margin-right: 0;
     margin-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--sRightDesktop {
     margin-right: 0;
     margin-left: var(--ch-space-s); } }
@@ -1013,12 +1013,12 @@ template {
   margin-right: var(--ch-space-m);
   margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--tablet {
     margin-right: var(--ch-space-m);
     margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--desktop {
     margin-right: var(--ch-space-m);
     margin-left: 0; } }
@@ -1027,12 +1027,12 @@ template {
   margin-right: 0;
   margin-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--rightTablet {
     margin-right: 0;
     margin-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--rightDesktop {
     margin-right: 0;
     margin-left: var(--ch-space-m); } }
@@ -1041,12 +1041,12 @@ template {
   margin-right: var(--ch-space-l);
   margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--lTablet {
     margin-right: var(--ch-space-l);
     margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--lDesktop {
     margin-right: var(--ch-space-l);
     margin-left: 0; } }
@@ -1055,12 +1055,12 @@ template {
   margin-right: 0;
   margin-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--lRightTablet {
     margin-right: 0;
     margin-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--lRightDesktop {
     margin-right: 0;
     margin-left: var(--ch-space-l); } }
@@ -1069,12 +1069,12 @@ template {
   margin-right: var(--ch-space-xl);
   margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xlTablet {
     margin-right: var(--ch-space-xl);
     margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xlDesktop {
     margin-right: var(--ch-space-xl);
     margin-left: 0; } }
@@ -1083,12 +1083,12 @@ template {
   margin-right: 0;
   margin-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xlRightTablet {
     margin-right: 0;
     margin-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xlRightDesktop {
     margin-right: 0;
     margin-left: var(--ch-space-xl); } }
@@ -1097,12 +1097,12 @@ template {
   margin-right: var(--ch-space-xxl);
   margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xxlTablet {
     margin-right: var(--ch-space-xxl);
     margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xxlDesktop {
     margin-right: var(--ch-space-xxl);
     margin-left: 0; } }
@@ -1111,12 +1111,12 @@ template {
   margin-right: 0;
   margin-left: var(--ch-space-xxl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInline--xxlRightTablet {
     margin-right: 0;
     margin-left: var(--ch-space-xxl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInline--xxlRightDesktop {
     margin-right: 0;
     margin-left: var(--ch-space-xxl); } }
@@ -1129,7 +1129,7 @@ template {
     margin-right: var(--ch-space-xxs);
     margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xxsTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1138,7 +1138,7 @@ template {
       margin-right: var(--ch-space-xxs);
       margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xxsDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1155,7 +1155,7 @@ template {
     margin-right: 0;
     margin-left: var(--ch-space-xxs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xxsRightTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1164,7 +1164,7 @@ template {
       margin-right: 0;
       margin-left: var(--ch-space-xxs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xxsRightDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1181,7 +1181,7 @@ template {
     margin-right: var(--ch-space-xs);
     margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xsTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1190,7 +1190,7 @@ template {
       margin-right: var(--ch-space-xs);
       margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xsDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1207,7 +1207,7 @@ template {
     margin-right: 0;
     margin-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xsRightTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1216,7 +1216,7 @@ template {
       margin-right: 0;
       margin-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xsRightDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1233,7 +1233,7 @@ template {
     margin-right: var(--ch-space-s);
     margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--sTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1242,7 +1242,7 @@ template {
       margin-right: var(--ch-space-s);
       margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--sDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1259,7 +1259,7 @@ template {
     margin-right: 0;
     margin-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--sRightTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1268,7 +1268,7 @@ template {
       margin-right: 0;
       margin-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--sRightDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1285,7 +1285,7 @@ template {
     margin-right: var(--ch-space-m);
     margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--tablet {
     display: flex;
     flex-wrap: wrap;
@@ -1294,7 +1294,7 @@ template {
       margin-right: var(--ch-space-m);
       margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--desktop {
     display: flex;
     flex-wrap: wrap;
@@ -1311,7 +1311,7 @@ template {
     margin-right: 0;
     margin-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--rightTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1320,7 +1320,7 @@ template {
       margin-right: 0;
       margin-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--rightDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1337,7 +1337,7 @@ template {
     margin-right: var(--ch-space-l);
     margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--lTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1346,7 +1346,7 @@ template {
       margin-right: var(--ch-space-l);
       margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--lDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1363,7 +1363,7 @@ template {
     margin-right: 0;
     margin-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--lRightTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1372,7 +1372,7 @@ template {
       margin-right: 0;
       margin-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--lRightDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1389,7 +1389,7 @@ template {
     margin-right: var(--ch-space-xl);
     margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xlTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1398,7 +1398,7 @@ template {
       margin-right: var(--ch-space-xl);
       margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xlDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1415,7 +1415,7 @@ template {
     margin-right: 0;
     margin-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xlRightTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1424,7 +1424,7 @@ template {
       margin-right: 0;
       margin-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xlRightDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1441,7 +1441,7 @@ template {
     margin-right: var(--ch-space-xxl);
     margin-left: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xxlTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1450,7 +1450,7 @@ template {
       margin-right: var(--ch-space-xxl);
       margin-left: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xxlDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1467,7 +1467,7 @@ template {
     margin-right: 0;
     margin-left: var(--ch-space-xxl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInlineGroup--xxlRightTablet {
     display: flex;
     flex-wrap: wrap;
@@ -1476,7 +1476,7 @@ template {
       margin-right: 0;
       margin-left: var(--ch-space-xxl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInlineGroup--xxlRightDesktop {
     display: flex;
     flex-wrap: wrap;
@@ -1491,14 +1491,14 @@ template {
   padding-bottom: var(--ch-space-xxs);
   padding-left: var(--ch-space-xxs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xxsTablet {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xxs);
     padding-bottom: var(--ch-space-xxs);
     padding-left: var(--ch-space-xxs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xxsDesktop {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xxs);
@@ -1511,14 +1511,14 @@ template {
   padding-bottom: var(--ch-space-xs);
   padding-left: var(--ch-space-xxs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xxsStretchTablet {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xxs);
     padding-bottom: var(--ch-space-xs);
     padding-left: var(--ch-space-xxs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xxsStretchDesktop {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xxs);
@@ -1531,14 +1531,14 @@ template {
   padding-bottom: var(--ch-space-xs);
   padding-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xsTablet {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xs);
     padding-bottom: var(--ch-space-xs);
     padding-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xsDesktop {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xs);
@@ -1551,14 +1551,14 @@ template {
   padding-bottom: var(--ch-space-xxs);
   padding-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xsSquishTablet {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xs);
     padding-bottom: var(--ch-space-xxs);
     padding-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xsSquishDesktop {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xs);
@@ -1571,14 +1571,14 @@ template {
   padding-bottom: var(--ch-space-s);
   padding-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xsStretchTablet {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-xs);
     padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xsStretchDesktop {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-xs);
@@ -1591,14 +1591,14 @@ template {
   padding-bottom: var(--ch-space-s);
   padding-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--sTablet {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-s);
     padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--sDesktop {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-s);
@@ -1611,14 +1611,14 @@ template {
   padding-bottom: var(--ch-space-xs);
   padding-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--sSquishTablet {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-s);
     padding-bottom: var(--ch-space-xs);
     padding-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--sSquishDesktop {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-s);
@@ -1631,14 +1631,14 @@ template {
   padding-bottom: var(--ch-space-m);
   padding-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--sStretchTablet {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-s);
     padding-bottom: var(--ch-space-m);
     padding-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--sStretchDesktop {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-s);
@@ -1651,14 +1651,14 @@ template {
   padding-bottom: var(--ch-space-m);
   padding-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--tablet {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-m);
     padding-bottom: var(--ch-space-m);
     padding-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--desktop {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-m);
@@ -1671,14 +1671,14 @@ template {
   padding-bottom: var(--ch-space-s);
   padding-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--squishTablet {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-m);
     padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--squishDesktop {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-m);
@@ -1691,14 +1691,14 @@ template {
   padding-bottom: var(--ch-space-l);
   padding-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--stretchTablet {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-m);
     padding-bottom: var(--ch-space-l);
     padding-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--stretchDesktop {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-m);
@@ -1711,14 +1711,14 @@ template {
   padding-bottom: var(--ch-space-l);
   padding-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--lTablet {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-l);
     padding-bottom: var(--ch-space-l);
     padding-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--lDesktop {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-l);
@@ -1731,14 +1731,14 @@ template {
   padding-bottom: var(--ch-space-m);
   padding-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--lSquishTablet {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-l);
     padding-bottom: var(--ch-space-m);
     padding-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--lSquishDesktop {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-l);
@@ -1751,14 +1751,14 @@ template {
   padding-bottom: var(--ch-space-xl);
   padding-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--lStretchTablet {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-l);
     padding-bottom: var(--ch-space-xl);
     padding-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--lStretchDesktop {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-l);
@@ -1771,14 +1771,14 @@ template {
   padding-bottom: var(--ch-space-xl);
   padding-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xlTablet {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xl);
     padding-bottom: var(--ch-space-xl);
     padding-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xlDesktop {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xl);
@@ -1791,14 +1791,14 @@ template {
   padding-bottom: var(--ch-space-l);
   padding-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xlSquishTablet {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-xl);
     padding-bottom: var(--ch-space-l);
     padding-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xlSquishDesktop {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-xl);
@@ -1811,14 +1811,14 @@ template {
   padding-bottom: var(--ch-space-xxl);
   padding-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xlStretchTablet {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xl);
     padding-bottom: var(--ch-space-xxl);
     padding-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xlStretchDesktop {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xl);
@@ -1831,14 +1831,14 @@ template {
   padding-bottom: var(--ch-space-xxl);
   padding-left: var(--ch-space-xxl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xxlTablet {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xxl);
     padding-bottom: var(--ch-space-xxl);
     padding-left: var(--ch-space-xxl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xxlDesktop {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xxl);
@@ -1851,14 +1851,14 @@ template {
   padding-bottom: var(--ch-space-xl);
   padding-left: var(--ch-space-xxl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInset--xxlSquishTablet {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xxl);
     padding-bottom: var(--ch-space-xl);
     padding-left: var(--ch-space-xxl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInset--xxlSquishDesktop {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xxl);
@@ -1871,14 +1871,14 @@ template {
   padding-bottom: var(--ch-space-xxs);
   padding-left: var(--ch-space-xxs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xxsTablet > * {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xxs);
     padding-bottom: var(--ch-space-xxs);
     padding-left: var(--ch-space-xxs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xxsDesktop > * {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xxs);
@@ -1891,14 +1891,14 @@ template {
   padding-bottom: var(--ch-space-xs);
   padding-left: var(--ch-space-xxs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xxsStretchTablet > * {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xxs);
     padding-bottom: var(--ch-space-xs);
     padding-left: var(--ch-space-xxs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xxsStretchDesktop > * {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xxs);
@@ -1911,14 +1911,14 @@ template {
   padding-bottom: var(--ch-space-xs);
   padding-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xsTablet > * {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xs);
     padding-bottom: var(--ch-space-xs);
     padding-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xsDesktop > * {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-xs);
@@ -1931,14 +1931,14 @@ template {
   padding-bottom: var(--ch-space-xxs);
   padding-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xsSquishTablet > * {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xs);
     padding-bottom: var(--ch-space-xxs);
     padding-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xsSquishDesktop > * {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xs);
@@ -1951,14 +1951,14 @@ template {
   padding-bottom: var(--ch-space-s);
   padding-left: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xsStretchTablet > * {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-xs);
     padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xsStretchDesktop > * {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-xs);
@@ -1971,14 +1971,14 @@ template {
   padding-bottom: var(--ch-space-s);
   padding-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--sTablet > * {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-s);
     padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--sDesktop > * {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-s);
@@ -1991,14 +1991,14 @@ template {
   padding-bottom: var(--ch-space-xs);
   padding-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--sSquishTablet > * {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-s);
     padding-bottom: var(--ch-space-xs);
     padding-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--sSquishDesktop > * {
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-s);
@@ -2011,14 +2011,14 @@ template {
   padding-bottom: var(--ch-space-m);
   padding-left: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--sStretchTablet > * {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-s);
     padding-bottom: var(--ch-space-m);
     padding-left: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--sStretchDesktop > * {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-s);
@@ -2031,14 +2031,14 @@ template {
   padding-bottom: var(--ch-space-m);
   padding-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--tablet > * {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-m);
     padding-bottom: var(--ch-space-m);
     padding-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--desktop > * {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-m);
@@ -2051,14 +2051,14 @@ template {
   padding-bottom: var(--ch-space-s);
   padding-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--squishTablet > * {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-m);
     padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--squishDesktop > * {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-m);
@@ -2071,14 +2071,14 @@ template {
   padding-bottom: var(--ch-space-l);
   padding-left: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--stretchTablet > * {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-m);
     padding-bottom: var(--ch-space-l);
     padding-left: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--stretchDesktop > * {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-m);
@@ -2091,14 +2091,14 @@ template {
   padding-bottom: var(--ch-space-l);
   padding-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--lTablet > * {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-l);
     padding-bottom: var(--ch-space-l);
     padding-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--lDesktop > * {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-l);
@@ -2111,14 +2111,14 @@ template {
   padding-bottom: var(--ch-space-m);
   padding-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--lSquishTablet > * {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-l);
     padding-bottom: var(--ch-space-m);
     padding-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--lSquishDesktop > * {
     padding-top: var(--ch-space-m);
     padding-right: var(--ch-space-l);
@@ -2131,14 +2131,14 @@ template {
   padding-bottom: var(--ch-space-xl);
   padding-left: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--lStretchTablet > * {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-l);
     padding-bottom: var(--ch-space-xl);
     padding-left: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--lStretchDesktop > * {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-l);
@@ -2151,14 +2151,14 @@ template {
   padding-bottom: var(--ch-space-xl);
   padding-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xlTablet > * {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xl);
     padding-bottom: var(--ch-space-xl);
     padding-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xlDesktop > * {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xl);
@@ -2171,14 +2171,14 @@ template {
   padding-bottom: var(--ch-space-l);
   padding-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xlSquishTablet > * {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-xl);
     padding-bottom: var(--ch-space-l);
     padding-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xlSquishDesktop > * {
     padding-top: var(--ch-space-l);
     padding-right: var(--ch-space-xl);
@@ -2191,14 +2191,14 @@ template {
   padding-bottom: var(--ch-space-xxl);
   padding-left: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xlStretchTablet > * {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xl);
     padding-bottom: var(--ch-space-xxl);
     padding-left: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xlStretchDesktop > * {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xl);
@@ -2211,14 +2211,14 @@ template {
   padding-bottom: var(--ch-space-xxl);
   padding-left: var(--ch-space-xxl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xxlTablet > * {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xxl);
     padding-bottom: var(--ch-space-xxl);
     padding-left: var(--ch-space-xxl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xxlDesktop > * {
     padding-top: var(--ch-space-xxl);
     padding-right: var(--ch-space-xxl);
@@ -2231,14 +2231,14 @@ template {
   padding-bottom: var(--ch-space-xl);
   padding-left: var(--ch-space-xxl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceInsetGroup--xxlSquishTablet > * {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xxl);
     padding-bottom: var(--ch-space-xl);
     padding-left: var(--ch-space-xxl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceInsetGroup--xxlSquishDesktop > * {
     padding-top: var(--ch-space-xl);
     padding-right: var(--ch-space-xxl);
@@ -2248,77 +2248,77 @@ template {
 .ch-spaceStack--xxs {
   margin-bottom: var(--ch-space-xxs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStack--xxsTablet {
     margin-bottom: var(--ch-space-xxs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStack--xxsDesktop {
     margin-bottom: var(--ch-space-xxs); } }
 
 .ch-spaceStack--xs {
   margin-bottom: var(--ch-space-xs); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStack--xsTablet {
     margin-bottom: var(--ch-space-xs); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStack--xsDesktop {
     margin-bottom: var(--ch-space-xs); } }
 
 .ch-spaceStack--s {
   margin-bottom: var(--ch-space-s); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStack--sTablet {
     margin-bottom: var(--ch-space-s); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStack--sDesktop {
     margin-bottom: var(--ch-space-s); } }
 
 .ch-spaceStack {
   margin-bottom: var(--ch-space-m); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStack--tablet {
     margin-bottom: var(--ch-space-m); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStack--desktop {
     margin-bottom: var(--ch-space-m); } }
 
 .ch-spaceStack--l {
   margin-bottom: var(--ch-space-l); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStack--lTablet {
     margin-bottom: var(--ch-space-l); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStack--lDesktop {
     margin-bottom: var(--ch-space-l); } }
 
 .ch-spaceStack--xl {
   margin-bottom: var(--ch-space-xl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStack--xlTablet {
     margin-bottom: var(--ch-space-xl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStack--xlDesktop {
     margin-bottom: var(--ch-space-xl); } }
 
 .ch-spaceStack--xxl {
   margin-bottom: var(--ch-space-xxl); }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStack--xxlTablet {
     margin-bottom: var(--ch-space-xxl); } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStack--xxlDesktop {
     margin-bottom: var(--ch-space-xxl); } }
 
@@ -2328,13 +2328,13 @@ template {
 .ch-spaceStackGroup--xxs > *:last-child {
   margin-bottom: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStackGroup--xxsTablet > *:not(:last-child) {
     margin-bottom: var(--ch-space-xxs); }
   .ch-spaceStackGroup--xxsTablet > *:last-child {
     margin-bottom: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStackGroup--xxsDesktop > *:not(:last-child) {
     margin-bottom: var(--ch-space-xxs); }
   .ch-spaceStackGroup--xxsDesktop > *:last-child {
@@ -2346,13 +2346,13 @@ template {
 .ch-spaceStackGroup--xs > *:last-child {
   margin-bottom: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStackGroup--xsTablet > *:not(:last-child) {
     margin-bottom: var(--ch-space-xs); }
   .ch-spaceStackGroup--xsTablet > *:last-child {
     margin-bottom: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStackGroup--xsDesktop > *:not(:last-child) {
     margin-bottom: var(--ch-space-xs); }
   .ch-spaceStackGroup--xsDesktop > *:last-child {
@@ -2364,13 +2364,13 @@ template {
 .ch-spaceStackGroup--s > *:last-child {
   margin-bottom: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStackGroup--sTablet > *:not(:last-child) {
     margin-bottom: var(--ch-space-s); }
   .ch-spaceStackGroup--sTablet > *:last-child {
     margin-bottom: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStackGroup--sDesktop > *:not(:last-child) {
     margin-bottom: var(--ch-space-s); }
   .ch-spaceStackGroup--sDesktop > *:last-child {
@@ -2382,13 +2382,13 @@ template {
 .ch-spaceStackGroup > *:last-child {
   margin-bottom: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStackGroup--tablet > *:not(:last-child) {
     margin-bottom: var(--ch-space-m); }
   .ch-spaceStackGroup--tablet > *:last-child {
     margin-bottom: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStackGroup--desktop > *:not(:last-child) {
     margin-bottom: var(--ch-space-m); }
   .ch-spaceStackGroup--desktop > *:last-child {
@@ -2400,13 +2400,13 @@ template {
 .ch-spaceStackGroup--l > *:last-child {
   margin-bottom: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStackGroup--lTablet > *:not(:last-child) {
     margin-bottom: var(--ch-space-l); }
   .ch-spaceStackGroup--lTablet > *:last-child {
     margin-bottom: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStackGroup--lDesktop > *:not(:last-child) {
     margin-bottom: var(--ch-space-l); }
   .ch-spaceStackGroup--lDesktop > *:last-child {
@@ -2418,13 +2418,13 @@ template {
 .ch-spaceStackGroup--xl > *:last-child {
   margin-bottom: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStackGroup--xlTablet > *:not(:last-child) {
     margin-bottom: var(--ch-space-xl); }
   .ch-spaceStackGroup--xlTablet > *:last-child {
     margin-bottom: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStackGroup--xlDesktop > *:not(:last-child) {
     margin-bottom: var(--ch-space-xl); }
   .ch-spaceStackGroup--xlDesktop > *:last-child {
@@ -2436,13 +2436,13 @@ template {
 .ch-spaceStackGroup--xxl > *:last-child {
   margin-bottom: 0; }
 
-@media screen and (min-width: var(--ch-breakpoint-tablet)) {
+@media screen and (min-width: 769px) {
   .ch-spaceStackGroup--xxlTablet > *:not(:last-child) {
     margin-bottom: var(--ch-space-xxl); }
   .ch-spaceStackGroup--xxlTablet > *:last-child {
     margin-bottom: 0; } }
 
-@media screen and (min-width: var(--ch-breakpoint-desktop)) {
+@media screen and (min-width: 1024px) {
   .ch-spaceStackGroup--xxlDesktop > *:not(:last-child) {
     margin-bottom: var(--ch-space-xxl); }
   .ch-spaceStackGroup--xxlDesktop > *:last-child {
@@ -2509,6 +2509,9 @@ template {
   display: flex;
   align-items: center;
   justify-content: space-between; }
+  @media screen and (min-width: 769px) {
+    .ch-template-header {
+      height: var(--ch-dimension-1); } }
   .ch-template-header,
   .ch-template-header > .ch-breadcrumbs,
   .ch-template-header > .ch-menu {
@@ -2526,6 +2529,10 @@ template {
     padding-right: var(--ch-space-s);
     padding-left: var(--ch-space-s);
     font-size: var(--ch-text-size-3); }
+    @media screen and (min-width: 1024px) {
+      .ch-template-header > .ch-breadcrumbs {
+        max-width: calc(100% / 3);
+        padding-left: var(--ch-space-l); } }
     .ch-template-header > .ch-breadcrumbs .ch-breadcrumbs-item:last-child {
       white-space: nowrap;
       overflow: hidden;
@@ -2533,28 +2540,50 @@ template {
   .ch-template-header > .ch-menu {
     order: 2;
     max-width: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s)) * 3); }
+    @media screen and (min-width: 1024px) {
+      .ch-template-header > .ch-menu {
+        max-width: calc(100% / 3 * 2);
+        margin-right: var(--ch-space-l); } }
     .ch-template-header > .ch-menu > .ch-menu-item {
       opacity: 0.8; }
       .ch-template-header > .ch-menu > .ch-menu-item:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
         display: none; }
+        @media screen and (min-width: 1024px) {
+          .ch-template-header > .ch-menu > .ch-menu-item:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+            display: block; } }
       .ch-template-header > .ch-menu > .ch-menu-item:hover:focus, .ch-template-header > .ch-menu > .ch-menu-item:hover, .ch-template-header > .ch-menu > .ch-menu-item:focus {
         opacity: 1;
         background: transparent; }
+      @media screen and (min-width: 1024px) {
+        .ch-template-header > .ch-menu > .ch-menu-item.ch-more {
+          display: none; } }
+      .ch-template-header > .ch-menu > .ch-menu-item:not(.ch-menu-item--icon) > .ch-menu-item-label {
+        width: max-content; }
       .ch-template-header > .ch-menu > .ch-menu-item > .ch-menu-item-label {
         text-transform: uppercase;
         font-weight: var(--ch-text-weight-bold); }
+      @media screen and (min-width: 1024px) {
+        .ch-template-header > .ch-menu > .ch-menu-item > .ch-avatar {
+          width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s));
+          height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s));
+          line-height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s)); } }
     .ch-template-header > .ch-menu.is-expanded {
       max-width: 100%;
       margin-left: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s)); }
+      @media screen and (min-width: 1024px) {
+        .ch-template-header > .ch-menu.is-expanded {
+          max-width: calc(100% / 3 * 2);
+          margin-left: initial; } }
       .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-more {
         position: fixed;
         left: 0; }
       .ch-template-header > .ch-menu.is-expanded > .ch-menu-item:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
         display: block; }
-      .ch-template-header > .ch-menu.is-expanded > .ch-menu-item:not(.ch-menu-item--icon) > .ch-menu-item-label {
-        width: max-content; }
       .ch-template-header > .ch-menu.is-expanded + .ch-breadcrumbs {
         display: none; }
+        @media screen and (min-width: 1024px) {
+          .ch-template-header > .ch-menu.is-expanded + .ch-breadcrumbs {
+            display: flex; } }
   .ch-template-header.is-sticky {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: sticky;
@@ -2567,6 +2596,9 @@ template {
   position: relative;
   height: var(--ch-dimension-1);
   padding-left: var(--ch-dimension-1); }
+  @media screen and (min-width: 769px) {
+    .ch-template-nav-brand {
+      display: block; } }
   .ch-template-nav-brand-icon {
     position: absolute;
     top: 50%;
@@ -2579,6 +2611,9 @@ template {
     font-family: var(--ch-text-font-family-brand);
     font-size: var(--ch-text-size-5);
     line-height: var(--ch-dimension-1); }
+    @media screen and (min-width: 769px) {
+      .ch-template-nav-brand-name {
+        overflow: hidden; } }
 
 .ch-template-nav.is-open > .ch-template-nav-brand {
   display: block; }
@@ -2711,6 +2746,42 @@ template {
   .ch-template-nav.is-open > .ch-menu .ch-menu-submenu > .ch-menu .ch-menu-item {
     padding-left: var(--ch-dimension-1); }
 
+@media screen and (min-width: 769px) {
+  .ch-template-nav > .ch-menu, .ch-template-nav:not(.is-open) > .ch-menu {
+    display: block;
+    flex: 1;
+    width: var(--ch-dimension-2); }
+    .ch-template-nav > .ch-menu > .ch-menu-item:not(.ch-menu-item--icon),
+    .ch-template-nav > .ch-menu > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon), .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-item:not(.ch-menu-item--icon),
+    .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
+      padding-top: var(--ch-space-s);
+      padding-right: var(--ch-space-m) !important;
+      padding-bottom: var(--ch-space-s);
+      padding-left: var(--ch-dimension-1) !important;
+      height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s)); }
+    .ch-template-nav > .ch-menu > .ch-menu-item > .ch-icon:first-child,
+    .ch-template-nav > .ch-menu > .ch-menu-submenu > .ch-menu-item > .ch-icon:first-child, .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-item > .ch-icon:first-child,
+    .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-submenu > .ch-menu-item > .ch-icon:first-child {
+      left: calc(var(--ch-dimension-1) / 2); }
+    .ch-template-nav > .ch-menu > .ch-menu-item > .ch-menu-item-label,
+    .ch-template-nav > .ch-menu > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-label, .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-item > .ch-menu-item-label,
+    .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-submenu > .ch-menu-item > .ch-menu-item-label {
+      display: block; }
+    .ch-template-nav > .ch-menu > .ch-menu-item.is-active:before,
+    .ch-template-nav > .ch-menu > .ch-menu-submenu > .ch-menu-item.is-active:before, .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-item.is-active:before,
+    .ch-template-nav:not(.is-open) > .ch-menu > .ch-menu-submenu > .ch-menu-item.is-active:before {
+      top: var(--ch-space-s);
+      left: var(--ch-space-xxs);
+      width: var(--ch-space-xxs);
+      min-width: auto;
+      height: var(--ch-icon-size-m); }
+  .ch-template-nav.is-expanded > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active:before, .ch-template-nav:focus:hover > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active:before, .ch-template-nav:focus > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active:before, .ch-template-nav:hover > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active:before {
+    display: none; }
+  .ch-template-nav.is-expanded > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active > .ch-icon:first-child, .ch-template-nav:focus:hover > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active > .ch-icon:first-child, .ch-template-nav:focus > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active > .ch-icon:first-child, .ch-template-nav:hover > .ch-menu > .ch-menu-submenu.is-open > .ch-menu-item.is-active > .ch-icon:first-child {
+    color: inherit; }
+  .ch-template-nav.is-expanded > .ch-menu > .ch-menu-submenu.is-open > .ch-menu, .ch-template-nav:focus:hover > .ch-menu > .ch-menu-submenu.is-open > .ch-menu, .ch-template-nav:focus > .ch-menu > .ch-menu-submenu.is-open > .ch-menu, .ch-template-nav:hover > .ch-menu > .ch-menu-submenu.is-open > .ch-menu {
+    display: block; } }
+
 .has-icon {
   position: relative;
   padding-left: var(--ch-dimension-1) !important; }
@@ -2732,6 +2803,15 @@ template {
 .ch-template-nav > .ch-more {
   width: 20%;
   height: var(--ch-dimension-1); }
+  @media screen and (min-width: 769px) {
+    .ch-template-nav > .ch-more {
+      display: none; } }
+  .ch-template-nav > .ch-more + .ch-more {
+    display: none; }
+    @media screen and (min-width: 769px) {
+      .ch-template-nav > .ch-more + .ch-more {
+        display: block;
+        width: var(--ch-dimension-1); } }
 
 .ch-template-nav.is-open > .ch-more {
   margin-left: 80%; }
@@ -2748,4 +2828,29 @@ template {
     z-index: 201;
     flex-direction: column;
     height: 100%; }
+  @media screen and (min-width: 769px) {
+    .ch-template-nav {
+      position: fixed;
+      z-index: 201;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: var(--ch-dimension-1);
+      height: 100vh; }
+      .ch-template-nav.is-expanded, .ch-template-nav:focus:hover, .ch-template-nav:focus, .ch-template-nav:hover {
+        z-index: 201;
+        width: var(--ch-dimension-2); }
+      .ch-template-nav:focus:hover:not(.is-expanded), .ch-template-nav:focus:not(.is-expanded), .ch-template-nav:hover:not(.is-expanded) {
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2); }
+      .ch-template-nav + .ch-template-header,
+      .ch-template-nav + .ch-template-header ~ .ch-template-content {
+        margin-left: var(--ch-dimension-1); }
+      .ch-template-nav.is-expanded + .ch-template-header,
+      .ch-template-nav.is-expanded + .ch-template-header ~ .ch-template-content {
+        margin-left: var(--ch-dimension-2); }
+      .ch-template-nav + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-more {
+        left: var(--ch-dimension-1); }
+      .ch-template-nav.is-expanded + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-more {
+        left: var(--ch-dimension-2); } }
 
