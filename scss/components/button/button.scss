@@ -173,4 +173,10 @@
       }
     }
   }
+
+  // 9. Mock Label
+
+  &--mockLabel {
+    margin-top: #{ch-get-mock-text-size()};
+  }
 }
