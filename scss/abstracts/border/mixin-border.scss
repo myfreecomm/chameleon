@@ -3,11 +3,10 @@
 
 @mixin ch-border (
   $rules: box,
-  $color: border,
+  $color: ch-get-color(border),
   $style: solid,
   $width: $ch-border-width
 ) {
-  $color: ch-get-color($color...);
 
   @each $rule in $rules {
     @if $rule == box {

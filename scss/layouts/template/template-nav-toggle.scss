@@ -4,7 +4,10 @@
 @import '../../abstracts/dimensions';
 
 .ch-template-nav {
-  > .ch-more {
+
+  // 1. Mobile toggle
+
+  > .ch-toggle {
     @include ch-media(from, tablet) {
       display: none;
     }
@@ -12,7 +15,23 @@
     width: 20%;
     height: #{ch-get-dimension(1)};
 
-    & + .ch-more {
+    // 1.1. Icon
+
+    > .ch-toggle-icon {
+      background-color: #{ch-get-color(text, 2, inverse)};
+    }
+
+    &:hover:focus,
+    &:hover,
+    &:focus {
+      > .ch-toggle-icon {
+        background-color: #{ch-get-color(text, 1, inverse)};
+      }
+    }
+
+    // 2. Tablet toggle
+
+    & + .ch-toggle {
       @include ch-media(from, tablet) {
         display: block;
 
@@ -23,7 +42,9 @@
     }
   }
 
-  &.is-open > .ch-more {
+  // 3. Is open state
+
+  &.is-open > .ch-toggle {
     margin-left: 80%;
   }
 }

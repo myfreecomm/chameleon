@@ -28,12 +28,12 @@
       }
 
       // 1.1.2. Focus interaction
-  
+
       &:hover:focus,
       &:focus,
       &:hover {
         background: transparent;
-  
+
         &,
         > .ch-icon {
           color: #{ch-get-color(text, 1, inverse)};
@@ -139,7 +139,7 @@
       > .ch-menu {
         display: block;
         flex: 1;
-  
+
         width: #{ch-get-dimension(2)};
 
         > .ch-menu-item,
