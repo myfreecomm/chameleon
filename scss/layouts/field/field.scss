@@ -7,19 +7,16 @@
 
   &:not(&--inline) {
     @include ch-space-stack-group(xxs);
+
+    .ch-input,
+    .ch-textarea,
+    .ch-select {
+      width: 100%;
+    }
   }
 
   > * {
     display: block;
-  }
-
-  &--inline {
-    @include ch-space-inline-group(left, s);
-    align-items: center;
-
-    > * {
-      display: inline-block;
-    }
   }
 
   &-label {
@@ -31,6 +28,22 @@
         color: #{ch-get-color(#{$type})};
         font-size: ch-get-text-size(1);
       }
+    }&--inline {
+      @include ch-space-inline-group(left, s);
+      align-items: center;
+
+      > * {
+        display: inline-block;
+      }
+    }
+  }
+
+  &--inline {
+    @include ch-space-inline-group(left, s);
+    align-items: center;
+
+    > * {
+      display: inline-block;
     }
   }
 }
