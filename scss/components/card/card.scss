@@ -1,22 +1,31 @@
+@import '../../abstracts/border';
 @import '../../abstracts/box-model';
 @import '../../abstracts/colors';
-@import '../../abstracts/border';
-@import '../../abstracts/space';
 @import '../../abstracts/layers';
+@import '../../abstracts/space';
 
 .ch-card {
+
+  // 1. Base
+
   @include ch-box-model(m, default, box, ch-get-color(border));
   @include ch-border-radius(2);
+
+  // 2. Header
 
   &-header:not(:last-child) {
     @include ch-space-stack;
   }
+
+  // 3. Content
 
   &-content {
     * + &:not(:last-child) {
       @include ch-space-stack;
     }
   }
+
+  // 4. Paddingless composition
 
   &.ch-paddingless {
     > .ch-card-header,
@@ -40,16 +49,20 @@
     }
   }
 
+  // 5. Interactive variation
+
   &--interactive {
     @include ch-shadow;
     cursor: pointer;
 
-    &:focus,
+    &:focus:hover,
     &:hover,
-    &:focus:hover {
+    &:focus {
       @include ch-shadow(3);
     }
   }
+
+  // 6. Active state
 
   &.is-active {
     border-color: ch-get-color(primary);
