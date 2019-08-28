@@ -1,4 +1,4 @@
-@import '../../typography';
+@import '../../typography/variables';
 @import '../../box';
 @import '../../space';
 
@@ -7,7 +7,7 @@
 .ch-dview {
   white-space: normal;
 
-  margin-bottom: calc(-1 * #{em-get-space(s)});
+  margin-bottom: calc(-1 * #{ch-get-space(s)});
 }
 
 // 1.1. Right
@@ -20,7 +20,7 @@
 
 .ch-dview-label,
 .ch-dview > dt {
-  @include em-box((text: $em-text-label));
+  font-weight: $ch-text-label;
 
   text-transform: uppercase;
 }
@@ -29,5 +29,5 @@
 
 .ch-dview-value,
 .ch-dview > dd {
-  @include em-space-stack(s);
+  @include ch-space-inset(s);
 }

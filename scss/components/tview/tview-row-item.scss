@@ -1,4 +1,4 @@
-@import '../../typography';
+@import '../../typography/variables';
 @import '../../helpers';
 @import '../../box-model';
 
@@ -15,22 +15,17 @@
   align-self: center;
   width: 100%;
 
-  font-weight: #{em-get-text-weight(regular)};
+  font-weight: $em-text-table;
   text-align: left;
 
-  @include em-box((
-    text:  $em-text-table,
-    inset: (stretch, s)
-  ));
+  @include ch-space-inset(stretch, s);
 }
 
 // 2. Header
 
 .ch-tview-row-item--header,
 .ch-tview th {
-  @include em-box((
-    text:  $em-text-table-header
-  ));
+  font-weight: $em-text-table-header;
 }
 
 // 3. Hover

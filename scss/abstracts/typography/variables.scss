@@ -1,0 +1,9 @@
+@import './function-get-text-line-height.scss';
+
+$ch-text:              (normal, regular, 3, ch-get-text-line-height(), (text, 2));
+$ch-text-bold:         (normal, bold,    3, ch-get-text-line-height(), (text, 2));
+
+$ch-text-table:        (normal, regular, 3, ch-get-text-line-height(), (text, 1));
+$ch-text-table-header: (normal, bold,    3, ch-get-text-line-height(), (text, 2));
+
+$ch-text-label:        (normal, regular, 1, em-get-text-line-height(), (text, 2));

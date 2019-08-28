@@ -21,9 +21,7 @@
 .ch-tview:not(.ch-tview--card) {
   .ch-tview-row,
   tr {
-    @include em-box((
-      border: $em-border-bottom
-    ));
+    @include ch-box-model(bottom);
   }
 }
 
@@ -39,7 +37,7 @@
 
   .ch-tview-footer .ch-tview-row,
   tfoot tr {
-    @include em-box((border: $em-border-top));
+    @include ch-box-model(top);
   }
 }
 
@@ -120,6 +118,6 @@
 .ch-tview--card tr {
   @extend %ch-card;
 
-  padding: 0 #{em-get-space(s)};
-  @include em-space-stack(s);
+  padding: 0 #{ch-get-space(s)};
+  @include ch-space-inset(s);
 }
