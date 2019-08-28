@@ -22,14 +22,9 @@
 
   &-label {
     display: inline-block;
-    color: #{ch-get-color(text, 1)};
+    @include ch-text-label();
 
-    @each $type in (negative, positive) {
-      &--#{$type} {
-        color: #{ch-get-color(#{$type})};
-        font-size: ch-get-text-size(1);
-      }
-    }&--inline {
+    &--inline {
       @include ch-space-inline-group(left, s);
       align-items: center;
 
@@ -39,9 +34,12 @@
     }
   }
 
+  &-message {
+    @include ch-text-caption();
+  }
+
   &--inline {
-    @include ch-space-inline-group(left, s);
-    align-items: center;
+    @include ch-space-inline-group(left, s, center);
 
     > * {
       display: inline-block;
