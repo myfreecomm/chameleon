@@ -21,8 +21,8 @@
   }
 
   &-label {
-    display: inline-block;
     @include ch-text-label();
+    display: inline-block;
 
     &--inline {
       @include ch-space-inline-group(left, s);
