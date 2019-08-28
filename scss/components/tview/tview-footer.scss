@@ -1,0 +1,8 @@
+@import './placeholder-flex-and-fluid.scss';
+@import './placeholder-flex-column.scss';
+
+.ch-tview-footer,
+.ch-tview > tfoot {
+  @extend %ch-flex-and-fluid;
+  @extend %ch-flex-column;
+}

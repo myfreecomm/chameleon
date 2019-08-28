@@ -1,0 +1,65 @@
+@import '../../typography';
+@import '../../helpers';
+@import '../../box-model';
+
+@import './placeholder-background-neutral-2.scss';
+@import './placeholder-cursor-pointer.scss';
+
+// 1. Base
+
+.ch-tview-row-item,
+.ch-tview td,
+.ch-tview th {
+  display: block;
+  flex-grow: 1;
+  align-self: center;
+  width: 100%;
+
+  font-weight: #{em-get-text-weight(regular)};
+  text-align: left;
+
+  @include em-box((
+    text:  $em-text-table,
+    inset: (stretch, s)
+  ));
+}
+
+// 2. Header
+
+.ch-tview-row-item--header,
+.ch-tview th {
+  @include em-box((
+    text:  $em-text-table-header
+  ));
+}
+
+// 3. Hover
+
+.ch-tview:not(.ch-tview--card) {
+  .ch-tview-row-item--hover {
+    &:hover {
+      @extend %ch-background-neutral-2;
+    }
+  }
+}
+
+// 4. Interactive
+
+.ch-tview:not(.ch-tview--card) {
+  .ch-tview-row-item--interactive {
+    &:hover {
+      @extend %ch-cursor-pointer;
+      @extend %ch-background-neutral-2;
+    }
+  }
+}
+
+// 5. Active state
+
+.ch-tview:not(.ch-tview--card) {
+  .ch-tview-row-item.is-active,
+  .ch-tview td.is-active,
+  .ch-tview th.is-active {
+    @extend %ch-background-neutral-2;
+  }
+}

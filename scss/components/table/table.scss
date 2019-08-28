@@ -58,12 +58,10 @@
 
     text-align: left;
 
-    @include ch-box((
-      inset: (stretch, s),
-      border: $ch-border-top
-    ));
+    @include ch-box-model(s, stretch, box, border);
 
   }
+
 
   // 1.5.1. Fit row variation
 

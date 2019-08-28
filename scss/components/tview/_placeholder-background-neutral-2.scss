@@ -1,0 +1,7 @@
+@import '../../box';
+
+%ch-background-neutral-2 {
+  @include em-box((
+    background: (neutral, 2)
+  ));
+}
