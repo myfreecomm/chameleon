@@ -8,6 +8,10 @@
 
     // 1. Base
 
+    @include ch-media(from, tablet) {
+      display: block;
+    }
+
     display: none;
     position: relative;
 
@@ -29,6 +33,10 @@
     // 3. Name
 
     &-name {
+      @include ch-media(from, tablet) {
+        overflow: hidden;
+      }
+
       color: #{ch-get-color(text, 1, inverse)};
       font-family: #{ch-get-text-font-family(brand)};
       font-size: #{ch-get-text-size(5)};
@@ -41,18 +49,6 @@
   &.is-open {
     > .ch-template-nav-brand {
       display: block;
-    }
-  }
-
-  // 5. From tablet
-
-  @include ch-media(from, tablet) {
-    .ch-template-nav-brand {
-      display: block;
-
-      .ch-template-nav-brand-name {
-        overflow: hidden;
-      }
     }
   }
 }
