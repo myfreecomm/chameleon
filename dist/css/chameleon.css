@@ -1,5 +1,5 @@
 :root {
-  --ch-border-radius-1: 2px;
+  --ch-border-radius-1: 3px;
   --ch-border-radius-2: 4px;
   --ch-border-radius-3: 8px; }
 
@@ -79,6 +79,8 @@
 
 :root {
   --ch-icon-size-unit: 1rem;
+  --ch-icon-size-xxs: calc(0.5  * var(--ch-icon-size-unit));
+  --ch-icon-size-xs:  calc(0.75 * var(--ch-icon-size-unit));
   --ch-icon-size-s:   calc(1    * var(--ch-icon-size-unit));
   --ch-icon-size-m:   calc(1.25 * var(--ch-icon-size-unit));
   --ch-icon-size-l:   calc(1.75 * var(--ch-icon-size-unit));
@@ -93,11 +95,7 @@
   --ch-space-m:      calc(1    * var(--ch-space-unit));
   --ch-space-l:      calc(1.25 * var(--ch-space-unit));
   --ch-space-xl:     calc(2    * var(--ch-space-unit));
-  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit));
-  --ch-space-xxs-l:  calc(1.5  * var(--ch-space-unit));
-  --ch-space-xs-xl:  calc(2.5  * var(--ch-space-unit));
-  --ch-space-m-xl:   calc(3    * var(--ch-space-unit));
-  --ch-space-xl-xxl: calc(6    * var(--ch-space-unit)); }
+  --ch-space-xxl:    calc(3.25 * var(--ch-space-unit)); }
 
 :root {
   --ch-text-font-family:       'Roboto', sans-serif;
@@ -2076,6 +2074,10 @@ template {
 .ch-icon {
   font-size: var(--ch-icon-size-m);
   text-align: center; }
+  .ch-icon--xxs {
+    font-size: var(--ch-icon-size-xxs); }
+  .ch-icon--xs {
+    font-size: var(--ch-icon-size-xs); }
   .ch-icon--s {
     font-size: var(--ch-icon-size-s); }
   .ch-icon--m {
@@ -2256,4 +2258,103 @@ template {
     font-size: var(--ch-text-size-2);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height); }
+
+.ch-button {
+  padding-top: var(--ch-space-xs);
+  padding-right: var(--ch-space-s);
+  padding-bottom: var(--ch-space-xs);
+  padding-left: var(--ch-space-s);
+  border: 1px solid var(--ch-color-border);
+  border-top-left-radius: var(--ch-border-radius-1);
+  border-top-right-radius: var(--ch-border-radius-1);
+  border-bottom-right-radius: var(--ch-border-radius-1);
+  border-bottom-left-radius: var(--ch-border-radius-1);
+  display: inline-block;
+  cursor: pointer;
+  color: var(--ch-color-text-2);
+  font-weight: var(--ch-text-weight-bold);
+  text-align: center;
+  background: transparent; }
+  .ch-button:hover:focus, .ch-button:hover, .ch-button:focus {
+    color: var(--ch-color-text-1);
+    border-color: var(--ch-color-border-focus); }
+  .ch-button:active {
+    color: var(--ch-color-text-1);
+    border-color: var(--ch-color-border-active); }
+  .ch-button:disabled, .ch-button.is-disabled {
+    opacity: 0.5; }
+  .ch-button--primary {
+    border-color: var(--ch-color-primary);
+    background: var(--ch-color-primary);
+    color: var(--ch-color-neutral-2); }
+    .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus {
+      border-color: var(--ch-color-primary-focus);
+      background: var(--ch-color-primary-focus); }
+    .ch-button--primary:active {
+      border-color: var(--ch-color-primary);
+      background: var(--ch-color-primary-active); }
+    .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus, .ch-button--primary:active {
+      color: var(--ch-color-neutral-1); }
+  .ch-button--secondary {
+    border-color: var(--ch-color-primary-active);
+    color: var(--ch-color-primary-active); }
+    .ch-button--secondary:hover:focus, .ch-button--secondary:hover, .ch-button--secondary:focus {
+      border-color: var(--ch-color-primary-focus); }
+    .ch-button--secondary:active {
+      border-color: var(--ch-color-primary-focus); }
+    .ch-button--secondary:hover:focus, .ch-button--secondary:hover, .ch-button--secondary:focus, .ch-button--secondary:active {
+      color: var(--ch-color-primary-focus); }
+  .ch-button--negative {
+    border-color: var(--ch-color-negative);
+    color: var(--ch-color-negative); }
+    .ch-button--negative:hover:focus, .ch-button--negative:hover, .ch-button--negative:focus {
+      border-color: var(--ch-color-negative-focus); }
+    .ch-button--negative:active {
+      border-color: var(--ch-color-negative-active); }
+    .ch-button--negative:hover:focus, .ch-button--negative:hover, .ch-button--negative:focus, .ch-button--negative:active {
+      color: var(--ch-color-negative-active); }
+  .ch-button--ghost, .ch-button--ghost:hover:focus, .ch-button--ghost:hover, .ch-button--ghost:focus, .ch-button--ghost:active {
+    border-color: transparent;
+    background: transparent; }
+  .ch-button--small {
+    padding-top: var(--ch-space-xxs);
+    padding-right: var(--ch-space-xs);
+    padding-bottom: var(--ch-space-xxs);
+    padding-left: var(--ch-space-xs); }
+  .ch-button--icon {
+    padding: 0 !important;
+    position: relative;
+    width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs));
+    min-width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs));
+    min-height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
+    .ch-button--icon > * {
+      display: none; }
+    .ch-button--icon > .ch-icon:first-child,
+    .ch-button--icon > .ch-avatar,
+    .ch-button--icon > .ch-more-icon {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .ch-button--icon > .ch-icon:first-child {
+      font-size: var(--ch-icon-size-s); }
+    .ch-button--icon.ch-button--small {
+      padding: 0 !important;
+      position: relative;
+      width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs));
+      min-width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs));
+      min-height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)); }
+      .ch-button--icon.ch-button--small > * {
+        display: none; }
+      .ch-button--icon.ch-button--small > .ch-icon:first-child,
+      .ch-button--icon.ch-button--small > .ch-avatar,
+      .ch-button--icon.ch-button--small > .ch-more-icon {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .ch-button--icon.ch-button--small > .ch-icon:first-child {
+        font-size: var(--ch-icon-size-xs); }
 
