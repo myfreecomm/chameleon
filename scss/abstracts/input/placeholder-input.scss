@@ -5,8 +5,8 @@
 
 %ch-input {
   @include ch-input-disabled;
-  @include ch-box-model(s, squish, box, border);
-  @include ch-border-radius(2, box);
+  @include ch-box-model(s, squish, box, ch-get-color(border));
+  @include ch-border-radius(1);
   background-color: #{ch-get-color(neutral, 1)};
 
   &:active {

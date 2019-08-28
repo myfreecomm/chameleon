@@ -8,11 +8,19 @@
     @each $type in (normal, inverse) {
       $sufix: ch-generate-variation(($i, $type), (3, normal));
 
-      #{&}#{$sufix} {
-        @include ch-text-title($i);
-  
+      @at-root #{&}#{$sufix} {
+        @extend %ch-placeholder-text-title-#{$i};
+
         > .ch-title-sub {
-          @include ch-text-subtitle($i);
+          @extend %ch-placeholder-text-subtitle-#{$i};
+        }
+      }
+
+      @at-root h#{$i} {
+        @extend %ch-placeholder-text-title-#{$i};
+
+        > .ch-title-sub {
+          @extend %ch-placeholder-text-subtitle-#{$i};
         }
       }
     } // @each $type in (normal, inverse)
