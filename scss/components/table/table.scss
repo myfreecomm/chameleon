@@ -1,5 +1,5 @@
-@import '../../box-model';
 @import '../../border';
+@import '../../box-model';
 
 .ch-table {
 
@@ -54,11 +54,12 @@
   &-cell,
   td,
   th {
+    @include ch-box-model(s, stretch, box, border);
+
     display: table-cell;
 
     text-align: left;
 
-    @include ch-box-model(s, stretch, box, border);
 
   }
 

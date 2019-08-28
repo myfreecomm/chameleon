@@ -118,6 +118,9 @@
 .ch-tview--card tr {
   @extend %ch-card;
 
+  @include ch-space-stack(s);
+
   padding: 0 #{ch-get-space(s)};
-  @include ch-space-inset(s);
+
 }
+

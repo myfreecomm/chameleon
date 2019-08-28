@@ -10,15 +10,17 @@
 .ch-tview-row-item,
 .ch-tview td,
 .ch-tview th {
+  @include ch-space-inset(stretch, s);
+
   display: block;
   flex-grow: 1;
   align-self: center;
   width: 100%;
 
+
   font-weight: $em-text-table;
   text-align: left;
 
-  @include ch-space-inset(stretch, s);
 }
 
 // 2. Header

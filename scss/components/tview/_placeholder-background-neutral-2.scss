@@ -1,7 +1,5 @@
 @import '../../box-model';
 
 %ch-background-neutral-2 {
-  @include em-box((
-    background: (neutral, 2)
-  ));
+  background: #{ch-get-color(neutral, 2)};
 }
