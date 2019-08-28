@@ -1,6 +1,8 @@
 @import '../../abstracts/input';
 
-.ch-input, .ch-textarea {
+.ch-input,
+.ch-textarea,
+.ch-file {
   @extend %ch-input;
 
   &--fluid {
