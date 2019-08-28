@@ -10,10 +10,6 @@
     padding-right: ch-get-space(xl);
   }
 
-  &--fluid {
-    width: 100%;
-  }
-
   &:after {
     $icon: '\f078';
     content: $icon;
@@ -24,5 +20,13 @@
     font-family: "Font Awesome 5 Pro";
     font-weight: ch-get-text-size(regular);
     font-size: ch-get-text-size(1);
+  }
+
+  &--small > select {
+    @extend %ch-input-small;
+  }
+
+  &--fluid {
+    width: 100%;
   }
 }

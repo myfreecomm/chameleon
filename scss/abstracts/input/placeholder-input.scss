@@ -22,3 +22,7 @@
     opacity: .75;
   }
 }
+
+%ch-input-small {
+  @include ch-box-model(xs, squish, box, ch-get-color(border));
+}

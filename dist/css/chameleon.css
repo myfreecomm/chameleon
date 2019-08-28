@@ -6293,6 +6293,15 @@ h3,
     color: var(--ch-color-text-2);
     opacity: .75; }
 
+.ch-input--small,
+.ch-textarea--small,
+.ch-file--small, .ch-select--small > select {
+  padding-top: var(--ch-space-xxs);
+  padding-right: var(--ch-space-xs);
+  padding-bottom: var(--ch-space-xxs);
+  padding-left: var(--ch-space-xs);
+  border: 1px solid var(--ch-color-border); }
+
 .ch-input--fluid,
 .ch-textarea--fluid,
 .ch-file--fluid {
@@ -6464,8 +6473,6 @@ h3,
   .ch-select > select {
     width: 100%;
     padding-right: var(--ch-space-xl); }
-  .ch-select--fluid {
-    width: 100%; }
   .ch-select:after {
     content: "";
     position: absolute;
@@ -6475,4 +6482,6 @@ h3,
     font-family: "Font Awesome 5 Pro";
     font-weight: var(--ch-text-size-regular);
     font-size: var(--ch-text-size-1); }
+  .ch-select--fluid {
+    width: 100%; }
 
