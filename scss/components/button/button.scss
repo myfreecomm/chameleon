@@ -10,7 +10,7 @@
 
   // 1. Base
 
-  @include ch-box-model(s, squish, box, border);
+  @include ch-box-model(s, squish, box, #{ch-get-color(border)});
   @include ch-border-radius(1);
 
   display: inline-block;
@@ -50,9 +50,9 @@
     border-color: #{ch-get-color(primary)};
     background: #{ch-get-color(primary)};
     color: #{ch-get-color(neutral, 2)};
-    
+
     // 2.1. Focus interaction
-    
+
     &:hover:focus,
     &:hover,
     &:focus {

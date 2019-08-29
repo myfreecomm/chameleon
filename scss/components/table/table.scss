@@ -54,15 +54,13 @@
   &-cell,
   td,
   th {
-    @include ch-box-model(s, stretch, box, border);
+    @include ch-box-model(s, stretch, top, #{ch-get-color(border)});
 
     display: table-cell;
 
     text-align: left;
-
-
+    vertical-align: middle;
   }
-
 
   // 1.5.1. Fit row variation
 
