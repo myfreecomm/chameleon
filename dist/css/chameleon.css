@@ -10286,11 +10286,11 @@ h3,
       padding-bottom: var(--ch-space-m); } }
 
 @media screen and (min-width: 769px) {
-  .ch-template-nav:not(.is-expanded) > .ch-menu {
+  .ch-template-nav:not(:hover):not(.is-expanded) > .ch-menu {
     width: var(--ch-dimension-2); }
-    .ch-template-nav:not(.is-expanded) > .ch-menu > .ch-menu-submenu > .ch-menu-item.is-active:before {
+    .ch-template-nav:not(:hover):not(.is-expanded) > .ch-menu > .ch-menu-submenu > .ch-menu-item.is-active:before {
       content: ""; }
-    .ch-template-nav:not(.is-expanded) > .ch-menu > .ch-menu-submenu > .ch-menu {
+    .ch-template-nav:not(:hover):not(.is-expanded) > .ch-menu > .ch-menu-submenu > .ch-menu {
       display: none; } }
 
 .has-icon {
