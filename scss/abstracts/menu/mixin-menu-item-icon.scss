@@ -1,12 +1,7 @@
-// sass-lint:disable no-important
+@import '../helpers';
 
-@import './function-calc-box-height';
-@import './mixin-paddingless';
-@import '../space';
-@import '../typography';
-
-@mixin ch-icon-only($size) {
-  $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space($size));
+@mixin ch-menu-item-icon {
+  $size: ch-calc-box-height();
 
   @include ch-paddingless(true);
 

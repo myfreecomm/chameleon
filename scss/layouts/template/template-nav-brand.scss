@@ -1,0 +1,54 @@
+@import '../../abstracts/breakpoints';
+@import '../../abstracts/colors';
+@import '../../abstracts/typography';
+@import '../../abstracts/dimensions';
+
+.ch-template-nav {
+  &-brand {
+
+    // 1. Base
+
+    @include ch-media(from, tablet) {
+      display: block;
+    }
+
+    display: none;
+    position: relative;
+
+    height: #{ch-get-dimension(1)};
+    padding-left: #{ch-get-dimension(1)};
+
+    // 2. Icon
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      left: calc(#{ch-get-dimension(1)} / 2);
+      transform: translate(-50%, -50%);
+
+      width: calc(#{ch-get-dimension(1)} - 2 * #{ch-get-space(s)});
+      height: calc(#{ch-get-dimension(1)} -  2 * #{ch-get-space(s)});
+    }
+
+    // 3. Name
+
+    &-name {
+      @include ch-media(from, tablet) {
+        overflow: hidden;
+      }
+
+      color: #{ch-get-color(text, 1, inverse)};
+      font-family: #{ch-get-text-font-family(brand)};
+      font-size: #{ch-get-text-size(5)};
+      line-height: #{ch-get-dimension(1)};
+    }
+  }
+
+  // 4. Open state
+
+  &.is-open {
+    > .ch-template-nav-brand {
+      display: block;
+    }
+  }
+}

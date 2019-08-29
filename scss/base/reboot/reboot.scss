@@ -45,6 +45,8 @@ body {
   font-family: ch-get-text-font-family();
   font-size: ch-get-text-size();
   line-height: ch-get-text-line-height();
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /**

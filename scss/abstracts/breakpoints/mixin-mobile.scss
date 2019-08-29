@@ -1,7 +1,7 @@
-@import './function-get-breakpoint';
+@import './variables';
 
 @mixin ch-mobile {
-  $width: calc(#{ch-get-breakpoint(tablet)} - 1px);
+  $width: calc(#{$ch-breakpoint-tablet} - 1px);
 
   @media screen and (max-width: $width) {
     @content;
