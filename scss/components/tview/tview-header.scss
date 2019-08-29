@@ -1,8 +1,0 @@
-@import './placeholder-flex-and-fluid.scss';
-@import './placeholder-flex-column.scss';
-
-.ch-tview-header,
-.ch-tview > thead {
-  @extend %ch-flex-and-fluid;
-  @extend %ch-flex-column;
-}
