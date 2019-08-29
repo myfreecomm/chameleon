@@ -1,0 +1,5 @@
+@import '../../abstracts/dimensions';
+
+.ch-template-content {
+  padding-bottom: #{ch-get-dimension(1)};
+}
