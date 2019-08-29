@@ -1,0 +1,19 @@
+@import '../../abstracts/space';
+
+.ch-grid {
+  $calc: calc(100% / 12 - #{ch-get-space()});
+
+  &-row {
+    @include ch-space-stack;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($calc, 1fr));
+    grid-column-gap: ch-get-space();
+    grid-row-gap: ch-get-space();
+
+    @for $i from 1 through 12 {
+      > .ch-col--#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+}
