@@ -1,4 +1,4 @@
-@import '../../abstracts/typography/variables';
+@import '../../abstracts/typography';
 @import '../../abstracts/space';
 
 // 1. Base
@@ -19,7 +19,7 @@
 
 .ch-dview-label,
 .ch-dview > dt {
-  font-weight: $ch-text-label;
+  @extend %ch-text-label;
 
   text-transform: uppercase;
 }
