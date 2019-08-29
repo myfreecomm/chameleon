@@ -1,0 +1,32 @@
+@import '../../abstracts/typography';
+@import '../../abstracts/space';
+
+// 1. Base
+
+.ch-dview {
+  white-space: normal;
+
+  margin-bottom: calc(-1 * #{ch-get-space(s)});
+}
+
+// 1.1. Right
+
+.ch-dview--right {
+  text-align: right;
+}
+
+// 2. Label
+
+.ch-dview-label,
+.ch-dview > dt {
+  @extend %ch-text-label;
+
+  text-transform: uppercase;
+}
+
+// 3. Value
+
+.ch-dview-value,
+.ch-dview > dd {
+  @include ch-space-stack(s);
+}
