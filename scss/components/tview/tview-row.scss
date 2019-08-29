@@ -116,13 +116,11 @@
 
 .ch-tview--card .ch-tview-row,
 .ch-tview--card tr {
-  // @extend .ch-card;
+  @extend .ch-card;
 
   @include ch-space-stack(s);
 
-
-
-  // padding: 0 #{ch-get-space(s)};
+  padding: 0 #{ch-get-space(s)};
 
 }
 
