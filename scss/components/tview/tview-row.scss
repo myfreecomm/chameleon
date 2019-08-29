@@ -1,7 +1,7 @@
-@import '../../box-model';
-@import '../../border';
-@import '../../color';
-@import '../../card';
+@import '../../abstracts/box-model';
+@import '../../abstracts/border';
+@import '../../abstracts/colors';
+// @import '../../card';
 
 @import './placeholder-flex-and-fluid.scss';
 @import './placeholder-background-neutral-2.scss';
@@ -21,7 +21,7 @@
 .ch-tview:not(.ch-tview--card) {
   .ch-tview-row,
   tr {
-    @include ch-box-model(bottom);
+    @include ch-box-model(box, bottom);
   }
 }
 
@@ -37,7 +37,7 @@
 
   .ch-tview-footer .ch-tview-row,
   tfoot tr {
-    @include ch-box-model(top);
+    @include ch-box-model(box, top);
   }
 }
 
@@ -83,11 +83,11 @@
   &:hover:focus,
   &:hover,
   &:focus {
-    @extend %ch-card-focus;
+    // @extend %ch-card-focus;
   }
 
   &:active {
-    @extend %ch-card-active;
+    // @extend %ch-card-active;
   }
 
   // 3.2.1. Active state
@@ -96,11 +96,11 @@
     &:hover:focus,
     &:hover,
     &:focus {
-      @extend %ch-card-primary-focus;
+      // @extend %ch-card-primary-focus;
     }
 
     &:active {
-      @extend %ch-card-primary-active;
+      // @extend %ch-card-primary-active;
     }
   }
 }
@@ -109,18 +109,18 @@
 
 .ch-tview--card .ch-tview-row.is-active,
 .ch-tview--card tr.is-active {
-  @extend %ch-card-primary;
+  // @extend %ch-card-primary;
 }
 
 // 5. Card
 
 .ch-tview--card .ch-tview-row,
 .ch-tview--card tr {
-  @extend %ch-card;
+  // @extend %ch-card;
 
   @include ch-space-stack(s);
 
-  padding: 0 #{ch-get-space(s)};
+  // padding: 0 #{ch-get-space(s)};
 
 }
 

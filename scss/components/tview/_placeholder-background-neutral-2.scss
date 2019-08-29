@@ -1,4 +1,4 @@
-@import '../../box-model';
+@import '../../abstracts/box-model';
 
 %ch-background-neutral-2 {
   background: #{ch-get-color(neutral, 2)};

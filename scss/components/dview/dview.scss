@@ -1,6 +1,5 @@
-@import '../../typography/variables';
-@import '../../box';
-@import '../../space';
+@import '../../abstracts/typography/variables';
+@import '../../abstracts/space';
 
 // 1. Base
 
@@ -29,5 +28,5 @@
 
 .ch-dview-value,
 .ch-dview > dd {
-  @include ch-space-inset(s);
+  @include ch-space-stack(s);
 }

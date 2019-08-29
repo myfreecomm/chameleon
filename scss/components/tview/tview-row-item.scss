@@ -1,6 +1,6 @@
-@import '../../typography/variables';
-@import '../../helpers';
-@import '../../box-model';
+@import '../../abstracts/typography/variables';
+@import '../../abstracts/helpers';
+@import '../../abstracts/box-model';
 
 @import './placeholder-background-neutral-2.scss';
 @import './placeholder-cursor-pointer.scss';
@@ -18,7 +18,7 @@
   width: 100%;
 
 
-  font-weight: $em-text-table;
+  font-weight: $ch-text-table;
   text-align: left;
 
 }
@@ -27,7 +27,7 @@
 
 .ch-tview-row-item--header,
 .ch-tview th {
-  font-weight: $em-text-table-header;
+  font-weight: $ch-text-table-header;
 }
 
 // 3. Hover
