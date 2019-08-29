@@ -1,40 +1,5 @@
-@import '../space';
-@import '../box-model';
+@import './mixin-menu-horizontal';
 
 %ch-menu-horizontal {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  align-items: stretch;
-
-  > .ch-menu-item:not(.ch-menu-item--icon),
-  > .ch-menu-submenu {
-    width: auto;
-  }
-
-  > .ch-menu-item:not(.ch-menu-item--icon),
-  > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
-    @include ch-box-model(xs, stretch);
-  }
-
-  > .ch-menu-submenu {
-    > .ch-menu,
-    &.is-open > .ch-menu {
-      display: none;
-    }
-  }
-
-  > .is-active:before,
-  > .ch-menu-submenu > .is-active:before {
-    $empty: '';
-    // sass-lint:disable no-important
-    content: $empty !important;
-    top: auto;
-    left: 50%;
-    bottom: ch-get-space(xxs);
-    width: calc(100% - 2 * #{ch-get-space(m)});
-    min-width: #{ch-get-icon-size(m)};
-    height: #{ch-get-space(xxs)};
-    transform: translate(-50%, 0);
-  }
+  @include ch-menu-horizontal;
 }

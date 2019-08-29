@@ -45,6 +45,8 @@
   // 3. Is open state
 
   &.is-open > .ch-toggle {
-    margin-left: 80%;
+    @include ch-media(only, mobile) {
+      margin-left: 80%;
+    }
   }
 }

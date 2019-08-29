@@ -76,7 +76,7 @@
     // 2.2. Arrow
 
     > .ch-menu-item > .ch-menu-item-arrow {
-      transform: translate(50%, -50%) scale(0.6);
+      transform: translate(50%, -50%);
     }
 
     // 2.3. Open state
@@ -102,7 +102,7 @@
         // 2.3.2.2. Arrow
 
         > .ch-menu-item-arrow {
-          transform: translate(50%, -50%) scale(0.6) rotate(90deg);
+          transform: translate(50%, -50%) rotate(90deg);
         }
       }
     }

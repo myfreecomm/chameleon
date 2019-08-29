@@ -16,6 +16,8 @@
 
   > .ch-menu {
 
+    flex: 1;
+
     // 1.1. Item
 
     .ch-menu-item {
@@ -62,51 +64,52 @@
   // 2. Is not open state
 
   &:not(.is-open) > .ch-menu {
+    @include ch-media(only, mobile) {
+      // 2.1. Base
 
-    // 2.1. Base
+      @include ch-menu-horizontal;
 
-    @extend %ch-menu-horizontal;
-    
-    width: 80%;
-    justify-content: space-around;
+      width: 80%;
+      justify-content: space-around;
 
-    // 2.2. Menu item
+      // 2.2. Menu item
 
-    > * {
-      flex-basis: 100%;
-
-      &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
-        display: none;
-      }
-    }
-
-    > .ch-menu-item,
-    > .ch-menu-submenu > .ch-menu-item {
-      @include ch-paddingless(true, horizontal);
-
-      height: #{ch-get-dimension(1)};
-
-      // 2.2.1. Icon
-
-      &.has-icon > .ch-icon {
-        left: 50%;
-      }
-
-      // 2.2.2. Arrow and label
-
-      > .ch-menu-item-arrow,
-      > .ch-menu-item-label {
-        display: none;
-      }
+      > * {
+        flex-basis: 100%;
   
-      // 2.2.3. Bottom bar
+        &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+          display: none;
+        }
+      }
 
-      &.is-active:before {
-        width: ch-get-icon-size();
-        height: #{ch-get-space(xxs)};
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
+      > .ch-menu-item,
+      > .ch-menu-submenu > .ch-menu-item {
+        @include ch-paddingless(true, horizontal);
+
+        height: #{ch-get-dimension(1)};
+
+        // 2.2.1. Icon
+
+        &.has-icon > .ch-icon {
+          left: 50%;
+        }
+
+        // 2.2.2. Arrow and label
+
+        > .ch-menu-item-arrow,
+        > .ch-menu-item-label {
+          display: none;
+        }
+
+        // 2.2.3. Bottom bar
+
+        &.is-active:before {
+          width: ch-get-icon-size();
+          height: #{ch-get-space(xxs)};
+          top: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
   }
@@ -114,81 +117,40 @@
   // 3. Open state
 
   &.is-open > .ch-menu {
+    @include ch-media(only, mobile) {
+      // 3.1. Base
 
-    // 3.1. Base
+      overflow-y: auto;
+  
+      // 3.2. Item
 
-    flex: 1;
-    overflow-y: auto;
+      > .ch-menu-item {
+        padding-left: #{ch-get-space(l)};
+      }
 
-    // 3.2. Item
-
-    .ch-menu-item {
-      @include ch-box-model(l, squish);
-    }
-
-    .ch-menu-submenu > .ch-menu .ch-menu-item {
-      padding-left: #{ch-get-dimension(1)};
+      .ch-menu-item {
+        padding-top: #{ch-get-space(m)};
+        padding-right: #{ch-get-space(l)};
+        padding-bottom: #{ch-get-space(m)};
+      }
     }
   }
 
   // 4. From tablet
 
   @include ch-media(from, tablet) {
-    &,
-    &:not(.is-open) {
-      > .ch-menu {
-        display: block;
-        flex: 1;
+    &:not(.is-expanded) > .ch-menu {
+      width: #{ch-get-dimension(2)};
 
-        width: #{ch-get-dimension(2)};
+      > .ch-menu-submenu {
+        > .ch-menu-item.is-active:before {
+          $empty: '';
 
-        > .ch-menu-item,
-        > .ch-menu-submenu > .ch-menu-item {
-          &:not(.ch-menu-item--icon) {
-            padding-top: #{ch-get-space(s)};
-            padding-right: #{ch-get-space(m)} !important;
-            padding-bottom: #{ch-get-space(s)};
-            padding-left: #{ch-get-dimension(1)} !important;
-            height: #{ch-calc-box-height()};
-          }
-
-          > .ch-icon:first-child {
-            left: calc(#{ch-get-dimension(1)} / 2);
-          }
-
-          > .ch-menu-item-label {
-            display: block;
-          }
-
-          &.is-active:before {
-            top: #{ch-get-space(s)};
-            left: #{ch-get-space(xxs)};
-
-            width: #{ch-get-space(xxs)};
-            min-width: auto;
-            height: #{ch-get-icon-size()};
-          }
-        }
-      }
-    }
-
-    &.is-expanded,
-    &:focus:hover,
-    &:focus,
-    &:hover {
-      > .ch-menu > .ch-menu-submenu.is-open {
-        > .ch-menu-item.is-active {
-          &:before {
-            display: none;
-          }
-
-          > .ch-icon:first-child {
-            color: inherit;
-          }
+          content: $empty;
         }
 
         > .ch-menu {
-          display: block;
+          display: none;
         }
       }
     }
