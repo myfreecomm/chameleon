@@ -106,11 +106,11 @@
 
   // 6. Border
 
-  --ch-color-border:                   #{$ch-color-grey-20};
-  --ch-color-border-focus:             #{ch-get-color-focus($ch-color-grey-20)};
-  --ch-color-border-active:            #{ch-get-color-active($ch-color-grey-20)};
+  --ch-color-border:                   #{$ch-color-navy-20};
+  --ch-color-border-focus:             #{ch-get-color-focus($ch-color-navy-20)};
+  --ch-color-border-active:            #{ch-get-color-active($ch-color-navy-20)};
 
-  --ch-color-border-inverse:           #{$ch-color-grey-20};
-  --ch-color-border-focus-inverse:     #{ch-get-color-focus($ch-color-grey-20,  inverse)};
-  --ch-color-border-active-inverse:    #{ch-get-color-active($ch-color-grey-20, inverse)};
+  --ch-color-border-inverse:           #{$ch-color-navy-20};
+  --ch-color-border-focus-inverse:     #{ch-get-color-focus($ch-color-navy-20,  inverse)};
+  --ch-color-border-active-inverse:    #{ch-get-color-active($ch-color-navy-20, inverse)};
 }
