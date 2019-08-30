@@ -1,18 +1,45 @@
 @import '../../abstracts/space';
+@import '../../abstracts/breakpoints';
 
 .ch-grid {
-  $calc: calc(100% / 12 - #{ch-get-space()});
+  $columns-number: 12;
+  $columns-width: calc(100% / #{$columns-number} - #{ch-get-space()});
 
-  &-row {
-    @include ch-space-stack;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax($calc, 1fr));
-    grid-column-gap: ch-get-space();
-    grid-row-gap: ch-get-space();
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(#{$columns-width}, 1fr));
+  grid-column-gap: ch-get-space();
+  grid-row-gap: ch-get-space();
 
-    @for $i from 1 through 12 {
-      > .ch-col--#{$i} {
-        grid-column: span $i;
+  &-column {
+    grid-column: span 1;
+  }
+
+  @for $i from 1 through $columns-number {
+    &--#{$i} {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+
+  @for $i from 1 through $columns-number {
+    > .ch-grid-column--#{$i} {
+      grid-column: span $i;
+    }
+  }
+
+  @each $media in $ch-breakpoint-screens {
+    @if $media != desktop {
+      @include ch-media(only, $media) {
+        @for $i from 1 through $columns-number {
+          &--#{$media}#{$i} {
+            grid-template-columns: repeat(#{$i}, 1fr);
+          }
+        }
+
+        @for $i from 1 through $columns-number {
+          > .ch-grid-column--#{$media}#{$i} {
+            grid-column: span $i;
+          }
+        }
       }
     }
   }
