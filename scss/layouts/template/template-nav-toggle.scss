@@ -1,0 +1,52 @@
+@import '../../abstracts/breakpoints';
+@import '../../abstracts/colors';
+@import '../../abstracts/icon';
+@import '../../abstracts/dimensions';
+
+.ch-template-nav {
+
+  // 1. Mobile toggle
+
+  > .ch-toggle {
+    @include ch-media(from, tablet) {
+      display: none;
+    }
+
+    width: 20%;
+    height: #{ch-get-dimension(1)};
+
+    // 1.1. Icon
+
+    > .ch-toggle-icon {
+      background-color: #{ch-get-color(text, 2, inverse)};
+    }
+
+    &:hover:focus,
+    &:hover,
+    &:focus {
+      > .ch-toggle-icon {
+        background-color: #{ch-get-color(text, 1, inverse)};
+      }
+    }
+
+    // 2. Tablet toggle
+
+    & + .ch-toggle {
+      @include ch-media(from, tablet) {
+        display: block;
+
+        width: #{ch-get-dimension(1)};
+      }
+
+      display: none;
+    }
+  }
+
+  // 3. Is open state
+
+  &.is-open > .ch-toggle {
+    @include ch-media(only, mobile) {
+      margin-left: 80%;
+    }
+  }
+}
