@@ -1,0 +1,5 @@
+@import '../colors';
+
+%ch-card-primary {
+  border-color: #{ch-get-color(primary)};
+}

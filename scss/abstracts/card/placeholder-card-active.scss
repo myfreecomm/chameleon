@@ -1,0 +1,5 @@
+@import '../color';
+
+%ch-card-active {
+  border-color: #{ch-get-color(border, active)}
+}

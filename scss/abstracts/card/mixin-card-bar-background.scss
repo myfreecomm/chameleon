@@ -1,0 +1,20 @@
+@import '../border';
+@import '../color';
+
+@mixin ch-card-bar-background ($position, $color: border) {
+  @if $position == top {
+    box-shadow: inset 0 #{ch-get-border-radius(2)} 0 #{ch-get-color($color...)};
+  }
+
+  @else if $position == right {
+    box-shadow: inset calc(-1 * #{ch-get-border-radius(2)}) 0 0 #{ch-get-color($color...)};
+  }
+
+  @else if $position == bottom {
+    box-shadow: inset 0 calc(-1 * #{ch-get-border-radius(2)}) 0 #{ch-get-color($color...)};
+  }
+
+  @else if $position == left {
+    box-shadow: inset #{ch-get-border-radius(2)} 0 0 #{ch-get-color($color...)};
+  }
+}

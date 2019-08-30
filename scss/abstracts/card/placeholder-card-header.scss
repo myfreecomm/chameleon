@@ -1,0 +1,8 @@
+@import '../space';
+
+%ch-card-header {
+  &:not(:last-child) {
+    @include ch-space-stack(m);
+  }
+}
+

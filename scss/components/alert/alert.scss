@@ -1,16 +1,12 @@
-@import 'src/abstracts/card/stylesheets/main.scss';
-@import 'src/abstracts/color/stylesheets/main.scss';
+@import '../../abstracts/colors';
 
 .ch-alert {
-  $supports: (info, warning, positive, negative);
-
-  // 1. Base
-
-  @extend %ch-card;
 
   // 1.1. Side bar
 
   @extend %ch-card-bar-left;
+
+  $supports: (info, warning, positive, negative);
 
   // 1.2. Header
 
@@ -24,17 +20,6 @@
     @extend %ch-card-content;
   }
 
-  // 1.4. Inner
-
-  > #{&}-inner {
-    @extend %ch-card-inner;
-  }
-
-  // 2. Has inner
-
-  &.has-inner {
-    @extend %ch-card-has-inner;
-  }
 
   // 3. Support variations
 
@@ -50,8 +35,8 @@
       // 3.2. Icon
 
       .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
-        color: ch-get-color($variation);
-      }
+        color: #{ch-get-color($variation)};
+      }}
     }
   }
 
@@ -74,7 +59,7 @@
         // 4.1.2. Icon
 
         .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
-          color: ch-get-color($variation, inverse);
+          color: #{ch-get-color($variation, inverse)};
         }
       }
     }

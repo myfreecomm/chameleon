@@ -1,0 +1,7 @@
+@import '../space';
+
+%ch-card-content {
+  * + &:not(:last-child) {
+    @include ch-space-inset(m);
+  }
+}
