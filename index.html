@@ -2,127 +2,174 @@
 <html>
 <head>
   <title>Chameleon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="dist/css/chameleon.css">
 </head>
-<body style="padding: 40px">
+<body>
+  <div class="ch-template">
 
-  <div class="ch-card ch-card--interactive ch-paddingless" style="width: 240px;">
-    <header class="ch-card-header">
-      <h3>Hello World</h3>
-    </header>
-    <div class="ch-card-content ch-paddingless">
+    <!-- NAV BEGIN -->
+    <nav class="ch-template-nav is-expanded">
+
+      <!-- BRAND BEGIN -->
+      <div class="ch-template-nav-brand">
+        <img src="https://via.placeholder.com/72" class="ch-template-nav-brand-icon">
+        <h1 class="ch-template-nav-brand-name">Chameleon</h1>
+      </div>
+      <!-- BRAND END -->
+
+      <!-- MENU BEGIN -->
       <ul class="ch-menu">
         <li class="ch-menu-submenu is-open">
           <a href="#" class="ch-menu-item has-icon has-iconRight is-active">
             <i class="ch-icon fal fa-chart-line"></i>
             <span class="ch-menu-item-label">Item 1</span>
-            <i class="ch-menu-item-arrow ch-icon fal fa-chevron-right"></i>
+            <i class="ch-menu-item-arrow ch-icon fal fa-angle-right"></i>
           </a>
 
           <ul class="ch-menu">
-            <li class="ch-menu-item has-iconRight">
+            <li class="ch-menu-item">
               <span class="ch-menu-item-label">Item 2</span>
-              <i class="ch-icon fal fa-chart-line"></i>
             </li>
-
+            
             <li class="ch-menu-item is-active">
               <span class="ch-menu-item-label">Item 3</span>
             </li>
-
+            
             <li class="ch-menu-item">
               <span class="ch-menu-item-label">Item 4</span>
             </li>
           </ul>
         </li>
 
-        <li class="ch-menu-item has-iconRight">
-          <span class="ch-menu-item-label">Item 2</span>
-          <i class="ch-icon fal fa-chart-line"></i>
-        </li>
-
-        <li class="ch-menu-item">
+        <li class="ch-menu-item has-icon">
+          <i class="ch-icon fal fa-table"></i>
           <span class="ch-menu-item-label">Item 3</span>
         </li>
 
-        <li class="ch-menu-item">
+        <li class="ch-menu-item has-icon">
+          <i class="ch-icon fal fa-magic"></i>
           <span class="ch-menu-item-label">Item 4</span>
         </li>
 
-        <li class="ch-menu-item">
+        <li class="ch-menu-item has-icon">
+          <i class="ch-icon fal fa-clipboard"></i>
           <span class="ch-menu-item-label">Item 5</span>
         </li>
 
-        <li class="ch-menu-item">
+        <li class="ch-menu-item has-icon">
+          <i class="ch-icon fal fa-chart-line"></i>
           <span class="ch-menu-item-label">Item 6</span>
         </li>
       </ul>
+      <!-- MENU END -->
+
+      <!-- TOGGLE BEGIN -->
+      <label class="ch-toggle">
+        <input type="checkbox" class="ch-toggle-toggle">
+        <span class="ch-toggle-icon"></span>
+      </label>
+      <!-- TOGGLE END -->
+
+      <!-- TOGGLE BEGIN -->
+      <label class="ch-toggle ch-toggle--nav">
+        <input type="checkbox" class="ch-toggle-toggle">
+        <span class="ch-toggle-icon"></span>
+      </label>
+      <!-- TOGGLE END -->
+
+    </nav>
+    <!-- NAV END -->
+
+    <!-- HEADER BEGIN -->
+    <header class="ch-template-header is-sticky">
+      <!-- MENU BEGIN -->
+      <nav class="ch-menu">
+        <label class="ch-menu-item ch-menu-item--icon ch-toggle ch-toggle--left">
+          <input class="ch-toggle-toggle" type="checkbox">
+          <i class="ch-toggle-icon"></i>
+        </label>
+
+        <button class="ch-menu-item ch-menu-item--icon">
+          <i class="ch-icon fal fa-search"></i>
+          <span class="ch-menu-item-label">Buscar</span>
+        </button>
+
+        <button class="ch-menu-item ch-menu-item--icon">
+          <i class="ch-icon fal fa-bell"></i>
+          <span class="ch-menu-item-label">Notificações</span>
+        </button>
+
+        <button class="ch-menu-item ch-menu-item--icon">
+          <i class="ch-icon fal fa-cog"></i>
+          <span class="ch-menu-item-label">Configurações</span>
+        </button>
+
+        <button class="ch-menu-item">
+          <span class="ch-menu-item-label">
+            Nome da conta
+            <i class="ch-icon ch-icon--xs fal fa-chevron-down"></i>
+          </span>
+        </button>
+
+        <button class="ch-menu-item ch-menu-item--icon">
+          <div class="ch-avatar" title="Max Salles">
+          </div>
+        </button>
+      </nav>
+      <!-- MENU END -->
+
+      <!-- BREADCRUMBS BEGIN -->
+      <nav class="ch-breadcrumbs">
+        <a class="ch-breadcrumbs-item" href="#">Fluxo de caixa</a>
+        <a class="ch-breadcrumbs-item" href="#">Contas a pagar</a>
+        <span class="ch-breadcrumbs-item">Nova despesa</span>
+      </nav>
+      <!-- BREADCRUMBS END -->
+    </header>
+    <!-- HEADER END -->
+
+    <!-- CONTENT BEGIN -->
+    <div class="ch-template-content">
+      <table class="ch-table">
+          <thead>
+            <tr>
+              <th> CNPJ </th>
+              <th> CNPJ </th>
+              <!-- <th> CNPJ </th>
+              <th> CNPJ </th>
+              <th> CNPJ </th>
+              <th> CNPJ </th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>70.896.614/0001-89</td>
+              <!-- <td>70.896.614/0001-89</td>
+              <td>70.896.614/0001-89</td>
+              <td>70.896.614/0001-89</td>
+              <td>70.896.614/0001-89</td> -->
+              <td class="ch-table-cell--compact ch-text--right">
+                <button class="ch-button ch-button--small">button</button>
+              </td>
+            </tr>
+            <tr>
+              <td>70.896.614/0001-89</td>
+              <!-- <td>70.896.614/0001-89</td>
+              <td>70.896.614/0001-89</td>
+              <td>70.896.614/0001-89</td>
+              <td>70.896.614/0001-89</td> -->
+              <td class="ch-table-cell--compact ch-text--right">
+                <button class="ch-button ch-button--small">button</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
     </div>
+    <!-- CONTENT END -->
   </div>
-
-  <br />
-
-  <div class="ch-spaceStackGroup">
-    <div class="ch-spaceInlineGroup" style="align-items: center;">
-      <button class="ch-button ch-button--primary">This is a button</button>
-      <button class="ch-button ch-button--secondary">This is a button</button>
-      <button class="ch-button ch-button--negative">This is a button</button>
-      <button class="ch-button">This is a button</button>
-      <button class="ch-button ch-button--icon">
-        <i class="ch-icon fal fa-pencil"></i>
-      </button>
-      <button class="ch-button ch-button--ghost">This is a button</button>
-    </div>
-
-    <div class="ch-spaceInlineGroup" style="align-items: center;">
-      <button class="ch-button ch-button--primary ch-button--small">This is a button</button>
-      <button class="ch-button ch-button--secondary ch-button--small">This is a button</button>
-      <button class="ch-button ch-button--negative ch-button--small">This is a button</button>
-      <button class="ch-button ch-button--small">This is a button</button>
-      <button class="ch-button ch-button--small ch-button--icon">
-        <i class="ch-icon fal fa-pencil"></i>
-      </button>
-      <button class="ch-button ch-button--ghost ch-button--small">This is a button</button>
-    </div>
-  </div>
-
-  <br />
-
-  <table class="ch-table">
-    <thead>
-      <tr>
-        <th> CNPJ </th>
-        <th> CNPJ </th>
-        <th> CNPJ </th>
-        <th> CNPJ </th>
-        <th> CNPJ </th>
-        <th> CNPJ </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td class="ch-table-cell--compact ch-text--right">
-          <button class="ch-button ch-button--primary">button</button>
-        </td>
-      </tr>
-      <tr>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td>70.896.614/0001-89</td>
-        <td class="ch-table-cell--compact ch-text--right">
-          <button class="ch-button ch-button--primary">button</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </body>
 </html>

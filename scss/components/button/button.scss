@@ -1,16 +1,16 @@
 @import '../../abstracts/box-model';
 @import '../../abstracts/border';
-@import '../../abstracts/typography';
 @import '../../abstracts/colors';
-@import '../../abstracts/space';
 @import '../../abstracts/icon';
 @import '../../abstracts/helpers';
+@import '../../abstracts/space';
+@import '../../abstracts/typography';
 
 .ch-button {
 
   // 1. Base
 
-  @include ch-box-model(s, squish, box, #{ch-get-color(border)});
+  @include ch-box-model(s, squish, box, ch-get-color(border));
   @include ch-border-radius(1);
 
   display: inline-block;

@@ -9,35 +9,35 @@
   border-collapse: collapse;
   width: 100%;
 
-  // 1.1. Header
+  // 2. Header
 
   &-header,
   thead {
     display: table-header-group;
   }
 
-  // 1.2. Content
+  // 3. Content
 
   &-content,
   tbody {
     display: table-row-group;
   }
 
-  // 1.3. Footer
+  // 3. Footer
 
   &-footer,
   tfoot {
     display: table-footer-group;
   }
 
-  // 1.4. Row
+  // 4. Row
 
   &-row,
   tr {
     display: table-row;
   }
 
-  // 1.4.1. Position variations
+  // 4.1. Position variations
 
   @each $position in (top, middle, bottom) {
     .ch-table-row--#{$position} {
@@ -49,20 +49,7 @@
     }
   }
 
-  // 1.5. Cell
-
-  &-cell,
-  td,
-  th {
-    @include ch-box-model(s, stretch, top, #{ch-get-color(border)});
-
-    display: table-cell;
-
-    text-align: left;
-    vertical-align: middle;
-  }
-
-  // 1.5.1. Fit row variation
+  // 4.2. Fit variation
 
   &-row--fit {
     > .ch-table-cell:first-child,
@@ -78,14 +65,27 @@
     }
   }
 
-  // 1.5.2. Compact variation
+  // 5. Cell
+
+  &-cell,
+  td,
+  th {
+    @include ch-box-model(s, stretch, top, #{ch-get-color(border)});
+
+    display: table-cell;
+
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  // 5.1. Compact variation
 
   .ch-table-cell--compact {
     padding-top: 0;
     padding-bottom: 0;
   }
 
-  // 1.5.2. Vertical position variants
+  // 5.2. Vertical position variants
 
   @each $position in (top, middle, bottom) {
     .ch-table-cell--#{$position} {
@@ -93,7 +93,7 @@
     }
   }
 
-  // 1.5.3. Remove first border
+  // 6. Remove first border
 
   .ch-table-header,
   thead {

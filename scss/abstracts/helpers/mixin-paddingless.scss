@@ -1,20 +1,17 @@
-// sass-lint:disable no-important
-// sass-lint:disable variable-for-property
-
 @mixin ch-paddingless ($important: false, $type: box) {
-  $important: if($important, !important, unquot(''));
+  $important: if($important, unquote('!important'), unquote(''));
 
   @if $type == box {
-    padding: 0 #{$important};
+    padding: #{0} #{$important};
   }
 
   @else if $type == horizontal {
-    padding-right: 0 #{$important};
-    padding-left: 0 #{$important};
+    padding-right: #{0} #{$important};
+    padding-left: #{0} #{$important};
   }
 
   @else if $type == vertical {
-    padding-top: 0 #{$important};
-    padding-bottom: 0 #{$important};
+    padding-top: #{0} #{$important};
+    padding-bottom: #{0} #{$important};
   }
 }
