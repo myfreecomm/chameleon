@@ -1,0 +1,10 @@
+@import '../space';
+@import '../breakpoints';
+
+@mixin ch-grid-column($columns-number: 1, $start: '') {
+  @if $start == '' {
+    grid-column: span $columns-number;
+  } @else {
+    grid-column: $start / span $columns-number;
+  }
+}

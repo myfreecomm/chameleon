@@ -1,28 +1,13 @@
-@import '../../abstracts/space';
 @import '../../abstracts/grid';
-@import '../../abstracts/breakpoints';
 
 .ch-grid {
-  $columns-width: #{ch-get-columns-width($columns-number)};
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(#{$columns-width}, 1fr));
-  grid-column-gap: ch-get-space();
-  grid-row-gap: ch-get-space();
-
-  &-column {
-    grid-column: span 1;
-  }
+  @include ch-grid;
 
   @for $i from 1 through $columns-number {
-    &--#{$i} {
-      grid-template-columns: repeat(#{$i}, 1fr);
-    }
-  }
+    $suffix: ch-generate-variation(($i), (1));
 
-  @for $i from 1 through $columns-number {
-    > .ch-grid-column--#{$i} {
-      grid-column: span $i;
+    > #{&}-column#{$suffix} {
+      @include ch-grid-column($i);
     }
   }
 
@@ -30,18 +15,10 @@
     @if $screen != mobile {
       @include ch-media(only, $screen) {
         @for $i from 1 through $columns-number {
-          $suffix: ch-generate-variation(($i, $screen), (12, mobile));
+          $suffix: ch-generate-variation(($i, $screen), ($columns-number, mobile));
 
-          &#{&}#{$suffix} {
-            grid-template-columns: repeat(#{$i}, 1fr);
-          }
-        }
-
-        @for $i from 1 through $columns-number {
-          $suffix: ch-generate-variation(($i, $screen), (12, mobile));
-
-          > .ch-grid-column--#{$suffix} {
-            grid-column: span $i;
+          > #{&}-column#{$suffix} {
+            @include ch-grid-column($i);
           }
         }
       }

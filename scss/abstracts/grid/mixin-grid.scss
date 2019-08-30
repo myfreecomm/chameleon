@@ -1,0 +1,32 @@
+@import '../space';
+@import '../breakpoints';
+
+@mixin ch-grid($columns-number: 12, $columns-gap: m) {
+  $columns-width: #{ch-get-columns-width($columns-number)};
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(#{$columns-width}, 1fr));
+  grid-column-gap: ch-get-space($columns-gap);
+  grid-row-gap: ch-get-space($columns-gap);
+
+  @for $i from 1 through $columns-number {
+    &--#{$i} {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+
+  @each $screen in $ch-breakpoint-screens {
+    @if $screen != mobile {
+      @include ch-media(only, $screen) {
+        @for $i from 1 through $columns-number {
+          $suffix: ch-generate-variation(($i, $screen), ($columns-number, mobile));
+          $selector: #{&}#{$suffix};
+
+          &#{$selector} {
+            grid-template-columns: repeat(#{$i}, 1fr);
+          }
+        }
+      }
+    }
+  }
+}
