@@ -1,5 +1,5 @@
 @import '../border';
-@import '../color';
+@import '../colors';
 
 @mixin ch-card-bar-background ($position, $color: border) {
   @if $position == top {

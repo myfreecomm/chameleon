@@ -1,4 +1,4 @@
-@import '../color';
+@import '../colors';
 @import './mixin-card-bar-background.scss';
 
 %ch-card-bar-bottom {
@@ -9,15 +9,14 @@
     @include ch-card-bar-background(bottom);
 
     $content: '';
-    $border-width: #{$ch-border-width};
 
     display: block;
     position: absolute;
-    bottom: calc(-1 * $border-width);
-    left: calc(-1   * $border-width);
+    bottom: calc(-1 * #{$ch-border-width});
+    left: calc(-1   * #{$ch-border-width});
 
     content: $content;
-    width: calc(100% + 2 * $border-width);
+    width: calc(100% + 2 * #{$ch-border-width});
     height: calc(2 * #{em-get-border-radius(2)});
     background:    transparent;
 

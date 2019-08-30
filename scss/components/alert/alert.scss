@@ -1,3 +1,4 @@
+@import '../../abstracts/card';
 @import '../../abstracts/colors';
 
 .ch-alert {
@@ -36,7 +37,7 @@
 
       .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
         color: #{ch-get-color($variation)};
-      }}
+      }
     }
   }
 

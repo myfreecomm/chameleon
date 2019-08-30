@@ -5615,3 +5615,89 @@ h3,
   font-weight: var(--ch-text-weight-bold);
   line-height: var(--ch-text-line-height); }
 
+.ch-alert .ch-alert-header:not(:last-child) {
+  margin-bottom: var(--ch-space-m); }
+
+.ch-alert * + .ch-alert-content:not(:last-child) {
+  padding-top: var(--ch-space-m);
+  padding-right: var(--ch-space-m);
+  padding-bottom: var(--ch-space-m);
+  padding-left: var(--ch-space-m); }
+
+.ch-alert {
+  position: relative; }
+  .ch-alert:after {
+    border-top-left-radius: var(--ch-border-radius-2);
+    border-top-right-radius: var(--ch-border-radius-2);
+    border-bottom-right-radius: var(--ch-border-radius-2);
+    border-bottom-left-radius: var(--ch-border-radius-2);
+    box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-border);
+    display: block;
+    position: absolute;
+    top: calc(-1  * 1px);
+    left: calc(-1 * 1px);
+    content: "";
+    width: calc(2 * var(--ch-border-radius-2));
+    height: calc(100% + 2 * 1px);
+    background: transparent; }
+
+.ch-alert--inverse {
+  padding-top: var(--ch-space-m);
+  padding-right: var(--ch-space-m);
+  padding-bottom: var(--ch-space-m);
+  padding-left: var(--ch-space-m);
+  border: 1px solid neutral; }
+  .ch-alert--inverse,
+  .ch-alert--inverse .ch-title {
+    color: var(--ch-color-text-1-inverse); }
+  .ch-alert--inverse .ch-title-sub {
+    color: var(--ch-color-text-2-inverse); }
+
+.ch-alert--info:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-info); }
+
+.ch-alert--info .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-info); }
+
+.ch-alert--warning:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-warning); }
+
+.ch-alert--warning .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-warning); }
+
+.ch-alert--positive:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-positive); }
+
+.ch-alert--positive .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-positive); }
+
+.ch-alert--negative:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-negative); }
+
+.ch-alert--negative .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-negative); }
+
+.ch-alert--inverse.ch-alert--info:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-info-inverse); }
+
+.ch-alert--inverse.ch-alert--info .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-info-inverse); }
+
+.ch-alert--inverse.ch-alert--warning:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-warning-inverse); }
+
+.ch-alert--inverse.ch-alert--warning .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-warning-inverse); }
+
+.ch-alert--inverse.ch-alert--positive:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-positive-inverse); }
+
+.ch-alert--inverse.ch-alert--positive .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-positive-inverse); }
+
+.ch-alert--inverse.ch-alert--negative:after {
+  box-shadow: inset var(--ch-border-radius-2) 0 0 var(--ch-color-negative-inverse); }
+
+.ch-alert--inverse.ch-alert--negative .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  color: var(--ch-color-negative-inverse); }
+
