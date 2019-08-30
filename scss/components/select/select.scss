@@ -1,24 +1,26 @@
-@import '../../abstracts/colors';
-@import '../../abstracts/input';
+@import '../../abstracts/space';
 
-.ch-input,
-.ch-textarea,
-.ch-file {
+.ch-select {
 
   // 1. Base
 
   @extend %ch-input;
 
-  // 2. Fluid variation
+  position: relative;
+  display: inline-block;
 
-  &--fluid {
-    width: 100%;
-  }
+  background-color: #{ch-get-color(neutral, 1)};
 
-  // 3. Small variation
+  // 2. Small variation
 
   &--small {
     @extend %ch-input-small;
+  }
+
+  // 3. Fluid variation
+
+  &--fluid {
+    width: 100%;
   }
 
   // 4. Support variations
