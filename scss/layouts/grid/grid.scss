@@ -3,23 +3,18 @@
 .ch-grid {
   @include ch-grid;
 
-  @for $i from 1 through $columns-number {
-    $suffix: ch-generate-variation(($i), (1));
-
-    > #{&}-column#{$suffix} {
-      @include ch-grid-column($i);
-    }
-  }
-
   @each $screen in $ch-breakpoint-screens {
-    @if $screen != mobile {
-      @include ch-media(only, $screen) {
-        @for $i from 1 through $columns-number {
-          $suffix: ch-generate-variation(($i, $screen), ($columns-number, mobile));
+    @include ch-media(from, $screen) {
+      @for $i from 1 through $columns-number {
+        $column-suffix: ch-generate-variation(($i, $screen), (1, mobile));
+        $column-start-suffix: ch-generate-variation((start#{$i}, $screen), (undefined, mobile));
 
-          > #{&}-column#{$suffix} {
-            @include ch-grid-column($i);
-          }
+        > #{&}-column#{$column-suffix} {
+          @include ch-grid-column($i);
+        }
+
+        > #{&}-column#{$column-start-suffix} {
+          grid-column-start: $i;
         }
       }
     }
