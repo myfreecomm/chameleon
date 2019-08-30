@@ -50,9 +50,9 @@
     border-color: #{ch-get-color(primary)};
     background: #{ch-get-color(primary)};
     color: #{ch-get-color(neutral, 2)};
-    
+
     // 2.1. Focus interaction
-    
+
     &:hover:focus,
     &:hover,
     &:focus {
