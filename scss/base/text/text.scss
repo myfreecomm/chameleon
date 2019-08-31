@@ -1,6 +1,7 @@
 // sass-lint:disable no-important
 
-@import '../abstracts/helpers';
+@import '../../abstracts/helpers';
+@import '../../abstracts/colors';
 
 .ch-text {
   &--left {
@@ -17,5 +18,11 @@
 
   &--truncate {
     @include ch-truncate;
+  }
+
+  @each $type in (info, warning, negative, positive) {
+    &--#{$type} {
+      color: #{ch-get-color(#{$type})} !important;
+    }
   }
 }

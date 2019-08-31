@@ -1,12 +1,12 @@
 @import '../../abstracts/dimensions';
 
 .ch-template-content {
+  @include ch-media (from, desktop) {
+    @include ch-space-inset(stretch, l);
+  }
+
   padding-top: #{ch-get-space(m)};
   padding-right: #{ch-get-space(s)};
   padding-bottom: #{ch-get-dimension(1)};
   padding-left: #{ch-get-space(s)};
-
-  @include ch-media (from, desktop) {
-    @include ch-space-inset(stretch, l);
-  }
 }
