@@ -1,6 +1,10 @@
+@import '../../abstracts/colors';
+@import '../../abstracts/helpers';
+@import '../../abstracts/icon';
 @import '../../abstracts/space';
 
 .ch-select {
+  $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
 
   // 1. Base
 
@@ -9,7 +13,13 @@
   position: relative;
   display: inline-block;
 
-  background-color: #{ch-get-color(neutral, 1)};
+  padding-right: #{ch-calc-box-height()};
+  background:
+    #{ch-get-color(neutral, 1)}
+    url('#{$ch-icon-angle-down}')
+    no-repeat
+    right #{$icon-right} center;
+  background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
 
   // 2. Small variation
 
