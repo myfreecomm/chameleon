@@ -3,7 +3,7 @@
 @import '../../abstracts/icon';
 @import '../../abstracts/space';
 
-.ch-select {
+select.ch-select {
   $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
 
   // 1. Base
@@ -52,6 +52,18 @@
       &:active {
         border-color: #{ch-get-color($type, active)};
       }
+    }
+  }
+
+  // 5. Multiple variation
+
+  &[multiple] {
+    @include ch-paddingless;
+
+    background-image: none;
+
+    > option {
+      @include ch-box-model(s, squish);
     }
   }
 }
