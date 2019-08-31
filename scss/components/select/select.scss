@@ -4,21 +4,19 @@
 @import '../../abstracts/space';
 
 select.ch-select {
-  $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
-
+  
   // 1. Base
-
+  
   @extend %ch-input;
+  
+  $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
+  $background: #{ch-get-color(neutral, 1)} url('#{$ch-icon-angle-down}') no-repeat right #{$icon-right} center;
 
   position: relative;
   display: inline-block;
 
   padding-right: #{ch-calc-box-height()};
-  background:
-    #{ch-get-color(neutral, 1)}
-    url('#{$ch-icon-angle-down}')
-    no-repeat
-    right #{$icon-right} center;
+  background: $background;
   background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
 
   // 2. Small variation
