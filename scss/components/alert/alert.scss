@@ -3,13 +3,10 @@
 
 .ch-alert {
 
+  // 1. Base
+
   @extend %ch-card;
-
-  // 1.1. Side bar
-
-  // @extend %ch-card-bar-left;
-
-  // $supports: (info, warning, positive, negative);
+  @include ch-card-support;
 
   // 1.2. Header
 
@@ -23,22 +20,11 @@
     @extend %ch-card-content;
   }
 
-  // 3. Support variations
+  // 2. Support variations
 
-  // @each $variation in $supports {
-  //   &--#{$variation} {
-
-  //     // 3.1. Side bar
-
-  //     &:after {
-  //       @include ch-card-bar-background(left, $variation);
-  //     }
-
-  //     // 3.2. Icon
-
-  //     .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
-  //       color: #{ch-get-color($variation)};
-  //     }
-  //   }
-  // }
+  @each $variation in (info, warning, positive, negative) {
+    &--#{$variation} {
+      @include ch-card-support(left, ch-get-color($variation));
+    }
+  }
 }
