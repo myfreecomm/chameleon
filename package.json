@@ -8,7 +8,7 @@
     "scss/**/*.{css,js,map}"
   ],
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open && webpack -w --mode=development",
     "build:watch": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack -w --mode=development",
     "build:prod": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack --mode=development && webpack --mode=production"
   },

@@ -1,0 +1,45 @@
+@import '../../abstracts/colors';
+@import '../../abstracts/input';
+
+.ch-input,
+.ch-textarea,
+.ch-file {
+
+  // 1. Base
+
+  @extend %ch-input;
+
+  // 2. Fluid variation
+
+  &--fluid {
+    width: 100%;
+  }
+
+  // 3. Small variation
+
+  &--small {
+    @extend %ch-input-small;
+  }
+
+  // 4. Support variations
+
+  @each $type in (info, warning, negative, positive) {
+    &--#{$type} {
+      border-color: #{ch-get-color($type)};
+
+      // 4.1. Focus interaction
+
+      &:hover:focus,
+      &:hover,
+      &:focus {
+        border-color: #{ch-get-color($type, focus)};
+      }
+
+      // 4.2. Active interaction
+
+      &:active {
+        border-color: #{ch-get-color($type, active)};
+      }
+    }
+  }
+}
