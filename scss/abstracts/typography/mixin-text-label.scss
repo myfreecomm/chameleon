@@ -8,6 +8,6 @@
   color: #{ch-get-color(text, 1, $type)};
   font-family: #{ch-get-text-font-family()};
   font-size: #{ch-get-text-size()};
-  font-weight: #{ch-get-text-weight(regular)};
+  font-weight: #{ch-get-text-weight(bold)};
   line-height: #{ch-get-text-line-height()};
 }
