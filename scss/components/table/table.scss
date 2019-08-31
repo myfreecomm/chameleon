@@ -1,0 +1,109 @@
+@import '../../abstracts/border';
+@import '../../abstracts/box-model';
+
+.ch-table {
+
+  // 1. Base
+
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+
+  // 2. Header
+
+  &-header,
+  thead {
+    display: table-header-group;
+  }
+
+  // 3. Content
+
+  &-content,
+  tbody {
+    display: table-row-group;
+  }
+
+  // 3. Footer
+
+  &-footer,
+  tfoot {
+    display: table-footer-group;
+  }
+
+  // 4. Row
+
+  &-row,
+  tr {
+    display: table-row;
+  }
+
+  // 4.1. Position variations
+
+  @each $position in (top, middle, bottom) {
+    .ch-table-row--#{$position} {
+      > .ch-table-cell,
+      > td,
+      > th {
+        vertical-align: $position;
+      }
+    }
+  }
+
+  // 4.2. Fit variation
+
+  &-row--fit {
+    > .ch-table-cell:first-child,
+    > td:first-child,
+    > th:first-child {
+      padding-left: 0;
+    }
+
+    > .ch-table-cell:last-child,
+    > td:last-child,
+    > th:last-child {
+      padding-right: 0;
+    }
+  }
+
+  // 5. Cell
+
+  &-cell,
+  td,
+  th {
+    @include ch-box-model(s, stretch, top, #{ch-get-color(border)});
+
+    display: table-cell;
+
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  // 5.1. Compact variation
+
+  .ch-table-cell--compact {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // 5.2. Vertical position variants
+
+  @each $position in (top, middle, bottom) {
+    .ch-table-cell--#{$position} {
+      vertical-align: $position;
+    }
+  }
+
+  // 6. Remove first border
+
+  .ch-table-header,
+  thead {
+    > .ch-table-row:first-child,
+    > tr:first-child {
+      > .ch-table-cell,
+      > td,
+      > th {
+        border-top: 0;
+      }
+    }
+  }
+}

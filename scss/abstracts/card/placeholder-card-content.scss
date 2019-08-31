@@ -1,7 +1,5 @@
-@import '../space';
+@import './mixin-card-content';
 
 %ch-card-content {
-  * + &:not(:last-child) {
-    @include ch-space-inset(m);
-  }
+  @include ch-card-content;
 }

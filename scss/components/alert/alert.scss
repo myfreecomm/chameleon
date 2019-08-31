@@ -3,11 +3,13 @@
 
 .ch-alert {
 
+  @extend %ch-card;
+
   // 1.1. Side bar
 
-  @extend %ch-card-bar-left;
+  // @extend %ch-card-bar-left;
 
-  $supports: (info, warning, positive, negative);
+  // $supports: (info, warning, positive, negative);
 
   // 1.2. Header
 
@@ -21,48 +23,22 @@
     @extend %ch-card-content;
   }
 
-
   // 3. Support variations
 
-  @each $variation in $supports {
-    &--#{$variation} {
+  // @each $variation in $supports {
+  //   &--#{$variation} {
 
-      // 3.1. Side bar
+  //     // 3.1. Side bar
 
-      &:after {
-        @include ch-card-bar-background(left, $variation);
-      }
+  //     &:after {
+  //       @include ch-card-bar-background(left, $variation);
+  //     }
 
-      // 3.2. Icon
+  //     // 3.2. Icon
 
-      .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
-        color: #{ch-get-color($variation)};
-      }
-    }
-  }
-
-  // 4. Inverse
-
-  &--inverse {
-    @extend %ch-card-inverse;
-
-    // 4.1. Support variations
-
-    @each $variation in $supports {
-      @at-root #{&}.ch-alert--#{$variation} {
-
-        // 4.1.1. Side bar
-
-        &:after {
-          @include ch-card-bar-background(left, ($variation, inverse));
-        }
-
-        // 4.1.2. Icon
-
-        .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
-          color: #{ch-get-color($variation, inverse)};
-        }
-      }
-    }
-  }
+  //     .ch-alert-header .ch-title[class*=has-icon] > .ch-icon {
+  //       color: #{ch-get-color($variation)};
+  //     }
+  //   }
+  // }
 }

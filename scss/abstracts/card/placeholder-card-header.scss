@@ -1,8 +1,5 @@
-@import '../space';
+@import './mixin-card-header';
 
 %ch-card-header {
-  &:not(:last-child) {
-    @include ch-space-stack(m);
-  }
+  @include ch-card-header;
 }
-

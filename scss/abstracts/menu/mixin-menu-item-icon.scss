@@ -1,0 +1,27 @@
+@import '../helpers';
+
+@mixin ch-menu-item-icon {
+  $size: ch-calc-box-height();
+
+  @include ch-paddingless(true);
+
+  position: relative;
+
+  width: #{$size};
+  min-width: #{$size};
+  min-height: #{$size};
+
+  > * {
+    display: none;
+  }
+
+  > .ch-icon:first-child,
+  > .ch-avatar,
+  > .ch-toggle-icon {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
