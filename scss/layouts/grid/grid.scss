@@ -1,27 +1,72 @@
 @import '../../abstracts/grid';
 
 .ch-grid {
-  @include ch-grid;
+  @at-root & {
+    @include ch-grid($ch-mobile-columns-number, m);
+  }
 
-  @each $screen in $ch-breakpoint-screens {
-    @include ch-media(from, $screen) {
-      @for $i from 1 through $columns-number {
-        $grid-suffix: ch-generate-variation(($i, $screen), (undefined, mobile));
-        $column-suffix: ch-generate-variation(($i, $screen), (1, mobile));
-        $column-start-suffix: ch-generate-variation((start#{$i}, $screen), (undefined, mobile));
+  @for $i from 1 through $ch-mobile-columns-number {
+    $grid-suffix: ch-generate-variation(($i, mobile), (undefined, mobile));
+    $column-suffix: ch-generate-variation(($i, mobile), (1, mobile));
+    $column-start-suffix: ch-generate-variation((start#{$i}, mobile), (undefined, mobile));
 
-        &#{&}#{$grid-suffix} {
-          @include ch-grid($i);
-        }
+    &#{&}#{$grid-suffix} {
+      @include ch-grid($i);
+    }
 
-        > #{&}-column#{$column-suffix} {
-          @include ch-grid-column($i);
-        }
+    > #{&}-column#{$column-suffix} {
+      @include ch-grid-column($i);
+    }
 
-        > #{&}-column#{$column-start-suffix} {
-          grid-column-start: $i;
-        }
+    > #{&}-column#{$column-start-suffix} {
+      grid-column-start: $i;
+    }
+  }
 
+  @include ch-media(from, desktop) {
+    @at-root & {
+      @include ch-grid($ch-desktop-columns-number, l);
+    }
+
+    @for $i from 1 through $ch-desktop-columns-number {
+      $grid-suffix: ch-generate-variation(($i, mobile), (undefined, mobile));
+      $column-suffix: ch-generate-variation(($i, mobile), (1, mobile));
+      $column-start-suffix: ch-generate-variation((start#{$i}, mobile), (undefined, mobile));
+
+      &#{&}#{$grid-suffix} {
+        @include ch-grid($i);
+      }
+
+      > #{&}-column#{$column-suffix} {
+        @include ch-grid-column($i);
+      }
+
+      > #{&}-column#{$column-start-suffix} {
+        grid-column-start: $i;
+      }
+    }
+  }
+
+  @include ch-media(only, tablet) {
+    @at-root & {
+      @include ch-grid($ch-tablet-columns-number);
+    }
+
+    @for $i from 1 through $ch-tablet-columns-number {
+      $grid-suffix: ch-generate-variation(($i, mobile), (undefined, mobile));
+      $column-suffix: ch-generate-variation(($i, mobile), (1, mobile));
+      $column-start-suffix: ch-generate-variation((start#{$i}, mobile), (undefined, mobile));
+
+      &#{&}#{$grid-suffix} {
+        @include ch-grid($i);
+      }
+
+      > #{&}-column#{$column-suffix} {
+        @include ch-grid-column($i);
+      }
+
+      > #{&}-column#{$column-start-suffix} {
+        grid-column-start: $i;
       }
     }
   }
