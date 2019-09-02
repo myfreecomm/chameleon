@@ -1,0 +1,19 @@
+@import '../../abstracts/grid/';
+
+.ch-fieldGroup {
+  @each $screen in $ch-breakpoint-screens {
+    @include ch-media(from, $screen) {
+      @for $i from 1 through $columns-number {
+        $grid-suffix: ch-generate-variation(($i, $screen), (1, mobile));
+
+        @at-root #{&}#{$grid-suffix} {
+          @include ch-grid($i, l);
+        }
+
+        > #{&}-column#{$grid-suffix} {
+          @include ch-grid-column($i)
+        }
+      }
+    }
+  }
+}
