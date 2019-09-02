@@ -1,6 +1,0 @@
-@import '../space';
-@import './variables.scss';
-
-@function ch-get-columns-width($columns-number, $space: m) {
-  @return calc(100% / #{$columns-number} - #{ch-get-space(m)});
-}

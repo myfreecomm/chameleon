@@ -6,8 +6,13 @@
   @each $screen in $ch-breakpoint-screens {
     @include ch-media(from, $screen) {
       @for $i from 1 through $columns-number {
+        $grid-suffix: ch-generate-variation(($i, $screen), (undefined, mobile));
         $column-suffix: ch-generate-variation(($i, $screen), (1, mobile));
         $column-start-suffix: ch-generate-variation((start#{$i}, $screen), (undefined, mobile));
+
+        &#{&}#{$grid-suffix} {
+          @include ch-grid($i);
+        }
 
         > #{&}-column#{$column-suffix} {
           @include ch-grid-column($i);
@@ -16,6 +21,7 @@
         > #{&}-column#{$column-start-suffix} {
           grid-column-start: $i;
         }
+
       }
     }
   }
