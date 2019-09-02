@@ -1,0 +1,55 @@
+@import '../../abstracts/border';
+@import '../../abstracts/colors';
+@import '../../abstracts/space';
+@import '../../abstracts/typography';
+
+.ch-tag {
+
+  // 1. Base
+
+  @include ch-text-caption;
+
+  display: inline-block;
+  position: relative;
+
+  text-transform: uppercase;
+  text-align: center;
+  padding: #{ch-get-space(xxs)} #{ch-get-space(s)};
+
+  // 1.1. Background
+
+  &,
+  &:before {
+    @include ch-border-radius(circle);
+  }
+
+  &:before {
+    $empty: '';
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    content: $empty;
+    width: 100%;
+    height: 100%;
+    background: #{ch-get-color(neutral, 2)};
+  }
+
+  // 2. Support variations
+
+  @each $variation in (info, warning, positive, negative) {
+    &--#{$variation} {
+      color: #{ch-get-color($variation)};
+
+      // 2.1. Background
+
+      &:before {
+        opacity: 0.15;
+        background: #{ch-get-color($variation)};
+      }
+    }
+  }
+}
