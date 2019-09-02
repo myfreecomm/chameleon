@@ -1,10 +1,11 @@
 @import './mixin-space-inline';
 
-@mixin ch-space-inline-group ($type: left, $size: m) {
+@mixin ch-space-inline-group ($type: left, $size: m, $alignment: flex-start) {
   $exception: '';
 
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
+  align-items: $alignment;
 
   @if ($type == left) {
     $exception: ':last-child';

@@ -1,0 +1,5 @@
+@import './mixin-card';
+
+%ch-card {
+  @include ch-card;
+}

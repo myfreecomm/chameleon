@@ -1,168 +1,159 @@
 <!doctype html>
 <html>
-<head>
-  <title>Chameleon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <head>
+    <title>Chameleon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="dist/css/chameleon.css">
-</head>
-<body>
-  <div class="ch-template">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="dist/css/chameleon.css">
+  </head>
+  <body>
+    <div class="ch-template">
 
-    <!-- NAV BEGIN -->
-    <nav class="ch-template-nav is-expanded">
+      <!-- NAV BEGIN -->
+      <nav class="ch-template-nav is-expanded">
 
-      <!-- BRAND BEGIN -->
-      <div class="ch-template-nav-brand">
-        <img src="https://via.placeholder.com/72" class="ch-template-nav-brand-icon">
-        <h1 class="ch-template-nav-brand-name">Chameleon</h1>
-      </div>
-      <!-- BRAND END -->
+        <!-- BRAND BEGIN -->
+        <div class="ch-template-nav-brand">
+          <img src="https://via.placeholder.com/72" class="ch-template-nav-brand-icon">
+          <h1 class="ch-template-nav-brand-name">Chameleon</h1>
+        </div>
 
-      <!-- MENU BEGIN -->
-      <ul class="ch-menu">
-        <li class="ch-menu-submenu is-open">
-          <a href="#" class="ch-menu-item has-icon has-iconRight is-active">
+        <!-- MENU BEGIN -->
+        <ul class="ch-menu">
+          <li class="ch-menu-submenu is-open">
+            <a href="#" class="ch-menu-item has-icon has-iconRight is-active">
+              <i class="ch-icon fal fa-chart-line"></i>
+              <span class="ch-menu-item-label">Item 1</span>
+              <i class="ch-menu-item-arrow ch-icon fal fa-angle-right"></i>
+            </a>
+
+            <ul class="ch-menu">
+              <li class="ch-menu-item">
+                <span class="ch-menu-item-label">Item 2</span>
+              </li>
+
+              <li class="ch-menu-item is-active">
+                <span class="ch-menu-item-label">Item 3</span>
+              </li>
+
+              <li class="ch-menu-item">
+                <span class="ch-menu-item-label">Item 4</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-table"></i>
+            <span class="ch-menu-item-label">Item 3</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-magic"></i>
+            <span class="ch-menu-item-label">Item 4</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-clipboard"></i>
+            <span class="ch-menu-item-label">Item 5</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
             <i class="ch-icon fal fa-chart-line"></i>
-            <span class="ch-menu-item-label">Item 1</span>
-            <i class="ch-menu-item-arrow ch-icon fal fa-angle-right"></i>
-          </a>
+            <span class="ch-menu-item-label">Item 6</span>
+          </li>
+        </ul>
+        <!-- MENU END -->
 
-          <ul class="ch-menu">
-            <li class="ch-menu-item">
-              <span class="ch-menu-item-label">Item 2</span>
-            </li>
-
-            <li class="ch-menu-item is-active">
-              <span class="ch-menu-item-label">Item 3</span>
-            </li>
-
-            <li class="ch-menu-item">
-              <span class="ch-menu-item-label">Item 4</span>
-            </li>
-          </ul>
-        </li>
-
-        <li class="ch-menu-item has-icon">
-          <i class="ch-icon fal fa-table"></i>
-          <span class="ch-menu-item-label">Item 3</span>
-        </li>
-
-        <li class="ch-menu-item has-icon">
-          <i class="ch-icon fal fa-magic"></i>
-          <span class="ch-menu-item-label">Item 4</span>
-        </li>
-
-        <li class="ch-menu-item has-icon">
-          <i class="ch-icon fal fa-clipboard"></i>
-          <span class="ch-menu-item-label">Item 5</span>
-        </li>
-
-        <li class="ch-menu-item has-icon">
-          <i class="ch-icon fal fa-chart-line"></i>
-          <span class="ch-menu-item-label">Item 6</span>
-        </li>
-      </ul>
-      <!-- MENU END -->
-
-      <!-- TOGGLE BEGIN -->
-      <label class="ch-toggle">
-        <input type="checkbox" class="ch-toggle-toggle">
-        <span class="ch-toggle-icon"></span>
-      </label>
-      <!-- TOGGLE END -->
-
-      <!-- TOGGLE BEGIN -->
-      <label class="ch-toggle ch-toggle--nav">
-        <input type="checkbox" class="ch-toggle-toggle">
-        <span class="ch-toggle-icon"></span>
-      </label>
-      <!-- TOGGLE END -->
-
-    </nav>
-    <!-- NAV END -->
-
-    <!-- HEADER BEGIN -->
-    <header class="ch-template-header">
-      <!-- MENU BEGIN -->
-      <nav class="ch-menu">
-        <label class="ch-menu-item ch-menu-item--icon ch-toggle ch-toggle--left">
-          <input class="ch-toggle-toggle" type="checkbox">
-          <i class="ch-toggle-icon"></i>
+        <!-- TOGGLE BEGIN -->
+        <label class="ch-toggle">
+          <input type="checkbox" class="ch-toggle-toggle">
+          <span class="ch-toggle-icon"></span>
         </label>
+        <!-- TOGGLE END -->
 
-        <button class="ch-menu-item ch-menu-item--icon">
-          <i class="ch-icon fal fa-search"></i>
-          <span class="ch-menu-item-label">Buscar</span>
-        </button>
+        <!-- TOGGLE BEGIN -->
+        <label class="ch-toggle ch-toggle--nav">
+          <input type="checkbox" class="ch-toggle-toggle">
+          <span class="ch-toggle-icon"></span>
+        </label>
+        <!-- TOGGLE END -->
 
-        <button class="ch-menu-item ch-menu-item--icon">
-          <i class="ch-icon fal fa-bell"></i>
-          <span class="ch-menu-item-label">Notificações</span>
-        </button>
-
-        <button class="ch-menu-item ch-menu-item--icon">
-          <i class="ch-icon fal fa-cog"></i>
-          <span class="ch-menu-item-label">Configurações</span>
-        </button>
-
-        <button class="ch-menu-item">
-          <span class="ch-menu-item-label">
-            Nome da conta
-            <i class="ch-icon ch-icon--xs fal fa-chevron-down"></i>
-          </span>
-        </button>
-
-        <button class="ch-menu-item ch-menu-item--icon">
-          <div class="ch-avatar" title="Max Salles">
-          </div>
-        </button>
       </nav>
-      <!-- MENU END -->
+      <!-- NAV END -->
 
-      <!-- BREADCRUMBS BEGIN -->
-      <nav class="ch-breadcrumbs">
-        <a class="ch-breadcrumbs-item" href="#">Fluxo de caixa</a>
-        <a class="ch-breadcrumbs-item" href="#">Contas a pagar</a>
-        <span class="ch-breadcrumbs-item">Nova despesa</span>
-      </nav>
-      <!-- BREADCRUMBS END -->
-    </header>
-    <!-- HEADER END -->
+      <!-- HEADER BEGIN -->
+      <header class="ch-template-header is-sticky">
+        <!-- MENU BEGIN -->
+        <nav class="ch-menu">
+          <label class="ch-menu-item ch-menu-item--icon ch-toggle ch-toggle--left">
+            <input class="ch-toggle-toggle" type="checkbox">
+            <i class="ch-toggle-icon"></i>
+          </label>
 
-    <!-- CONTENT BEGIN -->
-    <div class="ch-template-content" style="padding-top: var(--ch-space-l); padding-right: var(--ch-space-l); padding-left: var(--ch-space-l);">
+          <button class="ch-menu-item ch-menu-item--icon">
+            <i class="ch-icon fal fa-search"></i>
+            <span class="ch-menu-item-label">Buscar</span>
+          </button>
 
-      <div class="ch-grid">
-        <div class="ch-grid-column--1" style="background: #eee; padding: 5px; text-align: center;">.col 1</div>
-        <div class="ch-grid-column--11" style="background: #eee; padding: 5px; text-align: center;">.col 11</div>
+          <button class="ch-menu-item ch-menu-item--icon">
+            <i class="ch-icon fal fa-bell"></i>
+            <span class="ch-menu-item-label">Notificações</span>
+          </button>
 
-        <div class="ch-grid-column--2" style="background: #eee; padding: 5px; text-align: center;">.col 2</div>
-        <div class="ch-grid-column--10" style="background: #eee; padding: 5px; text-align: center;">.col 10</div>
+          <button class="ch-menu-item ch-menu-item--icon">
+            <i class="ch-icon fal fa-cog"></i>
+            <span class="ch-menu-item-label">Configurações</span>
+          </button>
 
-        <div class="ch-grid-column--3" style="background: #eee; padding: 5px; text-align: center;">.col 3</div>
-        <div class="ch-grid-column--9" style="background: #eee; padding: 5px; text-align: center;">.col 9</div>
+          <button class="ch-menu-item">
+            <span class="ch-menu-item-label">
+              Nome da conta
+              <i class="ch-icon ch-icon--xs fal fa-chevron-down"></i>
+            </span>
+          </button>
 
-        <div class="ch-grid-column--4" style="background: #eee; padding: 5px; text-align: center;">.col 4</div>
-        <div class="ch-grid-column--8" style="background: #eee; padding: 5px; text-align: center;">.col 8</div>
+          <button class="ch-menu-item ch-menu-item--icon">
+            <div class="ch-avatar" title="Max Salles">
+            </div>
+          </button>
+        </nav>
+        <!-- MENU END -->
 
-        <div class="ch-grid-column--5" style="background: #eee; padding: 5px; text-align: center;">.col 5</div>
-        <div class="ch-grid-column--7" style="background: #eee; padding: 5px; text-align: center;">.col 7</div>
+        <!-- BREADCRUMBS BEGIN -->
+        <nav class="ch-breadcrumbs">
+          <a class="ch-breadcrumbs-item" href="#">Fluxo de caixa</a>
+          <a class="ch-breadcrumbs-item" href="#">Contas a pagar</a>
+          <span class="ch-breadcrumbs-item">Nova despesa</span>
+        </nav>
+        <!-- BREADCRUMBS END -->
+      </header>
+      <!-- HEADER END -->
 
-        <div class="ch-grid-column--6" style="background: #eee; padding: 5px; text-align: center;">.col 6</div>
-        <div class="ch-grid-column--6" style="background: #eee; padding: 5px; text-align: center;">.col 6</div>
-     </div>
+      <!-- CONTENT BEGIN -->
+      <div class="ch-template-content">
+        <div class="ch-grid">
+          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 1</div>
+          <div class="ch-grid-column--11" style="background: #eee; padding: 5px; text-align: center;">col 11</div>
 
-     <div class="ch-grid ch-grid--3">
-      <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">.col 1</div>
-      <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">.col 1</div>
-      <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">.col 1</div>
-     </div>
+          <div class="ch-grid-column--2" style="background: #eee; padding: 5px; text-align: center;">col 2</div>
+          <div class="ch-grid-column--10" style="background: #eee; padding: 5px; text-align: center;">col 10</div>
 
+          <div class="ch-grid-column--3" style="background: #eee; padding: 5px; text-align: center;">col 3</div>
+          <div class="ch-grid-column--9" style="background: #eee; padding: 5px; text-align: center;">col 9</div>
+
+          <div class="ch-grid-column--4" style="background: #eee; padding: 5px; text-align: center;">col 4</div>
+          <div class="ch-grid-column--8" style="background: #eee; padding: 5px; text-align: center;">col 8</div>
+
+          <div class="ch-grid-column--5" style="background: #eee; padding: 5px; text-align: center;">col 5</div>
+          <div class="ch-grid-column--7" style="background: #eee; padding: 5px; text-align: center;">col 7</div>
+
+          <div class="ch-grid-column--6" style="background: #eee; padding: 5px; text-align: center;">col 6</div>
+          <div class="ch-grid-column--6" style="background: #eee; padding: 5px; text-align: center;">col 6</div>
+        </div>
+      </div>
+      <!-- CONTENT END -->
     </div>
-    <!-- CONTENT END -->
-  </div>
-</body>
+  </body>
 </html>
