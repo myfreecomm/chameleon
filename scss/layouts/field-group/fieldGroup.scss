@@ -2,16 +2,48 @@
 
 .ch-fieldGroup {
   @each $screen in $ch-breakpoint-screens {
-    @include ch-media(from, $screen) {
-      @for $i from 1 through $columns-number {
+    @if $screen == mobile {
+      @for $i from 1 through $ch-mobile-columns-number {
         $grid-suffix: ch-generate-variation(($i, $screen), (1, mobile));
 
         @at-root #{&}#{$grid-suffix} {
-          @include ch-grid($i, l);
+          @include ch-grid($i, m);
         }
 
         > #{&}-column#{$grid-suffix} {
           @include ch-grid-column($i)
+        }
+      }
+    }
+
+    @if $screen == tablet {
+      @include ch-media(from, tablet) {
+        @for $i from 1 through $ch-tablet-columns-number {
+          $grid-suffix: ch-generate-variation(($i, $screen), (1, mobile));
+
+          @at-root #{&}#{$grid-suffix} {
+            @include ch-grid($i, m);
+          }
+
+          > #{&}-column#{$grid-suffix} {
+            @include ch-grid-column($i)
+          }
+        }
+      }
+    }
+
+    @if $screen == desktop {
+      @include ch-media(from, desktop) {
+        @for $i from 1 through $ch-desktop-columns-number {
+          $grid-suffix: ch-generate-variation(($i, $screen), (1, mobile));
+
+          @at-root #{&}#{$grid-suffix} {
+            @include ch-grid($i, l);
+          }
+
+          > #{&}-column#{$grid-suffix} {
+            @include ch-grid-column($i)
+          }
         }
       }
     }
