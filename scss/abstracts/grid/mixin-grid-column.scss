@@ -4,7 +4,9 @@
 @mixin ch-grid-column($columns-number: 1, $start: 0) {
   @if $start == 0 {
     grid-column-end: span $columns-number;
-  } @else {
+  }
+  
+  @else {
     grid-column-start: $start;
     grid-column-end: span $columns-number;
   }
