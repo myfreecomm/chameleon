@@ -1,3 +1,2 @@
-$ch-desktop-columns-number: 12;
-$ch-tablet-columns-number: 8;
-$ch-mobile-columns-number: 4;
+$ch-columns-number: (mobile: 4, tablet: 8, desktop: 12);
+$ch-columns-gutter: (mobile: m, tablet: m, desktop: l);

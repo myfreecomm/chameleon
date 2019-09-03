@@ -1,73 +1,40 @@
 @import '../../abstracts/grid';
 
 .ch-grid {
-  @at-root & {
-    @include ch-grid($ch-mobile-columns-number, m);
+  > * {
+    @include ch-grid-column(1);
   }
 
-  @for $i from 1 through $ch-mobile-columns-number {
-    $grid-suffix: ch-generate-variation(($i, mobile), (undefined, mobile));
-    $column-suffix: ch-generate-variation(($i, mobile), (1, mobile));
-    $column-start-suffix: ch-generate-variation((start#{$i}, mobile), (undefined, mobile));
+  @each $screen in $ch-breakpoint-screens {
+    @include ch-media(from, $screen) {
+      $columns-number: map-get($ch-columns-number, $screen);
+      $gutter: map-get($ch-columns-gutter, $screen);
 
-    &#{&}#{$grid-suffix} {
-      @include ch-grid($i);
-    }
-
-    > #{&}-column#{$column-suffix} {
-      @include ch-grid-column($i);
-    }
-
-    > #{&}-column#{$column-start-suffix} {
-      grid-column-start: $i;
-    }
-  }
-
-  @include ch-media(from, desktop) {
-    @at-root & {
-      @include ch-grid($ch-desktop-columns-number, l);
-    }
-
-    @for $i from 1 through $ch-desktop-columns-number {
-      $grid-suffix: ch-generate-variation(($i, mobile), (undefined, mobile));
-      $column-suffix: ch-generate-variation(($i, mobile), (1, mobile));
-      $column-start-suffix: ch-generate-variation((start#{$i}, mobile), (undefined, mobile));
-
-      &#{&}#{$grid-suffix} {
-        @include ch-grid($i);
+      @at-root & {
+        @include ch-grid($columns-number, $gutter);
       }
 
-      > #{&}-column#{$column-suffix} {
-        @include ch-grid-column($i);
-      }
+      @for $i from 1 through $columns-number {
+        $suffix: ch-generate-variation(($i, $screen), (undefined, mobile));
+        $path: #{&}#{&}#{$suffix};
 
-      > #{&}-column#{$column-start-suffix} {
-        grid-column-start: $i;
-      }
-    }
-  }
+        @at-root #{$path} {
+          @include ch-grid($i, $gutter);
+        }
 
-  @include ch-media(only, tablet) {
-    @at-root & {
-      @include ch-grid($ch-tablet-columns-number);
-    }
+        @for $j from 1 through $i {
+          $column-suffix: ch-generate-variation(($j, $screen), (1, mobile));
+          $start-suffix: ch-generate-variation((start#{$j}, $screen), (undefined, mobile));
 
-    @for $i from 1 through $ch-tablet-columns-number {
-      $grid-suffix: ch-generate-variation(($i, mobile), (undefined, mobile));
-      $column-suffix: ch-generate-variation(($i, mobile), (1, mobile));
-      $column-start-suffix: ch-generate-variation((start#{$i}, mobile), (undefined, mobile));
+          > #{&}-column#{$column-suffix} {
+            @include ch-grid-column($j);
+          }
 
-      &#{&}#{$grid-suffix} {
-        @include ch-grid($i);
-      }
-
-      > #{&}-column#{$column-suffix} {
-        @include ch-grid-column($i);
-      }
-
-      > #{&}-column#{$column-start-suffix} {
-        grid-column-start: $i;
-      }
-    }
-  }
+          > #{&}-column#{$start-suffix} {
+            grid-column-start: $j;
+          }
+        } // @for $j from 1 through $i
+      } // @for $i from 1 through $columns-number
+    } // @include ch-media(from, $screen)
+  } // @each $screen in $ch-breakpoint-screens
 }
