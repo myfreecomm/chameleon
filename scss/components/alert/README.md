@@ -11,7 +11,7 @@ Nesse componente a borda lateral esquerda é preenchida com a cor referente ao t
 
 No exemplo abaixo temos uma markup HTML do tipo INFO. O markup é constituído de um wrapper que engloba header, content e footer.
 
-A classe do elemento pai (wrapper) deve ser passada como ch-alert(nome do componente) + o seu modificador, que no exemplo é ch-alert--info. E assim sucessivamente para qualquer outro tipo de ação. O modificador é passado da forma --modificador.
+A classe do elemento pai (wrapper) deve ser passada como ch-alert(nome do componente) + o seu modificador, que no exemplo é ch-alert--info. E assim sucessivamente para qualquer outro tipo de ação. O modificador é passado na forma --modificador.
 
 Exemplos: ch-alert--info, ch-alert--warning, ch-alert--positive, ch-alert--negative.
 
