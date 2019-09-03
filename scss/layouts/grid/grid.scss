@@ -22,18 +22,16 @@
           @include ch-grid($i, $gutter);
         }
 
-        @for $j from 1 through $i {
-          $column-suffix: ch-generate-variation(($j, $screen), (1, mobile));
-          $start-suffix: ch-generate-variation((start#{$j}, $screen), (undefined, mobile));
+        $column-suffix: ch-generate-variation(($i, $screen), (1, mobile));
+        $start-suffix: ch-generate-variation((start#{$i}, $screen), (undefined, mobile));
 
-          > #{&}-column#{$column-suffix} {
-            @include ch-grid-column($j);
-          }
+        > #{&}-column#{$column-suffix} {
+          @include ch-grid-column($i);
+        }
 
-          > #{&}-column#{$start-suffix} {
-            grid-column-start: $j;
-          }
-        } // @for $j from 1 through $i
+        > #{&}-column#{$start-suffix} {
+          grid-column-start: $i;
+        }
       } // @for $i from 1 through $columns-number
     } // @include ch-media(from, $screen)
   } // @each $screen in $ch-breakpoint-screens
