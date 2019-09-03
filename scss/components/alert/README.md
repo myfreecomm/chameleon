@@ -5,11 +5,15 @@
 O componente `Alert` é responsável em fornecer mensagens de feedback para ações dos usuários.
 Essas mensagens podem ser do tipo: INFO, WARNING, NEGATIVE, POSITIVE.
 
+Nesse componente a borda lateral esquerda é preenchida com a cor referente ao tipo da ação sofrida. Ex: Se for uma ação de WARNING a borda será preenchida de amarelo, POSITIVE de verde, NEGATIVE de vermelho e INFO de azul.
+
 ## Exemplo
 
-No exemplo abaixo temos uma markup do tipo INFO. O markup é constituído de um wrapper que engloba header, content e footer.
+No exemplo abaixo temos uma markup HTML do tipo INFO. O markup é constituído de um wrapper que engloba header, content e footer.
 
-A classe do elemento pai (wrapper) deve ser passada como ch-alert(nome do componente) + o seu modificador, que no exemplo é ch-alert--info. E assim sucessivamente para qualquer outro tipo de ação.
+A classe do elemento pai (wrapper) deve ser passada como ch-alert(nome do componente) + o seu modificador, que no exemplo é ch-alert--info. E assim sucessivamente para qualquer outro tipo de ação. O modificador é passado da forma --modificador.
+
+Exemplos: ch-alert--info, ch-alert--warning, ch-alert--positive, ch-alert--negative.
 
 HTML:
 
@@ -40,14 +44,14 @@ No código Sass usamos placeholders extendendo da classe card.
 
 ### `Base`
 
-```sass
+```CSS
   @extend %ch-card;
   @include ch-card-support;
  ```
 
 ### `Header`
 
-```sass
+```CSS
   #{&}-header {
     @extend %ch-card-header;
   }
@@ -55,7 +59,7 @@ No código Sass usamos placeholders extendendo da classe card.
 
 ### `Content`
 
-```sass
+```CSS
   #{&}-content {
     @extend %ch-card-content;
   }
@@ -63,7 +67,7 @@ No código Sass usamos placeholders extendendo da classe card.
 
 ### `Variations`
 
-```sass
+```CSS
   @each $variation in (info, warning, positive, negative) {
     &--#{$variation} {
       @include ch-card-support(left, ch-get-color($variation));
