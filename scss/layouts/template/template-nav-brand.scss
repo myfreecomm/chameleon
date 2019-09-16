@@ -2,18 +2,16 @@
 @import '../../abstracts/colors';
 @import '../../abstracts/typography';
 @import '../../abstracts/dimensions';
+@import '../../abstracts/transition';
 
 .ch-template-nav {
   &-brand {
 
     // 1. Base
 
-    @include ch-media(from, tablet) {
-      display: block;
-    }
-
-    display: none;
-    position: relative;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
 
     height: #{ch-get-dimension(1)};
     padding-left: #{ch-get-dimension(1)};
@@ -33,14 +31,13 @@
     // 3. Name
 
     &-name {
-      @include ch-media(from, tablet) {
-        overflow: hidden;
-      }
+      @include ch-transition(opacity, .15s);
 
       color: #{ch-get-color(text, 1, inverse)};
       font-family: #{ch-get-text-font-family(brand)};
       font-size: #{ch-get-text-size(5)};
       line-height: #{ch-get-dimension(1)};
+      opacity: 0;
     }
   }
 
@@ -48,7 +45,37 @@
 
   &.is-open {
     > .ch-template-nav-brand {
-      display: block;
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+
+      > .ch-template-nav-brand-name {
+        opacity: 1;
+      }
+    }
+  }
+
+  // 5. From tablet
+
+  @include ch-media(from, tablet) {
+    &-brand {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+
+      &-name {
+        overflow: hidden;
+      }
+    }
+
+    &:focus:hover,
+    &:focus,
+    &:hover {
+      &:not(.is-expanded) {
+        .ch-template-nav-brand > .ch-template-nav-brand-name {
+          opacity: 1
+        }
+      }
     }
   }
 }
