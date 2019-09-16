@@ -9,6 +9,7 @@
 @import '../../abstracts/menu';
 @import '../../abstracts/space';
 @import '../../abstracts/typography';
+@import '../../abstracts/transition';
 
 .ch-template-nav {
 
@@ -139,18 +140,51 @@
   // 4. From tablet
 
   @include ch-media(from, tablet) {
-    &:not(:hover):not(.is-expanded) > .ch-menu, {
-      width: #{ch-get-dimension(2)};
+    .ch-menu-item-label {
+      @include ch-transition(opacity, .15s);
+      min-width: calc(#{ch-get-dimension(2)} - #{ch-get-dimension(1)} - #{ch-get-space()});
+    }
 
-      > .ch-menu-submenu {
-        > .ch-menu-item.is-active:before {
-          $empty: '';
+    &:not(:hover):not(.is-expanded) {
+      > .ch-menu {
+        width: #{ch-get-dimension(2)};
 
-          content: $empty;
+        > .ch-menu-submenu {
+          > .ch-menu-item.is-active:before {
+            opacity: 1;
+          }
+
+          > .ch-menu {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+
+            > .ch-menu-item.is-active:before {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      .ch-menu-item-label {
+        opacity: 0;
+      }
+    }
+
+    &:focus:hover,
+    &:focus,
+    &:hover {
+      &:not(.is-expanded) {
+        > .ch-menu {
+          > .ch-menu-submenu > .ch-menu {
+            position:  static;
+            visibility: visible;
+            opacity: 1;
+          }
         }
 
-        > .ch-menu {
-          display: none;
+        .ch-menu-item-label {
+          opacity: 1;
         }
       }
     }
