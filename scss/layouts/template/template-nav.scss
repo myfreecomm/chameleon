@@ -8,11 +8,12 @@
   // 1. Base
 
   display: flex;
+  z-index: #{ch-get-z-index(2)};
   justify-content: space-between;
   position: fixed;
   bottom: 0;
   left: 0;
-  
+
   width: 100%;
   background-color: #{ch-get-color(neutral, 1, inverse)};
 
