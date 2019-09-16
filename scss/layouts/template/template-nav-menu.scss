@@ -27,6 +27,9 @@
       // 1.1.1. Label
 
       &-label {
+        $delay: calc(#{$ch-transition-duration} /2);
+
+        @include ch-transition(opacity, $delay);
         font-weight: ch-get-text-weight(bold);
       }
 
@@ -99,7 +102,9 @@
 
         > .ch-menu-item-arrow,
         > .ch-menu-item-label {
-          display: none;
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
         }
 
         // 2.2.3. Bottom bar
@@ -141,7 +146,6 @@
 
   @include ch-media(from, tablet) {
     .ch-menu-item-label {
-      @include ch-transition(opacity, .15s);
       min-width: calc(#{ch-get-dimension(2)} - #{ch-get-dimension(1)} - #{ch-get-space()});
     }
 

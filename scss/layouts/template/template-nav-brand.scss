@@ -31,7 +31,9 @@
     // 3. Name
 
     &-name {
-      @include ch-transition(opacity, .15s);
+      $delay: calc(#{$ch-transition-duration} /2);
+
+      @include ch-transition(opacity, $delay);
 
       color: #{ch-get-color(text, 1, inverse)};
       font-family: #{ch-get-text-font-family(brand)};
@@ -65,6 +67,13 @@
 
       &-name {
         overflow: hidden;
+        opacity: 1;
+      }
+    }
+
+    &:not(:hover):not(.is-expanded) {
+      .ch-template-nav-brand > .ch-template-nav-brand-name {
+        opacity: 0;
       }
     }
 
@@ -73,7 +82,7 @@
     &:hover {
       &:not(.is-expanded) {
         .ch-template-nav-brand > .ch-template-nav-brand-name {
-          opacity: 1
+          opacity: 1;
         }
       }
     }
