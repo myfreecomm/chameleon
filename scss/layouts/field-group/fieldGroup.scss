@@ -1,12 +1,14 @@
 @import '../../abstracts/grid/';
 
 .ch-fieldGroup {
+  $column-numbers: (mobile: 1, tablet: 2, desktop: 4);
+
   > * {
     @include ch-grid-column(1);
   }
 
   @each $screen in $ch-breakpoint-screens {
-    $columns-number: map-get($ch-columns-number, $screen) / 2;
+    $columns-number: map-get($column-numbers, $screen);
     $gutter: map-get($ch-columns-gutter, $screen);
 
     @include ch-media(from, $screen) {
@@ -25,11 +27,11 @@
         $column-suffix: ch-generate-variation(($i, $screen), (1, mobile));
         $start-suffix: ch-generate-variation((start#{$i}, $screen), (undefined, mobile));
 
-        > #{&}-column#{$column-suffix} {
+        > .ch-field#{$column-suffix} {
           @include ch-grid-column($i);
         }
 
-        > #{&}-column#{$start-suffix} {
+        > .ch-field#{$start-suffix} {
           grid-column-start: $i;
         }
       } // @for $i from 1 through $columns-number
