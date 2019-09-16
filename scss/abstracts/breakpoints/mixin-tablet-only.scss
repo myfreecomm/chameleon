@@ -3,7 +3,7 @@
 @mixin ch-tablet-only {
   $to: calc(#{$ch-breakpoint-desktop} - 1px);
 
-  @media screen and (max-width: $ch-breakpoint-desktop) and (max-width: $to) {
+  @media screen and (min-width: $ch-breakpoint-tablet) and (max-width: $to) {
     @content;
   }
 }
