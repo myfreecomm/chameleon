@@ -10,6 +10,7 @@
 
   @include ch-transition;
   display: flex;
+  z-index: #{ch-get-z-index(2)};
   justify-content: space-between;
   position: fixed;
   bottom: 0;
