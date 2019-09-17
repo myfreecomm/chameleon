@@ -1,3 +1,6 @@
 $ch-transition-duration: 0.3s;
 $ch-transition-timing-function: ease-in-out;
 $ch-transition-delay: unset;
+
+$ch-transition-fast: calc(#{$ch-transition-duration} / 2);
+$ch-transition-slow: calc(#{$ch-transition-duration} * 2);
