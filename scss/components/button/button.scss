@@ -5,12 +5,13 @@
 @import '../../abstracts/helpers';
 @import '../../abstracts/space';
 @import '../../abstracts/typography';
+@import '../../abstracts/ripple-effect';
 
 .ch-button {
 
   // 1. Base
-
-  @include ch-box-model(s, squish, box, ch-get-color(border));
+  @include ch-ripple-effect(default);
+  @include ch-box-model(s, squish, box, #{ch-get-color(default)});
   @include ch-border-radius(1);
 
   display: inline-block;
@@ -19,22 +20,26 @@
   color: #{ch-get-color(text, 2)};
   font-weight: #{ch-get-text-weight(bold)};
   text-align: center;
-  background: transparent;
 
   // 1.1. Focus interaction
 
   &:hover:focus,
   &:hover,
   &:focus {
-    color: #{ch-get-color(text, 1)};
-    border-color: #{ch-get-color(border, focus)}
+    border-color: #{ch-get-color(default, focus)}
   }
 
   // 1.2. Active interaction
 
   &:active {
-    color: #{ch-get-color(text, 1)};
-    border-color: #{ch-get-color(border, active)}
+    border-color: #{ch-get-color(default, active)}
+  }
+
+  &:hover:focus,
+  &:hover,
+  &:focus,
+  &:active {
+    color: #{ch-get-color(neutral, 1)};
   }
 
   // 1.3. Disabled interaction
@@ -47,8 +52,9 @@
   // 2. Primary variation
 
   &--primary {
+    @include ch-ripple-effect(primary);
+    transition: background 0.8s;
     border-color: #{ch-get-color(primary)};
-    background: #{ch-get-color(primary)};
     color: #{ch-get-color(neutral, 2)};
 
     // 2.1. Focus interaction
@@ -57,29 +63,19 @@
     &:hover,
     &:focus {
       border-color: #{ch-get-color(primary, focus)};
-      background: #{ch-get-color(primary, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
       border-color: #{ch-get-color(primary, acitve)};
-      background: #{ch-get-color(primary, active)};
-    }
-
-    // 2.3. Focus and active interaction
-
-    &:hover:focus,
-    &:hover,
-    &:focus,
-    &:active {
-      color: #{ch-get-color(neutral, 1)};
     }
   }
 
   // 3. Secondary variation
 
   &--secondary {
+    @include ch-ripple-effect(secondary);
     border-color: #{ch-get-color(primary, active)};
     color: #{ch-get-color(primary, active)};
 
@@ -96,20 +92,12 @@
     &:active {
       border-color: #{ch-get-color(primary, focus)};
     }
-
-    // 3.3. Focus and active interaction
-
-    &:hover:focus,
-    &:hover,
-    &:focus,
-    &:active {
-      color: #{ch-get-color(primary, focus)};
-    }
   }
 
   // 4. Negative variation
 
   &--negative {
+    @include ch-ripple-effect(negative);
     border-color: #{ch-get-color(negative)};
     color: #{ch-get-color(negative)};
 
@@ -125,15 +113,6 @@
 
     &:active {
       border-color: #{ch-get-color(negative, active)};
-    }
-
-    // 4.3. Focus and active interaction
-
-    &:hover:focus,
-    &:hover,
-    &:focus,
-    &:active {
-      color: #{ch-get-color(negative, active)};
     }
   }
 

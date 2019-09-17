@@ -103,9 +103,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
   !*** ./scss/index.scss ***!
   \*************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./scss/index.scss?");
+eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\\n\\n  transition: background $ch-transition-slow;\\n                        ^\\n      Undefined variable: \\\"$ch-transition-slow\\\".\\n      in /Users/herondsalles/Projetos/Nexaas/chameleon/scss/abstracts/ripple-effect/mixin-ripple-effect.scss (line 7, column 26)\\n    at runLoaders (/Users/herondsalles/Projetos/Nexaas/chameleon/node_modules/webpack/lib/NormalModule.js:313:20)\\n    at /Users/herondsalles/Projetos/Nexaas/chameleon/node_modules/loader-runner/lib/LoaderRunner.js:367:11\\n    at /Users/herondsalles/Projetos/Nexaas/chameleon/node_modules/loader-runner/lib/LoaderRunner.js:233:18\\n    at context.callback (/Users/herondsalles/Projetos/Nexaas/chameleon/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\\n    at Object.render [as callback] (/Users/herondsalles/Projetos/Nexaas/chameleon/node_modules/sass-loader/lib/loader.js:90:7)\\n    at Object.done [as callback] (/Users/herondsalles/Projetos/Nexaas/chameleon/node_modules/neo-async/async.js:8067:18)\\n    at options.error (/Users/herondsalles/Projetos/Nexaas/chameleon/node_modules/node-sass/lib/index.js:294:32)\");\n\n//# sourceURL=webpack:///./scss/index.scss?");
 
 /***/ }),
 
