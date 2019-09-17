@@ -22,7 +22,7 @@
     // 1.1. Item
 
     .ch-menu-item {
-      color: #{ch-get-color(text, 2, inverse)};
+      color: #{ch-get-color(menu-text, 1)};
 
       // 1.1.1. Label
 

@@ -18,7 +18,7 @@
     // 1.1. Icon
 
     > .ch-toggle-icon {
-      background-color: #{ch-get-color(text, 2, inverse)};
+      background-color: #{ch-get-color(menu-text, 1)};
     }
 
     &:hover:focus,

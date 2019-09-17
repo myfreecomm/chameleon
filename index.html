@@ -208,6 +208,10 @@
       $('.ch-menu-item').on('click', function() {
         $(this).parent().toggleClass('is-open')
       })
+
+      $('.ch-toggle-toggle').on('change', function() {
+        $('.ch-template-nav').toggleClass('is-expanded')
+      })
     </script>
   </body>
 </html>
