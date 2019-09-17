@@ -4,18 +4,18 @@
 @mixin ch-ripple-effect ($color-type) {
   $type: if($color-type != 'secondary', $color-type, 'primary');
 
-  transition: background #{$ch-transition-duration-slow};
+  transition: background #{$ch-transition-duration-fast};
   background-color: if($color-type == 'primary', #{ch-get-color($color-type)}, transparent);
   background-position: center;
 
-  &:hover:focus,
   &:hover,
   &:focus {
     background: #{ch-get-color-hover($type)};
+    transition: background #{$ch-transition-duration-very-slow};
   }
 
   &:active {
-    background-color: #{ch-get-color($type, active)};
+    background-color: #{ch-get-color($type, inverse)};
     background-size: 100%;
     transition: background 0s;
   }

@@ -23,7 +23,6 @@
 
   // 1.1. Focus interaction
 
-  &:hover:focus,
   &:hover,
   &:focus {
     border-color: #{ch-get-color(default, focus)}
@@ -35,10 +34,9 @@
     border-color: #{ch-get-color(default, active)}
   }
 
-  &:hover:focus,
   &:hover,
-  &:focus,
-  &:active {
+  &:active,
+  &:focus {
     color: #{ch-get-color(neutral, 1)};
   }
 
@@ -59,7 +57,6 @@
 
     // 2.1. Focus interaction
 
-    &:hover:focus,
     &:hover,
     &:focus {
       border-color: #{ch-get-color(primary, focus)};
@@ -81,7 +78,6 @@
 
     // 3.1. Focus interaction
 
-    &:hover:focus,
     &:hover,
     &:focus {
       border-color: #{ch-get-color(primary, focus)};
@@ -103,7 +99,6 @@
 
     // 4.1. Focus interaction
 
-    &:hover:focus,
     &:hover,
     &:focus {
       border-color: #{ch-get-color(negative, focus)};

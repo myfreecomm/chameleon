@@ -2367,7 +2367,7 @@ h3,
   line-height: var(--ch-text-line-height); }
 
 .ch-button {
-  transition: background 0.4s;
+  transition: background 0.2s;
   background-color: transparent;
   background-position: center;
   padding-top: var(--ch-space-xs);
@@ -2384,66 +2384,70 @@ h3,
   color: var(--ch-color-text-2);
   font-weight: var(--ch-text-weight-bold);
   text-align: center; }
-  .ch-button:hover:focus, .ch-button:hover, .ch-button:focus {
-    background: var(--ch-color-default-focus) radial-gradient(circle, transparent 1%, var(--ch-color-default-focus) 1%) center/15000%; }
+  .ch-button:hover, .ch-button:focus {
+    background: var(--ch-color-default-focus) radial-gradient(circle, transparent 1%, var(--ch-color-default-focus) 1%) center/15000%;
+    transition: background 0.6s; }
   .ch-button:active {
-    background-color: var(--ch-color-default-active);
+    background-color: var(--ch-color-default-inverse);
     background-size: 100%;
     transition: background 0s; }
-  .ch-button:hover:focus, .ch-button:hover, .ch-button:focus {
+  .ch-button:hover, .ch-button:focus {
     border-color: var(--ch-color-default-focus); }
   .ch-button:active {
     border-color: var(--ch-color-default-active); }
-  .ch-button:hover:focus, .ch-button:hover, .ch-button:focus, .ch-button:active {
+  .ch-button:hover, .ch-button:active, .ch-button:focus {
     color: var(--ch-color-neutral-1); }
   .ch-button:disabled, .ch-button.is-disabled {
     opacity: 0.5; }
   .ch-button--primary {
-    transition: background 0.4s;
+    transition: background 0.2s;
     background-color: var(--ch-color-primary);
     background-position: center;
     transition: background 0.8s;
     border-color: var(--ch-color-primary);
     color: var(--ch-color-neutral-2); }
-    .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus {
-      background: var(--ch-color-primary-focus) radial-gradient(circle, transparent 1%, var(--ch-color-primary-focus) 1%) center/15000%; }
+    .ch-button--primary:hover, .ch-button--primary:focus {
+      background: var(--ch-color-primary-focus) radial-gradient(circle, transparent 1%, var(--ch-color-primary-focus) 1%) center/15000%;
+      transition: background 0.6s; }
     .ch-button--primary:active {
-      background-color: var(--ch-color-primary-active);
+      background-color: var(--ch-color-primary-inverse);
       background-size: 100%;
       transition: background 0s; }
-    .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus {
+    .ch-button--primary:hover, .ch-button--primary:focus {
       border-color: var(--ch-color-primary-focus); }
     .ch-button--primary:active {
       border-color: var(--ch-color-primary); }
   .ch-button--secondary {
-    transition: background 0.4s;
+    transition: background 0.2s;
     background-color: transparent;
     background-position: center;
     border-color: var(--ch-color-primary-active);
     color: var(--ch-color-primary-active); }
-    .ch-button--secondary:hover:focus, .ch-button--secondary:hover, .ch-button--secondary:focus {
-      background: var(--ch-color-primary-focus) radial-gradient(circle, transparent 1%, var(--ch-color-primary-focus) 1%) center/15000%; }
+    .ch-button--secondary:hover, .ch-button--secondary:focus {
+      background: var(--ch-color-primary-focus) radial-gradient(circle, transparent 1%, var(--ch-color-primary-focus) 1%) center/15000%;
+      transition: background 0.6s; }
     .ch-button--secondary:active {
-      background-color: var(--ch-color-primary-active);
+      background-color: var(--ch-color-primary-inverse);
       background-size: 100%;
       transition: background 0s; }
-    .ch-button--secondary:hover:focus, .ch-button--secondary:hover, .ch-button--secondary:focus {
+    .ch-button--secondary:hover, .ch-button--secondary:focus {
       border-color: var(--ch-color-primary-focus); }
     .ch-button--secondary:active {
       border-color: var(--ch-color-primary-focus); }
   .ch-button--negative {
-    transition: background 0.4s;
+    transition: background 0.2s;
     background-color: transparent;
     background-position: center;
     border-color: var(--ch-color-negative);
     color: var(--ch-color-negative); }
-    .ch-button--negative:hover:focus, .ch-button--negative:hover, .ch-button--negative:focus {
-      background: var(--ch-color-negative-focus) radial-gradient(circle, transparent 1%, var(--ch-color-negative-focus) 1%) center/15000%; }
+    .ch-button--negative:hover, .ch-button--negative:focus {
+      background: var(--ch-color-negative-focus) radial-gradient(circle, transparent 1%, var(--ch-color-negative-focus) 1%) center/15000%;
+      transition: background 0.6s; }
     .ch-button--negative:active {
-      background-color: var(--ch-color-negative-active);
+      background-color: var(--ch-color-negative-inverse);
       background-size: 100%;
       transition: background 0s; }
-    .ch-button--negative:hover:focus, .ch-button--negative:hover, .ch-button--negative:focus {
+    .ch-button--negative:hover, .ch-button--negative:focus {
       border-color: var(--ch-color-negative-focus); }
     .ch-button--negative:active {
       border-color: var(--ch-color-negative-active); }
