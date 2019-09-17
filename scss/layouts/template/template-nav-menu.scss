@@ -27,9 +27,7 @@
       // 1.1.1. Label
 
       &-label {
-        $delay: calc(#{$ch-transition-duration} /2);
-
-        @include ch-transition(opacity, $delay);
+        @include ch-transition(opacity, $ch-transition-fast);
         font-weight: ch-get-text-weight(bold);
       }
 

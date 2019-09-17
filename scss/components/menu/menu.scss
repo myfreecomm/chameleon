@@ -79,6 +79,7 @@
     // 2.2. Arrow
 
     > .ch-menu-item > .ch-menu-item-arrow {
+      @include ch-transition;
       transform: translate(50%, -50%);
     }
 
