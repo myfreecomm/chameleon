@@ -1,0 +1,96 @@
+@import '../../abstracts/breakpoints';
+@import '../../abstracts/colors';
+@import '../../abstracts/dimensions';
+@import '../../abstracts/helpers';
+@import '../../abstracts/layers';
+@import '../../abstracts/space';
+
+.ch-dropdown {
+  
+  // 1. Base
+
+  @include ch-media(from, tablet) {
+    position: relative;
+  }
+
+  display: inline-block;
+
+  // 1.1. Overlay
+
+  &-overlay {
+    @include ch-media(from, tablet) {
+      @include ch-paddingless;
+
+      position: absolute;
+      top: auto;
+      
+      margin-top: #{ch-get-space(xs)};
+      width: auto;
+      min-width: #{ch-get-dimension(2)};
+      height: auto;
+    }
+    
+    @include ch-space-inset(default, xs);
+
+    transition: background 200ms ease, visibility 200ms ease;
+
+    visibility: hidden;
+    z-index: #{ch-get-z-index(5, 2)};
+    position: fixed;
+    display: flex;
+    flex-direction: column-reverse;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background: transparent;
+
+    // 1.1.1. Overlay content
+
+    > * {
+      @include ch-media(from, tablet) {
+        @include ch-shadow(2);
+
+        transform: none;
+      }
+
+      @include ch-shadow(5, top-bottom, #{$ch-color-grey-100});
+
+      transition: transform 200ms ease, opacity 200ms ease;
+      transform: translate(0, 10%);
+
+      opacity: 0;
+      max-height: 80vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+
+  // 2. Active state
+
+  &.is-active {
+
+    // 2.1. Overlay
+
+    .ch-dropdown-overlay {
+      @include ch-media(from, tablet) {
+        display: block;
+
+        background: transparent;
+      }
+
+      visibility: visible;
+
+      background: #{ch-get-color(overlay)};
+
+      // 2.1.1. Overlay content
+
+      > * {
+        transform: translate(0, 0);
+
+        opacity: 1;
+      }
+    }
+  }
+}

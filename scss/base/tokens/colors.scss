@@ -113,4 +113,9 @@
   --ch-color-border-inverse:           #{$ch-color-navy-20};
   --ch-color-border-focus-inverse:     #{ch-get-color-focus($ch-color-navy-20,  inverse)};
   --ch-color-border-active-inverse:    #{ch-get-color-active($ch-color-navy-20, inverse)};
+
+  // 7. Overlay
+
+  --ch-color-overlay:                  #{rgba($ch-color-grey-100, 0.55)};
+  --ch-color-overlay-inverse:          #{rgba($ch-color-grey-0, 0.55)};
 }
