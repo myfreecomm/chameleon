@@ -21,7 +21,17 @@
 
   // 3. Support
 
-  // 3.1. Primary
+  // 3.1. Default
+
+  --ch-color-default:                  #{$ch-color-grey};
+  --ch-color-default-focus:            #{ch-get-color-focus($ch-color-grey)};
+  --ch-color-default-active:           #{ch-get-color-active($ch-color-grey)};
+
+  --ch-color-default-inverse:          #{$ch-color-grey-light};
+  --ch-color-default-focus-inverse:    #{ch-get-color-focus($ch-color-grey-light,  inverse)};
+  --ch-color-default-active-inverse:   #{ch-get-color-active($ch-color-grey-light, inverse)};
+
+  // 3.2. Primary
 
   --ch-color-primary:                  #{$ch-color-blue};
   --ch-color-primary-focus:            #{ch-get-color-focus($ch-color-blue)};
@@ -31,7 +41,7 @@
   --ch-color-primary-focus-inverse:    #{ch-get-color-focus($ch-color-blue-light,  inverse)};
   --ch-color-primary-active-inverse:   #{ch-get-color-active($ch-color-blue-light, inverse)};
 
-  // 3.2. Secondary
+  // 3.3. Secondary
 
   --ch-color-secondary:                #{$ch-color-grey};
   --ch-color-secondary-focus:          #{ch-get-color-focus($ch-color-grey)};
@@ -41,7 +51,7 @@
   --ch-color-secondary-focus-inverse:  #{ch-get-color-focus($ch-color-grey-light,  inverse)};
   --ch-color-secondary-active-inverse: #{ch-get-color-active($ch-color-grey-light, inverse)};
 
-  // 3.3. Info
+  // 3.4. Info
 
   --ch-color-info:                     #{$ch-color-cyan};
   --ch-color-info-focus:               #{ch-get-color-focus($ch-color-cyan)};
@@ -51,7 +61,7 @@
   --ch-color-info-focus-inverse:       #{ch-get-color-focus($ch-color-cyan-light,  inverse)};
   --ch-color-info-active-inverse:      #{ch-get-color-active($ch-color-cyan-light, inverse)};
 
-  // 3.4. Warning
+  // 3.5. Warning
 
   --ch-color-warning:                  #{$ch-color-yellow};
   --ch-color-warning-focus:            #{ch-get-color-focus($ch-color-yellow)};
@@ -61,7 +71,7 @@
   --ch-color-warning-focus-inverse:    #{ch-get-color-focus($ch-color-yellow-light,  inverse)};
   --ch-color-warning-active-inverse:   #{ch-get-color-active($ch-color-yellow-light, inverse)};
 
-  // 3.5. Negative
+  // 3.6. Negative
 
   --ch-color-negative:                 #{$ch-color-red};
   --ch-color-negative-focus:           #{ch-get-color-focus($ch-color-red)};
@@ -71,7 +81,7 @@
   --ch-color-negative-focus-inverse:   #{ch-get-color-focus($ch-color-red-light,  inverse)};
   --ch-color-negative-active-inverse:  #{ch-get-color-active($ch-color-red-light, inverse)};
 
-  // 3.5. Positive
+  // 3.7. Positive
 
   --ch-color-positive:                 #{$ch-color-green};
   --ch-color-positive-focus:           #{ch-get-color-focus($ch-color-green)};
