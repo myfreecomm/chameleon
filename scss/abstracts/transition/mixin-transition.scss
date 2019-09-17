@@ -1,0 +1,10 @@
+@import './variables';
+
+@mixin ch-transition ($property: all, $delay: $ch-transition-delay) {
+  transition: {
+    property: $property;
+    duration: $ch-transition-duration;
+    timing-function: $ch-transition-timing-function;
+    delay: $delay;
+  }
+}

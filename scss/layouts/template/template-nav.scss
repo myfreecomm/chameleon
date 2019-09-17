@@ -2,11 +2,13 @@
 @import '../../abstracts/colors';
 @import '../../abstracts/dimensions';
 @import '../../abstracts/layers';
+@import '../../abstracts/transition';
 
 .ch-template-nav {
 
   // 1. Base
 
+  @include ch-transition;
   display: flex;
   z-index: #{ch-get-z-index(2)};
   justify-content: space-between;
@@ -15,6 +17,7 @@
   left: 0;
 
   width: 100%;
+  height: #{ch-get-dimension(1)};
   background-color: #{ch-get-color(neutral, 1, inverse)};
 
   // 2. Open state
