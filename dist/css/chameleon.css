@@ -2364,7 +2364,7 @@ h3,
   line-height: var(--ch-text-line-height); }
 
 .ch-button {
-  transition: background 0.8s;
+  transition: background 0.6s;
   background-color: transparent;
   background-position: center;
   padding-top: var(--ch-space-xs);
@@ -2396,7 +2396,7 @@ h3,
   .ch-button:disabled, .ch-button.is-disabled {
     opacity: 0.5; }
   .ch-button--primary {
-    transition: background 0.8s;
+    transition: background 0.6s;
     background-color: var(--ch-color-primary);
     background-position: center;
     transition: background 0.8s;
@@ -2413,7 +2413,7 @@ h3,
     .ch-button--primary:active {
       border-color: var(--ch-color-primary); }
   .ch-button--secondary {
-    transition: background 0.8s;
+    transition: background 0.6s;
     background-color: transparent;
     background-position: center;
     border-color: var(--ch-color-primary-active);
@@ -2429,7 +2429,7 @@ h3,
     .ch-button--secondary:active {
       border-color: var(--ch-color-primary-focus); }
   .ch-button--negative {
-    transition: background 0.8s;
+    transition: background 0.6s;
     background-color: transparent;
     background-position: center;
     border-color: var(--ch-color-negative);
