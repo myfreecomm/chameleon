@@ -5,6 +5,7 @@
 @import '../../abstracts/helpers';
 @import '../../abstracts/space';
 @import '../../abstracts/typography';
+@import '../../abstracts/ripple-effect';
 
 .ch-button {
 
@@ -47,8 +48,9 @@
   // 2. Primary variation
 
   &--primary {
+    @include ch-ripple-effect(primary);
+    transition: background 0.8s;
     border-color: #{ch-get-color(primary)};
-    background: #{ch-get-color(primary)};
     color: #{ch-get-color(neutral, 2)};
 
     // 2.1. Focus interaction
@@ -57,14 +59,12 @@
     &:hover,
     &:focus {
       border-color: #{ch-get-color(primary, focus)};
-      background: #{ch-get-color(primary, focus)};
     }
 
     // 2.2. Active interaction
 
     &:active {
       border-color: #{ch-get-color(primary, acitve)};
-      background: #{ch-get-color(primary, active)};
     }
 
     // 2.3. Focus and active interaction
@@ -80,6 +80,7 @@
   // 3. Secondary variation
 
   &--secondary {
+    @include ch-ripple-effect(secondary);
     border-color: #{ch-get-color(primary, active)};
     color: #{ch-get-color(primary, active)};
 
@@ -103,13 +104,14 @@
     &:hover,
     &:focus,
     &:active {
-      color: #{ch-get-color(primary, focus)};
+      color: #{ch-get-color(text, 1, inverse)};
     }
   }
 
   // 4. Negative variation
 
   &--negative {
+    @include ch-ripple-effect(negative);
     border-color: #{ch-get-color(negative)};
     color: #{ch-get-color(negative)};
 
@@ -133,7 +135,7 @@
     &:hover,
     &:focus,
     &:active {
-      color: #{ch-get-color(negative, active)};
+      color: #{ch-get-color(text, 1, inverse)};
     }
   }
 
