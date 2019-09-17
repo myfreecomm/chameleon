@@ -116,13 +116,13 @@
 
   // 6. Border
 
-  --ch-color-border:                   #{lighten($ch-color-navy-light, 5%)};
-  --ch-color-border-focus:             #{ch-get-color-focus($ch-color-navy-light)};
-  --ch-color-border-active:            #{ch-get-color-active($ch-color-navy-light)};
+  --ch-color-border:                   #{lighten($ch-color-grey-light, 7%)};
+  --ch-color-border-focus:             #{ch-get-color-focus($ch-color-grey-light)};
+  --ch-color-border-active:            #{ch-get-color-active($ch-color-grey-light)};
 
-  --ch-color-border-inverse:           #{$ch-color-navy-light};
-  --ch-color-border-focus-inverse:     #{ch-get-color-focus($ch-color-navy-light,  inverse)};
-  --ch-color-border-active-inverse:    #{ch-get-color-active($ch-color-navy-light, inverse)};
+  --ch-color-border-inverse:           #{$ch-color-grey-light};
+  --ch-color-border-focus-inverse:     #{ch-get-color-focus($ch-color-grey-light,  inverse)};
+  --ch-color-border-active-inverse:    #{ch-get-color-active($ch-color-grey-light, inverse)};
 
   // 7. Menu
 

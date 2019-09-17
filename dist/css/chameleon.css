@@ -68,12 +68,12 @@
   --ch-color-text-link-active-inverse: #51a9e1;
   --ch-color-highlight:                #FFE14C;
   --ch-color-highlight-inverse:        #9B8208;
-  --ch-color-border:                   #bdc7db;
-  --ch-color-border-focus:             #9babc9;
-  --ch-color-border-active:            #8b9dc0;
-  --ch-color-border-inverse:           #ACB9D2;
-  --ch-color-border-focus-inverse:     #bdc7db;
-  --ch-color-border-active-inverse:    #cdd5e4;
+  --ch-color-border:                   #cfd1d3;
+  --ch-color-border-focus:             #afb2b6;
+  --ch-color-border-active:            #a1a6aa;
+  --ch-color-border-inverse:           #BCBFC2;
+  --ch-color-border-focus-inverse:     #c9ccce;
+  --ch-color-border-active-inverse:    #d7d9da;
   --ch-color-menu-text-1:              #ACB9D2
 ; }
 
