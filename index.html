@@ -4,6 +4,11 @@
     <title>Chameleon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="dist/css/chameleon.css">
@@ -84,7 +89,7 @@
       <!-- NAV END -->
 
       <!-- HEADER BEGIN -->
-      <header class="ch-template-header is-sticky">
+      <header class="ch-template-header">
         <!-- MENU BEGIN -->
         <nav class="ch-menu">
           <label class="ch-menu-item ch-menu-item--icon ch-toggle ch-toggle--left">
@@ -194,9 +199,15 @@
               <option>Opção 4</option>
             </select>
           </div>
+          <div class="ch-button ch-button--primary">Enviar</div>
         </form>
       </div>
       <!-- CONTENT END -->
     </div>
+    <script>
+      $('.ch-menu-item').on('click', function() {
+        $(this).parent().toggleClass('is-open')
+      })
+    </script>
   </body>
 </html>
