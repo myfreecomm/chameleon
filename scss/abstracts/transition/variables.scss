@@ -1,3 +1,8 @@
-$ch-transition-duration: 0.3s;
+$ch-transition-duration-very-fast: 0.1s;
+$ch-transition-duration-fast:      0.2s;
+$ch-transition-duration-normal:    0.3s;
+$ch-transition-duration-slow:      0.4s;
+$ch-transition-duration-very-slow: 0.5s;
+
 $ch-transition-timing-function: ease-in-out;
 $ch-transition-delay: unset;

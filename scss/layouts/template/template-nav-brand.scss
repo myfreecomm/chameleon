@@ -31,9 +31,7 @@
     // 3. Name
 
     &-name {
-      $delay: calc(#{$ch-transition-duration} /2);
-
-      @include ch-transition(opacity, $delay);
+      @include ch-transition(opacity, $ch-transition-duration-fast);
 
       color: #{ch-get-color(text, 1, inverse)};
       font-family: #{ch-get-text-font-family(brand)};

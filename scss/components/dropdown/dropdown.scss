@@ -4,6 +4,7 @@
 @import '../../abstracts/helpers';
 @import '../../abstracts/layers';
 @import '../../abstracts/space';
+@import '../../abstracts/transition';
 
 .ch-dropdown {
   
@@ -31,8 +32,7 @@
     }
     
     @include ch-space-inset(default, xs);
-
-    transition: background 200ms ease, visibility 200ms ease;
+    @include ch-transition(background visibility, $ch-transition-duration-fast);
 
     visibility: hidden;
     z-index: #{ch-get-z-index(5, 2)};
@@ -55,9 +55,9 @@
         transform: none;
       }
 
-      @include ch-shadow(5, top-bottom, #{$ch-color-grey-100});
+      @include ch-shadow(5, top-bottom, #{$ch-color-black});
+      @include ch-transition(transform opacity, $ch-transition-duration-fast);
 
-      transition: transform 200ms ease, opacity 200ms ease;
       transform: translate(0, 10%);
 
       opacity: 0;

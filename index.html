@@ -90,7 +90,7 @@
       <!-- NAV END -->
 
       <!-- HEADER BEGIN -->
-      <header class="ch-template-header is-sticky">
+      <header class="ch-template-header">
         <!-- MENU BEGIN -->
         <nav class="ch-menu">
           <label class="ch-menu-item ch-menu-item--icon ch-toggle ch-toggle--left">
@@ -140,7 +140,7 @@
       <!-- CONTENT BEGIN -->
       <div class="ch-template-content">
         
-        <div class="ch-dropdown is-active">
+        <div class="ch-dropdown">
           <button class="ch-button ch-dropdown-toggle">Share</button>
 
           <div class="ch-dropdown-overlay">
@@ -238,6 +238,16 @@
         var $wrapper = $toggle.parent()
 
         $wrapper.toggleClass('is-active')
+      })
+    </script>
+
+    <script>
+      $('.ch-menu-item').on('click', function() {
+        $(this).parent().toggleClass('is-open')
+      })
+
+      $('.ch-toggle-toggle').on('change', function() {
+        $('.ch-template-nav').toggleClass('is-expanded')
       })
     </script>
 
