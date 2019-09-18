@@ -3,6 +3,7 @@
 @import '../../abstracts/dimensions';
 @import '../../abstracts/menu';
 @import '../../abstracts/border';
+@import '../../abstracts/transition';
 
 .ch-menu {
   // 1. item
@@ -30,6 +31,7 @@
     &.is-active:before {
       $empty: '';
 
+      @include ch-transition(opacity);
       @include ch-border-radius(circle);
 
       display: block;
@@ -40,6 +42,7 @@
       width: ch-get-space(xxs);
       height: ch-get-icon-size();
       transform: translate(0, -50%);
+      opacity: 1;
 
       background: #{ch-get-color(brand, 1)};
     }
@@ -53,7 +56,7 @@
     // 1.4. Label
 
     &-label {
-      display: block;  
+      display: block;
     }
   }
 
@@ -76,6 +79,8 @@
     // 2.2. Arrow
 
     > .ch-menu-item > .ch-menu-item-arrow {
+      @include ch-transition(transform, $ch-transition-duration-fast);
+
       transform: translate(50%, -50%);
     }
 
@@ -87,16 +92,29 @@
 
       > .ch-menu {
         display: block;
+
+        animation: --ch-fade-in #{$ch-transition-duration-normal} #{$ch-transition-timing-function};
+      }
+
+      @keyframes --ch-fade-in {
+        #{0%} {
+          opacity: 0;
+        }
+
+        #{100%} {
+          opacity: 1;
+        }
       }
 
       // 2.3.2. Item
-
+      
       > .ch-menu-item {
+        opacity: 1;
 
         // 2.3.2.1. Sidebar
 
         &.is-active:before {
-          content: none;
+          opacity: 0;
         }
 
         // 2.3.2.2. Arrow

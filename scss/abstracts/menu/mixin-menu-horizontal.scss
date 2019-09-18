@@ -29,14 +29,12 @@
 
   > .is-active:before,
   > .ch-menu-submenu > .is-active:before {
-    $empty: '';
-
     top: auto;
     bottom: ch-get-space(xxs);
     left: 50%;
     transform: translate(-50%, 0);
+    opacity: 1;
 
-    content: $empty !important;
     width: calc(100% - 2 * #{ch-get-space(m)});
     min-width: #{ch-get-icon-size(m)};
     height: #{ch-get-space(xxs)};

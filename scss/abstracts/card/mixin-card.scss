@@ -4,4 +4,6 @@
 @mixin ch-card {
   @include ch-box-model(m, default, box, ch-get-color(border));
   @include ch-border-radius(2);
+
+  background: #{ch-get-color(neutral, 1)};
 }
