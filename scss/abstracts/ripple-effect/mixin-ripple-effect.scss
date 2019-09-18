@@ -1,22 +1,22 @@
 @import './function-get-color-hover';
-@import '../transition/variables.scss';
+@import '../transition';
 
 @mixin ch-ripple-effect ($color-type) {
   $type: if($color-type != 'secondary', $color-type, 'primary');
 
-  transition: background #{$ch-transition-duration-fast};
+  @include ch-transition(background, #{$ch-transition-duration-fast});
   background-color: if($color-type == 'primary', #{ch-get-color($color-type)}, transparent);
   background-position: center;
 
   &:hover,
   &:focus {
+    @include ch-transition(background, #{$ch-transition-duration-very-slow});
     background: #{ch-get-color-hover($type)};
-    transition: background #{$ch-transition-duration-very-slow};
   }
 
   &:active {
+    @include ch-transition(background, 0s);
     background-color: #{ch-get-color($type, inverse)};
     background-size: 100%;
-    transition: background 0s;
   }
 }
