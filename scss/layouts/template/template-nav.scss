@@ -44,17 +44,13 @@
     height: 100vh;
 
     &.is-expanded,
-    &:focus:hover,
-    &:focus,
-    &:hover {
+    &.is-hovered {
       z-index: #{ch-get-z-index(3)};
 
       width: #{ch-get-dimension(2)};
     }
 
-    &:focus:hover,
-    &:focus,
-    &:hover {
+    &.is-hovered {
       &:not(.is-expanded) {
         @include ch-shadow(3, right-left);
       }
