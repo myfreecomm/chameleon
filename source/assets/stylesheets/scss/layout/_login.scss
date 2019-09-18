@@ -1,0 +1,147 @@
+.ch-login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before {
+    background: {
+      image: url('../images/bg_app.jpg');
+      size: cover;
+      position: center bottom;
+    }
+    filter: grayscale(100%) contrast(1.2);
+    z-index: -1;
+  }
+
+  &:after {
+    background-color: color(navy, tone-80);
+    opacity: 0.85;
+    z-index: 0;
+  }
+
+
+  &-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  &-header {
+    width: 100%;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+    .ui.header:not(.sub) {
+      color: $fontColor;
+      font-weight: 500;
+      font-size: 1.5em;
+    }
+
+    .ui.sub.header {
+      text-transform: none;
+      font-size: 1rem !important;
+      margin-top: .25rem;
+      color: rgba($fontColor, 0.7)
+    }
+
+    .logo-nexaas {
+      width: auto;
+      height: 1em;
+      display: block;
+    }
+
+    .text {
+      display: block;
+      font-weight: 300;
+      font-size: 1.3em;
+    }
+  }
+
+  &-form {
+    max-width: 330px;
+    padding: 25px 0 35px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .ui.header {
+      font-weight: 300;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .button {
+      color: #fff;
+      background-color: color(navy, tone-80);
+
+      &:hover {
+        color: #fff;
+        background-color: lighten(color(navy, tone-80), 5%);
+      }
+    }
+  }
+
+  &-helpers {
+    padding: 35px 0;
+    color: #999;
+
+    span {
+      display: block;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  &-footer {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    padding: 20px 60px;
+    text-align: center;
+
+    li {
+      display: inline-block;
+    }
+
+    li a {
+      color: #999;
+      display: block;
+      padding: 10px;
+    }
+  }
+
+  @include respond-to($tablet-portrait) {
+    &-container {
+      width: 100%;
+      padding: 20px;
+    }
+
+    &-footer {
+      padding: 20px;
+    }
+  }
+}

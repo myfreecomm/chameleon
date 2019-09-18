@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>
+      Nexaas - Chameleon
+      
+    </title>
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/stylesheets/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/init.js"></script>
+  </head>
+  <body data-theme="myfinance">
+    <div class="ch-nav">
+        <div class="ch-logo">
+          <div class="ch-logo-icon"><img src="../assets/images/myfinance_logo.png"></div><span class="ch-logo-label">MyFinance</span>
+        </div>
+      <ul class="ch-menu">
+        <li class="ch-menu-item active"><a href="#"><i class="fal fa-chart-line fa-icon"></i><span class="ch-menu-item-label">Visão consolidada</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-history fa-icon"></i><span class="ch-menu-item-label">Relatório Dinâmico</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-table fa-icon"></i><span class="ch-menu-item-label">Linha do Tempo</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-upload fa-icon"></i><span class="ch-menu-item-label">Contas a Pagar</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-download fa-icon"></i><span class="ch-menu-item-label">Contas a Receber</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-calendar-check fa-icon"></i><span class="ch-menu-item-label">Orçamentos</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-university fa-icon"></i><span class="ch-menu-item-label">Movimento Bancário</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-repeat fa-icon"></i><span class="ch-menu-item-label">Conciliação Bancária</span></a></li>
+        <li class="ch-menu-item"><a href="#"><i class="fal fa-credit-card-front fa-icon"></i><span class="ch-menu-item-label">Cartões de Crédito</span></a></li>
+        <li class="ch-menu-item ch-dropdown"><a class="ch-dropdown-button" href="#"><i class="fal fa-address-book fa-icon"></i><span class="ch-menu-item-label">Cadastros</span>
+            <div class="fal fa-chevron-right fa-icon dropdown"></div></a>
+          <div class="ch-dropdown-content">
+            <ul class="ch-dropdown-menu">
+              <li class="ch-menu-item"><a href="#">Clientes/Fornecedores</a></li>
+              <li class="ch-menu-item"><a href="#">Categorias</a></li>
+              <li class="ch-menu-item"><a href="#">Centros de Custo/Receita</a></li>
+              <li class="ch-menu-item"><a href="#">Classificadores Personalizados</a></li>
+              <li class="ch-menu-item"><a href="#">Relatórios Dinâmicos</a></li>
+              <li class="ch-menu-item"><a href="#">Regras Automáticas</a></li>
+              <li class="ch-menu-item"><a href="#">Contas de Recebíveis</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="ch-menu-item more mobile-only">
+          <button data-toogle="nav"><i class="fal fa-ellipsis-h-alt fa-icon"></i></button>
+        </li>
+      </ul>
+      <div class="ch-expand-button">
+        <button data-expand="Expandir" data-minimize="Minimizar">
+          <svg class="icon minimize" width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="minimize" fill="#000000" fill-rule="nonzero">
+                <path d="M1.4,2.22044605e-16 L18.6,2.22044605e-16 C19.3731986,8.0010317e-17 20,0.62680135 20,1.4 L20,13.6 C20,14.3731986 19.3731986,15 18.6,15 L1.4,15 C0.62680135,15 5.38778735e-16,14.3731986 4.4408921e-16,13.6 L0,1.4 C-9.46895252e-17,0.62680135 0.62680135,1.42034288e-16 1.4,2.22044605e-16 Z M18.3,1 L9,1 L9,14 L18.3,14 C18.6865993,14 19,13.6865993 19,13.3 L19,1.7 C19,1.31340068 18.6865993,1 18.3,1 Z M6.28125,11.375 L6.5,11.15625 C6.58333375,11.0937497 6.625,11.0104172 6.625,10.90625 C6.625,10.8020828 6.58333375,10.7083337 6.5,10.625 L3.875,8.03125 L9,8.03125 L9,6.96875 L3.875,6.96875 L6.5,4.375 C6.58333375,4.29166625 6.625,4.19791719 6.625,4.09375 C6.625,3.98958281 6.58333375,3.90625031 6.5,3.84375 L6.28125,3.625 C6.19791625,3.54166625 6.10937547,3.5 6.015625,3.5 C5.92187453,3.5 5.83333375,3.54166625 5.75,3.625 L2.125,7.25 C2.04166625,7.31250031 2,7.39583281 2,7.5 C2,7.60416719 2.04166625,7.68749969 2.125,7.75 L5.75,11.375 C5.83333375,11.4583337 5.92187453,11.5 6.015625,11.5 C6.10937547,11.5 6.19791625,11.4583337 6.28125,11.375 Z" id="path-1"></path>
+              </g>
+            </g>
+          </svg>
+          <svg class="icon expand" width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="expand" fill="#000000" fill-rule="nonzero">
+                <path d="M1.4,2.22044605e-16 L18.6,2.22044605e-16 C19.3731986,8.0010317e-17 20,0.62680135 20,1.4 L20,13.6 C20,14.3731986 19.3731986,15 18.6,15 L1.4,15 C0.62680135,15 5.38778735e-16,14.3731986 4.4408921e-16,13.6 L0,1.4 C-9.46895252e-17,0.62680135 0.62680135,1.42034288e-16 1.4,2.22044605e-16 Z M18.3,1 L4,1 L4,14 L18.3,14 C18.6865993,14 19,13.6865993 19,13.3 L19,1.7 C19,1.31340068 18.6865993,1 18.3,1 Z M6.71875,11.375 L6.5,11.15625 C6.41666625,11.0937497 6.375,11.0104172 6.375,10.90625 C6.375,10.8020828 6.41666625,10.7083337 6.5,10.625 L9.125,8.03125 L4,8.03125 L4,6.96875 L9.125,6.96875 L6.5,4.375 C6.41666625,4.29166625 6.375,4.19791719 6.375,4.09375 C6.375,3.98958281 6.41666625,3.90625031 6.5,3.84375 L6.71875,3.625 C6.80208375,3.54166625 6.89062453,3.5 6.984375,3.5 C7.07812547,3.5 7.16666625,3.54166625 7.25,3.625 L10.875,7.25 C10.9583337,7.31250031 11,7.39583281 11,7.5 C11,7.60416719 10.9583337,7.68749969 10.875,7.75 L7.25,11.375 C7.16666625,11.4583337 7.07812547,11.5 6.984375,11.5 C6.89062453,11.5 6.80208375,11.4583337 6.71875,11.375 Z" id="path-1"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <main class="ch-content">
+      <header class="ch-header">
+        <div class="ch-breadcrumb">
+          <div class="ch-breadcrumb-section active"><a href="#" title="Visão consolidada">Visão consolidada</a></div>
+        </div>
+        <div class="ch-header-nav animated">
+          <button class="ch-header-nav-button btn-more-options mobile-only"><i class="fal fa-angle-double-left fa-icon"></i></button>
+          <button class="ch-header-nav-button" data-target="search"><i class="fal fa-search fa-1_5x"></i></button>
+          <button class="ch-header-nav-button" data-target="modal" data-modal="notifications"><i class="ch-notification-label fal fa-bell fa-1_5x"></i></button>
+          <div class="ch-header-nav-button ch-dropdown" href="#">
+            <div class="ch-dropdown-toggle"><i class="ch-notification-label fal fa-cog fa-1_5x"></i></div>
+            <div class="ch-dropdown-content" tabindex="-1" data-position="bottom right"><span class="ch-dropdown-header">Configurações</span>
+              <ul class="ch-dropdown-menu">
+                <li class="ch-dropdown-menu-item"><a href="#">Minha conta</a></li>
+                <li class="ch-dropdown-menu-item"><a href="#">Ajuda</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ch-header-nav-button ch-dropdown ch-account">
+            <button class="ch-dropdown-toggle" type="button">StarGames<i class="fal fa-chevron-down fa-icon dropdown"></i></button>
+            <div class="ch-dropdown-content bottom right ch-account-container has-search" tabindex="-1">
+              <div class="ch-account-header"><i class="fal fa-search"></i>
+                <input class="ch-search-form-input" type="text" placeholder="Busque por conta ou entidade">
+                <div class="actions">
+                  <button class="btn-close mobile-only"><i class="fal fa-times"></i></button>
+                </div>
+              </div>
+              <div class="ch-account-content">
+                <nav class="ch-account-content-menu"><span class="ch-dropdown-header">Contas</span>
+                  <ul class="ch-dropdown-menu">
+                    <li class="ch-dropdown-menu-item active open">
+                      <button class="ch-dropdown-button ch-dropdown-menu-item-label" href="#">Grupo Nexaas</button>
+                      <nav class="ch-account-content-submenu"><span class="ch-dropdown-header">Entidades</span>
+                        <ul class="ch-dropdown-menu">
+                          <li class="ch-dropdown-menu-item active"><a class="ch-dropdown-menu-item-label" href="#">StarGames</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Empresa I</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Empresa II</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Empresa III</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Empresa IV</a></li>
+                        </ul>
+                      </nav>
+                    </li>
+                    <li class="ch-dropdown-menu-item">
+                      <button class="ch-dropdown-button ch-dropdown-menu-item-label" href="#">J Experts</button>
+                      <nav class="ch-account-content-submenu"><span class="ch-dropdown-header">Entidades</span>
+                        <ul class="ch-dropdown-menu">
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Nexaas I</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Nexaas II</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Nexaas III</a></li>
+                        </ul>
+                      </nav>
+                    </li>
+                    <li class="ch-dropdown-menu-item">
+                      <button class="ch-dropdown-button ch-dropdown-menu-item-label" href="#">Acme Factoring</button>
+                      <nav class="ch-account-content-submenu"><span class="ch-dropdown-header">Entidades</span>
+                        <ul class="ch-dropdown-menu">
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Lorem Ipsum I</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Lorem Ipsum II</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Lorem Ipsum III</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Lorem Ipsum IV</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Lorem Ipsum V</a></li>
+                          <li class="ch-dropdown-menu-item"><a class="ch-dropdown-menu-item-label" href="#">Lorem Ipsum VI</a></li>
+                        </ul>
+                      </nav>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="ch-header-nav-button ch-dropdown ch-user" href="#">
+            <button class="ch-avatar ch-dropdown-toggle" type="button"><img class="ui avatar image" src="http://i.pravatar.cc/50?img==5"></button>
+            <div class="ch-dropdown-content bottom right" tabindex="-1">
+              <div class="ch-user-container">
+                <div class="ch-user-header"><img class="avatar" src="http://i.pravatar.cc/50?img==5">
+                  <div class="info"><strong class="name">Maria Eduarda</strong>
+                    <div class="email">atendimento@stargames.com.br</div>
+                  </div>
+                </div>
+                <div class="ch-user-action"><a href="#"><i class="fal fa-user fa-icon"></i><span class="label">Meu Perfil</span></a></div>
+                <div class="ch-user-action"><a href="#"><i class="fal fa-sign-out fa-icon"></i><span class="label">Sair do Chameleon</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="ui padded grid stackable">
+        <div class="row middle aligned">
+          <div class="thirteen wide column">
+            <div class="ui items">
+              <div class="item">
+                <div class="ui tiny image circular"><img src="../assets/images/logo_bradesco.png"></div>
+                <div class="middle aligned content">
+                  <div class="ui header large">Bradesco
+                    <div class="sub header">Conta Corrente - 3836-1 - 09789-0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="three wide column right aligned">
+            <div class="ui header large blue"><small>R$</small> 272.873,56</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="thirteen wide column">
+            <div class="ch-tabs">
+              <div class="ui pointing secondary menu"><a class="active item" data-tab="first"><i class="fal fa-desktop fa-icon"></i>Visualizar</a><a class="item" data-tab="second"><i class="fal fa-cloud-download-alt fa-icon"></i>Importar</a><a class="item" data-tab="third"><i class="fal fa-print fa-icon"></i>Relatório</a><a class="item" data-tab="third"><i class="fal fa-filter fa-icon"></i>Filtros</a></div>
+            </div>
+          </div>
+          <div class="three wide column right aligned">
+            <div class="ui button primary">Novo Lançamento</div>
+          </div>
+        </div>
+        <div class="ui sixteen wide column">
+          <table class="ui very basic sortable table ch-table">
+            <thead>
+              <tr>
+                <th class="center aligned checkbox no-sort">
+                  <input type="checkbox">
+                </th>
+                <th><a href="#">Data</a></th>
+                <th class="no-sort">Documento</th>
+                <th class="no-sort">Descrição</th>
+                <th class="no-sort">Categoria</th>
+                <th class="no-sort">Cliente/Fornecedor</th>
+                <th class="right aligned">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">11/08/2017</td>
+                <td data-info="Documento">00230203</td>
+                <td data-info="Descrição">Salário de funcionários</td>
+                <td data-info="Categoria">Funcionários/Salário</td>
+                <td data-info="Cliente/Fornecedor">Maria da Silva</td>
+                <td class="right aligned negative" data-info="Valor"><strong>R$ -2.809.102.269,82</strong></td>
+              </tr>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">07/08/2017</td>
+                <td data-info="Documento">00000000</td>
+                <td data-info="Descrição">Conta de Telefone - GVTTelecomuniações</td>
+                <td data-info="Categoria">Serviços</td>
+                <td data-info="Cliente/Fornecedor">GVT</td>
+                <td class="right aligned negative" data-info="Valor"><strong>R$ -1.815,36</strong></td>
+              </tr>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">01/03/2017</td>
+                <td data-info="Documento">00410203</td>
+                <td data-info="Descrição">CR COB BlOQ COMP CONF RECEBIMENTO</td>
+                <td data-info="Categoria"></td>
+                <td data-info="Cliente/Fornecedor"></td>
+                <td class="right aligned positive" data-info="Valor"><strong>R$ 20.823,11</strong></td>
+              </tr>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">01/03/2017</td>
+                <td data-info="Documento">00410203</td>
+                <td data-info="Descrição">CR COB DINHEIRO CONF RECEBIMENTO</td>
+                <td data-info="Categoria"></td>
+                <td data-info="Cliente/Fornecedor"></td>
+                <td class="right aligned positive" data-info="Valor"><strong>R$ 999,92</strong></td>
+              </tr>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">24/02/2017</td>
+                <td data-info="Documento">00000000</td>
+                <td data-info="Descrição">PGTO TITULO OUTRO BCO - INTER</td>
+                <td data-info="Categoria"></td>
+                <td data-info="Cliente/Fornecedor"></td>
+                <td class="right aligned negative" data-info="Valor"><strong>R$ -1.815,36</strong></td>
+              </tr>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">10/02/2017</td>
+                <td data-info="Documento">00000000</td>
+                <td data-info="Descrição">FGTS</td>
+                <td data-info="Categoria">Impostos/FGTS</td>
+                <td data-info="Cliente/Fornecedor">Governo Federal</td>
+                <td class="right aligned negative" data-info="Valor"><strong>R$ -3.593,22</strong></td>
+              </tr>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">06/02/2017</td>
+                <td data-info="Documento">89250200</td>
+                <td data-info="Descrição">Projeto X</td>
+                <td data-info="Categoria">Serviços</td>
+                <td data-info="Cliente/Fornecedor">YanYan Cat</td>
+                <td class="right aligned positive" data-info="Valor"><strong>R$ 5.000.792.035,00</strong></td>
+              </tr>
+              <tr>
+                <td class="center aligned checkbox">
+                  <input type="checkbox">
+                </td>
+                <td data-info="Data">06/02/2017</td>
+                <td data-info="Documento">0000000</td>
+                <td data-info="Descrição">Conta de Luz</td>
+                <td data-info="Categoria"></td>
+                <td data-info="Cliente/Fornecedor">Light</td>
+                <td class="right aligned negative" data-info="Valor"><strong>R$ -1.000,00</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ui segment basic paddingless right aligned h-text-center--mobile">
+            <div class="ui pagination menu ch-pagination"><a class="item"><i class="fal fa-angle-double-left"></i></a><a class="item"><i class="fal fa-angle-left"></i></a><a class="active item">1</a><a class="item">2</a>
+              <div class="disabled item">...</div><a class="item">20</a><a class="item">21</a><a class="item"><i class="fal fa-angle-right"></i></a><a class="item"><i class="fal fa-angle-double-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="ch-dialog" data-modal="notifications" tabindex="0">
+      <div class="ch-overlay">
+        <div class="ch-dialog-container">
+          <div class="ch-dialog-header">
+            <div class="content">
+              <div class="title"><strong>4</strong> Notificações</div><a class="mark-as-read" href="#">Marcar todas como lidas</a>
+            </div>
+            <div class="actions">
+              <button class="btn-close-dialog" type="button"><i class="fal fa-times"></i></button>
+            </div>
+          </div>
+          <div class="ch-dialog-content">
+            <div class="ui divided items">
+              <div class="item ch-dialog-message new unread">
+                <div class="content"><a class="header"><img class="ui avatar image symbol" src="http://i.pravatar.cc/50?img=2"><span>Joel Simmons</span></a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum ullam iure, exercitationem omnis magni</p>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
+                </div>
+              </div>
+              <div class="item ch-dialog-message unread">
+                <div class="content"><a class="header"><img class="ui avatar image symbol" src="../assets/images/myfinance_logo.png"><span>Myfinance</span></a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
+                </div>
+              </div>
+              <div class="item ch-dialog-message unread">
+                <div class="content"><a class="header"><img class="ui avatar image symbol" src="../assets/images/cobrato_logo.png"><span>Cobrato</span></a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
+                </div>
+              </div>
+              <div class="item ch-dialog-message unread">
+                <div class="content"><a class="header"><img class="ui avatar image symbol" src="../assets/images/estoka_logo.png"><span>Estoka</span></a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
+                </div>
+              </div>
+              <div class="item ch-dialog-message">
+                <div class="content"><a class="header"><img class="ui avatar image symbol" src="../assets/images/emites_logo.png"><span>Emites</span></a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
+                </div>
+              </div>
+              <div class="item ch-dialog-message">
+                <div class="content"><a class="header"><img class="ui avatar image symbol" src="../assets/images/nexaas_id_logo.png"><span>Nexaas ID</span></a>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, totam.</p>
+                  </div><small class="time">20 de agosto de 2017 às 21:30</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-search" tabindex="0">
+      <div class="ch-overlay">
+        <div class="ch-search-content">
+          <div class="ch-search-input-group">
+            <div class="ch-search-form" data-message="para sair">
+              <input class="ch-search-form-input" type="text" placeholder="Ex Nexaas"><span class="ch-search-form-icon computer-only"><i class="fal fa-search fa-1_5x"></i></span>
+              <button class="ch-search-form-icon btn-close"><i class="fal fa-times"></i></button>
+            </div>
+          </div>
+          <div class="ch-search-results"><span class="ch-search-results-count"><strong>15</strong> resultados encontrados em <strong>4</strong> categorias</span>
+            <div class="ui stackable three column padded grid">
+              <div class="column">
+                <div class="ch-search-results-label">Clientes</div>
+                  <div class="ui items unstackable">
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=1">
+                      <div class="middle aligned content"><span>Ana Rachel</span></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=2">
+                      <div class="middle aligned content"><span>Brian Ridley</span></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=3">
+                      <div class="middle aligned content"><span>Donald Ronald</span></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=4">
+                      <div class="middle aligned content"><span>Jenny Rufus</span></div>
+                    </div>
+                  </div><a class="ch-search-results-show-more" href="#">Ver mais resultados</a>
+              </div>
+              <div class="column">
+                <div class="ch-search-results-label">Contas a Pagar</div>
+                  <div class="ui relaxed list unstackable">
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Ana Rachel</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Brian Ridley</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Donald Ronald</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Jenny Rufus</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="column">
+                <div class="ch-search-results-label">Contas a Receber</div>
+                  <div class="ui relaxed list unstackable">
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Ana Rachel</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Brian Ridley</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Donald Ronald</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="middle aligned content">
+                        <div>Salário Jenny Rufus</div><small>10/09/2018</small>
+                      </div>
+                    </div>
+                  </div><a class="ch-search-results-show-more" href="#">Ver mais resultados</a>
+              </div>
+              <div class="column">
+                <div class="ch-search-results-label">Fornecedores</div>
+                  <div class="ui items unstackable">
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=1">
+                      <div class="middle aligned content"><span>Ana Rachel</span></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=2">
+                      <div class="middle aligned content"><span>Brian Ridley</span></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=3">
+                      <div class="middle aligned content"><span>Donald Ronald</span></div>
+                    </div>
+                    <div class="item"><img class="ui avatar image" src="http://i.pravatar.cc/50?img=4">
+                      <div class="middle aligned content"><span>Jenny Rufus</span></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://semantic-ui.com/javascript/library/tablesort.js"></script>
+    <script>$('table').tablesort();</script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+.ch-dialog(data-modal="filters" tabindex="0")
+  .ch-overlay.inside
+    .ch-dialog-container
+      .ch-dialog-header Filtros
+        span.close-dialog
+          i.close.icon
+
+      .ch-dialog-content
+        .ui.segment.basic.padded
+          form.ui.form
+            .field
+              label Vencimento em
+              .two.fields
+                .field.ui.calendar#rangestart
+                  .ui.left.icon.input
+                    input(type="text" placeholder="De")
+                    i.calendar.icon
+                .field.ui.calendar#rangeend
+                  .ui.left.icon.input
+                    input(type="text" placeholder="Até")
+                    i.calendar.icon
+
+            .ui.divider.hidden
+
+            .field
+              label Valor
+              .two.fields
+                .field
+                  .ui.left.icon.input
+                    input(type="text" placeholder="De")
+                    i.dollar.icon
+                .field
+                  .ui.left.icon.input
+                    input(type="text" placeholder="Até")
+                    i.dollar.icon
+
+              .slider-container
+                #slider
+
+            .ui.divider.hidden
+
+            .field
+              label Configuração de Cobrança
+              select.ui.dropdown(name="")
+                each option in ["Myfinance Development - Boleto Bradesco 09", "Myfinance DEVELOPMENT Cielo"]
+                  option(value= option)= option
+
+            .ui.divider.hidden
+
+            .field
+              label Pagador
+              select.ui.dropdown(name="")
+                each option in ["John Doe", "Doe Company"]
+                  option(value= option)= option
+
+            .ui.divider.hidden
+
+            .field
+              label Tipo de Cobrança
+              select.ui.dropdown(name="")
+                each option in ["Option 1", "Option 2"]
+                  option(value= option)= option
+
+            .ui.divider.hidden
+
+            .field
+              label Status da Cobrança
+              select.ui.dropdown(name="" disabled)
+                each option in ["Escolha o tipo de cobrança", "Option 2"]
+                  option(value= option)= option
+
+  .action-dialog Filtrar

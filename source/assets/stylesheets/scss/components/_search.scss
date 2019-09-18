@@ -1,0 +1,153 @@
+.ch-search {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  &-content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(#000, 0.35);
+
+    .ch-nav.collapsed ~ .ch-search & {
+      margin-left: 60px;
+      width: calc(100% - 60px);
+    }
+  }
+
+  &-input-group {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background-color: #fff;
+    animation: fadeIn .1s;
+  }
+
+  &-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 15px 5px 15px 15px;
+
+    &-input {
+      flex-grow: 1;
+      font-family: inherit;
+      font-size: 1.2em;
+      color: $fontColor;
+      background-color: #fff;
+      border: 0;
+
+      &::placeholder {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &-icon {
+      margin-left: 5px;
+      margin-right: 10px;
+      color: darken($headerElementsColor, 10%);
+      order: -1;
+      border: none;
+      background: none;
+      outline: 0;
+
+      &:hover, &:active {
+        color: darken($headerElementsColor, 10%);;
+      }
+
+      &.btn-close {
+        order: 1;
+      }
+    }
+
+    &:before,
+    &:after {
+      color: #D0D8E5;
+    }
+
+    &:before {
+      content: attr(data-message);
+      order: 1;
+      margin-right: 0.625em;
+    }
+
+    &:after {
+      content: 'ESC';
+      margin: 0 5px;
+      padding: 0 4px;
+      font-weight: 600;
+      background: color(navy, tone-0);
+      border: 1px solid rgba(color(navy, tone-30), .5);
+      border-radius: 3px;
+    }
+  }
+
+  @include respond-to($tablet-portrait) {
+    &-content {
+      margin: 0 !important;
+      width: 100% !important;
+      height: 100%;
+      flex-wrap: wrap;
+      box-shadow: none;
+    }
+
+    &-context {
+      display: none;
+    }
+
+    &-form {
+      &:before, &:after {
+        content: none;
+      }
+    }
+
+    &-input-group {
+      border-bottom: 1px solid $borderColor;
+    }
+  }
+}
+
+.ch-search-results {
+  display: none;
+  overflow: auto;
+  max-height: calc(100% - 65px);
+  background-color: #fff;
+  border-top: 1px solid $borderColor;
+  border-radius: 0 0 3px 3px;
+
+  &-count, &-label {
+    display: block;
+    font-size: 1em;
+    color: color(navy, tone-30);
+  }
+
+  &-count {
+    padding: 24px;
+    padding-bottom: 0;
+  }
+
+  &-show-more {
+    color: color(navy, tone-30);
+    font-weight: 600;
+  }
+
+  &-item {
+    display: block;
+    padding: 10px 15px;
+    color: $fontColor;
+    @include transition(all .3s);
+
+    &:hover {
+      cursor: pointer;
+      color: inherit;
+      background-color: #color(navy, tone-5);
+    }
+  }
+}

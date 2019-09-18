@@ -1,9 +1,0 @@
-@import './mixin-has-icon';
-
-%ch-has-icon {
-  @include ch-has-icon;
-}
-
-%ch-has-icon-right {
-  @include ch-has-icon(right);
-}

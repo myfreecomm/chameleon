@@ -1,0 +1,144 @@
+.ch-dropdown {
+  position: relative;
+
+  ul, li {
+    list-style: none;
+  }
+
+  &-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 84px;
+    min-width: 200px;
+    font-weight: 400;
+    color: $fontColor;
+    background-color: #fff;
+    box-shadow: 0 4px 30px rgba(#000, 0.2);
+    border-radius: 3px;
+    outline: 0;
+    z-index:1;
+    animation: fadeIn 0.3s;
+
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      top: 25px;
+      left: -5px;
+      @include rotate(45);
+      box-shadow: -2px 2px 2px rgba(#000, 0.15);
+      z-index: -1;
+    }
+
+    &.visible {
+      display: block;
+    }
+
+    &.bottom {
+      top: calc(100% + .625em);
+
+      &:before {
+        content: none;
+      }
+
+      &.right {
+        left: auto;
+        right: 0;
+      }
+
+      &.left {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+
+  &-header, &-menu-item a {
+    display: block;
+    padding: 10px 25px;
+    font-size: 1em;
+    color: $fontColor;
+  }
+
+  &-header {
+    color: color(neutrals, tone-50);
+    cursor: default;
+  }
+
+  &-menu-item {
+    position: relative;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+
+    &:hover {
+      .ui.image.avatar ~ .ui.button {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      a {
+        color: color(neutrals, tone-50);
+      }
+    }
+
+    .ui.image.avatar {
+      margin-right: 10px;
+    }
+
+    .ui.image.avatar ~ .ui.button {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      margin-left: auto;
+      visibility: hidden;
+      opacity: 0;
+      @include transform(translateY(-50%));
+      @include transition(all .2s);
+    }
+  }
+
+  @include respond-to($tablet-portrait) {
+    &-content {
+      &.collapse {
+        position: static;
+        box-shadow: none;
+        z-index: 1;
+
+        .ch-dropdown-header {
+          display: none;
+        }
+      }
+    }
+
+    &-header {
+      border-bottom: 1px solid rgba(#fff, 0.2);
+    }
+  }
+}
+
+.dropdown-list {
+  .ui.dropdown + .ui.dropdown {
+    margin-left: .5em;
+  }
+
+  @include respond-to($tablet-portrait) {
+    .ui.dropdown {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    .ui.dropdown + .ui.dropdown {
+      margin-left: 0;
+    }
+  }
+}

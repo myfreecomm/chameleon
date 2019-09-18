@@ -1,0 +1,37 @@
+.ch-pagination {
+  &.ui.pagination.menu {
+    font-family: inherit;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1em;
+      margin-left: .75em;
+      margin-right: .75em;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: .25em;
+      color: color(neutrals, tone-40);
+      font-weight: 600;
+    }
+
+    .item.active {
+      border-bottom: 2px solid #ccc;
+    }
+
+    .item.active,
+    .item:hover {
+      color: color(neutrals, tone-70);
+      background: none;
+    }
+
+    .item:before {
+      content: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+-
+  var menuItems = [
+    { name: "Pedidos", icon: "fa-shopping-cart", href: "#", active: true },
+    { name: "Estoques", icon: "fa-boxes", href: "#" },
+    { name: "Produtos", icon: "fa-box", href: "#" },
+    { name: "Configurações", icon: "fa-cog", href: "#" },
+  ]
+
+each item in menuItems
+  li.ch-menu-item(class={active: item.active, disabled: item.disabled})
+    a(href=item.href)
+      i(class= "fal " + item.icon + " fa-icon")
+      span(class="ch-menu-item-label")= item.name
+
+      if item.tag
+        span.ui.horizontal.tiny.label.ch-tag--new(data-label="Novo")

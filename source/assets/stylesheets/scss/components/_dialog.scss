@@ -1,0 +1,166 @@
+.ch-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  &-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    min-height: 100%;
+    margin-left: auto;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+    @include transform(translate(100%));
+    @include transition(all .3s);
+
+    &.active {
+      @include transform(translate(0));
+      @include transition(all .3s);
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    padding-bottom: 15px;
+    color: lighten($fontColor, 10%);
+    border-bottom: 1px solid $borderColor;
+
+    .icon {
+      margin: 0;
+    }
+  }
+
+  &-content {
+    padding-bottom: 50px;
+    overflow: hidden;
+
+    .inside & {
+      padding-bottom: 120px;
+    }
+  }
+
+  &-message {
+    justify-content: center;
+    opacity: .4;
+  }
+
+  .ui.items {
+    margin-top: 0;
+  }
+
+  .ui.items>.item {
+    margin: 0;
+    flex-direction: row;
+    border: none;
+
+    &:first-child {
+      padding-top: 1em !important;
+    }
+
+    &.unread {
+      opacity: 1;
+    }
+
+    &.new {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        right: 0;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: #00CAE5;
+        visibility: visible;
+        border-radius: 100%;
+      }
+    }
+
+    >.image  {
+      padding: 10px 0 10px 20px;
+
+      img {
+        border-radius: 100%;
+      }
+    }
+
+    >.content {
+      .header, .description {
+        color: inherit;
+      }
+
+      .header {
+        font-size: 1em;
+      }
+
+      .header > .symbol {
+        margin-right: 10px;
+      }
+
+      .description {
+        margin: 5px 0;
+      }
+
+      .time {
+        text-transform: uppercase;
+        color: lighten($fontColor, 10%);
+      }
+    }
+  }
+
+  @include respond-to($tablet-portrait) {
+    &-container {
+      width: 100%;
+      animation: fadeIn .3s;
+    }
+
+    .ui.items:not(.unstackable)>.item>.image+.content {
+      padding: 10px;
+    }
+  }
+}
+
+.action-dialog {
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $fontColor;
+  border-top: 1px solid $borderColor;
+  background-color: #fff;
+  @include transform(translate(100%));
+  @include transition(all .3s);
+
+  &.active {
+    @include transform(translate(0));
+    @include transition(all .3s);
+  }
+
+  @include respond-to($tablet-portrait) {
+    max-width: 100%;
+  }
+}
+
+.btn-close-dialog {
+  color: inherit;
+  background: none;
+  border: none;
+  outline: 0;
+}

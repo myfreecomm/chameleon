@@ -1,0 +1,187 @@
+-
+  var data_table = [
+    {
+      date: "11/08/2017",
+      document: "00230203",
+      description: "Salário de funcionários",
+      category: "Funcionários/Salário",
+      client: "Maria da Silva",
+      value: "R$ -2.809.102.269,82",
+      value_class: "negative"
+    },
+    {
+      date: "07/08/2017",
+      document: "00000000",
+      description: "Conta de Telefone - GVTTelecomuniações",
+      category: "Serviços",
+      client: "GVT",
+      value: "R$ -1.815,36",
+      value_class: "negative"
+    },
+    {
+      date: "01/03/2017",
+      document: "00410203",
+      description: "CR COB BlOQ COMP CONF RECEBIMENTO",
+      category: "",
+      client: "",
+      value: "R$ 20.823,11",
+      value_class: "positive"
+    },
+    {
+      date: "01/03/2017",
+      document: "00410203",
+      description: "CR COB DINHEIRO CONF RECEBIMENTO",
+      category: "",
+      client: "",
+      value: "R$ 999,92",
+      value_class: "positive"
+    },
+    {
+      date: "24/02/2017",
+      document: "00000000",
+      description: "PGTO TITULO OUTRO BCO - INTER",
+      category: "",
+      client: "",
+      value: "R$ -1.815,36",
+      value_class: "negative"
+    },
+    {
+      date: "10/02/2017",
+      document: "00000000",
+      description: "FGTS",
+      category: "Impostos/FGTS",
+      client: "Governo Federal",
+      value: "R$ -3.593,22",
+      value_class: "negative"
+    },
+    {
+      date: "06/02/2017",
+      document: "89250200",
+      description: "Projeto X",
+      category: "Serviços",
+      client: "YanYan Cat",
+      value: "R$ 5.000.792.035,00",
+      value_class: "positive"
+    },
+    {
+      date: "06/02/2017",
+      document: "0000000",
+      description: "Conta de Luz",
+      category: "",
+      client: "Light",
+      value: "R$ -1.000,00",
+      value_class: "negative"
+    },
+  ];
+
+doctype html
+html
+  include includes/head.pug
+
+  body(data-theme="myfinance")
+    .ch-nav
+      +logo('myfinance_logo.png', 'MyFinance')
+
+      ul.ch-menu
+
+        include partials/menu/myfinance.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
+
+    main.ch-content
+      include partials/header/myfinance.pug
+
+      .ui.padded.grid.stackable
+        .row.middle.aligned
+          .thirteen.wide.column
+            .ui.items
+              .item
+                .ui.tiny.image.circular
+                  img(src="../assets/images/logo_bradesco.png")
+
+                .middle.aligned.content
+                  .ui.header.large
+                    | Bradesco
+                    .sub.header Conta Corrente - 3836-1 - 09789-0
+
+          .three.wide.column.right.aligned
+            .ui.header.large.blue
+              small R$
+              |  272.873,56
+
+        .row
+          .thirteen.wide.column
+            .ch-tabs
+              .ui.pointing.secondary.menu
+                a.active.item(data-tab="first")
+                  i.fal.fa-desktop.fa-icon
+                  | Visualizar
+                a.item(data-tab="second")
+                  i.fal.fa-cloud-download-alt.fa-icon
+                  | Importar
+                a.item(data-tab="third")
+                  i.fal.fa-print.fa-icon
+                  | Relatório
+
+                a.item(data-tab="third")
+                  i.fal.fa-filter.fa-icon
+                  | Filtros
+
+          .three.wide.column.right.aligned
+            .ui.button.primary
+              | Novo Lançamento
+
+        .ui.sixteen.wide.column
+          table.ui.very.basic.sortable.table.ch-table
+            thead
+              tr
+                th.center.aligned.checkbox.no-sort
+                  input(type="checkbox")
+                th
+                  a(href="#") Data
+                th.no-sort Documento
+                th.no-sort Descrição
+                th.no-sort Categoria
+                th.no-sort Cliente/Fornecedor
+                th.right.aligned Valor
+
+            tbody
+              each data in data_table
+                tr
+                  td.center.aligned.checkbox
+                    input(type="checkbox")
+                  td(data-info="Data")= data.date
+                  td(data-info="Documento")= data.document
+                  td(data-info="Descrição")= data.description
+                  td(data-info="Categoria")= data.category
+                  td(data-info="Cliente/Fornecedor")= data.client
+                  td.right.aligned(data-info="Valor" class=data.value_class)
+                    strong= data.value
+
+          .ui.segment.basic.paddingless.right.aligned.h-text-center--mobile
+            .ui.pagination.menu.ch-pagination
+              a.item
+                i.fal.fa-angle-double-left
+              a.item
+                i.fal.fa-angle-left
+              a.active.item 1
+              a.item 2
+              .disabled.item ...
+              a.item 20
+              a.item 21
+              a.item
+                i.fal.fa-angle-right
+              a.item
+                i.fal.fa-angle-double-right
+
+
+    include includes/notifications.pug
+    include includes/search.pug
+
+    script(src="https://semantic-ui.com/javascript/library/tablesort.js")
+    script.
+      $('table').tablesort();

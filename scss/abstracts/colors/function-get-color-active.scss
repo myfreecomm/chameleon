@@ -1,3 +1,0 @@
-@function ch-get-color-active ($color, $type: default) {
-  @return if($type == inverse, lighten($color, 10%), darken($color, 10%));
-}

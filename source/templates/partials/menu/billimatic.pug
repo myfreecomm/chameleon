@@ -1,0 +1,57 @@
+li.ch-menu-item.active
+  a(href="#")
+    i(class= "fal fa-th-large fa-icon")
+    span(class="ch-menu-item-label") Dashboard
+
+li.ch-menu-item
+  a(href="#")
+    i.fal.fa-calendar-check.fa-icon
+    span.ch-menu-item-label Contratos
+
+li.ch-menu-item.ch-dropdown
+  a.ch-dropdown-button(href="#")
+    i.fal.fa-clipboard-list.fa-icon
+    span.ch-menu-item-label Cadastros
+    .fal.fa-chevron-right.fa-icon.dropdown
+
+  -
+    var pages = [
+      { name: "Empresas", href: "#" },
+      { name: "Pessoas", href: "#" },
+      { name: "Serviços", href: "#" },
+      { name: "Notificações", href: "#" },
+      { name: "Réguas de Cobrança", href: "#" },
+      { name: "Planos", href: "#" },
+      { name: "Organizações", href: "#" },
+    ]
+
+  .ch-dropdown-content
+    ul.ch-dropdown-menu
+      each page in pages
+        li.ch-menu-item
+          a(href=page.href)=page.name
+
+li.ch-menu-item.ch-dropdown
+  a.ch-dropdown-button(href="#")
+    i.fal.fa-chart-line.fa-icon
+    span.ch-menu-item-label Relatórios
+    .fal.fa-chevron-right.fa-icon.dropdown
+
+  -
+    var pages = [
+      { name: "Contratos de Vendas", href: "#" },
+      { name: "Faturamentos", href: "#" },
+      { name: "Recebimentos", href: "#" },
+      { name: "MRR - Receita Recorrente Mensal", href: "#" },
+      { name: "MRR por Serviço", href: "#" },
+      { name: "Chum Rate", href: "#" },
+      { name: "Clientes", href: "#" },
+      { name: "Ticket Médio", href: "#" },
+    ]
+
+  .ch-dropdown-content
+    ul.ch-dropdown-menu
+      each page in pages
+        li.ch-menu-item
+          a(href=page.href)=page.name
+

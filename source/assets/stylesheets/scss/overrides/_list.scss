@@ -1,0 +1,5 @@
+@include respond-to($tablet-portrait) {
+  .ui.unstackable.items > .item > .image,
+  .ui.unstackable.items > .item > .image > img {
+    width: auto !important; }
+}
