@@ -9,18 +9,22 @@
       $sufix: ch-generate-variation(($i, $type), (3, normal));
 
       @at-root #{&}#{$sufix} {
-        @extend %ch-placeholder-text-title-#{$i};
+        // @extend %ch-text-title-#{$i};
+        @include ch-text-title($i);
 
         > .ch-title-sub {
-          @extend %ch-placeholder-text-subtitle-#{$i};
+          // @extend %ch-text-subtitle-#{$i};
+          @include ch-text-subtitle($i);
         }
       }
 
       @at-root h#{$i} {
-        @extend %ch-placeholder-text-title-#{$i};
+        // @extend %ch-text-title-#{$i};
+        @include ch-text-title($i);
 
         > .ch-title-sub {
-          @extend %ch-placeholder-text-subtitle-#{$i};
+          // @extend %ch-text-subtitle-#{$i};
+          @include ch-text-subtitle($i);
         }
       }
     } // @each $type in (normal, inverse)
