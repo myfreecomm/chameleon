@@ -27,7 +27,7 @@
       // 1.1.1. Label
 
       &-label {
-        @include ch-transition(opacity, $ch-transition-fast);
+        @include ch-transition(opacity, $ch-transition-duration-fast);
         font-weight: ch-get-text-weight(bold);
       }
 

@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="dist/css/chameleon.css">
   </head>
   <body>
+  
     <div class="ch-template">
 
       <!-- NAV BEGIN -->
@@ -138,72 +139,113 @@
 
       <!-- CONTENT BEGIN -->
       <div class="ch-template-content">
-        <div class="ch-grid">
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 1</div>
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 11</div>
+        <button class="ch-button ch-button--ghost">Button</button>
+        <button class="ch-button ch-button">Button</button>
+        <button class="ch-button ch-button--primary">Button</button>
+        <button class="ch-button ch-button--secondary">Button</button>
+        <button class="ch-button ch-button--negative">Button</button>
 
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 2</div>
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 10</div>
+        <div class="ch-dropdown">
+          <button class="ch-button ch-dropdown-toggle">Share</button>
 
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 3</div>
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 9</div>
+          <div class="ch-dropdown-overlay">
+            <div class="ch-card ch-paddingless">
+              <nav class="ch-menu">
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-facebook-f"></i>
+                  Facebook
+                </a>
 
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 4</div>
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 8</div>
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-twitter"></i>
+                  Twitter
+                </a>
 
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 5</div>
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 7</div>
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-instagram"></i>
+                  Instagram
+                </a>
 
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 6</div>
-          <div class="ch-grid-column" style="background: #eee; padding: 5px; text-align: center;">col 6</div>
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-whatsapp"></i>
+                  Whatsapp
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-facebook-f"></i>
+                  Facebook
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-twitter"></i>
+                  Twitter
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-instagram"></i>
+                  Instagram
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-whatsapp"></i>
+                  Whatsapp
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-facebook-f"></i>
+                  Facebook
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-twitter"></i>
+                  Twitter
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-instagram"></i>
+                  Instagram
+                </a>
+
+                <a class="ch-menu-item has-icon" href="#">
+                  <i class="ch-icon fab fa-whatsapp"></i>
+                  Whatsapp
+                </a>
+              </nav>
+            </div>
+          </div>
         </div>
 
-        <form class="ch-form" style="margin: 20px auto 0;">
-          <div class="ch-fieldGroup">
-            <div class="ch-field">
-              <label for="" class="ch-field-label">Common input</label>
-              <input type="text" name="" class="ch-field-control ch-input" placeholder="Common input">
-              <span class="ch-field-message">Texto de ajuda</span>
-            </div>
-
-            <div class="ch-field ch-field--2Desktop">
-              <label for="" class="ch-field-label">Common select</label>
-              <select class="ch-control ch-select">
-                <option>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</option>
-                <option>Opção 2</option>
-                <option>Opção 3</option>
-                <option>Opção 4</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="ch-fieldGroup">
-            <div class="ch-field">
-              <label for="" class="ch-field-label">Common input</label>
-              <input type="text" name="" class="ch-field-control ch-input" placeholder="Common input">
-              <span class="ch-field-message">Texto de ajuda</span>
-            </div>
-
-            <div class="ch-field">
-              <label for="" class="ch-field-label">Common input</label>
-              <input type="text" name="" class="ch-field-control ch-input" placeholder="Common input">
-            </div>
-          </div>
-
-          <div class="ch-field">
-            <label for="" class="ch-field-label">Common select</label>
-            <select class="ch-control ch-select">
-              <option>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</option>
-              <option>Opção 2</option>
-              <option>Opção 3</option>
-              <option>Opção 4</option>
-            </select>
-          </div>
-          <div class="ch-button ch-button--primary">Enviar</div>
-        </form>
       </div>
       <!-- CONTENT END -->
+
     </div>
+
+    <script type="text/javascript">
+      $('body').on('click', function (e) {
+        var $element = $(e.target)
+
+        if ($element.parents('.ch-dropdown-overlay').length === 0) {
+          $('.ch-dropdown').each(function () {
+            var $dropdown = $(this)
+
+            if (
+              $element.hasClass('ch-dropdown-toggle') &&
+              $element.parent()[0] === $dropdown[0]
+            ) return
+
+            $dropdown.removeClass('is-active')
+          })
+        }
+      })
+
+      $('.ch-dropdown-toggle').on('click', function () {
+        var $toggle  = $(this)
+        var $wrapper = $toggle.parent()
+
+        $wrapper.toggleClass('is-active')
+      })
+    </script>
+
     <script>
       $('.ch-menu-item').on('click', function() {
         $(this).parent().toggleClass('is-open')
@@ -213,5 +255,6 @@
         $('.ch-template-nav').toggleClass('is-expanded')
       })
     </script>
+
   </body>
 </html>

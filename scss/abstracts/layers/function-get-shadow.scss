@@ -1,11 +1,10 @@
 @import '../colors';
 
-@function ch-get-shadow ($layer, $direction) {
+@function ch-get-shadow ($layer, $direction, $color) {
   $distances: (0, 2px, 4px, 6px, 8px, 10px);
   $distance: nth($distances, $layer);
   $blurs: (0, 10px, 15px, 20px, 25px, 30px);
   $blur: nth($blurs, $layer);
-  $color: rgba($ch-color-navy-light, 0.65);
   $position: if($direction == top-bottom, 0 #{$distance},
     if($direction == left-right, -#{$distance} 0,
       if($direction == bottom-top, 0 -#{$distance},

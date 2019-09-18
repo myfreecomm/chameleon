@@ -14,7 +14,7 @@
   // 2. Neutral
 
   --ch-color-neutral-1:                #{$ch-color-white};
-  --ch-color-neutral-2:                #{lighten($ch-color-grey-extra-light, 7%)};
+  --ch-color-neutral-2:                #{$ch-color-grey-extra-light};
 
   --ch-color-neutral-1-inverse:        #{$ch-color-navy-extra-dark};
   --ch-color-neutral-2-inverse:        #{lighten($ch-color-navy-extra-dark, 5%)};
@@ -126,5 +126,10 @@
 
   // 7. Menu
 
-  --ch-color-menu-text-1:              #{$ch-color-navy-light}
+  --ch-color-menu-text-1:              #{$ch-color-navy-light};
+
+  // 8. Overlay
+
+  --ch-color-overlay:                  #{rgba($ch-color-black, 0.55)};
+  --ch-color-overlay-inverse:          #{rgba($ch-color-white, 0.55)};
 }

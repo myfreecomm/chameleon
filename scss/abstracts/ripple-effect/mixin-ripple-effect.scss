@@ -1,23 +1,40 @@
-@import './function-get-color-hover';
-@import '../transition/variables.scss';
+@import '../icon';
+@import '../transition';
 
-@mixin ch-ripple-effect ($color-type) {
-  $type: if($color-type != 'secondary', $color-type, 'primary');
+@mixin ch-ripple-effect ($color) {
+  position: relative;
+  overflow: hidden;
 
-  transition: background $ch-transition-slow;
-  background-color: if($color-type == 'primary', #{ch-get-color($color-type)}, transparent);
-  background-position: center;
+  &:after {
+    $empty: '';
 
-  &:hover:focus,
-  &:hover,
-  &:focus {
-    background: #{ch-get-color-hover($type)};
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    content: $empty;
+    border-radius: 50%;
+    background: $color;
+    animation: --ch-ripple-effect #{$ch-transition-duration-very-slow};
   }
 
-  &:active {
-    background-color: #{ch-get-color($type, active)};
-    background-size: 100%;
-    transition: background 0s;
+  &:focus:not(:active):after {
+    display: block;
   }
 
+  @keyframes --ch-ripple-effect {
+    #{0%} {
+      width: #{ch-get-icon-size()};
+      height: #{ch-get-icon-size()};
+      opacity: 0.5;
+    }
+  
+    #{100%} {
+      width: calc(10 * #{ch-get-icon-size()});
+      height: calc(10 * #{ch-get-icon-size()});
+      opacity: 0;
+    }
+  }
 }

@@ -31,7 +31,7 @@
     // 3. Name
 
     &-name {
-      @include ch-transition(opacity, $ch-transition-fast);
+      @include ch-transition(opacity, $ch-transition-duration-fast);
 
       color: #{ch-get-color(text, 1, inverse)};
       font-family: #{ch-get-text-font-family(brand)};

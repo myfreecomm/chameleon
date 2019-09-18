@@ -5,7 +5,8 @@
   @include ch-media (from, desktop) {
     @include ch-space-inset(stretch, l);
   }
-  @include ch-transition;
+  
+  @include ch-transition(margin-left);
 
   padding-top: #{ch-get-space(m)};
   padding-right: #{ch-get-space(s)};

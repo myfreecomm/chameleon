@@ -13,7 +13,8 @@
   @include ch-media(from, tablet) {
     height: #{ch-get-dimension(1)};
   }
-  @include ch-transition;
+  
+  @include ch-transition(box-shadow);
 
   display: flex;
   align-items: center;
