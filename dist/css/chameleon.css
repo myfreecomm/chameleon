@@ -2366,6 +2366,24 @@ h3,
   font-weight: var(--ch-text-weight-bold);
   line-height: var(--ch-text-line-height); }
 
+.has-icon {
+  position: relative;
+  padding-left: var(--ch-dimension-1) !important; }
+  .has-icon > .ch-icon:first-child {
+    position: absolute;
+    top: 50%;
+    left: calc((var(--ch-dimension-1)) / 2);
+    transform: translate(-50%, -50%); }
+
+.has-iconRight {
+  position: relative;
+  padding-right: var(--ch-dimension-1) !important; }
+  .has-iconRight > .ch-icon:last-child {
+    position: absolute;
+    top: 50%;
+    right: calc((var(--ch-dimension-1)) / 2);
+    transform: translate(50%, -50%); }
+
 .ch-button {
   position: relative;
   overflow: hidden;
@@ -2389,7 +2407,7 @@ h3,
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    content: '';
+    content: "";
     border-radius: 50%;
     background: var(--ch-color-text-1);
     animation: --ch-ripple-effect 0.6s; }
@@ -3179,7 +3197,6 @@ h3,
       .ch-dropdown-overlay {
         padding: 0 ;
         position: absolute;
-        top: auto;
         margin-top: var(--ch-space-xs);
         width: auto;
         min-width: var(--ch-dimension-2);
@@ -3192,12 +3209,13 @@ h3,
       transition-delay: unset;
       transform: translate(0, 10%);
       opacity: 0;
-      max-height: 80vh;
+      max-height: 60vh;
       overflow-x: hidden;
       overflow-y: auto; }
       @media screen and (min-width: 769px) {
         .ch-dropdown-overlay > * {
           box-shadow: 0 2px 10px rgba(172, 185, 210, 0.65);
+          transition-duration: 0.1s;
           transform: none; } }
   .ch-dropdown.is-active .ch-dropdown-overlay {
     visibility: visible;
@@ -3209,6 +3227,29 @@ h3,
     .ch-dropdown.is-active .ch-dropdown-overlay > * {
       transform: translate(0, 0);
       opacity: 1; }
+  @media screen and (min-width: 769px) {
+    .ch-dropdown .ch-dropdown-overlay {
+      top: 100%;
+      margin-top: var(--ch-space-xs);
+      left: 0; }
+    .ch-dropdown--left .ch-dropdown-overlay {
+      top: 100%;
+      margin-top: var(--ch-space-xs);
+      left: auto;
+      right: 0; }
+    .ch-dropdown--top .ch-dropdown-overlay {
+      top: auto;
+      bottom: 100%;
+      margin-top: 0;
+      margin-bottom: var(--ch-space-xs);
+      left: 0; }
+    .ch-dropdown--topLeft .ch-dropdown-overlay {
+      top: auto;
+      bottom: 100%;
+      margin-top: 0;
+      margin-bottom: var(--ch-space-xs);
+      left: auto;
+      right: 0; } }
 
 .ch-dview-label,
 .ch-dview > dt {

@@ -7,7 +7,7 @@
 @import '../../abstracts/transition';
 
 .ch-dropdown {
-  
+
   // 1. Base
 
   @include ch-media(from, tablet) {
@@ -23,14 +23,13 @@
       @include ch-paddingless;
 
       position: absolute;
-      top: auto;
       
       margin-top: #{ch-get-space(xs)};
       width: auto;
       min-width: #{ch-get-dimension(2)};
       height: auto;
     }
-    
+
     @include ch-space-inset(default, xs);
     @include ch-transition(background visibility, $ch-transition-duration-fast);
 
@@ -52,6 +51,8 @@
       @include ch-media(from, tablet) {
         @include ch-shadow(2);
 
+        transition-duration: #{$ch-transition-duration-very-fast};
+
         transform: none;
       }
 
@@ -61,7 +62,7 @@
       transform: translate(0, 10%);
 
       opacity: 0;
-      max-height: 80vh;
+      max-height: 60vh;
       overflow-x: hidden;
       overflow-y: auto;
     }
@@ -90,6 +91,41 @@
         transform: translate(0, 0);
 
         opacity: 1;
+      }
+    }
+  }
+
+  // 3. Position variations
+  
+  @include ch-media(from, tablet) {
+    @each $vertical in (bottom, top) {
+      @each $horizontal in (right, left) {
+        $sufix: ch-generate-variation(($vertical, $horizontal), (bottom, right));
+
+        @at-root #{&}#{$sufix} .ch-dropdown-overlay {
+          @if $vertical == bottom {
+            top: 100%;
+
+            margin-top: #{ch-get-space(xs)};
+          }
+          
+          @else if $vertical == top {
+            top: auto;
+            bottom: 100%;
+
+            margin-top: 0;
+            margin-bottom: #{ch-get-space(xs)};
+          }
+
+          @if $horizontal == right {
+            left: 0;
+          }
+
+          @else if $horizontal == left {
+            left: auto;
+            right: 0;
+          }
+        }
       }
     }
   }

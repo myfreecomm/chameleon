@@ -1,21 +1,23 @@
+@import '../icon';
 @import '../transition';
-@import './function-get-color-hover';
 
 @mixin ch-ripple-effect ($color) {
   position: relative;
   overflow: hidden;
 
   &:after {
+    $empty: '';
+
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    content: '';
+    content: $empty;
     border-radius: 50%;
     background: $color;
-    animation: --ch-ripple-effect 0.6s;
+    animation: --ch-ripple-effect #{$ch-transition-duration-very-slow};
   }
 
   &:focus:not(:active):after {
@@ -23,13 +25,13 @@
   }
 
   @keyframes --ch-ripple-effect {
-    0% {
+    #{0%} {
       width: #{ch-get-icon-size()};
       height: #{ch-get-icon-size()};
       opacity: 0.5;
     }
-
-    100% {
+  
+    #{100%} {
       width: calc(10 * #{ch-get-icon-size()});
       height: calc(10 * #{ch-get-icon-size()});
       opacity: 0;
