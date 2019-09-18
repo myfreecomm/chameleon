@@ -1,26 +1,8 @@
 @import '../../abstracts/box-model';
-@import '../../abstracts/border';
-@import '../../abstracts/colors';
-@import './mixin-input-disabled';
+@import './mixin-input';
 
 %ch-input {
-  @include ch-input-disabled;
-  @include ch-box-model(s, squish, box, ch-get-color(border));
-  @include ch-border-radius(1);
-  background-color: #{ch-get-color(neutral, 1)};
-
-  &:active {
-    border-color: #{ch-get-color(primary, active)};
-  }
-
-  &:focus {
-    border-color: #{ch-get-color(primary, focus)};
-  }
-
-  &::placeholder {
-    color: #{ch-get-color(text, 2)};
-    opacity: .75;
-  }
+  @include ch-input;
 }
 
 %ch-input-small {

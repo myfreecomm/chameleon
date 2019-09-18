@@ -7,7 +7,8 @@
 
   // 1. Base
 
-  @extend %ch-input;
+  // @extend %ch-input;
+  @include ch-input;
 
   // 2. Fluid variation
 
@@ -18,7 +19,8 @@
   // 3. Small variation
 
   &--small {
-    @extend %ch-input-small;
+    // @extend %ch-input-small;
+    @include ch-box-model(xs, squish, box, ch-get-color(border));
   }
 
   // 4. Support variations

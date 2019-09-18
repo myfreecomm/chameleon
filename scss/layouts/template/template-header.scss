@@ -65,7 +65,8 @@
   // 4. Menu
 
   > .ch-menu {
-    @extend %ch-menu-horizontal;
+    // @extend %ch-menu-horizontal;
+    @include ch-menu-horizontal;
 
     @include ch-media(from, desktop) {
       max-width: calc(100% / 3 * 2);

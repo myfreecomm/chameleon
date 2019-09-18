@@ -7,8 +7,9 @@ select.ch-select {
   
   // 1. Base
   
-  @extend %ch-input;
-  
+  // @extend %ch-input;
+  @include ch-input;
+
   $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
   $background: #{ch-get-color(neutral, 1)} url('#{$ch-icon-angle-down}') no-repeat right #{$icon-right} center;
 
@@ -22,7 +23,8 @@ select.ch-select {
   // 2. Small variation
 
   &--small {
-    @extend %ch-input-small;
+    // @extend %ch-input-small;
+    @include ch-box-model(xs, squish, box, ch-get-color(border));
   }
 
   // 3. Fluid variation
