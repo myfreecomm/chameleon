@@ -1,0 +1,25 @@
+@import './mixin-space-inline';
+
+@mixin ch-space-inline-group ($type: left, $size: m, $alignment: flex-start) {
+  $exception: '';
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: $alignment;
+
+  @if ($type == left) {
+    $exception: ':last-child';
+
+    justify-content: flex-start;
+  }
+
+  @else if ($type == right) {
+    $exception: ':first-child';
+
+    justify-content: flex-end;
+  }
+
+  & > *:not(#{unquote($exception)}) {
+    @include ch-space-inline($type, $size)
+  }
+}

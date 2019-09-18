@@ -1,0 +1,66 @@
+@import '../../abstracts/card';
+@import '../../abstracts/colors';
+@import '../../abstracts/layers';
+@import '../../abstracts/space';
+
+.ch-card {
+
+  // 1. Base
+
+  @extend %ch-card;
+
+  // 2. Header
+
+  &-header {
+    @extend %ch-card-header;
+  }
+
+  // 3. Content
+
+  &-content {
+    @extend %ch-card-content;
+  }
+
+  // 4. Paddingless composition
+
+  &.ch-paddingless {
+    > .ch-card-header,
+    > .ch-card-content,
+    > .ch-card-footer {
+      padding-right: ch-get-space(m);
+      padding-left: ch-get-space(m);
+
+      &:only-child {
+        padding-top: ch-get-space(m);
+        padding-bottom: ch-get-space(m);
+      }
+
+      &:last-child {
+        padding-bottom: ch-get-space(m);
+      }
+
+      &:first-child {
+        padding-top: ch-get-space(m);
+      }
+    }
+  }
+
+  // 5. Interactive variation
+
+  &--interactive {
+    @include ch-shadow;
+    cursor: pointer;
+
+    &:focus:hover,
+    &:hover,
+    &:focus {
+      @include ch-shadow(3);
+    }
+  }
+
+  // 6. Active state
+
+  &.is-active {
+    border-color: ch-get-color(primary);
+  }
+}

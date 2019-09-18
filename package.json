@@ -1,29 +1,39 @@
 {
-  "name": "Chameleon",
-  "version": "1.1.0",
-  "description": "Soluções visuais para projetos da Nexaas",
+  "name": "@nexaas/chameleon",
+  "version": "1.0.0-alpha.0.1.0",
+  "description": "Nexaas web framework",
   "main": "index.js",
-  "homepage": "http://docs.chameleon.nexaas.com/",
+  "files": [
+    "dist/**/*.{css,js,map}",
+    "scss/**/*.{css,js,map}"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "yarn run gulp"
+    "start": "webpack-dev-server --open && webpack -w --mode=development",
+    "build:watch": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack -w --mode=development",
+    "build:prod": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack --mode=development && webpack --mode=production"
   },
-  "author": "",
+  "keywords": [
+    "UI",
+    "Design system"
+  ],
+  "author": "The Chameleon authors (https://github.com/myfreecomm/chameleon/graphs/contributors)",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-concat-css": "^3.0.0",
-    "gulp-csso": "^3.0.0",
-    "gulp-header": "^2.0.5",
-    "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
-  }
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "docdash": "^1.1.1",
+    "file-loader": "^4.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^7.2.0",
+    "standard": "^12.0.1",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "sasslintConfig": ".sasslintrc",
+  "dependencies": {}
 }

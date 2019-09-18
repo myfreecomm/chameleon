@@ -1,0 +1,9 @@
+@import './variables';
+
+@mixin ch-to-tablet {
+  $width: calc(#{$ch-breakpoint-desktop} - 1px);
+
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}

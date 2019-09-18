@@ -1,0 +1,168 @@
+@import '../../abstracts/dimensions';
+@import '../../abstracts/helpers';
+@import '../../abstracts/layers';
+@import '../../abstracts/menu';
+@import '../../abstracts/space';
+@import '../../abstracts/typography';
+@import '../../abstracts/transition';
+
+.ch-template-header {
+
+  // 1. Base
+
+  @include ch-media(from, tablet) {
+    height: #{ch-get-dimension(1)};
+  }
+  
+  @include ch-transition(box-shadow);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &,
+  > .ch-breadcrumbs,
+  > .ch-menu {
+    position: relative;
+  }
+
+  // 2. Background
+
+  &:before {
+    $empty: '';
+
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    content: $empty;
+    background: #{ch-get-color(neutral, 1)};
+  }
+
+  // 3. Breadcrumbs
+
+  > .ch-breadcrumbs {
+    @include ch-media(from, desktop) {
+      max-width: calc(100% / 3);
+      padding-left: #{ch-get-space(l)};
+    }
+
+    order: 1;
+
+    max-width: calc(100% - #{ch-calc-box-height()} * 3);
+    padding-right: #{ch-get-space(s)};
+    padding-left: #{ch-get-space(s)};
+    font-size: #{ch-get-text-size(3)};
+
+    // 3.1. Last item
+
+    .ch-breadcrumbs-item:last-child {
+      @include ch-truncate;
+    }
+  }
+
+  // 4. Menu
+
+  > .ch-menu {
+    @extend %ch-menu-horizontal;
+
+    @include ch-media(from, desktop) {
+      max-width: calc(100% / 3 * 2);
+      margin-right: #{ch-get-space(l)};
+    }
+
+    order: 2;
+
+    max-width: calc(#{ch-calc-box-height()} * 3);
+
+    // 4.1. Item
+
+    > .ch-menu-item {
+      opacity: 0.8;
+
+      &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+        @include ch-media(from, desktop) {
+          display: block;
+        }
+
+        display: none;
+      }
+
+      &:hover:focus,
+      &:hover,
+      &:focus {
+        opacity: 1;
+        background: transparent;
+      }
+
+      &.ch-toggle {
+        @include ch-media(from, desktop) {
+          display: none;
+        }
+      }
+
+      &:not(.ch-menu-item--icon) > .ch-menu-item-label {
+        width: max-content;
+      }
+
+      > .ch-menu-item-label {
+        text-transform: uppercase;
+        font-weight: #{ch-get-text-weight(bold)};
+      }
+
+      > .ch-avatar {
+        @include ch-media(from, desktop) {
+          width: #{ch-calc-box-height()};
+          height: #{ch-calc-box-height()};
+          line-height: #{ch-calc-box-height()};
+        }
+      }
+    }
+
+    // 4.2. Expanded state
+
+    &.is-expanded {
+      @include ch-media(from, desktop) {
+        max-width: calc(100% / 3 * 2);
+        margin-left: initial;
+      }
+
+      max-width: 100%;
+      margin-left: #{ch-calc-box-height()};
+
+      > .ch-menu-item {
+        &.ch-toggle {
+          position: fixed;
+          left: 0;
+        }
+
+        &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+          display: block;
+        }
+      }
+
+      + .ch-breadcrumbs {
+        @include ch-media(from, desktop) {
+          display: flex;
+        }
+
+        display: none;
+      }
+    }
+  }
+
+  // 4.3. Sticky state
+
+  &.is-sticky {
+    @include ch-shadow(2, top-bottom);
+
+    position: sticky;
+    top: 0;
+    z-index: #{ch-get-z-index(2, 1)};
+
+    &:before {
+      opacity: 0.95;
+    }
+  }
+}

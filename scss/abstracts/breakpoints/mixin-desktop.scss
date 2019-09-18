@@ -1,0 +1,7 @@
+@import './variables';
+
+@mixin ch-desktop {
+  @media screen and (min-width: $ch-breakpoint-desktop) {
+    @content;
+  }
+}

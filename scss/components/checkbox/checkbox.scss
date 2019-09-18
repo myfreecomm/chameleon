@@ -1,0 +1,100 @@
+@import '../../abstracts/border';
+@import '../../abstracts/icon';
+@import '../../abstracts/layers';
+@import '../../abstracts/space';
+@import '../../abstracts/typography';
+
+.ch-checkbox,
+.ch-radio {
+
+  // 1. Base
+
+  position: relative;
+  display: inline-block;
+
+  // 2. Checkbox
+
+  > input[type="checkbox"],
+  > input[type="radio"],
+  > input[type="checkbox"] + label:before,
+  > input[type="radio"] + label:before,
+  > input[type="checkbox"] + label:after,
+  > input[type="radio"] + label:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: ch-get-icon-size();
+    height: ch-get-icon-size();
+  }
+
+  > input[type="checkbox"],
+  > input[type="radio"] {
+    z-index: ch-get-z-index(1, 1);
+    
+    opacity: 0;
+    cursor: pointer;
+
+    + label:before,
+    + label:after {
+      $empty: '';
+  
+      content: $empty;
+    }
+
+    // 2.1. Wrapper
+
+    + label:before {
+      @include ch-border;
+
+      border-radius: ch-get-border-radius();
+      background-color: ch-get-color(neutral, 1);
+    }
+
+    // 2.1.1. Focus interaction
+
+    &:hover:focus + label:before,
+    &:hover + label:before,
+    &:focus + label:before {
+      border-color: #{ch-get-color(primary, focus)};
+    }
+
+    // 2.1.1. Active interaction
+
+    &:active + label:before {
+      border-color: #{ch-get-color(primary, active)};
+    }
+
+    // 2.2. Tick
+
+    &:checked + label:after {
+      $offset: calc(#{ch-get-border-radius()} + 1px);
+      $size: calc(#{ch-get-icon-size()} - 2 * #{$offset});
+
+      top: $offset;
+      left: $offset;
+
+      width: $size;
+      height: $size;
+      background: #{ch-get-color(primary)};
+    }
+  }
+
+  // 3. Label
+
+  > input[type="checkbox"] + label,
+  > input[type="radio"] + label {
+    display: inline-block;
+
+    padding-left: calc(#{ch-get-icon-size()} + #{ch-get-space(s)});
+  }
+
+  // 4. Radio
+
+  @at-root .ch-radio > input[type="radio"] {
+    + label:before,
+    &:checked + label:after {
+      border-radius: ch-get-border-radius(circle);
+    }
+  }
+}
