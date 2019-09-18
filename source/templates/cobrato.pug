@@ -1,0 +1,154 @@
+doctype html
+html
+  include includes/head.pug
+
+  body(data-theme="cobrato")
+    .ch-nav
+      +logo('cobrato_logo.png', 'Cobrato')
+
+      ul.ch-menu
+
+        include partials/menu/cobrato.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
+
+    main.ch-content
+      include includes/message.pug
+      include partials/header/cobrato.pug
+
+      .ch-featured-content
+        .ui.padded.grid.stackable
+          .sixteen.wide.tablet.twelve.wide.computer.column
+            .ui.form
+              h2.ui.header.medium Informações da Cobrança
+
+              .ui.divider.hidden
+
+              .fields
+                .five.wide.field.required
+                  label Configuração de Cobrança
+                  select.ui.dropdown.selection
+                    option Selecione Config. de Cobrança
+
+                .four.wide.field
+                  label Modelo de Cobrança
+                  select.ui.dropdown.selection
+                    option Selecione Config. de Cobrança
+
+              .field
+                label Cobrança registrável ?
+                .ui.toggle.checkbox
+                  input(type="checkbox")
+                  label Sim
+
+              .fields
+                .field
+                  label Espécie do documento
+                  select.ui.dropdown.selection
+                    option Duplicata Mercantil
+
+                .seven.wide.field
+                  label Número do documento
+                  input(type="text")
+
+              .fields
+                .field
+                  label Data do documento
+                  .ui.left.icon.input
+                    input(type="text" placeholder="dd/mm/aaaa")
+                    i.icon.calendar.alternate.outline
+
+                .field.required
+                  label Data de vencimento
+                  .ui.left.icon.input
+                    input(type="text" placeholder="dd/mm/aaaa")
+                    i.icon.calendar.alternate.outline
+
+              .fields
+                .field.required
+                  label Valor cobrado
+                  .ui.left.icon.input
+                    input(type="text" placeholder="0,00")
+                    i.icon.money.outline
+
+              .ten.wide.field
+                label Instruções
+                textarea(rows="2")
+                small Você pode adicionar 9 linhas de 65 caracteres
+
+              .ten.wide.field
+                label Demonstrativo
+                textarea(rows="2")
+                small Você pode adicionar 9 linhas de 65 caracteres
+
+              .ui.divider.hidden.doubled
+
+              h2.ui.header.medium Informações do cliente/Fornecedor
+
+              .ui.divider.hidden
+
+              .inline.fields
+                .field
+                  .ui.radio.checkbox
+                    input(type="radio")
+                    label CPF
+
+                .field
+                  .ui.radio.checkbox
+                    input(type="radio")
+                    label CNPJ
+
+              .fields
+                .three.wide.field.required
+                  label CPF/CNPJ
+                  input(type="text" placeholder="000.000.000-00")
+
+                .seven.wide.field.required
+                  label Nome
+                  input(type="text")
+
+              .ui.divider.hidden
+
+              .three.wide.field
+                label CEP
+                input(type="text" placeholder="00000-000")
+
+              .fields
+                .three.wide.field
+                  label Cidade
+                  select.ui.dropdown.selection
+                    option Selecione a cidade
+
+                .two.wide.field
+                  label Estado
+                  select.ui.dropdown.selection.compact
+
+                .five.wide.field
+                  label Bairro
+                  input(type="text")
+
+              .fields
+                .eight.wide.field
+                  label Logradouro
+                  input(type="text")
+
+                .two.wide.field
+                  label Número
+                  input(type="text")
+
+              .ten.wide.field
+                label Complemento
+                input(type="text")
+
+              .ui.divider.section
+
+              .ui.segment.basic.paddingless
+                input(type="submit" value="Salvar" class="ui button primary small")
+                a.ui.button.basic Cancelar
+
+    include includes/notifications.pug
+    include includes/search.pug

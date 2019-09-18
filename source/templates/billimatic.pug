@@ -1,0 +1,265 @@
+-
+  var people = [
+    { name: "Rachel", photo_id: "1" },
+    { name: "Lindsay", photo_id: "2" },
+    { name: "Matthew", photo_id: "3" },
+    { name: "Jenny Hess", photo_id: "4" },
+    { name: "Veronika Ossi", photo_id: "5" }
+  ];
+
+  var groups = [
+    { name: "Marketing", photo_id: "6" },
+    { name: "Comercial", photo_id: "7" },
+    { name: "Desenvolvimento", photo_id: "8" },
+    { name: "Contabilidade", photo_id: "9" },
+    { name: "Suporte", photo_id: "10" }
+  ];
+
+  var workers = [
+    { name: "John Lilki", admission_date: "September 14, 2013", email: "jhlilk22@yahoo.com" },
+    { name: "Jamie Harington", admission_date: "January 11, 2014", email: "jamieharingonton@yahoo.com" },
+    { name: "Jill Lewis", admission_date: "May 11, 2014", email: "jilsewris22@yahoo.com" },
+    { name: "Veronika Ossi", admission_date: "September 14, 2013", email: "verossi@yahoo.com" },
+  ];
+
+-
+  var data_table = [
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Aguardando separação de produtos",
+      status_icon: "fa-box-open",
+      status_color: "#E58D00",
+      action: "Separar produtos",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Aguardando separação de produtos",
+      status_icon: "fa-box-open",
+      status_color: "#E58D00",
+      action: "Separar produtos",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Americanas",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Aguardando pagamento",
+      status_icon: "fa-user-clock",
+      status_color: "#F73D4E",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Maria da Silva",
+      value: "R$ 99,99",
+      status: "Aguardando pagamento",
+      status_icon: "fa-user-clock",
+      status_color: "#F73D4E",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Americanas",
+      client: "Maria da Silva",
+      value: "R$ 89,99",
+      status: "Aguardando separação de produtos",
+      status_icon: "fa-box-open",
+      status_color: "#E58D00",
+      action: "Separar produtos",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Submarino",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Faturado",
+      status_icon: "fa-check",
+      status_color: "#6C9C35",
+      action: "Emitir etiqueta",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Submarino",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Finalizado",
+      status_icon: "fa-check-double",
+      status_color: "#6C9C35",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Acom",
+      client: "Miguel dos Santos",
+      value: "R$ 7,99",
+      status: "Aguardando pagamento",
+      status_icon: "fa-user-clock",
+      status_color: "#F73D4E",
+      action: "",
+    },
+    {
+      date: "11/08/2017",
+      document: "1539095437476",
+      channel: "Shoptime",
+      client: "Augusto Manoel dos Santos",
+      value: "R$ 89,99",
+      status: "Finalizado",
+      status_color: "#6C9C35",
+      status_icon: "fa-check-double",
+      action: "",
+    },
+  ];
+
+mixin smallCard(name, value, date, type)
+  .four.wide.computer.eight.wide.tablet.column
+    .ui.segment
+      .ui.equal.width.grid.ch-metric
+        .middle.aligned.column
+          .ch-metric-label=name
+        .column.right.aligned
+          .ch-metric-value(class=type)
+            i.icon.small.up.arrow
+            span=value
+          span.ch-metric-date=date
+
+mixin listSegment(title, items)
+  .ui.attached.segment.middle.aligned.ch-segment-header
+    span.ui.title= title
+    .ui.icon.dropdown.actions
+      i.icon.ellipsis.vertical
+      .menu.fixed-position
+        for item in ["Option 1", "Option 2", "Option 3"]
+          .item=item
+
+doctype html
+html
+  include includes/head.pug
+
+  body(data-theme="billimatic")
+    .ch-nav
+      +logo('billimatic_logo.png', 'Billimatic')
+
+      ul.ch-menu
+
+        include partials/menu/billimatic.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
+
+    main.ch-content
+      include includes/message.pug
+      include partials/header/billimatic.pug
+
+      .ui.padded.grid.stackable
+
+        .row
+          .sixteen.wide.tablet.six.wide.computer.column
+            .ch-tabs
+              .ui.pointing.secondary.menu
+                a.active.item(data-tab="first")
+                  i.fal.fa-file-alt.fa-icon
+                  | Faturamentos
+                a.item(data-tab="second")
+                  i.fal.fa-wallet.fa-icon
+                  | Recebimentos
+                a.item(data-tab="third")
+                  i.fal.fa-credit-card.fa-icon
+                  | Pagamentos
+
+          .ten.wide.column.right.aligned
+            .dropdown-list
+              select.ui.dropdown
+                option Gráfico por: Área
+
+              select.ui.dropdown
+                option Dia
+
+              select.ui.dropdown
+                option Últimos 30 dias
+
+      .ui.padded.grid.stackable.doubling
+
+        .row
+          +smallCard("Faturamento total", "800", "Jan  - Ago 2017", "blue")
+          +smallCard("A faturar", "10", "Jan  - Ago 2017", "blue")
+          +smallCard("Cancelados", "27", "Jan  - Ago 2017", "blue")
+          +smallCard("Faturado", "14", "Jan  - Ago 2017", "red")
+
+        .row
+          .sixteen.wide.column
+            .ui.segments
+              .ui.attached.segment.middle.aligned.ch-segment-header
+                span.ui.title Resumo de Faturamentos
+
+              .ui.attached.segment
+                #users-chart
+
+        .row
+          .ui.sixteen.wide.column
+            table.ui.very.basic.sortable.table.ch-table
+              thead
+                tr
+                  th Data
+                  th Número
+                  th Canal
+                  th Cliente
+                  th Valor
+                  th Status
+                  th Ação
+
+              tbody
+                each data in data_table
+                  tr
+                    td(data-info="Data")=data.date
+                    td(data-info="Número")
+                      a(href="#")= data.document
+                    td(data-info="Canal")= data.channel
+                    td(data-info="Cliente")= data.client
+                    td(data-info="Valor")= data.value
+                    td(data-info="Status" style="color: " + data.status_color)
+                      strong
+                        i(class="fal " + data.status_icon style="margin-right: .5em;")
+                        span= data.status
+                    td
+                      if data.action
+                        a.ui.button.basic.secondary.small.fluid(href="#")= data.action
+
+
+            .ui.segment.basic.paddingless.right.aligned.h-text-center--mobile
+              .ui.pagination.menu.ch-pagination
+                a.item
+                  i.fal.fa-angle-double-left
+                a.item
+                  i.fal.fa-angle-left
+                a.active.item 1
+                a.item 2
+                .disabled.item ...
+                a.item 20
+                a.item 21
+                a.item
+                  i.fal.fa-angle-right
+                a.item
+                  i.fal.fa-angle-double-right
+
+    include includes/notifications.pug
+    include includes/search.pug
+    script(type="text/javascript" src="https://code.highcharts.com/highcharts.js")
+    script(type="text/javascript" src="../assets/javascripts/highcharts-init.js")

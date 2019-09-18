@@ -1,0 +1,232 @@
+.ch-menu {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include respond-to($tablet-portrait) {
+    .ch-nav:not(.active) & {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+
+.ch-menu-item {
+  > a,
+  > button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 40px;
+    line-height: 1.3em;
+    padding: .7em 0;
+    padding-left: $navbarCollapsedSize;
+    font-weight: 600;
+    color: color(navy, tone-10);
+    background: none;
+    border: none;
+
+    > .fa-icon:first-child {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      width: 20px;
+      height: 20px;
+      font-size: 1.15em;
+      text-align: center;
+      @include transform(translateY(-50%));
+    }
+
+    > .fa-icon:first-child, &-label {
+      line-height: 20px;
+    }
+
+    .ch-nav:not(.collapsed) & {
+      padding-right: 1em;
+    }
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  &.active {
+    > a {
+      color: #fff;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: auto;
+        height: 20px;
+        border-right: 5px solid $activeColor;
+        @include transform(translateY(-50%));
+      }
+
+      > .fa-icon:first-child {
+        color: $activeColor;
+      }
+    }
+  }
+
+  &.disabled {
+    > a {
+      color: #949FB2;
+      pointer-events: none;
+    }
+  }
+
+  &.ch-dropdown {
+    > .ch-dropdown-content {
+      display: none;
+      position: relative;
+      top: auto;
+      left: auto;
+      margin-bottom: 20px;
+      font-size: inherit;
+      background-color: transparent;
+      box-shadow: none;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    > .ch-dropdown-button > .fa-icon.dropdown {
+      position: absolute;
+      margin-right: 1.2em;
+      font-size: .65em;
+      top: 50%;
+      right: 0;
+      height: auto;
+      @include transform(translateY(-50%));
+      @include transition(transform .3s);
+
+      &:before {
+        content: "\f054";
+      }
+    }
+
+    &.open.active {
+      .ch-nav:not(.collapsed) &,
+      .ch-nav.collapsed.hover & {
+        > a:before {
+          border-right-color: transparent;
+        }
+      }
+    }
+
+    &.open {
+      > .ch-dropdown-content {
+        display: block;
+      }
+
+      > .ch-dropdown-button > .fa-icon.dropdown {
+        @include transform(translateY(-50%) rotate(90deg));
+      }
+    }
+  }
+
+  @include respond-to($tablet-portrait) {
+    .ch-nav & {
+      > a,
+      > button {
+        padding-top: 1.15em;
+        padding-bottom: 1.15em;
+        padding-left: 70px;
+
+
+        > .fa-icon:first-child{
+          font-size: 1.25em;
+        }
+      }
+    }
+
+    .ch-nav:not(.active) & {
+
+      display: none;
+      height: 100%;
+
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &.more
+      {
+        display: block;
+      }
+
+      &-label {
+        display: none;
+      }
+
+      > a,
+      > button {
+        height: 100%;
+        padding: 10px;
+        justify-content: center;
+
+        > .fa-icon:first-child {
+          position: static;
+          @include transform(translateY(0));
+        }
+      }
+
+      &.active {
+        a:before {
+          width: 20px;
+          height: auto;
+          top: auto;
+          bottom: 0;
+          left: auto;
+          right: 50%;
+          border-right: none;
+          border-bottom: 5px solid $activeColor;
+          @include transform(translate(50%, 0));
+        }
+      }
+
+      &.ch-dropdown {
+        > .ch-dropdown-content,
+        > .ch-dropdown-button > .fa-icon.dropdown {
+          display: none;
+        }
+      }
+    }
+
+    .ch-nav.active & {
+
+      > a,
+      > button {
+        > .fa-icon:first-child{
+          left: 25px;
+        }
+      }
+
+      &.more {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: color(navy, tone-80);
+        z-index: 2;
+
+        > button {
+          width: 60px;
+          height: 60px;
+          padding-right: 0 !important;
+        }
+
+        > button > .fa-icon {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}

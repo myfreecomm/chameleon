@@ -1,0 +1,168 @@
+doctype html
+html
+  include includes/head.pug
+
+  body(data-theme="emites")
+    .ch-nav
+      +logo('emites_logo.png', 'Emites')
+
+      ul.ch-menu
+
+        include partials/menu/emites.pug
+
+        li.ch-menu-item.more.mobile-only
+          button(data-toogle="nav")
+            i.fal.fa-ellipsis-h-alt.fa-icon
+
+      include partials/expandButton.pug
+
+    main.ch-content
+      include includes/message.pug
+      include partials/header/emites.pug
+
+      .ch-featured-content
+        .ui.padded.grid.stackable
+          .sixteen.wide.tablet.twelve.wide.computer.column
+            h2.ui.header.medium Resumo
+            .ui.grid.unstackable
+              .ui.twelve.wide.column
+                .ui.segment.basic.paddingless
+                  .ui.label.green.horizontal.large
+                    i.icon.check
+                    | Aprovado
+
+                  | Processado pelo Sefaz
+
+              .ui.four.wide.column
+                .ui.header.green R$ 240,67
+
+            .ui.grid.four.column.stackable
+              .column
+                .info
+                  .description Série
+                  .value
+                    strong at1
+
+              .column
+                .info
+                  .description RPS
+                  .value
+                    strong 615
+
+              .column
+                .info
+                  .description NFSe
+                  .value
+                    strong 9492
+
+              .column
+                .info
+                  .description Chave
+                  .value
+                    strong SURI-MP8P
+
+            .ui.divider.hidden
+
+            h2.ui.header.medium Informações do RPS
+
+            .ui.grid.two.column.stackable
+              .column
+                .info
+                  .description Data de emissão da nota
+                  .value 17/10/2018 às 16:29h
+
+              .column
+                .info
+                  .description Chave da NFSe
+                  .value SURI-MP8P
+
+              .column
+                .info
+                  .description Número da NFSe
+                  .value 9.492
+
+              .column
+                .info
+                  .description Tipo do RPS
+                  .value RPS
+
+              .column
+                .info
+                  .description Série do RPS
+                  .value at1
+
+              .column
+                .info
+                  .description Situação do RPS
+                  .value Normal
+
+              .column
+                .info
+                  .description Natureza da Operação
+                  .value Tributação no município
+
+              .column
+                .info
+                  .description Regime Especial
+                  .value ---
+
+            .ui.grid.one.column.stackable
+              .column
+                .info
+                  .description Outras informações
+                  .value Criado pelo Billimatic, contrato Lorem Ipsum, faturamento #000171
+
+          .seven.wide.tablet.four.wide.computer.column.sidebar.reverse-order
+            .ui.segment.basic.padded.center.aligned
+
+              .ui.fluid.button.basic.secondary.floating.dropdown.center.aligned
+                | Ações
+                i.dropdown.icon
+
+                .menu
+                  .item Exportar XML
+                  .item Exportar PDF
+                  .item Enviar e-mail para tomador
+                  .divider
+                  .item Clonar NFSe
+                  .item Deletar NFSE
+                  .item Cancelar NFSe
+
+            .ui.segment.basic.padded
+              .ui.header.medium Histórico
+              .ch-timeline
+                ul.ch-timeline-container
+                  li.info
+                    .header
+                      i.fal.fa-file-plus.symbol
+                      strong.description Criado
+                      span.date 17/10/18 às 16:29h
+
+                    .content
+
+                  li.info
+                    .header
+                      i.fal.fa-clock.symbol
+                      strong.description Agendado
+                      span.date 17/10/18 às 16:30h
+
+                    .content
+
+                  li.info
+                    .header
+                      i.fal.fa-cog.symbol
+                      strong.description Processando
+                      span.date 17/10/18 às 17:01h
+
+                    .content
+
+                  li.info
+                    .header
+                      i.fal.fa-check-circle.symbol
+                      strong.description Aceito
+                      span.date 17/10/18 às 17:15h
+
+                    .content
+
+    include includes/notifications.pug
+    include includes/search.pug

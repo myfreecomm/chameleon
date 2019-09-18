@@ -1,0 +1,133 @@
+.ch-content {
+  margin-left: $navbarSize;
+  transition: all .3s;
+
+  .ch-header {
+    position: static;
+    width: 100%;
+    background: none;
+    box-shadow: none;
+  }
+
+  @include respond-to($tablet-portrait) {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 60px;
+  }
+}
+
+.ch-avatar-container {
+  width: 35px;
+
+  &.big {
+    width: 105px;
+  }
+}
+
+.ch-avatar {
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+
+  > .ui.image.avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .big & {
+    width: 105px;
+    height: 105px;
+  }
+
+  &.rounded {
+    border-radius: 100%;
+  }
+}
+
+.ch-avatar-upload {
+  display: flex;
+  align-items: center;
+
+  .info {
+    margin: 0 1.5em;
+
+    .ui.header {
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .ui.button {
+      margin: 10px 0 0;
+    }
+  }
+
+  &.vertical {
+    display: block;
+    text-align: center;
+
+    .ch-avatar-container {
+      margin: 0 auto;
+    }
+  }
+}
+
+.ch-input-file {
+  input[type="file"] {
+    display: none;
+  }
+}
+
+.ch-detail-header {
+  .info {
+    display: flex;
+    vertical-align: middle;
+
+    .ui.header {
+      margin-top: 0;
+      margin-left: 20px;
+      align-self: center;
+    }
+  }
+}
+
+.ch-featured-content {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 65px);
+
+  .ui.grid.padded.grid:not(.vertically):not(.horizontally) > .column {
+
+    &.sidebar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      overflow: auto;
+      background-color: #fbfafa
+    }
+  }
+
+  @include respond-to($tablet-portrait) {
+    .ui.grid.padded.grid:not(.vertically):not(.horizontally) {
+      > .column.sidebar  {
+        position: static;
+        width: calc(100% + 20px) !important;
+        margin-left: -0.7143em !important;
+        margin-right: -0.7143em !important;
+        height: auto;
+        border-left: 0;
+
+        &.reverse-order {
+          order: -1;
+          margin-bottom: 2em !important;
+        }
+      }
+    }
+  }
+}
+

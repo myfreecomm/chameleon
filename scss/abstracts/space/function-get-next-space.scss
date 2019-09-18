@@ -1,9 +1,0 @@
-@import './variables';
-@import './function-get-space';
-
-@function ch-get-next-space ($size) {
-  $current-index: index($ch-space-sizes, $size);
-  $next-size:     nth($ch-space-sizes, $current-index + 1);
-
-  @return ch-get-space($next-size);
-}

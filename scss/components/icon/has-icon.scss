@@ -1,9 +1,0 @@
-@import '../../abstracts/icon';
-
-.has-icon {
-  @extend %ch-has-icon;
-
-  @at-root &Right {
-    @extend %ch-has-icon-right;
-  }
-}

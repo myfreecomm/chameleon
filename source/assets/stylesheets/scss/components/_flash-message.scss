@@ -1,0 +1,85 @@
+.ch-message {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  right: 2.375em;
+  bottom: 2.375em;
+  z-index: 10;
+  background: #232323;
+  padding: 1.25em;
+  padding-left: 1.5em;
+  padding-right: 3.25em;
+  min-width: 28.125em;
+  max-width: 37.5em;
+  @include border-radius(5px);
+  @include animation-duration(.65s);
+  @include animation-fill-mode(both);
+  @include animation-name(bounceInUp);
+
+  &.ch-message--hide {
+    @include animation-duration(.65s);
+    @include animation-fill-mode(both);
+    @include animation-name(bounceOutDown);
+  }
+
+  &-text {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    font-variant: normal;
+    margin-bottom: auto;
+    padding: 0;
+    color: #fffffF;
+  }
+
+  &-icon {
+    font-weight: bold;
+    margin-right: .5em;
+    font-size: 1.250em;
+    float: left;
+
+    &--info {
+      color: #54c8ff;
+    }
+
+    &--success {
+      color: #2ecc40;
+    }
+
+    &--error {
+      color: #ff695e;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    color: #cccccc;
+    font-size: 1.25em;
+    text-align: right;
+    display: block;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+@include respond-to($tablet-portrait) {
+  .ch-message {
+    min-width: 100%;
+    margin-bottom: 3em;
+    right: 0px;
+
+    &-icon,
+    &-close {
+      font-size: 0.938em;
+    }
+
+    &-text {
+      font-size: 0.938em;
+    }
+  }
+}

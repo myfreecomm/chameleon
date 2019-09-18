@@ -1,0 +1,52 @@
+.ui.form {
+  .field > label {
+    font-weight: normal;
+    color: color(navy, tone-50);
+  }
+
+  .fields {
+   margin: 0 -.5em 1.5em
+  }
+
+  .field {
+    margin: 0 0 1.5em;
+  }
+
+  input:not([type]),
+  input[type=date],
+  input[type=datetime-local],
+  input[type=email],
+  input[type=file],
+  input[type=number],
+  input[type=password],
+  input[type=search],
+  input[type=tel],
+  input[type=text],
+  input[type=time],
+  input[type=url],
+  textarea {
+    border-color: color(navy, tone-5);
+  }
+
+  .ui.checkbox {
+    label,
+    +label {
+      color: color(navy, tone-60);
+    }
+
+    .box:before,
+    label:before {
+      border-color: color(navy, tone-10);
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .fields .field {
+      margin: 0 0 1em;
+    }
+  }
+}
+
+.ui.icon.input>i.icon:not(.link) {
+  color: color(navy, tone-30);
+}

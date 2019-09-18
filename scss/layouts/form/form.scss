@@ -1,6 +1,0 @@
-@import '../../abstracts/space';
-
-.ch-form {
-  @include ch-space-stack-group(l);
-  align-items: flex-start;
-}

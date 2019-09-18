@@ -1,3 +1,0 @@
-@function ch-get-mock-text-size ($text-size: 2, $space-size: xxs) {
-  @return calc(#{ch-get-text-size($text-size)} * #{ch-get-text-line-height()} + #{ch-get-space($space-size)});
-}

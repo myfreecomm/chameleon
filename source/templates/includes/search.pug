@@ -1,0 +1,40 @@
+-
+  var people = [
+    { name: "Ana Rachel", photo_id: "1", date: '10/09/2018' },
+    { name: "Brian Ridley", photo_id: "2", date: '10/09/2018' },
+    { name: "Donald Ronald", photo_id: "3", date: '10/09/2018' },
+    { name: "Jenny Rufus", photo_id: "4", date: '10/09/2018' },
+  ];
+
+.ch-search(tabindex="0")
+  .ch-overlay
+    .ch-search-content
+      .ch-search-input-group
+        .ch-search-form(data-message="para sair")
+          input.ch-search-form-input(type="text" placeholder="Ex Nexaas")
+          span.ch-search-form-icon.computer-only
+            i.fal.fa-search.fa-1_5x
+          button.ch-search-form-icon.btn-close
+            i.fal.fa-times
+
+      .ch-search-results
+        span.ch-search-results-count #[strong 15] resultados encontrados em #[strong 4] categorias
+
+        .ui.stackable.three.column.padded.grid
+          .column
+            .ch-search-results-label Clientes
+            +list(people)
+            a.ch-search-results-show-more(href="#") Ver mais resultados
+
+          .column
+            .ch-search-results-label Contas a Pagar
+            +list_salary(people)
+
+          .column
+            .ch-search-results-label Contas a Receber
+            +list_salary(people)
+            a.ch-search-results-show-more(href="#") Ver mais resultados
+
+          .column
+            .ch-search-results-label Fornecedores
+            +list(people)
