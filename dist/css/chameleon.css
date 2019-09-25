@@ -4360,17 +4360,63 @@ h5 {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - var(--ch-dimension-1));
   text-align: center;
   background-color: var(--ch-color-neutral-2); }
+  .ch-template-error-number {
+    position: relative;
+    font-size: calc(var(--ch-text-size-2) * 8);
+    line-height: 1em; }
+    .ch-template-error-number-icon {
+      position: absolute;
+      top: 0;
+      right: calc(var(--ch-dimension-1) * -0.5);
+      width: calc(var(--ch-dimension-1) / 2);
+      height: calc(var(--ch-dimension-1) / 2); }
+      .ch-template-error-number-icon:before, .ch-template-error-number-icon:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .ch-template-error-number-icon:before {
+        color: var(--ch-color-text-1-inverse);
+        z-index: 2; }
+      .ch-template-error-number-icon:after {
+        border-top-left-radius: 999px;
+        border-top-right-radius: 999px;
+        border-bottom-right-radius: 999px;
+        border-bottom-left-radius: 999px;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: var(--ch-color-brand-1);
+        z-index: 1; }
+    @media screen and (min-width: 769px) {
+      .ch-template-error-number {
+        font-size: calc(var(--ch-text-size-2) * 12); }
+        .ch-template-error-number-icon {
+          right: calc(var(--ch-dimension-1) * -1);
+          width: calc(var(--ch-dimension-1) / 1.5);
+          height: calc(var(--ch-dimension-1) / 1.5); } }
+  .ch-template-error-message {
+    padding-top: var(--ch-space-m);
+    padding-right: var(--ch-space-m);
+    padding-bottom: var(--ch-space-m);
+    padding-left: var(--ch-space-m);
+    margin-bottom: var(--ch-space-l); }
+  .ch-template-error-button {
+    font-size: var(--ch-text-size-3); }
   .ch-template-error-footer {
     border-top: 1px solid var(--ch-color-border);
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: var(--ch-dimension-1);
-    margin-top: auto; }
+    background-color: var(--ch-color-neutral-2); }
     .ch-template-error-footer-brand {
       width: auto;
       max-height: calc(var(--ch-dimension-1) / 2);
