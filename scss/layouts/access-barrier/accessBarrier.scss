@@ -26,7 +26,7 @@
 
     > .ch-footer {
       @include ch-media(from, desktop) {
-        width: 50vw;
+        width: 50%;
       }
 
       @include ch-space-inline-group;
@@ -38,7 +38,7 @@
 
   > .ch-bg {
     @include ch-media(from, desktop) {
-      width: 50vw;
+      width: 50%;
       height: 100vh;
     }
 
