@@ -1,3 +1,8 @@
+@import './access-barrier';
+@import './field-group';
+@import './footer';
+@import './form';
+@import './grid';
 @import './paddingless';
 @import './space-inline';
 @import './space-inline-group';
@@ -5,7 +10,4 @@
 @import './space-inset-group';
 @import './space-stack';
 @import './space-stack-group';
-@import './grid';
 @import './template';
-@import './field-group';
-@import './form';
