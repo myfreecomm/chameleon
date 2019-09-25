@@ -4,12 +4,9 @@
   --ch-border-radius-3: 8px; }
 
 :root {
-  --ch-color-brand-1:                  #00BBDA;
-  --ch-color-brand-1-focus:            #00a5c1;
-  --ch-color-brand-1-active:           #008fa7;
-  --ch-color-brand-2:                  #18191B;
-  --ch-color-brand-2-focus:            #0c0d0e;
-  --ch-color-brand-2-active:           black;
+  --ch-color-brand:                    #00BBDA;
+  --ch-color-brand-focus:              #00a5c1;
+  --ch-color-brand-active:             #008fa7;
   --ch-color-neutral-1:                #FFFFFF;
   --ch-color-neutral-2:                #F0F2F4;
   --ch-color-neutral-1-inverse:        #172136;
@@ -253,7 +250,9 @@ address {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: inherit; }
+  color: var(--ch-color-primary); }
+  a:hover:focus, a:focus, a:hover {
+    color: var(--ch-color-primary-focus); }
 
 /**
 * 1. Remove the bottom border in Chrome 57-
@@ -716,6 +715,33 @@ template {
     background-size: cover;
     object-fit: cover; }
 
+.ch-bg {
+  position: relative;
+  background-color: var(--ch-color-brand-1); }
+  .ch-bg > img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.ch-brand {
+  position: relative;
+  padding-left: calc(calc(var(--ch-dimension-1) - 2 * var(--ch-space-s)) + var(--ch-space-s)); }
+  .ch-brand > img, .ch-brand-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--ch-dimension-1) - 2 * var(--ch-space-s));
+    height: calc(var(--ch-dimension-1) - 2 * var(--ch-space-s)); }
+  .ch-brand-name {
+    color: var(--ch-color-text-1);
+    font-family: var(--ch-text-font-family-brand);
+    font-size: var(--ch-text-size-5);
+    line-height: calc(var(--ch-dimension-1) - 2 * var(--ch-space-s)); }
+
 .ch-breadcrumbs {
   display: flex;
   flex-wrap: nowrap;
@@ -798,6 +824,22 @@ template {
     opacity: 0.5; }
     .ch-button:disabled:after, .ch-button.is-disabled:after {
       display: none; }
+  .ch-button--brand {
+    border-color: var(--ch-color-brand);
+    color: var(--ch-color-text-2-inverse);
+    background-color: var(--ch-color-brand); }
+    .ch-button--brand:hover:focus, .ch-button--brand:hover, .ch-button--brand:focus {
+      border-color: var(--ch-color-brand-focus);
+      background-color: var(--ch-color-brand-focus);
+      box-shadow: none; }
+    .ch-button--brand:active {
+      border-color: var(--ch-color-brand);
+      background-color: var(--ch-color-brand-active);
+      box-shadow: none; }
+    .ch-button--brand:hover:focus, .ch-button--brand:hover, .ch-button--brand:focus, .ch-button--brand:active {
+      color: var(--ch-color-text-1-inverse); }
+    .ch-button--brand:after {
+      background: var(--ch-color-neutral-1); }
   .ch-button--primary {
     border-color: var(--ch-color-primary);
     color: var(--ch-color-text-2-inverse);
@@ -1938,20 +1980,36 @@ h5 {
       grid-row-gap: var(--ch-space-m); } }
   .ch-accessBarrier-main {
     padding-top: 25vh; }
-    .ch-accessBarrier-main > * {
+    .ch-accessBarrier-main > .ch-card {
       position: relative;
       z-index: 2;
+      border: 0;
       margin-right: auto;
       margin-left: auto;
       max-width: var(--ch-dimension-3); }
+    .ch-accessBarrier-main > .ch-footer {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: var(--ch-space-m);
+      padding-right: var(--ch-space-m);
+      padding-bottom: var(--ch-space-m);
+      padding-left: var(--ch-space-m);
+      justify-content: center; }
+      @media screen and (min-width: 1024px) {
+        .ch-accessBarrier-main > .ch-footer {
+          width: 50vw; } }
+      .ch-accessBarrier-main > .ch-footer > *:not(:last-child) {
+        margin-right: var(--ch-space-m);
+        margin-left: 0; }
   .ch-accessBarrier > .ch-bg {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 1;
     width: 100%;
-    min-height: 50vh;
-    background: red; }
+    min-height: 50vh; }
     @media screen and (min-width: 1024px) {
       .ch-accessBarrier > .ch-bg {
         width: 50vw;

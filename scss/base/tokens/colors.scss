@@ -3,13 +3,9 @@
 :root {
   // 1. Brand
 
-  --ch-color-brand-1:                  #{$ch-color-cyan};
-  --ch-color-brand-1-focus:            #{ch-get-color-focus($ch-color-cyan)};
-  --ch-color-brand-1-active:           #{ch-get-color-active($ch-color-cyan)};
-
-  --ch-color-brand-2:                  #{$ch-color-grey-extra-dark};
-  --ch-color-brand-2-focus:            #{ch-get-color-focus($ch-color-grey-extra-dark)};
-  --ch-color-brand-2-active:           #{ch-get-color-active($ch-color-grey-extra-dark)};
+  --ch-color-brand:                    #{$ch-color-cyan};
+  --ch-color-brand-focus:              #{ch-get-color-focus($ch-color-cyan)};
+  --ch-color-brand-active:             #{ch-get-color-active($ch-color-cyan)};
 
   // 2. Neutral
 

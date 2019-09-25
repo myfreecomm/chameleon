@@ -14,13 +14,25 @@
   &-main {
     padding-top: 25vh;
 
-    > * {
+    > .ch-card {
       position: relative;
       z-index: #{ch-get-z-index(1, 2)};
 
+      border: 0;
       margin-right: auto;
       margin-left: auto;
       max-width: #{ch-get-dimension(3)};
+    }
+
+    > .ch-footer {
+      @include ch-media(from, desktop) {
+        width: 50vw;
+      }
+
+      @include ch-space-inline-group;
+      @include ch-space-inset;
+
+      justify-content: center;
     }
   }
 
@@ -37,7 +49,5 @@
 
     width: 100%;
     min-height: 50vh;
-
-    background: red;
   }
 }
