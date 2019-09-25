@@ -1,0 +1,30 @@
+@import '../../abstracts/colors';
+@import '../../abstracts/dimensions';
+@import '../../abstracts/border';
+
+.ch-template-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-color: #{ch-get-color(neutral, 2)};
+
+  &-footer {
+    @include ch-border(top);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: #{ch-get-dimension(1)};
+    margin-top: auto;
+
+    &-brand {
+      width: auto;
+      max-height: calc(#{ch-get-dimension(1)} / 2);
+      opacity: 0.2;
+    }
+  }
+}

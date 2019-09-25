@@ -4354,3 +4354,25 @@ h5 {
   .ch-form > *:last-child {
     margin-bottom: 0; }
 
+.ch-template-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-color: var(--ch-color-neutral-2); }
+  .ch-template-error-footer {
+    border-top: 1px solid var(--ch-color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: var(--ch-dimension-1);
+    margin-top: auto; }
+    .ch-template-error-footer-brand {
+      width: auto;
+      max-height: calc(var(--ch-dimension-1) / 2);
+      opacity: 0.2; }
+
