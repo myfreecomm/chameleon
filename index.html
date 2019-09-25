@@ -18,11 +18,123 @@
     <div class="ch-template">
 
       <!-- NAV BEGIN -->
+      <nav class="ch-template-nav is-expanded">
 
+        <!-- BRAND BEGIN -->
+        <div class="ch-brand">
+          <img src="https://via.placeholder.com/72" class="ch-brand-icon">
+          <h1 class="ch-brand-name">Chameleon</h1>
+        </div>
+
+        <!-- MENU BEGIN -->
+        <ul class="ch-menu">
+          <li class="ch-menu-submenu is-open">
+            <a href="#" class="ch-menu-item has-icon has-iconRight is-active">
+              <i class="ch-icon fal fa-chart-line"></i>
+              <span class="ch-menu-item-label">Item 1</span>
+              <i class="ch-menu-item-arrow ch-icon fal fa-angle-right"></i>
+            </a>
+
+            <ul class="ch-menu">
+              <li class="ch-menu-item">
+                <span class="ch-menu-item-label">Item 2</span>
+              </li>
+
+              <li class="ch-menu-item is-active">
+                <span class="ch-menu-item-label">Item 3</span>
+              </li>
+
+              <li class="ch-menu-item">
+                <span class="ch-menu-item-label">Item 4</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-table"></i>
+            <span class="ch-menu-item-label">Item 3</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-magic"></i>
+            <span class="ch-menu-item-label">Item 4</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-clipboard"></i>
+            <span class="ch-menu-item-label">Item 5</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-chart-line"></i>
+            <span class="ch-menu-item-label">Item 6</span>
+          </li>
+        </ul>
+        <!-- MENU END -->
+
+        <!-- TOGGLE BEGIN -->
+        <label class="ch-toggle">
+          <input type="checkbox" class="ch-toggle-toggle">
+          <span class="ch-toggle-icon"></span>
+        </label>
+        <!-- TOGGLE END -->
+
+        <!-- TOGGLE BEGIN -->
+        <label class="ch-toggle ch-toggle--nav">
+          <input type="checkbox" class="ch-toggle-toggle">
+          <span class="ch-toggle-icon"></span>
+        </label>
+        <!-- TOGGLE END -->
+
+      </nav>  
       <!-- NAV END -->
 
       <!-- HEADER BEGIN -->
+      <header class="ch-template-header">
+        <!-- MENU BEGIN -->
+        <nav class="ch-menu">
+          <label class="ch-menu-item ch-menu-item--icon ch-toggle ch-toggle--left">
+            <input class="ch-toggle-toggle" type="checkbox">
+            <i class="ch-toggle-icon"></i>
+          </label>
 
+          <button class="ch-menu-item ch-menu-item--icon">
+            <i class="ch-icon fal fa-search"></i>
+            <span class="ch-menu-item-label">Buscar</span>
+          </button>
+
+          <button class="ch-menu-item ch-menu-item--icon">
+            <i class="ch-icon fal fa-bell"></i>
+            <span class="ch-menu-item-label">Notificações</span>
+          </button>
+
+          <button class="ch-menu-item ch-menu-item--icon">
+            <i class="ch-icon fal fa-cog"></i>
+            <span class="ch-menu-item-label">Configurações</span>
+          </button>
+
+          <button class="ch-menu-item">
+            <span class="ch-menu-item-label">
+              Nome da conta
+              <i class="ch-icon ch-icon--xs fal fa-chevron-down"></i>
+            </span>
+          </button>
+
+          <button class="ch-menu-item ch-menu-item--icon">
+            <div class="ch-avatar" title="Max Salles">
+            </div>
+          </button>
+        </nav>
+        <!-- MENU END -->
+
+        <!-- BREADCRUMBS BEGIN -->
+        <nav class="ch-breadcrumbs">
+          <a class="ch-breadcrumbs-item" href="#">Fluxo de caixa</a>
+          <a class="ch-breadcrumbs-item" href="#">Contas a pagar</a>
+          <span class="ch-breadcrumbs-item">Nova despesa</span>
+        </nav>
+        <!-- BREADCRUMBS END -->
+      </header>
       <!-- HEADER END -->
 
       <!-- CONTENT BEGIN -->
