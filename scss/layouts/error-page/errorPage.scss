@@ -13,11 +13,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
+
   min-height: 100vh;
   text-align: center;
   background-color: #{ch-get-color(neutral, 2)};
-  
+
   > *:not(#{&}-code):not(:last-child) {
     @include ch-space-stack(l);
   }
@@ -34,6 +34,8 @@
     .ch-icon {
       position: absolute;
       top: 0;
+      right: 0;
+      transform: translateX(100%);
     }
 
     @include ch-media(from, tablet) {
