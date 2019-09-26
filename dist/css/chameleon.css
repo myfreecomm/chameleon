@@ -4354,7 +4354,7 @@ h5 {
   .ch-form > *:last-child {
     margin-bottom: 0; }
 
-.ch-template-error {
+.ch-errorPage {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4363,50 +4363,42 @@ h5 {
   height: calc(100vh - var(--ch-dimension-1));
   text-align: center;
   background-color: var(--ch-color-neutral-2); }
-  .ch-template-error-number {
+  .ch-errorPage-code {
     position: relative;
     font-size: calc(var(--ch-text-size-2) * 8);
     line-height: 1em; }
-    .ch-template-error-number-icon {
+    .ch-errorPage-code .ch-icon {
       position: absolute;
       top: 0;
-      right: calc(var(--ch-dimension-1) * -0.5);
-      width: calc(var(--ch-dimension-1) / 2);
-      height: calc(var(--ch-dimension-1) / 2); }
-      .ch-template-error-number-icon:before, .ch-template-error-number-icon:after {
+      right: calc(var(--ch-icon-size-xl) * -1);
+      width: var(--ch-icon-size-xl);
+      height: var(--ch-icon-size-xl); }
+      .ch-errorPage-code .ch-icon:before, .ch-errorPage-code .ch-icon:after {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
-      .ch-template-error-number-icon:before {
-        color: var(--ch-color-text-1-inverse);
-        z-index: 2; }
-      .ch-template-error-number-icon:after {
+      .ch-errorPage-code .ch-icon:before {
+        z-index: 2;
+        color: var(--ch-color-text-1-inverse); }
+      .ch-errorPage-code .ch-icon:after {
         border-top-left-radius: 999px;
         border-top-right-radius: 999px;
         border-bottom-right-radius: 999px;
         border-bottom-left-radius: 999px;
+        z-index: 1;
         content: "";
         width: 100%;
         height: 100%;
-        background-color: var(--ch-color-brand-1);
-        z-index: 1; }
+        background-color: var(--ch-color-brand-1); }
     @media screen and (min-width: 769px) {
-      .ch-template-error-number {
-        font-size: calc(var(--ch-text-size-2) * 12); }
-        .ch-template-error-number-icon {
-          right: calc(var(--ch-dimension-1) * -1);
-          width: calc(var(--ch-dimension-1) / 1.5);
-          height: calc(var(--ch-dimension-1) / 1.5); } }
-  .ch-template-error-message {
-    padding-top: var(--ch-space-m);
-    padding-right: var(--ch-space-m);
-    padding-bottom: var(--ch-space-m);
-    padding-left: var(--ch-space-m);
+      .ch-errorPage-code {
+        font-size: calc(var(--ch-text-size-2) * 12); } }
+  .ch-errorPage-message {
     margin-bottom: var(--ch-space-l); }
-  .ch-template-error-button {
+  .ch-errorPage .ch-button {
     font-size: var(--ch-text-size-3); }
-  .ch-template-error-footer {
+  .ch-errorPage .ch-footer {
     border-top: 1px solid var(--ch-color-border);
     position: absolute;
     bottom: 0;
@@ -4417,7 +4409,7 @@ h5 {
     width: 100%;
     height: var(--ch-dimension-1);
     background-color: var(--ch-color-neutral-2); }
-    .ch-template-error-footer-brand {
+    .ch-errorPage .ch-footer-brand {
       width: auto;
       max-height: calc(var(--ch-dimension-1) / 2);
       opacity: 0.2; }

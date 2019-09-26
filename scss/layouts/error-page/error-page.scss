@@ -5,27 +5,30 @@
 @import '../../abstracts/layers';
 @import '../../abstracts/space';
 
-.ch-template-error {
+.ch-errorPage {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   width: 100%;
   height: calc(100vh - #{ch-get-dimension(1)});
   text-align: center;
   background-color: #{ch-get-color(neutral, 2)};
 
-  &-number {
+  &-code {
     position: relative;
+
     font-size: calc(#{ch-get-text-size()} * 8);
     line-height: 1em;
 
-    &-icon {
+    .ch-icon {
       position: absolute;
       top: 0;
-      right: calc(#{ch-get-dimension(1)} * -0.5);
-      width: calc(#{ch-get-dimension(1)} / 2);
-      height: calc(#{ch-get-dimension(1)} / 2);
+      right: calc(#{ch-get-icon-size(xl)} * -1);
+
+      width: #{ch-get-icon-size(xl)};
+      height: #{ch-get-icon-size(xl)};
 
       &:before,
       &:after  {
@@ -36,49 +39,48 @@
       }
 
       &:before {
-        color: #{ch-get-color(text, 1, inverse)};
         z-index: #{ch-get-z-index(1, 2)};
+
+        color: #{ch-get-color(text, 1, inverse)};
       }
 
       &:after {
-        @include ch-border-radius(circle);
         $empty: '';
+
+        @include ch-border-radius(circle);
+
+        z-index: #{ch-get-z-index(1, 1)};
+
         content: $empty;
         width: 100%;
         height: 100%;
         background-color: #{ch-get-color(brand, 1)};
-        z-index: #{ch-get-z-index(1, 1)};
       }
     }
 
     @include ch-media(from, tablet) {
       font-size: calc(#{ch-get-text-size()} * 12);
-
-      &-icon {
-        right: calc(#{ch-get-dimension(1)} * -1);
-        width: calc(#{ch-get-dimension(1)} / 1.5);
-        height: calc(#{ch-get-dimension(1)} / 1.5);
-      }
     }
   }
 
   &-message {
-    @include ch-space-inset();
     @include ch-space-stack(l);
   }
 
-  &-button {
+  .ch-button {
     font-size: #{ch-get-text-size(3)};
   }
 
-  &-footer {
+  .ch-footer {
     @include ch-border(top);
+
     position: absolute;
     bottom: 0;
     right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 100%;
     height: #{ch-get-dimension(1)};
     background-color: #{ch-get-color(neutral, 2)};
