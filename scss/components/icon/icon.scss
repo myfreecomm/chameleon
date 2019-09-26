@@ -1,17 +1,38 @@
+@import '../../abstracts/border';
 @import '../../abstracts/icon';
+@import '../../abstracts/space';
+@import '../../abstracts/helpers';
 
 .ch-icon {
 
   // 1. Base
 
-  font-size: ch-get-icon-size(m);
   text-align: center;
 
-  // 2. Size variations
+  // 2. Circle variation
+
+  &--circle {
+    @include ch-border-radius(circle);
+
+    color: #{ch-get-color(text, 1, inverse)};
+    background-color: #{ch-get-color(default)};
+  }
+
+  // 3. Size variations
 
   @each $size in $ch-icon-sizes {
-    &--#{$size} {
+    $posfix: ch-generate-variation(($size), (m));
+
+    @at-root #{&}#{$posfix} {
       font-size: ch-get-icon-size($size);
+      
+      &.ch-icon--circle {
+        $sqrt2: 1.41421356237;
+        $radio: #{ch-get-icon-size($size)} / 2;
+        $padding: calc(#{$radio} * #{$sqrt2} - #{$radio} + #{ch-get-space(xs)});
+
+        padding: $padding;
+      }
     }
   }
 }

@@ -1,0 +1,53 @@
+@import '../../abstracts/dimensions';
+@import '../../abstracts/grid';
+@import '../../abstracts/layers';
+
+.ch-accessBarrier {
+  @include ch-media(from, desktop) {
+    @include ch-grid(2);
+  }
+
+  position: relative;
+
+  min-height: 100vh;
+
+  &-main {
+    padding-top: 25vh;
+
+    > .ch-card {
+      position: relative;
+      z-index: #{ch-get-z-index(1, 2)};
+
+      border: 0;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: #{ch-get-dimension(3)};
+    }
+
+    > .ch-footer {
+      @include ch-media(from, desktop) {
+        width: 50%;
+      }
+
+      @include ch-space-inline-group;
+      @include ch-space-inset;
+
+      justify-content: center;
+    }
+  }
+
+  > .ch-bg {
+    @include ch-media(from, desktop) {
+      width: 50%;
+      height: 100vh;
+    }
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: #{ch-get-z-index(1, 1)};
+
+    width: 100%;
+    min-height: 50vh;
+  }
+}

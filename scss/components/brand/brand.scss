@@ -1,0 +1,43 @@
+@import '../../abstracts/breakpoints';
+@import '../../abstracts/colors';
+@import '../../abstracts/typography';
+@import '../../abstracts/dimensions';
+@import '../../abstracts/transition';
+
+*:not(img).ch-brand {
+  $brand-icon-size: calc(#{ch-get-dimension(1)} - 2 * #{ch-get-space(s)});
+  
+  // 1. Base
+
+  @at-root img.ch-brand {
+    display: inline-block;
+    
+    width: auto;
+    height: $brand-icon-size;
+  }
+
+  position: relative;
+
+  padding-left: calc(#{$brand-icon-size} + #{ch-get-space(s)});
+
+  // 2. Icon
+
+  img,
+  &-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: $brand-icon-size;
+    height: $brand-icon-size;
+  }
+
+  // 3. Name
+
+  &-name {
+    color: #{ch-get-color(text, 1)};
+    font-family: #{ch-get-text-font-family(brand)};
+    font-size: #{ch-get-text-size(5)};
+    line-height: $brand-icon-size;
+  }
+}
