@@ -79,5 +79,41 @@
       </nav>
       <!-- NAV END -->
     </div>
+
+    <script type="text/javascript">
+      $('body').on('click', function (e) {
+        var $element = $(e.target)
+
+        if ($element.parents('.ch-dropdown-overlay').length === 0) {
+          $('.ch-dropdown').each(function () {
+            var $dropdown = $(this)
+
+            if (
+              $element.hasClass('ch-dropdown-toggle') &&
+              $element.parent()[0] === $dropdown[0]
+            ) return
+
+            $dropdown.removeClass('is-active')
+          })
+        }
+      })
+
+      $('.ch-dropdown-toggle').on('click', function () {
+        var $toggle  = $(this)
+        var $wrapper = $toggle.parent()
+
+        $wrapper.toggleClass('is-active')
+      })
+    </script>
+
+    <script>
+      $('.ch-menu-item').on('click', function() {
+        $(this).parent().toggleClass('is-open')
+      })
+
+      $('.ch-toggle-toggle').on('change', function() {
+        $('.ch-template-nav').toggleClass('is-expanded')
+      })
+    </script>
   </body>
 </html>
