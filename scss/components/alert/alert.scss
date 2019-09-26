@@ -11,14 +11,14 @@
 
   // 1.2. Header
 
-  #{&}-header {
+  &-header {
     // @extend %ch-card-header;
     @include ch-card-header;
   }
 
   // 1.3. Content
 
-  #{&}-content {
+  &-content {
     // @extend %ch-card-content;
     @include ch-card-content;
   }

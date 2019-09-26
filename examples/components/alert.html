@@ -4,53 +4,75 @@
     <title>Chameleon - Alert</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
   </head>
   <body>
     <div class="ch-template">
-      <div class="ch-template-content" style="max-width: 600px">
-        <div class="ch-alert ch-alert--info">
-          <div class="ch-alert-header">
-          </div>
-          <div class="ch-alert-content">
-          </div>
+      <main class="ch-template-content">
+
+        <div class="ch-alert">
+          <header class="ch-alert-header">
+            <h4>Lorem ipsum dolor sit amet</h4>
+          </header>
+
+          <main class="ch-alert-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.</p>
+          </main>
+
+          <footer class="ch-alert-footer">
+            <button type="button" class="ch-button ch-button--primary">Primary</button>
+            <button type="button" class="ch-button ch-button--secondary">Secondary</button>
+          </footer>
         </div>
 
-        <br/>
+        <div class="ch-alert ch-alert--info">
+          <header class="ch-alert-header">
+            <h4>Lorem ipsum dolor sit amet</h4>
+          </header>
+
+          <main class="ch-alert-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.</p>
+          </main>
+        </div>
 
         <div class="ch-alert ch-alert--warning">
-          <div class="ch-alert-header">
-          </div>
-          <div class="ch-alert-content">
-          </div>
-        </div>
+          <header class="ch-alert-header">
+            <h4>Lorem ipsum dolor sit amet</h4>
+          </header>
 
-        <br/>
+          <main class="ch-alert-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.</p>
+          </main>
+        </div>
 
         <div class="ch-alert ch-alert--positive">
-          <div class="ch-alert-header">
-          </div>
-          <div class="ch-alert-content">
-          </div>
-        </div>
+          <header class="ch-alert-header">
+            <h4>Lorem ipsum dolor sit amet</h4>
+          </header>
 
-        <br/>
+          <main class="ch-alert-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.</p>
+          </main>
+        </div>
 
         <div class="ch-alert ch-alert--negative">
-          <div class="ch-alert-header">
-          </div>
-          <div class="ch-alert-content">
-          </div>
-        </div>
+          <header class="ch-alert-header">
+            <h4>Lorem ipsum dolor sit amet</h4>
+          </header>
 
-      </div>
+          <main class="ch-alert-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.</p>
+          </main>
+        </div>
+      </main>
     </div>
+
+    <style>
+      .ch-alert {
+        margin-bottom: 1rem;
+      }
+    </style>
   </body>
 </html>

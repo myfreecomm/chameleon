@@ -10,8 +10,9 @@
   </head>
   <body>
     <div class="ch-template">
-      <main class="ch-template-content">
-        <div class="ch-spaceInlineGroup--l" style="align-items: flex-end; justify-content: center;">
+      <main class="ch-template-content ch-spaceStackGroup">
+
+        <div class="ch-spaceInlineGroup">
           <i class="ch-icon ch-icon--xxs fal fa-file"></i>
           <i class="ch-icon ch-icon--xs fal fa-file"></i>
           <i class="ch-icon ch-icon--s fal fa-file"></i>
@@ -21,18 +22,23 @@
           <i class="ch-icon ch-icon--xxl fal fa-file"></i>
         </div>
 
-        <br><br>
-
-        <div class="ch-spaceInlineGroup--l" style="align-items: center; justify-content: center;">
+        <div class="ch-spaceInlineGroup">
           <i class="ch-icon ch-icon--circle ch-bg--brand ch-icon--xxs fal fa-smile"></i>
-          <i class="ch-icon ch-icon--circle ch-bg--brand ch-icon--xs fal fa-smile"></i>
-          <i class="ch-icon ch-icon--circle ch-bg--primary ch-icon--s fal fa-smile"></i>
-          <i class="ch-icon ch-icon--circle ch-bg--primary ch-icon--m fal fa-smile"></i>
-          <i class="ch-icon ch-icon--circle ch-bg--negative ch-icon--l fal fa-smile"></i>
+          <i class="ch-icon ch-icon--circle ch-bg--primary ch-icon--xs fal fa-smile"></i>
+          <i class="ch-icon ch-icon--circle ch-bg--info ch-icon--s fal fa-smile"></i>
+          <i class="ch-icon ch-icon--circle ch-bg--positive ch-icon--m fal fa-smile"></i>
+          <i class="ch-icon ch-icon--circle ch-bg--warning ch-icon--l fal fa-smile"></i>
           <i class="ch-icon ch-icon--circle ch-bg--negative ch-icon--xl fal fa-smile"></i>
-          <i class="ch-icon ch-icon--circle ch-bg ch-icon--xxl fal fa-smile"></i>
+          <i class="ch-icon ch-icon--circle ch-icon--xxl fal fa-smile"></i>
         </div>
+
       </main>
     </div>
+
+    <style>
+      .ch-spaceInlineGroup {
+        align-items: flex-end;
+      }
+    </style>
   </body>
 </html>
