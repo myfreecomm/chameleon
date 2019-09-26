@@ -595,9 +595,9 @@ template {
     left: var(--ch-space-xxs);
     width: var(--ch-space-xxs);
     height: 100%; }
-  .ch-alert .ch-alert-header:not(:last-child) {
+  .ch-alert-header:not(:last-child) {
     margin-bottom: var(--ch-space-m); }
-  * + .ch-alert .ch-alert-content:not(:last-child) {
+  * + .ch-alert-content:not(:last-child) {
     margin-bottom: var(--ch-space-m); }
   .ch-alert--info {
     position: relative; }
