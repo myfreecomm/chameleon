@@ -1458,7 +1458,7 @@ template {
     height: var(--ch-icon-size-m);
     transform: translate(0, -50%);
     opacity: 1;
-    background: var(--ch-color-brand-1); }
+    background: var(--ch-color-brand); }
   .ch-menu-item.ch-menu-item--icon {
     padding: 0 !important;
     position: relative;
@@ -4374,7 +4374,7 @@ h5 {
     .ch-template-nav > .ch-menu .ch-menu-item.is-active > .ch-menu-item-label {
       color: var(--ch-color-text-1-inverse); }
     .ch-template-nav > .ch-menu .ch-menu-item.is-active > .ch-icon:first-child {
-      color: var(--ch-color-brand-1); }
+      color: var(--ch-color-brand); }
 
 @media screen and (max-width: calc(769px - 1px)) {
   .ch-template-nav:not(.is-open) > .ch-menu {

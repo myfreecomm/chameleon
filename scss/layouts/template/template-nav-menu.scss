@@ -57,7 +57,7 @@
         // 1.1.3.2. Icon
 
         > .ch-icon:first-child {
-          color: #{ch-get-color(brand, 1)};
+          color: #{ch-get-color(brand)};
         }
       }
     }

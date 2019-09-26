@@ -1,13 +1,8 @@
 <!doctype html>
 <html>
   <head>
-    <title>Chameleon</title>
+    <title>Chameleon - Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
@@ -15,105 +10,59 @@
   </head>
   <body>
     <div class="ch-template">
-      <!-- NAV BEGIN -->
-      <nav class="ch-template-nav is-expanded">
-        <!-- MENU BEGIN -->
-        <ul class="ch-menu">
-          <li class="ch-menu-submenu is-open">
-            <a href="#" class="ch-menu-item has-icon has-iconRight is-active">
-              <i class="ch-icon fal fa-chart-line"></i>
-              <span class="ch-menu-item-label">Item 1</span>
-              <i class="ch-menu-item-arrow ch-icon fal fa-angle-right"></i>
-            </a>
+      <main class="ch-template-content ch-spaceInlineGroup">
 
-            <ul class="ch-menu">
-              <li class="ch-menu-item">
-                <span class="ch-menu-item-label">Item 2</span>
-              </li>
+        <nav class="ch-menu">
+          <a class="ch-menu-item" href="#">Option 1</a>
+          <a class="ch-menu-item is-active" href="#">Option 2</a>
+          <a class="ch-menu-item" href="#">Option 3</a>
+          <a class="ch-menu-item" href="#">Option 4</a>
+        </nav>
 
-              <li class="ch-menu-item is-active">
-                <span class="ch-menu-item-label">Item 3</span>
-              </li>
-
-              <li class="ch-menu-item">
-                <span class="ch-menu-item-label">Item 4</span>
-              </li>
-            </ul>
-          </li>
-
-          <li class="ch-menu-item has-icon">
-            <i class="ch-icon fal fa-table"></i>
-            <span class="ch-menu-item-label">Item 3</span>
-          </li>
-
-          <li class="ch-menu-item has-icon">
-            <i class="ch-icon fal fa-magic"></i>
-            <span class="ch-menu-item-label">Item 4</span>
-          </li>
-
-          <li class="ch-menu-item has-icon">
-            <i class="ch-icon fal fa-clipboard"></i>
-            <span class="ch-menu-item-label">Item 5</span>
-          </li>
-
-          <li class="ch-menu-item has-icon">
+        <nav class="ch-menu">
+          <a class="ch-menu-item has-icon is-active" href="#">
             <i class="ch-icon fal fa-chart-line"></i>
-            <span class="ch-menu-item-label">Item 6</span>
-          </li>
-        </ul>
-        <!-- MENU END -->
+            <span class="ch-menu-item-label">Option 1</span>
+          </a>
 
-        <!-- TOGGLE BEGIN -->
-        <label class="ch-toggle">
-          <input type="checkbox" class="ch-toggle-toggle">
-          <span class="ch-toggle-icon"></span>
-        </label>
-        <!-- TOGGLE END -->
+          <a class="ch-menu-item has-icon" href="#">
+            <i class="ch-icon fal fa-table"></i>
+            <span class="ch-menu-item-label">Option 2</span>
+          </a>
 
-        <!-- TOGGLE BEGIN -->
-        <label class="ch-toggle ch-toggle--nav">
-          <input type="checkbox" class="ch-toggle-toggle">
-          <span class="ch-toggle-icon"></span>
-        </label>
-        <!-- TOGGLE END -->
-      </nav>
-      <!-- NAV END -->
+          <a class="ch-menu-item has-icon" href="#">
+            <i class="ch-icon fal fa-magic"></i>
+            <span class="ch-menu-item-label">Option 3</span>
+          </a>
+        </nav>
+
+        <nav class="ch-menu">
+          <a class="ch-menu-item" href="#">Option 1</a>
+
+          <a class="ch-menu-item" href="#">Option 2</a>
+
+          <div class="ch-menu-submenu is-open">
+            <button type="button" class="ch-menu-item has-iconRight">
+              <span class="ch-menu-item-label">Option 3</span>
+              <i class="ch-icon ch-menu-item-arrow fal fa-angle-right"></i>
+            </button>
+
+            <nav class="ch-menu">
+              <a class="ch-menu-item" href="#">Sub option 1</a>
+              <a class="ch-menu-item is-active" href="#">Sub option 2</a>
+              <a class="ch-menu-item" href="#">Sub option 3</a>
+              <a class="ch-menu-item" href="#">Sub option 4</a>
+            </nav>
+          </div>
+        </nav>
+
+      </main>
     </div>
 
-    <script type="text/javascript">
-      $('body').on('click', function (e) {
-        var $element = $(e.target)
-
-        if ($element.parents('.ch-dropdown-overlay').length === 0) {
-          $('.ch-dropdown').each(function () {
-            var $dropdown = $(this)
-
-            if (
-              $element.hasClass('ch-dropdown-toggle') &&
-              $element.parent()[0] === $dropdown[0]
-            ) return
-
-            $dropdown.removeClass('is-active')
-          })
-        }
-      })
-
-      $('.ch-dropdown-toggle').on('click', function () {
-        var $toggle  = $(this)
-        var $wrapper = $toggle.parent()
-
-        $wrapper.toggleClass('is-active')
-      })
-    </script>
-
-    <script>
-      $('.ch-menu-item').on('click', function() {
-        $(this).parent().toggleClass('is-open')
-      })
-
-      $('.ch-toggle-toggle').on('change', function() {
-        $('.ch-template-nav').toggleClass('is-expanded')
-      })
-    </script>
+    <style>
+      .ch-menu {
+        min-width: 240px;
+      }
+    </style>
   </body>
 </html>
