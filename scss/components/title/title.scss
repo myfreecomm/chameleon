@@ -4,7 +4,7 @@
 // 1. Base
 
 .ch-title {
-  @for $i from 1 to 6 {
+  @for $i from 1 through 6 {
     @each $type in (normal, inverse) {
       $sufix: ch-generate-variation(($i, $type), (3, normal));
 

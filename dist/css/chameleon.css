@@ -1258,33 +1258,33 @@ template {
     border-bottom-left-radius: 999px;
     color: var(--ch-color-text-1-inverse);
     background-color: var(--ch-color-default); }
-  .ch-icon--xxs {
+  .ch-icon.ch-icon--xxs {
     font-size: var(--ch-icon-size-xxs); }
-    .ch-icon--xxs.ch-icon--circle {
+    .ch-icon.ch-icon--xxs.ch-icon--circle {
       padding: calc(var(--ch-icon-size-xxs) / 2 * 1.41421 - var(--ch-icon-size-xxs) / 2 + var(--ch-space-xs)); }
-  .ch-icon--xs {
+  .ch-icon.ch-icon--xs {
     font-size: var(--ch-icon-size-xs); }
-    .ch-icon--xs.ch-icon--circle {
+    .ch-icon.ch-icon--xs.ch-icon--circle {
       padding: calc(var(--ch-icon-size-xs) / 2 * 1.41421 - var(--ch-icon-size-xs) / 2 + var(--ch-space-xs)); }
-  .ch-icon--s {
+  .ch-icon.ch-icon--s {
     font-size: var(--ch-icon-size-s); }
-    .ch-icon--s.ch-icon--circle {
+    .ch-icon.ch-icon--s.ch-icon--circle {
       padding: calc(var(--ch-icon-size-s) / 2 * 1.41421 - var(--ch-icon-size-s) / 2 + var(--ch-space-xs)); }
-  .ch-icon {
+  .ch-icon.ch-icon {
     font-size: var(--ch-icon-size-m); }
-    .ch-icon.ch-icon--circle {
+    .ch-icon.ch-icon.ch-icon--circle {
       padding: calc(var(--ch-icon-size-m) / 2 * 1.41421 - var(--ch-icon-size-m) / 2 + var(--ch-space-xs)); }
-  .ch-icon--l {
+  .ch-icon.ch-icon--l {
     font-size: var(--ch-icon-size-l); }
-    .ch-icon--l.ch-icon--circle {
+    .ch-icon.ch-icon--l.ch-icon--circle {
       padding: calc(var(--ch-icon-size-l) / 2 * 1.41421 - var(--ch-icon-size-l) / 2 + var(--ch-space-xs)); }
-  .ch-icon--xl {
+  .ch-icon.ch-icon--xl {
     font-size: var(--ch-icon-size-xl); }
-    .ch-icon--xl.ch-icon--circle {
+    .ch-icon.ch-icon--xl.ch-icon--circle {
       padding: calc(var(--ch-icon-size-xl) / 2 * 1.41421 - var(--ch-icon-size-xl) / 2 + var(--ch-space-xs)); }
-  .ch-icon--xxl {
+  .ch-icon.ch-icon--xxl {
     font-size: var(--ch-icon-size-xxl); }
-    .ch-icon--xxl.ch-icon--circle {
+    .ch-icon.ch-icon--xxl.ch-icon--circle {
       padding: calc(var(--ch-icon-size-xxl) / 2 * 1.41421 - var(--ch-icon-size-xxl) / 2 + var(--ch-space-xs)); }
 
 .ch-input,
@@ -1947,6 +1947,58 @@ h5 {
   font-weight: var(--ch-text-weight-bold);
   line-height: var(--ch-text-line-height); }
   h5 > .ch-title-sub {
+    color: var(--ch-color-text-2);
+    font-family: var(--ch-text-font-family);
+    font-size: var(--ch-text-size-2);
+    font-weight: var(--ch-text-weight-regular);
+    line-height: var(--ch-text-line-height); }
+
+.ch-title--6 {
+  color: var(--ch-color-text-1);
+  font-family: var(--ch-text-font-family);
+  font-size: var(--ch-text-size-3);
+  font-weight: var(--ch-text-weight-bold);
+  line-height: var(--ch-text-line-height); }
+  .ch-title--6 > .ch-title-sub {
+    color: var(--ch-color-text-2);
+    font-family: var(--ch-text-font-family);
+    font-size: var(--ch-text-size-2);
+    font-weight: var(--ch-text-weight-regular);
+    line-height: var(--ch-text-line-height); }
+
+h6 {
+  color: var(--ch-color-text-1);
+  font-family: var(--ch-text-font-family);
+  font-size: var(--ch-text-size-3);
+  font-weight: var(--ch-text-weight-bold);
+  line-height: var(--ch-text-line-height); }
+  h6 > .ch-title-sub {
+    color: var(--ch-color-text-2);
+    font-family: var(--ch-text-font-family);
+    font-size: var(--ch-text-size-2);
+    font-weight: var(--ch-text-weight-regular);
+    line-height: var(--ch-text-line-height); }
+
+.ch-title--6Inverse {
+  color: var(--ch-color-text-1);
+  font-family: var(--ch-text-font-family);
+  font-size: var(--ch-text-size-3);
+  font-weight: var(--ch-text-weight-bold);
+  line-height: var(--ch-text-line-height); }
+  .ch-title--6Inverse > .ch-title-sub {
+    color: var(--ch-color-text-2);
+    font-family: var(--ch-text-font-family);
+    font-size: var(--ch-text-size-2);
+    font-weight: var(--ch-text-weight-regular);
+    line-height: var(--ch-text-line-height); }
+
+h6 {
+  color: var(--ch-color-text-1);
+  font-family: var(--ch-text-font-family);
+  font-size: var(--ch-text-size-3);
+  font-weight: var(--ch-text-weight-bold);
+  line-height: var(--ch-text-line-height); }
+  h6 > .ch-title-sub {
     color: var(--ch-color-text-2);
     font-family: var(--ch-text-font-family);
     font-size: var(--ch-text-size-2);
