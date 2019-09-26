@@ -54,6 +54,43 @@
     }
   }
 
+  // 2. Brand variation
+
+  &--brand {
+    border-color: #{ch-get-color(brand)};
+    color: #{ch-get-color(text, 2, inverse)};
+    background-color: #{ch-get-color(brand)};
+
+    // 2.1. Focus interaction
+
+    &:hover:focus,
+    &:hover,
+    &:focus {
+      border-color: #{ch-get-color(brand, focus)};
+      background-color: #{ch-get-color(brand, focus)};
+      box-shadow: none;
+    }
+
+    // 2.2. Active interaction
+
+    &:active {
+      border-color: #{ch-get-color(brand, acitve)};
+      background-color: #{ch-get-color(brand, active)};
+      box-shadow: none;
+    }
+
+    &:hover:focus,
+    &:hover,
+    &:focus,
+    &:active {
+      color: #{ch-get-color(text, 1, inverse)};
+    }
+
+    &:after {
+      background: #{ch-get-color(neutral, 1)}
+    }
+  }
+
   // 2. Primary variation
 
   &--primary {
