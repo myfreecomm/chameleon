@@ -717,7 +717,7 @@ template {
 
 .ch-bg {
   position: relative;
-  background-color: var(--ch-color-brand-1); }
+  background-color: var(--ch-color-brand); }
   .ch-bg > img {
     position: absolute;
     display: block;
