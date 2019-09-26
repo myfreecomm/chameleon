@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Chameleon - Bg</title>
+    <title>Chameleon - File</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
@@ -12,24 +12,26 @@
     <div class="ch-template">
       <main class="ch-template-content">
 
-        <span class="ch-bg"></span>
-        <span class="ch-bg ch-bg--primary"></span>
-        <span class="ch-bg ch-bg--info"></span>
-        <span class="ch-bg ch-bg--positive"></span>
-        <span class="ch-bg ch-bg--warning"></span>
-        <span class="ch-bg ch-bg--negative"></span>
-        <span class="ch-bg ch-bg--negative">
-          <img src="https://placeimg.com/640/480/arch?t=1569510457933">
-        </span>
+        <input type="file" class="ch-file" />
+        <input type="file" class="ch-file ch-file--info" />
+        <input type="file" class="ch-file ch-file--warning" />
+        <input type="file" class="ch-file ch-file--positive" />
+        <input type="file" class="ch-file ch-file--negative" />
+        <input type="file" class="ch-file ch-file--small" />
+        <input type="file" class="ch-file ch-file--fluid" />
 
       </main>
     </div>
 
     <style>
-      span {
-        display: inline-block;
-        max-width: 300px;
-        height: 200px;
+      .ch-template-content {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+      }
+
+      .ch-file {
+        margin-bottom: 1rem;
       }
     </style>
   </body>

@@ -46,6 +46,10 @@
         padding-top: ch-get-space(m);
       }
     }
+
+    > * + .ch-card-footer {
+      padding-top: ch-get-space(m);
+    }
   }
 
   // 5. Interactive variation
