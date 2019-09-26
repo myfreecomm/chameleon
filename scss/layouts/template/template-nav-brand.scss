@@ -5,7 +5,7 @@
 @import '../../abstracts/transition';
 
 .ch-template-nav {
-  &-brand {
+  > .ch-brand {
 
     // 1. Base
 
@@ -18,24 +18,19 @@
 
     // 2. Icon
 
-    &-icon {
-      position: absolute;
+    img,
+    .ch-brand-icon {
       top: 50%;
       left: calc(#{ch-get-dimension(1)} / 2);
       transform: translate(-50%, -50%);
-
-      width: calc(#{ch-get-dimension(1)} - 2 * #{ch-get-space(s)});
-      height: calc(#{ch-get-dimension(1)} -  2 * #{ch-get-space(s)});
     }
 
     // 3. Name
 
-    &-name {
+    .ch-brand-name {
       @include ch-transition(opacity, $ch-transition-duration-fast);
 
       color: #{ch-get-color(text, 1, inverse)};
-      font-family: #{ch-get-text-font-family(brand)};
-      font-size: #{ch-get-text-size(5)};
       line-height: #{ch-get-dimension(1)};
       opacity: 0;
     }
@@ -44,12 +39,12 @@
   // 4. Open state
 
   &.is-open {
-    > .ch-template-nav-brand {
+    > .ch-brand {
       position: relative;
       opacity: 1;
       visibility: visible;
 
-      > .ch-template-nav-brand-name {
+      .ch-brand-name {
         opacity: 1;
       }
     }
@@ -58,19 +53,19 @@
   // 5. From tablet
 
   @include ch-media(from, tablet) {
-    &-brand {
+    > .ch-brand {
       position: relative;
       opacity: 1;
       visibility: visible;
 
-      &-name {
+      .ch-brand-name {
         overflow: hidden;
         opacity: 1;
       }
     }
 
     &:not(:hover):not(.is-expanded) {
-      .ch-template-nav-brand > .ch-template-nav-brand-name {
+      > .ch-brand .ch-brand-name {
         opacity: 0;
       }
     }
@@ -79,7 +74,7 @@
     &:focus,
     &:hover {
       &:not(.is-expanded) {
-        .ch-template-nav-brand > .ch-template-nav-brand-name {
+        > .ch-brand .ch-brand-name {
           opacity: 1;
         }
       }

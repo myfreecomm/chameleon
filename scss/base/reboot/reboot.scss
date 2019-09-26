@@ -151,7 +151,13 @@ address {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: inherit;
+  color: #{ch-get-color(primary)};
+
+  &:hover:focus,
+  &:focus,
+  &:hover {
+    color: #{ch-get-color(primary, focus)};
+  }
 }
 
 /**
