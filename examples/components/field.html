@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Chameleon - Select</title>
+    <title>Chameleon - Field</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
@@ -10,29 +10,26 @@
   </head>
   <body>
     <div class="ch-template">
-      <main class="ch-template-content" style="max-width: 600px;">
+      <main class="ch-template-content ch-spaceStackGroup">
+
         <div class="ch-field">
-          <form>
-            <label for="field" class="ch-field-label">Field</label>
-            <input type="text" name="field"><br/> <br/>
-
-            <label for="field" class="ch-field-label--inline">Field</label>
-            <input type="text" name="field"><br/> <br/>
-
-            <label for="field" class="ch-field-label">Field</label>
-            <input type="text" name="field"><br/> <br/>
-
-            <label for="field" class="ch-field-label--inline">Field</label>
-            <input type="text" name="field"><br/> <br/>
-          </form>
+          <label for="field" class="ch-field-label">Field</label>
+          <input type="text" id="field" class="ch-input ch-field-control">
+          <p class="ch-field-message">Lorem ipsum dolor sit amet consectetur</p>
         </div>
+
+        <div class="ch-field">
+          <label for="field" class="ch-field-label ch-text--negative">Field</label>
+          <input type="text" id="field" class="ch-input ch-input--negative ch-field-control">
+          <p class="ch-field-message ch-text--negative">Some error</p>
+        </div>
+
+        <div class="ch-field ch-field--inline">
+          <label for="field" class="ch-field-label">Field</label>
+          <input type="text" id="field" class="ch-input ch-field-control">
+        </div>
+
       </main>
     </div>
-
-    <style type="text/css">
-      input {
-        border: 1px solid #F1F0EE;
-      }
-    </style>
   </body>
 </html>
