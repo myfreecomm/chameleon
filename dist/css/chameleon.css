@@ -2068,7 +2068,9 @@ h5 {
     margin-bottom: 0; }
     .ch-errorPage-code .ch-icon {
       position: absolute;
-      top: 0; }
+      top: 0;
+      right: 0;
+      transform: translateX(100%); }
     @media screen and (min-width: 769px) {
       .ch-errorPage-code {
         font-size: calc(var(--ch-text-size-2) * 12); } }
