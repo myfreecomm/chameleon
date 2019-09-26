@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chameleon - Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
+  </head>
+  <body>
+    <div class="ch-template">
+      <main class="ch-template-content">
+
+        <div class="ch-card">
+          <header class="ch-card-header">
+            <h4>Lorem ipsum dolor sit amet</h4>
+          </header>
+
+          <main class="ch-card-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.</p>
+          </main>
+
+          <footer class="ch-card-footer">
+            <button type="button" class="ch-button ch-button--primary">Primary</button>
+            <button type="button" class="ch-button ch-button--secondary">Secondary</button>
+          </footer>
+        </div>
+
+        <div class="ch-card ch-card--interactive">
+          <h4>
+            Lorem ipsum dolor sit amet
+            <span class="ch-title-sub">Consectetur adipisicing elit</span>
+          </h4>
+        </div>
+
+        <div class="ch-card ch-card--interactive is-active">
+          <h4>
+            Lorem ipsum dolor sit amet
+            <span class="ch-title-sub">Consectetur adipisicing elit</span>
+          </h4>
+        </div>
+
+        <div class="ch-card ch-paddingless">
+          <header class="ch-card-header">
+            <h4>Lorem ipsum dolor sit amet</h4>
+          </header>
+
+          <nav class="ch-menu">
+            <a href="#" class="ch-menu-item">First option</a>
+            <a href="#" class="ch-menu-item">Second option</a>
+            <a href="#" class="ch-menu-item">Third option</a>
+          </nav>
+
+          <footer class="ch-card-footer">
+            <button type="button" class="ch-button ch-button--primary">Primary</button>
+            <button type="button" class="ch-button ch-button--secondary">Secondary</button>
+          </footer>
+        </div>
+
+      </main>
+    </div>
+
+    <style>
+      .ch-template-content {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .ch-card {
+        margin-right: 1rem;
+        max-width: 320px;
+        min-width: 200px;
+      }
+    </style>
+  </body>
+</html>
