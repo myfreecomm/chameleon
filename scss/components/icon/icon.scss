@@ -23,9 +23,9 @@
   @each $size in $ch-icon-sizes {
     $posfix: ch-generate-variation(($size), (m));
 
-    @at-root #{&}#{$posfix} {
+    @at-root #{&}#{&}#{$posfix} {
       font-size: ch-get-icon-size($size);
-      
+
       &.ch-icon--circle {
         $sqrt2: 1.41421356237;
         $radio: #{ch-get-icon-size($size)} / 2;
