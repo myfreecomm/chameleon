@@ -726,17 +726,33 @@ template {
     width: 100%;
     height: 100%;
     object-fit: cover; }
+  .ch-bg--brand {
+    background-color: var(--ch-color-brand) !important; }
+  .ch-bg--primary {
+    background-color: var(--ch-color-primary) !important; }
+  .ch-bg--info {
+    background-color: var(--ch-color-info) !important; }
+  .ch-bg--positive {
+    background-color: var(--ch-color-positive) !important; }
+  .ch-bg--warning {
+    background-color: var(--ch-color-warning) !important; }
+  .ch-bg--negative {
+    background-color: var(--ch-color-negative) !important; }
 
-.ch-brand {
+*:not(img).ch-brand {
   position: relative;
   padding-left: calc(calc(var(--ch-dimension-1) - 2 * var(--ch-space-s)) + var(--ch-space-s)); }
-  .ch-brand img, .ch-brand-icon {
+  img.ch-brand {
+    display: inline-block;
+    width: auto;
+    height: calc(var(--ch-dimension-1) - 2 * var(--ch-space-s)); }
+  *:not(img).ch-brand img, *:not(img).ch-brand-icon {
     position: absolute;
     top: 0;
     left: 0;
     width: calc(var(--ch-dimension-1) - 2 * var(--ch-space-s));
     height: calc(var(--ch-dimension-1) - 2 * var(--ch-space-s)); }
-  .ch-brand-name {
+  *:not(img).ch-brand-name {
     color: var(--ch-color-text-1);
     font-family: var(--ch-text-font-family-brand);
     font-size: var(--ch-text-size-5);
@@ -1216,22 +1232,42 @@ template {
       transform: translate(50%, -50%); }
 
 .ch-icon {
-  font-size: var(--ch-icon-size-m);
   text-align: center; }
+  .ch-icon--circle {
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    color: var(--ch-color-text-1-inverse);
+    background-color: var(--ch-color-default); }
   .ch-icon--xxs {
     font-size: var(--ch-icon-size-xxs); }
+    .ch-icon--xxs.ch-icon--circle {
+      padding: calc(var(--ch-icon-size-xxs) / 2 * 1.41421 - var(--ch-icon-size-xxs) / 2 + var(--ch-space-xs)); }
   .ch-icon--xs {
     font-size: var(--ch-icon-size-xs); }
+    .ch-icon--xs.ch-icon--circle {
+      padding: calc(var(--ch-icon-size-xs) / 2 * 1.41421 - var(--ch-icon-size-xs) / 2 + var(--ch-space-xs)); }
   .ch-icon--s {
     font-size: var(--ch-icon-size-s); }
-  .ch-icon--m {
+    .ch-icon--s.ch-icon--circle {
+      padding: calc(var(--ch-icon-size-s) / 2 * 1.41421 - var(--ch-icon-size-s) / 2 + var(--ch-space-xs)); }
+  .ch-icon {
     font-size: var(--ch-icon-size-m); }
+    .ch-icon.ch-icon--circle {
+      padding: calc(var(--ch-icon-size-m) / 2 * 1.41421 - var(--ch-icon-size-m) / 2 + var(--ch-space-xs)); }
   .ch-icon--l {
     font-size: var(--ch-icon-size-l); }
+    .ch-icon--l.ch-icon--circle {
+      padding: calc(var(--ch-icon-size-l) / 2 * 1.41421 - var(--ch-icon-size-l) / 2 + var(--ch-space-xs)); }
   .ch-icon--xl {
     font-size: var(--ch-icon-size-xl); }
+    .ch-icon--xl.ch-icon--circle {
+      padding: calc(var(--ch-icon-size-xl) / 2 * 1.41421 - var(--ch-icon-size-xl) / 2 + var(--ch-space-xs)); }
   .ch-icon--xxl {
     font-size: var(--ch-icon-size-xxl); }
+    .ch-icon--xxl.ch-icon--circle {
+      padding: calc(var(--ch-icon-size-xxl) / 2 * 1.41421 - var(--ch-icon-size-xxl) / 2 + var(--ch-space-xs)); }
 
 .ch-input,
 .ch-textarea,
@@ -2014,6 +2050,38 @@ h5 {
       .ch-accessBarrier > .ch-bg {
         width: 50%;
         height: 100vh; } }
+
+.ch-errorPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  background-color: var(--ch-color-neutral-2); }
+  .ch-errorPage > *:not(.ch-errorPage-code):not(:last-child) {
+    margin-bottom: var(--ch-space-l); }
+  .ch-errorPage-code {
+    position: relative;
+    font-size: calc(var(--ch-text-size-2) * 8);
+    line-height: 1em;
+    margin-bottom: 0; }
+    .ch-errorPage-code .ch-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(100%); }
+    @media screen and (min-width: 769px) {
+      .ch-errorPage-code {
+        font-size: calc(var(--ch-text-size-2) * 12); } }
+  .ch-errorPage > .ch-button {
+    font-size: var(--ch-text-size-3); }
+  .ch-errorPage > .ch-footer {
+    border-top: 1px solid var(--ch-color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--ch-dimension-1); }
 
 .ch-fieldGroup > * {
   grid-column-end: span 1; }

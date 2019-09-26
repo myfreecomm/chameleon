@@ -1,9 +1,16 @@
+// sass-lint:disable no-important
+
 @import '../../abstracts/colors';
 
 .ch-bg {
+
+  // 1. Base
+
   position: relative;
 
   background-color: #{ch-get-color(brand, 1)};
+
+  // 2. Image
 
   > img {
     position: absolute;
@@ -14,5 +21,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  // 3. Color variations
+
+  @each $color in (brand, primary, info, positive, warning, negative) {
+    @at-root &--#{$color} {
+      background-color: #{ch-get-color($color)} !important;
+    }
   }
 }

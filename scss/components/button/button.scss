@@ -91,14 +91,14 @@
     }
   }
 
-  // 2. Primary variation
+  // 3. Primary variation
 
   &--primary {
     border-color: #{ch-get-color(primary)};
     color: #{ch-get-color(text, 2, inverse)};
     background-color: #{ch-get-color(primary)};
 
-    // 2.1. Focus interaction
+    // 3.1. Focus interaction
 
     &:hover:focus,
     &:hover,
@@ -108,7 +108,7 @@
       box-shadow: none;
     }
 
-    // 2.2. Active interaction
+    // 3.2. Active interaction
 
     &:active {
       border-color: #{ch-get-color(primary, acitve)};
@@ -128,13 +128,13 @@
     }
   }
 
-  // 3. Secondary variation
+  // 4. Secondary variation
 
   &--secondary {
     border-color: #{ch-get-color(primary)};
     color: #{ch-get-color(primary)};
 
-    // 3.1. Focus interaction
+    // 4.1. Focus interaction
 
     &:hover:focus,
     &:hover,
@@ -143,7 +143,7 @@
       border-color: #{ch-get-color(primary, focus)};
     }
 
-    // 3.2. Active interaction
+    // 4.2. Active interaction
 
     &:active {
       color: #{ch-get-color(primary, active)};
@@ -155,13 +155,13 @@
     }
   }
 
-  // 4. Negative variation
+  // 5. Negative variation
 
   &--negative {
     border-color: #{ch-get-color(negative)};
     color: #{ch-get-color(negative)};
 
-    // 4.1. Focus interaction
+    // 5.1. Focus interaction
 
     &:hover:focus,
     &:hover,
@@ -170,7 +170,7 @@
       border-color: #{ch-get-color(negative, focus)};
     }
 
-    // 4.2. Active interaction
+    // 5.2. Active interaction
 
     &:active {
       color: #{ch-get-color(negative, active)};
@@ -182,7 +182,7 @@
     }
   }
 
-  // 5. Ghost variation
+  // 6. Ghost variation
 
   &--ghost {
     &,
