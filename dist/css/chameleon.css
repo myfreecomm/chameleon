@@ -894,6 +894,22 @@ template {
       border-color: var(--ch-color-negative-active); }
     .ch-button--negative:after {
       background: var(--ch-color-negative); }
+  .ch-button--ghost.ch-button--brand {
+    color: var(--ch-color-brand); }
+    .ch-button--ghost.ch-button--brand:focus:hover, .ch-button--ghost.ch-button--brand:focus, .ch-button--ghost.ch-button--brand:hover {
+      color: var(--ch-color-brand-focus); }
+    .ch-button--ghost.ch-button--brand:active {
+      color: var(--ch-color-brand-active); }
+    .ch-button--ghost.ch-button--brand:after {
+      background: var(--ch-color-brand); }
+  .ch-button--ghost.ch-button--primary {
+    color: var(--ch-color-primary); }
+    .ch-button--ghost.ch-button--primary:focus:hover, .ch-button--ghost.ch-button--primary:focus, .ch-button--ghost.ch-button--primary:hover {
+      color: var(--ch-color-primary-focus); }
+    .ch-button--ghost.ch-button--primary:active {
+      color: var(--ch-color-primary-active); }
+    .ch-button--ghost.ch-button--primary:after {
+      background: var(--ch-color-primary); }
   .ch-button--ghost, .ch-button--ghost:hover:focus, .ch-button--ghost:hover, .ch-button--ghost:focus, .ch-button--ghost:active {
     border-color: transparent;
     background: transparent;

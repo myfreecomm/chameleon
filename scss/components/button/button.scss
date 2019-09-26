@@ -185,6 +185,29 @@
   // 6. Ghost variation
 
   &--ghost {
+
+    // 6.1. Color variations
+
+    @each $type in (brand, primary) {
+      @at-root &.ch-button--#{$type} {
+        color: #{ch-get-color($type)};
+
+        &:focus:hover,
+        &:focus,
+        &:hover {
+          color: #{ch-get-color($type, focus)};
+        }
+    
+        &:active {
+          color: #{ch-get-color($type, active)};
+        }
+
+        &:after {
+          background: #{ch-get-color($type)}
+        }
+      }
+    }
+
     &,
     &:hover:focus,
     &:hover,
