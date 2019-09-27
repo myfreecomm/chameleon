@@ -5,64 +5,58 @@
 
 :root {
   --ch-color-brand:                    #00BBDA;
-  --ch-color-brand-focus:              #00a5c1;
-  --ch-color-brand-active:             #008fa7;
+  --ch-color-brand-focus:              #066879;
+  --ch-color-brand-active:             #083B45;
   --ch-color-neutral-1:                #FFFFFF;
   --ch-color-neutral-2:                #F0F2F4;
   --ch-color-neutral-1-inverse:        #172136;
-  --ch-color-neutral-2-inverse:        #1f2c48;
+  --ch-color-neutral-2-inverse:        #2E426B;
   --ch-color-default:                  #6D7278;
-  --ch-color-default-focus:            #61656b;
-  --ch-color-default-active:           #55595d;
-  --ch-color-default-inverse:          #BCBFC2;
-  --ch-color-default-focus-inverse:    #c9ccce;
-  --ch-color-default-active-inverse:   #d7d9da;
+  --ch-color-default-focus:            #47494C;
+  --ch-color-default-active:           #18191B;
+  --ch-color-default-inverse:          #6D7278;
+  --ch-color-default-focus-inverse:    #BCBFC2;
+  --ch-color-default-active-inverse:   #F0F2F4;
   --ch-color-primary:                  #016AAC;
-  --ch-color-primary-focus:            #015a93;
-  --ch-color-primary-active:           #014b79;
-  --ch-color-primary-inverse:          #2694D9;
-  --ch-color-primary-focus-inverse:    #3c9fdd;
-  --ch-color-primary-active-inverse:   #51a9e1;
-  --ch-color-secondary:                #6D7278;
-  --ch-color-secondary-focus:          #61656b;
-  --ch-color-secondary-active:         #55595d;
-  --ch-color-secondary-inverse:        #BCBFC2;
-  --ch-color-secondary-focus-inverse:  #c9ccce;
-  --ch-color-secondary-active-inverse: #d7d9da;
+  --ch-color-primary-focus:            #064D79;
+  --ch-color-primary-active:           #082E45;
+  --ch-color-primary-inverse:          #016AAC;
+  --ch-color-primary-focus-inverse:    #2694D9;
+  --ch-color-primary-active-inverse:   #E9F4FB;
   --ch-color-info:                     #00BBDA;
-  --ch-color-info-focus:               #00a5c1;
-  --ch-color-info-active:              #008fa7;
-  --ch-color-info-inverse:             #33EEFF;
-  --ch-color-info-focus-inverse:       #4df0ff;
-  --ch-color-info-active-inverse:      #66f2ff;
+  --ch-color-info-focus:               #066879;
+  --ch-color-info-active:              #083B45;
+  --ch-color-info-inverse:             #00BBDA;
+  --ch-color-info-focus-inverse:       #33EEFF;
+  --ch-color-info-active-inverse:      #E9FAFB;
   --ch-color-warning:                  #F2CC0D;
-  --ch-color-warning-focus:            #dab80c;
-  --ch-color-warning-active:           #c2a30a;
-  --ch-color-warning-inverse:          #FFE14C;
-  --ch-color-warning-focus-inverse:    #ffe566;
-  --ch-color-warning-active-inverse:   #ffea7f;
+  --ch-color-warning-focus:            #9B8208;
+  --ch-color-warning-active:           #453B08;
+  --ch-color-warning-inverse:          #F2CC0D;
+  --ch-color-warning-focus-inverse:    #FFE14C;
+  --ch-color-warning-active-inverse:   #F7F1D4;
   --ch-color-negative:                 #CC0000;
-  --ch-color-negative-focus:           #b30000;
-  --ch-color-negative-active:          #990000;
-  --ch-color-negative-inverse:         #ED5E5E;
-  --ch-color-negative-focus-inverse:   #f07575;
-  --ch-color-negative-active-inverse:  #f28c8c;
+  --ch-color-negative-focus:           #8A0F0F;
+  --ch-color-negative-active:          #450808;
+  --ch-color-negative-inverse:         #CC0000;
+  --ch-color-negative-focus-inverse:   #ED5E5E;
+  --ch-color-negative-active-inverse:  #FCE8E8;
   --ch-color-positive:                 #019863;
-  --ch-color-positive-focus:           #017f53;
-  --ch-color-positive-active:          #016542;
-  --ch-color-positive-inverse:         #26D99A;
-  --ch-color-positive-focus-inverse:   #3cdda4;
-  --ch-color-positive-active-inverse:  #51e1ae;
+  --ch-color-positive-focus:           #056141;
+  --ch-color-positive-active:          #08452F;
+  --ch-color-positive-inverse:         #019863;
+  --ch-color-positive-focus-inverse:   #26D99A;
+  --ch-color-positive-active-inverse:  #E1FAF1;
   --ch-color-text-1:                   #47494C;
   --ch-color-text-2:                   #6D7278;
   --ch-color-text-1-inverse:           #FFFFFF;
   --ch-color-text-2-inverse:           rgba(255, 255, 255, 0.8);
-  --ch-color-text-link:                #2694D9;
-  --ch-color-text-link-focus:          #2285c3;
-  --ch-color-text-link-active:         #1e76ae;
-  --ch-color-text-link-inverse:        #2694D9;
-  --ch-color-text-link-focus-inverse:  #3c9fdd;
-  --ch-color-text-link-active-inverse: #51a9e1;
+  --ch-color-text-link:                #016AAC;
+  --ch-color-text-link-focus:          #2694D9;
+  --ch-color-text-link-active:         #2694D9;
+  --ch-color-text-link-inverse:        #016AAC;
+  --ch-color-text-link-focus-inverse:  #064D79;
+  --ch-color-text-link-active-inverse: #064D79;
   --ch-color-highlight:                #FFE14C;
   --ch-color-highlight-inverse:        #9B8208;
   --ch-color-border:                   #cfd1d3;
@@ -805,9 +799,10 @@ template {
   border-bottom-left-radius: var(--ch-border-radius-1);
   display: inline-block;
   cursor: pointer;
-  color: var(--ch-color-text-2);
+  color: var(--ch-color-text-1-inverse);
   font-weight: var(--ch-text-weight-bold);
-  text-align: center; }
+  text-align: center;
+  background-color: var(--ch-color-default); }
   .ch-button:after {
     display: none;
     position: absolute;
@@ -816,7 +811,7 @@ template {
     transform: translate(-50%, -50%);
     content: "";
     border-radius: 50%;
-    background: var(--ch-color-text-1);
+    background: var(--ch-color-neutral-1);
     animation: --ch-ripple-effect 0.6s; }
   .ch-button:focus:not(:active):after {
     display: block; }
@@ -831,89 +826,118 @@ template {
     height: calc(10 * var(--ch-icon-size-m));
     opacity: 0; } }
   .ch-button:hover:focus, .ch-button:hover, .ch-button:focus {
-    border-color: var(--ch-color-default-focus); }
+    border-color: var(--ch-color-default-focus);
+    background-color: var(--ch-color-default-focus); }
   .ch-button:active {
-    border-color: var(--ch-color-default-active); }
-  .ch-button:hover:active, .ch-button:hover, .ch-button:active, .ch-button:focus {
-    color: var(--ch-color-text-1); }
+    border-color: var(--ch-color-default-active);
+    background-color: var(--ch-color-default-active); }
   .ch-button:disabled, .ch-button.is-disabled {
     opacity: 0.5; }
     .ch-button:disabled:after, .ch-button.is-disabled:after {
       display: none; }
   .ch-button--brand {
     border-color: var(--ch-color-brand);
-    color: var(--ch-color-text-2-inverse);
     background-color: var(--ch-color-brand); }
     .ch-button--brand:hover:focus, .ch-button--brand:hover, .ch-button--brand:focus {
       border-color: var(--ch-color-brand-focus);
-      background-color: var(--ch-color-brand-focus);
-      box-shadow: none; }
+      background-color: var(--ch-color-brand-focus); }
     .ch-button--brand:active {
       border-color: var(--ch-color-brand);
-      background-color: var(--ch-color-brand-active);
-      box-shadow: none; }
-    .ch-button--brand:hover:focus, .ch-button--brand:hover, .ch-button--brand:focus, .ch-button--brand:active {
-      color: var(--ch-color-text-1-inverse); }
-    .ch-button--brand:after {
-      background: var(--ch-color-neutral-1); }
+      background-color: var(--ch-color-brand-active); }
   .ch-button--primary {
     border-color: var(--ch-color-primary);
-    color: var(--ch-color-text-2-inverse);
     background-color: var(--ch-color-primary); }
     .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus {
       border-color: var(--ch-color-primary-focus);
-      background-color: var(--ch-color-primary-focus);
-      box-shadow: none; }
+      background-color: var(--ch-color-primary-focus); }
     .ch-button--primary:active {
       border-color: var(--ch-color-primary);
-      background-color: var(--ch-color-primary-active);
-      box-shadow: none; }
-    .ch-button--primary:hover:focus, .ch-button--primary:hover, .ch-button--primary:focus, .ch-button--primary:active {
-      color: var(--ch-color-text-1-inverse); }
-    .ch-button--primary:after {
-      background: var(--ch-color-neutral-1); }
-  .ch-button--secondary {
-    border-color: var(--ch-color-primary);
-    color: var(--ch-color-primary); }
-    .ch-button--secondary:hover:focus, .ch-button--secondary:hover, .ch-button--secondary:focus {
-      color: var(--ch-color-primary-focus);
-      border-color: var(--ch-color-primary-focus); }
-    .ch-button--secondary:active {
-      color: var(--ch-color-primary-active);
-      border-color: var(--ch-color-primary-active); }
-    .ch-button--secondary:after {
-      background: var(--ch-color-primary); }
+      background-color: var(--ch-color-primary-active); }
   .ch-button--negative {
     border-color: var(--ch-color-negative);
-    color: var(--ch-color-negative); }
+    background-color: var(--ch-color-negative); }
     .ch-button--negative:hover:focus, .ch-button--negative:hover, .ch-button--negative:focus {
-      color: var(--ch-color-negative-focus);
-      border-color: var(--ch-color-negative-focus); }
+      border-color: var(--ch-color-negative-focus);
+      background-color: var(--ch-color-negative-focus); }
     .ch-button--negative:active {
-      color: var(--ch-color-negative-active);
-      border-color: var(--ch-color-negative-active); }
-    .ch-button--negative:after {
-      background: var(--ch-color-negative); }
+      border-color: var(--ch-color-negative);
+      background-color: var(--ch-color-negative-active); }
+  .ch-button--outline, .ch-button--ghost {
+    color: var(--ch-color-text-2); }
+    .ch-button--outline:hover:focus, .ch-button--outline:hover, .ch-button--outline:focus, .ch-button--outline:active, .ch-button--ghost:hover:focus, .ch-button--ghost:hover, .ch-button--ghost:focus, .ch-button--ghost:active {
+      color: var(--ch-color-text-1); }
+    .ch-button--outline, .ch-button--outline:hover:focus, .ch-button--outline:hover, .ch-button--outline:focus, .ch-button--outline:active, .ch-button--ghost, .ch-button--ghost:hover:focus, .ch-button--ghost:hover, .ch-button--ghost:focus, .ch-button--ghost:active {
+      background: transparent; }
+    .ch-button--outline:after, .ch-button--ghost:after {
+      background: var(--ch-color-default); }
+    .ch-button--outline.ch-button--brand, .ch-button--ghost.ch-button--brand {
+      color: var(--ch-color-brand); }
+      .ch-button--outline.ch-button--brand:hover:active, .ch-button--outline.ch-button--brand:hover, .ch-button--outline.ch-button--brand:focus, .ch-button--ghost.ch-button--brand:hover:active, .ch-button--ghost.ch-button--brand:hover, .ch-button--ghost.ch-button--brand:focus {
+        color: var(--ch-color-brand-focus); }
+      .ch-button--outline.ch-button--brand:active, .ch-button--ghost.ch-button--brand:active {
+        color: var(--ch-color-brand-active); }
+      .ch-button--outline.ch-button--brand:after, .ch-button--ghost.ch-button--brand:after {
+        background: var(--ch-color-brand); }
+    .ch-button--outline.ch-button--primary, .ch-button--ghost.ch-button--primary {
+      color: var(--ch-color-primary); }
+      .ch-button--outline.ch-button--primary:hover:active, .ch-button--outline.ch-button--primary:hover, .ch-button--outline.ch-button--primary:focus, .ch-button--ghost.ch-button--primary:hover:active, .ch-button--ghost.ch-button--primary:hover, .ch-button--ghost.ch-button--primary:focus {
+        color: var(--ch-color-primary-focus); }
+      .ch-button--outline.ch-button--primary:active, .ch-button--ghost.ch-button--primary:active {
+        color: var(--ch-color-primary-active); }
+      .ch-button--outline.ch-button--primary:after, .ch-button--ghost.ch-button--primary:after {
+        background: var(--ch-color-primary); }
+    .ch-button--outline.ch-button--negative, .ch-button--ghost.ch-button--negative {
+      color: var(--ch-color-negative); }
+      .ch-button--outline.ch-button--negative:hover:active, .ch-button--outline.ch-button--negative:hover, .ch-button--outline.ch-button--negative:focus, .ch-button--ghost.ch-button--negative:hover:active, .ch-button--ghost.ch-button--negative:hover, .ch-button--ghost.ch-button--negative:focus {
+        color: var(--ch-color-negative-focus); }
+      .ch-button--outline.ch-button--negative:active, .ch-button--ghost.ch-button--negative:active {
+        color: var(--ch-color-negative-active); }
+      .ch-button--outline.ch-button--negative:after, .ch-button--ghost.ch-button--negative:after {
+        background: var(--ch-color-negative); }
+  .ch-button--outline {
+    border-color: var(--ch-color-default); }
+    .ch-button--outline:hover:active, .ch-button--outline:hover, .ch-button--outline:focus {
+      border-color: var(--ch-color-default-focus); }
+    .ch-button--outline:active {
+      border-color: var(--ch-color-default-active); }
+    .ch-button--outline.ch-button--brand {
+      border-color: var(--ch-color-brand); }
+      .ch-button--outline.ch-button--brand:hover:active, .ch-button--outline.ch-button--brand:hover, .ch-button--outline.ch-button--brand:focus {
+        border-color: var(--ch-color-brand-focus); }
+      .ch-button--outline.ch-button--brand:active {
+        border-color: var(--ch-color-brand-active); }
+    .ch-button--outline.ch-button--primary {
+      border-color: var(--ch-color-primary); }
+      .ch-button--outline.ch-button--primary:hover:active, .ch-button--outline.ch-button--primary:hover, .ch-button--outline.ch-button--primary:focus {
+        border-color: var(--ch-color-primary-focus); }
+      .ch-button--outline.ch-button--primary:active {
+        border-color: var(--ch-color-primary-active); }
+    .ch-button--outline.ch-button--negative {
+      border-color: var(--ch-color-negative); }
+      .ch-button--outline.ch-button--negative:hover:active, .ch-button--outline.ch-button--negative:hover, .ch-button--outline.ch-button--negative:focus {
+        border-color: var(--ch-color-negative-focus); }
+      .ch-button--outline.ch-button--negative:active {
+        border-color: var(--ch-color-negative-active); }
+  .ch-button--ghost, .ch-button--ghost:hover:focus, .ch-button--ghost:hover, .ch-button--ghost:focus, .ch-button--ghost:active {
+    border-color: transparent; }
   .ch-button--ghost.ch-button--brand {
     color: var(--ch-color-brand); }
     .ch-button--ghost.ch-button--brand:focus:hover, .ch-button--ghost.ch-button--brand:focus, .ch-button--ghost.ch-button--brand:hover {
       color: var(--ch-color-brand-focus); }
     .ch-button--ghost.ch-button--brand:active {
       color: var(--ch-color-brand-active); }
-    .ch-button--ghost.ch-button--brand:after {
-      background: var(--ch-color-brand); }
   .ch-button--ghost.ch-button--primary {
     color: var(--ch-color-primary); }
     .ch-button--ghost.ch-button--primary:focus:hover, .ch-button--ghost.ch-button--primary:focus, .ch-button--ghost.ch-button--primary:hover {
       color: var(--ch-color-primary-focus); }
     .ch-button--ghost.ch-button--primary:active {
       color: var(--ch-color-primary-active); }
-    .ch-button--ghost.ch-button--primary:after {
-      background: var(--ch-color-primary); }
-  .ch-button--ghost, .ch-button--ghost:hover:focus, .ch-button--ghost:hover, .ch-button--ghost:focus, .ch-button--ghost:active {
-    border-color: transparent;
-    background: transparent;
-    box-shadow: none; }
+  .ch-button--ghost.ch-button--negative {
+    color: var(--ch-color-negative); }
+    .ch-button--ghost.ch-button--negative:focus:hover, .ch-button--ghost.ch-button--negative:focus, .ch-button--ghost.ch-button--negative:hover {
+      color: var(--ch-color-negative-focus); }
+    .ch-button--ghost.ch-button--negative:active {
+      color: var(--ch-color-negative-active); }
   .ch-button--small {
     padding-top: var(--ch-space-xxs);
     padding-right: var(--ch-space-xs);

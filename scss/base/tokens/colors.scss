@@ -4,8 +4,8 @@
   // 1. Brand
 
   --ch-color-brand:                    #{$ch-color-cyan};
-  --ch-color-brand-focus:              #{ch-get-color-focus($ch-color-cyan)};
-  --ch-color-brand-active:             #{ch-get-color-active($ch-color-cyan)};
+  --ch-color-brand-focus:              #{$ch-color-cyan-dark};
+  --ch-color-brand-active:             #{$ch-color-cyan-extra-dark};
 
   // 2. Neutral
 
@@ -13,79 +13,69 @@
   --ch-color-neutral-2:                #{$ch-color-grey-extra-light};
 
   --ch-color-neutral-1-inverse:        #{$ch-color-navy-extra-dark};
-  --ch-color-neutral-2-inverse:        #{lighten($ch-color-navy-extra-dark, 5%)};
+  --ch-color-neutral-2-inverse:        #{$ch-color-navy-dark};
 
   // 3. Support
 
   // 3.1. Default
 
   --ch-color-default:                  #{$ch-color-grey};
-  --ch-color-default-focus:            #{ch-get-color-focus($ch-color-grey)};
-  --ch-color-default-active:           #{ch-get-color-active($ch-color-grey)};
+  --ch-color-default-focus:            #{$ch-color-grey-dark};
+  --ch-color-default-active:           #{$ch-color-grey-extra-dark};
 
-  --ch-color-default-inverse:          #{$ch-color-grey-light};
-  --ch-color-default-focus-inverse:    #{ch-get-color-focus($ch-color-grey-light,  inverse)};
-  --ch-color-default-active-inverse:   #{ch-get-color-active($ch-color-grey-light, inverse)};
+  --ch-color-default-inverse:          #{$ch-color-grey};
+  --ch-color-default-focus-inverse:    #{$ch-color-grey-light};
+  --ch-color-default-active-inverse:   #{$ch-color-grey-extra-light};
 
   // 3.2. Primary
 
   --ch-color-primary:                  #{$ch-color-blue};
-  --ch-color-primary-focus:            #{ch-get-color-focus($ch-color-blue)};
-  --ch-color-primary-active:           #{ch-get-color-active($ch-color-blue)};
+  --ch-color-primary-focus:            #{$ch-color-blue-dark};
+  --ch-color-primary-active:           #{$ch-color-blue-extra-dark};
 
-  --ch-color-primary-inverse:          #{$ch-color-blue-light};
-  --ch-color-primary-focus-inverse:    #{ch-get-color-focus($ch-color-blue-light,  inverse)};
-  --ch-color-primary-active-inverse:   #{ch-get-color-active($ch-color-blue-light, inverse)};
-
-  // 3.3. Secondary
-
-  --ch-color-secondary:                #{$ch-color-grey};
-  --ch-color-secondary-focus:          #{ch-get-color-focus($ch-color-grey)};
-  --ch-color-secondary-active:         #{ch-get-color-active($ch-color-grey)};
-
-  --ch-color-secondary-inverse:        #{$ch-color-grey-light};
-  --ch-color-secondary-focus-inverse:  #{ch-get-color-focus($ch-color-grey-light,  inverse)};
-  --ch-color-secondary-active-inverse: #{ch-get-color-active($ch-color-grey-light, inverse)};
+  --ch-color-primary-inverse:          #{$ch-color-blue};
+  --ch-color-primary-focus-inverse:    #{$ch-color-blue-light};
+  --ch-color-primary-active-inverse:   #{$ch-color-blue-extra-light};
 
   // 3.4. Info
 
   --ch-color-info:                     #{$ch-color-cyan};
-  --ch-color-info-focus:               #{ch-get-color-focus($ch-color-cyan)};
-  --ch-color-info-active:              #{ch-get-color-active($ch-color-cyan)};
+  --ch-color-info-focus:               #{$ch-color-cyan-dark};
+  --ch-color-info-active:              #{$ch-color-cyan-extra-dark};
 
-  --ch-color-info-inverse:             #{$ch-color-cyan-light};
-  --ch-color-info-focus-inverse:       #{ch-get-color-focus($ch-color-cyan-light,  inverse)};
-  --ch-color-info-active-inverse:      #{ch-get-color-active($ch-color-cyan-light, inverse)};
+  --ch-color-info-inverse:             #{$ch-color-cyan};
+  --ch-color-info-focus-inverse:       #{$ch-color-cyan-light};
+  --ch-color-info-active-inverse:      #{$ch-color-cyan-extra-light};
 
   // 3.5. Warning
 
   --ch-color-warning:                  #{$ch-color-yellow};
-  --ch-color-warning-focus:            #{ch-get-color-focus($ch-color-yellow)};
-  --ch-color-warning-active:           #{ch-get-color-active($ch-color-yellow)};
+  --ch-color-warning-focus:            #{$ch-color-yellow-dark};
+  --ch-color-warning-active:           #{$ch-color-yellow-extra-dark};
 
-  --ch-color-warning-inverse:          #{$ch-color-yellow-light};
-  --ch-color-warning-focus-inverse:    #{ch-get-color-focus($ch-color-yellow-light,  inverse)};
-  --ch-color-warning-active-inverse:   #{ch-get-color-active($ch-color-yellow-light, inverse)};
+  --ch-color-warning-inverse:          #{$ch-color-yellow};
+  --ch-color-warning-focus-inverse:    #{$ch-color-yellow-light};
+  --ch-color-warning-active-inverse:   #{$ch-color-yellow-extra-light};
 
   // 3.6. Negative
 
   --ch-color-negative:                 #{$ch-color-red};
-  --ch-color-negative-focus:           #{ch-get-color-focus($ch-color-red)};
-  --ch-color-negative-active:          #{ch-get-color-active($ch-color-red)};
+  --ch-color-negative-focus:           #{$ch-color-red-dark};
+  --ch-color-negative-active:          #{$ch-color-red-extra-dark};
 
-  --ch-color-negative-inverse:         #{$ch-color-red-light};
-  --ch-color-negative-focus-inverse:   #{ch-get-color-focus($ch-color-red-light,  inverse)};
-  --ch-color-negative-active-inverse:  #{ch-get-color-active($ch-color-red-light, inverse)};
+  --ch-color-negative-inverse:         #{$ch-color-red};
+  --ch-color-negative-focus-inverse:   #{$ch-color-red-light};
+  --ch-color-negative-active-inverse:  #{$ch-color-red-extra-light};
 
   // 3.7. Positive
 
   --ch-color-positive:                 #{$ch-color-green};
-  --ch-color-positive-focus:           #{ch-get-color-focus($ch-color-green)};
-  --ch-color-positive-active:          #{ch-get-color-active($ch-color-green)};
+  --ch-color-positive-focus:           #{$ch-color-green-dark};
+  --ch-color-positive-active:          #{$ch-color-green-extra-dark};
 
-  --ch-color-positive-inverse:         #{$ch-color-green-light};
-  --ch-color-positive-focus-inverse:   #{ch-get-color-focus($ch-color-green-light,  inverse)};
-  --ch-color-positive-active-inverse:  #{ch-get-color-active($ch-color-green-light, inverse)};
+  --ch-color-positive-inverse:         #{$ch-color-green};
+  --ch-color-positive-focus-inverse:   #{$ch-color-green-light};
+  --ch-color-positive-active-inverse:  #{$ch-color-green-extra-light};
 
   // 4. Text
 
@@ -97,13 +87,13 @@
 
   // 4.1. Link
 
-  --ch-color-text-link:                #{$ch-color-blue-light};
-  --ch-color-text-link-focus:          #{ch-get-color-focus($ch-color-blue-light)};
-  --ch-color-text-link-active:         #{ch-get-color-active($ch-color-blue-light)};
+  --ch-color-text-link:                #{$ch-color-blue};
+  --ch-color-text-link-focus:          #{$ch-color-blue-light};
+  --ch-color-text-link-active:         #{$ch-color-blue-light};
 
-  --ch-color-text-link-inverse:        #{$ch-color-blue-light};
-  --ch-color-text-link-focus-inverse:  #{ch-get-color-focus($ch-color-blue-light,  inverse)};
-  --ch-color-text-link-active-inverse: #{ch-get-color-active($ch-color-blue-light, inverse)};
+  --ch-color-text-link-inverse:        #{$ch-color-blue};
+  --ch-color-text-link-focus-inverse:  #{$ch-color-blue-dark};
+  --ch-color-text-link-active-inverse: #{$ch-color-blue-dark};
 
   // 5. Highlight
 
