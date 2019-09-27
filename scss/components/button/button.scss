@@ -11,16 +11,17 @@
 
   // 1. Base
 
-  @include ch-ripple-effect(ch-get-color(text, 1));
+  @include ch-ripple-effect(ch-get-color(neutral, 1));
   @include ch-box-model(s, squish, box, ch-get-color(default));
   @include ch-border-radius(1);
 
   display: inline-block;
 
   cursor: pointer;
-  color: #{ch-get-color(text, 2)};
+  color: #{ch-get-color(text, 1, inverse)};
   font-weight: #{ch-get-text-weight(bold)};
   text-align: center;
+  background-color: #{ch-get-color(default)};
 
   // 1.1. Focus interaction
 
@@ -28,19 +29,14 @@
   &:hover,
   &:focus {
     border-color: #{ch-get-color(default, focus)};
+    background-color: #{ch-get-color(default, focus)};
   }
   
   // 1.2. Active interaction
-
+  
   &:active {
     border-color: #{ch-get-color(default, active)};
-  }
-
-  &:hover:active,
-  &:hover,
-  &:active,
-  &:focus {
-    color: #{ch-get-color(text, 1)};
+    background-color: #{ch-get-color(default, active)};
   }
 
   // 1.3. Disabled interaction
@@ -54,158 +50,44 @@
     }
   }
 
-  // 2. Brand variation
+  // 2. Color variations
 
-  &--brand {
-    border-color: #{ch-get-color(brand)};
-    color: #{ch-get-color(text, 2, inverse)};
-    background-color: #{ch-get-color(brand)};
+  @each $type in (brand, primary, negative) {
+    &--#{$type} {
+      border-color: #{ch-get-color($type)};
+      background-color: #{ch-get-color($type)};
 
-    // 2.1. Focus interaction
-
-    &:hover:focus,
-    &:hover,
-    &:focus {
-      border-color: #{ch-get-color(brand, focus)};
-      background-color: #{ch-get-color(brand, focus)};
-      box-shadow: none;
-    }
-
-    // 2.2. Active interaction
-
-    &:active {
-      border-color: #{ch-get-color(brand, acitve)};
-      background-color: #{ch-get-color(brand, active)};
-      box-shadow: none;
-    }
-
-    &:hover:focus,
-    &:hover,
-    &:focus,
-    &:active {
-      color: #{ch-get-color(text, 1, inverse)};
-    }
-
-    &:after {
-      background: #{ch-get-color(neutral, 1)}
-    }
-  }
-
-  // 3. Primary variation
-
-  &--primary {
-    border-color: #{ch-get-color(primary)};
-    color: #{ch-get-color(text, 2, inverse)};
-    background-color: #{ch-get-color(primary)};
-
-    // 3.1. Focus interaction
-
-    &:hover:focus,
-    &:hover,
-    &:focus {
-      border-color: #{ch-get-color(primary, focus)};
-      background-color: #{ch-get-color(primary, focus)};
-      box-shadow: none;
-    }
-
-    // 3.2. Active interaction
-
-    &:active {
-      border-color: #{ch-get-color(primary, acitve)};
-      background-color: #{ch-get-color(primary, active)};
-      box-shadow: none;
-    }
-
-    &:hover:focus,
-    &:hover,
-    &:focus,
-    &:active {
-      color: #{ch-get-color(text, 1, inverse)};
-    }
-
-    &:after {
-      background: #{ch-get-color(neutral, 1)}
-    }
-  }
-
-  // 4. Secondary variation
-
-  &--secondary {
-    border-color: #{ch-get-color(primary)};
-    color: #{ch-get-color(primary)};
-
-    // 4.1. Focus interaction
-
-    &:hover:focus,
-    &:hover,
-    &:focus {
-      color: #{ch-get-color(primary, focus)};
-      border-color: #{ch-get-color(primary, focus)};
-    }
-
-    // 4.2. Active interaction
-
-    &:active {
-      color: #{ch-get-color(primary, active)};
-      border-color: #{ch-get-color(primary, active)};
-    }
-
-    &:after {
-      background: #{ch-get-color(primary)}
-    }
-  }
-
-  // 5. Negative variation
-
-  &--negative {
-    border-color: #{ch-get-color(negative)};
-    color: #{ch-get-color(negative)};
-
-    // 5.1. Focus interaction
-
-    &:hover:focus,
-    &:hover,
-    &:focus {
-      color: #{ch-get-color(negative, focus)};
-      border-color: #{ch-get-color(negative, focus)};
-    }
-
-    // 5.2. Active interaction
-
-    &:active {
-      color: #{ch-get-color(negative, active)};
-      border-color: #{ch-get-color(negative, active)};
-    }
-
-    &:after {
-      background: #{ch-get-color(negative)}
-    }
-  }
-
-  // 6. Ghost variation
-
-  &--ghost {
-
-    // 6.1. Color variations
-
-    @each $type in (brand, primary) {
-      @at-root &.ch-button--#{$type} {
-        color: #{ch-get-color($type)};
-
-        &:focus:hover,
-        &:focus,
-        &:hover {
-          color: #{ch-get-color($type, focus)};
-        }
-    
-        &:active {
-          color: #{ch-get-color($type, active)};
-        }
-
-        &:after {
-          background: #{ch-get-color($type)}
-        }
+      // 2.1. Focus interaction
+  
+      &:hover:focus,
+      &:hover,
+      &:focus {
+        border-color: #{ch-get-color($type, focus)};
+        background-color: #{ch-get-color($type, focus)};
       }
+
+      // 2.2. Active interaction
+
+      &:active {
+        border-color: #{ch-get-color($type, acitve)};
+        background-color: #{ch-get-color($type, active)};
+      }
+    }
+  }
+
+  // 3. Outline and ghost variation
+
+  &--outline,
+  &--ghost {
+    color: #{ch-get-color(text, 2)};
+
+    // 3.1. Focus and active interaction
+
+    &:hover:focus,
+    &:hover,
+    &:focus,
+    &:active {
+      color: #{ch-get-color(text, 1)};
     }
 
     &,
@@ -213,19 +95,127 @@
     &:hover,
     &:focus,
     &:active {
-      border-color: transparent;
       background: transparent;
-      box-shadow: none;
+    }
+
+    // 3.2. Ripple effect
+
+    &:after {
+      background: #{ch-get-color(default)};
+    }
+
+    // 3.3. Color variations
+
+    @each $type in (brand, primary, negative) {
+      @at-root &.ch-button--#{$type} {
+        color: #{ch-get-color($type)};
+
+        // 3.3.1. Focus interaction
+
+        &:hover:active,
+        &:hover,
+        &:focus {
+          color: #{ch-get-color($type, focus)};
+        }
+        
+        // 3.3.2. Active interaction
+  
+        &:active {
+          color: #{ch-get-color($type, active)};
+        }
+
+        // 3.3.3. Ripple effect
+
+        &:after {
+          background: #{ch-get-color($type)};
+        }
+      }
     }
   }
 
-  // 7. Small variation
+  // 4. Outline variation
+
+  &--outline {
+    border-color: #{ch-get-color(default)};
+
+    // 4.1. Focus interaction
+
+    &:hover:active,
+    &:hover,
+    &:focus {
+      border-color: #{ch-get-color(default, focus)};
+    }
+    
+    // 4.2. Active interaction
+    
+    &:active {
+      border-color: #{ch-get-color(default, active)};
+    }
+
+    // 4.3. Color variations
+
+    @each $type in (brand, primary, negative) {
+      @at-root &.ch-button--#{$type} {
+        border-color: #{ch-get-color($type)};
+  
+        // 4.3.1. Focus interaction
+  
+        &:hover:active,
+        &:hover,
+        &:focus {
+          border-color: #{ch-get-color($type, focus)};
+        }
+        
+        // 4.3.2. Active interaction
+  
+        &:active {
+          border-color: #{ch-get-color($type, active)};
+        }
+      }
+    }
+  }
+
+  // 5. Ghost variation
+
+  &--ghost {
+    &,
+    &:hover:focus,
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: transparent;
+    }
+
+    // 5.1. Color variations
+
+    @each $type in (brand, primary, negative) {
+      @at-root &.ch-button--#{$type} {
+        color: #{ch-get-color($type)};
+
+        // 5.1.1. Focus interaction
+        
+        &:focus:hover,
+        &:focus,
+        &:hover {
+          color: #{ch-get-color($type, focus)};
+        }
+        
+        // 5.1.2. Active interaction
+
+        &:active {
+          color: #{ch-get-color($type, active)};
+        }
+      }
+    }
+  }
+
+  // 6. Small variation
 
   &--small {
     @include ch-space-inset(squish, xs);
   }
 
-  // 8. Icon variation
+  // 7. Icon variation
 
   &--icon {
     @include ch-icon-only(xs);
@@ -243,7 +233,7 @@
     }
   }
 
-  // 9. Mock Label
+  // 8. Mock Label
 
   &--mockLabel {
     margin-top: #{ch-get-mock-text-size()};
