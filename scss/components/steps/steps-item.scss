@@ -1,0 +1,21 @@
+@import '../../abstracts/space';
+@import '../../abstracts/steps';
+
+.ch-steps-item {
+  // 1. Base
+
+  display: block;
+  position: relative;
+  flex: 1;
+
+  padding-left: $ch-steps-item-min-width;
+  padding-top: 0;
+  min-height: calc(2 * #{$ch-steps-item-min-width});
+  min-width: $ch-steps-item-min-width;
+
+  counter-increment: steps;
+
+  // 1.1. Counter
+
+  @include ch-steps-item-counter;
+}

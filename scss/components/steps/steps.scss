@@ -1,0 +1,11 @@
+// 1. Base
+
+.ch-steps {
+  position: relative;
+
+  counter-reset: steps;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  overflow-x: auto;
+}

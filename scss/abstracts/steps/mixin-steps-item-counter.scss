@@ -1,0 +1,48 @@
+@import './variables.scss';
+@import '../border';
+@import '../typography';
+
+@mixin ch-steps-item-counter($root: '.ch-steps') {
+  // 1. Base
+
+  &:before {
+    @include ch-border(box, ch-get-color(border), solid, 2px);
+    @include ch-text-label;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+
+    content: counter(steps);
+    width: $ch-steps-item-width;
+    height: $ch-steps-item-width;
+    background: transparent;
+    border-radius: #{ch-get-border-radius(circle)};
+
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  // 2. Active and Visited state
+
+  &.is-active,
+  &.is-visited {
+    &:before {
+      color: ch-get-color(primary);
+      border-color: ch-get-color(primary);
+    }
+  }
+
+  // 4. Complete state
+
+  &.is-completed {
+    &:before {
+      color: #{ch-get-color(text, 1, inverse)};
+      border-color: #{ch-get-color(primary)};
+      background: #{ch-get-color(primary)};
+    }
+  }
+}
