@@ -1,8 +1,11 @@
 @import '../../abstracts/space';
 @import '../../abstracts/steps';
+@import '../../abstracts/transition';
 
 .ch-steps-item {
   // 1. Base
+
+  @include ch-transition(opacity);
 
   display: block;
   position: relative;
@@ -14,6 +17,13 @@
   min-width: $ch-steps-item-min-width;
 
   counter-increment: steps;
+  opacity: 0.75;
+
+  &.is-active,
+  &.is-visited,
+  &.is-completed {
+    opacity: 1;
+  }
 
   // 1.1. Counter
 
@@ -26,5 +36,23 @@
   &-label {
     @include ch-space-inset(squish);
     padding-top: #{ch-get-space(xxs)};
+  }
+
+  // 4. Interactive variation
+
+  // 4.1. Focus interaction
+
+  &:hover:focus,
+  &:focus,
+  &:hover {
+    color: ch-get-color(primary, focus);
+    opacity: 1;
+  }
+
+  // 4.2. Active interaction
+
+  &:active {
+    color: ch-get-color(primary, active);
+    opacity: 1;
   }
 }
