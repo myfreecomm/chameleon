@@ -2,11 +2,11 @@
 @import '../border';
 @import '../typography';
 
-@mixin ch-steps-item-counter($root: '.ch-steps') {
+@mixin ch-steps-item-counter {
   // 1. Base
 
   &:before {
-    @include ch-border(box, ch-get-color(border), solid, 2px);
+    @include ch-border(box, ch-get-color(border), solid, $ch-steps-border-width);
     @include ch-text-label;
     display: flex;
     align-items: center;
@@ -36,7 +36,7 @@
     }
   }
 
-  // 4. Complete state
+  // 3. Complete state
 
   &.is-completed {
     &:before {

@@ -1,0 +1,30 @@
+@import '../border';
+
+@mixin ch-steps-item-conector {
+  // 1. Base
+
+  &:last-child:after {
+    content: none;
+  }
+
+  &:not(:last-child):after {
+    position: absolute;
+    z-index: 1;
+    top: #{$ch-steps-item-width};
+    left: calc((#{$ch-steps-item-width} / 2) - (#{$ch-steps-border-width} / 2));
+
+    content: '';
+    width: 0;
+    height: calc(100% - #{$ch-steps-item-width});
+
+    border-top: 0;
+    @include ch-border(left, ch-get-color(border), dashed, 2px);
+  }
+
+  // 2. Visited and complete state
+
+  &.is-visited:not(:last-child):after,
+  &.is-completed:not(:last-child):after {
+    @include ch-border(left, ch-get-color(primary), solid, $ch-steps-border-width);
+  }
+}

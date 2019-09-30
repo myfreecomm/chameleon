@@ -18,4 +18,13 @@
   // 1.1. Counter
 
   @include ch-steps-item-counter;
+
+  // 1.2. Conector
+
+  @include ch-steps-item-conector;
+
+  &-label {
+    @include ch-space-inset(squish);
+    padding-top: #{ch-get-space(xxs)};
+  }
 }
