@@ -1,7 +1,3 @@
-// @import '../../abstracts/space';
-// @import '../../abstracts/breakpoints';
-// @import '../../abstracts/helpers';
-
 .ch-spaceStack {
   @each $size in $ch-space-sizes {
     @each $screen in $ch-breakpoint-screens {
