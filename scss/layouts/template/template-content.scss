@@ -1,11 +1,8 @@
-@import '../../abstracts/dimensions';
-@import '../../abstracts/transition';
-
 .ch-template-content {
   @include ch-media (from, desktop) {
     @include ch-space-inset(stretch, l);
   }
-  
+
   @include ch-transition(margin-left);
 
   padding-top: #{ch-get-space(m)};

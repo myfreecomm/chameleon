@@ -1,6 +1,3 @@
-@import '../../abstracts/box-model';
-@import './mixin-input';
-
 %ch-input {
   @include ch-input;
 }

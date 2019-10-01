@@ -1,9 +1,3 @@
-@import '../../abstracts/border';
-@import '../../abstracts/icon';
-@import '../../abstracts/layers';
-@import '../../abstracts/space';
-@import '../../abstracts/typography';
-
 .ch-checkbox,
 .ch-radio {
 
@@ -31,14 +25,14 @@
   > input[type="checkbox"],
   > input[type="radio"] {
     z-index: ch-get-z-index(1, 1);
-    
+
     opacity: 0;
     cursor: pointer;
 
     + label:before,
     + label:after {
       $empty: '';
-  
+
       content: $empty;
     }
 

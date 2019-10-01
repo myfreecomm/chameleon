@@ -1,7 +1,3 @@
-@import '../border';
-@import '../colors';
-@import '../space';
-
 @mixin ch-card-support ($position: left, $color: ch-get-color(border)) {
   position: relative;
 
@@ -14,7 +10,7 @@
 
     content: $empty;
 
-    @if $position == top or $position == left {  
+    @if $position == top or $position == left {
       border-top-left-radius: #{ch-get-border-radius(2)};
     }
 
@@ -22,7 +18,7 @@
       border-top-right-radius: #{ch-get-border-radius(2)};
     }
 
-    @if $position == bottom or $position == right {  
+    @if $position == bottom or $position == right {
       border-bottom-right-radius: #{ch-get-border-radius(2)};
     }
 

@@ -1,12 +1,7 @@
-@import '../../abstracts/colors';
-@import '../../abstracts/helpers';
-@import '../../abstracts/icon';
-@import '../../abstracts/space';
-
 select.ch-select {
-  
+
   // 1. Base
-  
+
   // @extend %ch-input;
   @include ch-input;
 

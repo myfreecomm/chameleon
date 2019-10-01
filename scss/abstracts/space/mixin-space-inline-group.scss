@@ -1,5 +1,3 @@
-@import './mixin-space-inline';
-
 @mixin ch-space-inline-group ($type: left, $size: m, $alignment: flex-start) {
   $exception: '';
 
