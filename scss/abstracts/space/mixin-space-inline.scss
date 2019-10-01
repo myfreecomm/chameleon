@@ -1,5 +1,3 @@
-@import './function-get-space';
-
 @mixin ch-space-inline ($type: left, $size: m) {
   $space: ch-get-space($size);
 

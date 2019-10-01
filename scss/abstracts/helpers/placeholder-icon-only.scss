@@ -1,5 +1,4 @@
-@import './mixin-icon-only.scss';
-@import '../space';
+// @import './mixin-icon-only.scss';
 
 @each $size in $ch-space-sizes {
   %ch-icon-only-#{$size} {

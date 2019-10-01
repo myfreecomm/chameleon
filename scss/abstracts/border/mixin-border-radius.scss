@@ -1,5 +1,3 @@
-@import './function-get-border-radius.scss';
-
 @mixin ch-border-radius ($type: 1, $rules: box) {
   $radius: ch-get-border-radius($type);
 

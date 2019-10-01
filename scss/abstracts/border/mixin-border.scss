@@ -1,6 +1,3 @@
-@import './variables';
-@import '../colors';
-
 @mixin ch-border (
   $rules: box,
   $color: ch-get-color(border),
