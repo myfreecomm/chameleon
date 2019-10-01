@@ -1461,8 +1461,9 @@ template {
   display: block;
   width: 100%;
   position: relative;
-  cursor: pointer;
-  color: var(--ch-color-text-1); }
+  cursor: pointer; }
+  .ch-menu-item, .ch-menu-item:focus:hover, .ch-menu-item:focus, .ch-menu-item:hover, .ch-menu-item:active {
+    color: var(--ch-color-text-1); }
   .ch-menu-item:focus:hover, .ch-menu-item:hover, .ch-menu-item:focus {
     background: var(--ch-color-neutral-2); }
   .ch-menu-item.is-active:before {
@@ -1730,7 +1731,8 @@ select.ch-select {
     font-size: var(--ch-text-size-6);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--1Inverse, h1 {
   color: var(--ch-color-text-1);
@@ -1744,7 +1746,8 @@ select.ch-select {
     font-size: var(--ch-text-size-6);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--2, h2 {
   color: var(--ch-color-text-1);
@@ -1758,7 +1761,8 @@ select.ch-select {
     font-size: var(--ch-text-size-5);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--2Inverse, h2 {
   color: var(--ch-color-text-1);
@@ -1772,7 +1776,8 @@ select.ch-select {
     font-size: var(--ch-text-size-5);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title, h3 {
   color: var(--ch-color-text-1);
@@ -1786,7 +1791,8 @@ select.ch-select {
     font-size: var(--ch-text-size-4);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--inverse, h3 {
   color: var(--ch-color-text-1);
@@ -1800,7 +1806,8 @@ select.ch-select {
     font-size: var(--ch-text-size-4);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--4, h4 {
   color: var(--ch-color-text-1);
@@ -1814,7 +1821,8 @@ select.ch-select {
     font-size: var(--ch-text-size-3);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--4Inverse, h4 {
   color: var(--ch-color-text-1);
@@ -1828,7 +1836,8 @@ select.ch-select {
     font-size: var(--ch-text-size-3);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--5, h5 {
   color: var(--ch-color-text-1);
@@ -1842,7 +1851,8 @@ select.ch-select {
     font-size: var(--ch-text-size-2);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--5Inverse, h5 {
   color: var(--ch-color-text-1);
@@ -1856,7 +1866,8 @@ select.ch-select {
     font-size: var(--ch-text-size-2);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--6, h6 {
   color: var(--ch-color-text-1);
@@ -1870,7 +1881,8 @@ select.ch-select {
     font-size: var(--ch-text-size-2);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-title--6Inverse, h6 {
   color: var(--ch-color-text-1);
@@ -1884,7 +1896,8 @@ select.ch-select {
     font-size: var(--ch-text-size-2);
     font-weight: var(--ch-text-weight-regular);
     line-height: var(--ch-text-line-height);
-    display: block; }
+    display: block;
+    margin-top: -0.5em; }
 
 .ch-toggle {
   padding: 0 ;
