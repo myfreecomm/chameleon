@@ -1,6 +1,6 @@
-@import '../../abstracts/helpers';
-@import '../../abstracts/icon';
-@import '../../abstracts/layers';
+// @import '../../abstracts/helpers';
+// @import '../../abstracts/icon';
+// @import '../../abstracts/layers';
 
 .ch-toggle {
 
@@ -49,7 +49,7 @@
     -webkit-mask-repeat: no-repeat;
     mask-position: center;
     -webkit-mask-position: center;
-    
+
     &:hover:focus,
     &:hover,
     &:focus {

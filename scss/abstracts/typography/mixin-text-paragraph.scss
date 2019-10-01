@@ -1,8 +1,8 @@
 @import '../colors/';
-@import './function-get-text-font-family';
-@import './function-get-text-size';
-@import './function-get-text-weight';
-@import './function-get-text-line-height';
+// @import './function-get-text-font-family';
+// @import './function-get-text-size';
+// @import './function-get-text-weight';
+// @import './function-get-text-line-height';
 
 @mixin ch-text-paragraph ($type: '') {
   color: #{ch-get-color(text, 1, $type)};

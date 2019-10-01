@@ -1,10 +1,10 @@
-@import '../../abstracts/dimensions';
-@import '../../abstracts/helpers';
-@import '../../abstracts/layers';
-@import '../../abstracts/menu';
-@import '../../abstracts/space';
-@import '../../abstracts/typography';
-@import '../../abstracts/transition';
+// @import '../../abstracts/dimensions';
+// @import '../../abstracts/helpers';
+// @import '../../abstracts/layers';
+// @import '../../abstracts/menu';
+// @import '../../abstracts/space';
+// @import '../../abstracts/typography';
+// @import '../../abstracts/transition';
 
 .ch-template-header {
 
@@ -13,7 +13,7 @@
   @include ch-media(from, tablet) {
     height: #{ch-get-dimension(1)};
   }
-  
+
   @include ch-transition(box-shadow);
 
   display: flex;

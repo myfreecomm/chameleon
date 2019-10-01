@@ -1,9 +1,9 @@
-@import '../../abstracts/colors';
-@import '../../abstracts/box-model';
-@import '../../abstracts/dimensions';
-@import '../../abstracts/menu';
-@import '../../abstracts/border';
-@import '../../abstracts/transition';
+// @import '../../abstracts/colors';
+// @import '../../abstracts/box-model';
+// @import '../../abstracts/dimensions';
+// @import '../../abstracts/menu';
+// @import '../../abstracts/border';
+// @import '../../abstracts/transition';
 
 .ch-menu {
   // 1. item
@@ -108,7 +108,7 @@
       }
 
       // 2.3.2. Item
-      
+
       > .ch-menu-item {
         opacity: 1;
 

@@ -1,10 +1,10 @@
-@import '../../abstracts/breakpoints';
-@import '../../abstracts/colors';
-@import '../../abstracts/dimensions';
-@import '../../abstracts/helpers';
-@import '../../abstracts/layers';
-@import '../../abstracts/space';
-@import '../../abstracts/transition';
+// @import '../../abstracts/breakpoints';
+// @import '../../abstracts/colors';
+// @import '../../abstracts/dimensions';
+// @import '../../abstracts/helpers';
+// @import '../../abstracts/layers';
+// @import '../../abstracts/space';
+// @import '../../abstracts/transition';
 
 .ch-dropdown {
 
@@ -23,7 +23,7 @@
       @include ch-paddingless;
 
       position: absolute;
-      
+
       margin-top: #{ch-get-space(xs)};
       width: auto;
       min-width: #{ch-get-dimension(2)};
@@ -96,7 +96,7 @@
   }
 
   // 3. Position variations
-  
+
   @include ch-media(from, tablet) {
     @each $vertical in (bottom, top) {
       @each $horizontal in (right, left) {
@@ -108,7 +108,7 @@
 
             margin-top: #{ch-get-space(xs)};
           }
-          
+
           @else if $vertical == top {
             top: auto;
             bottom: 100%;

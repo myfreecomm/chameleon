@@ -1,5 +1,5 @@
 @import '../space';
-@import './variables';
+// @import './variables';
 
 @mixin ch-grid ($columns-number: $ch-mobile-columns-number, $gutter: m) {
   display: grid;

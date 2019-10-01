@@ -1,7 +1,7 @@
 @import '../../abstracts/box-model';
 @import '../../abstracts/border';
 @import '../../abstracts/colors';
-@import './mixin-input-disabled';
+// @import './mixin-input-disabled';
 
 @mixin ch-input {
   @include ch-input-disabled;

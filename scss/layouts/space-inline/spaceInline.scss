@@ -1,6 +1,6 @@
-@import '../../abstracts/space';
-@import '../../abstracts/breakpoints';
-@import '../../abstracts/helpers';
+// @import '../../abstracts/space';
+// @import '../../abstracts/breakpoints';
+// @import '../../abstracts/helpers';
 
 .ch-spaceInline {
   $types: (left, right);
@@ -9,7 +9,7 @@
     @each $type in $types {
       @each $screen in $ch-breakpoint-screens {
         $sufix: ch-generate-variation(($size, $type, $screen), (m, left, mobile));
-  
+
         @include ch-media (from, $screen) {
           @at-root &#{$sufix} {
             @include ch-space-inline($type, $size);

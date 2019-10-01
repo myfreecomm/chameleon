@@ -1,17 +1,17 @@
-@import '../../abstracts/breakpoints';
-@import '../../abstracts/colors';
-@import '../../abstracts/typography';
-@import '../../abstracts/dimensions';
-@import '../../abstracts/transition';
+// @import '../../abstracts/breakpoints';
+// @import '../../abstracts/colors';
+// @import '../../abstracts/typography';
+// @import '../../abstracts/dimensions';
+// @import '../../abstracts/transition';
 
 *:not(img).ch-brand {
   $brand-icon-size: calc(#{ch-get-dimension(1)} - 2 * #{ch-get-space(s)});
-  
+
   // 1. Base
 
   @at-root img.ch-brand {
     display: inline-block;
-    
+
     width: auto;
     height: $brand-icon-size;
   }

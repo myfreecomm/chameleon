@@ -1,11 +1,11 @@
-@import '../../abstracts/box-model';
-@import '../../abstracts/border';
-@import '../../abstracts/colors';
-@import '../../abstracts/icon';
-@import '../../abstracts/helpers';
-@import '../../abstracts/space';
-@import '../../abstracts/typography';
-@import '../../abstracts/ripple-effect';
+// @import '../../abstracts/box-model';
+// @import '../../abstracts/border';
+// @import '../../abstracts/colors';
+// @import '../../abstracts/icon';
+// @import '../../abstracts/helpers';
+// @import '../../abstracts/space';
+// @import '../../abstracts/typography';
+// @import '../../abstracts/ripple-effect';
 
 .ch-button {
 
@@ -31,9 +31,9 @@
     border-color: #{ch-get-color(default, focus)};
     background-color: #{ch-get-color(default, focus)};
   }
-  
+
   // 1.2. Active interaction
-  
+
   &:active {
     border-color: #{ch-get-color(default, active)};
     background-color: #{ch-get-color(default, active)};
@@ -58,7 +58,7 @@
       background-color: #{ch-get-color($type)};
 
       // 2.1. Focus interaction
-  
+
       &:hover:focus,
       &:hover,
       &:focus {
@@ -117,9 +117,9 @@
         &:focus {
           color: #{ch-get-color($type, focus)};
         }
-        
+
         // 3.3.2. Active interaction
-  
+
         &:active {
           color: #{ch-get-color($type, active)};
         }
@@ -145,9 +145,9 @@
     &:focus {
       border-color: #{ch-get-color(default, focus)};
     }
-    
+
     // 4.2. Active interaction
-    
+
     &:active {
       border-color: #{ch-get-color(default, active)};
     }
@@ -157,17 +157,17 @@
     @each $type in (brand, primary, negative) {
       @at-root &.ch-button--#{$type} {
         border-color: #{ch-get-color($type)};
-  
+
         // 4.3.1. Focus interaction
-  
+
         &:hover:active,
         &:hover,
         &:focus {
           border-color: #{ch-get-color($type, focus)};
         }
-        
+
         // 4.3.2. Active interaction
-  
+
         &:active {
           border-color: #{ch-get-color($type, active)};
         }
@@ -193,13 +193,13 @@
         color: #{ch-get-color($type)};
 
         // 5.1.1. Focus interaction
-        
+
         &:focus:hover,
         &:focus,
         &:hover {
           color: #{ch-get-color($type, focus)};
         }
-        
+
         // 5.1.2. Active interaction
 
         &:active {

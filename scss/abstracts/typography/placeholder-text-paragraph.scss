@@ -1,9 +1,9 @@
-@import './mixin-text-paragraph';
+// @import './mixin-text-paragraph';
 
 %ch-text-paragraph {
-  @include ch-text-paragraph; 
+  @include ch-text-paragraph;
 }
 
 %ch-text-paragraph-inverse {
-  @include ch-text-paragraph(inverse); 
+  @include ch-text-paragraph(inverse);
 }
