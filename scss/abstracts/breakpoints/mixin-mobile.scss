@@ -1,5 +1,3 @@
-// @import './variables';
-
 @mixin ch-mobile {
   $width: calc(#{$ch-breakpoint-tablet} - 1px);
 

@@ -1,16 +1,19 @@
+// Organized by priority order
+
+@import './space';
+@import './colors';
 @import './border';
 @import './box-model';
+@import './helpers';
+
 @import './breakpoints';
 @import './card';
-@import './colors';
 @import './dimensions';
 @import './grid';
-@import './helpers';
 @import './icon';
 @import './input';
 @import './layers';
 @import './menu';
 @import './ripple-effect';
-@import './space';
 @import './transition';
 @import './typography';

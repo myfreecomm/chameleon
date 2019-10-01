@@ -1,6 +1,3 @@
-// @import './function-get-space';
-// @import './function-get-prev-space';
-// @import './function-get-next-space';
 
 @mixin ch-space-inset ($type: default, $size: m) {
   @if ($type == default) {

@@ -1,13 +1,11 @@
 // sass-lint:disable no-important
 
-@import '../dimensions';
-
 @mixin ch-has-icon ($type: left, $padding: ch-get-dimension(1)) {
   position: relative;
-  
+
   @if ($type == left) {
     padding-left: #{$padding} !important;
-    
+
     > .ch-icon:first-child {
       position: absolute;
       top: 50%;
