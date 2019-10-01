@@ -45,14 +45,14 @@
   &:hover:focus,
   &:focus,
   &:hover {
-    color: ch-get-color(primary, focus);
+    color: #{ch-get-color(primary, focus)};
     opacity: 1;
   }
 
   // 4.2. Active interaction
 
   &:active {
-    color: ch-get-color(primary, active);
+    color: #{ch-get-color(primary, active)};
     opacity: 1;
   }
 }

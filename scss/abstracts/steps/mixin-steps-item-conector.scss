@@ -8,17 +8,19 @@
   }
 
   &:not(:last-child):after {
+    @include ch-border(left, ch-get-color(border), dashed, 2px);
     position: absolute;
     z-index: 1;
     top: #{$ch-steps-item-width};
     left: calc((#{$ch-steps-item-width} / 2) - (#{$ch-steps-border-width} / 2));
 
-    content: '';
+    $empty: '';
+
+    content: $empty;
     width: 0;
     height: calc(100% - #{$ch-steps-item-width});
 
     border-top: 0;
-    @include ch-border(left, ch-get-color(border), dashed, 2px);
   }
 
   // 2. Visited and complete state
