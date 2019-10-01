@@ -1,29 +1,37 @@
 // 1. Base
 
 .ch-title {
+  $margin-top-for-big-titles: -0.5em;
+  $margin-top-for-other-titles: -0.25em;
+
+  @include ch-text-title(3);
+
+  > .ch-title-sub {
+    // @extend %ch-text-subtitle-#{$i};
+    @include ch-text-subtitle(3);
+
+    display: block;
+
+    margin-top: $margin-top-for-big-titles;
+  }
+
   @for $i from 1 through 6 {
     @each $type in (normal, inverse) {
-      $sufix: ch-generate-variation(($i, $type), (3, normal));
+      $sufix: ch-generate-variation(($i, $type), (undefined, normal));
 
-      @at-root #{&}#{$sufix} {
+      @at-root #{&}#{$sufix}, h#{$i} {
         // @extend %ch-text-title-#{$i};
         @include ch-text-title($i);
 
         > .ch-title-sub {
           // @extend %ch-text-subtitle-#{$i};
           @include ch-text-subtitle($i);
-        }
-      }
 
-      @at-root h#{$i} {
-        // @extend %ch-text-title-#{$i};
-        @include ch-text-title($i);
+          display: block;
 
-        > .ch-title-sub {
-          // @extend %ch-text-subtitle-#{$i};
-          @include ch-text-subtitle($i);
+          margin-top: if($i < 4, $margin-top-for-big-titles, $margin-top-for-other-titles);
         }
-      }
+      } // @at-root #{&}#{$sufix}, h#{$i}
     } // @each $type in (normal, inverse)
   } // @for $i from 1 to 6
 }

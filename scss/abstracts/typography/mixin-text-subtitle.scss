@@ -1,5 +1,5 @@
 @mixin ch-text-subtitle ($hierarchy: 3, $type: '') {
-  $hierarchy-sizes: (6, 5, 4, 3, 2, 2);
+  $hierarchy-sizes: (4, 4, 3, 3, 2, 2);
   $size: nth($hierarchy-sizes, $hierarchy);
 
   color: #{ch-get-color(text, 2, $type)};

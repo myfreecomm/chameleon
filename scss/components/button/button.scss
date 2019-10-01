@@ -9,10 +9,17 @@
   display: inline-block;
 
   cursor: pointer;
-  color: #{ch-get-color(text, 1, inverse)};
   font-weight: #{ch-get-text-weight(bold)};
   text-align: center;
   background-color: #{ch-get-color(default)};
+
+  &,
+  &:hover:focus,
+  &:hover,
+  &:focus,
+  &:active {
+    color: #{ch-get-color(text, 1, inverse)};
+  }
 
   // 1.1. Focus interaction
 
