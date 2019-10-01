@@ -14,6 +14,8 @@
           @include ch-text-subtitle($i);
 
           display: block;
+
+          margin-top: -0.5em;
         }
       } // @at-root #{&}#{$sufix}, h#{$i}
     } // @each $type in (normal, inverse)
