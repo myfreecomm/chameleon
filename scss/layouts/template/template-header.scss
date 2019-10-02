@@ -6,7 +6,7 @@
     height: #{ch-get-dimension(1)};
   }
 
-  @include ch-transition(box-shadow);
+  @include ch-transition(box-shadow margin-left);
 
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@
 
     order: 2;
 
-    max-width: calc(#{ch-calc-box-height()} * 3);
+    max-width: calc(#{ch-calc-box-height(ch-get-text-size(2), ch-get-space(s))} * 3);
 
     // 4.1. Item
 
