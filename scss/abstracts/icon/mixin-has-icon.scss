@@ -1,6 +1,6 @@
 // sass-lint:disable no-important
 
-@mixin ch-has-icon ($type: left, $padding: ch-get-dimension(1)) {
+@mixin ch-has-icon ($type: left, $padding: ch-calc-box-height()) {
   position: relative;
 
   @if ($type == left) {

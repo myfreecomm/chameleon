@@ -1,3 +1,5 @@
+// sass-lint:disable no-important
+
 .ch-menu {
   // 1. item
 
@@ -28,23 +30,27 @@
 
     // 1.2. Active state/Sidebar
 
-    &.is-active:before {
-      $empty: '';
+    &.is-active {
+      font-weight: #{ch-get-text-weight(bold)};
+    
+      &:before {
+        $empty: '';
 
-      @include ch-transition(opacity);
-      @include ch-border-radius(circle);
+        @include ch-transition(opacity);
+        @include ch-border-radius(circle);
 
-      display: block;
-      content: $empty;
-      position: absolute;
-      top: 50%;
-      left: ch-get-space(xxs);
-      width: ch-get-space(xxs);
-      height: ch-get-icon-size();
-      transform: translate(0, -50%);
-      opacity: 1;
+        display: block;
+        content: $empty;
+        position: absolute;
+        top: 50%;
+        left: ch-get-space(xxs);
+        width: ch-get-space(xxs);
+        height: ch-get-icon-size();
+        transform: translate(0, -50%);
+        opacity: 1;
 
-      background: #{ch-get-color(brand)};
+        background: #{ch-get-color(brand)};
+      }
     }
 
     // 1.3. Icon variation
@@ -58,6 +64,28 @@
 
     &-label {
       display: block;
+    }
+
+    // 1.5. Has icon
+
+    &.has-icon {
+      $padding: ch-get-dimension(1);
+
+      padding-left: #{$padding} !important;
+
+      > .ch-icon:first-child {
+        left: calc((#{$padding}) / 2);
+      }
+    }
+
+    &.has-iconRight {
+      $padding: ch-get-dimension(1);
+
+      padding-right: #{$padding} !important;
+
+      > .ch-icon:first-child {
+        right: calc((#{$padding}) / 2);
+      }
     }
   }
 
@@ -114,8 +142,12 @@
 
         // 2.3.2.1. Sidebar
 
-        &.is-active:before {
-          opacity: 0;
+        &.is-active {
+          font-weight: #{ch-get-text-weight(normal)};
+
+          &:before {
+            opacity: 0;
+          }
         }
 
         // 2.3.2.2. Arrow
