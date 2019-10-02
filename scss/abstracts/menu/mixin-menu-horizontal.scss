@@ -24,16 +24,21 @@
     }
   }
 
-  > .is-active:before,
-  > .ch-menu-submenu > .is-active:before {
+  > .ch-menu-item.is-active:before,
+  > .ch-menu-submenu > .ch-menu-item.is-active:before {
     top: auto;
     bottom: ch-get-space(xxs);
     left: 50%;
     transform: translate(-50%, 0);
     opacity: 1;
 
-    width: calc(100% - 2 * #{ch-get-space(m)});
+    width: calc(100% - 2 * #{ch-get-space(xs)});
     min-width: #{ch-get-icon-size(m)};
     height: #{ch-get-space(xxs)};
+  }
+
+  > .ch-menu-item.ch-menu-item--icon.is-active:before,
+  > .ch-menu-submenu > .ch-menu-item.ch-menu-item--icon.is-active:before {
+    width: #{ch-get-icon-size(m)};
   }
 }
