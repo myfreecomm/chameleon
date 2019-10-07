@@ -18,7 +18,9 @@
     position: absolute;
     z-index: 2;
 
-    content: counter(steps);
+    $counter: counter(steps);
+
+    content: $counter;
     width: $ch-steps-item-width;
     height: $ch-steps-item-width;
     background: transparent;
@@ -33,7 +35,7 @@
   &.is-active,
   &.is-visited {
     &:before {
-      color: ch-get-color(primary);
+      color: #{ch-get-color(primary)};
       border-color: ch-get-color(primary);
     }
   }
@@ -62,7 +64,7 @@
       &:hover,
       &:focus {
         &:before {
-          color: ch-get-color(primary, focus);
+          color: #{ch-get-color(primary, focus)};
           border-color: ch-get-color(primary, focus);
         }
       }
@@ -71,7 +73,7 @@
 
       &:active {
         &:before {
-          color: ch-get-color(primary, active);
+          color: #{ch-get-color(primary, active)};
           border-color: ch-get-color(primary, active);
         }
       }
@@ -86,8 +88,8 @@
       &:hover,
       &:focus {
         &:before {
-          background: ch-get-color(primary, focus);
-          border-color: ch-get-color(primary, focus);
+          background: #{ch-get-color(primary, focus)};
+          border-color: #{ch-get-color(primary, focus)};
         }
       }
 
@@ -95,8 +97,8 @@
 
       &:active {
         &:before {
-          background: ch-get-color(primary, active);
-          border-color: ch-get-color(primary, active);
+          background: #{ch-get-color(primary, active)};
+          border-color: #{ch-get-color(primary, active)};
         }
       }
     }
