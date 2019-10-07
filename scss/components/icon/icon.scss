@@ -1,8 +1,3 @@
-@import '../../abstracts/border';
-@import '../../abstracts/icon';
-@import '../../abstracts/space';
-@import '../../abstracts/helpers';
-
 .ch-icon {
 
   // 1. Base
@@ -22,16 +17,20 @@
 
   @each $size in $ch-icon-sizes {
     $posfix: ch-generate-variation(($size), (m));
+    $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
 
-    @at-root #{&}#{&}#{$posfix} {
+    @at-root #{$path} {
       font-size: ch-get-icon-size($size);
+      width: ch-get-icon-size($size);
 
       &.ch-icon--circle {
         $sqrt2: 1.41421356237;
-        $radio: #{ch-get-icon-size($size)} / 2;
-        $padding: calc(#{$radio} * #{$sqrt2} - #{$radio} + #{ch-get-space(xs)});
+        $size: calc(#{ch-get-icon-size($size)} * #{$sqrt2} + #{ch-get-space(xxs)});
 
-        padding: $padding;
+        height: $size;
+        width: $size;
+        line-height: $size;
+        vertical-align: middle;
       }
     }
   }

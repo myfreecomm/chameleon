@@ -1,7 +1,5 @@
-@import '../helpers';
-
 @mixin ch-menu-item-icon {
-  $size: ch-calc-box-height();
+  $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
 
   @include ch-paddingless(true);
 

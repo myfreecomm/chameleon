@@ -30,6 +30,11 @@ module.exports = (_, argv) => {
       // to the output path, so './dist/js'
       filename: 'js/chameleon.js'
     },
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 9000
+    },
     module: {
       // Array of rules that tells Webpack how the modules (output)
       // will be created

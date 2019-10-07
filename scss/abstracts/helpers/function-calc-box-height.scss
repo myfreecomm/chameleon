@@ -1,7 +1,4 @@
-@import '../typography';
-@import '../space';
-
-@function ch-calc-box-height ($text-size: ch-get-text-size(2), $space: ch-get-space(s)) {
+@function ch-calc-box-height ($text-size: ch-get-text-size(2), $space: ch-get-space(xs)) {
   $line-height: ch-get-text-line-height();
 
   @return calc(#{$text-size} * #{$line-height} + 2 * #{$space});

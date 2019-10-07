@@ -1,5 +1,3 @@
-@import '../../abstracts/grid';
-
 .ch-grid {
   > * {
     @include ch-grid-column(1);
