@@ -1,6 +1,8 @@
 @import '../../abstracts/space';
 @import '../../abstracts/steps';
 @import '../../abstracts/transition';
+@import '../../abstracts/dimensions';
+@import '../../abstracts/typography';
 
 .ch-steps-item {
   // 1. Base
@@ -17,21 +19,20 @@
   min-width: $ch-steps-item-min-width;
 
   counter-increment: steps;
-  opacity: 0.75;
+  opacity: 0.6;
 
   &.is-active,
   &.is-visited,
   &.is-completed {
     opacity: 1;
-  }
 
+    .ch-title {
+      color: ch-get-color(primary);
+    }
+  }
   // 1.1. Counter
 
   @include ch-steps-item-counter;
-
-  // 1.2. Conector
-
-  @include ch-steps-item-conector;
 
   &-label {
     @include ch-space-inset(squish);
@@ -54,5 +55,37 @@
   &:active {
     color: #{ch-get-color(primary, active)};
     opacity: 1;
+  }
+}
+
+// Mobile
+@include ch-mobile {
+  .ch-steps {
+    flex-direction: row;
+    .ch-steps-item {
+
+      .ch-title {
+        font-size: #{ch-get-text-size(2)};
+        display: none;
+
+        .ch-title-sub {
+          display: none;
+        }
+      }
+
+      &.is-active {
+        flex-grow: 10;
+        .ch-title {
+          display: block;
+        }
+      }
+
+      &.is-completed {
+        flex-grow: 1;
+        .ch-title {
+          display: none;
+        }
+      }
+    }
   }
 }

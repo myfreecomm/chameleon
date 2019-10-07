@@ -2040,11 +2040,13 @@ select.ch-select {
   min-height: calc(2 * calc(var(--ch-space-xl) + var(--ch-space-xxs)));
   min-width: calc(var(--ch-space-xl) + var(--ch-space-xxs));
   counter-increment: steps;
-  opacity: 0.75; }
+  opacity: 0.6; }
   .ch-steps-item.is-active, .ch-steps-item.is-visited, .ch-steps-item.is-completed {
     opacity: 1; }
+    .ch-steps-item.is-active .ch-title, .ch-steps-item.is-visited .ch-title, .ch-steps-item.is-completed .ch-title {
+      color: var(--ch-color-primary); }
   .ch-steps-item:before {
-    border: 2px solid var(--ch-color-border);
+    border: 1px solid var(--ch-color-border);
     color: var(--ch-color-text-1);
     font-family: var(--ch-text-font-family);
     font-size: var(--ch-text-size-2);
@@ -2087,20 +2089,6 @@ select.ch-select {
   a.ch-steps-item.is-completed:active:before {
     background: var(--ch-color-primary-active);
     border-color: var(--ch-color-primary-active); }
-  .ch-steps-item:last-child:after {
-    content: none; }
-  .ch-steps-item:not(:last-child):after {
-    border-left: 2px dashed var(--ch-color-border);
-    position: absolute;
-    z-index: 1;
-    top: calc(var(--ch-space-xl) + var(--ch-space-xxs));
-    left: calc((calc(var(--ch-space-xl) + var(--ch-space-xxs)) / 2) - (2px / 2));
-    content: "";
-    width: 0;
-    height: calc(100% - calc(var(--ch-space-xl) + var(--ch-space-xxs)));
-    border-top: 0; }
-  .ch-steps-item.is-visited:not(:last-child):after, .ch-steps-item.is-completed:not(:last-child):after {
-    border-left: 2px solid var(--ch-color-primary); }
   .ch-steps-item-label {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-m);
@@ -2113,6 +2101,23 @@ select.ch-select {
   .ch-steps-item:active {
     color: var(--ch-color-primary-active);
     opacity: 1; }
+
+@media screen and (max-width: calc(769px - 1px)) {
+  .ch-steps {
+    flex-direction: row; }
+    .ch-steps .ch-steps-item .ch-title {
+      font-size: var(--ch-text-size-2);
+      display: none; }
+      .ch-steps .ch-steps-item .ch-title .ch-title-sub {
+        display: none; }
+    .ch-steps .ch-steps-item.is-active {
+      flex-grow: 10; }
+      .ch-steps .ch-steps-item.is-active .ch-title {
+        display: block; }
+    .ch-steps .ch-steps-item.is-completed {
+      flex-grow: 1; }
+      .ch-steps .ch-steps-item.is-completed .ch-title {
+        display: none; } }
 
 .ch-accessBarrier {
   position: relative;
