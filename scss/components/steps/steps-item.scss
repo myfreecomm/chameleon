@@ -9,7 +9,7 @@
   // 1. Base
 
   @include ch-transition(opacity);
-  @include ch-transition(box-shadow);
+  // @include ch-shadow(top-bottom);
 
   display: block;
   position: relative;

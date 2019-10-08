@@ -2032,10 +2032,6 @@ select.ch-select {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   transition-delay: unset;
-  transition-property: box-shadow;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-  transition-delay: unset;
   display: block;
   position: relative;
   flex: 1;
