@@ -3,11 +3,13 @@
 @import '../../abstracts/transition';
 @import '../../abstracts/dimensions';
 @import '../../abstracts/typography';
+@import '../../abstracts/layers';
 
 .ch-steps-item {
   // 1. Base
 
   @include ch-transition(opacity);
+  @include ch-transition(box-shadow);
 
   display: block;
   position: relative;
@@ -62,7 +64,9 @@
 @include ch-mobile {
   .ch-steps {
     flex-direction: row;
+
     .ch-steps-item {
+      padding-left: calc(var(--ch-space-s) + var(--ch-space-m));
 
       .ch-title {
         font-size: #{ch-get-text-size(2)};
@@ -71,6 +75,11 @@
         .ch-title-sub {
           display: none;
         }
+      }
+
+      &:before {
+        width: calc(var(--ch-space-m) + var(--ch-space-xs ));
+        height: calc(var(--ch-space-m) + var(--ch-space-xs));
       }
 
       &.is-active {
