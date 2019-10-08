@@ -1,11 +1,13 @@
 @import '../../abstracts/space';
 
-.ch-progress-bar {
-	background-color: ch-get-color(border);
+@include ch-media(only, mobile) {
+	.ch-progress-bar {
+		background-color: ch-get-color(border);
 
-	& > div {
-		background-color: ch-get-color(primary);
-		width: 50%;
-		height: 2px;
+		& > div {
+			background-color: ch-get-color(primary);
+			width: 50%;
+			height: 2px;
+		}
 	}
 }

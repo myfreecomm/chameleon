@@ -2117,6 +2117,8 @@ select.ch-select {
         font-size: var(--ch-text-size-1);
         width: calc(var(--ch-space-m) + var(--ch-space-xs ));
         height: calc(var(--ch-space-m) + var(--ch-space-xs)); }
+      .ch-steps .ch-steps-item.is-active:before, .ch-steps .ch-steps-item.is-completed:before {
+        box-shadow: 0 2px 10px rgba(172, 185, 210, 0.65); }
       .ch-steps .ch-steps-item.is-active {
         flex-grow: 10; }
         .ch-steps .ch-steps-item.is-active .ch-title {
@@ -4582,10 +4584,11 @@ select.ch-select {
       .ch-template-nav.is-expanded + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-toggle {
         left: var(--ch-dimension-2); } }
 
-.ch-progress-bar {
-  background-color: var(--ch-color-border); }
-  .ch-progress-bar > div {
-    background-color: var(--ch-color-primary);
-    width: 50%;
-    height: 2px; }
+@media screen and (max-width: calc(769px - 1px)) {
+  .ch-progress-bar {
+    background-color: var(--ch-color-border); }
+    .ch-progress-bar > div {
+      background-color: var(--ch-color-primary);
+      width: 50%;
+      height: 2px; } }
 

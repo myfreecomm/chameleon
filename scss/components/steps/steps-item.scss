@@ -5,98 +5,103 @@
 @import '../../abstracts/typography';
 @import '../../abstracts/layers';
 
-.ch-steps-item {
-  // 1. Base
-
-  @include ch-transition(opacity);
-  // @include ch-shadow()
-
-  display: block;
-  position: relative;
-  flex: 1;
-
-  padding-left: $ch-steps-item-min-width;
-  padding-top: 0;
-  min-height: calc(2 * #{$ch-steps-item-min-width});
-  min-width: $ch-steps-item-min-width;
-
-  counter-increment: steps;
-  opacity: 0.6;
-
-  &.is-active,
-  &.is-visited,
-  &.is-completed {
-    opacity: 1;
-
-    .ch-title {
-      color: ch-get-color(primary);
-    }
-  }
-  // 1.1. Counter
-
-  @include ch-steps-item-counter;
-
-  &-label {
-    @include ch-space-inset(squish);
-    padding-top: #{ch-get-space(xxs)};
-  }
-
-  // 4. Interactive variation
-
-  // 4.1. Focus interaction
-
-  &:hover:focus,
-  &:focus,
-  &:hover {
-    color: #{ch-get-color(primary, focus)};
-    opacity: 1;
-  }
-
-  // 4.2. Active interaction
-
-  &:active {
-    color: #{ch-get-color(primary, active)};
-    opacity: 1;
-  }
-}
-
-// Mobile
-@include ch-mobile {
-  .ch-steps {
+@include ch-media(from, mobile) {
+  .ch-steps-item {
     // 1. Base
 
-    flex-direction: row;
+    @include ch-transition(opacity);
 
-    .ch-steps-item {
-      padding-left: calc(var(--ch-space-s) + var(--ch-space-m));
-      min-height: 0;
+    display: block;
+    position: relative;
+    flex: 1;
+
+    padding-left: $ch-steps-item-min-width;
+    padding-top: 0;
+    min-height: calc(2 * #{$ch-steps-item-min-width});
+    min-width: $ch-steps-item-min-width;
+
+    counter-increment: steps;
+    opacity: 0.6;
+
+    &.is-active,
+    &.is-visited,
+    &.is-completed {
+      opacity: 1;
 
       .ch-title {
-        font-size: #{ch-get-text-size(2)};
-        display: none;
-
-        .ch-title-sub {
-          display: none;
-        }
+        color: ch-get-color(primary);
       }
+    }
+    // 1.1. Counter
 
-      &:before {
-        font-size: #{ch-get-text-size(1)};
-        width: calc(var(--ch-space-m) + var(--ch-space-xs ));
-        height: calc(var(--ch-space-m) + var(--ch-space-xs));
-      }
+    @include ch-steps-item-counter;
 
-      &.is-active {
-        flex-grow: 10;
+    &-label {
+      @include ch-space-inset(squish);
+      padding-top: #{ch-get-space(xxs)};
+    }
+
+    // 4. Interactive variation
+
+    // 4.1. Focus interaction
+
+    &:hover:focus,
+    &:focus,
+    &:hover {
+      color: #{ch-get-color(primary, focus)};
+      opacity: 1;
+    }
+
+    // 4.2. Active interaction
+
+    &:active {
+      color: #{ch-get-color(primary, active)};
+      opacity: 1;
+    }
+  }
+
+  @include ch-media(only, mobile) {
+    .ch-steps {
+      // 1. Base
+
+      flex-direction: row;
+
+      .ch-steps-item {
+        padding-left: calc(var(--ch-space-s) + var(--ch-space-m));
+        min-height: 0;
+
         .ch-title {
-          display: block;
-        }
-      }
-
-      &.is-completed {
-        flex-grow: 1;
-        .ch-title {
+          font-size: #{ch-get-text-size(2)};
           display: none;
+
+          .ch-title-sub {
+            display: none;
+          }
+        }
+
+        &:before {
+          font-size: #{ch-get-text-size(1)};
+          width: calc(var(--ch-space-m) + var(--ch-space-xs ));
+          height: calc(var(--ch-space-m) + var(--ch-space-xs));
+        }
+
+        &.is-active:before,
+        &.is-completed:before {
+          @include ch-shadow(2);
+        }
+
+        &.is-active {
+          flex-grow: 10;
+          .ch-title {
+            display: block;
+          }
+        }
+
+        &.is-completed {
+          flex-grow: 1;
+          .ch-title {
+            display: none;
+          }
         }
       }
     }
