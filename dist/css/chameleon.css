@@ -2106,13 +2106,15 @@ select.ch-select {
   .ch-steps {
     flex-direction: row; }
     .ch-steps .ch-steps-item {
-      padding-left: calc(var(--ch-space-s) + var(--ch-space-m)); }
+      padding-left: calc(var(--ch-space-s) + var(--ch-space-m));
+      min-height: 0; }
       .ch-steps .ch-steps-item .ch-title {
         font-size: var(--ch-text-size-2);
         display: none; }
         .ch-steps .ch-steps-item .ch-title .ch-title-sub {
           display: none; }
       .ch-steps .ch-steps-item:before {
+        font-size: var(--ch-text-size-1);
         width: calc(var(--ch-space-m) + var(--ch-space-xs ));
         height: calc(var(--ch-space-m) + var(--ch-space-xs)); }
       .ch-steps .ch-steps-item.is-active {
@@ -4579,4 +4581,11 @@ select.ch-select {
         left: var(--ch-dimension-1); }
       .ch-template-nav.is-expanded + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-toggle {
         left: var(--ch-dimension-2); } }
+
+.ch-progress-bar {
+  background-color: var(--ch-color-border); }
+  .ch-progress-bar > div {
+    background-color: var(--ch-color-primary);
+    width: 50%;
+    height: 2px; }
 

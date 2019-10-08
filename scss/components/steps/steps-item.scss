@@ -9,7 +9,7 @@
   // 1. Base
 
   @include ch-transition(opacity);
-  // @include ch-shadow(top-bottom);
+  // @include ch-shadow()
 
   display: block;
   position: relative;
@@ -63,10 +63,13 @@
 // Mobile
 @include ch-mobile {
   .ch-steps {
+    // 1. Base
+
     flex-direction: row;
 
     .ch-steps-item {
       padding-left: calc(var(--ch-space-s) + var(--ch-space-m));
+      min-height: 0;
 
       .ch-title {
         font-size: #{ch-get-text-size(2)};
@@ -78,6 +81,7 @@
       }
 
       &:before {
+        font-size: #{ch-get-text-size(1)};
         width: calc(var(--ch-space-m) + var(--ch-space-xs ));
         height: calc(var(--ch-space-m) + var(--ch-space-xs));
       }
