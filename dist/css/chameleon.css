@@ -2106,7 +2106,9 @@ select.ch-select {
   .ch-steps {
     flex-direction: row; }
     .ch-steps .ch-steps-item {
-      padding-left: calc(var(--ch-space-s) + var(--ch-space-m));
+      display: flex;
+      justify-content: space-around;
+      padding-left: 0;
       min-height: 0; }
       .ch-steps .ch-steps-item .ch-title {
         font-size: var(--ch-text-size-2);
