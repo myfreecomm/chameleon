@@ -1,7 +1,12 @@
 @import '../../abstracts/space';
 
+
+// Progress Bars
+
 @include ch-media(only, mobile) {
-	.ch-progress-bar {
+
+	// 1. Base
+	.ch-progress-bars {
 		background-color: ch-get-color(border);
 
 		& > div {

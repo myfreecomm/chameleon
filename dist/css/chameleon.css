@@ -2027,7 +2027,7 @@ select.ch-select {
   flex-direction: column;
   overflow-x: auto; }
 
-.ch-steps-item {
+.ch-steps .ch-steps-item {
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -2041,11 +2041,11 @@ select.ch-select {
   min-width: calc(var(--ch-space-xl) + var(--ch-space-xxs));
   counter-increment: steps;
   opacity: 0.6; }
-  .ch-steps-item.is-active, .ch-steps-item.is-visited, .ch-steps-item.is-completed {
+  .ch-steps .ch-steps-item.is-active, .ch-steps .ch-steps-item.is-visited, .ch-steps .ch-steps-item.is-completed {
     opacity: 1; }
-    .ch-steps-item.is-active .ch-title, .ch-steps-item.is-visited .ch-title, .ch-steps-item.is-completed .ch-title {
+    .ch-steps .ch-steps-item.is-active .ch-title, .ch-steps .ch-steps-item.is-visited .ch-title, .ch-steps .ch-steps-item.is-completed .ch-title {
       color: var(--ch-color-primary); }
-  .ch-steps-item:before {
+  .ch-steps .ch-steps-item:before {
     border: 1px solid var(--ch-color-border);
     color: var(--ch-color-text-1);
     font-family: var(--ch-text-font-family);
@@ -2070,35 +2070,35 @@ select.ch-select {
     border-radius: 999px;
     text-align: center;
     vertical-align: middle; }
-  .ch-steps-item.is-active:before, .ch-steps-item.is-visited:before {
+  .ch-steps .ch-steps-item.is-active:before, .ch-steps .ch-steps-item.is-visited:before {
     color: var(--ch-color-primary);
     border-color: var(--ch-color-primary); }
-  .ch-steps-item.is-completed:before {
+  .ch-steps .ch-steps-item.is-completed:before {
     color: var(--ch-color-text-1-inverse);
     border-color: var(--ch-color-primary);
     background: var(--ch-color-primary); }
-  a.ch-steps-item.is-active:hover:focus:before, a.ch-steps-item.is-active:hover:before, a.ch-steps-item.is-active:focus:before, a.ch-steps-item.is-visited:hover:focus:before, a.ch-steps-item.is-visited:hover:before, a.ch-steps-item.is-visited:focus:before {
+  a.ch-steps .ch-steps-item.is-active:hover:focus:before, a.ch-steps .ch-steps-item.is-active:hover:before, a.ch-steps .ch-steps-item.is-active:focus:before, a.ch-steps .ch-steps-item.is-visited:hover:focus:before, a.ch-steps .ch-steps-item.is-visited:hover:before, a.ch-steps .ch-steps-item.is-visited:focus:before {
     color: var(--ch-color-primary-focus);
     border-color: var(--ch-color-primary-focus); }
-  a.ch-steps-item.is-active:active:before, a.ch-steps-item.is-visited:active:before {
+  a.ch-steps .ch-steps-item.is-active:active:before, a.ch-steps .ch-steps-item.is-visited:active:before {
     color: var(--ch-color-primary-active);
     border-color: var(--ch-color-primary-active); }
-  a.ch-steps-item.is-completed:hover:focus:before, a.ch-steps-item.is-completed:hover:before, a.ch-steps-item.is-completed:focus:before {
+  a.ch-steps .ch-steps-item.is-completed:hover:focus:before, a.ch-steps .ch-steps-item.is-completed:hover:before, a.ch-steps .ch-steps-item.is-completed:focus:before {
     background: var(--ch-color-primary-focus);
     border-color: var(--ch-color-primary-focus); }
-  a.ch-steps-item.is-completed:active:before {
+  a.ch-steps .ch-steps-item.is-completed:active:before {
     background: var(--ch-color-primary-active);
     border-color: var(--ch-color-primary-active); }
-  .ch-steps-item-label {
+  .ch-steps .ch-steps-item-label {
     padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-m);
     padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-m);
     padding-top: var(--ch-space-xxs); }
-  .ch-steps-item:hover:focus, .ch-steps-item:focus, .ch-steps-item:hover {
+  .ch-steps .ch-steps-item:hover:focus, .ch-steps .ch-steps-item:focus, .ch-steps .ch-steps-item:hover {
     color: var(--ch-color-primary-focus);
     opacity: 1; }
-  .ch-steps-item:active {
+  .ch-steps .ch-steps-item:active {
     color: var(--ch-color-primary-active);
     opacity: 1; }
 
@@ -4585,9 +4585,9 @@ select.ch-select {
         left: var(--ch-dimension-2); } }
 
 @media screen and (max-width: calc(769px - 1px)) {
-  .ch-progress-bar {
+  .ch-progress-bars {
     background-color: var(--ch-color-border); }
-    .ch-progress-bar > div {
+    .ch-progress-bars > div {
       background-color: var(--ch-color-primary);
       width: 50%;
       height: 2px; } }
