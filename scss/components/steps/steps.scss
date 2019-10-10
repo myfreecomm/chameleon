@@ -1,0 +1,21 @@
+.ch-steps {
+  @include ch-space-inline-group(left, s);
+  position: relative;
+
+  counter-reset: steps;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: nowrap !important; // sass-lint:disable-line no-important
+  flex-direction: row;
+  padding-bottom: #{ch-get-space(xs)};
+  overflow-x: auto;
+
+  &--vertical {
+    @include ch-space-stack-group;
+    padding-bottom: 0;
+  }
+
+  @include ch-media(from, tablet) {
+    @include ch-space-inline-group;
+  }
+}

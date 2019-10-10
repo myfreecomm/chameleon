@@ -1,0 +1,103 @@
+.ch-steps-item {
+  @include ch-transition(opacity);
+  @include ch-steps-item-counter;
+
+  display: block;
+  position: relative;
+
+  padding-left: $ch-steps-item-min-width;
+  padding-top: 0;
+  min-height: $ch-steps-item-width;
+
+  counter-increment: steps;
+  opacity: 0.6;
+
+  // 1. Label
+
+  &-label {
+    padding-top: #{ch-get-space(xxs)};
+    padding-bottom: #{ch-get-space(xxs)};
+    padding-left: #{ch-get-space(s)};
+    display: none;
+    width: max-content;
+
+    > .ch-title > .ch-title-sub {
+      display: none;
+    }
+  }
+
+  // 2. Active item
+
+  &.is-active {
+    flex-grow: 1;
+
+    .ch-steps-item-label {
+      display: block;
+    }
+  }
+
+  // 3. Active, visited or completed
+
+  &.is-active,
+  &.is-visited,
+  &.is-completed {
+    opacity: 1;
+
+    &:before {
+      @include ch-shadow(2);
+    }
+
+    .ch-title {
+      color: #{ch-get-color(primary)};
+    }
+  }
+
+  // 4. Interactive variation
+
+  // 4.1. Focus interaction
+
+  &:hover:focus,
+  &:focus,
+  &:hover {
+    color: #{ch-get-color(primary, focus)};
+    opacity: 1;
+  }
+
+  // 4.2. Active interaction
+
+  &:active {
+    color: #{ch-get-color(primary, active)};
+    opacity: 1;
+  }
+
+  // 5. Vertical
+
+  .ch-steps--vertical & {
+    &-label {
+      display: block;
+      padding-top: 0;
+      width: auto;
+
+      > .ch-title > .ch-title-sub {
+        display: block;
+      }
+    }
+  }
+
+  // 5. Desktop behavior
+
+  @include ch-media(from, tablet) {
+    &.is-active {
+      flex-grow: 0;
+    }
+
+    &-label {
+      display: block;
+      padding-top: 0;
+
+      > .ch-title > .ch-title-sub {
+        display: block;
+      }
+    }
+  }
+}
