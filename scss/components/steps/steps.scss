@@ -1,11 +1,12 @@
 // 1. Base
 
 .ch-steps {
+  @include ch-space-inline-group(left, s);
   position: relative;
 
   counter-reset: steps;
   display: flex;
   flex-wrap: nowrap;
-  flex-direction: column;
+  flex-direction: row;
   overflow-x: auto;
 }

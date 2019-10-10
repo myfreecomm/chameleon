@@ -1,124 +1,72 @@
-@import '../../abstracts/space';
-@import '../../abstracts/steps';
-@import '../../abstracts/transition';
-@import '../../abstracts/dimensions';
-@import '../../abstracts/typography';
-@import '../../abstracts/layers';
+.ch-steps-item {
+  @include ch-transition(opacity);
 
+  display: block;
+  position: relative;
 
-.ch-steps {
+  padding-left: $ch-steps-item-min-width;
+  padding-top: 0;
+  min-height: $ch-steps-item-width;
 
-  // 1. Base
+  counter-increment: steps;
+  opacity: 0.6;
 
-  @include ch-media(from, mobile) {
-    .ch-steps-item {
-      @include ch-transition(opacity);
+  // 1.1. Counter
 
+  @include ch-steps-item-counter;
+
+  // 1.2. Label
+
+  &-label {
+    display: none;
+    @include ch-space-inset(squish, s);
+  }
+
+  // 2. Active item
+
+  &.is-active {
+    flex-grow: 1;
+
+    .ch-steps-item-label {
       display: block;
-      position: relative;
-      flex: 1;
+    }
 
-      padding-left: $ch-steps-item-min-width;
-      padding-top: 0;
-      min-height: calc(2 * #{$ch-steps-item-min-width});
-      min-width: $ch-steps-item-min-width;
-
-      counter-increment: steps;
-      opacity: 0.6;
-
-      &.is-active,
-      &.is-visited,
-      &.is-completed {
-        opacity: 1;
-
-        .ch-title {
-          color: ch-get-color(primary);
-        }
-      }
-
-      // 1.1. Counter
-
-      @include ch-steps-item-counter;
-
-      &-label {
-        @include ch-space-inset(squish);
-        padding-top: #{ch-get-space(xxs)};
-      }
-
-      // 4. Interactive variation
-
-      // 4.1. Focus interaction
-
-      &:hover:focus,
-      &:focus,
-      &:hover {
-        color: #{ch-get-color(primary, focus)};
-        opacity: 1;
-      }
-
-      // 4.2. Active interaction
-
-      &:active {
-        color: #{ch-get-color(primary, active)};
-        opacity: 1;
-      }
+    .ch-steps-item-label > .ch-title > .ch-title-sub {
+      display: none;
     }
   }
 
-  // 1. Steps Mobile
+  // 3. Active, visited or completed
 
-  @include ch-media(only, mobile) {
-    flex-direction: row;
+  &.is-active,
+  &.is-visited,
+  &.is-completed {
+    opacity: 1;
 
-    .ch-steps-item {
-      padding-left: calc(var(--ch-space-l) + var(--ch-space-x));
-      min-width: calc(var(--ch-space-l) + var(--ch-space-xs));
-      min-height: 0;
-
-
-
-      .ch-title {
-        font-size: #{ch-get-text-size(2)};
-        display: none;
-
-        .ch-title-sub {
-          display: none;
-        }
-      }
-
-      .ch-steps-item-label {
-        padding-left: calc(var(--ch-space-m) + var(--ch-space-m));
-        padding-right: calc(var(--ch-space-m) + var(--ch-space-m));
-      }
-
-      &:before {
-        font-size: #{ch-get-text-size(1)};
-        width: calc(var(--ch-space-m) + var(--ch-space-xs ));
-        height: calc(var(--ch-space-m) + var(--ch-space-xs));
-      }
-
-      &.is-active:before,
-      &.is-completed:before {
-        @include ch-shadow(2);
-      }
-
-      &.is-active {
-        flex-grow: 10;
-        .ch-title {
-          display: block;
-        }
-      }
-
-      &.is-completed {
-        flex-grow: 1;
-        .ch-title {
-          display: none;
-        }
-      }
-
-      &:last-child {
-        min-width: 0;
-      }
+    &:before {
+      @include ch-shadow(2);
     }
+
+    .ch-title {
+      color: ch-get-color(primary);
+    }
+  }
+
+  // 4. Interactive variation
+
+  // 4.1. Focus interaction
+
+  &:hover:focus,
+  &:focus,
+  &:hover {
+    color: #{ch-get-color(primary, focus)};
+    opacity: 1;
+  }
+
+  // 4.2. Active interaction
+
+  &:active {
+    color: #{ch-get-color(primary, active)};
+    opacity: 1;
   }
 }
