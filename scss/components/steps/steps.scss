@@ -4,12 +4,15 @@
 
   counter-reset: steps;
   display: flex;
-  flex-wrap: nowrap;
+  max-width: 100%;
+  flex-wrap: nowrap !important;
   flex-direction: row;
+  padding-bottom: #{ch-get-space(xxs)};
   overflow-x: auto;
 
   &--vertical {
-    flex-direction: column;
+    @include ch-space-stack-group;
+    padding-bottom: 0;
   }
 
   @include ch-media(from, tablet) {

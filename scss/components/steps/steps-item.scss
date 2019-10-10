@@ -19,6 +19,7 @@
 
   &-label {
     display: none;
+    width: max-content;
     @include ch-space-inset(squish, s);
 
     > .ch-title > .ch-title-sub {
@@ -73,11 +74,10 @@
   // 5. Vertical
 
   .ch-steps--vertical & {
-    min-height: calc(2 * #{$ch-steps-item-min-width});
-
     &-label {
       display: block;
       padding-top: 0;
+      width: auto;
 
       > .ch-title > .ch-title-sub {
         display: block;
