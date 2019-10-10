@@ -15,11 +15,9 @@
   // 1. Label
 
   &-label {
-    padding: {
-      top: #{ch-get-space(xxs)};
-      bottom: #{ch-get-space(xxs)};
-      left: #{ch-get-space(s)};
-    }
+    padding-top: #{ch-get-space(xxs)};
+    padding-bottom: #{ch-get-space(xxs)};
+    padding-left: #{ch-get-space(s)};
     display: none;
     width: max-content;
 
