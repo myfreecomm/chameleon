@@ -2110,12 +2110,12 @@ select.ch-select {
     background: var(--ch-color-primary-active);
     border-color: var(--ch-color-primary-active); }
   .ch-steps-item-label {
-    display: none;
-    width: max-content;
     padding-top: var(--ch-space-xs);
     padding-right: var(--ch-space-s);
     padding-bottom: var(--ch-space-xs);
-    padding-left: var(--ch-space-s); }
+    padding-left: var(--ch-space-s);
+    display: none;
+    width: max-content; }
     .ch-steps-item-label > .ch-title > .ch-title-sub {
       display: none; }
   .ch-steps-item.is-active {
@@ -4604,12 +4604,4 @@ select.ch-select {
         left: var(--ch-dimension-1); }
       .ch-template-nav.is-expanded + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-toggle {
         left: var(--ch-dimension-2); } }
-
-@media screen and (max-width: calc(769px - 1px)) {
-  .ch-progress-bars {
-    background-color: var(--ch-color-border); }
-    .ch-progress-bars > div {
-      background-color: var(--ch-color-primary);
-      width: 50%;
-      height: 2px; } }
 

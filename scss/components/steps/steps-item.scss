@@ -1,5 +1,6 @@
 .ch-steps-item {
   @include ch-transition(opacity);
+  @include ch-steps-item-counter;
 
   display: block;
   position: relative;
@@ -11,16 +12,12 @@
   counter-increment: steps;
   opacity: 0.6;
 
-  // 1.1. Counter
-
-  @include ch-steps-item-counter;
-
-  // 1.2. Label
+  // 1. Label
 
   &-label {
+    @include ch-space-inset(squish, s);
     display: none;
     width: max-content;
-    @include ch-space-inset(squish, s);
 
     > .ch-title > .ch-title-sub {
       display: none;
@@ -49,7 +46,7 @@
     }
 
     .ch-title {
-      color: ch-get-color(primary);
+      color: #{ch-get-color(primary)};
     }
   }
 
