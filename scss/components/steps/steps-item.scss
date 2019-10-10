@@ -71,9 +71,6 @@
     flex-direction: row;
 
     .ch-steps-item {
-      display: flex;
-      justify-content: space-around;
-
       padding-left: calc(var(--ch-space-l) + var(--ch-space-x));
       min-width: calc(var(--ch-space-l) + var(--ch-space-xs));
       min-height: 0;
@@ -87,6 +84,11 @@
         .ch-title-sub {
           display: none;
         }
+      }
+
+      .ch-steps-item-label {
+        padding-left: calc(var(--ch-space-m) + var(--ch-space-m));
+        padding-right: calc(var(--ch-space-m) + var(--ch-space-m));
       }
 
       &:before {
@@ -112,6 +114,10 @@
         .ch-title {
           display: none;
         }
+      }
+
+      &:last-child {
+        min-width: 0;
       }
     }
   }
