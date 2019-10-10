@@ -15,7 +15,11 @@
   // 1. Label
 
   &-label {
-    @include ch-space-inset(squish, s);
+    padding: {
+      top: #{ch-get-space(xxs)};
+      bottom: #{ch-get-space(xxs)};
+      left: #{ch-get-space(s)};
+    }
     display: none;
     width: max-content;
 

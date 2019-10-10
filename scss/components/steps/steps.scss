@@ -7,7 +7,7 @@
   max-width: 100%;
   flex-wrap: nowrap !important; // sass-lint:disable-line no-important
   flex-direction: row;
-  padding-bottom: #{ch-get-space(xxs)};
+  padding-bottom: #{ch-get-space(xs)};
   overflow-x: auto;
 
   &--vertical {

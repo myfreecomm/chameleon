@@ -2030,7 +2030,7 @@ select.ch-select {
   max-width: 100%;
   flex-wrap: nowrap !important;
   flex-direction: row;
-  padding-bottom: var(--ch-space-xxs);
+  padding-bottom: var(--ch-space-xs);
   overflow-x: auto; }
   .ch-steps > *:not(:last-child) {
     margin-right: var(--ch-space-s);
@@ -2060,9 +2060,9 @@ select.ch-select {
   transition-delay: unset;
   display: block;
   position: relative;
-  padding-left: calc(var(--ch-space-xl) + var(--ch-space-xxs));
+  padding-left: calc(var(--ch-space-xl));
   padding-top: 0;
-  min-height: calc(var(--ch-space-xl) + var(--ch-space-xxs));
+  min-height: calc(var(--ch-space-xl));
   counter-increment: steps;
   opacity: 0.6; }
   .ch-steps-item:before {
@@ -2084,8 +2084,8 @@ select.ch-select {
     position: absolute;
     z-index: 2;
     content: counter(steps);
-    width: calc(var(--ch-space-xl) + var(--ch-space-xxs));
-    height: calc(var(--ch-space-xl) + var(--ch-space-xxs));
+    width: calc(var(--ch-space-xl));
+    height: calc(var(--ch-space-xl));
     background: transparent;
     border-radius: 999px;
     text-align: center;
@@ -2110,9 +2110,8 @@ select.ch-select {
     background: var(--ch-color-primary-active);
     border-color: var(--ch-color-primary-active); }
   .ch-steps-item-label {
-    padding-top: var(--ch-space-xs);
-    padding-right: var(--ch-space-s);
-    padding-bottom: var(--ch-space-xs);
+    padding-top: var(--ch-space-xxs);
+    padding-bottom: var(--ch-space-xxs);
     padding-left: var(--ch-space-s);
     display: none;
     width: max-content; }
