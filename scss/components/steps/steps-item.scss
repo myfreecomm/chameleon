@@ -70,6 +70,23 @@
     opacity: 1;
   }
 
+  // 5. Vertical
+
+  .ch-steps--vertical & {
+    min-height: calc(2 * #{$ch-steps-item-min-width});
+
+    &-label {
+      display: block;
+      padding-top: 0;
+
+      > .ch-title > .ch-title-sub {
+        display: block;
+      }
+    }
+  }
+
+  // 5. Desktop behavior
+
   @include ch-media(from, tablet) {
     &.is-active {
       flex-grow: 0;
