@@ -9,4 +9,8 @@
   flex-wrap: nowrap;
   flex-direction: row;
   overflow-x: auto;
+
+  @include ch-media(from, tablet) {
+    @include ch-space-inline-group;
+  }
 }

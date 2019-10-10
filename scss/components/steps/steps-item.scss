@@ -20,6 +20,10 @@
   &-label {
     display: none;
     @include ch-space-inset(squish, s);
+
+    > .ch-title > .ch-title-sub {
+      display: none;
+    }
   }
 
   // 2. Active item
@@ -29,10 +33,6 @@
 
     .ch-steps-item-label {
       display: block;
-    }
-
-    .ch-steps-item-label > .ch-title > .ch-title-sub {
-      display: none;
     }
   }
 
@@ -68,5 +68,20 @@
   &:active {
     color: #{ch-get-color(primary, active)};
     opacity: 1;
+  }
+
+  @include ch-media(from, tablet) {
+    &.is-active {
+      flex-grow: 0;
+    }
+
+    &-label {
+      display: block;
+      padding-top: 0;
+
+      > .ch-title > .ch-title-sub {
+        display: block;
+      }
+    }
   }
 }
