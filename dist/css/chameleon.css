@@ -4604,3 +4604,19 @@ select.ch-select {
       .ch-template-nav.is-expanded + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-toggle {
         left: var(--ch-dimension-2); } }
 
+.ch-blankslate {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .ch-blankslate-content {
+    padding-top: var(--ch-space-m);
+    padding-right: var(--ch-space-s);
+    padding-bottom: var(--ch-space-m);
+    padding-left: var(--ch-space-s);
+    border: 1px solid transparent;
+    text-align: center; }
+    .ch-blankslate-content-icon {
+      width: 220px; }
+
