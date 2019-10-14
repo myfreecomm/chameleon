@@ -4611,9 +4611,9 @@ select.ch-select {
   align-items: center;
   justify-content: center; }
   .ch-blankslate-content {
-    padding-top: var(--ch-space-m);
+    padding-top: var(--ch-space-s);
     padding-right: var(--ch-space-s);
-    padding-bottom: var(--ch-space-m);
+    padding-bottom: var(--ch-space-s);
     padding-left: var(--ch-space-s);
     border: 1px solid transparent;
     text-align: center; }
