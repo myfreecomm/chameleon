@@ -1,24 +1,27 @@
-// 1. Base
-
 .ch-blankslate {
-  $ch-blankslate-icon-width:  220px;
+
+  // 1. Base
 
   display: flex;
   width: 100%;
-
+  
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  // 1.1. Content
-
+  
+  // 2. Content
+  
   &-content {
-    @include ch-box-model(s, stretch, box);
+    $icon-width:  220px;
+
+    @include ch-box-model(s, default, box);
 
     text-align: center;
 
+    // 2.1. Icon
+
     &-icon {
-      width: $ch-blankslate-icon-width;
+      width: $icon-width;
     }
   }
 }
