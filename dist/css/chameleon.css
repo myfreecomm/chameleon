@@ -2196,7 +2196,15 @@ select.ch-select {
       border-bottom-left-radius: var(--ch-border-radius-2);
       display: block;
       width: auto;
-      height: auto; } }
+      height: auto; }
+      .ch-modal--aside {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+        border-radius: 0; } }
 
 .ch-accessBarrier {
   position: relative;
