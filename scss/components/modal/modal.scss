@@ -1,19 +1,47 @@
 .ch-modal {
   @include ch-card;
+  @include ch-transition(visibility opacity transform);
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   border-radius: 0;
   border: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(.75);
+
+  &.is-active {
+    @include ch-transition(visibility opacity transform);
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
 
   &-header {
-    @include ch-card-header;
+    display: flex;
+
+    &:not(:last-child) {
+      @include ch-space-stack(l);
+    }
+
+    &-title {
+      flex-grow: 1;
+    }
+
+    &-closeButton {
+      @include ch-space-inline(right);
+      align-self: flex-start;
+      min-width: fit-content;
+    }
   }
 
   &-content {
-    @include ch-card-content;
     flex-grow: 1;
+
+    * + &:not(:last-child) {
+      @include ch-space-stack(l);
+    }
   }
 
   @include ch-media(from, tablet) {

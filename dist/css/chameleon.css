@@ -2149,13 +2149,26 @@ select.ch-select {
         display: block; } }
 
 .ch-overlay {
+  transition-property: visibility opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: unset;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: var(--ch-color-overlay);
-  z-index: 501; }
+  z-index: 501;
+  visibility: hidden;
+  opacity: 0; }
+  .ch-overlay.is-visible {
+    transition-property: visibility opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: ease-in;
+    visibility: visible;
+    opacity: 1; }
   .ch-overlay--inverse {
     background-color: var(--ch-color-overlay-inverse); }
   .ch-overlay-content {
@@ -2176,18 +2189,42 @@ select.ch-select {
   border-bottom-right-radius: var(--ch-border-radius-2);
   border-bottom-left-radius: var(--ch-border-radius-2);
   background: var(--ch-color-neutral-1);
+  transition-property: visibility opacity transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: unset;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   border-radius: 0;
-  border: 0; }
-  .ch-modal-header:not(:last-child) {
-    margin-bottom: var(--ch-space-m); }
+  border: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.75); }
+  .ch-modal.is-active {
+    transition-property: visibility opacity transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: unset;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1); }
+  .ch-modal-header {
+    display: flex; }
+    .ch-modal-header:not(:last-child) {
+      margin-bottom: var(--ch-space-l); }
+    .ch-modal-header-title {
+      flex-grow: 1; }
+    .ch-modal-header-closeButton {
+      margin-right: 0;
+      margin-left: var(--ch-space-m);
+      align-self: flex-start;
+      min-width: fit-content; }
   .ch-modal-content {
     flex-grow: 1; }
     * + .ch-modal-content:not(:last-child) {
-      margin-bottom: var(--ch-space-m); }
+      margin-bottom: var(--ch-space-l); }
   @media screen and (min-width: 769px) {
     .ch-modal {
       border-top-left-radius: var(--ch-border-radius-2);
