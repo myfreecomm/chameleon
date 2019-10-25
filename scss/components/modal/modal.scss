@@ -1,6 +1,7 @@
 .ch-modal {
   @include ch-card;
   @include ch-transition(visibility opacity transform);
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -16,6 +17,10 @@
     visibility: visible;
     opacity: 1;
     transform: scale(1);
+  }
+
+  &:not(&--aside).is-active {
+    position: relative;
   }
 
   &-header {
@@ -59,6 +64,10 @@
       bottom: 0;
       border-radius: 0;
       transform: translateX(100%);
+
+      &.is-active {
+        transform: translateX(0);
+      }
     }
   }
 }

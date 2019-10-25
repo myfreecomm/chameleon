@@ -2193,6 +2193,7 @@ select.ch-select {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   transition-delay: unset;
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -2210,6 +2211,8 @@ select.ch-select {
     visibility: visible;
     opacity: 1;
     transform: scale(1); }
+  .ch-modal:not(.ch-modal--aside).is-active {
+    position: relative; }
   .ch-modal-header {
     display: flex; }
     .ch-modal-header:not(:last-child) {
@@ -2242,7 +2245,9 @@ select.ch-select {
         right: 0;
         bottom: 0;
         border-radius: 0;
-        transform: translateX(100%); } }
+        transform: translateX(100%); }
+        .ch-modal--aside.is-active {
+          transform: translateX(0); } }
 
 .ch-accessBarrier {
   position: relative;
