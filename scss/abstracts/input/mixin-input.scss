@@ -1,5 +1,4 @@
 @mixin ch-input {
-  @include ch-input-disabled;
   @include ch-box-model(s, squish, box, ch-get-color(border));
   @include ch-border-radius(1);
 
@@ -11,6 +10,12 @@
 
   &:focus {
     border-color: #{ch-get-color(primary, focus)};
+  }
+
+  &:disabled,
+  &.is-disabled,
+  &[readonly] {
+    background-color: ch-get-color(neutral, 2);
   }
 
   &::placeholder {
