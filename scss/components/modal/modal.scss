@@ -1,6 +1,7 @@
 .ch-modal {
   @include ch-card;
   @include ch-transition((visibility, opacity, transform));
+  @include ch-shadow(5, top-bottom, rgba(#000, 0.45));
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -65,6 +66,7 @@
   }
 
   &--aside {
+    @include ch-shadow(5, right-left, rgba(#000, 0.45));
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -86,8 +88,6 @@
   }
 
   @include ch-media(from, tablet) {
-    width: auto;
-
     &:not(&--aside) {
       height: auto;
     }
@@ -95,12 +95,16 @@
     // Modal size variations
 
     @each $size in $ch-modal-sizes {
-      $posfix: ch-generate-variation(($size), (s));
-      $path: if($size != s, #{&}#{&}#{$posfix}, #{&});
+      $posfix: ch-generate-variation(($size), (m));
+      $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
 
       @at-root #{$path} {
         width: ch-get-modal-size($size);
       }
+    }
+
+    &--fullscreen {
+      width: 100%;
     }
 
     // Modal aside max width on desktop

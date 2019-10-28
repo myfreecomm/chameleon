@@ -146,9 +146,9 @@
   --ch-text-size-10:           calc(2.625 * var(--ch-text-unit)); }
 
 :root {
-  --ch-modal-size-s:   25rem;
-  --ch-modal-size-m:   50rem;
-  --ch-modal-size-l:   100%; }
+  --ch-modal-size-s: 300px;
+  --ch-modal-size-m: 500px;
+  --ch-modal-size-l: 800px; }
 
 /* Normalization of HTML elements, manually forked from destyle.css to remove
   styles targeting irrelevant browsers while applying new styles. */
@@ -2199,6 +2199,7 @@ select.ch-select {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   transition-delay: unset;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -2250,6 +2251,7 @@ select.ch-select {
     * + .ch-modal-content:not(:last-child) {
       margin-bottom: var(--ch-space-l); }
   .ch-modal--aside {
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.45);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -2265,20 +2267,20 @@ select.ch-select {
   .ch-modal:not(.ch-modal--aside).is-active {
     position: relative; }
   @media screen and (min-width: 769px) {
+    .ch-modal:not(.ch-modal--aside) {
+      height: auto; }
+    .ch-modal.ch-modal--s {
+      width: var(--ch-modal-size-s); }
     .ch-modal {
-      width: auto; }
-      .ch-modal:not(.ch-modal--aside) {
-        height: auto; }
-      .ch-modal {
-        width: var(--ch-modal-size-s); }
-      .ch-modal.ch-modal--m {
-        width: var(--ch-modal-size-m); }
-      .ch-modal.ch-modal--l {
-        width: var(--ch-modal-size-l); }
-      .ch-template-nav:not(.is-expanded) + .ch-template-content .ch-modal--aside {
-        max-width: calc(100% - var(--ch-dimension-1)); }
-      .ch-template-nav.is-expanded + .ch-template-content .ch-modal--aside {
-        max-width: calc(100% - var(--ch-dimension-2)); } }
+      width: var(--ch-modal-size-m); }
+    .ch-modal.ch-modal--l {
+      width: var(--ch-modal-size-l); }
+    .ch-modal--fullscreen {
+      width: 100%; }
+    .ch-template-nav:not(.is-expanded) + .ch-template-content .ch-modal--aside {
+      max-width: calc(100% - var(--ch-dimension-1)); }
+    .ch-template-nav.is-expanded + .ch-template-content .ch-modal--aside {
+      max-width: calc(100% - var(--ch-dimension-2)); } }
 
 .ch-accessBarrier {
   position: relative;
