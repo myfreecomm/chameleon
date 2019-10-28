@@ -2293,6 +2293,9 @@ select.ch-select {
     .ch-template-nav.is-expanded + .ch-template-content .ch-modal--aside {
       max-width: calc(100% - var(--ch-dimension-2)); } }
   .ch-modal--fullscreen {
+    width: 100%;
+    height: 100%; }
+  .ch-modal--fullWidth {
     width: 100%; }
 
 .ch-accessBarrier {
