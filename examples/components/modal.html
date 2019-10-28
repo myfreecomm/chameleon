@@ -1,5 +1,7 @@
 <!doctype html>
+
 <html>
+
   <head>
     <title>Chameleon - Modal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -7,12 +9,19 @@
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
+ 
   <body>
     <div class="ch-template">
       <main class="ch-template-content">
-        <div class="ch-overlay is-visible">
+        <button type="button" class="ch-button" id="show-modal">Open modal</button>
+        <button type="button" class="ch-button" id="show-aside">Open aside</button>
+
+        <div class="ch-overlay">
           <div class="ch-overlay-content">
+
             <div class="ch-modal ch-modal--aside">
               <header class="ch-modal-header">
                 <h4 class="ch-modal-header-title">Lorem ipsum dolor sit amet</h4>
@@ -39,7 +48,8 @@
                 <button type="button" class="ch-button ch-button--ghost">Cancel</button>
               </footer>
             </div>
-            <div class="ch-modal is-active">
+
+            <div class="ch-modal">
               <header class="ch-modal-header">
                 <h4 class="ch-modal-header-title">Lorem ipsum dolor sit amet</h4>
                 <button type="button" class="ch-modal-header-closeButton ch-button ch-button-icon ch-button--ghost ch-paddingless">
@@ -56,9 +66,37 @@
                 <button type="button" class="ch-button ch-button--ghost">Cancel</button>
               </footer>
             </div>
+
           </div>
         </div>
       </main>
     </div>
+
+    <script>
+      $('#show-modal').on('click', function () {
+        const $overlay = $('.ch-overlay')
+        const $modal = $('.ch-modal:not(.ch-modal--aside)')
+
+        $overlay.addClass('is-visible')
+        $modal.addClass('is-active')
+      })
+
+      $('#show-aside').on('click', function () {
+        const $overlay = $('.ch-overlay')
+        const $modal = $('.ch-modal--aside')
+
+        $overlay.addClass('is-visible')
+        $modal.addClass('is-active')
+      })
+
+      $('.ch-modal-header-closeButton').on('click', function () {
+        const $modal = $(this).parents('.ch-modal')
+        const $overlay = $(this).parents('.ch-overlay')
+
+        $modal.removeClass('is-active')
+        $overlay.removeClass('is-visible')
+      })
+    </script>
   </body>
+
 </html>
