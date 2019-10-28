@@ -113,7 +113,7 @@
       }
 
       + label:before {
-        background: ch-get-color(neutral, 2);
+        background: #{ch-get-color(neutral, 2)};
       }
     }
   }
@@ -121,7 +121,7 @@
   // 5. Negative variation
 
   &--negative {
-    color: ch-get-color(negative);
+    color: #{ch-get-color(negative)};
 
     > input[type="checkbox"],
     > input[type="radio"] {
@@ -130,7 +130,7 @@
       }
 
       &:checked + label:after {
-        background: ch-get-color(negative);
+        background: #{ch-get-color(negative)};
       }
 
       &:hover:focus + label:before,
