@@ -1,0 +1,118 @@
+.ch-modal {
+  @include ch-card;
+  @include ch-transition((visibility, opacity, transform));
+  @include ch-shadow(5, top-bottom, rgba(#000, 0.45));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0; // sass-lint:disable-line variable-for-property
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(.75);
+
+  &.is-active {
+    @include ch-transition((visibility, opacity, transform));
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  & > &-header,
+  & > &-content,
+  & > &-footer {
+    padding-right: ch-get-space(l);
+    padding-left: ch-get-space(l);
+
+    &:only-child {
+      padding-top: ch-get-space(l);
+      padding-bottom: ch-get-space(l);
+    }
+
+    &:last-child {
+      padding-bottom: ch-get-space(l);
+    }
+
+    &:first-child {
+      padding-top: ch-get-space(l);
+    }
+  }
+
+  &-header {
+    @include ch-actions-bar();
+    display: flex;
+  }
+
+  &-content {
+    flex-grow: 1;
+    overflow-y: auto;
+
+    * + &:not(:last-child) {
+      @include ch-space-stack(l);
+    }
+  }
+
+  &--aside {
+    @include ch-shadow(5, right-left, rgba(#000, 0.45));
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0; // sass-lint:disable-line variable-for-property
+    border-radius: 0;
+    transform: translateX(100%);
+
+    &.is-active {
+      transform: translateX(0);
+    }
+  }
+
+  &:not(&--aside).is-active {
+    position: relative;
+  }
+
+  @include ch-media(from, tablet) {
+    &:not(&--aside) {
+      height: auto;
+    }
+
+    // Modal size variations
+
+    @each $size in $ch-modal-sizes {
+      $posfix: ch-generate-variation(($size), (m));
+      $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
+
+      @at-root #{$path} {
+        width: ch-get-modal-size($size);
+      }
+    }
+
+    // Modal aside max width on desktop
+
+    .ch-template-nav:not(.is-expanded) + .ch-template-content & {
+      &--aside {
+        max-width: calc(100% - #{ch-get-dimension(1)});
+      }
+    }
+
+    .ch-template-nav.is-expanded + .ch-template-content & {
+      &--aside {
+        max-width: calc(100% - #{ch-get-dimension(2)});
+      }
+    }
+  }
+
+  &--fullscreen {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+}

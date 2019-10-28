@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <title>Chameleon - Modal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="ch-template">
+      <main class="ch-template-content">
+        <button type="button" class="ch-button" id="show-modal">Open modal</button>
+        <button type="button" class="ch-button" id="show-aside">Open aside</button>
+
+        <div class="ch-overlay">
+          <div class="ch-overlay-content">
+
+            <div class="ch-modal ch-modal--aside">
+              <header class="ch-modal-header">
+                <h4 class="ch-modal-header-content">Lorem ipsum dolor sit amet</h4>
+                <button type="button" class="ch-modal-header-actions ch-button ch-button-icon ch-button--ghost ch-paddingless" role="close">
+                  <i class="ch-icon fal fa-times"></i>
+                </button>
+              </header>
+
+              <main class="ch-modal-content">
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                </p>
+
+                <p>
+                  The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibet Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                </p>
+              </main>
+
+              <footer class="ch-modal-footer">
+                <button type="button" class="ch-button ch-button--primary">Primary</button>
+                <button type="button" class="ch-button ch-button--ghost">Cancel</button>
+              </footer>
+            </div>
+
+            <div class="ch-modal">
+              <header class="ch-modal-header">
+                <h4 class="ch-modal-header-content">Lorem ipsum dolor sit amet</h4>
+                <button type="button" class="ch-modal-header-actions ch-button ch-button-icon ch-button--ghost ch-paddingless" role="close">
+                  <i class="ch-icon fal fa-times"></i>
+                </button>
+              </header>
+
+              <main class="ch-modal-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.</p>
+              </main>
+
+              <footer class="ch-modal-footer">
+                <button type="button" class="ch-button ch-button--primary">Primary</button>
+                <button type="button" class="ch-button ch-button--ghost">Cancel</button>
+              </footer>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      $('#show-modal').on('click', function () {
+        const $overlay = $('.ch-overlay')
+        const $modal = $('.ch-modal:not(.ch-modal--aside)')
+
+        $overlay.addClass('is-visible')
+        $modal.addClass('is-active')
+      })
+
+      $('#show-aside').on('click', function () {
+        const $overlay = $('.ch-overlay')
+        const $modal = $('.ch-modal--aside')
+
+        $overlay.addClass('is-visible')
+        $modal.addClass('is-active')
+      })
+
+      $('.ch-modal-header-actions[role="close"]').on('click', function () {
+        const $modal = $(this).parents('.ch-modal')
+        const $overlay = $(this).parents('.ch-overlay')
+
+        $modal.removeClass('is-active')
+        $overlay.removeClass('is-visible')
+      })
+    </script>
+  </body>
+
+</html>
