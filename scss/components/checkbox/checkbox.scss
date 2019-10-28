@@ -61,7 +61,7 @@
 
     // 2.2. Tick
 
-    &:checked + label:after {
+    & + label:after {
       $offset: calc(#{ch-get-border-radius()} + 1px);
       $size: calc(#{ch-get-icon-size()} - 2 * #{$offset});
 
@@ -70,6 +70,9 @@
 
       width: $size;
       height: $size;
+    }
+    
+    &:checked + label:after {
       background: #{ch-get-color(primary)};
     }
   }
@@ -83,7 +86,66 @@
     padding-left: calc(#{ch-get-icon-size()} + #{ch-get-space(s)});
   }
 
-  // 4. Radio
+  // 4. Disabled and readonly states
+
+  > input[type="checkbox"],
+  > input[type="radio"] {
+    &:disabled,
+    &.is-disabled {
+      & + label,
+      & + label:before,
+      & + label:after {
+        @include ch-disabled;
+      }
+    }
+  }
+
+  > input[type="checkbox"],
+  > input[type="radio"] {
+    &:disabled,
+    &.is-disabled,
+    &[readonly] {
+      &,
+      & + label,
+      & + label:before,
+      & + label:after {
+        pointer-events: none;
+      }
+
+      + label:before {
+        background: ch-get-color(neutral, 2);
+      }
+    }
+  }
+
+  // 5. Negative variation
+
+  &--negative {
+    color: ch-get-color(negative);
+
+    > input[type="checkbox"],
+    > input[type="radio"] {
+      + label:before {
+        border-color: ch-get-color(negative);
+      }
+
+      &:checked + label:after {
+        background: ch-get-color(negative);
+      }
+
+      &:hover:focus + label:before,
+      &:hover + label:before,
+      &:focus + label:before {
+        border-color: #{ch-get-color(negative, focus)};
+      }
+
+      &:active + label:before {
+        border-color: #{ch-get-color(negative, active)};
+      }
+    }
+  }
+
+  // 6. Radio
 
   @at-root .ch-radio > input[type="radio"] {
     + label:before,
