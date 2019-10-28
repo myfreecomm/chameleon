@@ -1,6 +1,6 @@
 @mixin ch-actions-bar ($actionsAlignment: flex-start) {
-  display: flex;
   @include ch-space-inline-group(right);
+  display: flex;
 
   &:not(:last-child) {
     @include ch-space-stack(l);

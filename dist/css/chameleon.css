@@ -2242,11 +2242,11 @@ select.ch-select {
     .ch-modal > .ch-modal-footer:first-child {
       padding-top: var(--ch-space-l); }
   .ch-modal-header {
-    display: flex;
     display: inline-flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-end;
+    display: flex;
     display: flex; }
     .ch-modal-header > *:not(:first-child) {
       margin-right: 0;
@@ -4771,11 +4771,11 @@ select.ch-select {
       width: 220px; }
 
 .ch-actionsBar {
-  display: flex;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  display: flex; }
   .ch-actionsBar > *:not(:first-child) {
     margin-right: 0;
     margin-left: var(--ch-space-m); }
