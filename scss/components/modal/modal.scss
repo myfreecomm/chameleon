@@ -1,26 +1,40 @@
 .ch-modal {
   @include ch-card;
-  @include ch-transition(visibility opacity transform);
+  @include ch-transition((visibility, opacity, transform));
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
+  padding: 0;
   border: 0;
   visibility: hidden;
   opacity: 0;
   transform: scale(.75);
 
   &.is-active {
-    @include ch-transition(visibility opacity transform);
+    @include ch-transition((visibility, opacity, transform));
     visibility: visible;
     opacity: 1;
     transform: scale(1);
   }
 
-  &:not(&--aside).is-active {
-    position: relative;
+  & > &-header,
+  & > &-content,
+  & > &-footer {
+    padding-right: ch-get-space(l);
+    padding-left: ch-get-space(l);
+
+    &:only-child {
+      padding-top: ch-get-space(l);
+      padding-bottom: ch-get-space(l);
+    }
+
+    &:last-child {
+      padding-bottom: ch-get-space(l);
+    }
+
+    &:first-child {
+      padding-top: ch-get-space(l);
+    }
   }
 
   &-header {
@@ -43,30 +57,63 @@
 
   &-content {
     flex-grow: 1;
+    overflow-y: auto;
 
     * + &:not(:last-child) {
       @include ch-space-stack(l);
     }
   }
 
+  &--aside {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    transform: translateX(100%);
+
+    &.is-active {
+      transform: translateX(0);
+    }
+  }
+
+  &:not(&--aside).is-active {
+    position: relative;
+  }
+
   @include ch-media(from, tablet) {
-    @include ch-border-radius(2);
-    display: block;
     width: auto;
-    height: auto;
 
-    &--aside {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      height: 100%;
-      right: 0;
-      bottom: 0;
-      border-radius: 0;
-      transform: translateX(100%);
+    &:not(&--aside) {
+      height: auto;
+    }
 
-      &.is-active {
-        transform: translateX(0);
+    // Modal size variations
+
+    @each $size in $ch-modal-sizes {
+      $posfix: ch-generate-variation(($size), (s));
+      $path: if($size != s, #{&}#{&}#{$posfix}, #{&});
+
+      @at-root #{$path} {
+        width: ch-get-modal-size($size);
+      }
+    }
+
+    // Modal aside max width on desktop
+
+    .ch-template-nav:not(.is-expanded) + .ch-template-content & {
+      &--aside {
+        max-width: calc(100% - #{ch-get-dimension(1)});
+      }
+    }
+
+    .ch-template-nav.is-expanded + .ch-template-content & {
+      &--aside {
+        max-width: calc(100% - #{ch-get-dimension(2)});
       }
     }
   }
