@@ -1,4 +1,4 @@
-@mixin ch-actions-bar ($actionsAlignment: flex-start ) {
+@mixin ch-actions-bar ($actionsAlignment: flex-start) {
   display: flex;
   @include ch-space-inline-group(right);
 
