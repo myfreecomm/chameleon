@@ -10,16 +10,45 @@
   </head>
   <body>
     <div class="ch-template">
-      <main class="ch-template-content ch-spaceInlineGroup">
+      <main class="ch-template-content ch-spaceStackGroup">
   
-        <div class="ch-radio">
-          <input type="radio" name="radio" id="field_1">
-          <label for="field_1">Option 1</label>
+        <div class="ch-spaceInlineGroup">
+          <div class="ch-radio">
+            <input type="radio" name="radio_1" id="field_1">
+            <label for="field_1">Option 1</label>
+          </div>
+          
+          <div class="ch-radio">
+            <input type="radio" name="radio_1" id="field_2">
+            <label for="field_2">Option 2</label>
+          </div>
         </div>
 
-        <div class="ch-radio">
-          <input type="radio" name="radio" id="field_2">
-          <label for="field_2">Option 2</label>
+        <div class="ch-spaceInlineGroup">
+          <div class="ch-radio">
+            <input type="radio" name="radio_2" id="field_3">
+            <label for="field_3">Option 1</label>
+          </div>
+
+          <div class="ch-radio">
+            <input type="radio" name="radio_2" id="field_4" readonly checked>
+            <label for="field_4">Option 2</label>
+          </div>
+
+          <div class="ch-radio">
+            <input type="radio" name="radio_2" id="field_5" disabled>
+            <label for="field_5">Option 3</label>
+          </div>
+
+          <div class="ch-radio ch-checkbox--negative">
+            <input type="radio" name="radio_2" id="field_6">
+            <label for="field_6">Option 4</label>
+          </div>
+
+          <div class="ch-radio ch-checkbox--negative">
+            <input type="radio" name="radio_2" id="field_7" disabled>
+            <label for="field_7">Option 5</label>
+          </div>
         </div>
 
       </main>
