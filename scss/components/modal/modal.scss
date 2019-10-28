@@ -2,10 +2,12 @@
   @include ch-card;
   @include ch-transition((visibility, opacity, transform));
   @include ch-shadow(5, top-bottom, rgba(#000, 0.45));
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0;
+  max-width: 100%;
+  max-height: 100%;
   border: 0;
   visibility: hidden;
   opacity: 0;
@@ -39,21 +41,8 @@
   }
 
   &-header {
+    @include ch-actions-bar();
     display: flex;
-
-    &:not(:last-child) {
-      @include ch-space-stack(l);
-    }
-
-    &-title {
-      flex-grow: 1;
-    }
-
-    &-closeButton {
-      @include ch-space-inline(right);
-      align-self: flex-start;
-      min-width: fit-content;
-    }
   }
 
   &-content {
@@ -103,10 +92,6 @@
       }
     }
 
-    &--fullscreen {
-      width: 100%;
-    }
-
     // Modal aside max width on desktop
 
     .ch-template-nav:not(.is-expanded) + .ch-template-content & {
@@ -120,5 +105,9 @@
         max-width: calc(100% - #{ch-get-dimension(2)});
       }
     }
+  }
+
+  &--fullscreen {
+    width: 100%;
   }
 }
