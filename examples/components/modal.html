@@ -78,7 +78,7 @@
         const $modal = $('.ch-modal:not(.ch-modal--aside)')
 
         $overlay.addClass('is-visible')
-        $modal.addClass('is-active')
+        $modal.addClass('is-open')
       })
 
       $('#show-aside').on('click', function () {
@@ -86,14 +86,14 @@
         const $modal = $('.ch-modal--aside')
 
         $overlay.addClass('is-visible')
-        $modal.addClass('is-active')
+        $modal.addClass('is-open')
       })
 
       $('.ch-modal-header-actions[role="close"]').on('click', function () {
         const $modal = $(this).parents('.ch-modal')
         const $overlay = $(this).parents('.ch-overlay')
 
-        $modal.removeClass('is-active')
+        $modal.removeClass('is-open')
         $overlay.removeClass('is-visible')
       })
     </script>
