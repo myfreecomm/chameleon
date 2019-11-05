@@ -2292,7 +2292,7 @@ select.ch-select {
   visibility: hidden;
   opacity: 0;
   transform: scale(0.75); }
-  .ch-modal.is-active {
+  .ch-modal.is-open {
     transition-property: visibility, opacity, transform;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
@@ -2352,9 +2352,9 @@ select.ch-select {
     margin: 0;
     border-radius: 0;
     transform: translateX(100%); }
-    .ch-modal--aside.is-active {
+    .ch-modal--aside.is-open {
       transform: translateX(0); }
-  .ch-modal:not(.ch-modal--aside).is-active {
+  .ch-modal:not(.ch-modal--aside).is-open {
     position: relative; }
   @media screen and (min-width: 769px) {
     .ch-modal:not(.ch-modal--aside) {
