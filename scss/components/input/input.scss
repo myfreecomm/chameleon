@@ -20,25 +20,23 @@
     @include ch-box-model(xs, squish, box, ch-get-color(border));
   }
 
-  // 4. Support variations
+  // 4. Negative variation
 
-  @each $type in (info, warning, negative, positive) {
-    &--#{$type} {
-      border-color: #{ch-get-color($type)};
+  &--negative {
+    border-color: #{ch-get-color(negative)};
 
-      // 4.1. Focus interaction
+    // 4.1. Focus interaction
 
-      &:hover:focus,
-      &:hover,
-      &:focus {
-        border-color: #{ch-get-color($type, focus)};
-      }
+    &:hover:focus,
+    &:hover,
+    &:focus {
+      border-color: #{ch-get-color(negative, focus)};
+    }
 
-      // 4.2. Active interaction
+    // 4.2. Active interaction
 
-      &:active {
-        border-color: #{ch-get-color($type, active)};
-      }
+    &:active {
+      border-color: #{ch-get-color(negative, active)};
     }
   }
 }

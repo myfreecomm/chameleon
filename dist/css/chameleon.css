@@ -568,6 +568,11 @@ template {
 [hidden] {
   display: none; }
 
+*:disabled,
+*.is-disabled {
+  opacity: 0.75;
+  pointer-events: none; }
+
 .ch-text--left {
   text-align: left !important; }
 
@@ -868,7 +873,8 @@ template {
     border-color: var(--ch-color-default-active);
     background-color: var(--ch-color-default-active); }
   .ch-button:disabled, .ch-button.is-disabled {
-    opacity: 0.5; }
+    opacity: 0.75;
+    pointer-events: none; }
     .ch-button:disabled:after, .ch-button.is-disabled:after {
       display: none; }
   .ch-button--brand {
@@ -1146,14 +1152,18 @@ template {
     .ch-radio > input[type="checkbox"]:active + label:before,
     .ch-radio > input[type="radio"]:active + label:before {
       border-color: var(--ch-color-primary-active); }
+    .ch-checkbox > input[type="checkbox"] + label:after,
+    .ch-checkbox > input[type="radio"] + label:after,
+    .ch-radio > input[type="checkbox"] + label:after,
+    .ch-radio > input[type="radio"] + label:after {
+      top: calc(var(--ch-border-radius-1) + 1px);
+      left: calc(var(--ch-border-radius-1) + 1px);
+      width: calc(var(--ch-icon-size-m) - 2 * calc(var(--ch-border-radius-1) + 1px));
+      height: calc(var(--ch-icon-size-m) - 2 * calc(var(--ch-border-radius-1) + 1px)); }
     .ch-checkbox > input[type="checkbox"]:checked + label:after,
     .ch-checkbox > input[type="radio"]:checked + label:after,
     .ch-radio > input[type="checkbox"]:checked + label:after,
     .ch-radio > input[type="radio"]:checked + label:after {
-      top: calc(var(--ch-border-radius-1) + 1px);
-      left: calc(var(--ch-border-radius-1) + 1px);
-      width: calc(var(--ch-icon-size-m) - 2 * calc(var(--ch-border-radius-1) + 1px));
-      height: calc(var(--ch-icon-size-m) - 2 * calc(var(--ch-border-radius-1) + 1px));
       background: var(--ch-color-primary); }
   .ch-checkbox > input[type="checkbox"] + label,
   .ch-checkbox > input[type="radio"] + label,
@@ -1161,6 +1171,120 @@ template {
   .ch-radio > input[type="radio"] + label {
     display: inline-block;
     padding-left: calc(var(--ch-icon-size-m) + var(--ch-space-s)); }
+  .ch-checkbox > input[type="checkbox"]:disabled + label,
+  .ch-checkbox > input[type="checkbox"]:disabled + label:before,
+  .ch-checkbox > input[type="checkbox"]:disabled + label:after, .ch-checkbox > input[type="checkbox"].is-disabled + label,
+  .ch-checkbox > input[type="checkbox"].is-disabled + label:before,
+  .ch-checkbox > input[type="checkbox"].is-disabled + label:after,
+  .ch-checkbox > input[type="radio"]:disabled + label,
+  .ch-checkbox > input[type="radio"]:disabled + label:before,
+  .ch-checkbox > input[type="radio"]:disabled + label:after,
+  .ch-checkbox > input[type="radio"].is-disabled + label,
+  .ch-checkbox > input[type="radio"].is-disabled + label:before,
+  .ch-checkbox > input[type="radio"].is-disabled + label:after,
+  .ch-radio > input[type="checkbox"]:disabled + label,
+  .ch-radio > input[type="checkbox"]:disabled + label:before,
+  .ch-radio > input[type="checkbox"]:disabled + label:after,
+  .ch-radio > input[type="checkbox"].is-disabled + label,
+  .ch-radio > input[type="checkbox"].is-disabled + label:before,
+  .ch-radio > input[type="checkbox"].is-disabled + label:after,
+  .ch-radio > input[type="radio"]:disabled + label,
+  .ch-radio > input[type="radio"]:disabled + label:before,
+  .ch-radio > input[type="radio"]:disabled + label:after,
+  .ch-radio > input[type="radio"].is-disabled + label,
+  .ch-radio > input[type="radio"].is-disabled + label:before,
+  .ch-radio > input[type="radio"].is-disabled + label:after {
+    opacity: 0.75;
+    pointer-events: none; }
+  .ch-checkbox > input[type="checkbox"]:disabled,
+  .ch-checkbox > input[type="checkbox"]:disabled + label,
+  .ch-checkbox > input[type="checkbox"]:disabled + label:before,
+  .ch-checkbox > input[type="checkbox"]:disabled + label:after, .ch-checkbox > input[type="checkbox"].is-disabled,
+  .ch-checkbox > input[type="checkbox"].is-disabled + label,
+  .ch-checkbox > input[type="checkbox"].is-disabled + label:before,
+  .ch-checkbox > input[type="checkbox"].is-disabled + label:after, .ch-checkbox > input[type="checkbox"][readonly],
+  .ch-checkbox > input[type="checkbox"][readonly] + label,
+  .ch-checkbox > input[type="checkbox"][readonly] + label:before,
+  .ch-checkbox > input[type="checkbox"][readonly] + label:after,
+  .ch-checkbox > input[type="radio"]:disabled,
+  .ch-checkbox > input[type="radio"]:disabled + label,
+  .ch-checkbox > input[type="radio"]:disabled + label:before,
+  .ch-checkbox > input[type="radio"]:disabled + label:after,
+  .ch-checkbox > input[type="radio"].is-disabled,
+  .ch-checkbox > input[type="radio"].is-disabled + label,
+  .ch-checkbox > input[type="radio"].is-disabled + label:before,
+  .ch-checkbox > input[type="radio"].is-disabled + label:after,
+  .ch-checkbox > input[type="radio"][readonly],
+  .ch-checkbox > input[type="radio"][readonly] + label,
+  .ch-checkbox > input[type="radio"][readonly] + label:before,
+  .ch-checkbox > input[type="radio"][readonly] + label:after,
+  .ch-radio > input[type="checkbox"]:disabled,
+  .ch-radio > input[type="checkbox"]:disabled + label,
+  .ch-radio > input[type="checkbox"]:disabled + label:before,
+  .ch-radio > input[type="checkbox"]:disabled + label:after,
+  .ch-radio > input[type="checkbox"].is-disabled,
+  .ch-radio > input[type="checkbox"].is-disabled + label,
+  .ch-radio > input[type="checkbox"].is-disabled + label:before,
+  .ch-radio > input[type="checkbox"].is-disabled + label:after,
+  .ch-radio > input[type="checkbox"][readonly],
+  .ch-radio > input[type="checkbox"][readonly] + label,
+  .ch-radio > input[type="checkbox"][readonly] + label:before,
+  .ch-radio > input[type="checkbox"][readonly] + label:after,
+  .ch-radio > input[type="radio"]:disabled,
+  .ch-radio > input[type="radio"]:disabled + label,
+  .ch-radio > input[type="radio"]:disabled + label:before,
+  .ch-radio > input[type="radio"]:disabled + label:after,
+  .ch-radio > input[type="radio"].is-disabled,
+  .ch-radio > input[type="radio"].is-disabled + label,
+  .ch-radio > input[type="radio"].is-disabled + label:before,
+  .ch-radio > input[type="radio"].is-disabled + label:after,
+  .ch-radio > input[type="radio"][readonly],
+  .ch-radio > input[type="radio"][readonly] + label,
+  .ch-radio > input[type="radio"][readonly] + label:before,
+  .ch-radio > input[type="radio"][readonly] + label:after {
+    pointer-events: none; }
+  .ch-checkbox > input[type="checkbox"]:disabled + label:before, .ch-checkbox > input[type="checkbox"].is-disabled + label:before, .ch-checkbox > input[type="checkbox"][readonly] + label:before,
+  .ch-checkbox > input[type="radio"]:disabled + label:before,
+  .ch-checkbox > input[type="radio"].is-disabled + label:before,
+  .ch-checkbox > input[type="radio"][readonly] + label:before,
+  .ch-radio > input[type="checkbox"]:disabled + label:before,
+  .ch-radio > input[type="checkbox"].is-disabled + label:before,
+  .ch-radio > input[type="checkbox"][readonly] + label:before,
+  .ch-radio > input[type="radio"]:disabled + label:before,
+  .ch-radio > input[type="radio"].is-disabled + label:before,
+  .ch-radio > input[type="radio"][readonly] + label:before {
+    background: var(--ch-color-neutral-2); }
+  .ch-checkbox--negative,
+  .ch-radio--negative {
+    color: var(--ch-color-negative); }
+    .ch-checkbox--negative > input[type="checkbox"] + label:before,
+    .ch-checkbox--negative > input[type="radio"] + label:before,
+    .ch-radio--negative > input[type="checkbox"] + label:before,
+    .ch-radio--negative > input[type="radio"] + label:before {
+      border-color: var(--ch-color-negative); }
+    .ch-checkbox--negative > input[type="checkbox"]:checked + label:after,
+    .ch-checkbox--negative > input[type="radio"]:checked + label:after,
+    .ch-radio--negative > input[type="checkbox"]:checked + label:after,
+    .ch-radio--negative > input[type="radio"]:checked + label:after {
+      background: var(--ch-color-negative); }
+    .ch-checkbox--negative > input[type="checkbox"]:hover:focus + label:before,
+    .ch-checkbox--negative > input[type="checkbox"]:hover + label:before,
+    .ch-checkbox--negative > input[type="checkbox"]:focus + label:before,
+    .ch-checkbox--negative > input[type="radio"]:hover:focus + label:before,
+    .ch-checkbox--negative > input[type="radio"]:hover + label:before,
+    .ch-checkbox--negative > input[type="radio"]:focus + label:before,
+    .ch-radio--negative > input[type="checkbox"]:hover:focus + label:before,
+    .ch-radio--negative > input[type="checkbox"]:hover + label:before,
+    .ch-radio--negative > input[type="checkbox"]:focus + label:before,
+    .ch-radio--negative > input[type="radio"]:hover:focus + label:before,
+    .ch-radio--negative > input[type="radio"]:hover + label:before,
+    .ch-radio--negative > input[type="radio"]:focus + label:before {
+      border-color: var(--ch-color-negative-focus); }
+    .ch-checkbox--negative > input[type="checkbox"]:active + label:before,
+    .ch-checkbox--negative > input[type="radio"]:active + label:before,
+    .ch-radio--negative > input[type="checkbox"]:active + label:before,
+    .ch-radio--negative > input[type="radio"]:active + label:before {
+      border-color: var(--ch-color-negative-active); }
   .ch-radio > input[type="radio"] + label:before,
   .ch-radio > input[type="radio"]:checked + label:after {
     border-radius: 999px; }
@@ -1394,14 +1518,6 @@ template {
   border-bottom-right-radius: var(--ch-border-radius-1);
   border-bottom-left-radius: var(--ch-border-radius-1);
   background-color: var(--ch-color-neutral-1); }
-  .ch-input:disabled, .ch-input.is-disabled,
-  .ch-textarea:disabled,
-  .ch-textarea.is-disabled,
-  .ch-file:disabled,
-  .ch-file.is-disabled {
-    opacity: .75;
-    background-color: var(--ch-color-neutral-2);
-    pointer-events: none; }
   .ch-input:active,
   .ch-textarea:active,
   .ch-file:active {
@@ -1410,6 +1526,14 @@ template {
   .ch-textarea:focus,
   .ch-file:focus {
     border-color: var(--ch-color-primary-focus); }
+  .ch-input:disabled, .ch-input.is-disabled, .ch-input[readonly],
+  .ch-textarea:disabled,
+  .ch-textarea.is-disabled,
+  .ch-textarea[readonly],
+  .ch-file:disabled,
+  .ch-file.is-disabled,
+  .ch-file[readonly] {
+    background-color: var(--ch-color-neutral-2); }
   .ch-input::placeholder,
   .ch-textarea::placeholder,
   .ch-file::placeholder {
@@ -1427,38 +1551,6 @@ template {
     padding-bottom: var(--ch-space-xxs);
     padding-left: var(--ch-space-xs);
     border: 1px solid var(--ch-color-border); }
-  .ch-input--info,
-  .ch-textarea--info,
-  .ch-file--info {
-    border-color: var(--ch-color-info); }
-    .ch-input--info:hover:focus, .ch-input--info:hover, .ch-input--info:focus,
-    .ch-textarea--info:hover:focus,
-    .ch-textarea--info:hover,
-    .ch-textarea--info:focus,
-    .ch-file--info:hover:focus,
-    .ch-file--info:hover,
-    .ch-file--info:focus {
-      border-color: var(--ch-color-info-focus); }
-    .ch-input--info:active,
-    .ch-textarea--info:active,
-    .ch-file--info:active {
-      border-color: var(--ch-color-info-active); }
-  .ch-input--warning,
-  .ch-textarea--warning,
-  .ch-file--warning {
-    border-color: var(--ch-color-warning); }
-    .ch-input--warning:hover:focus, .ch-input--warning:hover, .ch-input--warning:focus,
-    .ch-textarea--warning:hover:focus,
-    .ch-textarea--warning:hover,
-    .ch-textarea--warning:focus,
-    .ch-file--warning:hover:focus,
-    .ch-file--warning:hover,
-    .ch-file--warning:focus {
-      border-color: var(--ch-color-warning-focus); }
-    .ch-input--warning:active,
-    .ch-textarea--warning:active,
-    .ch-file--warning:active {
-      border-color: var(--ch-color-warning-active); }
   .ch-input--negative,
   .ch-textarea--negative,
   .ch-file--negative {
@@ -1475,22 +1567,9 @@ template {
     .ch-textarea--negative:active,
     .ch-file--negative:active {
       border-color: var(--ch-color-negative-active); }
-  .ch-input--positive,
-  .ch-textarea--positive,
-  .ch-file--positive {
-    border-color: var(--ch-color-positive); }
-    .ch-input--positive:hover:focus, .ch-input--positive:hover, .ch-input--positive:focus,
-    .ch-textarea--positive:hover:focus,
-    .ch-textarea--positive:hover,
-    .ch-textarea--positive:focus,
-    .ch-file--positive:hover:focus,
-    .ch-file--positive:hover,
-    .ch-file--positive:focus {
-      border-color: var(--ch-color-positive-focus); }
-    .ch-input--positive:active,
-    .ch-textarea--positive:active,
-    .ch-file--positive:active {
-      border-color: var(--ch-color-positive-active); }
+
+.ch-file {
+  line-height: calc(100% + 2 * 1px); }
 
 .ch-menu-item {
   padding-top: var(--ch-space-s);
@@ -1601,14 +1680,12 @@ select.ch-select {
   padding-right: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs));
   background: var(--ch-color-neutral-1) url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgNTEyIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMTkuNSAzMjYuOUwzLjUgMjA5LjFjLTQuNy00LjctNC43LTEyLjMgMC0xN2w3LjEtNy4xYzQuNy00LjcgMTIuMy00LjcgMTcgMEwxMjggMjg3LjNsMTAwLjQtMTAyLjJjNC43LTQuNyAxMi4zLTQuNyAxNyAwbDcuMSA3LjFjNC43IDQuNyA0LjcgMTIuMyAwIDE3TDEzNi41IDMyN2MtNC43IDQuNi0xMi4zIDQuNi0xNy0uMXoiPjwvcGF0aD48L3N2Zz4=") no-repeat right calc((calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) / 2) - var(--ch-icon-size-m) / 2) center;
   background-size: var(--ch-icon-size-m) var(--ch-icon-size-m); }
-  select.ch-select:disabled, select.ch-select.is-disabled {
-    opacity: .75;
-    background-color: var(--ch-color-neutral-2);
-    pointer-events: none; }
   select.ch-select:active {
     border-color: var(--ch-color-primary-active); }
   select.ch-select:focus {
     border-color: var(--ch-color-primary-focus); }
+  select.ch-select:disabled, select.ch-select.is-disabled, select.ch-select[readonly] {
+    background-color: var(--ch-color-neutral-2); }
   select.ch-select::placeholder {
     color: var(--ch-color-text-2);
     opacity: .75; }
