@@ -6,7 +6,7 @@
     height: #{ch-get-dimension(1)};
   }
 
-  @include ch-transition(box-shadow margin-left);
+  @include ch-transition(unquote('box-shadow, margin-left, top'));
 
   display: flex;
   align-items: center;
@@ -157,5 +157,15 @@
     &:before {
       opacity: 0.95;
     }
+  }
+
+  // 4.4. Hide state
+
+  &.is-hide {
+    @include ch-media(from, tablet) {
+      top: 0;
+    }
+    
+    top: -100%;
   }
 }
