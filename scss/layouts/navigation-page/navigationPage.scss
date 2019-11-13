@@ -53,6 +53,8 @@
 
       $nav-top: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
 
+      @include ch-transition(top);
+
       position: fixed;
       top: $nav-top;
       left: 0;
@@ -148,6 +150,15 @@
       }
     }
   }
+
+  // 6. Template header hide state
+
+  @at-root .ch-template-header.is-hide + & > #{&}-aside {
+    > .ch-menu,
+    > .ch-steps {
+      @include ch-media(only, mobile) {
+        top: 0;
+      }
+    }
+  }
 }
-
-
