@@ -55,9 +55,12 @@
         top: auto;
         left: auto;
         right: auto;
+
+        background: transparent;
       }
 
       $nav-top: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
+      $background: linear-gradient(to bottom,#{ch-get-color(neutral, 1)} 0%,transparent 100%);
 
       @include ch-transition(top);
 
@@ -65,8 +68,9 @@
       top: $nav-top;
       left: 0;
       right: 0;
+      z-index: #{ch-get-z-index(2, 1)};
 
-      background: #{ch-get-color(neutral, 1)};
+      background: $background;
     }
 
     > .ch-steps {
@@ -163,10 +167,7 @@
     > .ch-menu,
     > .ch-steps {
       @include ch-media(only, mobile) {
-        @include ch-shadow(2, top-bottom);
-
         top: 0;
-        z-index: #{ch-get-z-index(2, 1)};
       }
     }
   }

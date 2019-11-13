@@ -4962,7 +4962,8 @@ a.ch-steps-item.is-completed:active:before {
       top: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s));
       left: 0;
       right: 0;
-      background: var(--ch-color-neutral-1); }
+      z-index: 101;
+      background: linear-gradient(to bottom, var(--ch-color-neutral-1) 0%, transparent 100%); }
       @media screen and (min-width: 769px) {
         .ch-navigationPage-aside > .ch-steps,
         .ch-navigationPage-aside > .ch-menu {
@@ -4978,7 +4979,8 @@ a.ch-steps-item.is-completed:active:before {
           position: relative;
           top: auto;
           left: auto;
-          right: auto; } }
+          right: auto;
+          background: transparent; } }
     .ch-navigationPage-aside > .ch-steps {
       padding-top: var(--ch-space-xs);
       padding-right: var(--ch-space-xs);
@@ -5054,7 +5056,5 @@ a.ch-steps-item.is-completed:active:before {
   @media screen and (max-width: calc(769px - 1px)) {
     .ch-template-header.is-hide + .ch-navigationPage > .ch-navigationPage-aside > .ch-menu,
     .ch-template-header.is-hide + .ch-navigationPage > .ch-navigationPage-aside > .ch-steps {
-      box-shadow: 0 2px 10px rgba(172, 185, 210, 0.65);
-      top: 0;
-      z-index: 101; } }
+      top: 0; } }
 
