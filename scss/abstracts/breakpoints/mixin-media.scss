@@ -8,13 +8,13 @@
     }
 
     @else if $screen == tablet {
-      @include ch-tablet {
+      @include ch-from-tablet {
         @content;
       }
     }
-    
+
     @else if $screen == desktop {
-      @include ch-desktop {
+      @include ch-from-desktop {
         @content;
       }
     }
@@ -24,13 +24,13 @@
 
   @else if $type == to {
     @if $screen == mobile {
-      @include ch-mobile {
+      @include ch-only-mobile {
         @content;
       }
     }
 
     @else if $screen == tablet {
-      @include ch-tablet {
+      @include ch-to-tablet {
         @content;
       }
     }
@@ -44,19 +44,19 @@
 
   @else if $type == only {
     @if $screen == mobile {
-      @include ch-mobile {
+      @include ch-only-mobile {
         @content;
       }
     }
 
     @else if $screen == tablet {
-      @include ch-tablet-only {
+      @include ch-only-tablet {
         @content;
       }
     }
 
     @else if $screen == desktop {
-      @include ch-desktop {
+      @include ch-from-desktop {
         @content;
       }
     }
