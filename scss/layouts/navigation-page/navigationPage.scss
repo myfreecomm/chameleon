@@ -45,7 +45,7 @@
         @include ch-transition(left);
 
         $nav-top: ch-get-dimension(1);
-
+        
         top: $nav-top;
         left: $nav-top;
       }
@@ -60,7 +60,6 @@
       }
 
       $nav-top: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
-      $background: linear-gradient(to bottom,#{ch-get-color(neutral, 1)} 75%,transparent 100%);
 
       @include ch-transition(top);
 
@@ -70,7 +69,7 @@
       right: 0;
       z-index: #{ch-get-z-index(2, 1)};
 
-      background: $background;
+      background: #{ch-get-color(neutral, 1)};
     }
 
     > .ch-steps {
@@ -153,7 +152,7 @@
         left: #{ch-get-dimension(2)};
       }
     }
-  
+
     .ch-navigationPage-actions {
       @include ch-media(from, desktop) {
         left: #{ch-get-dimension(2)};
@@ -167,6 +166,8 @@
     > .ch-menu,
     > .ch-steps {
       @include ch-media(only, mobile) {
+        @include ch-border(bottom);
+
         top: 0;
       }
     }
