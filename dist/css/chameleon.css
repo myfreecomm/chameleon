@@ -5054,6 +5054,10 @@ a.ch-steps-item.is-completed:active:before {
   @media screen and (max-width: calc(769px - 1px)) {
     .ch-template-header.is-hide + .ch-navigationPage > .ch-navigationPage-aside > .ch-menu,
     .ch-template-header.is-hide + .ch-navigationPage > .ch-navigationPage-aside > .ch-steps {
+      top: 0; } }
+  @media screen and (max-width: calc(769px - 1px)) {
+    .ch-template-header.is-sticky + .ch-navigationPage > .ch-navigationPage-aside > .ch-menu,
+    .ch-template-header.is-sticky + .ch-navigationPage > .ch-navigationPage-aside > .ch-steps {
       border-bottom: 1px solid var(--ch-color-border);
       top: 0; } }
 

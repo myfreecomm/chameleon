@@ -166,9 +166,18 @@
     > .ch-menu,
     > .ch-steps {
       @include ch-media(only, mobile) {
-        @include ch-border(bottom);
-
         top: 0;
+      }
+    }
+  }
+
+  // 6. Template header hide state
+
+  @at-root .ch-template-header.is-sticky + & > #{&}-aside {
+    > .ch-menu,
+    > .ch-steps {
+      @include ch-media(only, mobile) {
+        @include ch-border(bottom);
       }
     }
   }
