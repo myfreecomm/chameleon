@@ -1,13 +1,13 @@
 .ch-steps-item {
   @include ch-transition(opacity);
-  @include ch-steps-item-counter;
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
 
-  padding-left: $ch-steps-item-min-width;
-  padding-top: 0;
-  min-height: $ch-steps-item-width;
+  padding-left: #{ch-get-space(xl)};
+  min-height: #{ch-get-space(xl)};
 
   counter-increment: steps;
   opacity: 0.6;
@@ -15,22 +15,20 @@
   // 1. Label
 
   &-label {
-    padding-top: #{ch-get-space(xxs)};
-    padding-bottom: #{ch-get-space(xxs)};
-    padding-left: #{ch-get-space(s)};
+    @include ch-media(from, tablet) {
+      display: block;
+      padding-top: 0;
+    }
+
     display: none;
     width: max-content;
 
-    > .ch-title > .ch-title-sub {
-      display: none;
-    }
+    padding-left: #{ch-get-space(s)};
   }
 
   // 2. Active item
 
   &.is-active {
-    flex-grow: 1;
-
     .ch-steps-item-label {
       display: block;
     }
@@ -43,12 +41,14 @@
   &.is-completed {
     opacity: 1;
 
-    &:before {
-      @include ch-shadow(2);
-    }
-
-    .ch-title {
+    > .ch-title {
       color: #{ch-get-color(primary)};
+    }
+  }
+
+  &.is-active {
+    @include ch-media(from, tablet) {
+      flex-grow: 0;
     }
   }
 
@@ -72,32 +72,8 @@
 
   // 5. Vertical
 
-  .ch-steps--vertical & {
-    &-label {
-      display: block;
-      padding-top: 0;
-      width: auto;
-
-      > .ch-title > .ch-title-sub {
-        display: block;
-      }
-    }
-  }
-
-  // 5. Desktop behavior
-
-  @include ch-media(from, tablet) {
-    &.is-active {
-      flex-grow: 0;
-    }
-
-    &-label {
-      display: block;
-      padding-top: 0;
-
-      > .ch-title > .ch-title-sub {
-        display: block;
-      }
-    }
+  @at-root .ch-steps.ch-steps--vertical #{&}-label {
+    display: block;
+    width: auto;
   }
 }
