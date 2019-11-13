@@ -29,6 +29,8 @@
   // 2. Active item
 
   &.is-active {
+    flex: 1;
+
     .ch-steps-item-label {
       display: block;
     }
