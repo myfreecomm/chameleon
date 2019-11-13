@@ -1,6 +1,12 @@
 .ch-navigationPage {
   // 1. Base
 
+  $header-size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
+
+  @include ch-media (to, mobile) {
+    padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(s)});
+  }
+
   @include ch-media (only, tablet) {
     padding-bottom: ch-get-space();
   }
@@ -9,7 +15,7 @@
   flex-direction: column;
   justify-content: space-between;
   
-  min-height: calc(100vh - #{ch-get-dimension(1)});
+  min-height: calc(100vh - #{$header-size});
 
   // 2. Aside
 
@@ -157,7 +163,10 @@
     > .ch-menu,
     > .ch-steps {
       @include ch-media(only, mobile) {
+        @include ch-shadow(2, top-bottom);
+
         top: 0;
+        z-index: #{ch-get-z-index(2, 1)};
       }
     }
   }

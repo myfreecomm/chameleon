@@ -152,7 +152,7 @@
 
     position: sticky;
     top: 0;
-    z-index: #{ch-get-z-index(2, 1)};
+    z-index: #{ch-get-z-index(2, 2)};
 
     &:before {
       opacity: 0.95;
