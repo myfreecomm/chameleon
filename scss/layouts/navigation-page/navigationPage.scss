@@ -174,7 +174,7 @@
   @at-root .ch-template-header.is-sticky + & > #{&}-aside {
     > .ch-menu,
     > .ch-steps {
-      @include ch-media(to, mobile) {
+      @include ch-media(to, tablet) {
         @include ch-border(bottom);
       }
     }
