@@ -4963,7 +4963,7 @@ a.ch-steps-item.is-completed:active:before {
       left: 0;
       right: 0;
       z-index: 101;
-      background: linear-gradient(to bottom, var(--ch-color-neutral-1) 0%, transparent 100%); }
+      background: linear-gradient(to bottom, var(--ch-color-neutral-1) 75%, transparent 100%); }
       @media screen and (min-width: 769px) {
         .ch-navigationPage-aside > .ch-steps,
         .ch-navigationPage-aside > .ch-menu {

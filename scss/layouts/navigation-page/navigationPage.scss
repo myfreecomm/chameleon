@@ -60,7 +60,7 @@
       }
 
       $nav-top: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
-      $background: linear-gradient(to bottom,#{ch-get-color(neutral, 1)} 0%,transparent 100%);
+      $background: linear-gradient(to bottom,#{ch-get-color(neutral, 1)} 75%,transparent 100%);
 
       @include ch-transition(top);
 
