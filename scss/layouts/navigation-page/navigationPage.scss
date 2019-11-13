@@ -1,0 +1,122 @@
+.ch-navigationPage {
+  // 1. Base
+
+  @include ch-media (only, tablet) {
+    padding-bottom: ch-get-space();
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  min-height: calc(100vh - #{ch-get-dimension(1)});
+
+  // 2. Aside
+
+  &-aside {
+    @include ch-media(from, desktop) {
+      position: fixed;
+      top: ch-get-dimension(1);
+      left: ch-get-dimension(1);
+      width: ch-get-dimension(2);
+
+      padding-top: ch-get-space(xl);
+      padding-right: ch-get-space(l);
+      padding-left: ch-get-space(l);
+
+      height: calc(100vh - #{ch-get-dimension(2)} + #{ch-get-space(xs)});
+    }
+
+    padding-top: calc(#{ch-get-space(xl)} + 2 * #{ch-get-space(xs)});
+
+    // 2.1. Steps and Menu
+
+    > .ch-steps,
+    > .ch-menu {
+      @include ch-media(from, tablet) {
+        $nav-top: ch-get-dimension(1);
+
+        top: $nav-top;
+        left: $nav-top;
+      }
+
+      @include ch-media(from, desktop) {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+      }
+
+      $nav-top: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
+
+      position: fixed;
+      top: $nav-top;
+      left: 0;
+      right: 0;
+
+      background: #{ch-get-color(neutral, 1)};
+    }
+
+    > .ch-steps {
+      @include ch-media(from, desktop) {
+        @include ch-space-stack-group(s);
+
+        padding: 0; // sass-lint:disable-line variable-for-property
+        overflow-x: initial;
+        
+        .ch-steps-item {
+          margin-right: 0;
+          width: 100%;
+        }
+
+        .ch-steps-item-label {
+          display: block;
+          width: auto;
+        }
+      }
+
+      @include ch-space-inset(default, xs);
+    }
+  }
+
+  // 3. Content
+
+  &-content {
+    @include ch-space-stack;
+
+    @include ch-media(from, desktop) {
+      margin-left: calc(#{ch-get-dimension(2)} - #{ch-get-space(l)});
+      margin-bottom: 0;
+    }
+
+    flex: 1;
+  }
+
+  // 4. Actions
+
+  &-actions {
+    @include ch-media(only, tablet) {
+      @include ch-space-inline-group(right, xs);
+    }
+
+    @include ch-media(from, desktop) {
+      position: fixed;
+      bottom: 0;
+      left: ch-get-dimension(1);
+      width: ch-get-dimension(2);
+
+      padding-top: ch-get-space(xs);
+      padding-right: ch-get-space(l);
+      padding-bottom: ch-get-space(xl);
+      padding-left: ch-get-space(l);
+    }
+
+    @include ch-space-stack-group(xs);
+
+    > *:not(:last-child) {
+      @include ch-media(only, tablet) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
