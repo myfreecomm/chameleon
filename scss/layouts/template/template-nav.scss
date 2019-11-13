@@ -5,7 +5,7 @@
   @include ch-transition(unquote('width, height, bottom'));
 
   display: flex;
-  z-index: #{ch-get-z-index(2)};
+  z-index: #{ch-get-z-index(2, 3)};
   justify-content: space-between;
   position: fixed;
   bottom: 0;

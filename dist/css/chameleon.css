@@ -4767,7 +4767,7 @@ a.ch-steps-item.is-completed:active:before {
   transition-timing-function: ease-in-out;
   transition-delay: unset;
   display: flex;
-  z-index: 101;
+  z-index: 103;
   justify-content: space-between;
   position: fixed;
   bottom: 0;
