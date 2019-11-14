@@ -1,21 +1,29 @@
 .ch-navigationPage {
   // 1. Base
 
-  $header-size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
-
   @include ch-media (to, mobile) {
+    $header-size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
+
     padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(s)});
+    min-height: calc(100vh - #{$header-size});
   }
 
   @include ch-media (only, tablet) {
     padding-bottom: ch-get-space();
   }
 
+  @include ch-media (from, tablet) {
+    min-height: calc(100vh - #{ch-get-dimension(1)});
+  }
+
+  @include ch-media(from, desktop) {
+    @include ch-border(top);
+  }
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   
-  min-height: calc(100vh - #{$header-size});
 
   // 2. Aside
 
@@ -24,15 +32,15 @@
       @include ch-transition(left);
 
       position: fixed;
-      top: ch-get-dimension(1);
+      top: calc(#{ch-get-dimension(1)} + #{$ch-border-width});
       left: ch-get-dimension(1);
       width: ch-get-dimension(2);
 
       padding-top: ch-get-space(xl);
       padding-right: ch-get-space(l);
       padding-left: ch-get-space(l);
-
       height: calc(100vh - #{ch-get-dimension(2)} + #{ch-get-space(xs)});
+      background: #{ch-get-color(neutral, 2)};
     }
 
     padding-top: calc(#{ch-get-space(xl)} + 2 * #{ch-get-space(xs)});
@@ -100,7 +108,7 @@
     @include ch-space-stack;
 
     @include ch-media(from, desktop) {
-      margin-left: calc(#{ch-get-dimension(2)} - #{ch-get-space(l)});
+      margin-left: #{ch-get-dimension(2)};
       margin-bottom: 0;
     }
 
@@ -126,6 +134,7 @@
       padding-right: ch-get-space(l);
       padding-bottom: ch-get-space(xl);
       padding-left: ch-get-space(l);
+      background: #{ch-get-color(neutral, 2)};
     }
 
     @include ch-space-stack-group(xs);
@@ -171,11 +180,17 @@
     }
   }
 
-  @at-root .ch-template-header.is-sticky + & > #{&}-aside {
-    > .ch-menu,
-    > .ch-steps {
-      @include ch-media(to, tablet) {
-        @include ch-border(bottom);
+  @at-root .ch-template-header.is-sticky + & {
+    @include ch-media(from, desktop) {
+      border-top-color: transparent;
+    }
+
+    > #{&}-aside {
+      > .ch-menu,
+      > .ch-steps {
+        @include ch-media(to, tablet) {
+          @include ch-border(bottom);
+        }
       }
     }
   }
