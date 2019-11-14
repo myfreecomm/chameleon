@@ -185,7 +185,7 @@
       border-top-color: transparent;
     }
 
-    > #{&}-aside {
+    > .ch-navigationPage-aside {
       > .ch-menu,
       > .ch-steps {
         @include ch-media(to, tablet) {
