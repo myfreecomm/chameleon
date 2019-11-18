@@ -1,8 +1,12 @@
 .ch-fieldGroup {
   $column-numbers: (mobile: 1, tablet: 2, desktop: 4);
 
+  width: 100%;
+
   > * {
     @include ch-grid-column(1);
+
+    min-width: 0;
   }
 
   @each $screen in $ch-breakpoint-screens {
