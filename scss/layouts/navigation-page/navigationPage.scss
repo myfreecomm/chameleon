@@ -31,6 +31,8 @@
     @include ch-media(from, desktop) {
       @include ch-transition(left);
 
+      $actions-height: calc(#{ch-get-dimension(2)} + #{ch-get-space(xs)});
+
       position: fixed;
       top: calc(#{ch-get-dimension(1)} + #{$ch-border-width});
       left: ch-get-dimension(1);
@@ -39,8 +41,22 @@
       padding-top: ch-get-space(xl);
       padding-right: ch-get-space(l);
       padding-left: ch-get-space(l);
-      height: calc(100vh - #{ch-get-dimension(2)} + #{ch-get-space(xs)});
-      background: #{ch-get-color(neutral, 2)};
+      height: calc(100vh - #{$actions-height});
+
+      &:after {
+        $empty: '';
+
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        content: $empty;
+        width: 100%;
+        height: calc(100% + #{$actions-height});
+        background: #{ch-get-color(neutral, 2)};
+      }
     }
 
     padding-top: calc(#{ch-get-space(xl)} + 2 * #{ch-get-space(xs)});
@@ -134,7 +150,6 @@
       padding-right: ch-get-space(l);
       padding-bottom: ch-get-space(xl);
       padding-left: ch-get-space(l);
-      background: #{ch-get-color(neutral, 2)};
     }
 
     @include ch-space-stack-group(xs);
