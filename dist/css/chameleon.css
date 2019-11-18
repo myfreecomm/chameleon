@@ -5023,6 +5023,8 @@ a.ch-steps-item.is-completed:active:before {
       .ch-navigationPage-content {
         margin-left: var(--ch-dimension-2);
         margin-bottom: 0; } }
+    .ch-navigationPage-content--contained {
+      max-width: calc(1024px - var(--ch-dimension-2)); }
   .ch-navigationPage-actions {
     display: flex;
     flex-direction: column; }
