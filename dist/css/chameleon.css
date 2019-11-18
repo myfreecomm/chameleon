@@ -1421,6 +1421,14 @@ template {
     .ch-field-label--inline > * {
       display: inline-block; }
 
+.ch-field-control {
+  display: flex;
+  flex-direction: column; }
+  .ch-field-control > *:not(:last-child) {
+    margin-bottom: var(--ch-space-xxs); }
+  .ch-field-control > *:last-child {
+    margin-bottom: 0; }
+
 .ch-field-message {
   color: var(--ch-color-text-2);
   font-family: var(--ch-text-font-family);
