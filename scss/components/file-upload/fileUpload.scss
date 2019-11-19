@@ -1,0 +1,25 @@
+.ch-fileUpload {
+  // 1. Base
+
+  @include ch-space-stack-group(s);
+  @include ch-box-model(s, default, box, ch-get-color(neutral, 2));
+  @include ch-border-radius(1);
+
+  display: block;
+
+  cursor: pointer;
+  text-align: center;
+  background: #{ch-get-color(neutral, 2)};
+
+  // 1.1. Icon
+
+  &-icon {
+    color: inherit;
+  }
+
+  // 1.2. Input
+
+  &-input {
+    display: none
+  }
+}
