@@ -5,11 +5,10 @@
   @include ch-box-model(s, default, box, ch-get-color(neutral, 2));
   @include ch-border-radius(1);
 
-  display: block;
-
   cursor: pointer;
   text-align: center;
   background: #{ch-get-color(neutral, 2)};
+  width: 100%;
 
   // 2. Icon
 

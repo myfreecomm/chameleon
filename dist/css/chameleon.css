@@ -1460,10 +1460,10 @@ template {
   border-top-right-radius: var(--ch-border-radius-1);
   border-bottom-right-radius: var(--ch-border-radius-1);
   border-bottom-left-radius: var(--ch-border-radius-1);
-  display: block;
   cursor: pointer;
   text-align: center;
-  background: var(--ch-color-neutral-2); }
+  background: var(--ch-color-neutral-2);
+  width: 100%; }
   .ch-fileUpload > *:not(:last-child) {
     margin-bottom: var(--ch-space-s); }
   .ch-fileUpload > *:last-child {
