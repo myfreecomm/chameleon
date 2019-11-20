@@ -11,15 +11,27 @@
   text-align: center;
   background: #{ch-get-color(neutral, 2)};
 
-  // 1.1. Icon
+  // 2. Icon
 
   &-icon {
     color: inherit;
   }
 
-  // 1.2. Input
+  // 3. Input
 
   &-input {
     display: none
+  }
+
+  // 4. Negative variation
+
+  &--negative {
+    &,
+    *,
+    * > .ch-title-sub,
+    .ch-title,
+    .ch-title > .ch-title-sub {
+      color: #{ch-get-color(negative)};
+    }
   }
 }

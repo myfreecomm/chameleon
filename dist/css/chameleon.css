@@ -1472,6 +1472,12 @@ template {
     color: inherit; }
   .ch-fileUpload-input {
     display: none; }
+  .ch-fileUpload--negative,
+  .ch-fileUpload--negative *,
+  .ch-fileUpload--negative * > .ch-title-sub,
+  .ch-fileUpload--negative .ch-title,
+  .ch-fileUpload--negative .ch-title > .ch-title-sub {
+    color: var(--ch-color-negative); }
 
 .has-icon {
   position: relative;
