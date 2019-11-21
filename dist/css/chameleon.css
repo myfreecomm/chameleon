@@ -1469,7 +1469,8 @@ template {
   .ch-fileUpload > *:last-child {
     margin-bottom: 0; }
   .ch-fileUpload-icon {
-    color: inherit; }
+    color: inherit;
+    font-size: var(--ch-icon-size-xl); }
   .ch-fileUpload-input {
     display: none; }
   .ch-fileUpload--negative,
