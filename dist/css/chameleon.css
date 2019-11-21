@@ -1421,13 +1421,25 @@ template {
     .ch-field-label--inline > * {
       display: inline-block; }
 
-.ch-field-control {
+.ch-field:not(.ch-field--inline) .ch-field-control {
   display: flex;
   flex-direction: column; }
-  .ch-field-control > *:not(:last-child) {
-    margin-bottom: var(--ch-space-xxs); }
-  .ch-field-control > *:last-child {
+  .ch-field:not(.ch-field--inline) .ch-field-control > *:not(:last-child) {
+    margin-bottom: var(--ch-space-xs); }
+  .ch-field:not(.ch-field--inline) .ch-field-control > *:last-child {
     margin-bottom: 0; }
+  .ch-field:not(.ch-field--inline) .ch-field-control > * {
+    width: 100%; }
+
+.ch-field--inline .ch-field-control {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: initial;
+  justify-content: flex-start; }
+  .ch-field--inline .ch-field-control > *:not(:last-child) {
+    margin-right: var(--ch-space-xs);
+    margin-left: 0; }
 
 .ch-field-message {
   color: var(--ch-color-text-2);

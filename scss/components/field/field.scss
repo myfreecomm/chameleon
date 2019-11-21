@@ -38,8 +38,16 @@
 
   // 3. Control
 
-  &-control {
-    @include ch-space-stack-group(xxs);
+  &:not(&--inline) &-control {
+    @include ch-space-stack-group(xs);
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &--inline &-control {
+    @include ch-space-inline-group(left, xs);
   }
 
   // 4. Message
