@@ -1,6 +1,10 @@
 .ch-grid {
+  width: 100%;
+
   > * {
     @include ch-grid-column(1);
+
+    min-width: 0;
   }
 
   @each $screen in $ch-breakpoint-screens {

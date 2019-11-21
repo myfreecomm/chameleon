@@ -36,13 +36,27 @@
     }
   }
 
-  // 3. Message
+  // 3. Control
+
+  &:not(&--inline) &-control {
+    @include ch-space-stack-group(xs);
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &--inline &-control {
+    @include ch-space-inline-group(left, xs);
+  }
+
+  // 4. Message
 
   &-message {
     @include ch-text-caption();
   }
 
-  // 4. Inline variation
+  // 5. Inline variation
 
   &--inline {
     @include ch-space-inline-group(left, s, center);
