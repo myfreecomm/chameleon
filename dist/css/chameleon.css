@@ -1421,6 +1421,26 @@ template {
     .ch-field-label--inline > * {
       display: inline-block; }
 
+.ch-field:not(.ch-field--inline) .ch-field-control {
+  display: flex;
+  flex-direction: column; }
+  .ch-field:not(.ch-field--inline) .ch-field-control > *:not(:last-child) {
+    margin-bottom: var(--ch-space-xs); }
+  .ch-field:not(.ch-field--inline) .ch-field-control > *:last-child {
+    margin-bottom: 0; }
+  .ch-field:not(.ch-field--inline) .ch-field-control > * {
+    width: 100%; }
+
+.ch-field--inline .ch-field-control {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: initial;
+  justify-content: flex-start; }
+  .ch-field--inline .ch-field-control > *:not(:last-child) {
+    margin-right: var(--ch-space-xs);
+    margin-left: 0; }
+
 .ch-field-message {
   color: var(--ch-color-text-2);
   font-family: var(--ch-text-font-family);
@@ -1439,6 +1459,39 @@ template {
     margin-left: 0; }
   .ch-field--inline > * {
     display: inline-block; }
+
+.ch-fileUpload {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--ch-space-s);
+  padding-right: var(--ch-space-s);
+  padding-bottom: var(--ch-space-s);
+  padding-left: var(--ch-space-s);
+  border: 1px solid var(--ch-color-neutral-2);
+  border-top-left-radius: var(--ch-border-radius-1);
+  border-top-right-radius: var(--ch-border-radius-1);
+  border-bottom-right-radius: var(--ch-border-radius-1);
+  border-bottom-left-radius: var(--ch-border-radius-1);
+  cursor: pointer;
+  text-align: center;
+  background: var(--ch-color-neutral-2);
+  width: 100%; }
+  .ch-fileUpload > *:not(:last-child) {
+    margin-bottom: var(--ch-space-s); }
+  .ch-fileUpload > *:last-child {
+    margin-bottom: 0; }
+  .ch-fileUpload .ch-fileUpload-icon {
+    color: inherit;
+    font-size: var(--ch-icon-size-xl);
+    width: auto; }
+  .ch-fileUpload-input {
+    display: none; }
+  .ch-fileUpload--negative,
+  .ch-fileUpload--negative *,
+  .ch-fileUpload--negative * > .ch-title-sub,
+  .ch-fileUpload--negative .ch-title,
+  .ch-fileUpload--negative .ch-title > .ch-title-sub {
+    color: var(--ch-color-negative); }
 
 .has-icon {
   position: relative;
