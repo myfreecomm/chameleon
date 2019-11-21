@@ -1468,9 +1468,10 @@ template {
     margin-bottom: var(--ch-space-s); }
   .ch-fileUpload > *:last-child {
     margin-bottom: 0; }
-  .ch-fileUpload-icon {
+  .ch-fileUpload .ch-fileUpload-icon {
     color: inherit;
-    font-size: var(--ch-icon-size-xl); }
+    font-size: var(--ch-icon-size-xl);
+    width: auto; }
   .ch-fileUpload-input {
     display: none; }
   .ch-fileUpload--negative,

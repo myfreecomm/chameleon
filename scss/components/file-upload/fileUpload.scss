@@ -12,9 +12,10 @@
 
   // 2. Icon
 
-  &-icon {
+  & &-icon {
     color: inherit;
     font-size: ch-get-icon-size(xl);
+    width: auto;
   }
 
   // 3. Input
