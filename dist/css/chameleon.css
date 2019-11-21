@@ -4616,7 +4616,7 @@ a.ch-steps-item.is-completed:active:before {
     box-shadow: 0 2px 10px rgba(172, 185, 210, 0.65);
     position: sticky;
     top: 0;
-    z-index: 102; }
+    z-index: 101; }
     .ch-template-header.is-sticky:before {
       opacity: 0.95; }
   @media screen and (max-width: calc(769px - 1px)) {
@@ -5014,7 +5014,7 @@ a.ch-steps-item.is-completed:active:before {
       top: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-s));
       left: 0;
       right: 0;
-      z-index: 101;
+      z-index: 102;
       background: var(--ch-color-neutral-1); }
       @media screen and (min-width: 769px) {
         .ch-navigationPage-aside > .ch-steps,
