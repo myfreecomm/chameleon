@@ -1,5 +1,3 @@
-@import './access-barrier';
-@import './error-page';
 @import './field-group';
 @import './footer';
 @import './form';
@@ -14,3 +12,7 @@
 @import './template';
 @import './blankslate';
 @import './actions-bar';
+
+@import './error-page';
+@import './access-barrier';
+@import './navigation-page';

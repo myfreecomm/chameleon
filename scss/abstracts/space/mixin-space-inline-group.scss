@@ -4,6 +4,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   align-items: $alignment;
+  flex-direction: initial;
 
   @if ($type == left) {
     $exception: ':last-child';

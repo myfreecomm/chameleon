@@ -1,23 +1,23 @@
-@mixin ch-steps-item-counter {
+.ch-steps-item {
   // 1. Base
 
   &:before {
-    @include ch-border(box, ch-get-color(border), solid, $ch-steps-border-width);
+    @include ch-border(box, ch-get-color(border), solid, $ch-border-width);
     @include ch-text-label;
-    @include ch-transition(border background);
+    @include ch-transition(unquote('border, background'));
+
+    $counter: counter(steps);
+
     display: flex;
     align-items: center;
     justify-content: center;
     top: 0;
     left: 0;
     position: absolute;
-    z-index: 2;
-
-    $counter: counter(steps);
 
     content: $counter;
-    width: $ch-steps-item-width;
-    height: $ch-steps-item-width;
+    width: #{ch-get-space(xl)};
+    height: #{ch-get-space(xl)};
     background: transparent;
     border-radius: #{ch-get-border-radius(circle)};
 
@@ -33,6 +33,10 @@
       color: #{ch-get-color(primary)};
       border-color: ch-get-color(primary);
     }
+  }
+
+  &.is-active:before {
+    @include ch-shadow(2);
   }
 
   // 3. Complete state

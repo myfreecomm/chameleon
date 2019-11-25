@@ -2,10 +2,10 @@
 
   // 1. Base
 
-  @include ch-transition(width height);
+  @include ch-transition(unquote('width, height, bottom'));
 
   display: flex;
-  z-index: #{ch-get-z-index(2)};
+  z-index: #{ch-get-z-index(2, 3)};
   justify-content: space-between;
   position: fixed;
   bottom: 0;
@@ -24,7 +24,17 @@
     height: 100%;
   }
 
-  // 3. From tablet
+  // 3. Hide state
+
+  &.is-hide {
+    @include ch-media(from, tablet) {
+      bottom: 0;
+    }
+
+    bottom: -100%;
+  }
+
+  // 4. From tablet
 
   @include ch-media(from, tablet) {
     position: fixed;

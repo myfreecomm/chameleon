@@ -6,7 +6,7 @@
     height: #{ch-get-dimension(1)};
   }
 
-  @include ch-transition(box-shadow margin-left);
+  @include ch-transition(unquote('box-shadow, margin-left, transform'));
 
   display: flex;
   align-items: center;
@@ -152,10 +152,18 @@
 
     position: sticky;
     top: 0;
-    z-index: #{ch-get-z-index(2, 1)};
+    z-index: #{ch-get-z-index(2)};
 
     &:before {
       opacity: 0.95;
     }
+  }
+
+  // 4.4. Hide state
+
+  &.is-hide {
+    @include ch-media(to, mobile) {
+      transform: translateY(-100%);
+    }    
   }
 }
