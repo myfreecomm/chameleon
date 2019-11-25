@@ -17,8 +17,9 @@
 
     &.is-active:after {
       @include ch-border-radius(circle);
+      $empty: "";
 
-      content: "";
+      content: $empty;
       display: block;
       position: absolute;
       width: #{ch-get-icon-size()};
