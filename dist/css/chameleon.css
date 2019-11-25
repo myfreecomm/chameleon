@@ -2435,6 +2435,44 @@ a.ch-steps-item.is-completed:active:before {
   .ch-modal--fullWidth {
     width: 100%; }
 
+.ch-pagination {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: initial;
+  justify-content: flex-start;
+  width: 100%;
+  justify-content: center; }
+  .ch-pagination > *:not(:last-child) {
+    margin-right: var(--ch-space-l);
+    margin-left: 0; }
+  .ch-pagination-item {
+    position: relative;
+    color: var(--ch-color-text-1);
+    font-weight: bold;
+    opacity: 0.7; }
+    .ch-pagination-item.is-active, .ch-pagination-item:hover {
+      color: currentColor;
+      opacity: 1; }
+    .ch-pagination-item.is-active:after {
+      border-top-left-radius: 999px;
+      border-top-right-radius: 999px;
+      border-bottom-right-radius: 999px;
+      border-bottom-left-radius: 999px;
+      content: "";
+      display: block;
+      position: absolute;
+      width: var(--ch-icon-size-m);
+      height: calc(var(--ch-space-xxs));
+      top: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ch-color-brand); }
+  .ch-pagination--leftAligned {
+    justify-content: flex-start; }
+  .ch-pagination--rightAligned {
+    justify-content: flex-end; }
+
 .ch-fieldGroup {
   width: 100%; }
   .ch-fieldGroup > * {

@@ -1,0 +1,40 @@
+.ch-pagination {
+  @include ch-space-inline-group(left, l);
+  width: 100%;
+  justify-content: center;
+
+  &-item {
+    position: relative;
+    color: #{ch-get-color(text, 1)};
+    font-weight: bold;
+    opacity: 0.7;
+
+    &.is-active,
+    &:hover {
+      color: currentColor;
+      opacity: 1;
+    }
+
+    &.is-active:after {
+      @include ch-border-radius(circle);
+
+      content: "";
+      display: block;
+      position: absolute;
+      width: #{ch-get-icon-size()};
+      height: calc(#{ch-get-space(xxs)});
+      top: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #{ch-get-color(brand)};
+    }
+  }
+
+  &--leftAligned {
+    justify-content: flex-start;
+  }
+
+  &--rightAligned {
+    justify-content: flex-end;
+  }
+}
