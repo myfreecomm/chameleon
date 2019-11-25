@@ -1,8 +1,8 @@
 @import './variables';
 @import './function-get-breakpoint';
-@import './mixin-desktop';
-@import './mixin-mobile';
-@import './mixin-tablet';
-@import './mixin-tablet-only';
+@import './mixin-from-desktop';
+@import './mixin-from-tablet';
+@import './mixin-only-mobile';
+@import './mixin-only-tablet';
 @import './mixin-to-tablet';
 @import './mixin-media';

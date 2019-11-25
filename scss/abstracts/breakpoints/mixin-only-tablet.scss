@@ -1,4 +1,4 @@
-@mixin ch-tablet-only {
+@mixin ch-only-tablet {
   $to: calc(#{$ch-breakpoint-desktop} - 1px);
 
   @media screen and (min-width: $ch-breakpoint-tablet) and (max-width: $to) {

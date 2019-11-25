@@ -1,17 +1,23 @@
 .ch-steps {
-  @include ch-space-inline-group(left, s);
-  position: relative;
-
-  counter-reset: steps;
   display: flex;
-  max-width: 100%;
-  flex-wrap: nowrap !important; // sass-lint:disable-line no-important
   flex-direction: row;
+  position: relative;
+  
+  counter-reset: steps;
+  max-width: 100%;
   padding-bottom: #{ch-get-space(xs)};
   overflow-x: auto;
 
+  &:not(#{&}--vertical) {
+    @include ch-space-inline-group(left, s);
+
+    flex-wrap: nowrap;
+  }
+
   &--vertical {
-    @include ch-space-stack-group;
+    @include ch-space-stack-group(s);
+
+    overflow-x: initial;
     padding-bottom: 0;
   }
 
