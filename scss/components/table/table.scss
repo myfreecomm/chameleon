@@ -75,14 +75,31 @@
     vertical-align: middle;
   }
 
-  // 5.1. Compact variation
+  // 5.1. Checkbox, actions and compact variation
 
+  .ch-table-cell--checkbox,
+  .ch-table-cell--actions,
   .ch-table-cell--compact {
     padding-top: 0;
     padding-bottom: 0;
   }
 
-  // 5.2. Vertical position variants
+  // 5.2. Checkbox variation
+
+  .ch-table-cell--checkbox {
+    $width: calc(#{ch-get-icon-size()} + 2 * #{ch-get-space(s)});
+
+    max-width: $width;
+    width: $width;
+  }
+
+  // 5.3. Actions variation
+
+  .ch-table-cell--actions {
+    text-align: right;
+  }
+
+  // 5.3. Vertical position variants
 
   @each $position in (top, middle, bottom) {
     .ch-table-cell--#{$position} {
