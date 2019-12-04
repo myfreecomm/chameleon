@@ -1,3 +1,5 @@
+// sass-lint:disable no-important
+
 .ch-dropdown.ch-dropdown--actions {
   // 1. For media up to tablet
 
@@ -12,11 +14,13 @@
 
       > .ch-menu {
         &:first-child:before {
+          $empty: '';
+
           @include ch-border(top);
 
           display: block;
 
-          content: '';
+          content: $empty;
           margin: #{ch-get-space(s)};
         }
 
@@ -137,7 +141,9 @@
       }
 
       > .ch-overlay {
-        margin: 0;
+        $none: 0;
+
+        margin: $none;
       }
 
       > .ch-overlay > .ch-card {
