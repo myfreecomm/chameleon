@@ -1350,7 +1350,7 @@ template {
   .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card {
     display: flex;
     flex-direction: column; }
-    .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child:before {
+    .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:not(:last-child):before {
       border-top: 1px solid var(--ch-color-border);
       display: block;
       content: "";
@@ -1375,6 +1375,7 @@ template {
     .ch-dropdown.ch-dropdown--actions > .ch-overlay {
       visibility: visible;
       position: relative;
+      z-index: initial;
       margin-top: 0;
       min-width: auto;
       background: transparent; }
