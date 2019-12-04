@@ -26,7 +26,7 @@
 
   // 3. Hide state
 
-  &.is-hide {
+  &.is-hidden {
     @include ch-media(from, tablet) {
       bottom: 0;
     }
