@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Chameleon - Dropdown</title>
+    <title>Chameleon - Actions dropdown</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
@@ -11,33 +11,36 @@
   <body>
     <div class="ch-template">
       <main class="ch-template-content">
-  
-          <div class="ch-dropdown">
-            <div class="ch-dropdown-toggle">
-              <button class="ch-button" type="button">Options</button>
-            </div>
 
-            <div class="ch-overlay">
-              <div class="ch-card ch-paddingless">
-                <ul class="ch-menu">
-                  <li class="ch-menu-item has-icon">
-                    <i class="ch-icon fal fa-chart-line"></i>
-                    <span class="ch-menu-item-label">Option 1</span>
-                  </li>
+        <div class="ch-dropdown ch-dropdown--actions has-secondaryActions">
+          <div class="ch-dropdown-toggle">
+            <button class="ch-button ch-button--icon ch-button--small ch-button--ghost">
+              <i class="ch-icon fal fa-ellipsis-v-alt"></i>
+            </button>
+          </div>
 
-                  <li class="ch-menu-item has-icon">
-                    <i class="ch-icon fal fa-table"></i>
-                    <span class="ch-menu-item-label">Option 2</span>
-                  </li>
+          <div class="ch-overlay">
+            <div class="ch-card">
+              <nav class="ch-menu">
+                <a class="ch-menu-item ch-menu-item--icon" href="#">
+                  <i class="ch-icon fal fa-pencil"></i>
+                  <span class="ch-menu-item-label">Edit</span>
+                </a>
 
-                  <li class="ch-menu-item has-icon">
-                    <i class="ch-icon fal fa-magic"></i>
-                    <span class="ch-menu-item-label">Option 3</span>
-                  </li>
-                </ul>
-              </div>
+                <a class="ch-menu-item ch-menu-item--icon ch-text--negative" href="#">
+                  <i class="ch-icon fal fa-trash-alt"></i>
+                  <span class="ch-menu-item-label">Exclude</span>
+                </a>
+              </nav>
+
+              <nav class="ch-menu">
+                <a class="ch-menu-item" href="#">Lorem ipsum dolor</a>
+                <a class="ch-menu-item" href="#">Suspendisse</a>
+                <a class="ch-menu-item" href="#">Maecenas convallis</a>
+              </nav>
             </div>
           </div>
+        </div>
 
       </main>
     </div>
