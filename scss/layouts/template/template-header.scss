@@ -161,7 +161,7 @@
 
   // 4.4. Hide state
 
-  &.is-hide {
+  &.is-hidden {
     @include ch-media(to, mobile) {
       transform: translateY(-100%);
     }    

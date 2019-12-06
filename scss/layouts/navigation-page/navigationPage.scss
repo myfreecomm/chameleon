@@ -192,7 +192,7 @@
 
   // 6. Template header hide and sticky state
 
-  @at-root .ch-template-header.is-sticky.is-hide + & > #{&}-aside {
+  @at-root .ch-template-header.is-sticky.is-hidden + & > #{&}-aside {
     > .ch-menu,
     > .ch-steps {
       @include ch-media(to, mobile) {
