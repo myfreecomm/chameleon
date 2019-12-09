@@ -1,0 +1,61 @@
+.ch-tableResponsive {
+  @include ch-media(to, tablet) {
+    $margin-left: calc(#{ch-get-icon-size()} + 2 * #{ch-get-space(s)});
+    $margin-right: ch-calc-box-height();
+  
+    // 1. Base
+
+    position: relative;
+
+    // 2. Scroll
+
+    &-scroll {
+      overflow-x: auto;
+      overflow-y: visible;
+  
+      margin-left: $margin-left;
+      margin-right: $margin-right;
+    }
+
+    // 3. Table cell
+
+    td,
+    th,
+    .ch-table-cell {
+      @include ch-truncate;
+  
+      max-width: #{ch-get-dimension(2)};
+    }
+
+    // 4. Table cell checkbox and actions
+
+    .ch-table-cell--checkbox,
+    .ch-table-cell--actions {
+      position: absolute;
+      top: auto;
+  
+      height: #{ch-calc-box-height(ch-get-text-size(2), ch-get-space())};
+  
+      > * {
+        position: absolute;
+        top: 50%;
+    
+        transform: translateY(-50%);
+      }
+    }
+  
+    .ch-table-cell--checkbox {
+      left: 0;
+    }
+  
+    .ch-table-cell--actions {
+      right: 0;
+  
+      width: $margin-right;
+  
+      > * {
+        right: 0;
+      }
+    }
+  }
+}
