@@ -1454,6 +1454,12 @@ template {
           .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item.has-iconRight > .ch-icon,
           .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item.ch-menu-item--icon > .ch-icon {
             font-size: var(--ch-icon-size-s); }
+          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item:hover:focus, .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item:hover, .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item:focus,
+          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item:hover:focus,
+          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item:hover,
+          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item:focus {
+            color: var(--ch-color-text-1);
+            background: transparent; }
         .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item:not(.ch-menu-item--icon),
         .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
           padding-top: var(--ch-space-xxs);
@@ -1480,12 +1486,6 @@ template {
               top: 50%;
               right: calc((calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs))) / 2);
               transform: translate(50%, -50%); }
-          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item:not(.ch-menu-item--icon):focus:hover, .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item:not(.ch-menu-item--icon):focus, .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item:not(.ch-menu-item--icon):hover,
-          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon):focus:hover,
-          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon):focus,
-          .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon):hover {
-            color: var(--ch-color-text-1);
-            background: transparent; }
         .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item--icon {
           padding: 0 !important;
           position: relative;
@@ -1848,6 +1848,7 @@ template {
   display: block;
   width: 100%;
   position: relative;
+  text-align: left;
   cursor: pointer; }
   .ch-menu-item, .ch-menu-item:focus:hover, .ch-menu-item:focus, .ch-menu-item:hover, .ch-menu-item:active {
     color: var(--ch-color-text-1); }
@@ -4754,11 +4755,13 @@ a.ch-steps-item.is-completed:active:before {
 @media screen and (max-width: calc(1024px - 1px)) {
   .ch-tableResponsive {
     position: relative; }
+    .ch-tableResponsive.has-checkbox > .ch-tableResponsive-scroll {
+      margin-left: calc(var(--ch-icon-size-m) + 2 * var(--ch-space-s)); }
+    .ch-tableResponsive.has-actions > .ch-tableResponsive-scroll {
+      margin-right: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
     .ch-tableResponsive-scroll {
       overflow-x: auto;
-      overflow-y: visible;
-      margin-left: calc(var(--ch-icon-size-m) + 2 * var(--ch-space-s));
-      margin-right: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
+      overflow-y: visible; }
     .ch-tableResponsive td,
     .ch-tableResponsive th,
     .ch-tableResponsive .ch-table-cell {
@@ -4770,12 +4773,10 @@ a.ch-steps-item.is-completed:active:before {
     .ch-tableResponsive .ch-table-cell--actions {
       position: absolute;
       top: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-m)); }
-      .ch-tableResponsive .ch-table-cell--checkbox > *,
-      .ch-tableResponsive .ch-table-cell--actions > * {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%); }
     .ch-tableResponsive .ch-table-cell--checkbox {
       left: 0; }
     .ch-tableResponsive .ch-table-cell--actions {
