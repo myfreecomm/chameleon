@@ -98,6 +98,13 @@
               font-size: #{ch-get-icon-size(s)};
             }
           }
+
+          &:hover:focus,
+          &:hover,
+          &:focus {
+            color: #{ch-get-color(text, 1)};
+            background: transparent;
+          }
         }
 
         > .ch-menu-item:not(.ch-menu-item--icon),
@@ -112,13 +119,6 @@
 
           &.has-iconRight {
             @include ch-has-icon(right, $box-height);
-          }
-
-          &:focus:hover,
-          &:focus,
-          &:hover {
-            color: #{ch-get-color(text, 1)};
-            background: transparent;
           }
         }
 
