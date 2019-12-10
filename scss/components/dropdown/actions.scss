@@ -33,14 +33,14 @@
           padding-right: #{ch-get-space(xs)} !important;
           padding-bottom: #{ch-get-space(s)} !important;
           padding-left: #{ch-get-dimension(1)} !important;
-  
-          width: auto;
+
+          width: 100%;
           min-height: auto;
-  
+
           > .ch-icon {
             left: calc(#{ch-get-dimension(1)} / 2);
           }
-  
+
           > .ch-menu-item-label {
             display: block;
           }
