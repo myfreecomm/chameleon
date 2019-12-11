@@ -1,0 +1,67 @@
+.ch-dropdown {
+  @include ch-media(from, desktop) {
+    @each $vertical in (bottom, top) {
+      @each $horizontal in (right, left) {
+        $sufix: ch-generate-variation(($vertical, $horizontal), (bottom, right));
+
+        // 1. Base
+
+        @at-root {
+          #{&}#{$sufix}:not(#{&}--actions) > .ch-overlay {
+            @if $vertical == bottom {
+              top: 100%;
+
+              margin-top: #{ch-get-space(xs)};
+            }
+
+            @else if $vertical == top {
+              top: auto;
+              bottom: 100%;
+    
+              margin-top: 0;
+              margin-bottom: #{ch-get-space(xs)};
+            }
+
+            @if $horizontal == right {
+              left: 0;
+            }
+
+            @else if $horizontal == left {
+              left: auto;
+              right: 0;
+            }
+          } // #{&}#{$sufix}:not(#{&}--actions) > .ch-overlay
+
+          // 2. Actions variation
+
+          #{&}#{$sufix}#{&}--actions > .ch-overlay > .ch-card > .ch-menu:not(:first-child) {
+            @if $vertical == bottom {
+              top: 100%;
+
+              margin-top: #{ch-get-space(xs)};
+            }
+
+            @else if $vertical == top {
+              top: auto;
+              bottom: 100%;
+    
+              margin-top: 0;
+              margin-bottom: #{ch-get-space(xs)};
+            }
+
+            @if $horizontal == right {
+              left: 100%;
+            }
+
+            @else if $horizontal == left {
+              $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
+
+              left: auto;
+              right: calc(-1 * #{$size});
+            }
+          } // #{&}#{$sufix}#{&}--actions > .ch-overlay > .ch-card > .ch-menu:not(:first-child)
+        } // @at-root
+      } // @each $horizontal in (right, left)
+    } // @each $vertical in (bottom, top)
+  } // @include ch-media(from, desktop)
+}

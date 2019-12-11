@@ -1,0 +1,184 @@
+// sass-lint:disable no-important
+
+.ch-dropdown.ch-dropdown--actions {
+  // 1. For media up to tablet
+
+  @include ch-media(to, tablet) {
+    // 1.1. Card
+
+    > .ch-overlay > .ch-card {
+      display: flex;
+      flex-direction: column;
+
+      // 1.1.1. Menu
+
+      > .ch-menu {
+        &:not(:last-child):before {
+          $empty: '';
+
+          @include ch-border(top);
+
+          display: block;
+
+          content: $empty;
+          margin: #{ch-get-space(s)};
+        }
+
+        &:not(:last-child) {
+          order: 2;
+        }
+
+        > .ch-menu-item--icon {
+          padding-top: #{ch-get-space(s)} !important;
+          padding-right: #{ch-get-space(xs)} !important;
+          padding-bottom: #{ch-get-space(s)} !important;
+          padding-left: #{ch-get-dimension(1)} !important;
+
+          width: 100%;
+          min-height: auto;
+
+          > .ch-icon {
+            left: calc(#{ch-get-dimension(1)} / 2);
+          }
+
+          > .ch-menu-item-label {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  // 2. For media from desktop
+
+  @include ch-media(from, desktop) {
+    display: inline-flex;
+
+    // 2.1. Overlay
+
+    > .ch-overlay {
+      visibility: visible;
+      position: relative;
+      z-index: initial;
+
+      margin-top: 0;
+      min-width: auto;
+      background: transparent;
+
+      // 2.1.1. Card
+
+      &,
+      > .ch-card {
+        opacity: 1;
+      }
+
+      > .ch-card {
+        border: 0;
+        box-shadow: none;
+      }
+
+      // 2.1.2. Menu
+
+      > .ch-card > .ch-menu:first-child {
+        @include ch-menu-horizontal;
+
+        overflow: auto;
+
+        > .ch-menu-item,
+        > .ch-menu-submenu > .ch-menu-item {
+          @include ch-ripple-effect(ch-get-color(default));
+          @include ch-border-radius(1);
+
+          color: #{ch-get-color(text, 2)};
+
+          &.has-icon,
+          &.has-iconRight,
+          &.ch-menu-item--icon {
+            > .ch-icon {
+              font-size: #{ch-get-icon-size(s)};
+            }
+          }
+
+          &:hover:focus,
+          &:hover,
+          &:focus {
+            color: #{ch-get-color(text, 1)};
+            background: transparent;
+          }
+        }
+
+        > .ch-menu-item:not(.ch-menu-item--icon),
+        > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
+          $box-height: ch-calc-box-height(ch-get-text-size(), ch-get-space(xxs));
+
+          @include ch-space-inset(squish, xs);
+
+          &.has-icon {
+            @include ch-has-icon(left, $box-height);
+          }
+
+          &.has-iconRight {
+            @include ch-has-icon(right, $box-height);
+          }
+        }
+
+        > .ch-menu-item--icon {
+          @include ch-icon-only(xxs);
+        }
+      }
+    }
+
+    // 2.2. Secondary actions context
+
+    &:not(.has-secondaryActions) > .ch-dropdown-toggle {
+      display: none;
+    }
+
+    &.has-secondaryActions {
+      position: relative;
+
+      > .ch-dropdown-toggle {
+        order: 2;
+      }
+
+      > .ch-overlay {
+        $none: 0;
+
+        margin: $none;
+      }
+
+      > .ch-overlay > .ch-card {
+        overflow: initial;
+      }
+
+      > .ch-overlay > .ch-card > .ch-menu:not(:first-child) {
+        @include ch-shadow(2);
+        @include ch-border-radius(2);
+        @include ch-border;
+        @include ch-transition(
+          unquote('visibility, opacity'), $ch-transition-duration-very-fast
+        );
+
+        position: absolute;
+        visibility: hidden;
+
+        opacity: 0;
+        width: auto;
+        min-width: #{ch-get-dimension(2)};
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      > .ch-overlay.is-visible > .ch-card > .ch-menu:not(:first-child) {
+        visibility: visible;
+
+        opacity: 1;
+      }
+    }
+  }
+
+  > .ch-overlay > .ch-card {
+    @include ch-paddingless;
+  }
+}

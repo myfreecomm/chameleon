@@ -221,6 +221,13 @@
     &.has-iconRight {
       @include ch-has-icon(right, $box-height);
     }
+
+    &.has-icon,
+    &.has-iconRight {
+      > .ch-icon {
+        font-size: #{ch-get-icon-size(s)};
+      }
+    }
   }
 
   // 7. Icon variation

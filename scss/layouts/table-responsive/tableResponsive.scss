@@ -7,52 +7,57 @@
 
     position: relative;
 
-    // 2. Scroll
+    // 2. Has checkbox
+
+    &.has-checkbox > &-scroll {
+      margin-left: $margin-left;
+    }
+
+    // 3. Has actions
+
+    &.has-actions > &-scroll {
+      margin-right: $margin-right;
+    }
+
+    // 4. Scroll
 
     &-scroll {
       overflow-x: auto;
       overflow-y: visible;
-  
-      margin-left: $margin-left;
-      margin-right: $margin-right;
     }
 
-    // 3. Table cell
+    // 5. Table cell
 
     td,
     th,
     .ch-table-cell {
       @include ch-truncate;
-  
+
       max-width: #{ch-get-dimension(2)};
     }
 
-    // 4. Table cell checkbox and actions
+    // 6. Table cell checkbox and actions
 
     .ch-table-cell--checkbox,
     .ch-table-cell--actions {
       position: absolute;
       top: auto;
-  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       height: #{ch-calc-box-height(ch-get-text-size(2), ch-get-space())};
-  
-      > * {
-        position: absolute;
-        top: 50%;
-    
-        transform: translateY(-50%);
-      }
     }
-  
+
     .ch-table-cell--checkbox {
       left: 0;
     }
-  
+
     .ch-table-cell--actions {
       right: 0;
-  
+
       width: $margin-right;
-  
+
       > * {
         right: 0;
       }

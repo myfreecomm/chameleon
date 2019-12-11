@@ -1,37 +1,52 @@
 .ch-overlay {
-  @include ch-transition(visibility opacity);
+  @include ch-transition(unquote('visibility, opacity'));
+
+  // 1. Base
+
   position: fixed;
   top: 0;
   left: 0;
+  z-index: ch-get-z-index(5, 1);
+
+  visibility: hidden;
+  opacity: 0;
   width: 100%;
   height: 100%;
   background-color: #{ch-get-color(overlay)};
-  z-index: ch-get-z-index(5, 1);
-  visibility: hidden;
-  opacity: 0;
+
+  // 2. Visible state
 
   &.is-visible {
-    @include ch-transition(visibility opacity, $ch-transition-duration-normal, ease-in);
+    @include ch-transition(
+      unquote('visibility, opacity'), $ch-transition-duration-normal, ease-in
+    );
+
     visibility: visible;
     opacity: 1;
   }
+
+  // 3. Content
+
+  &-content {
+    @include ch-space-inset();
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100%;
+  }
+
+  // 4. Inverse variation
 
   &--inverse {
     background-color: #{ch-get-color(overlay, inverse)};
   }
 
-  &-content {
-    @include ch-space-inset();
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  // 5. Inside variation
 
   &--inside {
     position: absolute;
   }
 }
-
-
