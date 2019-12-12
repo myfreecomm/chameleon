@@ -35,16 +35,22 @@
   // 3. Breadcrumbs
 
   > .ch-breadcrumbs {
+    @include ch-media(only, mobile) {
+      padding-left: #{ch-get-space(s)};
+    }
+
+    @include ch-media(from, tablet) {
+      padding-left: #{ch-get-space(l)};
+    }
+
     @include ch-media(from, desktop) {
       max-width: calc(100% / 3);
-      padding-left: #{ch-get-space(l)};
     }
 
     order: 1;
 
     max-width: calc(100% - #{ch-calc-box-height()} * 3);
     padding-right: #{ch-get-space(s)};
-    padding-left: #{ch-get-space(s)};
     font-size: #{ch-get-text-size(3)};
 
     // 3.1. Last item
