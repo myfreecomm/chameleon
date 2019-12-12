@@ -75,18 +75,18 @@
     vertical-align: middle;
   }
 
-  // 5.1. Checkbox, actions and compact variation
+  // 5.1. Leading, actions and compact variation
 
-  .ch-table-cell--checkbox,
+  .ch-table-cell--leading,
   .ch-table-cell--actions,
   .ch-table-cell--compact {
     padding-top: 0;
     padding-bottom: 0;
   }
 
-  // 5.2. Checkbox variation
+  // 5.2. Leading variation
 
-  .ch-table-cell--checkbox {
+  .ch-table-cell--leading {
     $width: calc(#{ch-get-icon-size()} + 2 * #{ch-get-space(s)});
 
     max-width: $width;

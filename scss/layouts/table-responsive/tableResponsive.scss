@@ -7,9 +7,9 @@
 
     position: relative;
 
-    // 2. Has checkbox
+    // 2. Has leading
 
-    &.has-checkbox > &-scroll {
+    &.has-leading > &-scroll {
       margin-left: $margin-left;
     }
 
@@ -36,9 +36,9 @@
       max-width: #{ch-get-dimension(2)};
     }
 
-    // 6. Table cell checkbox and actions
+    // 6. Table cell leading and actions
 
-    .ch-table-cell--checkbox,
+    .ch-table-cell--leading,
     .ch-table-cell--actions {
       position: absolute;
       top: auto;
@@ -49,8 +49,11 @@
       height: #{ch-calc-box-height(ch-get-text-size(2), ch-get-space())};
     }
 
-    .ch-table-cell--checkbox {
+    .ch-table-cell--leading {
       left: 0;
+
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .ch-table-cell--actions {
