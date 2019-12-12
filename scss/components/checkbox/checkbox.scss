@@ -84,6 +84,12 @@
     display: inline-block;
 
     padding-left: calc(#{ch-get-icon-size()} + #{ch-get-space(s)});
+
+    &:empty {
+      padding: #{0};
+      width: ch-get-icon-size();
+      height: 0;
+    }
   }
 
   // 4. Disabled and readonly states
