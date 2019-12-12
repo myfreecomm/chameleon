@@ -1173,6 +1173,13 @@ template {
   .ch-radio > input[type="radio"] + label {
     display: inline-block;
     padding-left: calc(var(--ch-icon-size-m) + var(--ch-space-s)); }
+    .ch-checkbox > input[type="checkbox"] + label:empty,
+    .ch-checkbox > input[type="radio"] + label:empty,
+    .ch-radio > input[type="checkbox"] + label:empty,
+    .ch-radio > input[type="radio"] + label:empty {
+      padding: 0;
+      width: var(--ch-icon-size-m);
+      height: 0; }
   .ch-checkbox > input[type="checkbox"]:disabled + label,
   .ch-checkbox > input[type="checkbox"]:disabled + label:before,
   .ch-checkbox > input[type="checkbox"]:disabled + label:after, .ch-checkbox > input[type="checkbox"].is-disabled + label,
@@ -2047,12 +2054,12 @@ select.ch-select {
     display: table-cell;
     text-align: left;
     vertical-align: middle; }
-  .ch-table .ch-table-cell--checkbox,
+  .ch-table .ch-table-cell--leading,
   .ch-table .ch-table-cell--actions,
   .ch-table .ch-table-cell--compact {
     padding-top: 0;
     padding-bottom: 0; }
-  .ch-table .ch-table-cell--checkbox {
+  .ch-table .ch-table-cell--leading {
     max-width: calc(var(--ch-icon-size-m) + 2 * var(--ch-space-s));
     width: calc(var(--ch-icon-size-m) + 2 * var(--ch-space-s)); }
   .ch-table .ch-table-cell--actions {
@@ -4755,7 +4762,7 @@ a.ch-steps-item.is-completed:active:before {
 @media screen and (max-width: calc(1024px - 1px)) {
   .ch-tableResponsive {
     position: relative; }
-    .ch-tableResponsive.has-checkbox > .ch-tableResponsive-scroll {
+    .ch-tableResponsive.has-leading > .ch-tableResponsive-scroll {
       margin-left: calc(var(--ch-icon-size-m) + 2 * var(--ch-space-s)); }
     .ch-tableResponsive.has-actions > .ch-tableResponsive-scroll {
       margin-right: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
@@ -4769,7 +4776,7 @@ a.ch-steps-item.is-completed:active:before {
       overflow: hidden;
       text-overflow: ellipsis;
       max-width: var(--ch-dimension-2); }
-    .ch-tableResponsive .ch-table-cell--checkbox,
+    .ch-tableResponsive .ch-table-cell--leading,
     .ch-tableResponsive .ch-table-cell--actions {
       position: absolute;
       top: auto;
@@ -4777,8 +4784,10 @@ a.ch-steps-item.is-completed:active:before {
       justify-content: center;
       align-items: center;
       height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-m)); }
-    .ch-tableResponsive .ch-table-cell--checkbox {
-      left: 0; }
+    .ch-tableResponsive .ch-table-cell--leading {
+      left: 0;
+      padding-left: 0;
+      padding-right: 0; }
     .ch-tableResponsive .ch-table-cell--actions {
       right: 0;
       width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
