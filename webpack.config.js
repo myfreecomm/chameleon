@@ -43,7 +43,7 @@ module.exports = (_, argv) => {
           // Look for Sass files and process them according to the
           // rules specified in the different loaders
           test: /\.(sa|sc)ss$/,
-          
+
           // Use the following loaders from right-to-left, so it will
           // use sass-loader first and ending with MiniCssExtractPlugin
           use: [
@@ -65,7 +65,7 @@ module.exports = (_, argv) => {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                
+
                 // We instruct PostCSS to autoprefix and minimize our
                 // CSS when in production mode, otherwise don't do
                 // anything.
@@ -87,7 +87,11 @@ module.exports = (_, argv) => {
             },
             {
               // Adds support for Sass files
-              loader: 'sass-loader'
+              loader: 'sass-loader',
+              options: {
+                // Prefer `dart-sass`
+                implementation: require('sass'),
+              },
             }
           ]
         },
@@ -101,7 +105,7 @@ module.exports = (_, argv) => {
                 // The image will be named with the original name and
                 // extension
                 name: '[name].[ext]',
-                
+
                 // Indicates where the images are stored and will use
                 // this path when generating the CSS files.
                 // Example, in site.scss I have
