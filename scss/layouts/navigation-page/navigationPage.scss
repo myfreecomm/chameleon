@@ -145,6 +145,8 @@
   // 4. Actions
 
   &-actions {
+    $mobile-limit: calc(#{$ch-breakpoint-tablet} - 1px);
+
     @include ch-media(only, tablet) {
       @include ch-space-inline-group(right, xs);
     }
@@ -165,18 +167,20 @@
 
     @include ch-space-stack-group(xs);
 
+    @media screen and (max-width: $mobile-limit) and (min-width: $ch-breakpoint-desktop) {
+      > .ch-button.has-icon {
+        padding-right: ch-calc-box-height();
+      }
+      
+      > .ch-button.has-iconRight {
+        padding-left: ch-calc-box-height();
+      }
+    }
+
     > *:not(:last-child) {
       @include ch-media(only, tablet) {
         margin-bottom: 0;
       }
-    }
-
-    > .ch-button.has-icon {
-      padding-right: ch-calc-box-height();
-    }
-
-    > .ch-button.has-iconRight {
-      padding-left: ch-calc-box-height();
     }
   }
 
