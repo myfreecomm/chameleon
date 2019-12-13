@@ -1,0 +1,70 @@
+@use 'mixin-from-tablet' as *;
+@use 'mixin-from-desktop' as *;
+@use 'mixin-only-mobile' as *;
+@use 'mixin-only-tablet' as *;
+@use 'mixin-to-tablet' as *;
+
+@mixin media ($type, $screen) {
+
+  // 1. From
+
+  @if $type == from {
+    @if $screen == mobile {
+      @content;
+    }
+
+    @else if $screen == tablet {
+      @include from-tablet {
+        @content;
+      }
+    }
+
+    @else if $screen == desktop {
+      @include from-desktop {
+        @content;
+      }
+    }
+  }
+
+  // 2. To
+
+  @else if $type == to {
+    @if $screen == mobile {
+      @include only-mobile {
+        @content;
+      }
+    }
+
+    @else if $screen == tablet {
+      @include to-tablet {
+        @content;
+      }
+    }
+
+    @else if $screen == desktop {
+      @content;
+    }
+  }
+
+  // 3. Only
+
+  @else if $type == only {
+    @if $screen == mobile {
+      @include only-mobile {
+        @content;
+      }
+    }
+
+    @else if $screen == tablet {
+      @include only-tablet {
+        @content;
+      }
+    }
+
+    @else if $screen == desktop {
+      @include from-desktop {
+        @content;
+      }
+    }
+  }
+}
