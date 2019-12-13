@@ -145,14 +145,29 @@
   // 4. Actions
 
   &-actions {
-    $mobile-limit: calc(#{$ch-breakpoint-tablet} - 1px);
+    @include ch-media(only, mobile) {
+      @include ch-space-stack-group(xs);
+
+      > .ch-button.has-icon {
+        padding-right: ch-calc-box-height();
+      }
+
+      > .ch-button.has-iconRight {
+        padding-left: ch-calc-box-height();
+      }
+    }
 
     @include ch-media(only, tablet) {
       @include ch-space-inline-group(right, xs);
+
+      > *:not(:last-child) {
+        margin-bottom: 0;
+      }
     }
 
     @include ch-media(from, desktop) {
       @include ch-transition(left);
+      @include ch-space-stack-group(xs);
 
       position: fixed;
       bottom: 0;
@@ -163,23 +178,13 @@
       padding-right: ch-get-space(l);
       padding-bottom: ch-get-space(xl);
       padding-left: ch-get-space(l);
-    }
 
-    @include ch-space-stack-group(xs);
-
-    @media screen and (max-width: $mobile-limit) and (min-width: $ch-breakpoint-desktop) {
       > .ch-button.has-icon {
         padding-right: ch-calc-box-height();
       }
-      
+
       > .ch-button.has-iconRight {
         padding-left: ch-calc-box-height();
-      }
-    }
-
-    > *:not(:last-child) {
-      @include ch-media(only, tablet) {
-        margin-bottom: 0;
       }
     }
   }

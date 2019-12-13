@@ -5390,45 +5390,54 @@ a.ch-steps-item.is-completed:active:before {
         margin-bottom: 0; } }
     .ch-navigationPage-content--contained {
       max-width: calc(1024px - var(--ch-dimension-2)); }
-  .ch-navigationPage-actions {
-    display: flex;
-    flex-direction: column; }
-    @media screen and (min-width: 769px) and (max-width: calc(1024px - 1px)) {
-      .ch-navigationPage-actions {
-        display: inline-flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        flex-direction: initial;
-        justify-content: flex-end; }
-        .ch-navigationPage-actions > *:not(:first-child) {
-          margin-right: 0;
-          margin-left: var(--ch-space-xs); } }
-    @media screen and (min-width: 1024px) {
-      .ch-navigationPage-actions {
-        transition-property: left;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-in-out;
-        transition-delay: unset;
-        position: fixed;
-        bottom: 0;
-        left: var(--ch-dimension-1);
-        width: var(--ch-dimension-2);
-        padding-top: var(--ch-space-xs);
-        padding-right: var(--ch-space-l);
-        padding-bottom: var(--ch-space-xl);
-        padding-left: var(--ch-space-l); } }
-    .ch-navigationPage-actions > *:not(:last-child) {
-      margin-bottom: var(--ch-space-xs); }
-    .ch-navigationPage-actions > *:last-child {
-      margin-bottom: 0; }
-    @media screen and (max-width: calc(769px - 1px)) and (min-width: 1024px) {
+  @media screen and (max-width: calc(769px - 1px)) {
+    .ch-navigationPage-actions {
+      display: flex;
+      flex-direction: column; }
+      .ch-navigationPage-actions > *:not(:last-child) {
+        margin-bottom: var(--ch-space-xs); }
+      .ch-navigationPage-actions > *:last-child {
+        margin-bottom: 0; }
       .ch-navigationPage-actions > .ch-button.has-icon {
         padding-right: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
       .ch-navigationPage-actions > .ch-button.has-iconRight {
         padding-left: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); } }
-    @media screen and (min-width: 769px) and (max-width: calc(1024px - 1px)) {
+  @media screen and (min-width: 769px) and (max-width: calc(1024px - 1px)) {
+    .ch-navigationPage-actions {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      flex-direction: initial;
+      justify-content: flex-end; }
+      .ch-navigationPage-actions > *:not(:first-child) {
+        margin-right: 0;
+        margin-left: var(--ch-space-xs); }
       .ch-navigationPage-actions > *:not(:last-child) {
         margin-bottom: 0; } }
+  @media screen and (min-width: 1024px) {
+    .ch-navigationPage-actions {
+      transition-property: left;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      transition-delay: unset;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      bottom: 0;
+      left: var(--ch-dimension-1);
+      width: var(--ch-dimension-2);
+      padding-top: var(--ch-space-xs);
+      padding-right: var(--ch-space-l);
+      padding-bottom: var(--ch-space-xl);
+      padding-left: var(--ch-space-l); }
+      .ch-navigationPage-actions > *:not(:last-child) {
+        margin-bottom: var(--ch-space-xs); }
+      .ch-navigationPage-actions > *:last-child {
+        margin-bottom: 0; }
+      .ch-navigationPage-actions > .ch-button.has-icon {
+        padding-right: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
+      .ch-navigationPage-actions > .ch-button.has-iconRight {
+        padding-left: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); } }
   @media screen and (min-width: 769px) and (max-width: calc(1024px - 1px)) {
     .ch-template-nav.is-expanded + .ch-template-header ~ .ch-navigationPage .ch-navigationPage-aside > .ch-menu,
     .ch-template-nav.is-expanded + .ch-template-header ~ .ch-navigationPage .ch-navigationPage-aside > .ch-steps {
