@@ -24,7 +24,7 @@
   // 4. Stacked variation
 
   &--stacked {
-    @include ch-media(to, mobile) {
+    @include ch-media(only, mobile) {
       flex-wrap: wrap;
 
       .ch-media-actions {
@@ -35,6 +35,14 @@
         &,
         > * {
           width: 100%;
+        }
+
+        > .ch-button.has-icon {
+          padding-right: ch-calc-box-height();
+        }
+    
+        > .ch-button.has-iconRight {
+          padding-left: ch-calc-box-height();
         }
       }
     }

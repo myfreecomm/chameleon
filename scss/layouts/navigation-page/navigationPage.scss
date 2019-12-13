@@ -170,6 +170,14 @@
         margin-bottom: 0;
       }
     }
+
+    > .ch-button.has-icon {
+      padding-right: ch-calc-box-height();
+    }
+
+    > .ch-button.has-iconRight {
+      padding-left: ch-calc-box-height();
+    }
   }
 
   // 5. Template nav expanded state
