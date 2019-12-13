@@ -5296,7 +5296,7 @@ a.ch-steps-item.is-completed:active:before {
     .ch-navigationPage {
       border-top: 1px solid var(--ch-color-border); } }
   .ch-navigationPage-aside {
-    padding-top: calc(var(--ch-space-xl) + 2 * var(--ch-space-xs)); }
+    padding-top: var(--ch-space-xl); }
     @media screen and (min-width: 1024px) {
       .ch-navigationPage-aside {
         transition-property: left;
@@ -5350,27 +5350,33 @@ a.ch-steps-item.is-completed:active:before {
           left: auto;
           right: auto;
           background: transparent; } }
-    .ch-navigationPage-aside > .ch-steps {
-      padding-top: var(--ch-space-xs);
-      padding-right: var(--ch-space-xs);
-      padding-bottom: var(--ch-space-xs);
-      padding-left: var(--ch-space-xs); }
-      @media screen and (min-width: 1024px) {
-        .ch-navigationPage-aside > .ch-steps {
-          display: flex;
-          flex-direction: column;
-          padding: 0;
-          overflow-x: initial; }
-          .ch-navigationPage-aside > .ch-steps > *:not(:last-child) {
-            margin-bottom: var(--ch-space-s); }
-          .ch-navigationPage-aside > .ch-steps > *:last-child {
-            margin-bottom: 0; }
-          .ch-navigationPage-aside > .ch-steps .ch-steps-item {
-            margin-right: 0;
-            width: 100%; }
-          .ch-navigationPage-aside > .ch-steps .ch-steps-item-label {
-            display: block;
-            width: auto; } }
+    @media screen and (max-width: calc(769px - 1px)) {
+      .ch-navigationPage-aside > .ch-steps {
+        padding-top: var(--ch-space-xs);
+        padding-right: var(--ch-space-xs);
+        padding-bottom: var(--ch-space-xs);
+        padding-left: var(--ch-space-xs); } }
+    @media screen and (min-width: 769px) and (max-width: calc(1024px - 1px)) {
+      .ch-navigationPage-aside > .ch-steps {
+        padding-top: var(--ch-space-m);
+        padding-right: var(--ch-space-l);
+        padding-bottom: var(--ch-space-m);
+        padding-left: var(--ch-space-l); } }
+    @media screen and (min-width: 1024px) {
+      .ch-navigationPage-aside > .ch-steps {
+        display: flex;
+        flex-direction: column;
+        overflow-x: initial; }
+        .ch-navigationPage-aside > .ch-steps > *:not(:last-child) {
+          margin-bottom: var(--ch-space-s); }
+        .ch-navigationPage-aside > .ch-steps > *:last-child {
+          margin-bottom: 0; }
+        .ch-navigationPage-aside > .ch-steps .ch-steps-item {
+          margin-right: 0;
+          width: 100%; }
+        .ch-navigationPage-aside > .ch-steps .ch-steps-item-label {
+          display: block;
+          width: auto; } }
   .ch-navigationPage-content {
     margin-bottom: var(--ch-space-m);
     flex: 1; }

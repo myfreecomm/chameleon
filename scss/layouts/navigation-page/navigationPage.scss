@@ -59,7 +59,7 @@
       }
     }
 
-    padding-top: calc(#{ch-get-space(xl)} + 2 * #{ch-get-space(xs)});
+    padding-top: ch-get-space(xl);
 
     // 2.1. Steps and Menu
 
@@ -97,12 +97,19 @@
     }
 
     > .ch-steps {
+      @include ch-media(only, mobile) {
+        @include ch-space-inset(default, xs);
+      }
+      
+      @include ch-media(only, tablet) {
+        @include ch-space-inset(squish, l);
+      }
+
       @include ch-media(from, desktop) {
         @include ch-space-stack-group(s);
 
-        padding: 0; // sass-lint:disable-line variable-for-property
         overflow-x: initial;
-        
+
         .ch-steps-item {
           margin-right: 0;
           width: 100%;
@@ -113,8 +120,6 @@
           width: auto;
         }
       }
-
-      @include ch-space-inset(default, xs);
     }
   }
 
