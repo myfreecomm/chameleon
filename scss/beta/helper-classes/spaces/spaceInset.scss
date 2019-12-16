@@ -1,7 +1,6 @@
-@use '../variables' as *;
-@use '../mixin-space-inset' as *;
-@use '../../breakpoints' as *;
-@use '../../helpers' as *;
+@use '../../base/spaces' as *;
+@use '../../base/breakpoints' as *;
+@use '../../base/helpers' as *;
 
 .ch-spaceInset {
   $types: (default, squish, stretch);

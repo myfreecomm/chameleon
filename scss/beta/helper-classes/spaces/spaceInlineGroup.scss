@@ -1,7 +1,6 @@
-@use '../variables' as *;
-@use '../mixin-space-inline-group' as *;
-@use '../../breakpoints' as *;
-@use '../../helpers' as *;
+@use '../../base/spaces' as *;
+@use '../../base/breakpoints' as *;
+@use '../../base/helpers' as *;
 
 .ch-spaceInlineGroup {
   $types: (left, right);
