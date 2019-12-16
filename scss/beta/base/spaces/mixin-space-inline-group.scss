@@ -21,6 +21,6 @@
   }
 
   & > *:not(#{unquote($exception)}) {
-    @include ch-space-inline($type, $size)
+    @include space-inline($type, $size)
   }
 }

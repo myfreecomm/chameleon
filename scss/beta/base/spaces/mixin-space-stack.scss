@@ -1,4 +1,4 @@
-@use 'function-get-space';
+@use 'function-get-space' as *;
 
 @mixin space-stack ($size: m) {
   $space: get-space($size);

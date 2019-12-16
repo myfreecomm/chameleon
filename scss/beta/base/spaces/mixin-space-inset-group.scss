@@ -1,4 +1,4 @@
-@use 'mixin-space-inset';
+@use 'mixin-space-inset' as *;
 
 @mixin space-inset-group ($type: default, $size: m) {
   & > * {

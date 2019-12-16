@@ -1,4 +1,4 @@
-@use 'mixin-space-stack';
+@use 'mixin-space-stack' as *;
 
 @mixin space-stack-group ($size: m) {
   display: flex;
