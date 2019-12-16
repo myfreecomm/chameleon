@@ -1,6 +1,9 @@
-@function ch-get-prev-space ($size) {
-  $current-index: index($ch-space-sizes, $size);
-  $previous-size: nth($ch-space-sizes, $current-index - 1);
+@use 'function-get-space' as *;
+@use 'variables' as *;
 
-  @return ch-get-space($previous-size);
+@function get-prev-space ($size) {
+  $current-index: index($space-sizes, $size);
+  $previous-size: nth($space-sizes, $current-index - 1);
+
+  @return get-space($previous-size);
 }
