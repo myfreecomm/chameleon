@@ -1,7 +1,10 @@
+@use 'function-get-space' as *;
+@use 'function-get-prev-space' as *;
+@use 'function-get-next-space' as *;
 
-@mixin ch-space-inset ($type: default, $size: m) {
+@mixin space-inset ($type: default, $size: m) {
   @if ($type == default) {
-    $space: ch-get-space($size);
+    $space: get-space($size);
 
     padding-top:    $space;
     padding-right:  $space;
@@ -10,17 +13,17 @@
   }
 
   @else {
-    $vertical-space:   ch-get-space(m);
-    $horizontal-space: ch-get-space(m);
+    $vertical-space:   get-space(m);
+    $horizontal-space: get-space(m);
 
     @if ($type == squish) {
-      $vertical-space:   ch-get-prev-space($size);
-      $horizontal-space: ch-get-space($size);
+      $vertical-space:   get-prev-space($size);
+      $horizontal-space: get-space($size);
     }
 
     @else if ($type == stretch) {
-      $vertical-space:   ch-get-next-space($size);
-      $horizontal-space: ch-get-space($size);
+      $vertical-space:   get-next-space($size);
+      $horizontal-space: get-space($size);
     }
 
     padding-top:    $vertical-space;

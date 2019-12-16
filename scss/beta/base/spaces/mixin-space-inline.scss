@@ -1,5 +1,7 @@
-@mixin ch-space-inline ($type: left, $size: m) {
-  $space: ch-get-space($size);
+@use 'function-get-space';
+
+@mixin space-inline ($type: left, $size: m) {
+  $space: get-space($size);
 
   @if ($type == left) {
     margin-right: $space;

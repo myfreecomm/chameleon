@@ -1,5 +1,7 @@
-@mixin ch-space-inset-group ($type: default, $size: m) {
+@use 'mixin-space-inset';
+
+@mixin space-inset-group ($type: default, $size: m) {
   & > * {
-    @include ch-space-inset($type, $size);
+    @include space-inset($type, $size);
   }
 }

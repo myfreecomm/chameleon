@@ -1,9 +1,11 @@
-@mixin ch-space-stack-group ($size: m) {
+@use 'mixin-space-stack';
+
+@mixin space-stack-group ($size: m) {
   display: flex;
   flex-direction: column;
 
   & > *:not(:last-child) {
-    @include ch-space-stack($size);
+    @include space-stack($size);
   }
 
   & > *:last-child {

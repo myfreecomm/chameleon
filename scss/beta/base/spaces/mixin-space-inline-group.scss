@@ -1,4 +1,6 @@
-@mixin ch-space-inline-group ($type: left, $size: m, $alignment: flex-start) {
+@use 'mixin-space-inline' as *;
+
+@mixin space-inline-group ($type: left, $size: m, $alignment: flex-start) {
   $exception: '';
 
   display: inline-flex;
