@@ -2078,3 +2078,30 @@
     margin-bottom: 0;
   }
 }
+
+.ch-text--left {
+  text-align: left;
+}
+.ch-text--right {
+  text-align: right;
+}
+.ch-text--center {
+  text-align: center;
+}
+.ch-text--truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ch-text--info {
+  color: var(--ch-color-info);
+}
+.ch-text--warning {
+  color: var(--ch-color-warning);
+}
+.ch-text--negative {
+  color: var(--ch-color-negative);
+}
+.ch-text--positive {
+  color: var(--ch-color-positive);
+}

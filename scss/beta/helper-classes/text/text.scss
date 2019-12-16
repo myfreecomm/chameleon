@@ -1,0 +1,26 @@
+@use '../../base/colors' as *;
+@use '../../base/helpers' as *;
+
+.ch-text {
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--truncate {
+    @include truncate;
+  }
+
+  @each $type in (info, warning, negative, positive) {
+    &--#{$type} {
+      color: #{get-color(#{$type})};
+    }
+  }
+}
