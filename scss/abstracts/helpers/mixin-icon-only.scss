@@ -1,7 +1,8 @@
 // sass-lint:disable no-important
 
 @mixin ch-icon-only($size) {
-  $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space($size));
+  $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space($size));
+  $size: calc(#{$box-height} + 2 * #{$ch-border-width});
 
   @include ch-paddingless(true);
 
