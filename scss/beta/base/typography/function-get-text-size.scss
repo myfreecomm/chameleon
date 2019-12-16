@@ -1,0 +1,3 @@
+@function get-text-size ($size: 2) {
+  @return unquote("var(--ch-text-size-#{$size})");
+}

@@ -1,0 +1,13 @@
+@use '../colors' as *;
+@use 'function-get-text-font-family' as *;
+@use 'function-get-text-size' as *;
+@use 'function-get-text-weight' as *;
+@use 'function-get-text-line-height' as *;
+
+@mixin text-label ($type: '') {
+  color: #{get-color(text, 1, $type)};
+  font-family: #{get-text-font-family()};
+  font-size: #{get-text-size()};
+  font-weight: #{get-text-weight(bold)};
+  line-height: #{get-text-line-height()};
+}

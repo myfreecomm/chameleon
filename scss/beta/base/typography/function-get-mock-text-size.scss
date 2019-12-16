@@ -1,0 +1,7 @@
+@use '../spaces' as *;
+@use 'function-get-text-size' as *;
+@use 'function-get-text-line-height' as *;
+
+@function get-mock-text-size ($text-size: 2, $space-size: xxs) {
+  @return calc(#{get-text-size($text-size)} * #{get-text-line-height()} + #{get-space($space-size)});
+}
