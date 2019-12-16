@@ -1,0 +1,22 @@
+@use '../variables' as *;
+@use '../mixin-space-inline' as *;
+@use '../../breakpoints' as *;
+@use '../../helpers' as *;
+
+.ch-spaceInline {
+  $types: (left, right);
+
+  @each $size in $space-sizes {
+    @each $type in $types {
+      @each $screen in $breakpoint-screens {
+        $sufix: generate-variation(($size, $type, $screen), (m, left, mobile));
+
+        @include media (from, $screen) {
+          @at-root &#{$sufix} {
+            @include space-inline($type, $size);
+          }
+        } // @include ch-media
+      } // @each $screen in $ch-breakpoint-screens
+    } // @each $type in $types
+  } // @each $size in $ch-space-sizes
+}

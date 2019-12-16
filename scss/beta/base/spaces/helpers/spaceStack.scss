@@ -1,0 +1,18 @@
+@use '../variables' as *;
+@use '../mixin-space-stack' as *;
+@use '../../breakpoints' as *;
+@use '../../helpers' as *;
+
+.ch-spaceStack {
+  @each $size in $space-sizes {
+    @each $screen in $breakpoint-screens {
+      $sufix: generate-variation(($size, $screen), (m, mobile));
+
+      @include media (from, $screen) {
+        @at-root #{&}#{$sufix} {
+          @include space-stack($size);
+        }
+      } // @include ch-media
+    } // @each $screen in $ch-breakpoint-screens
+  } // @each $size in $ch-space-sizes
+}
