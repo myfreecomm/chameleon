@@ -1,0 +1,30 @@
+:root {
+  // 1. Base
+
+  --ch-text-font-family:       'Nunito Sans', sans-serif;
+  --ch-text-font-family-brand: 'Montserrat', sans-serif;
+  --ch-text-font-family-code:  'Roboto Mono', monospace;
+  --ch-text-size:              14px;
+  --ch-text-unit:              1rem;
+  --ch-text-line-height:       1.5;
+
+  // 2. Weight
+
+  --ch-text-weight-light:      300;
+  --ch-text-weight-regular:    400;
+  --ch-text-weight-semibold:   600;
+  --ch-text-weight-bold:       700;
+
+  // 3. Sizes
+
+  --ch-text-size-1:            calc(0.75  * var(--ch-text-unit)); // 12px
+  --ch-text-size-2:            calc(0.875 * var(--ch-text-unit)); // 14px
+  --ch-text-size-3:            calc(1     * var(--ch-text-unit)); // 16px
+  --ch-text-size-4:            calc(1.125 * var(--ch-text-unit)); // 18px
+  --ch-text-size-5:            calc(1.25  * var(--ch-text-unit)); // 20px
+  --ch-text-size-6:            calc(1.5   * var(--ch-text-unit)); // 24px
+  --ch-text-size-7:            calc(1.75  * var(--ch-text-unit)); // 28px
+  --ch-text-size-8:            calc(2     * var(--ch-text-unit)); // 32px
+  --ch-text-size-9:            calc(2.25  * var(--ch-text-unit)); // 36px
+  --ch-text-size-10:           calc(2.625 * var(--ch-text-unit)); // 42px
+}
