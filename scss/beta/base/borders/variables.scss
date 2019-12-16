@@ -1,0 +1,7 @@
+$border-width: 1px;
+
+$border-box:         (box, $border-width, solid, border);
+$border-box-focus:   (box, $border-width, solid, (border focus));
+$border-box-active:  (box, $border-width, solid, (border active));
+
+$border-box-inverse: (box, $border-width, solid, (border inverse));

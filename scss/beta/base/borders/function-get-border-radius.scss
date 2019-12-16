@@ -1,0 +1,11 @@
+@function get-border-radius ($type: 1) {
+  @if ($type == 0) {
+    @return 0;
+  }
+
+  @if ($type == circle) {
+    @return 999px;
+  }
+
+  @return unquote("var(--ch-border-radius-#{$type})");
+}

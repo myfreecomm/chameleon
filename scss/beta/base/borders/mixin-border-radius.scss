@@ -1,0 +1,38 @@
+@mixin border-radius ($type: 1, $rules: box) {
+  $radius: get-border-radius($type);
+
+  @each $rule in $rules {
+    @if $rule == box {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    @if $rule == top {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+    }
+
+    @if $rule == bottom {
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    @if $rule == top-left {
+      border-top-left-radius: $radius;
+    }
+
+    @if $rule == top-right {
+      border-top-right-radius: $radius;
+    }
+
+    @if $rule == bottom-right {
+      border-bottom-right-radius: $radius;
+    }
+
+    @if $rule == bottom-left {
+      border-bottom-left-radius: $radius;
+    }
+  }
+}
