@@ -1,0 +1,13 @@
+@mixin ch-space-inline ($type: left, $size: m) {
+  $space: ch-get-space($size);
+
+  @if ($type == left) {
+    margin-right: $space;
+    margin-left: 0;
+  }
+
+  @else if ($type == right) {
+    margin-right: 0;
+    margin-left: $space;
+  }
+}

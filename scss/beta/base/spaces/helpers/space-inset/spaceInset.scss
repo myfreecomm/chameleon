@@ -1,0 +1,22 @@
+.ch-spaceInset {
+  $types: (default, squish, stretch);
+
+  @each $size in $ch-space-sizes {
+    @each $type in $types {
+      $invalid-squish:  $type == squish  and $size == xxs;
+      $invalid-stretch: $type == stretch and $size == xxl;
+
+      @if not $invalid-squish and not $invalid-stretch {
+        @each $screen in $ch-breakpoint-screens {
+          $sufix: ch-generate-variation(($size, $type, $screen), (m, default, mobile));
+
+          @include ch-media (from, $screen) {
+            @at-root #{&}#{$sufix} {
+              @include ch-space-inset($type, $size);
+            }
+          } // @include ch-media
+        } // @each $screen in $ch-breakpoint-screens
+      } // @if not $invalid-squish and not $invalid-stretch
+    } // @each $type in $types
+  } // @each $size in $ch-space-sizes
+}
