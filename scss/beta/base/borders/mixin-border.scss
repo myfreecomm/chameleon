@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @mixin border (
   $rules: box,
   $color: get-color(border),
