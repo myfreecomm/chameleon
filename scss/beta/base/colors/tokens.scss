@@ -10,15 +10,15 @@
   // 2. Neutral
 
   --ch-color-neutral-1:        #{$color-white};
-  --ch-color-neutral-2:        #{$color-neutrals-extra-light};
+  --ch-color-neutral-2:        #{$color-neutral-extra-light};
 
   // 3. Support
 
   // 3.1. Default
 
-  --ch-color-default:          #{$color-neutrals};
-  --ch-color-default-focus:    #{$color-neutrals-dark};
-  --ch-color-default-active:   #{$color-neutrals-extra-dark};
+  --ch-color-default:          #{$color-neutral};
+  --ch-color-default-focus:    #{$color-neutral-dark};
+  --ch-color-default-active:   #{$color-neutral-extra-dark};
 
   // 3.2. Primary
 
@@ -52,8 +52,8 @@
 
   // 4. Text
 
-  --ch-color-text-1:           #{$color-neutrals-dark};
-  --ch-color-text-2:           #{$color-neutrals};
+  --ch-color-text-1:           #{$color-neutral-dark};
+  --ch-color-text-2:           #{$color-neutral};
 
   // 4.1. Link
 
@@ -67,7 +67,7 @@
 
   // 6. Border
 
-  --ch-color-border:           #{lighten($color-neutrals-light, 7%)};
+  --ch-color-border:           #{lighten($color-neutral-light, 7%)};
 
   // 7. Menu
 
