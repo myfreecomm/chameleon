@@ -3,22 +3,22 @@
 :root {
   // 1. Brand
 
-  --ch-color-brand:                    #{$color-cyan};
-  --ch-color-brand-focus:              #{$color-cyan-dark};
-  --ch-color-brand-active:             #{$color-cyan-extra-dark};
+  --ch-color-brand:            #{$color-cyan};
+  --ch-color-brand-focus:      #{$color-cyan-dark};
+  --ch-color-brand-active:     #{$color-cyan-extra-dark};
 
   // 2. Neutral
 
-  --ch-color-neutral-1:                #{$color-white};
-  --ch-color-neutral-2:                #{$color-grey-extra-light};
+  --ch-color-neutral-1:        #{$color-white};
+  --ch-color-neutral-2:        #{$color-neutrals-extra-light};
 
   // 3. Support
 
   // 3.1. Default
 
-  --ch-color-default:          #{$color-grey};
-  --ch-color-default-focus:    #{$color-grey-dark};
-  --ch-color-default-active:   #{$color-grey-extra-dark};
+  --ch-color-default:          #{$color-neutrals};
+  --ch-color-default-focus:    #{$color-neutrals-dark};
+  --ch-color-default-active:   #{$color-neutrals-extra-dark};
 
   // 3.2. Primary
 
@@ -52,8 +52,8 @@
 
   // 4. Text
 
-  --ch-color-text-1:           #{$color-grey-dark};
-  --ch-color-text-2:           #{$color-grey};
+  --ch-color-text-1:           #{$color-neutrals-dark};
+  --ch-color-text-2:           #{$color-neutrals};
 
   // 4.1. Link
 
@@ -67,9 +67,7 @@
 
   // 6. Border
 
-  --ch-color-border:           #{lighten($color-grey-light, 7%)};
-  --ch-color-border-focus:     #{ch-get-color-focus($color-grey-light)};
-  --ch-color-border-active:    #{ch-get-color-active($color-grey-light)};
+  --ch-color-border:           #{lighten($color-neutrals-light, 7%)};
 
   // 7. Menu
 

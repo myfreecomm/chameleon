@@ -29,8 +29,6 @@
   --ch-color-text-link-active: #69C0FF;
   --ch-color-highlight: #FFDA8F;
   --ch-color-border: #dedede;
-  --ch-color-border-focus: ch-get-color-focus(#CCCCCC);
-  --ch-color-border-active: ch-get-color-active(#CCCCCC);
   --ch-color-menu-text-1: #ACB9D2;
   --ch-color-overlay: rgba(0, 0, 0, 0.55);
 }
