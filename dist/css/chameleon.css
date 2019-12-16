@@ -1,1 +1,36 @@
-
+:root {
+  --ch-color-brand: #00BBDA;
+  --ch-color-brand-focus: #006E8C;
+  --ch-color-brand-active: #004D66;
+  --ch-color-neutral-1: #FFFFFF;
+  --ch-color-neutral-2: #F8F8F8;
+  --ch-color-default: #898989;
+  --ch-color-default-focus: #6D6D6D;
+  --ch-color-default-active: #454646;
+  --ch-color-primary: #1890FF;
+  --ch-color-primary-focus: #096DD9;
+  --ch-color-primary-active: #002766;
+  --ch-color-info: #00BBDA;
+  --ch-color-info-focus: #006E8C;
+  --ch-color-info-active: #004D66;
+  --ch-color-warning: #FDB03D;
+  --ch-color-warning-focus: #B06919;
+  --ch-color-warning-active: #633308;
+  --ch-color-negative: #FB1C33;
+  --ch-color-negative-focus: #AD021E;
+  --ch-color-negative-active: #610017;
+  --ch-color-positive: #40C441;
+  --ch-color-positive-focus: #1C7822;
+  --ch-color-positive-active: #072B0C;
+  --ch-color-text-1: #6D6D6D;
+  --ch-color-text-2: #898989;
+  --ch-color-text-link: #1890FF;
+  --ch-color-text-link-focus: #69C0FF;
+  --ch-color-text-link-active: #69C0FF;
+  --ch-color-highlight: #FFDA8F;
+  --ch-color-border: #dedede;
+  --ch-color-border-focus: ch-get-color-focus(#CCCCCC);
+  --ch-color-border-active: ch-get-color-active(#CCCCCC);
+  --ch-color-menu-text-1: #ACB9D2;
+  --ch-color-overlay: rgba(0, 0, 0, 0.55);
+}

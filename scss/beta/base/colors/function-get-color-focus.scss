@@ -1,0 +1,3 @@
+@function get-color-focus ($color, $type: default) {
+  @return if($type == inverse, lighten($color, 5%), darken($color, 5%));
+}
