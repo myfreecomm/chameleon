@@ -2,13 +2,16 @@
   @include ch-transition(margin-left);
 
   @include ch-media(only, mobile) {
-    padding-top: #{ch-get-space(m)};
-    padding-right: #{ch-get-space(s)};
-    padding-bottom: #{ch-get-dimension(1)};
-    padding-left: #{ch-get-space(s)};
+    @include ch-space-inset(stretch);
   } 
 
   @include ch-media(from, tablet) {
     @include ch-space-inset(stretch, l);
+  }
+
+  @at-root .ch-template-nav ~ .ch-template-header ~ & {
+    @include ch-media(only, mobile) {
+      padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(m)});
+    }
   }
 }
