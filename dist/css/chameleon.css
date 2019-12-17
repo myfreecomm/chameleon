@@ -1013,38 +1013,38 @@ template {
   .ch-button.has-icon.ch-button--small > .ch-icon:last-child, .ch-button.has-iconRight.ch-button--small > .ch-icon:first-child,
   .ch-button.has-iconRight.ch-button--small > .ch-icon:last-child {
     font-size: var(--ch-icon-size-xs); }
-  .ch-button--icon {
+  .ch-button--icon:not(.ch-button--small) {
     padding: 0 !important;
     position: relative;
-    width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs));
-    min-width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs));
-    min-height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
-    .ch-button--icon > * {
+    width: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) + 2 * 1px);
+    min-width: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) + 2 * 1px);
+    min-height: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) + 2 * 1px); }
+    .ch-button--icon:not(.ch-button--small) > * {
       display: none; }
-    .ch-button--icon > .ch-icon:first-child,
-    .ch-button--icon > .ch-avatar,
-    .ch-button--icon > .ch-toggle-icon {
+    .ch-button--icon:not(.ch-button--small) > .ch-icon:first-child,
+    .ch-button--icon:not(.ch-button--small) > .ch-avatar,
+    .ch-button--icon:not(.ch-button--small) > .ch-toggle-icon {
       position: absolute;
       display: block;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
-    .ch-button--icon.ch-button--small {
-      padding: 0 !important;
-      position: relative;
-      width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs));
-      min-width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs));
-      min-height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)); }
-      .ch-button--icon.ch-button--small > * {
-        display: none; }
-      .ch-button--icon.ch-button--small > .ch-icon:first-child,
-      .ch-button--icon.ch-button--small > .ch-avatar,
-      .ch-button--icon.ch-button--small > .ch-toggle-icon {
-        position: absolute;
-        display: block;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); }
+  .ch-button--icon.ch-button--small {
+    padding: 0 !important;
+    position: relative;
+    width: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px);
+    min-width: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px);
+    min-height: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px); }
+    .ch-button--icon.ch-button--small > * {
+      display: none; }
+    .ch-button--icon.ch-button--small > .ch-icon:first-child,
+    .ch-button--icon.ch-button--small > .ch-avatar,
+    .ch-button--icon.ch-button--small > .ch-toggle-icon {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
   .ch-button--mockLabel {
     margin-top: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + var(--ch-space-xxs)); }
 
@@ -1496,9 +1496,9 @@ template {
         .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item--icon {
           padding: 0 !important;
           position: relative;
-          width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs));
-          min-width: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs));
-          min-height: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)); }
+          width: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px);
+          min-width: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px);
+          min-height: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px); }
           .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item--icon > * {
             display: none; }
           .ch-dropdown.ch-dropdown--actions > .ch-overlay > .ch-card > .ch-menu:first-child > .ch-menu-item--icon > .ch-icon:first-child,
@@ -2552,6 +2552,20 @@ a.ch-steps-item.is-completed:active:before {
     background-color: var(--ch-color-overlay-inverse); }
   .ch-overlay--inside {
     position: absolute; }
+
+.ch-search {
+  display: inline-block;
+  position: relative; }
+  .ch-search > .ch-input:not(.ch-input--small) {
+    padding-right: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) + 2 * 1px); }
+  .ch-search > .ch-input.ch-input--small {
+    padding-right: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px); }
+  .ch-search > .ch-button--icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
 
 .ch-modal {
   padding-top: var(--ch-space-m);

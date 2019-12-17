@@ -250,12 +250,12 @@
     }
   }
 
-  &--icon {
+  &--icon:not(.ch-button--small) {
     @include ch-icon-only(xs);
+  }
 
-    &.ch-button--small {
-      @include ch-icon-only(xxs);
-    }
+  &--icon.ch-button--small {
+    @include ch-icon-only(xxs);
   }
 
   // 8. Mock Label
