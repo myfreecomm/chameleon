@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chameleon - Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
+  </head>
+  <body>
+
+    <div class="ch-template">
+
+      <!-- CONTENT BEGIN -->
+      <div class="ch-template-content">
+
+        <form class="ch-form ch-form--contained">
+          <h4 class="ch-title ch-title--4">Informações gerais</h4>
+
+          <div class="ch-fieldGroup ch-fieldGroup--3Desktop">
+            <div class="ch-field">
+              <label class="ch-field-label">CNPJ</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field ch-field--2Desktop">
+              <label class="ch-field-label">Razão social</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">Inscrição estadual</label>
+              <div class="ch-field-control">
+                <input class="ch-input" type="text" value="">
+                <div class="ch-checkbox"><input id="__ch-1" type="checkbox" value="true"><label for="__ch-1">Isento</label></div>
+              </div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">Inscrição municipal</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">SUFRAMA</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field ch-field--2Desktop">
+              <label class="ch-field-label">Natureza jurídica</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">CNAE principal</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field ch-field--3Desktop">
+              <label class="ch-field-label">CNAEs secundários</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+          </div>
+
+          <h4 class="ch-title ch-title--4">Endereço</h4>
+
+          <div class="ch-fieldGroup">
+            <div class="ch-field">
+              <label class="ch-field-label">CEP</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field ch-field--3Desktop">
+              <label class="ch-field-label">Logradouro</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">Número</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">Complemento</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field ch-field--2Desktop">
+              <label class="ch-field-label">Bairro</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">UF</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field ch-field--2Desktop">
+              <label class="ch-field-label">Município</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+          </div>
+
+          <h4 class="ch-title ch-title--4">Informações de contato</h4>
+
+          <div class="ch-fieldGroup ch-fieldGroup--2Desktop">
+            <div class="ch-field">
+              <label class="ch-field-label">E-mail</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">Telefone</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+          </div>
+
+          <h4 class="ch-title ch-title--4">Informações tributárias</h4>
+
+          <div class="ch-fieldGroup ch-fieldGroup--1Desktop">
+            <div class="ch-field">
+              <label class="ch-field-label">Regime tributário geral</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">Regime tributário diferencido</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+
+            <div class="ch-field">
+              <label class="ch-field-label">Contribuintes</label>
+              <div class="ch-field-control"><input class="ch-input" type="text" value=""></div>
+            </div>
+          </div>
+
+          <div class="ch-form-actions">
+            <button type="button" class="ch-button has-icon ch-button--outline">
+              <i class="ch-icon fal fa-arrow-left"></i>
+              Voltar
+            </button>
+
+            <button type="button" class="ch-button ch-button--primary">Salvar</button>
+          </div>
+        </form>
+
+      </div>
+      <!-- CONTENT END -->
+
+    </div>
+  </body>
+</html>
