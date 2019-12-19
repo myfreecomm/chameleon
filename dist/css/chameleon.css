@@ -3029,6 +3029,8 @@ a.ch-steps-item.is-completed:active:before {
   @media screen and (max-width: calc(769px - 1px)) {
     .ch-media--stacked {
       flex-wrap: wrap; }
+      .ch-media--stacked .ch-media-content {
+        margin-right: 0; }
       .ch-media--stacked .ch-media-actions {
         display: flex;
         flex-direction: column;

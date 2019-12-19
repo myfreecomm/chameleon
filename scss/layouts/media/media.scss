@@ -27,11 +27,15 @@
     @include ch-media(only, mobile) {
       flex-wrap: wrap;
 
+      .ch-media-content {
+        margin-right: 0;
+      }
+
       .ch-media-actions {
         @include ch-space-stack-group(xs);
-        
+
         margin-top: #{ch-get-space(s)};
-        
+
         &,
         > * {
           width: 100%;
