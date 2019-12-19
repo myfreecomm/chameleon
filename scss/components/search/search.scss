@@ -2,18 +2,22 @@
   display: inline-block;
   position: relative;
 
-  > .ch-input:not(.ch-input--small) {
-    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
-    $padding-right: calc(#{$box-height} + 2 * #{$ch-border-width});
+  > .ch-input {
+    width: 100%;
 
-    padding-right: $padding-right;
-  }
+    &:not(.ch-input--small) {
+      $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
+      $padding-right: calc(#{$box-height} + 2 * #{$ch-border-width});
+  
+      padding-right: $padding-right;
+    }
 
-  > .ch-input.ch-input--small {
-    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
-    $padding-right: calc(#{$box-height} + 2 * #{$ch-border-width});
-
-    padding-right: $padding-right;
+    &.ch-input--small {
+      $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
+      $padding-right: calc(#{$box-height} + 2 * #{$ch-border-width});
+  
+      padding-right: $padding-right;
+    }
   }
 
   > .ch-button--icon {

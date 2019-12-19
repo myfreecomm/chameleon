@@ -2556,10 +2556,12 @@ a.ch-steps-item.is-completed:active:before {
 .ch-search {
   display: inline-block;
   position: relative; }
-  .ch-search > .ch-input:not(.ch-input--small) {
-    padding-right: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) + 2 * 1px); }
-  .ch-search > .ch-input.ch-input--small {
-    padding-right: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px); }
+  .ch-search > .ch-input {
+    width: 100%; }
+    .ch-search > .ch-input:not(.ch-input--small) {
+      padding-right: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) + 2 * 1px); }
+    .ch-search > .ch-input.ch-input--small {
+      padding-right: calc(calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xxs)) + 2 * 1px); }
   .ch-search > .ch-button--icon {
     position: absolute;
     top: 0;
