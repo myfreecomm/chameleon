@@ -14,4 +14,8 @@
       padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(m)});
     }
   }
+
+  &--contained {
+    max-width: calc(#{$ch-breakpoint-desktop} - #{ch-get-dimension(2)} + 2 * #{ch-get-space(l)});
+  }
 }

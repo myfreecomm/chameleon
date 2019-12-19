@@ -21,7 +21,7 @@
     padding-top: #{ch-get-space(s)};
   }
 
-  &--contained {
-    max-width: calc(#{$ch-breakpoint-desktop} - #{ch-get-dimension(2)});
-  }
+  // &--contained {
+  //   max-width: calc(#{$ch-breakpoint-desktop} - #{ch-get-dimension(2)});
+  // }
 }

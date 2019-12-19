@@ -2800,8 +2800,6 @@ a.ch-steps-item.is-completed:active:before {
         .ch-form-actions > *:not(:first-child) {
           margin-right: 0;
           margin-left: var(--ch-space-xs); } }
-  .ch-form--contained {
-    max-width: calc(1024px - var(--ch-dimension-2)); }
 
 .ch-grid {
   width: 100%; }
@@ -4863,6 +4861,8 @@ a.ch-steps-item.is-completed:active:before {
   @media screen and (max-width: calc(769px - 1px)) {
     .ch-template-nav ~ .ch-template-header ~ .ch-template-content {
       padding-bottom: calc(var(--ch-dimension-1) + var(--ch-space-m)); } }
+  .ch-template-content--contained {
+    max-width: calc(1024px - var(--ch-dimension-2) + 2 * var(--ch-space-l)); }
 
 .ch-template-header {
   transition-property: box-shadow, margin-left, transform;
