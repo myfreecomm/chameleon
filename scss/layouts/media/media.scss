@@ -29,6 +29,15 @@
 
       .ch-media-content {
         margin-right: 0;
+
+        &:after {
+          $empty: '';
+
+          display: block;
+
+          content: $empty;
+          margin-right: 1px;
+        }
       }
 
       .ch-media-actions {

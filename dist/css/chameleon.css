@@ -3070,6 +3070,10 @@ a.ch-steps-item.is-completed:active:before {
       flex-wrap: wrap; }
       .ch-media--stacked .ch-media-content {
         margin-right: 0; }
+        .ch-media--stacked .ch-media-content:after {
+          display: block;
+          content: "";
+          margin-right: 1px; }
       .ch-media--stacked .ch-media-actions {
         display: flex;
         flex-direction: column;
