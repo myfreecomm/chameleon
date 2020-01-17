@@ -1713,6 +1713,52 @@ template {
   .ch-fileUpload--negative .ch-title > .ch-title-sub {
     color: var(--ch-color-negative); }
 
+.ch-flashMessages {
+  padding: 0 ;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: 501;
+  width: 100%;
+  max-width: calc(var(--ch-dimension-3) + var(--ch-space-m) + var(--ch-space-xxl));
+  max-height: 100vh;
+  overflow-y: auto; }
+  .ch-flashMessages > .ch-flashMessages-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    .ch-flashMessages > .ch-flashMessages-inner > *:not(:last-child) {
+      margin-bottom: var(--ch-space-s); }
+    .ch-flashMessages > .ch-flashMessages-inner > *:last-child {
+      margin-bottom: 0; }
+    .ch-flashMessages > .ch-flashMessages-inner:not(:empty) {
+      padding-top: var(--ch-space-m);
+      padding-right: var(--ch-space-m);
+      padding-bottom: var(--ch-space-m);
+      padding-left: var(--ch-space-m); }
+      @media screen and (min-width: 769px) {
+        .ch-flashMessages > .ch-flashMessages-inner:not(:empty) {
+          padding-left: var(--ch-space-xxl); } }
+    .ch-flashMessages > .ch-flashMessages-inner > .ch-alert {
+      box-shadow: 0 10px 30px rgba(172, 185, 210, 0.65);
+      padding: 0 ;
+      border-color: transparent; }
+      .ch-flashMessages > .ch-flashMessages-inner > .ch-alert > .ch-alert-header {
+        padding-top: var(--ch-space-m);
+        padding-right: var(--ch-space-m);
+        padding-bottom: var(--ch-space-m);
+        padding-left: var(--ch-space-m); }
+      .ch-flashMessages > .ch-flashMessages-inner > .ch-alert--info .ch-media-icon {
+        color: var(--ch-color-info); }
+      .ch-flashMessages > .ch-flashMessages-inner > .ch-alert--warning .ch-media-icon {
+        color: var(--ch-color-warning); }
+      .ch-flashMessages > .ch-flashMessages-inner > .ch-alert--positive .ch-media-icon {
+        color: var(--ch-color-positive); }
+      .ch-flashMessages > .ch-flashMessages-inner > .ch-alert--negative .ch-media-icon {
+        color: var(--ch-color-negative); }
+
 .has-icon {
   position: relative;
   padding-left: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)) !important; }
