@@ -19,8 +19,6 @@
   // 2. Inner
 
   > #{&}-inner {
-    @include ch-space-stack-group(s);
-
     width: 100%;
 
     &:not(:empty) {
@@ -28,16 +26,29 @@
         padding-left: #{ch-get-space(xxl)};
       }
 
-      @include ch-space-inset;
+      padding-top: #{ch-get-space()};
+      padding-right: #{ch-get-space()};
+      padding-left: #{ch-get-space()};
     }
 
     // 2.1. Alert
 
     > .ch-alert {
+      @include ch-transition(
+        unquote('max-height, opacity, transform, margin-bottom'),
+        $ch-transition-duration-slow
+      );
+
       @include ch-shadow(6);
       @include ch-paddingless;
 
+      overflow: hidden;
+
+      opacity: 0;
+      max-height: 0;
+      margin-bottom: 0;
       border-color: transparent;
+      transform: scale(0.95);
 
       > .ch-alert-header {
         @include ch-space-inset();
@@ -49,6 +60,13 @@
             color: #{ch-get-color($variation)};
           }
         }
+      }
+
+      &.is-visible {
+        opacity: 1;
+        max-height: #{ch-get-dimension(2)};
+        margin-bottom: #{ch-get-space()};
+        transform: scale(1);
       }
     }
   }

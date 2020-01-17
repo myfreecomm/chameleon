@@ -89,5 +89,19 @@
       </main>
     </div>
 
+    <script>
+      const alerts = document.querySelectorAll('.ch-alert')
+
+      for (let i = 1; i <= alerts.length; i ++) {
+        const alert = alerts[i - 1]
+        const closeButton = alert.querySelector('.ch-button')
+
+        closeButton.addEventListener('click', () => alert.classList.remove('is-visible'))
+
+        setTimeout(() => alert.classList.add('is-visible'), 400 * i)
+        setInterval(() => alert.classList.remove('is-visible'), 8000 * i)
+      }
+    </script>
+
   </body>
 </html>
