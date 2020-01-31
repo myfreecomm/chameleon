@@ -1,0 +1,59 @@
+.ch-nestedFields {
+  @include ch-space-stack-group;
+
+  @include ch-media(only, mobile) {
+    > .ch-button.has-icon {
+      padding-right: ch-calc-box-height();
+    }
+  
+    > .ch-button.has-iconRight {
+      padding-left: ch-calc-box-height();
+    }
+  }
+
+  @include ch-media(from, tablet) {
+    align-items: flex-end;
+  }
+
+  > *:not(.ch-button) {
+    // @extend %ch-card;
+    @include ch-card;
+  }
+
+  > .ch-media {
+    align-items: stretch;
+
+    width: 100%;
+
+    > .ch-media-content {
+      margin-right: #{ch-get-space()};
+    }
+
+    > .ch-media-actions {
+      padding-top: #{ch-get-mock-text-size()};
+    }
+  }
+
+  @each $screen in $ch-breakpoint-screens {
+    @include ch-media(from, $screen) {
+      $suffix: ch-generate-variation((compact, $screen), (undefined, mobile));
+
+      &#{$suffix} {
+        > *:not(.ch-button) {
+          @include ch-paddingless;
+
+          border-radius: 0;
+          border: 0;
+        }
+
+        > .ch-media:not(:first-child) > .ch-media-actions {
+          padding-top: 0;
+        }
+    
+        > .ch-media:not(:first-child) .ch-field-label {
+          display: none;
+        }
+      }
+    }
+  }
+}

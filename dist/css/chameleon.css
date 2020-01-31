@@ -2679,6 +2679,66 @@ a.ch-steps-item.is-completed:active:before {
   .ch-modal--fullWidth {
     width: 100%; }
 
+.ch-nestedFields {
+  display: flex;
+  flex-direction: column; }
+  .ch-nestedFields > *:not(:last-child) {
+    margin-bottom: var(--ch-space-m); }
+  .ch-nestedFields > *:last-child {
+    margin-bottom: 0; }
+  @media screen and (max-width: calc(769px - 1px)) {
+    .ch-nestedFields > .ch-button.has-icon {
+      padding-right: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); }
+    .ch-nestedFields > .ch-button.has-iconRight {
+      padding-left: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + 2 * var(--ch-space-xs)); } }
+  @media screen and (min-width: 769px) {
+    .ch-nestedFields {
+      align-items: flex-end; } }
+  .ch-nestedFields > *:not(.ch-button) {
+    padding-top: var(--ch-space-m);
+    padding-right: var(--ch-space-m);
+    padding-bottom: var(--ch-space-m);
+    padding-left: var(--ch-space-m);
+    border: 1px solid var(--ch-color-border);
+    border-top-left-radius: var(--ch-border-radius-2);
+    border-top-right-radius: var(--ch-border-radius-2);
+    border-bottom-right-radius: var(--ch-border-radius-2);
+    border-bottom-left-radius: var(--ch-border-radius-2);
+    background: var(--ch-color-neutral-1); }
+  .ch-nestedFields > .ch-media {
+    align-items: stretch;
+    width: 100%; }
+    .ch-nestedFields > .ch-media > .ch-media-content {
+      margin-right: var(--ch-space-m); }
+    .ch-nestedFields > .ch-media > .ch-media-actions {
+      padding-top: calc(var(--ch-text-size-2) * var(--ch-text-line-height) + var(--ch-space-xxs)); }
+  .ch-nestedFields--compact > *:not(.ch-button) {
+    padding: 0 ;
+    border-radius: 0;
+    border: 0; }
+  .ch-nestedFields--compact > .ch-media:not(:first-child) > .ch-media-actions {
+    padding-top: 0; }
+  .ch-nestedFields--compact > .ch-media:not(:first-child) .ch-field-label {
+    display: none; }
+  @media screen and (min-width: 769px) {
+    .ch-nestedFields--compactTablet > *:not(.ch-button) {
+      padding: 0 ;
+      border-radius: 0;
+      border: 0; }
+    .ch-nestedFields--compactTablet > .ch-media:not(:first-child) > .ch-media-actions {
+      padding-top: 0; }
+    .ch-nestedFields--compactTablet > .ch-media:not(:first-child) .ch-field-label {
+      display: none; } }
+  @media screen and (min-width: 1024px) {
+    .ch-nestedFields--compactDesktop > *:not(.ch-button) {
+      padding: 0 ;
+      border-radius: 0;
+      border: 0; }
+    .ch-nestedFields--compactDesktop > .ch-media:not(:first-child) > .ch-media-actions {
+      padding-top: 0; }
+    .ch-nestedFields--compactDesktop > .ch-media:not(:first-child) .ch-field-label {
+      display: none; } }
+
 .ch-fieldGroup {
   width: 100%; }
   .ch-fieldGroup > * {
