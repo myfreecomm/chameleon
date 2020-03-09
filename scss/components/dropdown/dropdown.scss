@@ -31,6 +31,25 @@
       background: transparent;
     }
 
+    &:not(.is-visible) {
+      @include ch-transition(
+        unquote('visibility, opacity, width, height, min-width, min-height')
+      );
+
+      transition-timing-function:
+        #{$ch-transition-timing-function},
+        #{$ch-transition-timing-function},
+        step-end,
+        step-end,
+        step-end,
+        step-end;
+
+      width: 0;
+      height: 0;
+      min-width: 0;
+      min-height: 0;
+    }
+
     // 2.1. Overlay content
 
     > .ch-card {
@@ -68,7 +87,7 @@
     }
 
     // 2.2. Visible state
-  
+
     &.is-visible {
       @include ch-media(from, desktop) {
         display: block;
