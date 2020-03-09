@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chameleon - Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
+  </head>
+  <body>
+
+    <div class="ch-template">
+
+      <!-- NAV BEGIN -->
+      <nav class="ch-template-nav">
+
+        <!-- BRAND BEGIN -->
+        <div class="ch-brand">
+          <img src="https://via.placeholder.com/72" class="ch-brand-icon">
+          <h1 class="ch-brand-name">Chameleon</h1>
+        </div>
+
+        <!-- MENU BEGIN -->
+        <ul class="ch-menu">
+          <li class="ch-menu-submenu is-open">
+            <a href="#" class="ch-menu-item has-icon has-iconRight is-active">
+              <i class="ch-icon fal fa-chart-line"></i>
+              <span class="ch-menu-item-label">Item 1</span>
+              <i class="ch-menu-item-arrow ch-icon fal fa-angle-right"></i>
+            </a>
+
+            <ul class="ch-menu">
+              <li class="ch-menu-item">
+                <span class="ch-menu-item-label">Item 2</span>
+              </li>
+
+              <li class="ch-menu-item is-active">
+                <span class="ch-menu-item-label">Item 3</span>
+              </li>
+
+              <li class="ch-menu-item">
+                <span class="ch-menu-item-label">Item 4</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-table"></i>
+            <span class="ch-menu-item-label">Item 3</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-magic"></i>
+            <span class="ch-menu-item-label">Item 4</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-clipboard"></i>
+            <span class="ch-menu-item-label">Item 5</span>
+          </li>
+
+          <li class="ch-menu-item has-icon">
+            <i class="ch-icon fal fa-chart-line"></i>
+            <span class="ch-menu-item-label">Item 6</span>
+          </li>
+        </ul>
+        <!-- MENU END -->
+
+        <!-- TOGGLE BEGIN -->
+        <label class="ch-toggle">
+          <input type="checkbox" class="ch-toggle-toggle">
+          <span class="ch-toggle-icon"></span>
+        </label>
+        <!-- TOGGLE END -->
+
+        <!-- TOGGLE BEGIN -->
+        <label class="ch-toggle ch-toggle--nav">
+          <input type="checkbox" class="ch-toggle-toggle" checked>
+          <span class="ch-toggle-icon"></span>
+        </label>
+        <!-- TOGGLE END -->
+
+      </nav>
+      <!-- NAV END -->
+
+      <!-- HEADER BEGIN -->
+      <header class="ch-template-header">
+        <!-- HEADER NAV BEGIN -->
+        <nav class="ch-template-header-nav">
+          <button type="button" class="ch-template-header-nav-toggle ch-button ch-button--ghost ch-button--icon">
+            <label class="ch-toggle ch-toggle--left">
+              <input class="ch-toggle-toggle" type="checkbox">
+              <i class="ch-toggle-icon"></i>
+            </label>
+          </button>
+
+          <button type="button" class="ch-button ch-button--ghost ch-button--icon">
+            <i class="ch-icon fal fa-search"></i>
+          </button>
+
+          <button type="button" class="ch-button ch-button--ghost ch-button--icon">
+            <i class="ch-icon fal fa-bell"></i>
+          </button>
+
+          <button type="button" class="ch-button ch-button--ghost ch-button--icon">
+            <i class="ch-icon fal fa-cog"></i>
+          </button>
+
+          <!-- ACCOUNTS DROPDOWN BEGIN -->
+          <div class="ch-dropdown ch-dropdown--left">
+            <div class="ch-dropdown-toggle">
+              <button type="button" class="ch-button ch-button--ghost ch-text--truncate">Account name</button>
+            </div>
+
+            <div class="ch-overlay">
+              <div class="ch-card ch-paddingless">
+                <nav class="ch-menu">
+                  <a class="ch-menu-item is-active">Nexaas</a>
+                  <a class="ch-menu-item">B2W</a>
+                  <a class="ch-menu-item">Dufry</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <!-- ACCOUNTS DROPDOWN END -->
+
+          <!-- USER DROPDOWN BEGIN -->
+          <div class="ch-dropdown ch-dropdown--left">
+            <div class="ch-dropdown-toggle">
+              <div class="ch-avatar" title="Max Salles"></div>
+            </div>
+
+            <div class="ch-overlay">
+              <div class="ch-card ch-paddingless">
+                <nav class="ch-menu">
+                  <a class="ch-menu-item is-active">Nexaas</a>
+                  <a class="ch-menu-item">B2W</a>
+                  <a class="ch-menu-item">Dufry</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <!-- USER DROPDOWN END -->
+        </nav>
+        <!-- HEADER NAV END -->
+
+        <!-- BREADCRUMBS BEGIN -->
+        <nav class="ch-breadcrumbs">
+          <a class="ch-breadcrumbs-item" href="#">Fluxo de caixa</a>
+          <a class="ch-breadcrumbs-item" href="#">Contas a pagar</a>
+          <span class="ch-breadcrumbs-item">Nova despesa</span>
+        </nav>
+        <!-- BREADCRUMBS END -->
+        
+      </header>
+      <!-- HEADER END -->
+
+      <!-- CONTENT BEGIN -->
+      <div class="ch-template-content" style="height: 1000px">
+
+      </div>
+      <!-- CONTENT END -->
+
+    </div>
+
+    <script type="text/javascript">
+      // Template nav
+
+      ;(function () {
+        var $templateNav = $('.ch-template-nav')
+        var $templateNavMobileToggle = $templateNav.find('.ch-toggle:not(.ch-toggle--nav)')
+        var $templateNavTabletToggle = $templateNav.find('.ch-toggle.ch-toggle--nav')
+        var $templateNavTabletToggleCheckbox = $templateNavTabletToggle.find('input')
+        var $submenuMainItem = $templateNav.find('.ch-menu-submenu > .ch-menu-item')
+
+        $templateNavMobileToggle.on('click', function () {
+          $templateNav.toggleClass('is-open')
+        })
+
+        $templateNavTabletToggle.on('click', function () {
+          var isActive = $templateNavTabletToggleCheckbox.is(':checked')
+
+          $templateNav.toggleClass('is-expanded', !isActive)
+        })
+
+        $templateNav.on('mouseenter', function () {
+          $templateNav.addClass('is-hovered')
+        })
+
+        $templateNav.on('mouseleave', function () {
+          $templateNav.removeClass('is-hovered')
+        })
+
+        $submenuMainItem.on('click', function () {
+          if ($templateNav.hasClass('is-open')) return
+
+          $templateNav.addClass('is-open')
+        })
+      })()
+
+      // Template header
+
+      ;(function () {
+        var $templateHeader = $('.ch-template-header')
+        var $templateHeaderNav = $('.ch-template-header-nav')
+        var $templateHeaderNavToggle = $('.ch-template-header-nav-toggle')
+        var scroll = { current: window.scrollY, previous: window.scrollY }
+
+        $templateHeaderNavToggle.on('click', function () {
+          $templateHeaderNav.toggleClass('is-expanded')
+        })
+
+        window.addEventListener('scroll', function () {
+          window.requestAnimationFrame(function () {
+            scroll.previous = scroll.current
+            scroll.current = window.scrollY
+
+            $templateHeader
+              .toggleClass('is-hidden', scroll.current > scroll.previous)
+              .toggleClass('is-sticky', !!scroll.current)
+          })
+        })
+      })()
+
+      // Menu
+
+      ;(function () {
+        var $menuItem = $('.ch-menu > .ch-menu-item')
+        var $submenuMainItem = $('.ch-menu-submenu > .ch-menu-item')
+
+        $menuItem.on('click', function () {
+          var $item = $(this)
+
+          if ($item.hasClass('is-active')) return
+
+          var $context = $item.parents('.ch-menu').last()
+          var $currentActiveItens = $context.find('.ch-menu-item').not($item).filter('.is-active')
+          var $submenu = $item.closest('.ch-menu-submenu')
+          var $submenuMainItem = $submenu.find('> .ch-menu-item')
+
+          $currentActiveItens.removeClass('is-active')
+          $item.addClass('is-active')
+          $submenuMainItem.addClass('is-active')
+        })
+
+        $submenuMainItem.on('click', function () {
+          var $item = $(this)
+          var $submenu = $item.parent()
+
+          $submenu.toggleClass('is-open')
+        })
+      })()
+
+      // Dropdown
+
+      ;(function () {
+        var $dropdownToggle = $('.ch-dropdown-toggle')
+        var $dropdownOverlay = $('.ch-dropdown .ch-overlay')
+
+        $(document).on('click', function (e) {
+          var $element = $(e.target)
+          var $dropdownToggle = $element.parents('.ch-dropdown-toggle')
+          var $dropdown = $element.parents('.ch-dropdown')
+          var $card = $element.parents('.ch-card')
+
+          if ($dropdownToggle.length) {
+            var $overlay = $dropdown.find('.ch-overlay')
+
+            $('.ch-dropdown .ch-overlay.is-visible')
+              .not($overlay)
+              .removeClass('is-visible')
+
+            $overlay.toggleClass('is-visible')
+
+            return
+          }
+
+          if ($dropdown.length && $card.length) return
+
+          $('.ch-dropdown .ch-overlay.is-visible').removeClass('is-visible')
+        })
+      })()
+    </script>
+
+    <script>
+      // $('.ch-menu-item').on('click', function() {
+      //   $(this).parent().toggleClass('is-open')
+      // })
+
+      // $('.ch-toggle-toggle').on('change', function() {
+      //   $('.ch-template-nav').toggleClass('is-expanded')
+      // })
+    </script>
+
+  </body>
+</html>
