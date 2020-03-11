@@ -8,22 +8,15 @@
   // 2. Neutral
 
   --ch-color-neutral-1:                #{$ch-color-white};
-  --ch-color-neutral-2:                #{$ch-color-grey-extra-light};
-
-  --ch-color-neutral-1-inverse:        #{$ch-color-navy-extra-dark};
-  --ch-color-neutral-2-inverse:        #{$ch-color-navy-dark};
+  --ch-color-neutral-2:                #{$ch-color-neutral-extra-light};
 
   // 3. Support
 
   // 3.1. Default
 
-  --ch-color-default:                  #{$ch-color-grey};
-  --ch-color-default-focus:            #{$ch-color-grey-dark};
-  --ch-color-default-active:           #{$ch-color-grey-extra-dark};
-
-  --ch-color-default-inverse:          #{$ch-color-grey};
-  --ch-color-default-focus-inverse:    #{$ch-color-grey-light};
-  --ch-color-default-active-inverse:   #{$ch-color-grey-extra-light};
+  --ch-color-default:                  #{$ch-color-neutral};
+  --ch-color-default-focus:            #{$ch-color-neutral-dark};
+  --ch-color-default-active:           #{$ch-color-neutral-extra-dark};
 
   // 3.2. Primary
 
@@ -31,19 +24,11 @@
   --ch-color-primary-focus:            #{$ch-color-blue-dark};
   --ch-color-primary-active:           #{$ch-color-blue-extra-dark};
 
-  --ch-color-primary-inverse:          #{$ch-color-blue};
-  --ch-color-primary-focus-inverse:    #{$ch-color-blue-light};
-  --ch-color-primary-active-inverse:   #{$ch-color-blue-extra-light};
-
   // 3.4. Info
 
   --ch-color-info:                     #{$ch-color-cyan};
   --ch-color-info-focus:               #{$ch-color-cyan-dark};
   --ch-color-info-active:              #{$ch-color-cyan-extra-dark};
-
-  --ch-color-info-inverse:             #{$ch-color-cyan};
-  --ch-color-info-focus-inverse:       #{$ch-color-cyan-light};
-  --ch-color-info-active-inverse:      #{$ch-color-cyan-extra-light};
 
   // 3.5. Warning
 
@@ -51,19 +36,11 @@
   --ch-color-warning-focus:            #{$ch-color-yellow-dark};
   --ch-color-warning-active:           #{$ch-color-yellow-extra-dark};
 
-  --ch-color-warning-inverse:          #{$ch-color-yellow};
-  --ch-color-warning-focus-inverse:    #{$ch-color-yellow-light};
-  --ch-color-warning-active-inverse:   #{$ch-color-yellow-extra-light};
-
   // 3.6. Negative
 
   --ch-color-negative:                 #{$ch-color-red};
   --ch-color-negative-focus:           #{$ch-color-red-dark};
   --ch-color-negative-active:          #{$ch-color-red-extra-dark};
-
-  --ch-color-negative-inverse:         #{$ch-color-red};
-  --ch-color-negative-focus-inverse:   #{$ch-color-red-light};
-  --ch-color-negative-active-inverse:  #{$ch-color-red-extra-light};
 
   // 3.7. Positive
 
@@ -71,17 +48,10 @@
   --ch-color-positive-focus:           #{$ch-color-green-dark};
   --ch-color-positive-active:          #{$ch-color-green-extra-dark};
 
-  --ch-color-positive-inverse:         #{$ch-color-green};
-  --ch-color-positive-focus-inverse:   #{$ch-color-green-light};
-  --ch-color-positive-active-inverse:  #{$ch-color-green-extra-light};
-
   // 4. Text
 
-  --ch-color-text-1:                   #{$ch-color-grey-dark};
-  --ch-color-text-2:                   #{$ch-color-grey};
-
-  --ch-color-text-1-inverse:           #{$ch-color-white};
-  --ch-color-text-2-inverse:           #{rgba($ch-color-white, 0.8)};
+  --ch-color-text-1:                   #{$ch-color-neutral-dark};
+  --ch-color-text-2:                   #{$ch-color-neutral};
 
   // 4.1. Link
 
@@ -89,24 +59,15 @@
   --ch-color-text-link-focus:          #{$ch-color-blue-light};
   --ch-color-text-link-active:         #{$ch-color-blue-light};
 
-  --ch-color-text-link-inverse:        #{$ch-color-blue};
-  --ch-color-text-link-focus-inverse:  #{$ch-color-blue-dark};
-  --ch-color-text-link-active-inverse: #{$ch-color-blue-dark};
-
   // 5. Highlight
 
   --ch-color-highlight:                #{$ch-color-yellow-light};
-  --ch-color-highlight-inverse:        #{$ch-color-yellow-dark};
 
   // 6. Border
 
-  --ch-color-border:                   #{lighten($ch-color-grey-light, 7%)};
-  --ch-color-border-focus:             #{ch-get-color-focus($ch-color-grey-light)};
-  --ch-color-border-active:            #{ch-get-color-active($ch-color-grey-light)};
-
-  --ch-color-border-inverse:           #{$ch-color-grey-light};
-  --ch-color-border-focus-inverse:     #{ch-get-color-focus($ch-color-grey-light,  inverse)};
-  --ch-color-border-active-inverse:    #{ch-get-color-active($ch-color-grey-light, inverse)};
+  --ch-color-border:                   #{lighten($ch-color-neutral-light, 7%)};
+  --ch-color-border-focus:             #{ch-get-color-focus($ch-color-neutral-light)};
+  --ch-color-border-active:            #{ch-get-color-active($ch-color-neutral-light)};
 
   // 7. Menu
 
@@ -115,5 +76,4 @@
   // 8. Overlay
 
   --ch-color-overlay:                  #{rgba($ch-color-black, 0.55)};
-  --ch-color-overlay-inverse:          #{rgba($ch-color-white, 0.55)};
 }
