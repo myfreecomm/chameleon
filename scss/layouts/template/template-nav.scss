@@ -69,13 +69,5 @@
     &.is-expanded + .ch-template-header ~ .ch-template-content {
       margin-left: #{ch-get-dimension(2)};
     }
-
-    + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-toggle {
-      left: #{ch-get-dimension(1)};
-    }
-
-    &.is-expanded + .ch-template-header > .ch-menu.is-expanded > .ch-menu-item.ch-toggle {
-      left: #{ch-get-dimension(2)};
-    }
   }
 }

@@ -72,19 +72,17 @@
         </ul>
         <!-- MENU END -->
 
-        <!-- TOGGLE BEGIN -->
-        <label class="ch-toggle">
-          <input type="checkbox" class="ch-toggle-toggle">
-          <span class="ch-toggle-icon"></span>
-        </label>
-        <!-- TOGGLE END -->
+        <!-- MOBILE TOGGLE BEGIN -->
+        <button type="button" class="ch-template-nav-toggle">
+          <i class="ch-icon"></i>
+        </button>
+        <!-- MOBILE TOGGLE END -->
 
-        <!-- TOGGLE BEGIN -->
-        <label class="ch-toggle ch-toggle--nav">
-          <input type="checkbox" class="ch-toggle-toggle" checked>
-          <span class="ch-toggle-icon"></span>
-        </label>
-        <!-- TOGGLE END -->
+        <!-- TABLET/DESKTOP TOGGLE BEGIN -->
+        <button type="button" class="ch-template-nav-toggle">
+          <i class="ch-icon"></i>
+        </button>
+        <!-- TABLET/DESKTOP TOGGLE END -->
 
       </nav>
       <!-- NAV END -->
@@ -93,11 +91,8 @@
       <header class="ch-template-header">
         <!-- HEADER NAV BEGIN -->
         <nav class="ch-template-header-nav">
-          <button type="button" class="ch-template-header-nav-toggle ch-button ch-button--ghost ch-button--icon">
-            <label class="ch-toggle ch-toggle--left">
-              <input class="ch-toggle-toggle" type="checkbox">
-              <i class="ch-toggle-icon"></i>
-            </label>
+          <button type="button" class="ch-template-header-nav-toggle">
+            <i class="ch-icon"></i>
           </button>
 
           <button type="button" class="ch-button ch-button--ghost ch-button--icon">
@@ -174,8 +169,11 @@
 
       ;(function () {
         var $templateNav = $('.ch-template-nav')
-        var $templateNavMobileToggle = $templateNav.find('.ch-toggle:not(.ch-toggle--nav)')
-        var $templateNavTabletToggle = $templateNav.find('.ch-toggle.ch-toggle--nav')
+        var $templateNavToggle = $templateNav.find('.ch-template-nav-toggle')
+        var $templateNavMobileToggle = $($templateNavToggle[0])
+        var $templateNavTabletToggle = $($templateNavToggle[1])
+        var $templateNavMobileToggleIcon = $templateNavMobileToggle.find('.ch-icon')
+        var $templateNavTabletToggleIcon = $templateNavTabletToggle.find('.ch-icon')
         var $templateNavTabletToggleCheckbox = $templateNavTabletToggle.find('input')
         var $submenuMainItem = $templateNav.find('.ch-menu-submenu > .ch-menu-item')
 
@@ -184,18 +182,22 @@
         })
 
         $templateNavTabletToggle.on('click', function () {
-          var isActive = $templateNavTabletToggleCheckbox.is(':checked')
-
-          $templateNav.toggleClass('is-expanded', !isActive)
+          $templateNav.toggleClass('is-expanded')
         })
 
-        $templateNav.on('mouseenter', function () {
-          $templateNav.addClass('is-hovered')
-        })
-
-        $templateNav.on('mouseleave', function () {
-          $templateNav.removeClass('is-hovered')
-        })
+        $templateNav
+          .on('mouseenter', function () {
+            $templateNav.addClass('is-hovered')
+          })
+          .on('focusin', function () {
+            $templateNav.addClass('is-hovered')
+          })
+          .on('mouseleave', function () {
+            $templateNav.removeClass('is-hovered')
+          })
+          .on('focusout', function () {
+            $templateNav.removeClass('is-hovered')
+          })
 
         $submenuMainItem.on('click', function () {
           if ($templateNav.hasClass('is-open')) return

@@ -2,46 +2,68 @@
 
   // 1. Mobile toggle
 
-  > .ch-toggle {
+  > .ch-template-nav-toggle {
     @include ch-media(from, tablet) {
       display: none;
     }
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 20%;
     height: #{ch-get-dimension(1)};
 
-    // 1.1. Icon
+    > .ch-icon {
+      @include ch-mask-icon($ch-icon-ellipsis);
 
-    > .ch-toggle-icon {
-      background-color: #{ch-get-color(menu-text, 1)};
+      height: #{ch-get-icon-size()};
+      background-color: #{ch-get-color(text, 2, inverse)};
     }
+
+    // 1.1. Focus interaction
 
     &:hover:focus,
     &:hover,
     &:focus {
-      > .ch-toggle-icon {
+      > .ch-icon {
         background-color: #{ch-get-color(text, 1, inverse)};
       }
     }
 
     // 2. Tablet toggle
 
-    & + .ch-toggle {
+    & + .ch-template-nav-toggle {
       @include ch-media(from, tablet) {
-        display: block;
+        display: flex;
 
         width: #{ch-get-dimension(1)};
       }
 
       display: none;
+
+      > .ch-icon {
+        @include ch-mask-icon($ch-icon-nav-expand, 'only-mask');
+      }
     }
   }
 
-  // 3. Is open state
+  // 3. Open state
 
-  &.is-open > .ch-toggle {
+  &.is-open > .ch-template-nav-toggle {
     @include ch-media(only, mobile) {
       margin-left: 80%;
     }
+
+    > .ch-icon {
+      @include ch-mask-icon($ch-icon-times, 'only-mask');
+    }
+  }
+
+  // 4. Expanded state
+
+  &.is-expanded > .ch-template-nav-toggle + .ch-template-nav-toggle > .ch-icon,
+  &.is-open.is-expanded > .ch-template-nav-toggle + .ch-template-nav-toggle > .ch-icon {
+    @include ch-mask-icon($ch-icon-nav-retract, 'only-mask');
   }
 }
