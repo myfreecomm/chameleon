@@ -31,13 +31,23 @@
       background: transparent;
     }
 
-    &:not(.is-visible) {
-      @include ch-transition(
-        unquote('visibility, opacity, width, height, min-width, min-height')
-      );
+    @include ch-transition(
+      unquote('visibility, opacity, width, height, min-width, min-height')
+    );
 
+    &.is-visible {
       transition-timing-function:
+        step-start,
         #{$ch-transition-timing-function},
+        step-start,
+        step-start,
+        step-start,
+        step-start;
+    }
+
+    &:not(.is-visible) {
+      transition-timing-function:
+        step-end,
         #{$ch-transition-timing-function},
         step-end,
         step-end,
