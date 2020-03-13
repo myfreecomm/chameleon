@@ -24,7 +24,7 @@
     .ch-brand-name {
       @include ch-transition(opacity, $ch-transition-duration-fast);
 
-      color: #{ch-get-color(text, 1, inverse)};
+      color: #{ch-get-color(neutral, 1)};
       line-height: #{ch-get-dimension(1)};
       opacity: 0;
     }

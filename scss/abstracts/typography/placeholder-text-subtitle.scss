@@ -24,30 +24,3 @@
 %ch-text-subtitle-6 {
   @include ch-text-subtitle(6);
 }
-
-// 2. Inverse
-
-%ch-text-subtitle-1-inverse {
-  @include ch-text-subtitle(1, inverse);
-}
-
-%ch-text-subtitle-2-inverse {
-  @include ch-text-subtitle(2, inverse);
-}
-
-%ch-text-subtitle-inverse,
-%ch-text-subtitle-3-inverse {
-  @include ch-text-subtitle(3, inverse);
-}
-
-%ch-text-subtitle-4-inverse {
-  @include ch-text-subtitle(4, inverse);
-}
-
-%ch-text-subtitle-5-inverse {
-  @include ch-text-subtitle(5, inverse);
-}
-
-%ch-text-subtitle-6-inverse {
-  @include ch-text-subtitle(6, inverse);
-}
