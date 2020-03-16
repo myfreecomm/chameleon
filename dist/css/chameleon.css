@@ -543,7 +543,7 @@ template {
 
 *:disabled,
 *.is-disabled {
-  opacity: 0.75;
+  opacity: 0.65;
   pointer-events: none; }
 
 .ch-text--left {
@@ -846,7 +846,7 @@ template {
     border-color: var(--ch-color-default-active);
     background-color: var(--ch-color-default-active); }
   .ch-button:disabled, .ch-button.is-disabled {
-    opacity: 0.75;
+    opacity: 0.65;
     pointer-events: none; }
     .ch-button:disabled:after, .ch-button.is-disabled:after {
       display: none; }
@@ -1176,7 +1176,7 @@ template {
   .ch-radio > input[type="radio"].is-disabled + label,
   .ch-radio > input[type="radio"].is-disabled + label:before,
   .ch-radio > input[type="radio"].is-disabled + label:after {
-    opacity: 0.75;
+    opacity: 0.65;
     pointer-events: none; }
   .ch-checkbox > input[type="checkbox"]:disabled,
   .ch-checkbox > input[type="checkbox"]:disabled + label,
