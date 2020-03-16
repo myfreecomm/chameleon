@@ -16,8 +16,13 @@
   // 3. Small variation
 
   &--small {
-    // @extend %ch-input-small;
-    @include ch-box-model(xs, squish, box, ch-get-color(border));
+    $inset-type: squish;
+    $size: xs;
+    $border-rule: box;
+    $border-color: ch-get-color(border);
+
+    @include ch-space-inset($inset-type, $size);
+    @include ch-border($border-rule, $border-color);
   }
 
   // 4. Negative variation

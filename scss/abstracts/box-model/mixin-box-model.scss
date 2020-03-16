@@ -1,4 +1,0 @@
-@mixin ch-box-model ($size, $inset-type, $border-rule: none, $border-color: transparent) {
-  @include ch-space-inset($inset-type, $size);
-  @include ch-border($border-rule, $border-color);
-}

@@ -4,17 +4,21 @@
 
   display: flex;
   width: 100%;
-  
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   // 2. Content
-  
+
   &-content {
     $icon-width:  220px;
+    $inset-type: default;
+    $size: s;
+    $border-rule: box;
 
-    @include ch-box-model(s, default, box);
+    @include ch-space-inset($inset-type, $size);
+    @include ch-border($border-rule);
 
     text-align: center;
 
