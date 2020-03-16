@@ -7,7 +7,6 @@
   @include ch-text-title(3);
 
   > .ch-title-sub {
-    // @extend %ch-text-subtitle-#{$i};
     @include ch-text-subtitle(3);
 
     display: block;
@@ -17,11 +16,9 @@
 
   @for $i from 1 through 6 {
     @at-root #{&}--#{$i}, h#{$i} {
-      // @extend %ch-text-title-#{$i};
       @include ch-text-title($i);
 
       > .ch-title-sub {
-        // @extend %ch-text-subtitle-#{$i};
         @include ch-text-subtitle($i);
 
         display: block;

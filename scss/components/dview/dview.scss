@@ -8,7 +8,6 @@
 
   &-label,
   & > dt {
-    // @extend %ch-text-label;
     @include ch-text-label;
 
     text-transform: uppercase;
