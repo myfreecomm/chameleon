@@ -63,7 +63,6 @@
   // 4. Menu
 
   > .ch-menu {
-    // @extend %ch-menu-horizontal;
     @include ch-menu-horizontal;
 
     @include ch-media(from, desktop) {
@@ -170,6 +169,6 @@
   &.is-hidden {
     @include ch-media(to, mobile) {
       transform: translateY(-100%);
-    }    
+    }
   }
 }

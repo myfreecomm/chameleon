@@ -2,7 +2,6 @@ select.ch-select {
 
   // 1. Base
 
-  // @extend %ch-input;
   @include ch-input;
 
   $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
