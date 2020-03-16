@@ -1,5 +1,11 @@
 @mixin ch-card {
-  @include ch-box-model(m, default, box, ch-get-color(border));
+  $inset-type: default;
+  $size: m;
+  $border-rule: box;
+  $border-color: ch-get-color(border);
+
+  @include ch-space-inset($inset-type, $size);
+  @include ch-border($border-rule, $border-color);
   @include ch-border-radius(2);
 
   background: #{ch-get-color(neutral, 1)};

@@ -1,8 +1,14 @@
 .ch-fileUpload {
   // 1. Base
 
+  $inset-type: default;
+  $size: s;
+  $border-rule: box;
+  $border-color: ch-get-color(neutral, 2);
+
   @include ch-space-stack-group(s);
-  @include ch-box-model(s, default, box, ch-get-color(neutral, 2));
+  @include ch-space-inset($inset-type, $size);
+  @include ch-border($border-rule, $border-color);
   @include ch-border-radius(1);
 
   cursor: pointer;

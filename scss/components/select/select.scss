@@ -18,8 +18,13 @@ select.ch-select {
   // 2. Small variation
 
   &--small {
-    // @extend %ch-input-small;
-    @include ch-box-model(xs, squish, box, ch-get-color(border));
+    $inset-type: squish;
+    $size: xs;
+    $border-rule: box;
+    $border-color: ch-get-color(border);
+
+    @include ch-space-inset($inset-type, $size);
+    @include ch-border($border-rule, $border-color);
   }
 
   // 3. Fluid variation
@@ -58,7 +63,7 @@ select.ch-select {
     background-image: none;
 
     > option {
-      @include ch-box-model(s, squish);
+      @include ch-space-inset(s, squish);
     }
   }
 }

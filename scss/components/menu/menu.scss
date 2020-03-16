@@ -4,7 +4,7 @@
   // 1. item
 
   &-item {
-    @include ch-box-model(m, squish);
+    @include ch-space-inset(m, squish);
 
     display: block;
     width: 100%;
@@ -33,7 +33,7 @@
 
     &.is-active {
       font-weight: #{ch-get-text-weight(bold)};
-    
+
       &:before {
         $empty: '';
 

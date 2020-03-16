@@ -2,8 +2,14 @@
 
   // 1. Base
 
+  $inset-type: squish;
+  $size: s;
+  $border-rule: box;
+  $border-color: ch-get-color(default);
+
   @include ch-ripple-effect(ch-get-color(neutral, 1));
-  @include ch-box-model(s, squish, box, ch-get-color(default));
+  @include ch-space-inset($inset-type, $size);
+  @include ch-border($border-rule, $border-color);
   @include ch-border-radius(1);
 
   display: inline-block;
