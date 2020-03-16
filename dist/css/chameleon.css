@@ -2510,22 +2510,10 @@ a.ch-steps-item.is-completed:active:before {
     .ch-modal > .ch-modal-footer:first-child {
       padding-top: var(--ch-space-l); }
   .ch-modal-header {
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    flex-direction: initial;
-    justify-content: flex-end;
-    display: flex;
+    margin-bottom: var(--ch-space-l);
     display: flex; }
-    .ch-modal-header > *:not(:first-child) {
-      margin-right: 0;
-      margin-left: var(--ch-space-m); }
-    .ch-modal-header:not(:last-child) {
-      margin-bottom: var(--ch-space-l); }
-    .ch-modal-header-content {
-      flex-grow: 1; }
     .ch-modal-header-actions {
-      align-self: flex-start;
+      margin-left: auto;
       min-width: fit-content; }
   .ch-modal-content {
     flex-grow: 1;
@@ -5122,24 +5110,6 @@ a.ch-steps-item.is-completed:active:before {
     text-align: center; }
     .ch-blankslate-content-icon {
       width: 220px; }
-
-.ch-actionsBar {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: initial;
-  justify-content: flex-end;
-  display: flex; }
-  .ch-actionsBar > *:not(:first-child) {
-    margin-right: 0;
-    margin-left: var(--ch-space-m); }
-  .ch-actionsBar:not(:last-child) {
-    margin-bottom: var(--ch-space-l); }
-  .ch-actionsBar-content {
-    flex-grow: 1; }
-  .ch-actionsBar-actions {
-    align-self: flex-start;
-    min-width: fit-content; }
 
 .ch-errorPage {
   display: flex;
