@@ -43,7 +43,7 @@ module.exports = (_, argv) => {
           // Look for Sass files and process them according to the
           // rules specified in the different loaders
           test: /\.(sa|sc)ss$/,
-          
+
           // Use the following loaders from right-to-left, so it will
           // use sass-loader first and ending with MiniCssExtractPlugin
           use: [
@@ -65,7 +65,7 @@ module.exports = (_, argv) => {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                
+
                 // We instruct PostCSS to autoprefix and minimize our
                 // CSS when in production mode, otherwise don't do
                 // anything.
@@ -91,33 +91,6 @@ module.exports = (_, argv) => {
             }
           ]
         },
-        {
-          // Adds support to load images in your CSS rules.
-          test: /\.(svg|png|jpe?g|gif)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                // The image will be named with the original name and
-                // extension
-                name: '[name].[ext]',
-                
-                // Indicates where the images are stored and will use
-                // this path when generating the CSS files.
-                // Example, in site.scss I have
-                // url('../dist/images/pattern.png') and when generating
-                // the CSS file, file-loader will output as
-                // url(../images/pattern.png), which is relative
-                // to '/css/chameleon.css'
-                publicPath: '../images',
-
-                // When this option is 'true', the loader will emit the
-                // image to output.path
-                emitFile: false
-              }
-            }
-          ]
-        }
       ]
     },
     plugins: [
