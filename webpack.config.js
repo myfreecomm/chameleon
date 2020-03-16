@@ -2,6 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const RemovePlugin = require('remove-files-webpack-plugin')
 
 module.exports = (_, argv) => {
   const devMode = argv.mode !== 'production'
@@ -98,7 +99,7 @@ module.exports = (_, argv) => {
       // indicating what the CSS output file name should be and
       // the location
       new MiniCssExtractPlugin({
-        filename: devMode ? 'css/chameleon.css' : 'css/chameleon.min.css'
+        filename: devMode ? 'chameleon.css' : 'chameleon.min.css'
       }),
       ...(
         !devMode
@@ -113,7 +114,12 @@ module.exports = (_, argv) => {
             })
           ]
           : []
-      )
+      ),
+      new RemovePlugin({
+        after: {
+          include: ['./dist/js']
+        }
+      })
     ],
     devServer: {
       contentBase: __dirname,
