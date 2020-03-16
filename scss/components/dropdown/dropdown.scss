@@ -114,4 +114,26 @@
       }
     }
   }
+
+  // 3. Contained variation
+
+  &--contained {
+    > .ch-overlay > .ch-card {
+      @include ch-media(from, desktop) {
+        max-width: ch-get-dimension(3);
+        max-height: 80vh;
+      }
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      > .ch-card-content {
+        flex: 1;
+        overflow-y: auto;
+
+        margin-bottom: 0;
+      }
+    }
+  }
 }
