@@ -14,7 +14,8 @@
 
   > .ch-menu-item:not(.ch-menu-item--icon),
   > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
-    @include ch-box-model(xs, stretch);
+    // @include ch-box-model(xs, stretch);
+    white-space: nowrap;
   }
 
   > .ch-menu-submenu {
