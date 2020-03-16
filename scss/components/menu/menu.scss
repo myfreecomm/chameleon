@@ -4,7 +4,7 @@
   // 1. item
 
   &-item {
-    @include ch-space-inset(m, squish);
+    @include ch-space-inset(squish, m);
 
     display: block;
     width: 100%;
