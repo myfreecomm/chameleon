@@ -41,8 +41,13 @@
   }
 
   &-header {
-    @include ch-actions-bar();
+    @include ch-space-stack(l);
     display: flex;
+
+    &-actions {
+      margin-left: auto;
+      min-width: fit-content;
+    }
   }
 
   &-content {
