@@ -2,9 +2,6 @@
 Framework CSS de interface para os projetos da Nexaas
 ___
 
-## Conceito
-O Framework é baseado em uma estrutura totalmente modular, com todos os seus atributos armazenados no CSS, tornando o HTML mais enxuto e semântico.
-
 ### Dependências
 
 - [Node.js](https://nodejs.org/)
@@ -17,7 +14,7 @@ Instale as dependências do projeto utilizando esse comando:
 $ npm install
 ```
 
-### Rodando a aplicação
+### Rodando a aplicação localmente
 Seu ambiente está configurado. Para rodar a aplicação:
 
 ```
