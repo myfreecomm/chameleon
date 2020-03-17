@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --mode=development --open",
-    "build:watch": "webpack -w --mode=development",
-    "build:prod": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack --mode=development && webpack --mode=production"
+    "build": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack --mode=production"
   },
   "keywords": [
     "UI",
