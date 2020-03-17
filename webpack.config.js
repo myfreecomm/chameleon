@@ -13,10 +13,9 @@ module.exports = (_, argv) => {
 
     // Webpack needs to know where to start the bundling process,
     // so we define the Sass file under './scss' directory
-    // entry: ['./scss'],
     entry: {
-      "chameleon": "./scss",
-      "chamleon.min": "./scss",
+      'chameleon': './scss',
+      'chamleon.min': './scss',
     },
 
     // This is where we define the path where Webpack will place
