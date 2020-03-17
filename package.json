@@ -2,7 +2,7 @@
   "name": "@nexaas/chameleon",
   "version": "1.0.0-alpha.0.1.0",
   "description": "Nexaas web framework",
-  "main": "index.js",
+  "main": "scss/index.js",
   "files": [
     "dist/**/*.{css,js,map}",
     "scss/**/*.{css,js,map}"
