@@ -1,6 +1,5 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const postcssPresetEnv = require('postcss-preset-env')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const RemovePlugin = require('remove-files-webpack-plugin')
 
@@ -24,16 +23,17 @@ module.exports = (_, argv) => {
 
       // Specify the base path for all the styles within your
       // application. This is relative to the output path, so in
-      // our case it will be './dist/css'
-      publicPath: '/css',
+      // our case it will be './dist'
+      publicPath: '/',
 
       // The name of the output bundle. Path is also relative
       // to the output path, so './dist/js'
       filename: 'js/chameleon.js'
     },
     devServer: {
-      contentBase: path.join(__dirname, 'dist'),
+      contentBase: __dirname,
       compress: true,
+      liveReload: true,
       port: 9000
     },
     module: {
@@ -51,14 +51,11 @@ module.exports = (_, argv) => {
             {
               // Extracts the CSS into a separate file and uses the
               // defined configurations in the 'plugins' section
-              loader: MiniCssExtractPlugin.loader
+              loader: MiniCssExtractPlugin.loader,
             },
             {
               // Interprets CSS
               loader: 'css-loader',
-              options: {
-                importLoaders: 2
-              }
             },
             {
               // Use PostCSS to minify and autoprefix with vendor rules
@@ -66,24 +63,18 @@ module.exports = (_, argv) => {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-
                 // We instruct PostCSS to autoprefix and minimize our
                 // CSS when in production mode, otherwise don't do
                 // anything.
-                plugins: devMode
-                  ? () => []
-                  : () => [
-                    postcssPresetEnv({
-                      // Compile our CSS code to support browsers
-                      // that are used in more than 1% of the
-                      // global market browser share. You can modify
-                      // the target browsers according to your needs
-                      // by using supported queries.
-                      // https://github.com/browserslist/browserslist#queries
-                      browsers: ['>1%']
-                    }),
-                    require('cssnano')()
-                  ]
+                plugins: [
+                  require('postcss-preset-env')(),
+                  require('cssnano')({
+                    preset: ['default', {
+                        normalizeWhitespace: false,
+                        discardComments: { removeAll: true }
+                    }]
+                  })
+                ]
               }
             },
             {
@@ -94,6 +85,18 @@ module.exports = (_, argv) => {
         },
       ]
     },
+    optimization: {
+      minimizer: [
+        new OptimizeCssAssetsPlugin({
+          assetNameRegExp: /\.min\.css$/g,
+          cssProcessor: require('cssnano'),
+          cssProcessorPluginOptions: {
+            preset: ['default', { discardComments: { removeAll: true } }],
+          },
+          canPrint: true
+        })
+      ]
+    },
     plugins: [
       // Configuration options for MiniCssExtractPlugin. Here I'm only
       // indicating what the CSS output file name should be and
@@ -101,31 +104,11 @@ module.exports = (_, argv) => {
       new MiniCssExtractPlugin({
         filename: devMode ? 'chameleon.css' : 'chameleon.min.css'
       }),
-      ...(
-        !devMode
-          ? [
-            new OptimizeCssAssetsPlugin({
-              assetNameRegExp: /\.min\.css$/g,
-              cssProcessor: require('cssnano'),
-              cssProcessorPluginOptions: {
-                preset: ['default', { discardComments: { removeAll: true } }],
-              },
-              canPrint: true
-            })
-          ]
-          : []
-      ),
       new RemovePlugin({
         after: {
           include: ['./dist/js']
         }
       })
-    ],
-    devServer: {
-      contentBase: __dirname,
-      compress: false,
-      liveReload: true,
-      port: 9000
-    }
+    ]
   }
 }
