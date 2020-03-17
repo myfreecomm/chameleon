@@ -53,10 +53,10 @@
   &.is-open > .ch-template-nav-toggle {
     @include ch-media(only, mobile) {
       margin-left: 80%;
-    }
 
-    > .ch-icon {
-      @include ch-mask-icon($ch-icon-times, 'only-mask');
+      > .ch-icon {
+        @include ch-mask-icon($ch-icon-times, 'only-mask');
+      }
     }
   }
 
