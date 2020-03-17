@@ -13,7 +13,11 @@ module.exports = (_, argv) => {
 
     // Webpack needs to know where to start the bundling process,
     // so we define the Sass file under './scss' directory
-    entry: ['./scss'],
+    // entry: ['./scss'],
+    entry: {
+      "chameleon": "./scss",
+      "chamleon.min": "./scss",
+    },
 
     // This is where we define the path where Webpack will place
     // a bundled JS file. Webpack needs to produce this file,
@@ -28,12 +32,15 @@ module.exports = (_, argv) => {
 
       // The name of the output bundle. Path is also relative
       // to the output path, so './dist/js'
-      filename: 'js/chameleon.js'
+      filename: 'js/[name].js'
     },
     devServer: {
-      contentBase: __dirname,
+      contentBase: [
+        path.join(__dirname, 'examples'),
+        path.join(__dirname, 'dist'),
+        path.join(__dirname, 'scss')
+      ],
       compress: true,
-      liveReload: true,
       port: 9000
     },
     module: {
@@ -102,7 +109,7 @@ module.exports = (_, argv) => {
       // indicating what the CSS output file name should be and
       // the location
       new MiniCssExtractPlugin({
-        filename: devMode ? 'chameleon.css' : 'chameleon.min.css'
+        filename: devMode ? 'chameleon.css' : '[name].css'
       }),
       new RemovePlugin({
         after: {
