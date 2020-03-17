@@ -57,6 +57,9 @@
   --ch-color-text-1:                   #{$ch-color-neutral-extra-dark};
   --ch-color-text-2:                   #{$ch-color-neutral-dark};
 
+  --ch-color-text-1-inverse:           #{$ch-color-white};
+  --ch-color-text-2-inverse:           #{rgba($ch-color-white, 0.8)};
+
   // 4.1. Link
 
   --ch-color-text-link:                #{$ch-color-blue};

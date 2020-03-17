@@ -18,7 +18,7 @@
   &:hover,
   &:focus,
   &:active {
-    color: #{ch-get-color(neutral, 1)};
+    color: #{ch-get-color(text, 1, inverse)};
   }
 
   // 1.1. Focus interaction

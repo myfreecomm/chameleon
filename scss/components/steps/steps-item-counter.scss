@@ -43,7 +43,7 @@
 
   &.is-completed {
     &:before {
-      color: #{ch-get-color(neutral, 1)};
+      color: #{ch-get-color(text, 1, inverse)};
       border-color: #{ch-get-color(primary)};
       background: #{ch-get-color(primary)};
     }

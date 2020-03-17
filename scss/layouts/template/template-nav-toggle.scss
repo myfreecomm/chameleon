@@ -20,7 +20,7 @@
     &:hover,
     &:focus {
       > .ch-toggle-icon {
-        background-color: #{ch-get-color(neutral, 1)};
+        background-color: #{ch-get-color(text, 1, inverse)};
       }
     }
 

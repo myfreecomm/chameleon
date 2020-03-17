@@ -9,7 +9,7 @@
   &--circle {
     @include ch-border-radius(circle);
 
-    color: #{ch-get-color(neutral, 1)};
+    color: #{ch-get-color(text, 1, inverse)};
     background-color: #{ch-get-color(default)};
   }
 

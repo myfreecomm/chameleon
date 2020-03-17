@@ -62,6 +62,8 @@
   --ch-color-positive-active:          #072B0C;
   --ch-color-text-1:                   #454646;
   --ch-color-text-2:                   #6D6D6D;
+  --ch-color-text-1-inverse:           #FFFFFF;
+  --ch-color-text-2-inverse:           rgba(255, 255, 255, 0.8);
   --ch-color-text-link:                #1890FF;
   --ch-color-text-link-focus:          #69C0FF;
   --ch-color-text-link-active:         #69C0FF;
@@ -837,7 +839,7 @@ template {
     height: calc(10 * var(--ch-icon-size-m));
     opacity: 0; } }
   .ch-button, .ch-button:hover:focus, .ch-button:hover, .ch-button:focus, .ch-button:active {
-    color: var(--ch-color-neutral-1); }
+    color: var(--ch-color-text-1-inverse); }
   .ch-button:hover:focus, .ch-button:hover, .ch-button:focus {
     border-color: var(--ch-color-default-focus);
     background-color: var(--ch-color-default-focus); }
@@ -1709,7 +1711,7 @@ template {
     border-top-right-radius: 999px;
     border-bottom-right-radius: 999px;
     border-bottom-left-radius: 999px;
-    color: var(--ch-color-neutral-1);
+    color: var(--ch-color-text-1-inverse);
     background-color: var(--ch-color-default); }
   .ch-icon.ch-icon--xs {
     font-size: var(--ch-icon-size-xs);
@@ -2385,7 +2387,7 @@ select.ch-select {
   box-shadow: 0 2px 10px rgba(172, 185, 210, 0.65); }
 
 .ch-steps-item.is-completed:before {
-  color: var(--ch-color-neutral-1);
+  color: var(--ch-color-text-1-inverse);
   border-color: var(--ch-color-primary);
   background: var(--ch-color-primary); }
 
@@ -4896,7 +4898,7 @@ a.ch-steps-item.is-completed:active:before {
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
     transition-delay: unset;
-    color: var(--ch-color-neutral-1);
+    color: var(--ch-color-text-1-inverse);
     line-height: var(--ch-dimension-1);
     opacity: 0; }
 
@@ -4936,9 +4938,9 @@ a.ch-steps-item.is-completed:active:before {
       .ch-template-nav > .ch-menu .ch-menu-item:hover:focus > .ch-icon, .ch-template-nav > .ch-menu .ch-menu-item:focus,
       .ch-template-nav > .ch-menu .ch-menu-item:focus > .ch-icon, .ch-template-nav > .ch-menu .ch-menu-item:hover,
       .ch-template-nav > .ch-menu .ch-menu-item:hover > .ch-icon {
-        color: var(--ch-color-neutral-1); }
+        color: var(--ch-color-text-1-inverse); }
     .ch-template-nav > .ch-menu .ch-menu-item.is-active > .ch-menu-item-label {
-      color: var(--ch-color-neutral-1); }
+      color: var(--ch-color-text-1-inverse); }
     .ch-template-nav > .ch-menu .ch-menu-item.is-active > .ch-icon:first-child {
       color: var(--ch-color-brand); }
 
@@ -5044,7 +5046,7 @@ a.ch-steps-item.is-completed:active:before {
   .ch-template-nav > .ch-toggle > .ch-toggle-icon {
     background-color: var(--ch-color-menu-text-1); }
   .ch-template-nav > .ch-toggle:hover:focus > .ch-toggle-icon, .ch-template-nav > .ch-toggle:hover > .ch-toggle-icon, .ch-template-nav > .ch-toggle:focus > .ch-toggle-icon {
-    background-color: var(--ch-color-neutral-1); }
+    background-color: var(--ch-color-text-1-inverse); }
   .ch-template-nav > .ch-toggle + .ch-toggle {
     display: none; }
     @media screen and (min-width: 769px) {
