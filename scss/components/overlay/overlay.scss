@@ -29,19 +29,13 @@
 
   &-content {
     @include ch-space-inset();
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     width: 100%;
     height: 100%;
-  }
-
-  // 4. Inverse variation
-
-  &--inverse {
-    background-color: #{ch-get-color(overlay, inverse)};
   }
 
   // 5. Inside variation
