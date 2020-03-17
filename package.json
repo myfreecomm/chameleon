@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --mode=development --open",
-    "build": "standard \"scss/**/*.js\" && sass-lint \"scss/**/*.scss\" -v -q && webpack --mode=production"
+    "build": "standard \"scss/**/*.js\" -v -q && webpack --mode=production"
   },
   "keywords": [
     "UI",
@@ -31,10 +31,7 @@
     "standard": "^12.0.1",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
-  },
-  "sasslintConfig": ".sasslintrc",
-  "dependencies": {
+    "webpack-dev-server": "^3.8.0",
     "remove-files-webpack-plugin": "^1.4.0"
   }
 }
