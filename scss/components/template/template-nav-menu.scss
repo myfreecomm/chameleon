@@ -136,7 +136,7 @@
       min-width: calc(#{ch-get-dimension(2)} - #{ch-get-dimension(1)} - #{ch-get-space()});
     }
 
-    &:not(:hover):not(.is-expanded) {
+    &:not(:hover):not(:focus):not(.is-expanded):not(.is-hovered) {
       > .ch-menu {
         width: #{ch-get-dimension(2)};
 
@@ -146,6 +146,7 @@
           }
 
           > .ch-menu {
+            display: none;
             position: absolute;
             visibility: hidden;
             opacity: 0;
@@ -162,21 +163,18 @@
       }
     }
 
-    &:focus:hover,
-    &:focus,
-    &:hover {
-      &:not(.is-expanded) {
-        > .ch-menu {
-          > .ch-menu-submenu > .ch-menu {
-            position:  static;
-            visibility: visible;
-            opacity: 1;
-          }
-        }
-
-        .ch-menu-item-label {
+    &.is-expanded {
+      > .ch-menu {
+        > .ch-menu-submenu > .ch-menu {
+          display: block;
+          position: static;
+          visibility: visible;
           opacity: 1;
         }
+      }
+
+      .ch-menu-item-label {
+        opacity: 1;
       }
     }
   }

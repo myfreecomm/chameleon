@@ -12,13 +12,12 @@
   min-width: #{$size};
   min-height: #{$size};
 
-  > * {
+  > *:not(.ch-icon):not(.ch-avatar) {
     display: none;
   }
 
   > .ch-icon:first-child,
-  > .ch-avatar,
-  > .ch-toggle-icon {
+  > .ch-avatar {
     position: absolute;
     display: block;
     top: 50%;

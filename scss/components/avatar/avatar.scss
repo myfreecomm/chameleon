@@ -1,5 +1,6 @@
 .ch-avatar {
-  $avatar-width: ch-get-space(xl);
+  $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
+  $avatar-width: calc(#{$box-height} + 2 * #{$ch-border-width});
 
   // 1. Base
 

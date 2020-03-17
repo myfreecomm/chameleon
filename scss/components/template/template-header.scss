@@ -1,20 +1,21 @@
 .ch-template-header {
+  $button-box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
+  $icon-button-width: calc(#{$button-box-height} + 2 * #{$ch-border-width});
+  $nav-max-width: calc(3 * #{$icon-button-width} + 2 * #{ch-get-space(xxs)});
 
   // 1. Base
-
-  @include ch-media(from, tablet) {
-    height: #{ch-get-dimension(1)};
-  }
-
   @include ch-transition(unquote('box-shadow, margin-left, transform'));
+
+  height: #{ch-get-dimension(1)};
+  padding-right: #{ch-get-space(l)};
+  padding-left: #{ch-get-space(l)};
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   &,
-  > .ch-breadcrumbs,
-  > .ch-menu {
+  > * {
     position: relative;
   }
 
@@ -27,93 +28,80 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    left: 0;
 
     content: $empty;
     background: #{ch-get-color(neutral, 1)};
   }
 
-  // 3. Breadcrumbs
+  // 3. Secondary
 
-  > .ch-breadcrumbs {
-    @include ch-media(only, mobile) {
-      padding-left: #{ch-get-space(s)};
-    }
-
-    @include ch-media(from, tablet) {
-      padding-left: #{ch-get-space(l)};
-    }
-
+  > *:not(.ch-template-header-nav) {
     @include ch-media(from, desktop) {
-      max-width: calc(100% / 3);
+      max-width: 50%;
     }
 
     order: 1;
 
-    max-width: calc(100% - #{ch-calc-box-height()} * 3);
+    max-width: calc(100% - #{$nav-max-width});
     padding-right: #{ch-get-space(s)};
-    font-size: #{ch-get-text-size(3)};
 
-    // 3.1. Last item
+    // 3.1. Breadcrumbs item
 
     .ch-breadcrumbs-item:last-child {
       @include ch-truncate;
     }
   }
 
-  // 4. Menu
+  // 4. Nav
 
-  > .ch-menu {
-    @include ch-menu-horizontal;
-
+  > .ch-template-header-nav {
     @include ch-media(from, desktop) {
-      max-width: calc(100% / 3 * 2);
-      margin-right: #{ch-get-space(l)};
+      max-width: 50%;
+
+      > .ch-template-header-nav-toggle {
+        display: none;
+      }
     }
 
+    @include ch-space-inline-group(left, xxs);
+
     order: 2;
+    flex-wrap: nowrap;
+    align-items: center;
 
-    max-width: calc(#{ch-calc-box-height(ch-get-text-size(2), ch-get-space(s))} * 3);
+    overflow-x: initial;
+    max-width: #{$nav-max-width};
+    margin-left: auto;
 
-    // 4.1. Item
+    > .ch-template-header-nav-toggle {
+      @include ch-icon-only(xs);
 
-    > .ch-menu-item {
-      opacity: 0.8;
+      width: $icon-button-width;
+      height: $icon-button-width;
 
-      &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
-        @include ch-media(from, desktop) {
-          display: block;
-        }
+      > .ch-icon {
+        @include ch-mask-icon($ch-icon-angle-double-left);
 
-        display: none;
+        height: #{ch-get-icon-size()};
+        background-color: #{ch-get-color(text, 2)};
       }
 
       &:hover:focus,
       &:hover,
-      &:focus {
-        opacity: 1;
-        background: transparent;
-      }
-
-      &.ch-toggle {
-        @include ch-media(from, desktop) {
-          display: none;
+      &:focus,
+      &:active {
+        > .ch-icon {
+          background-color: #{ch-get-color(text, 1)};
         }
       }
+    }
 
-      &:not(.ch-menu-item--icon) > .ch-menu-item-label {
-        width: max-content;
-      }
-
-      > .ch-menu-item-label {
-        text-transform: uppercase;
-        font-weight: #{ch-get-text-weight(bold)};
-      }
-
-      > .ch-avatar {
-        @include ch-media(from, desktop) {
-          width: #{ch-calc-box-height()};
-          height: #{ch-calc-box-height()};
-          line-height: #{ch-calc-box-height()};
+    &:not(.is-expanded) {
+      @include ch-media(to, tablet) {
+        > .ch-button--icon:nth-child(n+4),
+        > *:not(.ch-button--icon):not(.ch-template-header-nav-toggle) {
+          display: none;
         }
       }
     }
@@ -121,31 +109,23 @@
     // 4.2. Expanded state
 
     &.is-expanded {
-      @include ch-media(from, desktop) {
-        max-width: calc(100% / 3 * 2);
-        margin-left: initial;
-      }
+      @include ch-media(to, tablet) {
+        overflow-x: auto;
+        max-width: 100%;
+        margin-left: calc(#{$icon-button-width} + #{ch-get-space(xxs)});
 
-      max-width: 100%;
-      margin-left: #{ch-calc-box-height()};
-
-      > .ch-menu-item {
-        &.ch-toggle {
+        > .ch-template-header-nav-toggle {
           position: fixed;
-          left: 0;
+          margin-left: calc(-1 * (#{$icon-button-width} + #{ch-get-space(xxs)}));
+
+          > .ch-icon {
+            @include ch-mask-icon($ch-icon-angle-double-right, 'only-mask');
+          }
         }
 
-        &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
-          display: block;
+        + * {
+          display: none;
         }
-      }
-
-      + .ch-breadcrumbs {
-        @include ch-media(from, desktop) {
-          display: flex;
-        }
-
-        display: none;
       }
     }
   }
@@ -164,7 +144,7 @@
     }
   }
 
-  // 4.4. Hide state
+  // 4.4. Hidden state
 
   &.is-hidden {
     @include ch-media(to, mobile) {
