@@ -1,7 +1,3 @@
 %ch-text-label {
   @include ch-text-label;
 }
-
-%ch-text-label-inverse {
-  @include ch-text-label(inverse);
-}
