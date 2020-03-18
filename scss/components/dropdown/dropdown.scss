@@ -58,6 +58,10 @@
       height: 0;
       min-width: 0;
       min-height: 0;
+
+      > .ch-card {
+        width: auto;
+      }
     }
 
     // 2.1. Overlay content
@@ -66,6 +70,10 @@
       @include ch-media(to, tablet) {
         border: 0;
       }
+
+      @include ch-transition(width);
+
+      transition-timing-function: step-end;
     }
 
     > * {
@@ -79,9 +87,9 @@
 
       @include ch-media(from, desktop) {
         @include ch-shadow(2);
-        
+
         transition-duration: #{$ch-transition-duration-very-fast};
-        
+
         width: auto;
       }
 
@@ -120,7 +128,7 @@
   &--contained {
     > .ch-overlay > .ch-card {
       @include ch-media(from, desktop) {
-        max-width: ch-get-dimension(3);
+        width: ch-get-dimension(3);
         max-height: 80vh;
       }
 
