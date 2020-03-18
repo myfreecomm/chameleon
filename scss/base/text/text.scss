@@ -17,6 +17,10 @@
     @include ch-truncate;
   }
 
+  &--wrap {
+    @include ch-wrap($important: true);
+  }
+
   @each $type in (info, warning, negative, positive) {
     &--#{$type} {
       color: #{ch-get-color(#{$type})} !important;
