@@ -1601,7 +1601,7 @@ template {
   .ch-field:not(.ch-field--inline) .ch-control {
     width: 100%; }
 
-.ch-field > *:not(.ch-field-label) {
+.ch-field > *:not(.ch-field-label):not(.ch-grid) {
   display: block; }
 
 .ch-field-label {
@@ -1625,15 +1625,19 @@ template {
     .ch-field-label--inline > * {
       display: inline-block; }
 
-.ch-field:not(.ch-field--inline) .ch-field-control {
+.ch-field:not(.ch-field--inline) .ch-field-control:not(.ch-grid) {
   display: flex;
   flex-direction: column; }
-  .ch-field:not(.ch-field--inline) .ch-field-control > *:not(:last-child) {
+  .ch-field:not(.ch-field--inline) .ch-field-control:not(.ch-grid) > *:not(:last-child) {
     margin-bottom: var(--ch-space-xs); }
-  .ch-field:not(.ch-field--inline) .ch-field-control > *:last-child {
+  .ch-field:not(.ch-field--inline) .ch-field-control:not(.ch-grid) > *:last-child {
     margin-bottom: 0; }
-  .ch-field:not(.ch-field--inline) .ch-field-control > * {
-    width: 100%; }
+
+.ch-field:not(.ch-field--inline) .ch-field-control > * {
+  width: 100%; }
+
+.ch-field:not(.ch-field--inline) .ch-field-control.ch-grid {
+  grid-row-gap: var(--ch-space-xs); }
 
 .ch-field--inline .ch-field-control {
   display: inline-flex;
