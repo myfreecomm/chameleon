@@ -24,65 +24,23 @@
 
       position: absolute;
 
-      margin-top: #{ch-get-space(xs)};
+      margin-top: ch-get-space(xs);
       width: auto;
-      min-width: #{ch-get-dimension(2)};
+      min-width: ch-get-dimension(2);
       height: auto;
       background: transparent;
-    }
-
-    @include ch-transition(
-      unquote('visibility, opacity, width, height, min-width, min-height')
-    );
-
-    &.is-visible {
-      transition-timing-function:
-        step-start,
-        #{$ch-transition-timing-function},
-        step-start,
-        step-start,
-        step-start,
-        step-start;
-    }
-
-    &:not(.is-visible) {
-      transition-timing-function:
-        step-end,
-        #{$ch-transition-timing-function},
-        step-end,
-        step-end,
-        step-end,
-        step-end;
-
-      width: 0;
-      height: 0;
-      min-width: 0;
-      min-height: 0;
-
-      > .ch-card {
-        width: auto;
-      }
     }
 
     // 2.1. Overlay content
 
     > .ch-card {
       @include ch-media(to, tablet) {
-        border: 0;
-      }
-
-      @include ch-transition(width);
-
-      transition-timing-function: step-end;
-    }
-
-    > * {
-      @include ch-media(to, tablet) {
         transform: translate(0, 10%);
-
+        
         width: 100%;
         max-width: calc(2 * #{ch-get-dimension(2)});
         max-height: 60vh;
+        border: 0;
       }
 
       @include ch-media(from, desktop) {
@@ -94,11 +52,8 @@
       }
 
       @include ch-shadow(5, top-bottom, #{$ch-color-black});
-      @include ch-transition(
-        unquote('transform, opacity'), $ch-transition-duration-fast
-      );
+      @include ch-transition(transform);
 
-      opacity: 0;
       width: 100%;
       overflow-x: hidden;
       overflow-y: auto;
@@ -115,7 +70,7 @@
 
       // 2.2.1. Overlay content
 
-      > * {
+      > .ch-card {
         transform: translate(0, 0);
 
         opacity: 1;
@@ -129,7 +84,7 @@
     > .ch-overlay > .ch-card {
       @include ch-media(from, desktop) {
         width: ch-get-dimension(3);
-        max-height: 80vh;
+        max-height: 50vh;
       }
 
       display: flex;
