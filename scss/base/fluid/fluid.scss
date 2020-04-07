@@ -1,0 +1,11 @@
+.ch-fluid {
+  @each $screen in $ch-breakpoint-screens {
+    $suffix: ch-generate-variation($screen, mobile);
+
+    @include ch-media(from, $screen) {
+      @at-root #{&}#{$suffix} {
+        @include ch-fluid;
+      }
+    }
+  }
+}

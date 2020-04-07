@@ -3,15 +3,13 @@
   overflow: hidden;
 
   &:after {
-    $empty: '';
-
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    content: $empty;
+    content: '';
     border-radius: 50%;
     background: $color;
     animation: --ch-ripple-effect #{$ch-transition-duration-very-slow};
