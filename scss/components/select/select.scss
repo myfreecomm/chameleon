@@ -2,17 +2,8 @@ select.ch-select {
 
   // 1. Base
 
-  @include ch-input;
-
-  $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
-  $background: #{ch-get-color(neutral, 1)} url('#{$ch-icon-angle-down}') no-repeat right #{$icon-right} center;
-
   position: relative;
   display: inline-block;
-
-  padding-right: #{ch-calc-box-height()};
-  background: $background;
-  background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
 
   // 2. Small variation
 

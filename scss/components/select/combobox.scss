@@ -1,0 +1,54 @@
+select.ch-select,
+.ch-dropdown.ch-select > .ch-dropdown-toggle {
+  @include ch-input;
+
+  $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
+  $background: #{ch-get-color(neutral, 1)} url('#{$ch-icon-angle-down}') no-repeat right #{$icon-right} center;
+
+  padding-right: #{ch-calc-box-height()};
+  background: $background;
+  background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
+}
+
+.ch-dropdown.ch-select {
+  > .ch-dropdown-toggle {
+    @include ch-truncate;
+  }
+
+  &.is-readonly,
+  &.is-disabled {
+    > .ch-dropdown-toggle {
+      background-color: ch-get-color(neutral, 2);
+    }
+  }
+
+  > .ch-overlay.is-visible + .ch-dropdown-toggle {
+    border-color: ch-get-color(primary, focus);
+  }
+
+  > .ch-overlay > .ch-card {
+    @include ch-paddingless;
+    
+    > .ch-menu > .ch-menu-item {
+      @include ch-media(from, desktop) {
+        @include ch-space-inset(squish, s);
+      }
+
+      &:before {
+        content: none;
+      }
+
+      &.is-active {
+        color: ch-get-color(text, inverse, 2);
+        background: ch-get-color(primary);
+
+        &:hover:focus,
+        &:hover,
+        &:focus,
+        &:active {
+          background: ch-get-color(primary, focus);
+        }
+      }
+    }
+  }
+}

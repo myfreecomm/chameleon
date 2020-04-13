@@ -12,17 +12,57 @@
     <div class="ch-template">
       <main class="ch-template-content ch-spaceStackGroup">
 
-        <select class="ch-select">
-          <option value="1">Option example 1</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+        <section>
+          <select class="ch-select">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3" selected>Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+          </select>
 
-        <select class="ch-select" readonly>
-          <option value="1">Option example 1</option>
-        </select>
+          <div class="ch-select ch-dropdown">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <ul class="ch-menu">
+                  <li class="ch-menu-item">Option 1</li>
+                  <li class="ch-menu-item">Option 2</li>
+                  <li class="ch-menu-item is-active">Option 3</li>
+                  <li class="ch-menu-item">Option 4</li>
+                  <li class="ch-menu-item">Option 5</li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="ch-dropdown-toggle">
+              Option 3
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select" readonly>
+            <option value="1">Option 1</option>
+          </select>
+
+          <div class="ch-select ch-dropdown is-readonly">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <ul class="ch-menu">
+                  <li class="ch-menu-item is-active">Option 1</li>
+                  <li class="ch-menu-item">Option 2</li>
+                  <li class="ch-menu-item">Option 3</li>
+                  <li class="ch-menu-item">Option 4</li>
+                  <li class="ch-menu-item">Option 5</li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="ch-dropdown-toggle">
+              Option 1
+            </div>
+          </div>
+        </section>
 
         <select class="ch-select" disabled>
           <option value="1">Option example 1</option>
@@ -72,6 +112,22 @@
           <option value="5">Option example 5</option>
         </select>
 
+        <div class="ch-select ch-dropdown is-disabled">
+          <div class="ch-overlay">
+            <div class="ch-card">
+              <ul class="ch-menu">
+                <li class="ch-menu-item">Option 1</li>
+                <li class="ch-menu-item is-active">Option 2</li>
+                <li class="ch-menu-item">Option 3</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ch-dropdown-toggle">
+            Option 2
+          </div>
+        </div>
+
       </main>
     </div>
 
@@ -80,5 +136,27 @@
         align-items: flex-start;
       }
     </style>
+
+    <script>
+      const dropdown = document.querySelector('.ch-dropdown')
+      const toggle = document.querySelector('.ch-dropdown-toggle')
+      const overlay = document.querySelector('.ch-overlay')
+
+      toggle.addEventListener('click', () => {
+        overlay.classList.add('is-visible')
+      })
+
+      overlay.addEventListener('click', e => {
+        if (e.target === overlay) {
+          overlay.classList.remove('is-visible')
+        }
+      })
+
+      document.addEventListener('click', e => {
+        if (!dropdown.contains(e.target)) {
+          overlay.classList.remove('is-visible')
+        }
+      })
+    </script>
   </body>
 </html>
