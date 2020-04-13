@@ -2,15 +2,14 @@
   "name": "@nexaas/chameleon",
   "version": "1.0.0-alpha.0.1.0",
   "description": "Nexaas web framework",
-  "main": "index.js",
+  "main": "scss/index.js",
   "files": [
     "dist/**/*.{css,js,map}",
     "scss/**/*.{css,js,map}"
   ],
   "scripts": {
     "start": "webpack-dev-server --mode=development --open",
-    "build:watch": "webpack -w --mode=development",
-    "build:prod": "standard \"scss/**/*.js\" && webpack --mode=development && webpack --mode=production"
+    "build": "standard \"scss/**/*.js\" -v -q && webpack --mode=production"
   },
   "keywords": [
     "UI",
@@ -32,8 +31,7 @@
     "standard": "^12.0.1",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
-  },
-  "sasslintConfig": ".sasslintrc",
-  "dependencies": {}
+    "webpack-dev-server": "^3.8.0",
+    "remove-files-webpack-plugin": "^1.4.0"
+  }
 }

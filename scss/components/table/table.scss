@@ -67,7 +67,13 @@
   &-cell,
   td,
   th {
-    @include ch-box-model(s, stretch, top, #{ch-get-color(border)});
+    $inset-type: stretch;
+    $size: s;
+    $border-rule: top;
+    $border-color: ch-get-color(border);
+
+    @include ch-space-inset($inset-type, $size);
+    @include ch-border($border-rule, $border-color);
 
     display: table-cell;
 

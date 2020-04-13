@@ -1,7 +1,0 @@
-%ch-input {
-  @include ch-input;
-}
-
-%ch-input-small {
-  @include ch-box-model(xs, squish, box, ch-get-color(border));
-}

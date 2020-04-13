@@ -1,9 +1,7 @@
 .has-icon {
+  @include ch-has-icon;
+
   @at-root &Right {
-    // @extend %ch-has-icon-right;
     @include ch-has-icon(right);
   }
-
-  // @extend %ch-has-icon;
-  @include ch-has-icon;
 }

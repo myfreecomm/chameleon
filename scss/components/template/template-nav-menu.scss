@@ -7,6 +7,8 @@
   > .ch-menu {
 
     flex: 1;
+    overflow-y: overlay;
+    overflow-x: hidden;
 
     // 1.1. Item
 
@@ -165,7 +167,7 @@
 
     &.is-expanded {
       > .ch-menu {
-        > .ch-menu-submenu > .ch-menu {
+        > .ch-menu-submenu.is-open > .ch-menu {
           display: block;
           position: static;
           visibility: visible;

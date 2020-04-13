@@ -2,20 +2,17 @@
 
   // 1. Base
 
-  // @extend %ch-card;
   @include ch-card;
 
   // 2. Header
 
   &-header {
-    // @extend %ch-card-header;
     @include ch-card-header;
   }
 
   // 3. Content
 
   &-content {
-    // @extend %ch-card-content;
     @include ch-card-content;
   }
 

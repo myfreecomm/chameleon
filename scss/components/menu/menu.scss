@@ -3,7 +3,7 @@
   // 1. item
 
   &-item {
-    @include ch-box-model(m, squish);
+    @include ch-space-inset(squish, m);
 
     display: block;
     width: 100%;
@@ -31,8 +31,29 @@
     // 1.2. Icon variation
 
     &#{&}--icon {
-      // @extend %ch-menu-item-icon;
-      @include ch-menu-item-icon;
+      $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
+
+      @include ch-paddingless(true);
+
+      position: relative;
+
+      width: #{$size};
+      min-width: #{$size};
+      min-height: #{$size};
+
+      > * {
+        display: none;
+      }
+
+      > .ch-icon:first-child,
+      > .ch-avatar,
+      > .ch-toggle-icon {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
 
     // 1.3. Label
