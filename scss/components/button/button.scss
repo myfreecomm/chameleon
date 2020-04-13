@@ -15,6 +15,7 @@
   display: inline-block;
 
   cursor: pointer;
+  white-space: nowrap;
   font-weight: #{ch-get-text-weight(bold)};
   text-align: center;
   background-color: #{ch-get-color(default)};

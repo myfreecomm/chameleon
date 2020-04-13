@@ -108,18 +108,88 @@
           </button>
 
           <!-- ACCOUNTS DROPDOWN BEGIN -->
-          <div class="ch-dropdown ch-dropdown--left">
+          <div class="accountWidget ch-dropdown ch-dropdown--contained ch-dropdown--left">
             <div class="ch-dropdown-toggle">
-              <button type="button" class="ch-button ch-button--ghost ch-text--truncate">Account name</button>
+              <button type="button" class="ch-button ch-button--ghost">Nome da conta</button>
             </div>
 
             <div class="ch-overlay">
               <div class="ch-card ch-paddingless">
-                <nav class="ch-menu">
-                  <a class="ch-menu-item is-active">Nexaas</a>
-                  <a class="ch-menu-item">B2W</a>
-                  <a class="ch-menu-item">Dufry</a>
-                </nav>
+                <header class="ch-card-header">
+                  <form class="ch-search ch-fluid ch-spaceStack">
+                    <input class="ch-input" type="text" placeholder="Busque por conta ou empresa..." value="">
+                    <button type="submit" class="ch-button ch-button--icon ch-button--ghost">
+                      <i class="ch-icon fal fa-search"></i>
+                    </button>
+                  </form>
+
+                  <ul class="ch-segmentedControl ch-segmentedControl--primary ch-segmentedControl--horizontal ch-segmentedControl--small ch-fluid">
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_1" checked>
+                      <label for="field_1">Nexaas</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_2">
+                      <label for="field_2">Dufry</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_3">
+                      <label for="field_3">Option 3</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_4">
+                      <label for="field_4">Zeedog</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_5">
+                      <label for="field_5">Pampili</label>
+                    </li>
+                  </ul>
+                </header>
+
+                <main class="ch-card-content ch-paddingless">
+                  <nav class="ch-menu">
+                    <button type="button" class="ch-menu-item is-active">
+                      <span class="ch-menu-item-label">Empresa 1</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 2</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 3</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 4</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 5</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 6</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 7</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 8</span>
+                    </button>
+                  </nav>
+                </main>
+
+                <footer class="ch-card-footer">
+                  <button type="button" class="ch-button ch-button--primary ch-button--outline ch-fluid">Acessar o dashboard da conta</button>
+                </footer>
               </div>
             </div>
           </div>

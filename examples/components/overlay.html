@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <title>Chameleon - Overly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="ch-template">
+      <main class="ch-template-content">
+        <button type="button" class="ch-button">Show overlay</button>
+      </main>
+    </div>
+
+    <div class="ch-overlay">
+      <div class="ch-overlay-content">
+        <button type="button" class="ch-button">Hide overlay</button>
+      </div>
+    </div>
+
+    <script>
+      const overlay = document.querySelector('.ch-overlay')
+      const [showOverlayButton, hideOverlayButton] = document.querySelectorAll('.ch-button')
+
+      showOverlayButton.addEventListener('click', () => overlay.classList.add('is-visible'))
+      hideOverlayButton.addEventListener('click', () => overlay.classList.remove('is-visible'))
+    </script>
+  </body>
+
+</html>

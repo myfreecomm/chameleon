@@ -10,7 +10,7 @@
     }
   }
 
-  > *:not(#{&}-label) {
+  > *:not(#{&}-label):not(.ch-grid) {
     display: block;
   }
 
@@ -39,10 +39,16 @@
   // 3. Control
 
   &:not(&--inline) &-control {
-    @include ch-space-stack-group(xs);
+    &:not(.ch-grid) {
+      @include ch-space-stack-group(xs);
+    }
 
     > * {
       width: 100%;
+    }
+
+    &.ch-grid {
+      grid-row-gap: ch-get-space(xs);
     }
   }
 

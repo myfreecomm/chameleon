@@ -1,0 +1,73 @@
+.ch-flashMessages {
+
+  // 1. Base
+
+  @include ch-paddingless;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: #{ch-get-z-index(6, 1)};
+  
+  width: 100%;
+  max-width: calc(#{ch-get-dimension(3) + #{ch-get-space()} + #{ch-get-space(xxl)}});
+  max-height: 100vh;
+  overflow-y: auto;
+
+  // 2. Inner
+
+  > #{&}-inner {
+    width: 100%;
+
+    &:not(:empty) {
+      @include ch-media(from, tablet) {
+        padding-left: #{ch-get-space(xxl)};
+      }
+
+      padding-top: #{ch-get-space()};
+      padding-right: #{ch-get-space()};
+      padding-left: #{ch-get-space()};
+    }
+
+    // 2.1. Alert
+
+    > .ch-alert {
+      @include ch-transition(
+        unquote('max-height, opacity, transform, margin-bottom'),
+        $ch-transition-duration-slow
+      );
+
+      @include ch-shadow(6);
+      @include ch-paddingless;
+
+      overflow: hidden;
+
+      opacity: 0;
+      max-height: 0;
+      margin-bottom: 0;
+      border-color: transparent;
+      transform: scale(0.95);
+
+      > .ch-alert-header {
+        @include ch-space-inset();
+      }
+
+      @each $variation in (info, warning, positive, negative) {
+        &--#{$variation} {
+          .ch-media-icon {
+            color: #{ch-get-color($variation)};
+          }
+        }
+      }
+
+      &.is-visible {
+        opacity: 1;
+        max-height: #{ch-get-dimension(2)};
+        margin-bottom: #{ch-get-space()};
+        transform: scale(1);
+      }
+    }
+  }
+}

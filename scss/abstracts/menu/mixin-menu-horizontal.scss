@@ -1,5 +1,3 @@
-// sass-lint:disable no-important
-
 @mixin ch-menu-horizontal {
   display: flex;
   flex-wrap: nowrap;
@@ -14,7 +12,7 @@
 
   > .ch-menu-item:not(.ch-menu-item--icon),
   > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
-    @include ch-space-inset(stretch, xs);
+    white-space: nowrap;
   }
 
   > .ch-menu-submenu {
@@ -30,11 +28,10 @@
     bottom: ch-get-space(xxs);
     left: 50%;
     transform: translate(-50%, 0);
-    opacity: 1;
 
     width: calc(100% - 2 * #{ch-get-space(xs)});
-    min-width: #{ch-get-icon-size(m)};
-    height: #{ch-get-space(xxs)};
+    min-width: ch-get-icon-size(m);
+    height: ch-get-space(xxs);
   }
 
   > .ch-menu-item.ch-menu-item--icon.is-active:before,
