@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chameleon - Flash messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Roboto+Mono:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../dist/css/chameleon.css">
+  </head>
+  <body>
+    <div class="ch-template">
+      <main class="ch-template-content">
+
+        <div class="ch-flashMessages">
+          <div class="ch-flashMessages-inner">
+
+            <div class="ch-alert ch-alert--info">
+              <header class="ch-alert-header ch-media">
+                <i class="ch-media-icon ch-icon ch-icon--l fal fa-info-circle"></i>
+
+                <h6 class="ch-media-content ch-title ch-title--6">
+                  Lorem ipsum dolor sit
+                  <div class="ch-title-sub">Phasellus gravida vel</div>
+                </h6>
+
+                <div class="ch-media-actions">
+                  <button class="ch-button ch-button--icon ch-button--ghost">
+                    <i class="ch-icon fal fa-times"></i>
+                  </button>
+                </div>
+              </header>
+            </div>
+
+            <div class="ch-alert ch-alert--positive">
+              <header class="ch-alert-header ch-media">
+                <i class="ch-media-icon ch-icon ch-icon--l fal fa-check-circle"></i>
+
+                <h6 class="ch-media-content ch-title ch-title--6">
+                  Lorem ipsum dolor sit
+                  <div class="ch-title-sub">Phasellus gravida vel</div>
+                </h6>
+
+                <div class="ch-media-actions">
+                  <button class="ch-button ch-button--icon ch-button--ghost">
+                    <i class="ch-icon fal fa-times"></i>
+                  </button>
+                </div>
+              </header>
+            </div>
+
+            <div class="ch-alert ch-alert--warning">
+              <header class="ch-alert-header ch-media">
+                <i class="ch-media-icon ch-icon ch-icon--l fal fa-exclamation-circle"></i>
+
+                <h6 class="ch-media-content ch-title ch-title--6">
+                  Lorem ipsum dolor sit
+                  <div class="ch-title-sub">Phasellus gravida vel</div>
+                </h6>
+
+                <div class="ch-media-actions">
+                  <button class="ch-button ch-button--icon ch-button--ghost">
+                    <i class="ch-icon fal fa-times"></i>
+                  </button>
+                </div>
+              </header>
+            </div>
+
+            <div class="ch-alert ch-alert--negative">
+              <header class="ch-alert-header ch-media">
+                <i class="ch-media-icon ch-icon ch-icon--l fal fa-times-circle"></i>
+
+                <h6 class="ch-media-content ch-title ch-title--6">
+                  Lorem ipsum dolor sit
+                  <div class="ch-title-sub">Phasellus gravida vel</div>
+                </h6>
+
+                <div class="ch-media-actions">
+                  <button class="ch-button ch-button--icon ch-button--ghost">
+                    <i class="ch-icon fal fa-times"></i>
+                  </button>
+                </div>
+              </header>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <script>
+      const alerts = document.querySelectorAll('.ch-alert')
+
+      for (let i = 1; i <= alerts.length; i ++) {
+        const alert = alerts[i - 1]
+        const closeButton = alert.querySelector('.ch-button')
+
+        closeButton.addEventListener('click', () => alert.classList.remove('is-visible'))
+
+        setTimeout(() => alert.classList.add('is-visible'), 400 * i)
+        setInterval(() => alert.classList.remove('is-visible'), 8000 * i)
+      }
+    </script>
+
+  </body>
+</html>
