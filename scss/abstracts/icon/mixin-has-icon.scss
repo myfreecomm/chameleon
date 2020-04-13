@@ -3,25 +3,29 @@
 @mixin ch-has-icon ($type: left, $padding: ch-calc-box-height()) {
   position: relative;
 
-  @if ($type == left) {
-    padding-left: #{$padding} !important;
+  @if ($type == right) {
+    padding-right: #{$padding} !important;
 
-    > .ch-icon:first-child {
+    > .ch-icon:last-child,
+    > .ch-toggle-icon {
       position: absolute;
       top: 50%;
-      left: calc((#{$padding}) / 2);
-      transform: translate(-50%, -50%);
+      left: auto;
+      right: calc((#{$padding}) / 2);
+      transform: translate(50%, -50%);
     }
   }
 
-  @else if ($type == right) {
-    padding-right: #{$padding} !important;
+  @else if ($type == left) {
+    padding-left: #{$padding} !important;
 
-    > .ch-icon:last-child {
+    > .ch-icon:first-child,
+    > .ch-toggle-icon {
       position: absolute;
       top: 50%;
-      right: calc((#{$padding}) / 2);
-      transform: translate(50%, -50%);
+      left: calc((#{$padding}) / 2);
+      right: auto;
+      transform: translate(-50%, -50%);
     }
   }
 }

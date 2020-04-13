@@ -1,0 +1,5 @@
+@mixin ch-wrap ($important: false) {
+  $important: if($important, unquote('!important'), unquote(''));
+
+  white-space: normal #{$important};
+}

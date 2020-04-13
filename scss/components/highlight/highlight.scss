@@ -1,0 +1,6 @@
+.ch-highlight {
+  @include ch-border-radius();
+
+  background-color: ch-get-color(highlight);
+  box-shadow: 0 0 0 #{ch-get-border-radius()} ch-get-color(highlight);
+}
