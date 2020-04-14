@@ -3,12 +3,12 @@ Framework CSS de interface para os projetos da Nexaas
 
 ## Tabela de conteúdo
 
-- [Introdução](#introducao)
-- [Dependências](#dependencias)
-- [Instalação](#instalacao)
+- [Introdução](#introdução)
+- [Dependências](#dependências)
+- [Instalação](#instalação)
 - [Usando Chameleon](#usando-chameleon)
 - [Complementos](#complementos)
-- [Rodando a aplicação localmente](#rodando-a-aplicacao-localmente)
+- [Rodando a aplicação localmente](#rodando-a-aplicação-localmente)
 
 ## Introdução
 
@@ -31,7 +31,7 @@ Após a instalação, o Chameleon deverá ser incluído no projeto, essa inclus�
 
 - Dentro da tag `head`
 
-```
+```html
   <head>
     <link
       href="chameleon.min.css"
@@ -53,7 +53,7 @@ Algumas variáveis CSS estão presentes no bundle do projeto, entretanto a alter
 
 Para trocar a cor da marca mude o valor da variável `--ch-color-brand`. Segue abaixo um exemplo:
 
-```
+```css
 :root {
   --ch-color-brand: #f00
 }
@@ -68,7 +68,7 @@ Mesmo não sendo uma dependência do projeto, em nossos templates utilizamos as 
 
 - No cabeçalho do documento
 
-```
+```html
 <head>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans:wght@400;600;700&display=swap"
@@ -79,7 +79,7 @@ Mesmo não sendo uma dependência do projeto, em nossos templates utilizamos as 
 
 - Importe em seu CSS
 
-```
+```css
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans:wght@400;600;700&display=swap');
 ```
 
