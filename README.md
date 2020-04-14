@@ -28,7 +28,9 @@ Chameleon é um framework para interface web projetado com o objetivo de padroni
 
 ## Instalação
 
-Em seu terminal rode `npm install @nexaas/chameleon` ou `yarn add @nexaas/chameleon`
+Neste momento o pacote pode ser adicionado exclusivamente através do repositório do github.
+
+Em seu terminal rode `npm install ssh://git@github.com:myfreecomm/chameleon.git#v0.1.0` ou `yarn add ssh://git@github.com:myfreecomm/chameleon.git#v0.1.0`
 
 ## Usando Chameleon
 
@@ -40,11 +42,7 @@ Após a instalação, o Chameleon deverá ser incluído no projeto, essa inclus�
 
 ```html
   <head>
-    <link
-      href="chameleon.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="chameleon.min.css" rel="stylesheet" type="text/css" />
   </head>
 ```
 
@@ -62,7 +60,7 @@ Para trocar a cor da marca mude o valor da variável `--ch-color-brand`. Segue a
 
 ```css
 :root {
-  --ch-color-brand: #f00
+  --ch-color-brand: #f00;
 }
 ```
 
