@@ -1,5 +1,12 @@
-# Chameleon
-Framework CSS de interface para os projetos da Nexaas
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/6816187/79229373-4c814f80-7e39-11ea-8b7a-248c4fa5f153.png" width="100" />
+</p>
+
+<h3 align="center">Chameleon</h3>
+
+<p align="center">
+  Framework CSS de interface para os projetos da Nexaas
+</p>
 
 ## Tabela de conteúdo
 
