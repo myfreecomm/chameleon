@@ -185,24 +185,28 @@
       }
     }
   }
+  
+  // 8. Multiple variation
+  
+  &:not(.ch-dropdown)[multiple] {
+    @include ch-paddingless;
+    
+    background-image: none;
+    
+    > option {
+      @include ch-space-inset(squish, s);
+    }
+  }
 
   // 7. Small variation
 
   &--small:not(.ch-dropdown),
+  &--small:not(.ch-dropdown)[multiple] > option,
   &--small > .ch-dropdown-toggle {
     @include ch-space-inset(squish, xs);
-    @include ch-border(box);
   }
 
-  // 8. Multiple variation
-
-  &:not(.ch-dropdown)[multiple] {
-    @include ch-paddingless;
-
-    background-image: none;
-
-    > option {
-      @include ch-space-inset(squish, s);
-    }
+  &--small > .ch-dropdown-toggle.has-options > .ch-tag {
+    margin-bottom: ch-get-space(xxs);
   }
 }
