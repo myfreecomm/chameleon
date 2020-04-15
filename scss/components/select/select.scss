@@ -1,53 +1,202 @@
-select.ch-select {
+.ch-select {
 
   // 1. Base
 
   position: relative;
   display: inline-block;
 
-  // 2. Small variation
-
-  &--small {
-    $inset-type: squish;
-    $size: xs;
-    $border-rule: box;
-    $border-color: ch-get-color(border);
-
-    @include ch-space-inset($inset-type, $size);
-    @include ch-border($border-rule, $border-color);
+  &.ch-dropdown {
+    vertical-align: middle;
   }
 
-  // 3. Fluid variation
+  // 2. Toggle
 
-  &--fluid {
-    width: 100%;
+  &:not(.ch-dropdown),
+  > .ch-dropdown-toggle {
+    @include ch-input;
+
+    &:not(.is-readonly),
+    &:not([readonly]) {
+      $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
+      $background: #{ch-get-color(neutral, 1)} url('#{$ch-icon-angle-down}') no-repeat right #{$icon-right} center;
+    
+      padding-right: #{ch-calc-box-height()};
+      background: $background;
+      background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
+    }
   }
 
-  // 4. Support variations
+  > .ch-dropdown-toggle {
+    @include ch-truncate;
 
-  @each $type in (info, warning, negative, positive) {
-    &--#{$type} {
-      border-color: #{ch-get-color($type)};
+    &.has-options {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
 
-      // 4.1. Focus interaction
+      padding-bottom: 0;
 
-      &:hover:focus,
-      &:hover,
-      &:focus {
-        border-color: #{ch-get-color($type, focus)};
-      }
+      > .ch-tag {
+        z-index: ch-get-z-index(1);
 
-      // 4.2. Active interaction
-
-      &:active {
-        border-color: #{ch-get-color($type, active)};
+        color: ch-get-color(text, 1);
+        margin-right: ch-get-space(xs);
+        margin-bottom: ch-get-space(xs);
+        text-transform: initial;
+        box-shadow: 0 0 0 #{$ch-border-width} #{ch-get-color(border)};
       }
     }
   }
 
-  // 5. Multiple variation
+  > .ch-overlay.is-visible + .ch-dropdown-toggle {
+    border-color: ch-get-color(primary, focus);
+  }
 
-  &[multiple] {
+  // 3. Options
+
+  > .ch-overlay {
+    @include ch-media(from, desktop) {
+      width: 100%;
+    }
+
+    > .ch-card {
+      @include ch-paddingless;
+      @include ch-media(from, desktop) {
+        max-height: 50vh;
+      }
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      > .ch-card-content {
+        @include ch-paddingless;
+
+        flex: 1;
+        overflow-y: auto;
+      }
+
+      > .ch-card-header,
+      > .ch-card-footer {
+        @include ch-space-inset();
+      }
+
+      > .ch-card-header,
+      > .ch-card-content,
+      > .ch-card-footer {
+        margin-bottom: 0;
+      }
+
+      > .ch-card-footer {
+        @include ch-media(from, desktop) {
+          display: none;
+        }
+      }
+
+      > .ch-card-header > .ch-search,
+      > .ch-card-footer > .ch-button {
+        @include ch-fluid;
+
+        display: block;
+      }
+
+      .ch-menu-item,
+      .ch-menu-group > .ch-title {
+        @include ch-media(from, desktop) {
+          @include ch-space-inset(squish, s);
+        }
+      }
+
+      .ch-menu-item {
+        font-weight: ch-get-text-weight();
+
+        &:before {
+          content: none;
+        }
+
+        .ch-highlight:after {
+          content: none;
+        }
+
+        &.is-active {
+          color: ch-get-color(text, inverse, 2);
+          background: ch-get-color(primary);
+
+          &:hover:focus,
+          &:hover,
+          &:focus,
+          &:active {
+            background: ch-get-color(primary, focus);
+          }
+
+        }
+      }
+
+      .ch-menu-group .ch-menu-item {
+        @include ch-media(from, desktop) {
+          padding-left: ch-get-space(l);
+        }
+      }
+    }
+  }
+
+  // 4. Readonly state
+
+  &:not(.ch-dropdown)[readonly],
+  &:not(.ch-dropdown).is-readonly,
+  &.is-readonly > .ch-dropdown-toggle {
+    pointer-events: none;
+  }
+
+  // 5. Disabled state
+
+  &:not(.ch-dropdown)[readonly],
+  &:not(.ch-dropdown).is-readonly,
+  &.is-readonly > .ch-dropdown-toggle,
+  &:not(.ch-dropdown)[disabled],
+  &:not(.ch-dropdown).is-disabled,
+  &.is-disabled > .ch-dropdown-toggle {
+    background-color: ch-get-color(neutral, 2);
+  }
+
+  // 6. Support variations
+
+  @each $type in (info, warning, negative, positive) {
+    &--#{$type} {
+      &:not(.ch-dropdown),
+      > .ch-dropdown-toggle {
+        border-color: #{ch-get-color($type)};
+      }
+
+      &:not(.ch-dropdown) {
+        &:hover:focus,
+        &:hover,
+        &:focus {
+          border-color: #{ch-get-color($type, focus)};
+        }
+
+        &:active {
+          border-color: #{ch-get-color($type, active)};
+        }
+      }
+
+      > .ch-overlay.is-visible + .ch-dropdown-toggle {
+        border-color: #{ch-get-color($type, focus)};
+      }
+    }
+  }
+
+  // 7. Small variation
+
+  &--small:not(.ch-dropdown),
+  &--small > .ch-dropdown-toggle {
+    @include ch-space-inset(squish, xs);
+    @include ch-border(box);
+  }
+
+  // 8. Multiple variation
+
+  &:not(.ch-dropdown)[multiple] {
     @include ch-paddingless;
 
     background-image: none;
