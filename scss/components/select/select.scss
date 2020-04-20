@@ -27,7 +27,11 @@
   }
 
   > .ch-dropdown-toggle {
+    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
+
     @include ch-truncate;
+
+    min-height: calc(#{$box-height} + 2 * #{$ch-border-width});
 
     &.has-options {
       display: flex;
@@ -204,6 +208,14 @@
   &--small:not(.ch-dropdown)[multiple] > option,
   &--small > .ch-dropdown-toggle {
     @include ch-space-inset(squish, xs);
+  }
+
+  &--small > .ch-dropdown-toggle {
+    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
+
+    @include ch-space-inset(squish, xs);
+
+    min-height: calc(#{$box-height} + 2 * #{$ch-border-width});
   }
 
   &--small > .ch-dropdown-toggle.has-options > .ch-tag {
