@@ -82,7 +82,13 @@
 
       > .ch-card-header,
       > .ch-card-footer {
-        @include ch-space-inset();
+        @include ch-media(to, tablet) {
+          @include ch-space-inset();
+        }
+
+        @include ch-media(from, desktop) {
+          @include ch-space-inset(default, s);
+        }
       }
 
       > .ch-card-header,
