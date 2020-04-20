@@ -17,12 +17,18 @@
 
     &:not(.is-readonly),
     &:not([readonly]) {
-      $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
-      $background: #{ch-get-color(neutral, 1)} url('#{$ch-icon-angle-down}') no-repeat right #{$icon-right} center;
+      $icon-right: calc(#{ch-calc-box-height()} / 2 - #{ch-get-icon-size()} / 2);
     
-      padding-right: #{ch-calc-box-height()};
-      background: $background;
+      padding-right: ch-calc-box-height();
+      background-color: ch-get-color(neutral, 1);
+      background-image: url('#{$ch-icon-angle-down}');
+      background-repeat: no-repeat;
+      background-position: right #{$icon-right} center;
       background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
+
+      &.has-clear {
+        padding-right: calc(#{ch-calc-box-height()} + #{ch-get-icon-size()});
+      }
     }
   }
 
@@ -56,7 +62,33 @@
     border-color: ch-get-color(primary, focus);
   }
 
-  // 3. Options
+  // 3. Clear
+
+  .ch-select-clear {
+    @include ch-mask-icon($ch-icon-times);
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: ch-calc-box-height();
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    width: ch-get-icon-size();
+    height: ch-get-icon-size();
+    mask-size: calc(#{ch-get-icon-size()} / 2);
+    background-color: ch-get-color(text, 2);
+    border: 0;
+
+    &:hover:focus,
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: ch-get-color(text, 1);
+    }
+  }
+
+  // 4. Options
 
   > .ch-overlay {
     @include ch-media(from, desktop) {
@@ -150,7 +182,7 @@
     }
   }
 
-  // 4. Readonly state
+  // 5. Readonly state
 
   &:not(.ch-dropdown)[readonly],
   &:not(.ch-dropdown).is-readonly,
@@ -158,7 +190,7 @@
     pointer-events: none;
   }
 
-  // 5. Disabled state
+  // 6. Disabled state
 
   &:not(.ch-dropdown)[readonly],
   &:not(.ch-dropdown).is-readonly,
@@ -169,7 +201,7 @@
     background-color: ch-get-color(neutral, 2);
   }
 
-  // 6. Support variations
+  // 7. Support variations
 
   @each $type in (info, warning, negative, positive) {
     &--#{$type} {
@@ -208,7 +240,7 @@
     }
   }
 
-  // 7. Small variation
+  // 9. Small variation
 
   &--small:not(.ch-dropdown),
   &--small:not(.ch-dropdown)[multiple] > option,
@@ -222,6 +254,22 @@
     @include ch-space-inset(squish, xs);
 
     min-height: calc(#{$box-height} + 2 * #{$ch-border-width});
+    
+    &:not(.is-readonly),
+    &:not([readonly]) {
+      $icon-right: calc(#{$box-height} / 2 - #{ch-get-icon-size()} / 2);
+
+      padding-right: $box-height;
+      background-position: right #{$icon-right} center;
+
+      &.has-clear {
+        padding-right: calc(#{$box-height} + #{ch-get-icon-size()});
+      }
+    }
+
+    .ch-select-clear {
+      right: #{$box-height};
+    }
   }
 
   &--small > .ch-dropdown-toggle.has-options > .ch-tag {
