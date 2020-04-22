@@ -12,23 +12,23 @@
   // 2. Toggle
 
   &:not(.ch-dropdown),
-  > .ch-dropdown-toggle {
+  & > .ch-dropdown-toggle {
     @include ch-input;
+  }
 
-    &:not(.is-readonly),
-    &:not([readonly]) {
-      $icon-right: calc(#{ch-calc-box-height()} / 2 - #{ch-get-icon-size()} / 2);
-    
-      padding-right: ch-calc-box-height();
-      background-color: ch-get-color(neutral, 1);
-      background-image: url('#{$ch-icon-angle-down}');
-      background-repeat: no-repeat;
-      background-position: right #{$icon-right} center;
-      background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
+  &:not(.is-readonly) > .ch-dropdown-toggle,
+  &:not(.ch-dropdown):not([readonly]):not(.is-readonly):not([multiple]) {
+    $icon-right: calc(#{ch-calc-box-height()} / 2 - #{ch-get-icon-size()} / 2);
 
-      &.has-clear {
-        padding-right: calc(#{ch-calc-box-height()} + #{ch-get-icon-size()});
-      }
+    padding-right: ch-calc-box-height();
+    background-color: ch-get-color(neutral, 1);
+    background-image: url('#{$ch-icon-angle-down}');
+    background-repeat: no-repeat;
+    background-position: right #{$icon-right} center;
+    background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
+
+    &.has-clear {
+      padding-right: calc(#{ch-calc-box-height()} + #{ch-get-icon-size()});
     }
   }
 
@@ -182,15 +182,7 @@
     }
   }
 
-  // 5. Readonly state
-
-  &:not(.ch-dropdown)[readonly],
-  &:not(.ch-dropdown).is-readonly,
-  &.is-readonly > .ch-dropdown-toggle {
-    pointer-events: none;
-  }
-
-  // 6. Disabled state
+  // 5. Disabled and readonly state
 
   &:not(.ch-dropdown)[readonly],
   &:not(.ch-dropdown).is-readonly,
@@ -200,6 +192,27 @@
   &.is-disabled > .ch-dropdown-toggle {
     background-color: ch-get-color(neutral, 2);
   }
+
+  // 6. Readonly state
+
+  &:not(.ch-dropdown)[readonly],
+  &:not(.ch-dropdown).is-readonly,
+  &.is-readonly > .ch-dropdown-toggle {
+    pointer-events: none;
+  }
+
+&.is-readonly > .ch-dropdown-toggle {
+  padding-right: calc(#{ch-get-space(s)} - #{ch-get-space(xs)});
+
+  .ch-tag-close,
+  .ch-select-clear {
+    display: none;
+  }
+
+  .ch-tag {
+    padding-right: ch-get-space(xs);
+  }
+}
 
   // 7. Support variations
 
