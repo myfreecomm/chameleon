@@ -182,7 +182,22 @@
     }
   }
 
-  // 5. Disabled and readonly state
+  &--multiple .ch-menu-item.is-active {
+    @include ch-media(from, desktop) {
+      display: none
+    }
+  }
+
+  // 5. Blankslate
+
+  .ch-blankslate-content {
+    @include ch-fluid;
+
+    padding-top: 0;
+    border: 0;
+  }
+
+  // 6. Disabled and readonly state
 
   &:not(.ch-dropdown)[readonly],
   &:not(.ch-dropdown).is-readonly,
@@ -193,7 +208,7 @@
     background-color: ch-get-color(neutral, 2);
   }
 
-  // 6. Readonly state
+  // 7. Readonly state
 
   &:not(.ch-dropdown)[readonly],
   &:not(.ch-dropdown).is-readonly,
@@ -214,7 +229,7 @@
   }
 }
 
-  // 7. Support variations
+  // 8. Support variations
 
   @each $type in (info, warning, negative, positive) {
     &--#{$type} {
@@ -241,7 +256,7 @@
     }
   }
   
-  // 8. Multiple variation
+  // 9. Multiple variation
   
   &:not(.ch-dropdown)[multiple] {
     @include ch-paddingless;
@@ -253,7 +268,7 @@
     }
   }
 
-  // 9. Small variation
+  // 10. Small variation
 
   &--small:not(.ch-dropdown),
   &--small:not(.ch-dropdown)[multiple] > option,
