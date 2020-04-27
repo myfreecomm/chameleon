@@ -1,0 +1,45 @@
+.ch-pagination {
+  $columns-width: calc(#{ch-get-icon-size(m)} + (#{ch-get-space(xs)} * 2));
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($columns-width, auto));
+  gap: ch-get-space(xs) ch-get-space(xs);
+
+  @include ch-media(from, tablet) {
+    @include ch-space-inline-group(right, xs);
+  }
+
+  &-item {
+    $inset-type: default;
+    $size: xs;
+    $border-rule: box;
+    $border-color: ch-get-color(border);
+    @include ch-border-radius(1);
+
+    @include ch-space-inset($inset-type, $size);
+    @include ch-border($border-rule, $border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ch-get-color(text, 1);
+    background-color: ch-get-color(neutral, 1);
+
+    &:hover:focus,
+    &:focus,
+    &:hover {
+      color: currentColor;
+      background-color: ch-get-color(neutral, 2);
+    }
+
+    &.is-active {
+      color: ch-get-color(text, 1, inverse);
+      background-color: ch-get-color(primary);
+      border-color: ch-get-color(primary);
+    }
+
+    &-label {
+      min-width: ch-get-icon-size(m);
+      text-align: center;
+    }
+  }
+}
