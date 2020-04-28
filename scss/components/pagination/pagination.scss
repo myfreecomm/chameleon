@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(max-content, $columns-width));
   gap: ch-get-space(xs) ch-get-space(xs);
+  vertical-align: middle;
 
   @include ch-media(from, tablet) {
     @include ch-space-inline-group(right, xs);
@@ -16,14 +17,15 @@
   // 2. Pagintation Item
 
   &-item {
-    $inset-type: default;
-    $size: xs;
+    $inset-type: squish;
+    $size: s;
     $border-rule: box;
     $border-color: ch-get-color(border);
-    @include ch-border-radius(1);
 
+    @include ch-border-radius(1);
     @include ch-space-inset($inset-type, $size);
     @include ch-border($border-rule, $border-color);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,9 +49,19 @@
     // 2.2 Item active variation
 
     &.is-active {
+      font-weight: ch-get-text-weight(semibold);
       color: ch-get-color(text, 1, inverse);
       background-color: ch-get-color(primary);
       border-color: ch-get-color(primary);
+
+      &:hover:focus,
+      &:focus,
+      &:hover {
+        color: ch-get-color(text, 1, inverse);
+        background-color: ch-get-color(primary, focus);
+        border-color: ch-get-color(primary, focus);
+      }
+
     }
 
     // 2.3 Item label
