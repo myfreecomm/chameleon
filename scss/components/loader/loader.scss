@@ -1,7 +1,28 @@
 .ch-loader {
+  $sqrt2: 1.41421356237;
+  $size: calc(#{ch-get-icon-size(m)} * #{$sqrt2} + #{ch-get-space(xxs)});
+
+  // 1. Base
+
   position: relative;
   display: inline-block;
   background-color: transparent;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  vertical-align: middle;
+
+  // 2. Size Variations
+
+  @each $size in $ch-icon-sizes {
+    &--#{$size} {
+      $size: calc(#{ch-get-icon-size($size)} * #{$sqrt2} + #{ch-get-space(xxs)});
+
+      width: $size;
+      height: $size;
+      line-height: $size;
+    }
+  }
 
   &:before,
   &:after {
@@ -17,13 +38,28 @@
   }
 
   &:before {
-    @include ch-border(box, ch-get-color(brand), solid, 3px);
+    @include ch-border(box, ch-get-color(default), solid, 3px);
     opacity: 0.3;
   }
 
   &:after {
     @include ch-border(box, transparent, solid, 3px);
-    @include ch-border(top, ch-get-color(brand), solid, 3px);
-    @include ch-mixin-spin-effect();
+    @include ch-border(top, ch-get-color(default), solid, 3px);
+    @include ch-mixin-spin-effect;
+  }
+
+  // 3. Color Variations
+
+  @each $type in (brand, primary, positive, warning, negative) {
+    &--#{$type} {
+      &:before {
+        @include ch-border(box, ch-get-color($type), solid, 3px);
+        opacity: 0.3;
+      }
+
+      &:after {
+        @include ch-border(top, ch-get-color($type), solid, 3px);
+      }
+    }
   }
 }
