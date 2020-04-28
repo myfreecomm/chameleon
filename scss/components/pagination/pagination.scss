@@ -1,13 +1,19 @@
 .ch-pagination {
-  $columns-width: calc(#{ch-get-icon-size(m)} + (#{ch-get-space(xs)} * 2));
+
+  // 1. Base
+
+  $columns-width: calc(#{ch-get-icon-size(m)} + calc(#{ch-get-space(xs)} * 2));
+  $root: &;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($columns-width, auto));
+  grid-template-columns: repeat(auto-fill, minmax(max-content, $columns-width));
   gap: ch-get-space(xs) ch-get-space(xs);
 
   @include ch-media(from, tablet) {
     @include ch-space-inline-group(right, xs);
   }
+
+  // 2. Pagintation Item
 
   &-item {
     $inset-type: default;
@@ -31,6 +37,14 @@
       background-color: ch-get-color(neutral, 2);
     }
 
+    // 2.1 Item disabled variation
+
+    &.is-disabled {
+      @include ch-disabled;
+    }
+
+    // 2.2 Item active variation
+
     &.is-active {
       color: ch-get-color(text, 1, inverse);
       background-color: ch-get-color(primary);
@@ -40,6 +54,27 @@
     &-label {
       min-width: ch-get-icon-size(m);
       text-align: center;
+    }
+  }
+
+  // 3. Small variation
+
+  &--small {
+    $columns-width: calc(#{ch-get-icon-size(m)} + (#{ch-get-space(xxs)} * 2));
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max-content, $columns-width));
+    gap: ch-get-space(xxs) ch-get-space(xxs);
+
+    @include ch-media(from, tablet) {
+      @include ch-space-inline-group(right, xxs);
+    }
+
+    #{$root}-item {
+      $inset-type: default;
+      $size: xxs;
+
+      @include ch-space-inset($inset-type, $size);
     }
   }
 }
