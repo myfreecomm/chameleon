@@ -41,6 +41,7 @@
 
     &.is-disabled {
       @include ch-disabled;
+      background-color: ch-get-color(neutral, 2);
     }
 
     // 2.2 Item active variation
@@ -50,6 +51,8 @@
       background-color: ch-get-color(primary);
       border-color: ch-get-color(primary);
     }
+
+    // 2.3 Item label
 
     &-label {
       min-width: ch-get-icon-size(m);
