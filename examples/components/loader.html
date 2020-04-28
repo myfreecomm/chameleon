@@ -25,6 +25,32 @@
         <i class="ch-loader ch-loader--m ch-loader--positive"></i>
         <i class="ch-loader ch-loader--l ch-loader--warning"></i>
         <i class="ch-loader ch-loader--xl ch-loader--negative"></i>
+
+
+        <br />
+        <br />
+
+        <button type="button" class="ch-button">Show spinner</button>
+
+        <div class="ch-overlay">
+          <div class="ch-overlay-content">
+            <button
+              type="button"
+              class="ch-button ch-button--icon ch-button--ghost"
+              style="position: absolute; top: 10px; right: 10px; color: #fff;">
+              <i class="ch-icon fal fa-times"></i>
+            </button>
+            <span class="ch-loader ch-loader--l ch-loader--inverse"></span>
+          </div>
+        </div>
+
+        <script>
+          const overlay = document.querySelector('.ch-overlay')
+          const [showOverlayButton, hideOverlayButton] = document.querySelectorAll('.ch-button')
+
+          showOverlayButton.addEventListener('click', () => overlay.classList.add('is-visible'))
+          hideOverlayButton.addEventListener('click', () => overlay.classList.remove('is-visible'))
+        </script>
       </main>
     </div>
   </body>

@@ -62,4 +62,17 @@
       }
     }
   }
+
+  // 4. Inverse Variation
+
+  &--inverse {
+    &:before {
+      @include ch-border(box, ch-get-color(neutral, 1), solid, 3px);
+      opacity: 0.3;
+    }
+
+    &:after {
+      @include ch-border(top, ch-get-color(neutral, 1), solid, 3px);
+    }
+  }
 }
