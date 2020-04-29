@@ -1,6 +1,5 @@
 .ch-spinner {
-  $sqrt2: 1.41421356237;
-  $size: calc(#{ch-get-icon-size(m)} * #{$sqrt2} + #{ch-get-space(xxs)});
+  $size: ch-get-icon-size(m);
 
   // 1. Base
 
@@ -16,7 +15,7 @@
 
   @each $size in $ch-icon-sizes {
     &--#{$size} {
-      $size: calc(#{ch-get-icon-size($size)} * #{$sqrt2} + #{ch-get-space(xxs)});
+      $size: ch-get-icon-size($size);
 
       width: $size;
       height: $size;
