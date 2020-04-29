@@ -1,0 +1,94 @@
+.ch-pagination {
+
+  // 1. Base
+
+  @include ch-space-inline-group(right, xs);
+  vertical-align: middle;
+
+  // 2. Pagintation Item
+
+  &-item {
+    $inset-type: default;
+    $size: xs;
+    $border-rule: box;
+    $border-color: ch-get-color(border);
+    $icons: (
+      "first":    $ch-icon-angle-double-left,
+      "previous": $ch-icon-angle-left,
+      "gap":      $ch-icon-ellipsis,
+      "next":     $ch-icon-angle-right,
+      "last":     $ch-icon-angle-double-right
+    );
+
+    @include ch-border-radius(1);
+    @include ch-space-inset($inset-type, $size);
+    @include ch-border($border-rule, $border-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ch-get-color(text, 1);
+    background-color: ch-get-color(neutral, 1);
+
+    @each $type, $icon in $icons {
+      &--#{$type} > *[class="ch-icon"] {
+        @include ch-mask-icon($icon);
+        height: ch-get-icon-size(m);
+      }
+    }
+
+    &--gap {
+      pointer-events: none;
+    }
+
+    &:hover:focus,
+    &:focus,
+    &:hover {
+      color: currentColor;
+      background-color: ch-get-color(neutral, 2);
+    }
+
+    // 2.1 Item disabled variation
+
+    &.is-disabled {
+      @include ch-disabled;
+      background-color: ch-get-color(neutral, 2);
+    }
+
+    // 2.2 Item active variation
+
+    &.is-active {
+      color: ch-get-color(primary);
+      border-color: ch-get-color(primary);
+
+      &:hover:focus,
+      &:focus,
+      &:hover {
+        color: ch-get-color(primary, focus);
+        background-color: ch-get-color(neutral, 1);
+        border-color: ch-get-color(primary, focus);
+      }
+    }
+
+    // 2.3 Item label
+
+    &-label {
+      min-width: ch-get-icon-size(m);
+      text-align: center;
+    }
+  }
+
+  // 3. Small variation
+  $root: &;
+
+  &--small {
+    @include ch-space-inline-group(right, xxs);
+
+    #{$root}-item {
+      $inset-type: default;
+      $size: xxs;
+
+      @include ch-space-inset($inset-type, $size);
+    }
+  }
+}
