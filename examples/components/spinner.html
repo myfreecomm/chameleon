@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chameleon - Spinner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../chameleon.css">
+  </head>
+  <body>
+    <div class="ch-template">
+      <main class="ch-template-content">
+        <i class="ch-spinner ch-spinner--xs"></i>
+        <i class="ch-spinner ch-spinner--s"></i>
+        <i class="ch-spinner ch-spinner--m"></i>
+        <i class="ch-spinner ch-spinner--l"></i>
+        <i class="ch-spinner ch-spinner--xl"></i>
+
+        <br />
+        <br />
+
+        <i class="ch-spinner ch-spinner--xs ch-spinner--brand"></i>
+        <i class="ch-spinner ch-spinner--s ch-spinner--primary"></i>
+        <i class="ch-spinner ch-spinner--m ch-spinner--positive"></i>
+        <i class="ch-spinner ch-spinner--l ch-spinner--warning"></i>
+        <i class="ch-spinner ch-spinner--xl ch-spinner--negative"></i>
+
+
+        <br />
+        <br />
+
+        <button type="button" class="ch-button">Show spinner</button>
+
+        <div class="ch-overlay">
+          <div class="ch-overlay-content">
+            <button
+              type="button"
+              class="ch-button ch-button--icon ch-button--ghost"
+              style="position: absolute; top: 10px; right: 10px; color: #fff;">
+              <i class="ch-icon fal fa-times"></i>
+            </button>
+            <span class="ch-spinner ch-spinner--l ch-spinner--inverse"></span>
+          </div>
+        </div>
+
+        <script>
+          const overlay = document.querySelector('.ch-overlay')
+          const [showOverlayButton, hideOverlayButton] = document.querySelectorAll('.ch-button')
+
+          showOverlayButton.addEventListener('click', () => overlay.classList.add('is-visible'))
+          hideOverlayButton.addEventListener('click', () => overlay.classList.remove('is-visible'))
+        </script>
+      </main>
+    </div>
+  </body>
+</html>
