@@ -16,7 +16,7 @@
 
   cursor: pointer;
   white-space: nowrap;
-  font-weight: #{ch-get-text-weight(bold)};
+  font-weight: #{ch-get-text-weight(semibold)};
   text-align: center;
   background-color: #{ch-get-color(default)};
 
