@@ -1,0 +1,77 @@
+.ch-spinner {
+  $size: ch-get-icon-size(m);
+
+  // 1. Base
+
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  vertical-align: middle;
+
+  // 2. Size Variations
+
+  @each $size in $ch-icon-sizes {
+    &--#{$size} {
+      $size: ch-get-icon-size($size);
+
+      width: $size;
+      height: $size;
+      line-height: $size;
+    }
+  }
+
+  &:before,
+  &:after {
+    @include ch-border-radius(circle);
+
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &:before {
+    @include ch-border(box, ch-get-color(default), solid, 3px);
+    opacity: 0.3;
+  }
+
+  &:after {
+    @include ch-border(box, transparent, solid, 3px);
+    @include ch-border(top, ch-get-color(default), solid, 3px);
+    @include ch-mixin-spin-effect;
+  }
+
+  // 3. Color Variations
+
+  @each $type in (brand, primary, positive, warning, negative) {
+    &--#{$type} {
+      &:before {
+        @include ch-border(box, ch-get-color($type), solid, 3px);
+        opacity: 0.3;
+      }
+
+      &:after {
+        @include ch-border(top, ch-get-color($type), solid, 3px);
+      }
+    }
+  }
+
+  // 4. Inverse Variation
+
+  &--inverse {
+    &:before {
+      @include ch-border(box, ch-get-color(neutral, 1), solid, 3px);
+      opacity: 0.3;
+    }
+
+    &:after {
+      @include ch-border(top, ch-get-color(neutral, 1), solid, 3px);
+    }
+  }
+}

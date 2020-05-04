@@ -1,6 +1,6 @@
 {
   "name": "@nexaas/chameleon",
-  "version": "1.0.0-alpha.0.1.0",
+  "version": "0.1.0",
   "description": "Nexaas web framework",
   "main": "scss/index.js",
   "files": [
