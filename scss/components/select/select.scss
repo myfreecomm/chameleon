@@ -92,6 +92,8 @@
 
   > .ch-overlay {
     @include ch-media(from, desktop) {
+      z-index: ch-get-z-index(1, 99);
+
       width: 100%;
     }
 
@@ -193,8 +195,11 @@
   .ch-blankslate-content {
     @include ch-fluid;
 
-    padding-top: 0;
     border: 0;
+  }
+
+  .ch-card-header + .ch-card-content .ch-blankslate-content {
+    padding-top: 0;
   }
 
   // 6. Disabled and readonly state
@@ -216,18 +221,20 @@
     pointer-events: none;
   }
 
-&.is-readonly > .ch-dropdown-toggle {
-  padding-right: calc(#{ch-get-space(s)} - #{ch-get-space(xs)});
+  &.is-readonly > .ch-dropdown-toggle {
+    &.has-options {
+      padding-right: calc(#{ch-get-space(s)} - #{ch-get-space(xs)});
+    }
 
-  .ch-tag-close,
-  .ch-select-clear {
-    display: none;
-  }
+    .ch-tag-close,
+    .ch-select-clear {
+      display: none;
+    }
 
-  .ch-tag {
-    padding-right: ch-get-space(xs);
+    .ch-tag {
+      padding-right: ch-get-space(xs);
+    }
   }
-}
 
   // 8. Support variations
 
@@ -255,14 +262,14 @@
       }
     }
   }
-  
+
   // 9. Multiple variation
-  
+
   &:not(.ch-dropdown)[multiple] {
     @include ch-paddingless;
-    
+
     background-image: none;
-    
+
     > option {
       @include ch-space-inset(squish, s);
     }
