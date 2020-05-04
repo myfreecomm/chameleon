@@ -16,10 +16,10 @@
     position: absolute;
 
     content: $counter;
-    width: #{ch-get-space(xl)};
-    height: #{ch-get-space(xl)};
+    width: ch-get-space(xl);
+    height: ch-get-space(xl);
     background: transparent;
-    border-radius: #{ch-get-border-radius(circle)};
+    border-radius: ch-get-border-radius(circle);
 
     text-align: center;
     vertical-align: middle;
@@ -30,22 +30,18 @@
   &.is-active,
   &.is-visited {
     &:before {
-      color: #{ch-get-color(primary)};
+      color: ch-get-color(primary);
       border-color: ch-get-color(primary);
     }
-  }
-
-  &.is-active:before {
-    @include ch-shadow(2);
   }
 
   // 3. Complete state
 
   &.is-completed {
     &:before {
-      color: #{ch-get-color(text, 1, inverse)};
-      border-color: #{ch-get-color(primary)};
-      background: #{ch-get-color(primary)};
+      color: ch-get-color(text, 1, inverse);
+      border-color: ch-get-color(primary);
+      background: ch-get-color(primary);
     }
   }
 
@@ -63,7 +59,7 @@
       &:hover,
       &:focus {
         &:before {
-          color: #{ch-get-color(primary, focus)};
+          color: ch-get-color(primary, focus);
           border-color: ch-get-color(primary, focus);
         }
       }
@@ -72,7 +68,7 @@
 
       &:active {
         &:before {
-          color: #{ch-get-color(primary, active)};
+          color: ch-get-color(primary, active);
           border-color: ch-get-color(primary, active);
         }
       }
@@ -87,8 +83,8 @@
       &:hover,
       &:focus {
         &:before {
-          background: #{ch-get-color(primary, focus)};
-          border-color: #{ch-get-color(primary, focus)};
+          background: ch-get-color(primary, focus);
+          border-color: ch-get-color(primary, focus);
         }
       }
 
@@ -96,8 +92,8 @@
 
       &:active {
         &:before {
-          background: #{ch-get-color(primary, active)};
-          border-color: #{ch-get-color(primary, active)};
+          background: ch-get-color(primary, active);
+          border-color: ch-get-color(primary, active);
         }
       }
     }

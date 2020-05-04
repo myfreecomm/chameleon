@@ -18,7 +18,7 @@
     <div class="ch-template">
 
       <!-- NAV BEGIN -->
-      <nav class="ch-template-nav is-expanded">
+      <nav class="ch-template-nav">
 
         <!-- BRAND BEGIN -->
         <div class="ch-brand">
@@ -72,60 +72,148 @@
         </ul>
         <!-- MENU END -->
 
-        <!-- TOGGLE BEGIN -->
-        <label class="ch-toggle">
-          <input type="checkbox" class="ch-toggle-toggle">
-          <span class="ch-toggle-icon"></span>
-        </label>
-        <!-- TOGGLE END -->
+        <!-- MOBILE TOGGLE BEGIN -->
+        <button type="button" class="ch-template-nav-toggle">
+          <i class="ch-icon"></i>
+        </button>
+        <!-- MOBILE TOGGLE END -->
 
-        <!-- TOGGLE BEGIN -->
-        <label class="ch-toggle ch-toggle--nav">
-          <input type="checkbox" class="ch-toggle-toggle">
-          <span class="ch-toggle-icon"></span>
-        </label>
-        <!-- TOGGLE END -->
+        <!-- TABLET/DESKTOP TOGGLE BEGIN -->
+        <button type="button" class="ch-template-nav-toggle">
+          <i class="ch-icon"></i>
+        </button>
+        <!-- TABLET/DESKTOP TOGGLE END -->
 
       </nav>
       <!-- NAV END -->
 
       <!-- HEADER BEGIN -->
       <header class="ch-template-header">
-        <!-- MENU BEGIN -->
-        <nav class="ch-menu">
-          <label class="ch-menu-item ch-menu-item--icon ch-toggle ch-toggle--left">
-            <input class="ch-toggle-toggle" type="checkbox">
-            <i class="ch-toggle-icon"></i>
-          </label>
+        <!-- HEADER NAV BEGIN -->
+        <nav class="ch-template-header-nav">
+          <button type="button" class="ch-template-header-nav-toggle">
+            <i class="ch-icon"></i>
+          </button>
 
-          <button class="ch-menu-item ch-menu-item--icon">
+          <button type="button" class="ch-button ch-button--ghost ch-button--icon">
             <i class="ch-icon fal fa-search"></i>
-            <span class="ch-menu-item-label">Buscar</span>
           </button>
 
-          <button class="ch-menu-item ch-menu-item--icon">
+          <button type="button" class="ch-button ch-button--ghost ch-button--icon">
             <i class="ch-icon fal fa-bell"></i>
-            <span class="ch-menu-item-label">Notificações</span>
           </button>
 
-          <button class="ch-menu-item ch-menu-item--icon">
+          <button type="button" class="ch-button ch-button--ghost ch-button--icon">
             <i class="ch-icon fal fa-cog"></i>
-            <span class="ch-menu-item-label">Configurações</span>
           </button>
 
-          <button class="ch-menu-item">
-            <span class="ch-menu-item-label">
-              Nome da conta
-              <i class="ch-icon ch-icon--xs fal fa-chevron-down"></i>
-            </span>
-          </button>
-
-          <button class="ch-menu-item ch-menu-item--icon">
-            <div class="ch-avatar" title="Max Salles">
+          <!-- ACCOUNTS DROPDOWN BEGIN -->
+          <div class="accountWidget ch-dropdown ch-dropdown--contained ch-dropdown--left">
+            <div class="ch-dropdown-toggle">
+              <button type="button" class="ch-button ch-button--ghost">Nome da conta</button>
             </div>
-          </button>
+
+            <div class="ch-overlay">
+              <div class="ch-card ch-paddingless">
+                <header class="ch-card-header">
+                  <form class="ch-search ch-fluid ch-spaceStack">
+                    <input class="ch-input" type="text" placeholder="Busque por conta ou empresa..." value="">
+                    <button type="submit" class="ch-button ch-button--icon ch-button--ghost">
+                      <i class="ch-icon fal fa-search"></i>
+                    </button>
+                  </form>
+
+                  <ul class="ch-segmentedControl ch-segmentedControl--primary ch-segmentedControl--horizontal ch-segmentedControl--small ch-fluid">
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_1" checked>
+                      <label for="field_1">Nexaas</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_2">
+                      <label for="field_2">Dufry</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_3">
+                      <label for="field_3">Option 3</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_4">
+                      <label for="field_4">Zeedog</label>
+                    </li>
+
+                    <li class="ch-segmentedControl-option">
+                      <input type="radio" name="radio_1" id="field_5">
+                      <label for="field_5">Pampili</label>
+                    </li>
+                  </ul>
+                </header>
+
+                <main class="ch-card-content ch-paddingless">
+                  <nav class="ch-menu">
+                    <button type="button" class="ch-menu-item is-active">
+                      <span class="ch-menu-item-label">Empresa 1</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 2</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 3</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 4</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 5</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 6</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 7</span>
+                    </button>
+                    
+                    <button type="button" class="ch-menu-item">
+                      <span class="ch-menu-item-label">Empresa 8</span>
+                    </button>
+                  </nav>
+                </main>
+
+                <footer class="ch-card-footer">
+                  <button type="button" class="ch-button ch-button--primary ch-button--outline ch-fluid">Acessar o dashboard da conta</button>
+                </footer>
+              </div>
+            </div>
+          </div>
+          <!-- ACCOUNTS DROPDOWN END -->
+
+          <!-- USER DROPDOWN BEGIN -->
+          <div class="ch-dropdown ch-dropdown--left">
+            <div class="ch-dropdown-toggle">
+              <div class="ch-avatar" title="Max Salles"></div>
+            </div>
+
+            <div class="ch-overlay">
+              <div class="ch-card ch-paddingless">
+                <nav class="ch-menu">
+                  <a class="ch-menu-item is-active">Nexaas</a>
+                  <a class="ch-menu-item">B2W</a>
+                  <a class="ch-menu-item">Dufry</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <!-- USER DROPDOWN END -->
         </nav>
-        <!-- MENU END -->
+        <!-- HEADER NAV END -->
 
         <!-- BREADCRUMBS BEGIN -->
         <nav class="ch-breadcrumbs">
@@ -134,6 +222,7 @@
           <span class="ch-breadcrumbs-item">Nova despesa</span>
         </nav>
         <!-- BREADCRUMBS END -->
+
       </header>
       <!-- HEADER END -->
 
@@ -179,5 +268,131 @@
       <!-- CONTENT END -->
 
     </div>
+
+    <script type="text/javascript">
+      // Template nav
+
+      ;(function () {
+        var $templateNav = $('.ch-template-nav')
+        var $templateNavToggle = $templateNav.find('.ch-template-nav-toggle')
+        var $templateNavMobileToggle = $($templateNavToggle[0])
+        var $templateNavTabletToggle = $($templateNavToggle[1])
+        var $templateNavMobileToggleIcon = $templateNavMobileToggle.find('.ch-icon')
+        var $templateNavTabletToggleIcon = $templateNavTabletToggle.find('.ch-icon')
+        var $templateNavTabletToggleCheckbox = $templateNavTabletToggle.find('input')
+        var $submenuMainItem = $templateNav.find('.ch-menu-submenu > .ch-menu-item')
+
+        $templateNavMobileToggle.on('click', function () {
+          $templateNav.toggleClass('is-open')
+        })
+
+        $templateNavTabletToggle.on('click', function () {
+          $templateNav.toggleClass('is-expanded')
+        })
+
+        $templateNav
+          .on('mouseenter', function () {
+            $templateNav.addClass('is-hovered')
+          })
+          .on('focusin', function () {
+            $templateNav.addClass('is-hovered')
+          })
+          .on('mouseleave', function () {
+            $templateNav.removeClass('is-hovered')
+          })
+          .on('focusout', function () {
+            $templateNav.removeClass('is-hovered')
+          })
+
+        $submenuMainItem.on('click', function () {
+          if ($templateNav.hasClass('is-open')) return
+
+          $templateNav.addClass('is-open')
+        })
+      })()
+
+      // Template header
+
+      ;(function () {
+        var $templateHeader = $('.ch-template-header')
+        var $templateHeaderNav = $('.ch-template-header-nav')
+        var $templateHeaderNavToggle = $('.ch-template-header-nav-toggle')
+        var scroll = { current: window.scrollY, previous: window.scrollY }
+
+        $templateHeaderNavToggle.on('click', function () {
+          $templateHeaderNav.toggleClass('is-expanded')
+        })
+
+        window.addEventListener('scroll', function () {
+          window.requestAnimationFrame(function () {
+            scroll.previous = scroll.current
+            scroll.current = window.scrollY
+
+            $templateHeader
+              .toggleClass('is-hidden', scroll.current > scroll.previous)
+              .toggleClass('is-sticky', !!scroll.current)
+          })
+        })
+      })()
+
+      // Menu
+
+      ;(function () {
+        var $menuItem = $('.ch-menu > .ch-menu-item')
+        var $submenuMainItem = $('.ch-menu-submenu > .ch-menu-item')
+
+        $menuItem.on('click', function () {
+          var $item = $(this)
+
+          if ($item.hasClass('is-active')) return
+
+          var $context = $item.parents('.ch-menu').last()
+          var $currentActiveItens = $context.find('.ch-menu-item').not($item).filter('.is-active')
+          var $submenu = $item.closest('.ch-menu-submenu')
+          var $submenuMainItem = $submenu.find('> .ch-menu-item')
+
+          $currentActiveItens.removeClass('is-active')
+          $item.addClass('is-active')
+          $submenuMainItem.addClass('is-active')
+        })
+
+        $submenuMainItem.on('click', function () {
+          var $item = $(this)
+          var $submenu = $item.parent()
+
+          $submenu.toggleClass('is-open')
+        })
+      })()
+
+      // Dropdown
+
+      ;(function () {
+        var $dropdownToggle = $('.ch-dropdown-toggle')
+        var $dropdownOverlay = $('.ch-dropdown .ch-overlay')
+
+        $(document).on('click', function (e) {
+          var $element = $(e.target)
+          var $dropdownToggle = $element.parents('.ch-dropdown-toggle')
+          var $dropdown = $element.parents('.ch-dropdown')
+          var $card = $element.parents('.ch-card')
+
+          if ($dropdownToggle.length) {
+            var $overlay = $dropdown.find('.ch-overlay')
+
+            $('.ch-dropdown .ch-overlay.is-visible')
+              .not($overlay)
+              .removeClass('is-visible')
+
+            $overlay.toggleClass('is-visible')
+
+            return
+          }
+
+          if ($dropdown.length && $card.length) return
+
+          $('.ch-dropdown .ch-overlay.is-visible').removeClass('is-visible')
+        })
+      })()
+    </script>
   </body>
 </html>

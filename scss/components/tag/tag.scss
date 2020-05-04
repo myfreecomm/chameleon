@@ -1,47 +1,94 @@
 .ch-tag {
+  $height: calc(#{ch-get-text-size()} * #{ch-get-text-line-height()});
 
   // 1. Base
 
   @include ch-text-caption;
+  @include ch-truncate;
 
   display: inline-block;
   position: relative;
 
   text-transform: uppercase;
   text-align: center;
-  padding: #{ch-get-space(xxs)} #{ch-get-space(s)};
+  height: $height;
+  line-height: calc(#{$height} + 1px);
+  vertical-align: middle;
+  padding-right: ch-get-space(s);
+  padding-left: ch-get-space(s);
 
-  // 1.1. Background
+  // 2. Close button
+
+  &.has-close {
+    padding-right: calc(#{ch-get-space(xxs)} + #{$height});
+
+    > .ch-tag-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  > .ch-tag-close {
+    @include ch-mask-icon($ch-icon-times);
+    @include ch-border-radius(circle);
+
+    cursor: pointer;
+    width: $height;
+    height: $height;
+    mask-size: calc(#{$height} / 3);
+    background-color: ch-get-color(text, 2);
+
+    &:hover:focus,
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: ch-get-color(text, 1);
+    }
+  }
+
+  // 3. Background
 
   &,
-  &:before {
+  &:after {
     @include ch-border-radius(circle);
   }
 
-  &:before {
-    $empty: '';
-
+  &:after {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
 
-    content: $empty;
+    content: '';
     width: 100%;
     height: 100%;
     background: #{ch-get-color(neutral, 2)};
   }
 
-  // 2. Support variations
+  // 4. Support variations
 
   @each $variation in (info, warning, positive, negative) {
     &--#{$variation} {
-      color: #{ch-get-color($variation)};
+      color: ch-get-color($variation);
 
-      // 2.1. Background
+      // 4.1. Close button
 
-      &:before {
+      > .ch-tag-close {
+        background-color: ch-get-color($variation);
+    
+        &:hover:focus,
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: ch-get-color($variation, focus);
+        }
+      }
+
+      // 4.2. Background
+
+      &:after {
         opacity: 0.15;
         background: #{ch-get-color($variation)};
       }

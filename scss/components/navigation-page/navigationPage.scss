@@ -2,14 +2,13 @@
   // 1. Base
 
   @include ch-media (to, mobile) {
-    $header-size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
-
-    padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(s)});
-    min-height: calc(100vh - #{$header-size});
+    padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(l)});
+    min-height: calc(100vh - #{ch-get-dimension(1)});
   }
 
   @include ch-media (only, tablet) {
-    padding-bottom: ch-get-space();
+    padding-top: ch-get-space(l);
+    padding-bottom: ch-get-space(l);
   }
 
   @include ch-media (from, tablet) {
@@ -27,6 +26,10 @@
   // 2. Aside
 
   &-aside {
+    @include ch-media(to, tablet) {
+      padding-top: calc(#{ch-get-space(xl)} + 2 * #{ch-get-space(xs)});
+    }
+
     @include ch-media(from, desktop) {
       @include ch-transition(left);
 
@@ -58,19 +61,18 @@
       }
     }
 
-    padding-top: ch-get-space(xl);
-
     // 2.1. Steps and Menu
 
     > .ch-steps,
     > .ch-menu {
+      @include ch-media(to, tablet) {
+        top: ch-get-dimension(1);
+      }
+
       @include ch-media(from, tablet) {
         @include ch-transition(left);
 
-        $nav-top: ch-get-dimension(1);
-        
-        top: $nav-top;
-        left: $nav-top;
+        left: ch-get-dimension(1);
       }
 
       @include ch-media(from, desktop) {
@@ -82,12 +84,9 @@
         background: transparent;
       }
 
-      $nav-top: ch-calc-box-height(ch-get-text-size(2), ch-get-space(s));
-
       @include ch-transition(top);
 
       position: fixed;
-      top: $nav-top;
       left: 0;
       right: 0;
       z-index: #{ch-get-z-index(2, 2)};
@@ -96,12 +95,11 @@
     }
 
     > .ch-steps {
-      @include ch-media(only, mobile) {
-        @include ch-space-inset(default, xs);
-      }
-      
-      @include ch-media(only, tablet) {
-        @include ch-space-inset(squish, l);
+      @include ch-media(to, tablet) {
+        padding-top: ch-get-space(xs);
+        padding-right: ch-get-space(l);
+        padding-bottom: ch-get-space(xs);
+        padding-left: ch-get-space(l);
       }
 
       @include ch-media(from, desktop) {

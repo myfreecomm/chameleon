@@ -6,35 +6,21 @@
   // 1. Base
   @include ch-transition(unquote('box-shadow, margin-left, transform'));
 
-  height: #{ch-get-dimension(1)};
-  padding-right: #{ch-get-space(l)};
-  padding-left: #{ch-get-space(l)};
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  height: #{ch-get-dimension(1)};
+  padding-right: #{ch-get-space(l)};
+  padding-left: #{ch-get-space(l)};
+  background: #{ch-get-color(neutral, 1)};
 
   &,
   > * {
     position: relative;
   }
 
-  // 2. Background
-
-  &:before {
-    $empty: '';
-
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-
-    content: $empty;
-    background: #{ch-get-color(neutral, 1)};
-  }
-
-  // 3. Secondary
+  // 2. Secondary
 
   > *:not(.ch-template-header-nav) {
     @include ch-media(from, desktop) {
@@ -46,14 +32,14 @@
     max-width: calc(100% - #{$nav-max-width});
     padding-right: #{ch-get-space(s)};
 
-    // 3.1. Breadcrumbs item
+    // 2.1. Breadcrumbs item
 
     .ch-breadcrumbs-item:last-child {
       @include ch-truncate;
     }
   }
 
-  // 4. Nav
+  // 3. Nav
 
   > .ch-template-header-nav {
     @include ch-media(from, desktop) {
@@ -106,7 +92,7 @@
       }
     }
 
-    // 4.2. Expanded state
+    // 3.2. Expanded state
 
     &.is-expanded {
       @include ch-media(to, tablet) {
@@ -130,7 +116,7 @@
     }
   }
 
-  // 4.3. Sticky state
+  // 3.3. Sticky state
 
   &.is-sticky {
     @include ch-shadow(2, top-bottom);
@@ -138,13 +124,9 @@
     position: sticky;
     top: 0;
     z-index: #{ch-get-z-index(2)};
-
-    &:before {
-      opacity: 0.95;
-    }
   }
 
-  // 4.4. Hidden state
+  // 3.4. Hidden state
 
   &.is-hidden {
     @include ch-media(to, mobile) {

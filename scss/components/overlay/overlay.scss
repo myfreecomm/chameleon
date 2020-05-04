@@ -1,5 +1,5 @@
 .ch-overlay {
-  @include ch-transition('opacity');
+  @include ch-transition(unquote('visibility, opacity'));
 
   // 1. Base
 

@@ -1,62 +1,271 @@
-select.ch-select {
+.ch-select {
 
   // 1. Base
-
-  @include ch-input;
-
-  $icon-right: calc((#{ch-calc-box-height()} / 2) - #{ch-get-icon-size()} / 2);
-  $background: #{ch-get-color(neutral, 1)} url('#{$ch-icon-angle-down}') no-repeat right #{$icon-right} center;
 
   position: relative;
   display: inline-block;
 
-  padding-right: #{ch-calc-box-height()};
-  background: $background;
-  background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
-
-  // 2. Small variation
-
-  &--small {
-    $inset-type: squish;
-    $size: xs;
-    $border-rule: box;
-    $border-color: ch-get-color(border);
-
-    @include ch-space-inset($inset-type, $size);
-    @include ch-border($border-rule, $border-color);
+  &.ch-dropdown {
+    vertical-align: middle;
   }
 
-  // 3. Fluid variation
+  // 2. Toggle
 
-  &--fluid {
-    width: 100%;
+  &:not(.ch-dropdown),
+  & > .ch-dropdown-toggle {
+    @include ch-input;
   }
 
-  // 4. Support variations
+  &:not(.is-readonly) > .ch-dropdown-toggle,
+  &:not(.ch-dropdown):not([readonly]):not(.is-readonly):not([multiple]) {
+    $icon-right: calc(#{ch-calc-box-height()} / 2 - #{ch-get-icon-size()} / 2);
 
-  @each $type in (info, warning, negative, positive) {
-    &--#{$type} {
-      border-color: #{ch-get-color($type)};
+    padding-right: ch-calc-box-height();
+    background-color: ch-get-color(neutral, 1);
+    background-image: url('#{$ch-icon-angle-down}');
+    background-repeat: no-repeat;
+    background-position: right #{$icon-right} center;
+    background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
 
-      // 4.1. Focus interaction
+    &.has-clear {
+      padding-right: calc(#{ch-calc-box-height()} + #{ch-get-icon-size()});
+    }
+  }
 
-      &:hover:focus,
-      &:hover,
-      &:focus {
-        border-color: #{ch-get-color($type, focus)};
-      }
+  > .ch-dropdown-toggle {
+    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
 
-      // 4.2. Active interaction
+    @include ch-truncate;
 
-      &:active {
-        border-color: #{ch-get-color($type, active)};
+    min-height: calc(#{$box-height} + 2 * #{$ch-border-width});
+
+    &.has-options {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      padding-bottom: 0;
+
+      > .ch-tag {
+        z-index: ch-get-z-index(1);
+
+        color: ch-get-color(text, 1);
+        margin-right: ch-get-space(xs);
+        margin-bottom: ch-get-space(xs);
+        text-transform: initial;
+        box-shadow: 0 0 0 #{$ch-border-width} #{ch-get-color(border)};
       }
     }
   }
 
-  // 5. Multiple variation
+  > .ch-overlay.is-visible + .ch-dropdown-toggle {
+    border-color: ch-get-color(primary, focus);
+  }
 
-  &[multiple] {
+  // 3. Clear
+
+  .ch-select-clear {
+    @include ch-mask-icon($ch-icon-times);
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: ch-calc-box-height();
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    width: ch-get-icon-size();
+    height: ch-get-icon-size();
+    mask-size: calc(#{ch-get-icon-size()} / 2);
+    background-color: ch-get-color(text, 2);
+    border: 0;
+
+    &:hover:focus,
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: ch-get-color(text, 1);
+    }
+  }
+
+  // 4. Options
+
+  > .ch-overlay {
+    @include ch-media(from, desktop) {
+      z-index: ch-get-z-index(1, 99);
+
+      width: 100%;
+    }
+
+    > .ch-card {
+      @include ch-paddingless;
+      @include ch-media(from, desktop) {
+        max-height: 50vh;
+      }
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      > .ch-card-content {
+        @include ch-paddingless;
+
+        flex: 1;
+        overflow-y: auto;
+      }
+
+      > .ch-card-header,
+      > .ch-card-footer {
+        @include ch-media(to, tablet) {
+          @include ch-space-inset();
+        }
+
+        @include ch-media(from, desktop) {
+          @include ch-space-inset(default, s);
+        }
+      }
+
+      > .ch-card-header,
+      > .ch-card-content,
+      > .ch-card-footer {
+        margin-bottom: 0;
+      }
+
+      > .ch-card-footer {
+        @include ch-media(from, desktop) {
+          display: none;
+        }
+      }
+
+      > .ch-card-header > .ch-search,
+      > .ch-card-footer > .ch-button {
+        @include ch-fluid;
+
+        display: block;
+      }
+
+      .ch-menu-item,
+      .ch-menu-group > .ch-title {
+        @include ch-media(from, desktop) {
+          @include ch-space-inset(squish, s);
+        }
+      }
+
+      .ch-menu-item {
+        font-weight: ch-get-text-weight();
+
+        &:before {
+          content: none;
+        }
+
+        .ch-highlight:after {
+          content: none;
+        }
+
+        &.is-active {
+          color: ch-get-color(text, inverse, 2);
+          background: ch-get-color(primary);
+
+          &:hover:focus,
+          &:hover,
+          &:focus,
+          &:active {
+            background: ch-get-color(primary, focus);
+          }
+
+        }
+      }
+
+      .ch-menu-group .ch-menu-item {
+        @include ch-media(from, desktop) {
+          padding-left: ch-get-space(l);
+        }
+      }
+    }
+  }
+
+  &--multiple .ch-menu-item.is-active {
+    @include ch-media(from, desktop) {
+      display: none
+    }
+  }
+
+  // 5. Blankslate
+
+  .ch-blankslate-content {
+    @include ch-fluid;
+
+    border: 0;
+  }
+
+  .ch-card-header + .ch-card-content .ch-blankslate-content {
+    padding-top: 0;
+  }
+
+  // 6. Disabled and readonly state
+
+  &:not(.ch-dropdown)[readonly],
+  &:not(.ch-dropdown).is-readonly,
+  &.is-readonly > .ch-dropdown-toggle,
+  &:not(.ch-dropdown)[disabled],
+  &:not(.ch-dropdown).is-disabled,
+  &.is-disabled > .ch-dropdown-toggle {
+    background-color: ch-get-color(neutral, 2);
+  }
+
+  // 7. Readonly state
+
+  &:not(.ch-dropdown)[readonly],
+  &:not(.ch-dropdown).is-readonly,
+  &.is-readonly > .ch-dropdown-toggle {
+    pointer-events: none;
+  }
+
+  &.is-readonly > .ch-dropdown-toggle {
+    &.has-options {
+      padding-right: calc(#{ch-get-space(s)} - #{ch-get-space(xs)});
+    }
+
+    .ch-tag-close,
+    .ch-select-clear {
+      display: none;
+    }
+
+    .ch-tag {
+      padding-right: ch-get-space(xs);
+    }
+  }
+
+  // 8. Support variations
+
+  @each $type in (info, warning, negative, positive) {
+    &--#{$type} {
+      &:not(.ch-dropdown),
+      > .ch-dropdown-toggle {
+        border-color: #{ch-get-color($type)};
+      }
+
+      &:not(.ch-dropdown) {
+        &:hover:focus,
+        &:hover,
+        &:focus {
+          border-color: #{ch-get-color($type, focus)};
+        }
+
+        &:active {
+          border-color: #{ch-get-color($type, active)};
+        }
+      }
+
+      > .ch-overlay.is-visible + .ch-dropdown-toggle {
+        border-color: #{ch-get-color($type, focus)};
+      }
+    }
+  }
+
+  // 9. Multiple variation
+
+  &:not(.ch-dropdown)[multiple] {
     @include ch-paddingless;
 
     background-image: none;
@@ -64,5 +273,41 @@ select.ch-select {
     > option {
       @include ch-space-inset(squish, s);
     }
+  }
+
+  // 10. Small variation
+
+  &--small:not(.ch-dropdown),
+  &--small:not(.ch-dropdown)[multiple] > option,
+  &--small > .ch-dropdown-toggle {
+    @include ch-space-inset(squish, xs);
+  }
+
+  &--small > .ch-dropdown-toggle {
+    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
+
+    @include ch-space-inset(squish, xs);
+
+    min-height: calc(#{$box-height} + 2 * #{$ch-border-width});
+    
+    &:not(.is-readonly),
+    &:not([readonly]) {
+      $icon-right: calc(#{$box-height} / 2 - #{ch-get-icon-size()} / 2);
+
+      padding-right: $box-height;
+      background-position: right #{$icon-right} center;
+
+      &.has-clear {
+        padding-right: calc(#{$box-height} + #{ch-get-icon-size()});
+      }
+    }
+
+    .ch-select-clear {
+      right: #{$box-height};
+    }
+  }
+
+  &--small > .ch-dropdown-toggle.has-options > .ch-tag {
+    margin-bottom: ch-get-space(xxs);
   }
 }

@@ -59,7 +59,21 @@
       overflow-y: auto;
     }
 
-    // 2.2. Visible state
+    // 2.2. Not visible state
+
+    &:not(.is-visible) {
+      @include ch-media(from, desktop) {
+        transition-duration: 0s;
+
+        max-width: 0;
+        min-width: 0;
+        max-height: 0;
+        min-height: 0;
+        overflow: hidden;
+      }
+    }
+
+    // 2.3. Visible state
 
     &.is-visible {
       @include ch-media(from, desktop) {

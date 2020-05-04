@@ -180,7 +180,23 @@
     }
   }
 
-  // 4. Horizontal variation
+
+  // 4. Group
+  
+  &-group {
+    > .ch-title {
+      @include ch-space-inset(squish, m);
+      @include ch-text-caption;
+
+      text-transform: uppercase;
+    }
+
+    > .ch-menu > .ch-menu-item {
+      padding-left: ch-get-space(xl);
+    }
+  }
+
+  // 5. Horizontal variation
 
   &--horizontal {
     @include ch-menu-horizontal;
