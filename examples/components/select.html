@@ -4,6 +4,11 @@
     <title>Chameleon - Select</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/nexaas-chameleon/fontawesome/v5.3.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../chameleon.css">
@@ -12,66 +17,365 @@
     <div class="ch-template">
       <main class="ch-template-content ch-spaceStackGroup">
 
-        <select class="ch-select">
-          <option value="1">Option example 1</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+        <section>
+          <select class="ch-select">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3" selected>Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+          </select>
 
-        <select class="ch-select" readonly>
-          <option value="1">Option example 1</option>
-        </select>
+          <div class="ch-select ch-dropdown">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item">Option 1</li>
+                    <li class="ch-menu-item">Option 2</li>
+                    <li class="ch-menu-item is-active">Option 3</li>
+                    <li class="ch-menu-item">Option 4</li>
+                    <li class="ch-menu-item">Option 5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <div class="ch-dropdown-toggle">
+              Option 3
+            </div>
+          </div>
+        </section>
 
-        <select class="ch-select" disabled>
-          <option value="1">Option example 1</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+        <section>
+          <select class="ch-select">
+            <optgroup label="Group 1">
+              <option value="1.1" selected>Option 1.1</option>
+            </optgroup> 
+            <optgroup label="Group 2">
+              <option value="2.1">Option 2.1</option>
+              <option value="2.2">Option 2.2</option>
+            </optgroup>
+            <optgroup label="Group 3">
+              <option value="3.1">Option 3.1</option>
+              <option value="3.3">Option 3.2</option>
+              <option value="3.3">Option 3.3</option>
+            </optgroup>
+          </select>
 
-        <select class="ch-select ch-select--negative">
-          <option>Placeholder</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+          <div class="ch-select ch-dropdown">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <ul class="ch-menu">
+                  <li class="ch-menu-group">
+                    <h3 class="ch-title">Group 1</h3>
 
-        <select class="ch-select ch-select--negative" disabled>
-          <option>Placeholder</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+                    <ul class="ch-menu">
+                      <li class="ch-menu-item is-active">Option 1.1</li>
+                    </ul>
+                  </li>
 
-        <select class="ch-select ch-select--small">
-          <option>Placeholder</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+                  <li class="ch-menu-group">
+                    <h3 class="ch-title">Group 2</h3>
 
-        <select class="ch-select" multiple>
-          <option>Placeholder</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+                    <ul class="ch-menu">
+                      <li class="ch-menu-item">Option 2.1</li>
+                    </ul>
+                  </li>
 
-        <select class="ch-select ch-select--fluid">
-          <option value="1">Option example 1</option>
-          <option value="2">Option example 2</option>
-          <option value="3">Option example 3</option>
-          <option value="4">Option example 4</option>
-          <option value="5">Option example 5</option>
-        </select>
+                  <li class="ch-menu-group">
+                    <h3 class="ch-title">Group 3</h3>
 
+                    <ul class="ch-menu">
+                      <li class="ch-menu-item">Option 3.1</li>
+                      <li class="ch-menu-item">Option 3.2</li>
+                      <li class="ch-menu-item">Option 3.3</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="ch-dropdown-toggle">
+              Option 1.1
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select" readonly>
+            <option value="1">Option 1</option>
+          </select>
+
+          <div class="ch-select ch-dropdown is-readonly">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item is-active">Option 1</li>
+                    <li class="ch-menu-item">Option 2</li>
+                    <li class="ch-menu-item">Option 3</li>
+                    <li class="ch-menu-item">Option 4</li>
+                    <li class="ch-menu-item">Option 5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <div class="ch-dropdown-toggle">
+              Option 1
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select" disabled>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3" selected>Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+          </select>
+
+          <div class="ch-select ch-dropdown is-disabled">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item">Option 1</li>
+                    <li class="ch-menu-item">Option 2</li>
+                    <li class="ch-menu-item" class="is-active">Option 3</li>
+                    <li class="ch-menu-item">Option 4</li>
+                    <li class="ch-menu-item">Option 5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <div class="ch-dropdown-toggle">
+              Option 3
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select ch-select--negative">
+            <option>Placeholder</option>
+            <option value="1">Option example 1</option>
+            <option value="2">Option example 2</option>
+            <option value="3">Option example 3</option>
+            <option value="4">Option example 4</option>
+          </select>
+
+          <div class="ch-dropdown ch-select ch-select--negative">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item is-active">Placeholder</li>
+                    <li class="ch-menu-item">Option 1</li>
+                    <li class="ch-menu-item">Option 2</li>
+                    <li class="ch-menu-item">Option 3</li>
+                    <li class="ch-menu-item">Option 4</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="ch-dropdown-toggle">
+              Placeholder
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select ch-select--negative" disabled>
+            <option>Placeholder</option>
+            <option value="2">Option example 2</option>
+            <option value="3">Option example 3</option>
+            <option value="4">Option example 4</option>
+            <option value="5">Option example 5</option>
+          </select>
+
+          <div class="ch-dropdown ch-select ch-select--negative is-disabled">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item is-active">Placeholder</li>
+                    <li class="ch-menu-item">Option 1</li>
+                    <li class="ch-menu-item">Option 2</li>
+                    <li class="ch-menu-item">Option 3</li>
+                    <li class="ch-menu-item">Option 4</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="ch-dropdown-toggle">
+              Placeholder
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select ch-select--small">
+            <option>Placeholder</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+          </select>
+
+          <div class="ch-dropdown ch-select ch-select--small">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item is-active">Placeholder</li>
+                    <li class="ch-menu-item">Option 1</li>
+                    <li class="ch-menu-item">Option 2</li>
+                    <li class="ch-menu-item">Option 3</li>
+                    <li class="ch-menu-item">Option 4</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="ch-dropdown-toggle">
+              Placeholder
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select" multiple readonly>
+            <option value="1">Option 1</option>
+            <option value="2" selected>Option 2</option>
+            <option value="3" selected>Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+            <option value="6" selected>Option 6</option>
+          </select>
+
+          <div class="ch-dropdown ch-select ch-select--multiple">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <header class="ch-card-header">
+                  <form class="ch-search">
+                    <input type="text" placeholder="Buscar..." class="ch-input">
+                    <button type="button" class="ch-button ch-button--ghost ch-button--icon">
+                      <i class="ch-icon fal fa-search"></i>
+                    </button>
+                  </form>
+                </header>
+
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item">Machado de Assis</li>
+                    <li class="ch-menu-item is-active">José Saramago</li>
+                    <li class="ch-menu-item is-active">William Shakespeare</li>
+                    <li class="ch-menu-item">Fiódor Dostoiévski</li>
+                    <li class="ch-menu-item">Jorge Luís Borges</li>
+                    <li class="ch-menu-item">Franz Kafka</li>
+                    <li class="ch-menu-item is-active">Gabriel García Márquez</li>
+                    <li class="ch-menu-item">Federico García Lorca</li>
+                    <li class="ch-menu-item">Charles Bukowski</li>
+                    <li class="ch-menu-item">Liev Tolstói</li>
+                  </ul>
+                </div>
+
+                <div class="ch-card-footer">
+                  <button type="button" class="ch-button ch-button--primary ch-button--outline">Concluir</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="ch-dropdown-toggle has-options has-clear">
+              <span class="ch-tag has-close">
+                José Saramago
+                <button class="ch-tag-close"></button>
+              </span>
+              
+              <span class="ch-tag has-close">
+                William Shakespeare
+                <button class="ch-tag-close"></button>
+              </span>
+              
+              <span class="ch-tag has-close">
+                Gabriel García Márquez
+                <button class="ch-tag-close"></button>
+              </span>
+
+              <button class="ch-select-clear"></button>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <select class="ch-select ch-select--small" multiple disabled>
+            <option value="1">Option 1</option>
+            <option value="2" selected>Option 2</option>
+            <option value="3" selected>Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+            <option value="6" selected>Option 6</option>
+          </select>
+
+          <div class="ch-dropdown ch-select ch-select--multiple ch-select--small is-disabled">
+            <div class="ch-overlay">
+              <div class="ch-card">
+                <header class="ch-card-header">
+                  <form class="ch-search">
+                    <input type="text" placeholder="Buscar..." class="ch-input">
+                    <button type="button" class="ch-button ch-button--ghost ch-button--icon">
+                      <i class="ch-icon fal fa-search"></i>
+                    </button>
+                  </form>
+                </header>
+
+                <div class="ch-card-content">
+                  <ul class="ch-menu">
+                    <li class="ch-menu-item">Machado de Assis</li>
+                    <li class="ch-menu-item is-active">José Saramago</li>
+                    <li class="ch-menu-item is-active">William Shakespeare</li>
+                    <li class="ch-menu-item">Fiódor Dostoiévski</li>
+                    <li class="ch-menu-item">Jorge Luís Borges</li>
+                    <li class="ch-menu-item">Franz Kafka</li>
+                    <li class="ch-menu-item is-active">Gabriel García Márquez</li>
+                    <li class="ch-menu-item">Federico García Lorca</li>
+                    <li class="ch-menu-item">Charles Bukowski</li>
+                    <li class="ch-menu-item">Liev Tolstói</li>
+                  </ul>
+                </div>
+
+                <div class="ch-card-footer">
+                  <button type="button" class="ch-button ch-button--primary ch-button--outline">Concluir</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ch-dropdown-toggle has-options has-clear">
+              <span class="ch-tag has-close">
+                José Saramago
+                <button class="ch-tag-close"></button>
+              </span>
+              
+              <span class="ch-tag has-close">
+                William Shakespeare
+                <button class="ch-tag-close"></button>
+              </span>
+              
+              <span class="ch-tag has-close">
+                Gabriel García Márquez
+                <button class="ch-tag-close"></button>
+              </span>
+
+              <button class="ch-select-clear"></button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -80,5 +384,35 @@
         align-items: flex-start;
       }
     </style>
+
+    <script>
+      ;(function () {
+        var $dropdownToggle = $('.ch-dropdown-toggle')
+        var $dropdownOverlay = $('.ch-dropdown > .ch-overlay')
+
+        $(document).on('click', function (e) {
+          var $element = $(e.target)
+          var $dropdownToggle = $element.parents('.ch-dropdown-toggle')
+          var $dropdown = $element.parents('.ch-dropdown')
+          var $card = $element.parents('.ch-card')
+
+          if ($dropdownToggle.length || $element.hasClass('ch-dropdown-toggle')) {
+            var $overlay = $dropdown.find('.ch-overlay')
+
+            $('.ch-dropdown .ch-overlay.is-visible')
+              .not($overlay)
+              .removeClass('is-visible')
+
+            $overlay.toggleClass('is-visible')
+
+            return
+          }
+
+          if ($dropdown.length && $card.length) return
+
+          $('.ch-dropdown .ch-overlay.is-visible').removeClass('is-visible')
+        })
+      })()
+    </script>
   </body>
 </html>

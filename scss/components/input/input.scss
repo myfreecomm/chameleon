@@ -63,6 +63,7 @@ STYLES ON INPUT CONTAINER
 
   &.has-leadingIcon,
   &.has-trailingIcon {
+    @include ch-paddingless(true);
     position: relative;
 
     > .ch-icon,

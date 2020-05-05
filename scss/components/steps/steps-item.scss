@@ -6,8 +6,8 @@
   justify-content: center;
   position: relative;
 
-  padding-left: #{ch-get-space(xl)};
-  min-height: #{ch-get-space(xl)};
+  padding-left: ch-get-space(xl);
+  min-height: ch-get-space(xl);
 
   counter-increment: steps;
   opacity: 0.6;
@@ -23,7 +23,7 @@
     display: none;
     width: max-content;
 
-    padding-left: #{ch-get-space(s)};
+    padding-left: ch-get-space(s);
   }
 
   // 2. Active item
@@ -44,7 +44,7 @@
     opacity: 1;
 
     > .ch-title {
-      color: #{ch-get-color(primary)};
+      color: ch-get-color(primary);
     }
   }
 
@@ -61,14 +61,14 @@
   &:hover:focus,
   &:focus,
   &:hover {
-    color: #{ch-get-color(primary, focus)};
+    color: ch-get-color(primary, focus);
     opacity: 1;
   }
 
   // 4.2. Active interaction
 
   &:active {
-    color: #{ch-get-color(primary, active)};
+    color: ch-get-color(primary, active);
     opacity: 1;
   }
 

@@ -65,6 +65,13 @@
       min-width: auto;
       background: transparent;
 
+      &:not(.is-visible) {
+        max-width: initial;
+        min-width: initial;
+        max-height: initial;
+        min-height: initial;
+      }
+
       // 2.1.1. Card
 
       &,
