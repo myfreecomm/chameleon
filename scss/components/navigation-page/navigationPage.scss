@@ -68,7 +68,7 @@
         @include ch-transition(left);
 
         $nav-top: ch-get-dimension(1);
-        
+
         top: $nav-top;
         left: $nav-top;
       }
@@ -99,7 +99,7 @@
       @include ch-media(only, mobile) {
         @include ch-space-inset(default, xs);
       }
-      
+
       @include ch-media(only, tablet) {
         @include ch-space-inset(squish, l);
       }
@@ -147,11 +147,11 @@
     @include ch-media(only, mobile) {
       @include ch-space-stack-group(xs);
 
-      > .ch-button.has-icon {
+      > .ch-button.has-leadingIcon {
         padding-right: ch-calc-box-height();
       }
 
-      > .ch-button.has-iconRight {
+      > .ch-button.has-trailingIcon {
         padding-left: ch-calc-box-height();
       }
     }
@@ -178,11 +178,11 @@
       padding-bottom: ch-get-space(xl);
       padding-left: ch-get-space(l);
 
-      > .ch-button.has-icon {
+      > .ch-button.has-leadingIcon {
         padding-right: ch-calc-box-height();
       }
 
-      > .ch-button.has-iconRight {
+      > .ch-button.has-trailingIcon {
         padding-left: ch-calc-box-height();
       }
     }

@@ -1,19 +1,19 @@
 .ch-form {
   @include ch-space-stack-group(l);
-  
+
   &-actions {
     @include ch-media(only, mobile) {
       @include ch-space-stack-group(xs);
-      
-      > .ch-button.has-icon {
+
+      > .ch-button.has-leadingIcon {
         padding-right: ch-calc-box-height();
       }
-      
-      > .ch-button.has-iconRight {
+
+      > .ch-button.has-trailingIcon {
         padding-left: ch-calc-box-height();
       }
     }
-    
+
     @include ch-media(from, tablet) {
       @include ch-space-inline-group(right, xs);
     }
