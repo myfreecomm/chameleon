@@ -1,7 +1,7 @@
-.has-icon {
+.has-leadingIcon {
   @include ch-has-icon;
+}
 
-  @at-root &Right {
-    @include ch-has-icon(right);
-  }
+.has-trailingIcon {
+  @include ch-has-icon(right);
 }
