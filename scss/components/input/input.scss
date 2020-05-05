@@ -53,6 +53,12 @@ STYLES ON INPUT CONTAINER
     @include ch-input-negative;
   }
 
+  // 4. Disabled variation
+
+  &.is-disabled:not(input) > input {
+    opacity: 1;
+  }
+
   // 4. Icons variation
 
   &.has-leadingIcon,
