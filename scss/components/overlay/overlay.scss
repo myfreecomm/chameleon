@@ -42,4 +42,10 @@
   &--inside {
     position: absolute;
   }
+
+  // 6. Inverse variation
+
+  &--inverse {
+    background-color: ch-get-color(overlay, inverse);
+  }
 }
