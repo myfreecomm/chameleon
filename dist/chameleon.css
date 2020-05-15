@@ -5884,14 +5884,14 @@ a.ch-steps-item.is-completed:active:before{
     @media screen and (max-width:calc(1024px - 1px)){
       .ch-pagination-item:not(.ch-pagination-item--previous):not(.ch-pagination-item--next):not(.is-active){
         display:none; } }
-    .ch-pagination-item:active,.ch-pagination-item:focus,.ch-pagination-item:hover,.ch-pagination-item:hover:focus{
+    .ch-pagination-item:not(.ch-pagination-item--gap):active,.ch-pagination-item:not(.ch-pagination-item--gap):focus,.ch-pagination-item:not(.ch-pagination-item--gap):hover,.ch-pagination-item:not(.ch-pagination-item--gap):hover:focus{
       color:currentColor;
       background-color:#f8f8f8;
       background-color:var(--ch-color-neutral-2); }
-    .ch-pagination-item:focus,.ch-pagination-item:hover,.ch-pagination-item:hover:focus{
+    .ch-pagination-item:not(.ch-pagination-item--gap):focus,.ch-pagination-item:not(.ch-pagination-item--gap):hover,.ch-pagination-item:not(.ch-pagination-item--gap):hover:focus{
       border-color:#bfbfbf;
       border-color:var(--ch-color-border-focus); }
-    .ch-pagination-item:active{
+    .ch-pagination-item:not(.ch-pagination-item--gap):active{
       border-color:#b3b3b3;
       border-color:var(--ch-color-border-active); }
     .ch-pagination-item--first>[class=ch-icon]{
@@ -5937,6 +5937,18 @@ a.ch-steps-item.is-completed:active:before{
       height:var(--ch-icon-size-m); }
     .ch-pagination-item--gap{
       border-color:transparent; }
+      .ch-pagination-item--gap>[class=ch-icon]{
+        background:#6d6d6d;
+        background:var(--ch-color-text-2); }
+      .ch-pagination-item--gap>.ch-icon{
+        color:#6d6d6d;
+        color:var(--ch-color-text-2); }
+      .ch-pagination-item--gap:active>[class=ch-icon],.ch-pagination-item--gap:focus>[class=ch-icon],.ch-pagination-item--gap:hover:focus>[class=ch-icon],.ch-pagination-item--gap:hover>[class=ch-icon]{
+        background:#454646;
+        background:var(--ch-color-text-1); }
+      .ch-pagination-item--gap:active>.ch-icon,.ch-pagination-item--gap:focus>.ch-icon,.ch-pagination-item--gap:hover:focus>.ch-icon,.ch-pagination-item--gap:hover>.ch-icon{
+        color:#454646;
+        color:var(--ch-color-text-1); }
     .ch-pagination-item.is-disabled{
       background-color:#f8f8f8;
       background-color:var(--ch-color-neutral-2); }
@@ -5947,7 +5959,9 @@ a.ch-steps-item.is-completed:active:before{
       border-color:var(--ch-color-primary);
       background-color:#fff;
       background-color:var(--ch-color-neutral-1); }
-  .ch-pagination>.ch-field>label{
+  .ch-pagination>.ch-field>.ch-field-label,.ch-pagination>.ch-field>label{
+    font-weight:400;
+    font-weight:var(--ch-text-weight-regular);
     margin-right:.5rem;
     margin-right:var(--ch-space-xs); }
   .ch-pagination .ch-input{

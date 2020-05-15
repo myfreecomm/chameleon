@@ -44,22 +44,24 @@
 
     // 2.2. Interactions
 
-    &:hover:focus,
-    &:focus,
-    &:hover,
-    &:active {
-      color: currentColor;
-      background-color: ch-get-color(neutral, 2);
-    }
+    &:not(#{&}--gap) {
+      &:hover:focus,
+      &:focus,
+      &:hover,
+      &:active {
+        color: currentColor;
+        background-color: ch-get-color(neutral, 2);
+      }
 
-    &:hover:focus,
-    &:focus,
-    &:hover {
-      border-color: ch-get-color(border, focus);
-    }
-
-    &:active {
-      border-color: ch-get-color(border, active);
+      &:hover:focus,
+      &:focus,
+      &:hover {
+        border-color: ch-get-color(border, focus);
+      }
+  
+      &:active {
+        border-color: ch-get-color(border, active);
+      }
     }
 
     // 2.3. Icon variations
@@ -76,6 +78,27 @@
 
     &--gap {
       border-color: transparent;
+
+      > *[class="ch-icon"] {
+        background: ch-get-color(text, 2);
+      }
+
+      > .ch-icon {
+        color: ch-get-color(text, 2);
+      }
+
+      &:hover:focus,
+      &:focus,
+      &:hover,
+      &:active {
+        > *[class="ch-icon"] {
+          background: ch-get-color(text, 1);
+        }
+
+        > .ch-icon {
+          color: ch-get-color(text, 1);
+        }
+      }
     }
 
     // 2.5. Disabled state
@@ -99,7 +122,9 @@
 
   // 3. Field
 
-  > .ch-field > label {
+  > .ch-field > label,
+  > .ch-field > .ch-field-label {
+    font-weight: ch-get-text-weight(regular);
     margin-right: ch-get-space(xs);
   }
 
