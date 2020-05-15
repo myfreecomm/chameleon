@@ -3,92 +3,133 @@
   // 1. Base
 
   @include ch-space-inline-group(right, xs);
+
   vertical-align: middle;
 
-  // 2. Pagintation Item
+  // 2. Item
 
   &-item {
-    $inset-type: default;
-    $size: xs;
-    $border-rule: box;
-    $border-color: ch-get-color(border);
+    $box-size: calc(#{ch-calc-box-height()} + 2 * #{$ch-border-width});
     $icons: (
-      "first":    $ch-icon-angle-double-left,
-      "previous": $ch-icon-angle-left,
-      "gap":      $ch-icon-ellipsis,
-      "next":     $ch-icon-angle-right,
-      "last":     $ch-icon-angle-double-right
+      first: $ch-icon-angle-double-left,
+      previous: $ch-icon-angle-left,
+      gap: $ch-icon-ellipsis,
+      next: $ch-icon-angle-right,
+      last: $ch-icon-angle-double-right
     );
 
+    // 2.1. Base
+
     @include ch-border-radius(1);
-    @include ch-space-inset($inset-type, $size);
-    @include ch-border($border-rule, $border-color);
+    @include ch-border();
 
     display: flex;
     align-items: center;
     justify-content: center;
+
     color: ch-get-color(text, 1);
+    padding-right: ch-get-space(xs);
+    padding-left: ch-get-space(xs);
+    height: $box-size;
+    max-height: $box-size;
+    min-width: $box-size;
+    text-align: center;
     background-color: ch-get-color(neutral, 1);
 
-    @each $type, $icon in $icons {
-      &--#{$type} > *[class="ch-icon"] {
-        @include ch-mask-icon($icon);
-        height: ch-get-icon-size(m);
+    &:not(#{&}--previous):not(#{&}--next):not(.is-active) {
+      @include ch-media(to, tablet) {
+        display: none;
       }
     }
 
-    &--gap {
-      pointer-events: none;
+    // 2.2. Interactions
+
+    &:hover:focus,
+    &:focus,
+    &:hover,
+    &:active {
+      color: currentColor;
+      background-color: ch-get-color(neutral, 2);
     }
 
     &:hover:focus,
     &:focus,
     &:hover {
-      color: currentColor;
-      background-color: ch-get-color(neutral, 2);
+      border-color: ch-get-color(border, focus);
     }
 
-    // 2.1 Item disabled variation
-
-    &.is-disabled {
-      @include ch-disabled;
-      background-color: ch-get-color(neutral, 2);
+    &:active {
+      border-color: ch-get-color(border, active);
     }
 
-    // 2.2 Item active variation
+    // 2.3. Icon variations
 
-    &.is-active {
-      color: ch-get-color(primary);
-      border-color: ch-get-color(primary);
+    @each $type, $icon in $icons {
+      &--#{$type} > *[class="ch-icon"] {
+        @include ch-mask-icon($icon);
 
-      &:hover:focus,
-      &:focus,
-      &:hover {
-        color: ch-get-color(primary, focus);
-        background-color: ch-get-color(neutral, 1);
-        border-color: ch-get-color(primary, focus);
+        height: ch-get-icon-size(m);
       }
     }
 
-    // 2.3 Item label
+    // 2.4. Gap variations
 
-    &-label {
-      min-width: ch-get-icon-size(m);
-      text-align: center;
+    &--gap {
+      border-color: transparent;
+    }
+
+    // 2.5. Disabled state
+
+    &.is-disabled {
+      background-color: ch-get-color(neutral, 2);
+    }
+
+    // 2.6. Active state
+
+    &.is-active,
+    &.is-active:hover:focus,
+    &.is-active:focus,
+    &.is-active:hover,
+    &.is-active:active {
+      color: ch-get-color(primary);
+      border-color: ch-get-color(primary);
+      background-color: ch-get-color(neutral, 1);
+    }
+  }
+
+  // 3. Field
+
+  > .ch-field > label {
+    margin-right: ch-get-space(xs);
+  }
+
+  .ch-input {
+    width: ch-get-dimension(1);
+  }
+
+  // 4. Select
+
+  > .ch-select {
+    @include ch-media(to, mobile) {
+      display: none;
     }
   }
 
   // 3. Small variation
+  
   $root: &;
 
   &--small {
-    @include ch-space-inline-group(right, xxs);
-
     #{$root}-item {
-      $inset-type: default;
-      $size: xxs;
+      $box-size: calc(
+        #{ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs))} + 2 * #{$ch-border-width}
+      );
 
-      @include ch-space-inset($inset-type, $size);
+      padding-right: ch-get-space(xxs);
+      padding-left: ch-get-space(xxs);
+      height: $box-size;
+      max-height: $box-size;
+      min-width: $box-size;
     }
   }
 }

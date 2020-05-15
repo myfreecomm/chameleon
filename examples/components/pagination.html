@@ -10,83 +10,127 @@
   </head>
   <body>
     <div class="ch-template">
-      <main class="ch-template-content">
+      <main class="ch-template-content ch-spaceStackGroup">
         <nav class="ch-pagination">
-          <a href="#" class="ch-pagination-item ch-pagination-item--first">
+          <a href="#" class="ch-pagination-item ch-pagination-item--previous">
             <i class="ch-icon"></i>
           </a>
-          <a href="#" class="ch-pagination-item ch-pagination-item--previous">
-            <i class="ch-icon fal fa-angle-left"></i>
+
+          <a href="#" class="ch-pagination-item ch-pagination-item--first">
+            1
           </a>
-          <a href="#" class="ch-pagination-item is-active" title="3">
-            <span class="ch-pagination-item-label">3</span>
+
+          <button type="button" class="ch-pagination-item ch-pagination-item--gap">
+            <i class="ch-icon"></i>
+          </button>
+
+          <a href="#" class="ch-pagination-item" title="4">
+            4
           </a>
-          <span class="ch-pagination-item ch-pagination-item--gap">
-            <i class="ch-icon fal fa-ellipsis-h"></i>
+
+          <a href="#" class="ch-pagination-item" title="5">
+            5
+          </a>
+
+          <span class="ch-pagination-item is-active" title="6">
+            6
           </span>
-          <a href="#" class="ch-pagination-item" title="6">
-            <span class="ch-pagination-item-label">6</span>
+
+          <a href="#" class="ch-pagination-item" title="7">
+            7
           </a>
+
+          <a href="#" class="ch-pagination-item" title="8">
+            8
+          </a>
+
+          <button type="button" class="ch-pagination-item ch-pagination-item--gap">
+            <i class="ch-icon"></i>
+          </button>
+
+          <a href="#" class="ch-pagination-item ch-pagination-item--last">
+            120
+          </a>
+
           <a href="#" class="ch-pagination-item ch-pagination-item--next">
-            <i class="ch-icon fal fa-angle-right"></i>
+            <i class="ch-icon"></i>
           </a>
-          <a href="#" class="ch-pagination-item ch-pagination-item ch-pagination-item--last">
-            <i class="ch-icon fal fa-angle-double-right"></i>
-          </a>
+
+          <div class="ch-field ch-field--inline">
+            <label for="pagination">Go to</label>
+
+            <div class="ch-field-control">
+              <input class="ch-input" value="6" id="pagination" />
+            </div>
+          </div>
+
           <select class="ch-select">
-            <option>10 / Page</option>
-            <option>20 / Page</option>
-            <option>50 / Page</option>
-            <option>100 / Page</option>
+            <option>10 per page</option>
+            <option>20 per page</option>
+            <option>50 per page</option>
+            <option>100 per page</option>
           </select>
         </nav>
 
-        <br />
-        <br />
-
-        <nav class="ch-pagination">
-          <a href="#" class="ch-pagination-item is-disabled">
-            <span class="ch-pagination-item-label">Previous</span>
-          </a>
-          <a href="#" class="ch-pagination-item" title="1">
-            <span class="ch-pagination-item-label">1</span>
-          </a>
-          <a href="#" class="ch-pagination-item is-active" title="2">
-            <span class="ch-pagination-item-label">2</span>
-          </a>
-          <a href="#" class="ch-pagination-item" title="3">
-            <span class="ch-pagination-item-label">3</span>
-          </a>
-          <a href="#" class="ch-pagination-item">
-            <span class="ch-pagination-item-label">Next</span>
-          </a>
-        </nav>
-
-        <br />
-        <br />
-
         <nav class="ch-pagination ch-pagination--small">
-          <a href="#" class="ch-pagination-item">
-            <i class="ch-icon fal fa-angle-double-left"></i>
+          <a href="#" class="ch-pagination-item ch-pagination-item--previous">
+            <i class="ch-icon"></i>
           </a>
-          <a href="#" class="ch-pagination-item">
-            <i class="ch-icon fal fa-angle-left"></i>
+
+          <a href="#" class="ch-pagination-item ch-pagination-item--first">
+            1
           </a>
-          <a href="#" class="ch-pagination-item is-active" title="3">
-            <span class="ch-pagination-item-label">3</span>
+
+          <button type="button" class="ch-pagination-item ch-pagination-item--gap">
+            <i class="ch-icon"></i>
+          </button>
+
+          <a href="#" class="ch-pagination-item" title="4">
+            4
           </a>
-          <span class="ch-pagination-item">
-            <i class="ch-icon fal fa-ellipsis-h"></i>
+
+          <a href="#" class="ch-pagination-item" title="5">
+            5
+          </a>
+
+          <span class="ch-pagination-item is-active" title="6">
+            6
           </span>
-          <a href="#" class="ch-pagination-item" title="6">
-            <span class="ch-pagination-item-label">6</span>
+
+          <a href="#" class="ch-pagination-item" title="7">
+            7
           </a>
-          <a href="#" class="ch-pagination-item">
-            <i class="ch-icon fal fa-angle-right"></i>
+
+          <a href="#" class="ch-pagination-item" title="8">
+            8
           </a>
-          <a href="#" class="ch-pagination-item">
-            <i class="ch-icon fal fa-angle-double-right"></i>
+
+          <button type="button" class="ch-pagination-item ch-pagination-item--gap">
+            <i class="ch-icon"></i>
+          </button>
+
+          <a href="#" class="ch-pagination-item ch-pagination-item--last">
+            120
           </a>
+
+          <a href="#" class="ch-pagination-item ch-pagination-item--next">
+            <i class="ch-icon"></i>
+          </a>
+
+          <div class="ch-field ch-field--inline">
+            <label for="pagination">Go to</label>
+
+            <div class="ch-field-control">
+              <input class="ch-input ch-input--small" value="6" id="pagination" />
+            </div>
+          </div>
+
+          <select class="ch-select ch-select--small">
+            <option>10 per page</option>
+            <option>20 per page</option>
+            <option>50 per page</option>
+            <option>100 per page</option>
+          </select>
         </nav>
       </main>
     </div>
