@@ -1,7 +1,7 @@
 @mixin ch-mask-icon ($image, $option: 'complete') {
   mask-image: url(#{$image});
   -webkit-mask-image: url(#{$image});
-  
+
   @if ($option != 'only-mask') {
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;

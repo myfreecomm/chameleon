@@ -1,4 +1,9 @@
 *:disabled,
 *.is-disabled {
   @include ch-disabled;
+
+  *:disabled,
+  *.is-disabled {
+    opacity: 1;
+  }
 }
