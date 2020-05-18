@@ -101,13 +101,7 @@
       }
     }
 
-    // 2.5. Disabled state
-
-    &.is-disabled {
-      background-color: ch-get-color(neutral, 2);
-    }
-
-    // 2.6. Active state
+    // 2.5. Active state
 
     &.is-active,
     &.is-active:hover:focus,
@@ -156,5 +150,16 @@
       max-height: $box-size;
       min-width: $box-size;
     }
+  }
+
+  // 4. Disabled state
+
+  > .ch-pagination-item:not(.ch-pagination-item--gap).is-disabled
+  > .ch-pagination-item:not(.ch-pagination-item--gap)[disabled] {
+    background-color: ch-get-color(neutral, 2);
+  }
+
+  @at-root .is-disabled .ch-pagination-item:not(.ch-pagination-item--gap) {
+    background-color: ch-get-color(neutral, 2);
   }
 }

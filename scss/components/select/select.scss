@@ -21,7 +21,6 @@
     $icon-right: calc(#{ch-calc-box-height()} / 2 - #{ch-get-icon-size()} / 2);
 
     padding-right: ch-calc-box-height();
-    background-color: ch-get-color(neutral, 1);
     background-image: url('#{$ch-icon-angle-down}');
     background-repeat: no-repeat;
     background-position: right #{$icon-right} center;
@@ -211,6 +210,13 @@
   &:not(.ch-dropdown).is-disabled,
   &.is-disabled > .ch-dropdown-toggle {
     background-color: ch-get-color(neutral, 2);
+  }
+
+  @at-root *.is-disabled {
+    .ch-select:not(.ch-dropdown),
+    .ch-select.ch-dropdown > .ch-dropdown-toggle {
+      background-color: ch-get-color(neutral, 2);
+    }
   }
 
   // 7. Readonly state
