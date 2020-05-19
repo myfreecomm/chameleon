@@ -193,8 +193,7 @@
 
   .ch-blankslate-content {
     @include ch-fluid;
-
-    border: 0;
+    @include ch-space-inset;
   }
 
   .ch-card-header + .ch-card-content .ch-blankslate-content {

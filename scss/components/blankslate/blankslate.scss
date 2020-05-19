@@ -12,20 +12,15 @@
   // 2. Content
 
   &-content {
-    $icon-width:  220px;
-    $inset-type: default;
-    $size: s;
-    $border-rule: box;
-
-    @include ch-space-inset($inset-type, $size);
-    @include ch-border($border-rule);
+    @include ch-space-stack-group(xs);
 
     text-align: center;
+    align-items: center;
 
-    // 2.1. Icon
+    // 2.1. Image
 
-    &-icon {
-      width: $icon-width;
+    &-image {
+      width: ch-get-dimension(2);
     }
   }
 }
