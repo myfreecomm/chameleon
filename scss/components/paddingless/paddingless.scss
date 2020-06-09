@@ -1,6 +1,3 @@
-// sass-lint:disable no-important
-// sass-lint:disable variable-for-property
-
 .ch-paddingless {
-  @include ch-paddingless(true);
+  @include ch-paddingless($important: true);
 }

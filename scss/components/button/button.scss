@@ -217,31 +217,21 @@
   // 6. Small variation
 
   &--small {
-    $box-height: ch-calc-box-height(ch-get-text-size(), ch-get-space(xxs));
-
     @include ch-space-inset(squish, xs);
 
-    &.has-icon {
-      @include ch-has-icon(left, $box-height);
-    }
-
-    &.has-iconRight {
-      @include ch-has-icon(right, $box-height);
-    }
-
-    &.has-icon,
-    &.has-iconRight {
+    &.has-leadingIcon,
+    &.has-trailingIcon {
       > .ch-icon {
         font-size: #{ch-get-icon-size(s)};
       }
     }
   }
 
-  // 7. Icon variation
+  // // 7. Icon variation
 
   &--icon,
-  &.has-icon,
-  &.has-iconRight {
+  &.has-leadingIcon,
+  &.has-trailingIcon {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
       font-size: #{ch-get-icon-size(s)};
@@ -249,8 +239,8 @@
   }
 
   &--icon.ch-button--small,
-  &.has-icon.ch-button--small,
-  &.has-iconRight.ch-button--small {
+  &.has-leadingIcon.ch-button--small,
+  &.has-trailingIcon.ch-button--small {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
       font-size: #{ch-get-icon-size(xs)};
