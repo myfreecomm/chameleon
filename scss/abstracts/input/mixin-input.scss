@@ -1,13 +1,11 @@
-@mixin ch-input {
+@mixin ch-input($size: s) {
   $inset-type: squish;
-  $size: s;
   $border-rule: box;
   $border-color: ch-get-color(border);
 
   @include ch-space-inset($inset-type, $size);
   @include ch-border($border-rule, $border-color);
   @include ch-border-radius(1);
-
   background-color: #{ch-get-color(neutral, 1)};
 
   &:active {

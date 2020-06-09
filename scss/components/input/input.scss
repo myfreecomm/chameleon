@@ -1,46 +1,122 @@
-.ch-input,
-.ch-textarea,
-.ch-file {
+/***********************
+STYLES DIRECTLY ON INPUT
+************************/
+
+input.ch-input,
+input.ch-file,
+textarea.ch-textarea {
 
   // 1. Base
 
   @include ch-input;
 
   // 2. Fluid variation
-
   &--fluid {
     width: 100%;
   }
 
-  // 3. Small variation
+   // 2. Small variation
 
   &--small {
-    $inset-type: squish;
-    $size: xs;
-    $border-rule: box;
-    $border-color: ch-get-color(border);
-
-    @include ch-space-inset($inset-type, $size);
-    @include ch-border($border-rule, $border-color);
+    @include ch-input(xs);
   }
 
   // 4. Negative variation
 
   &--negative {
-    border-color: #{ch-get-color(negative)};
+    @include ch-input-negative;
+  }
+}
 
-    // 4.1. Focus interaction
+/***************************
+STYLES ON INPUT CONTAINER
+**************************/
 
-    &:hover:focus,
-    &:hover,
-    &:focus {
-      border-color: #{ch-get-color(negative, focus)};
+.ch-input,
+.ch-file {
+  // 1. Base
+
+  &:not(input) > input {
+    @include ch-input;
+  }
+
+  // 2. Fluid variation
+
+  &--fluid,
+  &--fluid:not(input) > input {
+    width: 100%;
+  }
+
+  // 3. Negative variation
+
+  &--negative:not(input) > input {
+    @include ch-input-negative;
+  }
+
+  // 4. Disabled variation
+
+  &.is-disabled:not(input) > input {
+    opacity: 1;
+  }
+
+  // 4. Icons variation
+
+  &.has-leadingIcon,
+  &.has-trailingIcon {
+    @include ch-paddingless(true);
+    position: relative;
+
+    > .ch-icon,
+    > .ch-spinner {
+      z-index: #{ch-get-z-index(1, 1)};
     }
 
-    // 4.2. Active interaction
+    > .ch-icon {
+      font-size: #{ch-get-icon-size(s)};
+    }
+  }
 
-    &:active {
-      border-color: #{ch-get-color(negative, active)};
+  &.has-leadingIcon {
+    > input {
+      @include ch-has-icon;
+    }
+
+    > .ch-icon:first-child,
+    > .ch-spinner:first-child {
+      @include ch-is-leading-icon;
+    }
+  }
+
+  &.has-trailingIcon {
+    > input {
+      @include ch-has-icon(right);
+    }
+
+    > .ch-icon:last-child,
+    > .ch-spinner:last-child {
+      @include ch-is-trailing-icon;
+    }
+  }
+
+  // 5. Small variation
+
+  &--small {
+    &:not(input) > input {
+      @include ch-input(xs);
+    }
+
+    // 5.1 Icons variation
+
+    &.has-leadingIcon,
+    &.has-trailingIcon {
+      > .ch-icon {
+        font-size: #{ch-get-icon-size(xs)};
+      }
+
+      > .ch-spinner {
+        width: #{ch-get-icon-size(s)};
+        height: #{ch-get-icon-size(s)};
+      }
     }
   }
 

@@ -98,8 +98,8 @@
 
           color: #{ch-get-color(text, 2)};
 
-          &.has-icon,
-          &.has-iconRight,
+          &.has-leadingIcon,
+          &.has-trailingIcon,
           &.ch-menu-item--icon {
             > .ch-icon {
               font-size: #{ch-get-icon-size(s)};
@@ -120,11 +120,11 @@
 
           @include ch-space-inset(squish, xs);
 
-          &.has-icon {
+          &.has-leadingIcon {
             @include ch-has-icon(left, $box-height);
           }
 
-          &.has-iconRight {
+          &.has-trailingIcon {
             @include ch-has-icon(right, $box-height);
           }
         }
