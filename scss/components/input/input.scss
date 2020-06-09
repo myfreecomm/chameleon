@@ -119,4 +119,13 @@ STYLES ON INPUT CONTAINER
       }
     }
   }
+
+  // 5. Disabled and readonly state
+
+  @at-root {
+    .is-disabled .ch-input,
+    .is-readonly .ch-input {
+      background-color: ch-get-color(neutral, 2);
+    }
+  }
 }
