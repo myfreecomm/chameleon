@@ -1,3 +1,4 @@
+@use '../colors' as color;
 @use 'functions' as *;
 @use 'mixins' as *;
 
@@ -22,9 +23,9 @@
     @include wrap($important: true);
   }
 
-  @each $type in (info, warning, negative, positive) {
+  @each $type in color.$suport-names {
     &--#{$type} {
-      color: #{get-color($type)} !important;
+      color: #{color.get-color($type)} !important;
     }
   }
 }
