@@ -1,7 +1,0 @@
-@use 'mixin-inset' as *;
-
-@mixin inset-group ($type: default, $size: m) {
-  & > * {
-    @include inset($type, $size);
-  }
-}

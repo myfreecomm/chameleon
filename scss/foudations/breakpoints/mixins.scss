@@ -1,0 +1,101 @@
+@use 'variables' as *;
+
+@mixin _from-desktop {
+  @media screen and (min-width: $desktop-screen) {
+    @content;
+  }
+}
+
+@mixin _from-tablet {
+  @media screen and (min-width: $tablet-screen) {
+    @content;
+  }
+}
+
+@mixin _only-mobile {
+  $width: calc(#{$tablet-screen} - 1px);
+
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin _only-tablet {
+  $width: calc(#{$desktop-screen} - 1px);
+
+  @media screen and (min-width: $tablet-screen) and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin _to-tablet {
+  $width: calc(#{$desktop-screen} - 1px);
+
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media ($type, $screen) {
+  // 1. From
+
+  @if $type == from {
+    @if $screen == mobile {
+      @content;
+    }
+
+    @else if $screen == tablet {
+      @include _from-tablet {
+        @content;
+      }
+    }
+
+    @else if $screen == desktop {
+      @include _from-desktop {
+        @content;
+      }
+    }
+  }
+
+  // 2. To
+
+  @else if $type == to {
+    @if $screen == mobile {
+      @include _only-mobile {
+        @content;
+      }
+    }
+
+    @else if $screen == tablet {
+      @include _to-tablet {
+        @content;
+      }
+    }
+
+    @else if $screen == desktop {
+      @content;
+    }
+  }
+
+  // 3. Only
+
+  @else if $type == only {
+    @if $screen == mobile {
+      @include _only-mobile {
+        @content;
+      }
+    }
+
+    @else if $screen == tablet {
+      @include _only-tablet {
+        @content;
+      }
+    }
+
+    @else if $screen == desktop {
+      @include _from-desktop {
+        @content;
+      }
+    }
+  }
+}

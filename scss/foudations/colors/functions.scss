@@ -1,4 +1,4 @@
-@function get-var ($name, $variants...) {
+@function get-color ($name, $variants...) {
   $scale: unquote('');
   $interaction: unquote('');
   $inverse: unquote('');

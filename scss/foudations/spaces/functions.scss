@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+@function get-space ($size: m) {
+  @return unquote("var(--ch-space-#{$size})");
+}
+
+@function get-next-space ($size) {
+  $current-index: index($sizes, $size);
+  $next-size: nth($sizes, $current-index + 1);
+
+  @return get-space($next-size);
+}
+
+@function get-prev-space ($size) {
+  $current-index: index($sizes, $size);
+  $previous-size: nth($sizes, $current-index - 1);
+
+  @return get-space($previous-size);
+}

@@ -1,7 +1,0 @@
-@use 'variables' as *;
-
-@mixin from-desktop {
-  @media screen and (min-width: $desktop-screen) {
-    @content;
-  }
-}

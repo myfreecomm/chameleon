@@ -1,0 +1,89 @@
+@use 'variables' as *;
+
+:root {
+  // 1. Brand
+
+  --ch-color-brand:           #{$cyan};
+  --ch-color-brand-focus:     #{$cyan-dark};
+  --ch-color-brand-active:    #{$cyan-extra-dark};
+
+  // 2. Neutral
+
+  --ch-color-neutral-1:       #{$white};
+  --ch-color-neutral-2:       #{$neutral-extra-light};
+
+  // 3. Navy
+
+  --ch-color-navy:            #{$navy-extra-dark};
+
+  // 3. Support
+
+  // 3.1. Default
+
+  --ch-color-default:         #{$neutral};
+  --ch-color-default-focus:   #{$neutral-dark};
+  --ch-color-default-active:  #{$neutral-extra-dark};
+
+  // 3.2. Primary
+
+  --ch-color-primary:         #{$blue};
+  --ch-color-primary-focus:   #{$blue-dark};
+  --ch-color-primary-active:  #{$blue-extra-dark};
+
+  // 3.4. Info
+
+  --ch-color-info:            #{$cyan};
+  --ch-color-info-focus:      #{$cyan-dark};
+  --ch-color-info-active:     #{$cyan-extra-dark};
+
+  // 3.5. Warning
+
+  --ch-color-warning:         #{$yellow};
+  --ch-color-warning-focus:   #{$yellow-dark};
+  --ch-color-warning-active:  #{$yellow-extra-dark};
+
+  // 3.6. Negative
+
+  --ch-color-negative:        #{$red};
+  --ch-color-negative-focus:  #{$red-dark};
+  --ch-color-negative-active: #{$red-extra-dark};
+
+  // 3.7. Positive
+
+  --ch-color-positive:         #{$green};
+  --ch-color-positive-focus:   #{$green-dark};
+  --ch-color-positive-active:  #{$green-extra-dark};
+
+  // 4. Text
+
+  --ch-color-text-1:           #{$neutral-extra-dark};
+  --ch-color-text-2:           #{$neutral-dark};
+
+  --ch-color-text-1-inverse:   #{$white};
+  --ch-color-text-2-inverse:   #{rgba($white, 0.8)};
+
+  // 4.1. Link
+
+  --ch-color-text-link:        #{$blue};
+  --ch-color-text-link-focus:  #{$blue-light};
+  --ch-color-text-link-active: #{$blue-light};
+
+  // 5. Highlight
+
+  --ch-color-highlight:        #{$yellow-light};
+
+  // 6. Border
+
+  --ch-color-border:           #{lighten($neutral-light, 7%)};
+  --ch-color-border-focus:     #{$neutral-light};
+  --ch-color-border-active:    #{$neutral};
+
+  // 7. Menu
+
+  --ch-color-menu-text-1:      #{$navy-light};
+
+  // 8. Overlay
+
+  --ch-color-overlay:          #{rgba($black, 0.55)};
+  --ch-color-overlay-inverse:  #{rgba($white, 0.75)};
+}

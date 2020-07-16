@@ -1,10 +1,4 @@
-@forward 'function-get-next';
-@forward 'function-get-prev';
-@forward 'function-get-var';
-@forward 'mixin-inline';
-@forward 'mixin-inline-group';
-@forward 'mixin-inset';
-@forward 'mixin-inset-group';
-@forward 'mixin-stack';
-@forward 'mixin-stack-group';
+@forward 'functions';
+@forward 'mixins';
+@forward 'tokens';
 @forward 'variables';

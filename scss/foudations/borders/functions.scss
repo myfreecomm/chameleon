@@ -1,4 +1,4 @@
-@function get-var ($type: 1) {
+@function get-border-radius ($type: 1) {
   @if ($type == 0) {
     @return 0;
   }

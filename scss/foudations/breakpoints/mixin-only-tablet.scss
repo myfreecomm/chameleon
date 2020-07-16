@@ -1,9 +1,0 @@
-@use 'variables' as *;
-
-@mixin only-tablet {
-  $width: calc(#{$desktop-screen} - 1px);
-
-  @media screen and (min-width: $tablet-screen) and (max-width: $width) {
-    @content;
-  }
-}

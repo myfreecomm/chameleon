@@ -1,7 +1,0 @@
-@use 'variables' as *;
-
-@mixin from-tablet {
-  @media screen and (min-width: $tablet-screen) {
-    @content;
-  }
-}
