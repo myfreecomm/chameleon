@@ -1,0 +1,61 @@
+@use 'functions' as *;
+
+@mixin caption () {
+  font-family: get-font-family();
+  font-size: get-font-size(1);
+  font-weight: get-font-weight();
+  line-height: get-line-height();
+}
+
+@mixin code () {
+  font-family: get-font-family(code);
+  font-size: get-font-size();
+  font-weight: get-font-weight();
+  line-height: get-line-height();
+}
+
+@mixin label () {
+  font-family: get-font-family();
+  font-size: get-font-size();
+  font-weight: get-font-weight(bold);
+  line-height: get-line-height();
+}
+
+@mixin paragraph () {
+  font-family: get-font-family();
+  font-size: get-font-size();
+  font-weight: get-font-weight();
+  line-height: get-line-height();
+}
+
+@mixin title ($hierarchy) {
+  $hierarchy-sizes: (8, 7, 6, 5, 4, 3);
+  $size: nth($hierarchy-sizes, $hierarchy);
+
+  font-family: get-font-family();
+  font-size: get-font-size($size);
+  font-weight: get-font-weight(bold);
+  line-height: get-line-height();
+}
+
+@mixin subtitle ($hierarchy) {
+  $hierarchy-sizes: (4, 4, 3, 3, 2, 2);
+  $size: nth($hierarchy-sizes, $hierarchy);
+
+  font-family: get-font-family();
+  font-size: get-font-size($size);
+  font-weight: get-font-weight();
+  line-height: get-line-height();
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin wrap ($important: false) {
+  $important: if($important, unquote('!important'), unquote(''));
+
+  white-space: normal #{$important};
+}

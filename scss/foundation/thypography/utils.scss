@@ -1,0 +1,30 @@
+@use 'functions' as *;
+@use 'mixins' as *;
+
+.ch-text {
+  &--left {
+    text-align: left !important;
+  }
+
+  &--right {
+    text-align: right !important;
+  }
+
+  &--center {
+    text-align: center !important;
+  }
+
+  &--truncate {
+    @include truncate;
+  }
+
+  &--wrap {
+    @include wrap($important: true);
+  }
+
+  @each $type in (info, warning, negative, positive) {
+    &--#{$type} {
+      color: #{get-color($type)} !important;
+    }
+  }
+}
