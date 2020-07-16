@@ -1,3 +1,2 @@
-@import './abstracts';
-@import './base';
-@import './components';
+@forward 'foudations' as ch-*;
+@forward 'components' as ch-*;

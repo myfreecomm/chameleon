@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+@mixin only-tablet {
+  $width: calc(#{$breakpoint-desktop} - 1px);
+
+  @media screen and (min-width: $breakpoint-tablet) and (max-width: $width) {
+    @content;
+  }
+}
