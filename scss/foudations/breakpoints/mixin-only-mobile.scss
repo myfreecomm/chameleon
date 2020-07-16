@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 @mixin only-mobile {
-  $width: calc(#{$breakpoint-tablet} - 1px);
+  $width: calc(#{$tablet-screen} - 1px);
 
   @media screen and (max-width: $width) {
     @content;
