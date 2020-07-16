@@ -1,0 +1,7 @@
+@use 'function-get-var' as *;
+
+@mixin stack ($size: m) {
+  $space: get-var($size);
+
+  margin-bottom: $space;
+}

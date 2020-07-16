@@ -1,0 +1,14 @@
+@use 'mixin-stack' as *;
+
+@mixin stack-group ($size: m) {
+  display: flex;
+  flex-direction: column;
+
+  & > *:not(:last-child) {
+    @include stack($size);
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}

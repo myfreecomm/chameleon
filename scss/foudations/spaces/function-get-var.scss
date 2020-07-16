@@ -1,0 +1,3 @@
+@function get-var ($size: m) {
+  @return unquote("var(--ch-space-#{$size})");
+}

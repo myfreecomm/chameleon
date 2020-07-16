@@ -1,0 +1,9 @@
+@use 'variables' as *;
+@use 'function-get-var' as *;
+
+@function get-next ($size) {
+  $current-index: index($sizes, $size);
+  $next-size: nth($sizes, $current-index + 1);
+
+  @return get-var($next-size);
+}
