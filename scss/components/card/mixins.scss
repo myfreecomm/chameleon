@@ -1,0 +1,23 @@
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/borders' as borders;
+
+@mixin wrapper {
+  @include spaces.inset(default, m);
+  @include borders.border(box, colors.get-color(border));
+  @include borders.border-radius(2);
+
+  background: colors.get-color(neutral, 1);
+}
+
+@mixin header {
+  &:not(:last-child) {
+    @include spaces.stack;
+  }
+}
+
+@mixin content {
+  * + &:not(:last-child) {
+    @include spaces.stack;
+  }
+}
