@@ -1,0 +1,3 @@
+@function get-size ($size) {
+  @return unquote("var(--ch-size-#{$size})");
+}
