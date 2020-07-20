@@ -2,7 +2,7 @@
 @use '../../foundation/colors' as colors;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
-@use '../../foundation/utils/mixins' as *;
+@use '../../foundation/utils' as utils;
 
 .ch-button {
 
@@ -54,7 +54,7 @@
 
   &:disabled,
   &.is-disabled {
-    @include disabled;
+    @include utils.disabled;
 
     &:after {
       display: none;
