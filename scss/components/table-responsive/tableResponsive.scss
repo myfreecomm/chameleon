@@ -1,10 +1,17 @@
+// @use '../../foundation/borders' as borders;
+// @use '../../foundation/colors' as colors;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/utils' as utils;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
 .ch-tableResponsive {
   position: relative;
 
-  @include ch-media(to, tablet) {
-    $margin-left: calc(#{ch-get-icon-size()} + 2 * #{ch-get-space(s)});
-    $margin-right: ch-calc-box-height();
-  
+  @include breakpoints.media(to, tablet) {
+    $margin-left: calc(#{ch-get-icon-size()} + 2 * #{spaces.get-space(s)}); // @todo
+    //$margin-right: ch-calc-box-height(); // @todo
+    $margin-right: calc(#{thypography.get-font-size(2)} * #{thypography.get-font-height(1)} + 2 * #{spaces.get-space(xs)});
     // 1. Base
 
     position: relative;
@@ -33,9 +40,9 @@
     td,
     th,
     .ch-table-cell {
-      @include ch-truncate;
+      @include thypography.truncate;
 
-      max-width: #{ch-get-dimension(2)};
+      // @todo max-width: #{ch-get-dimension(2)};
     }
 
     // 6. Table cell leading and actions
@@ -48,7 +55,7 @@
       justify-content: center;
       align-items: center;
 
-      height: #{ch-calc-box-height(ch-get-text-size(2), ch-get-space())};
+      // height: #{utils.calc-box-height(thypography.get-font-size(2), spaces.get-space())};
     }
 
     .ch-table-cell--leading {
