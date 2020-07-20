@@ -14,7 +14,7 @@
   transform: translate(50%, -50%);
 }
 
-@mixin has-icon ($type: leading, $padding) {
+@mixin has-icon ($type, $padding) {
   position: relative;
 
   @if ($type == leading) {
@@ -23,7 +23,7 @@
     > .ch-icon:first-child,
     > .ch-toggle-icon,
     > .ch-spinner:first-child {
-      @include leading-icon;
+      @include leading-icon($padding);
     }
   }
 
@@ -33,7 +33,7 @@
     > .ch-icon:last-child,
     > .ch-toggle-icon,
     > .ch-spinner:last-child {
-      @include trailing-icon;
+      @include trailing-icon($padding);
     }
   }
 }
