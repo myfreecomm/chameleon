@@ -1,10 +1,18 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/borders/variables' as *;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/utils' as utils;
+
+
 .ch-avatar {
-  $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
-  $avatar-width: calc(#{$box-height} + 2 * #{$ch-border-width});
+  $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)); // @todo add $padding-bottom parameter with ch-get-space(xs) value. REVIEW! 
+  $avatar-width: calc(#{$box-height} + 2 * #{$border-width});
 
   // 1. Base
 
-  @include ch-border-radius(circle);
+  @include borders.border-radius(circle);
 
   display: block;
   position: relative;
@@ -12,7 +20,7 @@
   width: #{$avatar-width};
   height: #{$avatar-width};
   text-align: center;
-  background: #{ch-get-color(neutral, 2)};
+  background: colors.get-color(neutral, 2);
 
   &,
   &:first-letter {
@@ -27,8 +35,8 @@
   }
 
   &:first-letter {
-    color: #{ch-get-color(text, 2)};
-    font-size: #{ch-get-text-size(3)};
+    color: colors.get-color(text, 2);
+    font-size: thypography.get-font-size(3);
     line-height: #{$avatar-width};
   }
 
@@ -36,7 +44,7 @@
 
   > #{&}-image,
   > img {
-    @include ch-border-radius(circle);
+    @include borders.border-radius(circle);
 
     display: block;
     position: absolute;

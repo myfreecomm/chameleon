@@ -1,3 +1,5 @@
+@use '../../foundation/spaces' as spaces;
+
 .ch-blankslate {
 
   // 1. Base
@@ -12,7 +14,7 @@
   // 2. Content
 
   &-content {
-    @include ch-space-stack-group(xs);
+    @include spaces.stack-group(xs);
 
     text-align: center;
     align-items: center;

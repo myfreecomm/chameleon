@@ -146,26 +146,26 @@
   // 5. Negative variation
 
   &--negative {
-    color: #{ch-get-color(negative)};
+    color: #{colors.get-color(negative)};
 
     > input[type="checkbox"],
     > input[type="radio"] {
       + label:before {
-        border-color: ch-get-color(negative);
+        border-color: colors.get-color(negative);
       }
 
       &:checked + label:after {
-        background: #{ch-get-color(negative)};
+        background: colors.get-color(negative);
       }
 
       &:hover:focus + label:before,
       &:hover + label:before,
       &:focus + label:before {
-        border-color: #{ch-get-color(negative, focus)};
+        border-color: colors.get-color(negative, focus);
       }
 
       &:active + label:before {
-        border-color: #{ch-get-color(negative, active)};
+        border-color: colors.get-color(negative, active);
       }
     }
   }
@@ -175,7 +175,7 @@
   @at-root .ch-radio > input[type="radio"] {
     + label:before,
     &:checked + label:after {
-      border-radius: ch-get-border-radius(circle);
+      border-radius: borders.get-border-radius(circle);
     }
   }
 }
