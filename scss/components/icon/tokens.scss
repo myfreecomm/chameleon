@@ -1,0 +1,9 @@
+:root {
+  --ch-icon-size-unit: 1rem;
+
+  --ch-icon-size-xs:   calc(0.75 * var(--ch-icon-size-unit));
+  --ch-icon-size-s:    calc(1    * var(--ch-icon-size-unit));
+  --ch-icon-size-m:    calc(1.25 * var(--ch-icon-size-unit));
+  --ch-icon-size-l:    calc(1.75 * var(--ch-icon-size-unit));
+  --ch-icon-size-xl:   calc(2    * var(--ch-icon-size-unit));
+}

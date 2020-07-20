@@ -1,0 +1,39 @@
+@mixin leading-icon ($padding) {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  left: calc((#{$padding}) / 2);
+  transform: translate(-50%, -50%);
+}
+
+@mixin trailing-icon ($padding) {
+  position: absolute;
+  top: 50%;
+  right: calc((#{$padding}) / 2);
+  left: auto;
+  transform: translate(50%, -50%);
+}
+
+@mixin has-icon ($type: leading, $padding) {
+  position: relative;
+
+  @if ($type == leading) {
+    padding-left: #{$padding} !important;
+
+    > .ch-icon:first-child,
+    > .ch-toggle-icon,
+    > .ch-spinner:first-child {
+      @include leading-icon;
+    }
+  }
+
+  @else if ($type == trailing) {
+    padding-right: #{$padding} !important;
+
+    > .ch-icon:last-child,
+    > .ch-toggle-icon,
+    > .ch-spinner:last-child {
+      @include trailing-icon;
+    }
+  }
+}

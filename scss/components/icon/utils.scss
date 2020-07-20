@@ -1,0 +1,9 @@
+@use 'mixins' as *;
+
+.has-leadingIcon {
+  @include has-icon;
+}
+
+.has-trailingIcon {
+  @include has-icon(trailing);
+}
