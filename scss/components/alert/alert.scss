@@ -1,5 +1,5 @@
 @use '../../foundation/colors' as colors;
-@use '../card' as card with($render: false);
+@use '../card' as card;
 
 .ch-alert {
   // 1. Base
