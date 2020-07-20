@@ -1,5 +1,6 @@
+@use '../colors' as colors;
 @use 'functions' as *;
 
-@mixin shadow ($layer, $direction: top-bottom, $color: rgba($ch-color-navy-light, 0.65)) {
+@mixin shadow ($layer, $direction: top-bottom, $color: rgba(colors.$navy-light, 0.65)) {
   box-shadow: get-shadow($layer, $direction, $color);
 }
