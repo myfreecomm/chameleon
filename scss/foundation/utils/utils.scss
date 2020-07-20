@@ -5,10 +5,6 @@
 @use 'functions' as *;
 @use 'mixins' as *;
 
-$render: true !default;
-
-@if $render {
-
 *:disabled,
 *.is-disabled {
   @include disabled;
@@ -172,6 +168,4 @@ $render: true !default;
 
 .ch-paddingless {
   @include spaces.paddingless($important: true);
-}
-
 }

@@ -24,12 +24,12 @@
   @return if($outcome == unquote(''), $outcome, $prefix + $outcome);
 }
 
-@function calc-box-height ($font-size, $paddint-top, $padding-bottom, $has-border: false) {
+@function calc-box-height ($font-size, $padding-top, $padding-bottom, $has-border: false) {
   $border: if($has-border, 2 * #{borders.$border-width}, 0);
 
   @return calc(
     (#{$font-size} * #{thypography.get-line-height()}) +
-    (#{$paddint-top} + #{$padding-bottom}) +
+    (#{$padding-top} + #{$padding-bottom}) +
     (#{$border})
   );
 }
