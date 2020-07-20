@@ -1,27 +1,29 @@
-.ch-alert {
+@use '../../foundation/colors' as colors;
+@use '../card' as card with($render: false);
 
+.ch-alert {
   // 1. Base
 
-  @include ch-card;
-  @include ch-card-support;
+  @include card.wrapper;
+  @include card.support;
 
   // 1.2. Header
 
   &-header {
-    @include ch-card-header;
+    @include card.header;
   }
 
   // 1.3. Content
 
   &-content {
-    @include ch-card-content;
+    @include card.content;
   }
 
   // 2. Support variations
 
-  @each $variation in (info, warning, positive, negative) {
+  @each $variation in colors.$suport-names {
     &--#{$variation} {
-      @include ch-card-support(left, ch-get-color($variation));
+      @include card.support(left, colors.get-color($variation));
     }
   }
 }
