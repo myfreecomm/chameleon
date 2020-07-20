@@ -1,5 +1,3 @@
-// @use '../../foundation/borders' as borders;
-// @use '../../foundation/colors' as colors;
 @use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/utils' as utils;
 @use '../../foundation/spaces' as spaces;
@@ -11,7 +9,7 @@
   @include breakpoints.media(to, tablet) {
     $margin-left: calc(#{ch-get-icon-size()} + 2 * #{spaces.get-space(s)}); // @todo
     //$margin-right: ch-calc-box-height(); // @todo
-    $margin-right: calc(#{thypography.get-font-size(2)} * #{thypography.get-font-height(1)} + 2 * #{spaces.get-space(xs)});
+    $margin-right: calc(#{thypography.get-font-size(2)} * #{thypography.get-font-height(1)} + 2 * #{spaces.get-space(xs)}); // @todo MOCK to replace before line. Remove!
     // 1. Base
 
     position: relative;
