@@ -1,3 +1,7 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
+
 .ch-table {
 
   // 1. Base
@@ -70,10 +74,10 @@
     $inset-type: stretch;
     $size: s;
     $border-rule: top;
-    $border-color: ch-get-color(border);
+    $border-color: colors.get-color(border);
 
-    @include ch-space-inset($inset-type, $size);
-    @include ch-border($border-rule, $border-color);
+    @include spaces.inset($inset-type, $size);
+    @include borders.border($border-rule, $border-color);
 
     display: table-cell;
 
@@ -93,7 +97,7 @@
   // 5.2. Leading variation
 
   .ch-table-cell--leading {
-    $width: calc(#{ch-get-icon-size()} + 2 * #{ch-get-space(s)});
+    $width: calc(#{ch-get-icon-size()} + 2 * #{spaces.get-space(s)}); // @todo
 
     max-width: $width;
     width: $width;
