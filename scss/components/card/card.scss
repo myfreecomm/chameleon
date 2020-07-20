@@ -3,6 +3,10 @@
 @use '../../foundation/colors' as colors;
 @use 'mixins' as *;
 
+$render: true !default;
+
+@if $render {
+
 .ch-card {
   // 1. Base
 
@@ -67,4 +71,6 @@
   &.is-active {
     border-color: colors.get-color(primary);
   }
+}
+
 }
