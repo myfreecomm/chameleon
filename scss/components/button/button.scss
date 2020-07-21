@@ -1,21 +1,19 @@
-@use '../../foundation/borders' as borders;
-@use '../../foundation/colors' as colors;
 @use '../../foundation/spaces' as spaces;
+@use '../../foundation/borders' as borders;
 @use '../../foundation/thypography' as thypography;
+@use '../../foundation/colors' as colors;
 @use '../../foundation/utils' as utils;
+@use '../icon' as icon;
+@use 'mixins' as *;
 
 .ch-button {
+  $_suport-variations: (brand, primary, negative);
 
   // 1. Base
 
-  $inset-type: squish;
-  $size: s;
-  $border-rule: box;
-  $border-color: colors.get-color(default);
-
-  // @todo @include ch-ripple-effect(ch-get-color(neutral, 1));
-  @include spaces.inset($inset-type, $size);
-  @include borders.border($border-rule, $border-color);
+  @include ripple-effect(colors.get-color(neutral, 1));
+  @include spaces.inset(squish, s);
+  @include borders.border(box, colors.get-color(default));
   @include borders.border-radius(1);
 
   display: inline-block;
@@ -63,7 +61,7 @@
 
   // 2. Color variations
 
-  @each $type in (brand, primary, negative) {
+  @each $type in $_suport-variations {
     &--#{$type} {
       border-color: colors.get-color($type);
       background-color: colors.get-color($type);
@@ -117,7 +115,7 @@
 
     // 3.3. Color variations
 
-    @each $type in (brand, primary, negative) {
+    @each $type in $_suport-variations {
       @at-root &.ch-button--#{$type} {
         color: colors.get-color($type);
 
@@ -165,7 +163,7 @@
 
     // 4.3. Color variations
 
-    @each $type in (brand, primary, negative) {
+    @each $type in $_suport-variations {
       @at-root &.ch-button--#{$type} {
         border-color: colors.get-color($type);
 
@@ -199,7 +197,7 @@
 
     // 5.1. Color variations
 
-    @each $type in (brand, primary, negative) {
+    @each $type in $_suport-variations {
       @at-root &.ch-button--#{$type} {
         color: colors.get-color($type);
 
@@ -228,7 +226,7 @@
     &.has-leadingIcon,
     &.has-trailingIcon {
       > .ch-icon {
-        // @todo font-size: #{ch-get-icon-size(s)};
+        font-size: icon.get-icon-size(s);
       }
     }
   }
@@ -240,7 +238,7 @@
   &.has-trailingIcon {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
-      // @todo font-size: #{ch-get-icon-size(s)};
+      font-size: icon.get-icon-size(s);
     }
   }
 
@@ -249,21 +247,23 @@
   &.has-trailingIcon.ch-button--small {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
-      // @todo font-size: #{ch-get-icon-size(xs)};
+      font-size: icon.get-icon-size(xs);
     }
   }
 
   &--icon:not(.ch-button--small) {
-    // @todo @include ch-icon-only(xs);
+    @include icon.icon-only(xs);
   }
 
   &--icon.ch-button--small {
-    // @todo @include ch-icon-only(xxs);
+    @include icon.icon-only(xxs);
   }
 
   // 8. Mock Label
 
   &--mockLabel {
-    // @todo margin-top: #{ch-get-mock-text-size()};
+    margin-top: calc(
+      #{thypography.get-font-height(2)} + #{spaces.get-space(xxs)}
+    );
   }
 }

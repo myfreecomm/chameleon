@@ -1,0 +1,38 @@
+@use '../../foundation/motion' as motion;
+@use '../icon' as icon;
+
+@mixin ripple-effect ($color) {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    content: '';
+    border-radius: 50%;
+    background: $color;
+    animation: --ch-ripple-effect #{motion.$transition-duration-very-slow};
+  }
+
+  &:focus:not(:active):after {
+    display: block;
+  }
+
+  @keyframes --ch-ripple-effect {
+    0% {
+      width: icon.get-icon-size(m);
+      height: icon.get-icon-size(m);
+      opacity: 0.5;
+    }
+
+    100% {
+      width: calc(10 * #{icon.get-icon-size(m)});
+      height: calc(10 * #{icon.get-icon-size(m)});
+      opacity: 0;
+    }
+  }
+}
