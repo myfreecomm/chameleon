@@ -1,5 +1,15 @@
+@use '../../foundation/borders' as borders;
+// @use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+// @use '../../foundation/sizes' as sizes;
+// @use '../../foundation/spaces' as spaces;
+// @use '../../foundation/thypography' as thypography;
+// @use '../../foundation/utils' as utils;
+@use '../icon' as icon;
+@use 'mixins' as *;
+
 .ch-spinner {
-  $size: ch-get-icon-size(m);
+  $size: icon.get-icon-size(m);
 
   // 1. Base
 
@@ -13,9 +23,9 @@
 
   // 2. Size Variations
 
-  @each $size in $ch-icon-sizes {
+  @each $size in icon.$sizes {
     &--#{$size} {
-      $size: ch-get-icon-size($size);
+      $size: icon.get-icon-size($size);
 
       width: $size;
       height: $size;
@@ -25,7 +35,7 @@
 
   &:before,
   &:after {
-    @include ch-border-radius(circle);
+    @include borders.border-radius(circle);
 
     content: '';
     position: absolute;
@@ -37,14 +47,14 @@
   }
 
   &:before {
-    @include ch-border(box, ch-get-color(default), solid, 3px);
+    @include borders.border(box, colors.get-color(default), solid, 3px);
     opacity: 0.3;
   }
 
   &:after {
-    @include ch-border(box, transparent, solid, 3px);
-    @include ch-border(top, ch-get-color(default), solid, 3px);
-    @include ch-mixin-spin-effect;
+    @include borders.border(box, transparent, solid, 3px);
+    @include borders.border(top, colors.get-color(default), solid, 3px);
+    @include spin-effect; // @todo review
   }
 
   // 3. Color Variations
@@ -52,12 +62,12 @@
   @each $type in (brand, primary, positive, warning, negative) {
     &--#{$type} {
       &:before {
-        @include ch-border(box, ch-get-color($type), solid, 3px);
+        @include borders.border(box, colors.get-color($type), solid, 3px);
         opacity: 0.3;
       }
 
       &:after {
-        @include ch-border(top, ch-get-color($type), solid, 3px);
+        @include borders.border(top, colors.get-color($type), solid, 3px);
       }
     }
   }
@@ -66,12 +76,12 @@
 
   &--inverse {
     &:before {
-      @include ch-border(box, ch-get-color(neutral, 1), solid, 3px);
+      @include borders.border(box, colors.get-color(neutral, 1), solid, 3px);
       opacity: 0.3;
     }
 
     &:after {
-      @include ch-border(top, ch-get-color(neutral, 1), solid, 3px);
+      @include borders.border(top, colors.get-color(neutral, 1), solid, 3px);
     }
   }
 }
