@@ -3,6 +3,7 @@
 @use '../../foundation/depth' as depth;
 @use '../../foundation/motion' as motion;
 @use '../../foundation/spaces' as spaces;
+@use '../../foundation/sizes' as sizes;
 @use '../../foundation/utils' as utils;
 @use '../card' as card;
 @use 'variables' as *;
@@ -128,13 +129,13 @@
 
     .ch-template-nav:not(.is-expanded) + .ch-template-content & {
       &--aside {
-        max-width: calc(100% - #{ch-get-dimension(1)}); // @todo
+        max-width: calc(100% - #{sizes.get-size(1)});
       }
     }
 
     .ch-template-nav.is-expanded + .ch-template-content & {
       &--aside {
-        max-width: calc(100% - #{ch-get-dimension(2)}); // @todo
+        max-width: calc(100% - #{sizes.get-size(2)});
       }
     }
   }

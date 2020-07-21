@@ -1,15 +1,17 @@
 @use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/sizes' as sizes;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
+@use '../../foundation/utils' as utils;
+@use '../icon' as icon;
 
 .ch-tableResponsive {
   position: relative;
 
   @include breakpoints.media(to, tablet) {
-    $margin-left: calc(#{ch-get-icon-size()} + 2 * #{spaces.get-space(s)}); // @todo
-    //$margin-right: ch-calc-box-height(); // @todo
-    $margin-right: calc(#{thypography.get-font-size(2)} * #{thypography.get-font-height(1)} + 2 * #{spaces.get-space(xs)}); // @todo MOCK to replace before line. Remove!
+    $margin-left: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)}); // @todo review default value
+    $margin-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)); // @todo review default parameters
+
     // 1. Base
 
     position: relative;
@@ -40,7 +42,7 @@
     .ch-table-cell {
       @include thypography.truncate;
 
-      max-width: #{ch-get-dimension(2)}; // @todo
+      max-width: #{sizes.get-size(2)}; // @todo
     }
 
     // 6. Table cell leading and actions
