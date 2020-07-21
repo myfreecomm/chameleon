@@ -3,6 +3,7 @@
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
 @use '../../foundation/utils' as utils;
+@use '../icon' as icon;
 
 .ch-button {
 
@@ -228,7 +229,7 @@
     &.has-leadingIcon,
     &.has-trailingIcon {
       > .ch-icon {
-        // @todo font-size: #{ch-get-icon-size(s)};
+        font-size: icon.get-icon-size(s);
       }
     }
   }
@@ -240,7 +241,7 @@
   &.has-trailingIcon {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
-      // @todo font-size: #{ch-get-icon-size(s)};
+      font-size: icon.get-icon-size(s);
     }
   }
 
@@ -249,21 +250,21 @@
   &.has-trailingIcon.ch-button--small {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
-      // @todo font-size: #{ch-get-icon-size(xs)};
+      font-size: icon.get-icon-size(xs);
     }
   }
 
   &--icon:not(.ch-button--small) {
-    // @todo @include ch-icon-only(xs);
+    @include icon.icon-only(xs);
   }
 
   &--icon.ch-button--small {
-    // @todo @include ch-icon-only(xxs);
+    @include icon.icon-only(xxs);
   }
 
   // 8. Mock Label
 
   &--mockLabel {
-    // @todo margin-top: #{ch-get-mock-text-size()};
+    margin-top: thypography.get-mock-text-size();
   }
 }
