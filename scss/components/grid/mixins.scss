@@ -1,19 +1,19 @@
 @use '../../foundation/spaces' as spaces;
 
-@mixin grid-column($columns-number: 1, $start: 0) {
+@mixin wrapper ($columns-number, $gutter: spaces.get-space(m)) {
+  display: grid;
+  grid-template-columns: repeat(#{$columns-number}, 1fr);
+  grid-column-gap: $gutter;
+  grid-row-gap: $gutter;
+}
+
+@mixin column ($columns-number, $start: 0) {
   @if $start == 0 {
-    grid-column-end: span $columns-number;
+    grid-column-end: span #{$columns-number};
   }
 
   @else {
     grid-column-start: $start;
-    grid-column-end: span $columns-number;
+    grid-column-end: span #{$columns-number};
   }
-}
-
-@mixin grid($columns-number: $ch-mobile-columns-number, $gutter: m) {
-  display: grid;
-  grid-template-columns: repeat($columns-number, 1fr);
-  grid-column-gap: spaces.get-space($gutter);
-  grid-row-gap: spaces.get-space($gutter);
 }

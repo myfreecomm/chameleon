@@ -1,2 +1,9 @@
+@use '../../foundation/spaces' as spaces;
+
 $columns-number: (mobile: 4, tablet: 8, desktop: 12);
-$columns-gutter: (mobile: m, tablet: m, desktop: l);
+
+$columns-gutter: (
+  mobile: spaces.get-space(m),
+  tablet: spaces.get-space(m),
+  desktop: spaces.get-space(l)
+);

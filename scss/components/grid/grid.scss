@@ -1,12 +1,5 @@
-// @use '../../foundation/borders' as borders;
 @use '../../foundation/breakpoints' as breakpoints;
-// @use '../../foundation/colors' as colors;
-// @use '../../foundation/depth' as depth;
-// @use '../../foundation/spaces' as spaces;
-// @use '../../foundation/thypography' as thypography;
 @use '../../foundation/utils' as utils;
-// @use '../icon' as icon;
-// @use '../input' as input;
 @use 'mixins' as *;
 @use 'variables' as *;
 
@@ -14,33 +7,33 @@
   width: 100%;
 
   > * {
-    @include grid-column(1);
+    @include column(1);
 
     min-width: 0;
   }
 
   @each $screen in breakpoints.$screens {
-    @include breakpoints.media (from, $screen) {
-      $columns-number: map-get($columns-number, $screen);
+    @include breakpoints.media(from, $screen) {
+      $column: map-get($columns-number, $screen);
       $gutter: map-get($columns-gutter, $screen);
 
       @at-root & {
-        @include grid($columns-number, $gutter);
+        @include wrapper($column, $gutter);
       }
 
-      @for $i from 1 through $columns-number {
+      @for $i from 1 through $column {
         $suffix: utils.generate-variation(($i, $screen), (undefined, mobile));
         $path: #{&}#{&}#{$suffix};
 
         @at-root #{$path} {
-          @include grid($i, $gutter);
+          @include wrapper($i, $gutter);
         }
 
         $column-suffix: utils.generate-variation(($i, $screen), (1, mobile));
         $start-suffix: utils.generate-variation((start#{$i}, $screen), (undefined, mobile));
 
         > #{&}-column#{$column-suffix} {
-          @include grid-column($i);
+          @include column($i);
         }
 
         > #{&}-column#{$start-suffix} {
@@ -48,5 +41,5 @@
         }
       } // @for $i from 1 through $columns-number
     } // @include breakpoints.media(from, $screen)
-  } // @each $screen in $ch-breakpoint-screens
+  } // @each $screen in breakpoints.$screens
 }
