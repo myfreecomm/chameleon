@@ -1,16 +1,21 @@
+@use '../../foundation/motion' as motion;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
+
 .ch-overlay {
-  @include ch-transition(unquote('visibility, opacity'));
+  @include motion.transition(unquote('visibility, opacity'));
 
   // 1. Base
 
   position: fixed;
   top: 0;
   left: 0;
-  z-index: ch-get-z-index(5, 1);
+  z-index: depth.get-z-index(5);
 
   width: 100%;
   height: 100%;
-  background-color: ch-get-color(overlay);
+  background-color: colors.get-color(overlay);
 
   // 2. Visible state
 
@@ -27,7 +32,7 @@
   // 3. Content
 
   &-content {
-    @include ch-space-inset();
+    @include spaces.inset();
 
     display: flex;
     align-items: center;
@@ -46,6 +51,6 @@
   // 6. Inverse variation
 
   &--inverse {
-    background-color: ch-get-color(overlay, inverse);
+    background-color: colors.get-color(overlay, inverse);
   }
 }
