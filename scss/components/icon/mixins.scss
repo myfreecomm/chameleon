@@ -43,9 +43,8 @@
   }
 }
 
-// @todo verify function necessary
 @mixin icon-only($size) {
-  $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space($size), spaces.get-space($size)); // @todo Verify  add parameter
+  $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space($size), spaces.get-space($size));
   $size: calc(#{$box-height} + 2 * #{$border-width});
 
   @include spaces.paddingless(true);
@@ -67,5 +66,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@mixin mask-icon ($image, $option: 'complete') {
+  mask-image: url(#{$image});
+  -webkit-mask-image: url(#{$image});
+  
+  @if ($option != 'only-mask') {
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-color: #{ch-get-color(text, 2)};
   }
 }

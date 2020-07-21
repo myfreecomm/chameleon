@@ -5,8 +5,6 @@
 @use '../../foundation/utils/mixins' as *;
 @use '../icon' as icon;
 
-// @todo REVIEW default icon-size definition: icon.get-icon-size(m)
-
 .ch-checkbox,
 .ch-radio {
 

@@ -7,7 +7,7 @@
 
 
 .ch-avatar {
-  $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)); // @todo add $padding-bottom parameter with ch-get-space(xs) value. REVIEW! 
+  $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
   $avatar-width: calc(#{$box-height} + 2 * #{$border-width});
 
   // 1. Base

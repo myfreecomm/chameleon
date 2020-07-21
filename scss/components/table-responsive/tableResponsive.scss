@@ -9,8 +9,8 @@
   position: relative;
 
   @include breakpoints.media(to, tablet) {
-    $margin-left: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)}); // @todo review default value
-    $margin-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)); // @todo review default parameters
+    $margin-left: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)});
+    $margin-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
 
     // 1. Base
 
@@ -42,7 +42,7 @@
     .ch-table-cell {
       @include thypography.truncate;
 
-      max-width: #{sizes.get-size(2)}; // @todo
+      max-width: #{sizes.get-size(2)};
     }
 
     // 6. Table cell leading and actions

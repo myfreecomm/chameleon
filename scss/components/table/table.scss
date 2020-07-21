@@ -98,7 +98,7 @@
   // 5.2. Leading variation
 
   .ch-table-cell--leading {
-    $width: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)}); // @todo review default parameter
+    $width: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)});
 
     max-width: $width;
     width: $width;
