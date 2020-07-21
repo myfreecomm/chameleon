@@ -1,3 +1,11 @@
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/utils' as utils;
+@use 'mixins' as *;
+@use '../icon' as icon;
+
 /***********************
 STYLES DIRECTLY ON INPUT
 ************************/
@@ -8,7 +16,7 @@ textarea.ch-textarea {
 
   // 1. Base
 
-  @include ch-input;
+  @include input;
 
   // 2. Fluid variation
   &--fluid {
@@ -18,13 +26,13 @@ textarea.ch-textarea {
    // 2. Small variation
 
   &--small {
-    @include ch-input(xs);
+    @include input(xs);
   }
 
   // 4. Negative variation
 
   &--negative {
-    @include ch-input-negative;
+    @include input-negative;
   }
 }
 
@@ -37,7 +45,7 @@ STYLES ON INPUT CONTAINER
   // 1. Base
 
   &:not(input) > input {
-    @include ch-input;
+    @include input;
   }
 
   // 2. Fluid variation
@@ -50,7 +58,7 @@ STYLES ON INPUT CONTAINER
   // 3. Negative variation
 
   &--negative:not(input) > input {
-    @include ch-input-negative;
+    @include input-negative;
   }
 
   // 4. Disabled variation
@@ -63,38 +71,38 @@ STYLES ON INPUT CONTAINER
 
   &.has-leadingIcon,
   &.has-trailingIcon {
-    @include ch-paddingless(true);
+    @include spaces.paddingless(true);
     position: relative;
 
     > .ch-icon,
     > .ch-spinner {
-      z-index: #{ch-get-z-index(1, 1)};
+      z-index: #{depth.get-z-index(1, 1)};
     }
 
     > .ch-icon {
-      font-size: #{ch-get-icon-size(s)};
+      font-size: #{icon.get-icon-size(s)};
     }
   }
 
   &.has-leadingIcon {
     > input {
-      @include ch-has-icon;
+      @include icon.has-icon(leading, utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)));
     }
 
     > .ch-icon:first-child,
     > .ch-spinner:first-child {
-      @include ch-is-leading-icon;
+      @include icon.leading-icon(utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)));
     }
   }
 
   &.has-trailingIcon {
     > input {
-      @include ch-has-icon(right);
+      @include icon.has-icon(trailing, utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)));
     }
 
     > .ch-icon:last-child,
     > .ch-spinner:last-child {
-      @include ch-is-trailing-icon;
+      @include icon.trailing-icon(utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs)));
     }
   }
 
@@ -102,7 +110,7 @@ STYLES ON INPUT CONTAINER
 
   &--small {
     &:not(input) > input {
-      @include ch-input(xs);
+      @include input(xs);
     }
 
     // 5.1 Icons variation
@@ -110,12 +118,12 @@ STYLES ON INPUT CONTAINER
     &.has-leadingIcon,
     &.has-trailingIcon {
       > .ch-icon {
-        font-size: #{ch-get-icon-size(xs)};
+        font-size: #{icon.get-icon-size(xs)};
       }
 
       > .ch-spinner {
-        width: #{ch-get-icon-size(s)};
-        height: #{ch-get-icon-size(s)};
+        width: #{icon.get-icon-size(s)};
+        height: #{icon.get-icon-size(s)};
       }
     }
   }
@@ -125,7 +133,7 @@ STYLES ON INPUT CONTAINER
   @at-root {
     .is-disabled .ch-input,
     .is-readonly .ch-input {
-      background-color: ch-get-color(neutral, 2);
+      background-color: colors.get-color(neutral, 2);
     }
   }
 }
