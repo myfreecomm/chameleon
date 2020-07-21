@@ -1,3 +1,3 @@
-@import './steps.scss';
-@import './steps-item.scss';
-@import './steps-item-counter.scss';
+@forward 'steps';
+@forward 'steps-item';
+@forward 'steps-item-counter';
