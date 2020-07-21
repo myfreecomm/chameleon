@@ -1,19 +1,30 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/utils' as utils;
+@use '../icon' as icon;
+
 .ch-template-header {
-  $button-box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
-  $icon-button-width: calc(#{$button-box-height} + 2 * #{$ch-border-width});
-  $nav-max-width: calc(3 * #{$icon-button-width} + 2 * #{ch-get-space(xxs)});
+  $button-box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+  $icon-button-width: calc(#{$button-box-height} + 2 * #{borders.$border-width});
+  $nav-max-width: calc(3 * #{$icon-button-width} + 2 * #{spaces.get-space(xxs)});
 
   // 1. Base
-  @include ch-transition(unquote('box-shadow, margin-left, transform'));
+  @include motion.transition(unquote('box-shadow, margin-left, transform'));
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  height: #{ch-get-dimension(1)};
-  padding-right: #{ch-get-space(l)};
-  padding-left: #{ch-get-space(l)};
-  background: #{ch-get-color(neutral, 1)};
+  height: #{sizes.get-size(1)};
+  padding-right: #{spaces.get-space(l)};
+  padding-left: #{spaces.get-space(l)};
+  background: #{colors.get-color(neutral, 1)};
 
   &,
   > * {
@@ -23,26 +34,26 @@
   // 2. Secondary
 
   > *:not(.ch-template-header-nav) {
-    @include ch-media(from, desktop) {
+    @include breakpoints.media(from, desktop) {
       max-width: 50%;
     }
 
     order: 1;
 
     max-width: calc(100% - #{$nav-max-width});
-    padding-right: #{ch-get-space(s)};
+    padding-right: #{spaces.get-space(s)};
 
     // 2.1. Breadcrumbs item
 
     .ch-breadcrumbs-item:last-child {
-      @include ch-truncate;
+      @include thypography.truncate;
     }
   }
 
   // 3. Nav
 
   > .ch-template-header-nav {
-    @include ch-media(from, desktop) {
+    @include breakpoints.media(from, desktop) {
       max-width: 50%;
 
       > .ch-template-header-nav-toggle {
@@ -50,7 +61,7 @@
       }
     }
 
-    @include ch-space-inline-group(left, xxs);
+    @include spaces.inline-group(left, xxs);
 
     order: 2;
     flex-wrap: nowrap;
@@ -61,16 +72,16 @@
     margin-left: auto;
 
     > .ch-template-header-nav-toggle {
-      @include ch-icon-only(xs);
+      @include icon.icon-only(xs);
 
       width: $icon-button-width;
       height: $icon-button-width;
 
       > .ch-icon {
-        @include ch-mask-icon($ch-icon-angle-double-left);
+        @include icon.mask-icon(icon.$icon-angle-double-left);
 
-        height: #{ch-get-icon-size()};
-        background-color: #{ch-get-color(text, 2)};
+        height: icon.get-icon-size(m);
+        background-color: colors.get-color(text, 2);
       }
 
       &:hover:focus,
@@ -78,13 +89,13 @@
       &:focus,
       &:active {
         > .ch-icon {
-          background-color: #{ch-get-color(text, 1)};
+          background-color: colors.get-color(text, 1);
         }
       }
     }
 
     &:not(.is-expanded) {
-      @include ch-media(to, tablet) {
+      @include breakpoints.media(to, tablet) {
         > .ch-button--icon:nth-child(n+4),
         > *:not(.ch-button--icon):not(.ch-template-header-nav-toggle) {
           display: none;
@@ -95,17 +106,17 @@
     // 3.2. Expanded state
 
     &.is-expanded {
-      @include ch-media(to, tablet) {
+      @include breakpoints.media(to, tablet) {
         overflow-x: auto;
         max-width: 100%;
-        margin-left: calc(#{$icon-button-width} + #{ch-get-space(xxs)});
+        margin-left: calc(#{$icon-button-width} + #{spaces.get-space(xxs)});
 
         > .ch-template-header-nav-toggle {
           position: fixed;
-          margin-left: calc(-1 * (#{$icon-button-width} + #{ch-get-space(xxs)}));
+          margin-left: calc(-1 * (#{$icon-button-width} + #{spaces.get-space(xxs)}));
 
           > .ch-icon {
-            @include ch-mask-icon($ch-icon-angle-double-right, 'only-mask');
+            @include icon.mask-icon(icon.$icon-angle-double-right, 'only-mask');
           }
         }
 
@@ -119,17 +130,17 @@
   // 3.3. Sticky state
 
   &.is-sticky {
-    @include ch-shadow(2, top-bottom);
+    @include depth.shadow(2, top-bottom);
 
     position: sticky;
     top: 0;
-    z-index: #{ch-get-z-index(2)};
+    z-index: #{depth.get-z-index(2)};
   }
 
   // 3.4. Hidden state
 
   &.is-hidden {
-    @include ch-media(to, mobile) {
+    @include breakpoints.media(to, mobile) {
       transform: translateY(-100%);
     }
   }

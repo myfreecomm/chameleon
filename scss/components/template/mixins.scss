@@ -1,4 +1,7 @@
-@mixin ch-menu-horizontal {
+@use '../../foundation/spaces' as spaces;
+@use '../icon' as icon;
+
+@mixin menu-horizontal {
   display: flex;
   flex-wrap: nowrap;
   align-items: stretch;
@@ -25,17 +28,17 @@
   > .ch-menu-item.is-active:before,
   > .ch-menu-submenu > .ch-menu-item.is-active:before {
     top: auto;
-    bottom: ch-get-space(xxs);
+    bottom: spaces.get-space(xxs);
     left: 50%;
     transform: translate(-50%, 0);
 
-    width: calc(100% - 2 * #{ch-get-space(xs)});
-    min-width: ch-get-icon-size(m);
-    height: ch-get-space(xxs);
+    width: calc(100% - 2 * #{spaces.get-space(xs)});
+    min-width: icon.get-icon-size(m);
+    height: spaces.get-space(xxs);
   }
 
   > .ch-menu-item.ch-menu-item--icon.is-active:before,
   > .ch-menu-submenu > .ch-menu-item.ch-menu-item--icon.is-active:before {
-    width: #{ch-get-icon-size(m)};
+    width: icon.get-icon-size(m);
   }
 }

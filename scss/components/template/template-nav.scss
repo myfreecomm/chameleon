@@ -1,24 +1,30 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+
 .ch-template-nav {
 
   // 1. Base
 
-  @include ch-transition(unquote('width, height, bottom'));
+  @include motion.transition(unquote('width, height, bottom'));
 
   display: flex;
-  z-index: #{ch-get-z-index(2, 3)};
+  z-index: depth.get-z-index(2, 3);
   justify-content: space-between;
   position: fixed;
   bottom: 0;
   left: 0;
 
   width: 100%;
-  height: #{ch-get-dimension(1)};
-  background-color: #{ch-get-color(navy)};
+  height: sizes.get-size(1);
+  background-color: colors.get-color(navy);
 
   // 2. Open state
 
   &.is-open {
-    z-index: #{ch-get-z-index(3)};
+    z-index: depth.get-z-index(3);
     flex-direction: column;
 
     height: 100%;
@@ -27,7 +33,7 @@
   // 3. Hide state
 
   &.is-hidden {
-    @include ch-media(from, tablet) {
+    @include breakpoints.media(from, tablet) {
       bottom: 0;
     }
 
@@ -36,38 +42,38 @@
 
   // 4. From tablet
 
-  @include ch-media(from, tablet) {
+  @include breakpoints.media(from, tablet) {
     position: fixed;
-    z-index: #{ch-get-z-index(3)};
+    z-index: depth.get-z-index(3);
     flex-direction: column;
     top: 0;
     left: 0;
 
     overflow: hidden;
-    width: #{ch-get-dimension(1)};
+    width: sizes.get-size(1);
     height: 100vh;
 
     &.is-expanded,
     &.is-hovered {
-      z-index: #{ch-get-z-index(3)};
+      z-index: depth.get-z-index(3);
 
-      width: #{ch-get-dimension(2)};
+      width: sizes.get-size(2);
     }
 
     &.is-hovered {
       &:not(.is-expanded) {
-        @include ch-shadow(3, right-left);
+        @include depth.shadow(3, right-left);
       }
     }
 
     + .ch-template-header,
     + .ch-template-header ~ .ch-template-content {
-      margin-left: #{ch-get-dimension(1)};
+      margin-left: sizes.get-size(1);
     }
 
     &.is-expanded + .ch-template-header,
     &.is-expanded + .ch-template-header ~ .ch-template-content {
-      margin-left: #{ch-get-dimension(2)};
+      margin-left: sizes.get-size(2);
     }
   }
 }
