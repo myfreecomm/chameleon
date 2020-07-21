@@ -1,12 +1,17 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/thypography' as thypography;
+
 .ch-highlight {
   position: relative;
-  z-index: ch-get-z-index(1);
+  z-index: depth.get-z-index(1);
 
-  font-weight: ch-get-text-weight(bold);
+  font-weight: thypography.get-font-weight(bold);
   text-decoration: underline;
 
   &:after {
-    @include ch-border-radius();
+    @include borders.border-radius();
 
     display: block;
     position: absolute;
@@ -17,7 +22,7 @@
     content: '';
     width: 100%;
     height: 100%;
-    background: ch-get-color(highlight);
-    box-shadow: 0 0 0 #{ch-get-border-radius()} ch-get-color(highlight);
+    background: colors.get-color(highlight);
+    box-shadow: 0 0 0 #{borders.get-border-radius()} colors.get-color(highlight);
   }
 }
