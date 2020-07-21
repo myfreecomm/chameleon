@@ -1,3 +1,8 @@
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/borders' as borders;
+@use '../../foundation/utils' as utils;
+
 @mixin leading-icon ($padding) {
   position: absolute;
   top: 50%;
@@ -35,5 +40,36 @@
     > .ch-spinner:last-child {
       @include trailing-icon($padding);
     }
+  }
+}
+
+@mixin icon-only ($size) {
+  $box-height: utils.calc-box-height(
+    thypography.get-font-size(2),
+    spaces.get-space($size),
+    spaces.get-space($size)
+  );
+
+  $size: calc(#{$box-height} + 2 * #{borders.$border-width});
+
+  @include spaces.paddingless(true);
+
+  position: relative;
+
+  width: $size;
+  min-width: $size;
+  min-height: $size;
+
+  > *:not(.ch-icon):not(.ch-avatar) {
+    display: none;
+  }
+
+  > .ch-icon:first-child,
+  > .ch-avatar {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
