@@ -1,9 +1,10 @@
 @use '../../foundation/colors' as colors;
+@use '../../foundation/sizes' as sizes;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
 
 *:not(img).ch-brand {
-  $brand-icon-size: calc(#{ch-get-dimension(1)} - 2 * #{spaces.get-space(s)}); // @todo
+  $brand-icon-size: calc(#{sizes.get-size(1)} - 2 * #{spaces.get-space(s)});
 
   // 1. Base
 

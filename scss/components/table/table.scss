@@ -1,6 +1,7 @@
 @use '../../foundation/borders' as borders;
 @use '../../foundation/colors' as colors;
 @use '../../foundation/spaces' as spaces;
+@use '../icon' as icon;
 
 .ch-table {
 
@@ -97,7 +98,7 @@
   // 5.2. Leading variation
 
   .ch-table-cell--leading {
-    $width: calc(#{ch-get-icon-size()} + 2 * #{spaces.get-space(s)}); // @todo
+    $width: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)});
 
     max-width: $width;
     width: $width;

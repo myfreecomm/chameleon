@@ -1,3 +1,4 @@
+@use '../../foundation/sizes' as sizes;
 @use '../../foundation/spaces' as spaces;
 
 .ch-blankslate {
@@ -22,7 +23,7 @@
     // 2.1. Image
 
     &-image {
-      width: ch-get-dimension(2);
+      width: sizes.get-size(2);
     }
   }
 }

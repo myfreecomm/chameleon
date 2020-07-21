@@ -1,3 +1,5 @@
+@use '../spaces' as spaces;
+
 @function get-font-size ($size: 2) {
   @return unquote("var(--ch-font-size-#{$size})");
 }
@@ -26,4 +28,9 @@
 
 @function get-font-weight ($weight: regular) {
   @return unquote("var(--ch-font-weight-#{$weight})");
+}
+
+// @todo - review this function
+@function get-mock-text-size ($text-size: 2, $space-size: xxs) {
+  @return calc(#{get-font-size($text-size)} * #{get-line-height()} + #{spaces.get-space($space-size)});
 }
