@@ -1,0 +1,44 @@
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../icon' as icon;
+
+.ch-fileUpload {
+  // 1. Base
+
+  @include spaces.stack-group(s);
+  @include spaces.inset(default, s);
+  @include borders.border(box, colors.get-color(neutral, 2));
+  @include borders.border-radius(1);
+
+  cursor: pointer;
+  text-align: center;
+  background: colors.get-color(neutral, 2);
+  width: 100%;
+
+  // 2. Icon
+
+  & &-icon {
+    color: inherit;
+    font-size: icon.get-icon-size(xl);
+    width: auto;
+  }
+
+  // 3. Input
+
+  &-input {
+    display: none
+  }
+
+  // 4. Negative variation
+
+  &--negative {
+    &,
+    *,
+    * > .ch-title-sub,
+    .ch-title,
+    .ch-title > .ch-title-sub {
+      color: colors.get-color(negative);
+    }
+  }
+}
