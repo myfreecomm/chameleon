@@ -1,3 +1,13 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/utils' as utils;
+@use '../icon' as icon;
+@use '../input' as input;
+
 .ch-select {
 
   // 1. Base
@@ -13,30 +23,30 @@
 
   &:not(.ch-dropdown),
   & > .ch-dropdown-toggle {
-    @include ch-input;
+    @include input.input;
   }
 
   &:not(.is-readonly) > .ch-dropdown-toggle,
   &:not(.ch-dropdown):not([readonly]):not(.is-readonly):not([multiple]) {
-    $icon-right: calc(#{ch-calc-box-height()} / 2 - #{ch-get-icon-size()} / 2);
+    $icon-right: calc(#{utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs))} / 2 - #{icon.get-icon-size(m)} / 2);
 
-    padding-right: ch-calc-box-height();
-    background-image: url('#{$ch-icon-angle-down}');
+    padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+    background-image: url('#{icon.$icon-angle-down}');
     background-repeat: no-repeat;
     background-position: right #{$icon-right} center;
-    background-size: #{ch-get-icon-size()} #{ch-get-icon-size()};
+    background-size: #{icon.get-icon-size(m)} #{icon.get-icon-size(m)};
 
     &.has-clear {
-      padding-right: calc(#{ch-calc-box-height()} + #{ch-get-icon-size()});
+      padding-right: calc(#{utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs))} + #{icon.get-icon-size(m)});
     }
   }
 
   > .ch-dropdown-toggle {
-    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
+    $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
 
-    @include ch-truncate;
+    @include thypography.truncate;
 
-    min-height: calc(#{$box-height} + 2 * #{$ch-border-width});
+    min-height: calc(#{$box-height} + 2 * #{borders.$border-width});
 
     &.has-options {
       display: flex;
@@ -46,59 +56,59 @@
       padding-bottom: 0;
 
       > .ch-tag {
-        z-index: ch-get-z-index(1);
+        z-index: depth.get-z-index(1);
 
-        color: ch-get-color(text, 1);
-        margin-right: ch-get-space(xs);
-        margin-bottom: ch-get-space(xs);
+        color: colors.get-color(text, 1);
+        margin-right: spaces.get-space(xs);
+        margin-bottom: spaces.get-space(xs);
         text-transform: initial;
-        box-shadow: 0 0 0 #{$ch-border-width} #{ch-get-color(border)};
+        box-shadow: 0 0 0 #{borders.$border-width} #{colors.get-color(border)};
       }
     }
   }
 
   > .ch-overlay.is-visible + .ch-dropdown-toggle {
-    border-color: ch-get-color(primary, focus);
+    border-color: colors.get-color(primary, focus);
   }
 
   // 3. Clear
 
   .ch-select-clear {
-    @include ch-mask-icon($ch-icon-times);
+    @include icon.mask-icon(icon.$icon-times);
 
     display: block;
     position: absolute;
     top: 50%;
-    right: ch-calc-box-height();
+    right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
     transform: translateY(-50%);
 
     cursor: pointer;
-    width: ch-get-icon-size();
-    height: ch-get-icon-size();
-    mask-size: calc(#{ch-get-icon-size()} / 2);
-    background-color: ch-get-color(text, 2);
+    width: icon.get-icon-size(m);
+    height: icon.get-icon-size(m);
+    mask-size: calc(#{icon.get-icon-size(m)} / 2);
+    background-color: colors.get-color(text, 2);
     border: 0;
 
     &:hover:focus,
     &:hover,
     &:focus,
     &:active {
-      background-color: ch-get-color(text, 1);
+      background-color: colors.get-color(text, 1);
     }
   }
 
   // 4. Options
 
   > .ch-overlay {
-    @include ch-media(from, desktop) {
-      z-index: ch-get-z-index(1, 99);
+    @include breakpoints.media(from, desktop) {
+      z-index: depth.get-z-index(1, 99);
 
       width: 100%;
     }
 
     > .ch-card {
-      @include ch-paddingless;
-      @include ch-media(from, desktop) {
+      @include spaces.paddingless;
+      @include breakpoints.media(from, desktop) {
         max-height: 50vh;
       }
 
@@ -107,7 +117,7 @@
       flex-wrap: nowrap;
 
       > .ch-card-content {
-        @include ch-paddingless;
+        @include spaces.paddingless;
 
         flex: 1;
         overflow-y: auto;
@@ -115,12 +125,12 @@
 
       > .ch-card-header,
       > .ch-card-footer {
-        @include ch-media(to, tablet) {
-          @include ch-space-inset();
+        @include breakpoints.media(to, tablet) {
+          @include spaces.inset();
         }
 
-        @include ch-media(from, desktop) {
-          @include ch-space-inset(default, s);
+        @include breakpoints.media(from, desktop) {
+          @include spaces.inset(default, s);
         }
       }
 
@@ -131,27 +141,27 @@
       }
 
       > .ch-card-footer {
-        @include ch-media(from, desktop) {
+        @include breakpoints.media(from, desktop) {
           display: none;
         }
       }
 
       > .ch-card-header > .ch-search,
       > .ch-card-footer > .ch-button {
-        @include ch-fluid;
+        @include utils.fluid;
 
         display: block;
       }
 
       .ch-menu-item,
       .ch-menu-group > .ch-title {
-        @include ch-media(from, desktop) {
-          @include ch-space-inset(squish, s);
+        @include breakpoints.media(from, desktop) {
+          @include spaces.inset(squish, s);
         }
       }
 
       .ch-menu-item {
-        font-weight: ch-get-text-weight();
+        font-weight: thypography.get-font-weight();
 
         &:before {
           content: none;
@@ -162,29 +172,29 @@
         }
 
         &.is-active {
-          color: ch-get-color(text, inverse, 2);
-          background: ch-get-color(primary);
+          color: colors.get-color(text, inverse, 2);
+          background: colors.get-color(primary);
 
           &:hover:focus,
           &:hover,
           &:focus,
           &:active {
-            background: ch-get-color(primary, focus);
+            background: colors.get-color(primary, focus);
           }
 
         }
       }
 
       .ch-menu-group .ch-menu-item {
-        @include ch-media(from, desktop) {
-          padding-left: ch-get-space(l);
+        @include breakpoints.media(from, desktop) {
+          padding-left: spaces.get-space(l);
         }
       }
     }
   }
 
   &--multiple .ch-menu-item.is-active {
-    @include ch-media(from, desktop) {
+    @include breakpoints.media(from, desktop) {
       display: none
     }
   }
@@ -192,8 +202,8 @@
   // 5. Blankslate
 
   .ch-blankslate-content {
-    @include ch-fluid;
-    @include ch-space-inset;
+    @include utils.fluid;
+    @include spaces.inset;
   }
 
   .ch-card-header + .ch-card-content .ch-blankslate-content {
@@ -208,13 +218,13 @@
   &:not(.ch-dropdown)[disabled],
   &:not(.ch-dropdown).is-disabled,
   &.is-disabled > .ch-dropdown-toggle {
-    background-color: ch-get-color(neutral, 2);
+    background-color: colors.get-color(neutral, 2);
   }
 
   @at-root *.is-disabled {
     .ch-select:not(.ch-dropdown),
     .ch-select.ch-dropdown > .ch-dropdown-toggle {
-      background-color: ch-get-color(neutral, 2);
+      background-color: colors.get-color(neutral, 2);
     }
   }
 
@@ -228,7 +238,7 @@
 
   &.is-readonly > .ch-dropdown-toggle {
     &.has-options {
-      padding-right: calc(#{ch-get-space(s)} - #{ch-get-space(xs)});
+      padding-right: calc(#{spaces.get-space(s)} - #{spaces.get-space(xs)});
     }
 
     .ch-tag-close,
@@ -237,7 +247,7 @@
     }
 
     .ch-tag {
-      padding-right: ch-get-space(xs);
+      padding-right: spaces.get-space(xs);
     }
   }
 
@@ -247,23 +257,23 @@
     &--#{$type} {
       &:not(.ch-dropdown),
       > .ch-dropdown-toggle {
-        border-color: #{ch-get-color($type)};
+        border-color: #{colors.get-color($type)};
       }
 
       &:not(.ch-dropdown) {
         &:hover:focus,
         &:hover,
         &:focus {
-          border-color: #{ch-get-color($type, focus)};
+          border-color: #{colors.get-color($type, focus)};
         }
 
         &:active {
-          border-color: #{ch-get-color($type, active)};
+          border-color: #{colors.get-color($type, active)};
         }
       }
 
       > .ch-overlay.is-visible + .ch-dropdown-toggle {
-        border-color: #{ch-get-color($type, focus)};
+        border-color: #{colors.get-color($type, focus)};
       }
     }
   }
@@ -271,12 +281,12 @@
   // 9. Multiple variation
 
   &:not(.ch-dropdown)[multiple] {
-    @include ch-paddingless;
+    @include spaces.paddingless;
 
     background-image: none;
 
     > option {
-      @include ch-space-inset(squish, s);
+      @include spaces.inset(squish, s);
     }
   }
 
@@ -285,25 +295,25 @@
   &--small:not(.ch-dropdown),
   &--small:not(.ch-dropdown)[multiple] > option,
   &--small > .ch-dropdown-toggle {
-    @include ch-space-inset(squish, xs);
+    @include spaces.inset(squish, xs);
   }
 
   &--small > .ch-dropdown-toggle {
-    $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
+    $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xxs), spaces.get-space(xxs));
 
-    @include ch-space-inset(squish, xs);
+    @include spaces.inset(squish, xs);
 
-    min-height: calc(#{$box-height} + 2 * #{$ch-border-width});
+    min-height: calc(#{$box-height} + 2 * #{borders.$border-width});
     
     &:not(.is-readonly),
     &:not([readonly]) {
-      $icon-right: calc(#{$box-height} / 2 - #{ch-get-icon-size()} / 2);
+      $icon-right: calc(#{$box-height} / 2 - #{icon.get-icon-size(m)} / 2);
 
       padding-right: $box-height;
       background-position: right #{$icon-right} center;
 
       &.has-clear {
-        padding-right: calc(#{$box-height} + #{ch-get-icon-size()});
+        padding-right: calc(#{$box-height} + #{icon.get-icon-size(m)});
       }
     }
 
@@ -313,6 +323,6 @@
   }
 
   &--small > .ch-dropdown-toggle.has-options > .ch-tag {
-    margin-bottom: ch-get-space(xxs);
+    margin-bottom: spaces.get-space(xxs);
   }
 }
