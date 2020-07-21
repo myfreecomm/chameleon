@@ -1,0 +1,47 @@
+
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/utils' as utils;
+@use '../grid' as grid;
+
+.ch-fieldGroup {
+  $columns-number: (mobile: 1, tablet: 2, desktop: 4);
+
+  width: 100%;
+
+  > * {
+    @include grid.column(1);
+
+    min-width: 0;
+  }
+
+  @each $screen in breakpoints.$screens {
+    $column: map-get($columns-number, $screen);
+    $gutter: map-get(grid.$columns-gutter, $screen);
+
+    @include breakpoints.media(from, $screen) {
+      @at-root & {
+        @include grid.wrapper($column, $gutter);
+      }
+
+      @for $i from 1 through $column {
+        $suffix: utils.generate-variation(($i, $screen), (undefined, mobile));
+        $path: #{&}#{&}#{$suffix};
+
+        @at-root #{$path} {
+          @include grid.wrapper($i, $gutter);
+        }
+
+        $column-suffix: utils.generate-variation(($i, $screen), (1, mobile));
+        $start-suffix: utils.generate-variation((start#{$i}, $screen), (undefined, mobile));
+
+        > .ch-field#{$column-suffix} {
+          @include grid.column($i);
+        }
+
+        > .ch-field#{$start-suffix} {
+          grid-column-start: $i;
+        }
+      } // @for $i from 1 through $column
+    } // @include ch-media(from, $screen)
+  } // @each $screen in breakpointa.$screens
+}
