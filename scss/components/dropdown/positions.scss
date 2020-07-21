@@ -1,8 +1,13 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/utils' as utils;
+@use '../../foundation/thypography' as thypography;
+
 .ch-dropdown {
-  @include ch-media(from, desktop) {
+  @include breakpoints.media(from, desktop) {
     @each $vertical in (bottom, top) {
       @each $horizontal in (right, left) {
-        $sufix: ch-generate-variation(($vertical, $horizontal), (bottom, right));
+        $sufix: utils.generate-variation(($vertical, $horizontal), (bottom, right));
 
         // 1. Base
 
@@ -11,15 +16,15 @@
             @if $vertical == bottom {
               top: 100%;
 
-              margin-top: #{ch-get-space(xs)};
+              margin-top: spaces.get-space(xs);
             }
 
             @else if $vertical == top {
               top: auto;
               bottom: 100%;
-    
+
               margin-top: 0;
-              margin-bottom: #{ch-get-space(xs)};
+              margin-bottom: spaces.get-space(xs);
             }
 
             @if $horizontal == right {
@@ -38,7 +43,7 @@
             @if $vertical == bottom {
               top: 100%;
 
-              margin-top: #{ch-get-space(xs)};
+              margin-top: spaces.get-space(xs);
             }
 
             @else if $vertical == top {
@@ -46,7 +51,7 @@
               bottom: 100%;
     
               margin-top: 0;
-              margin-bottom: #{ch-get-space(xs)};
+              margin-bottom: spaces.get-space(xs);
             }
 
             @if $horizontal == right {
@@ -54,7 +59,11 @@
             }
 
             @else if $horizontal == left {
-              $size: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs));
+              $size: utils.calc-box-height(
+                thypography.get-font-size(2),
+                spaces.get-space(xxs),
+                spaces.get-space(xxs)
+              );
 
               left: auto;
               right: calc(-1 * #{$size});

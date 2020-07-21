@@ -1,8 +1,14 @@
-.ch-dropdown {
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/colors' as colors;
 
+.ch-dropdown {
   // 1. Base
 
-  @include ch-media(from, desktop) {
+  @include breakpoints.media(from, desktop) {
     position: relative;
   }
 
@@ -11,22 +17,22 @@
   // 2. Overlay
 
   > .ch-overlay {
-    @include ch-media(to, tablet) {
-      @include ch-space-inset(default, xs);
+    @include breakpoints.media(to, tablet) {
+      @include spaces.inset(default, xs);
 
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
     }
 
-    @include ch-media(from, desktop) {
-      @include ch-paddingless;
+    @include breakpoints.media(from, desktop) {
+      @include spaces.paddingless;
 
       position: absolute;
 
-      margin-top: ch-get-space(xs);
+      margin-top: spaces.get-space(xs);
       width: auto;
-      min-width: ch-get-dimension(2);
+      min-width: sizes.get-size(2);
       height: auto;
       background: transparent;
     }
@@ -34,25 +40,25 @@
     // 2.1. Overlay content
 
     > .ch-card {
-      @include ch-media(to, tablet) {
+      @include breakpoints.media(to, tablet) {
         transform: translate(0, 10%);
-        
+
         width: 100%;
-        max-width: calc(2 * #{ch-get-dimension(2)});
+        max-width: calc(2 * #{sizes.get-size(2)});
         max-height: 60vh;
         border: 0;
       }
 
-      @include ch-media(from, desktop) {
-        @include ch-shadow(2);
+      @include breakpoints.media(from, desktop) {
+        @include depth.shadow(2);
 
-        transition-duration: #{$ch-transition-duration-very-fast};
+        transition-duration: #{motion.$transition-duration-very-fast};
 
         width: auto;
       }
 
-      @include ch-shadow(5, top-bottom, #{$ch-color-black});
-      @include ch-transition(transform);
+      @include depth.shadow(5, top-bottom, #{colors.$black});
+      @include motion.transition(transform);
 
       width: 100%;
       overflow-x: hidden;
@@ -62,7 +68,7 @@
     // 2.2. Not visible state
 
     &:not(.is-visible) {
-      @include ch-media(from, desktop) {
+      @include breakpoints.media(from, desktop) {
         transition-duration: 0s;
 
         max-width: 0;
@@ -76,7 +82,7 @@
     // 2.3. Visible state
 
     &.is-visible {
-      @include ch-media(from, desktop) {
+      @include breakpoints.media(from, desktop) {
         display: block;
 
         background: transparent;
@@ -96,8 +102,8 @@
 
   &--contained {
     > .ch-overlay > .ch-card {
-      @include ch-media(from, desktop) {
-        width: ch-get-dimension(3);
+      @include breakpoints.media(from, desktop) {
+        width: sizes.get-size(3);
         max-height: 50vh;
       }
 
