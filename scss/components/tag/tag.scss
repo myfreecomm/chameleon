@@ -2,6 +2,7 @@
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/borders' as borders;
 @use '../../foundation/colors' as colors;
+@use '../icon' as icon;
 
 .ch-tag {
   $height: calc(#{thypography.get-font-size()} * #{thypography.get-line-height()});
@@ -35,7 +36,7 @@
   }
 
   > .ch-tag-close {
-    // @todo @include ch-mask-icon($ch-icon-times);
+    @include icon.mask-icon(icon.$icon-times);
     @include borders.border-radius(circle);
 
     cursor: pointer;
