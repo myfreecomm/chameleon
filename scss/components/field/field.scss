@@ -1,9 +1,11 @@
-.ch-field {
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
 
+.ch-field {
   // 1. Base
 
   &:not(&--inline) {
-    @include ch-space-stack-group(xxs);
+    @include spaces.stack-group(xxs);
 
     .ch-control {
       width: 100%;
@@ -17,7 +19,7 @@
   // 2. Label
 
   &-label {
-    @include ch-text-label();
+    @include thypography.label;
 
     display: inline-block;
 
@@ -26,7 +28,7 @@
     // 2.1. Inline variation
 
     &--inline {
-      @include ch-space-inline-group(left, s);
+      @include spaces.inline-group(left, s);
 
       align-items: center;
 
@@ -40,7 +42,7 @@
 
   &:not(&--inline) &-control {
     &:not(.ch-grid) {
-      @include ch-space-stack-group(xs);
+      @include spaces.stack-group(xs);
     }
 
     > * {
@@ -48,24 +50,24 @@
     }
 
     &.ch-grid {
-      grid-row-gap: ch-get-space(xs);
+      grid-row-gap: spaces.get-space(xs);
     }
   }
 
   &--inline &-control {
-    @include ch-space-inline-group(left, xs);
+    @include spaces.inline-group(left, xs);
   }
 
   // 4. Message
 
   &-message {
-    @include ch-text-caption();
+    @include thypography.caption();
   }
 
   // 5. Inline variation
 
   &--inline {
-    @include ch-space-inline-group(left, s, center);
+    @include spaces.inline-group(left, s, center);
 
     > * {
       display: inline-block;
