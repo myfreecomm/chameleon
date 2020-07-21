@@ -1,3 +1,10 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
 .ch-errorPage {
 
   // 1. Base
@@ -9,10 +16,10 @@
 
   min-height: 100vh;
   text-align: center;
-  background-color: #{ch-get-color(neutral, 2)};
+  background-color: #{colors.get-color(neutral, 2)};
 
   > *:not(#{&}-code):not(:last-child) {
-    @include ch-space-stack(l);
+    @include spaces.stack(l);
   }
 
   // 2. Code
@@ -20,7 +27,7 @@
   &-code {
     position: relative;
 
-    font-size: calc(#{ch-get-text-size()} * 8);
+    font-size: calc(#{thypography.get-font-size()} * 8);
     line-height: 1em;
     margin-bottom: 0;
 
@@ -31,26 +38,26 @@
       transform: translateX(100%);
     }
 
-    @include ch-media(from, tablet) {
-      font-size: calc(#{ch-get-text-size()} * 12);
+    @include breakpoints.media(from, tablet) {
+      font-size: calc(#{thypography.get-font-size()} * 12);
     }
   }
 
   // 3. Button
 
   > .ch-button {
-    font-size: #{ch-get-text-size(3)};
+    font-size: #{thypography.get-font-size(3)};
   }
 
   // 4. Footer
 
   > .ch-footer {
-    @include ch-border(top);
+    @include borders.border(top);
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    height: #{ch-get-dimension(1)};
+    height: #{sizes.get-size(1)};
   }
 }
