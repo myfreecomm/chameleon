@@ -12,14 +12,14 @@
     @include borders.border($border-rule, $border-color);
     @include borders.border-radius(1);
   
-    background-color: #{colors.get-color(neutral, 1)};
+    background-color: colors.get-color(neutral, 1);
   
     &:active {
-      border-color: #{colors.get-color(primary, active)};
+      border-color: colors.get-color(primary, active);
     }
   
     &:focus {
-      border-color: #{colors.get-color(primary, focus)};
+      border-color: colors.get-color(primary, focus);
     }
   
     &:disabled,
@@ -29,7 +29,7 @@
     }
   
     &::placeholder {
-      color: #{colors.get-color(text, 2)};
+      color: colors.get-color(text, 2);
       opacity: .75;
     }
   }

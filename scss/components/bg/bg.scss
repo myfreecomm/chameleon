@@ -8,7 +8,7 @@
 
   position: relative;
 
-  background-color: #{colors.get-color(brand)};
+  background-color: colors.get-color(brand);
 
   // 2. Image
 
@@ -27,7 +27,7 @@
 
   @each $color in (brand, primary, info, positive, warning, negative) {
     @at-root &--#{$color} {
-      background-color: #{colors.get-color($color)} !important;
+      background-color: colors.get-color($color) !important;
     }
   }
 }

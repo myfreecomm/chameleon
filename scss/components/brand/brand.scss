@@ -34,9 +34,9 @@
   // 3. Name
 
   &-name {
-    color: #{colors.get-color(text, 1)};
-    font-family: #{thypography.get-font-family(brand)};
-    font-size: #{thypography.get-font-size(5)};
+    color: colors.get-color(text, 1);
+    font-family: thypography.get-font-family(brand);
+    font-size: thypography.get-font-size(5);
     line-height: $brand-icon-size;
   }
 }

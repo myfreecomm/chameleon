@@ -76,11 +76,11 @@ STYLES ON INPUT CONTAINER
 
     > .ch-icon,
     > .ch-spinner {
-      z-index: #{depth.get-z-index(1, 1)};
+      z-index: depth.get-z-index(1, 1);
     }
 
     > .ch-icon {
-      font-size: #{icon.get-icon-size(s)};
+      font-size: icon.get-icon-size(s);
     }
   }
 
@@ -118,12 +118,12 @@ STYLES ON INPUT CONTAINER
     &.has-leadingIcon,
     &.has-trailingIcon {
       > .ch-icon {
-        font-size: #{icon.get-icon-size(xs)};
+        font-size: icon.get-icon-size(xs);
       }
 
       > .ch-spinner {
-        width: #{icon.get-icon-size(s)};
-        height: #{icon.get-icon-size(s)};
+        width: icon.get-icon-size(s);
+        height: icon.get-icon-size(s);
       }
     }
   }

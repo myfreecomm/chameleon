@@ -23,7 +23,7 @@
       @include spaces.inline-group(right, xs);
     }
 
-    padding-top: #{spaces.get-space(s)};
+    padding-top: spaces.get-space(s);
   }
 
   // &--contained {

@@ -28,8 +28,8 @@
     > .ch-icon {
       @include icon.mask-icon(icon.$icon-ellipsis);
 
-      height: #{icon.get-icon-size(m)};
-      background-color: #{colors.get-color(text, 2, inverse)};
+      height: icon.get-icon-size(m);
+      background-color: colors.get-color(text, 2, inverse);
     }
 
     // 1.1. Focus interaction
@@ -38,7 +38,7 @@
     &:hover,
     &:focus {
       > .ch-icon {
-        background-color: #{colors.get-color(text, 1, inverse)};
+        background-color: colors.get-color(text, 1, inverse);
       }
     }
 
@@ -48,7 +48,7 @@
       @include breakpoints.media(from, tablet) {
         display: flex;
 
-        width: #{sizes.get-size(1)};
+        width: sizes.get-size(1);
       }
 
       display: none;

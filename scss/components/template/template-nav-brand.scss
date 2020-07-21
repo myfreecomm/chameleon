@@ -12,8 +12,8 @@
     opacity: 0;
     visibility: hidden;
 
-    height: #{sizes.get-size(1)};
-    padding-left: #{sizes.get-size(1)};
+    height: sizes.get-size(1);
+    padding-left: sizes.get-size(1);
 
     // 2. Icon
 

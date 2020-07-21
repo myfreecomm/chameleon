@@ -52,7 +52,7 @@
       @include breakpoints.media(from, desktop) {
         @include depth.shadow(2);
 
-        transition-duration: #{motion.$transition-duration-very-fast};
+        transition-duration: motion.$transition-duration-very-fast;
 
         width: auto;
       }

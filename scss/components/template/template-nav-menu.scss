@@ -27,7 +27,7 @@
     // 1.1. Item
 
     .ch-menu-item {
-      color: #{colors.get-color(menu-text, 1)};
+      color: colors.get-color(menu-text, 1);
 
       // 1.1.1. Label
 
@@ -45,7 +45,7 @@
 
         &,
         > .ch-icon {
-          color: #{colors.get-color(text, 1, inverse)};
+          color: colors.get-color(text, 1, inverse);
         }
       }
 
@@ -56,7 +56,7 @@
         // 1.1.3.1. Label
 
         > .ch-menu-item-label {
-          color: #{colors.get-color(text, 1, inverse)};
+          color: colors.get-color(text, 1, inverse);
         }
 
         // 1.1.3.2. Icon
@@ -93,7 +93,7 @@
       > .ch-menu-submenu > .ch-menu-item {
         @include spaces.paddingless(true, horizontal);
 
-        height: #{sizes.get-size(1)};
+        height: sizes.get-size(1);
 
         // 2.2.1. Icon
 

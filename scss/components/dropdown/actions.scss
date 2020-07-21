@@ -38,10 +38,10 @@
         }
 
         > .ch-menu-item--icon {
-          padding-top: #{spaces.get-space(s)} !important;
-          padding-right: #{spaces.get-space(xs)} !important;
-          padding-bottom: #{spaces.get-space(s)} !important;
-          padding-left: #{sizes.get-size(1)} !important;
+          padding-top: spaces.get-space(s) !important;
+          padding-right: spaces.get-space(xs) !important;
+          padding-bottom: spaces.get-space(s) !important;
+          padding-left: sizes.get-size(1) !important;
 
           width: 100%;
           min-height: auto;

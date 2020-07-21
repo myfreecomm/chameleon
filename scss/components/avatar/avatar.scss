@@ -17,27 +17,27 @@
   display: block;
   position: relative;
 
-  width: #{$avatar-width};
-  height: #{$avatar-width};
+  width: $avatar-width;
+  height: $avatar-width;
   text-align: center;
   background: colors.get-color(neutral, 2);
 
   &,
   &:first-letter {
-    line-height: #{$avatar-width};
+    line-height: $avatar-width;
   }
 
   // 2. Abbreviation
 
   &:before {
-    content: #{attr(title)};
+    content: attr(title);
     font-size: 0;
   }
 
   &:first-letter {
     color: colors.get-color(text, 2);
     font-size: thypography.get-font-size(3);
-    line-height: #{$avatar-width};
+    line-height: $avatar-width;
   }
 
   // 3. Image

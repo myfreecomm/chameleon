@@ -16,7 +16,7 @@
 
   min-height: 100vh;
   text-align: center;
-  background-color: #{colors.get-color(neutral, 2)};
+  background-color: colors.get-color(neutral, 2);
 
   > *:not(#{&}-code):not(:last-child) {
     @include spaces.stack(l);
@@ -46,7 +46,7 @@
   // 3. Button
 
   > .ch-button {
-    font-size: #{thypography.get-font-size(3)};
+    font-size: thypography.get-font-size(3);
   }
 
   // 4. Footer
@@ -58,6 +58,6 @@
     align-items: center;
     justify-content: center;
 
-    height: #{sizes.get-size(1)};
+    height: sizes.get-size(1);
   }
 }

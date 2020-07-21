@@ -86,7 +86,7 @@
     }
 
     &.has-trailingIcon {
-      padding-right: #{sizes.get-size(1)} !important;
+      padding-right: sizes.get-size(1) !important;
 
       > .ch-icon:first-child {
         right: calc((#{sizes.get-size(1)}) / 2);

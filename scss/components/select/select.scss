@@ -34,7 +34,7 @@
     background-image: url('#{icon.$icon-angle-down}');
     background-repeat: no-repeat;
     background-position: right #{$icon-right} center;
-    background-size: #{icon.get-icon-size(m)} #{icon.get-icon-size(m)};
+    background-size: icon.get-icon-size(m) icon.get-icon-size(m);
 
     &.has-clear {
       padding-right: calc(#{utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs))} + #{icon.get-icon-size(m)});
@@ -257,23 +257,23 @@
     &--#{$type} {
       &:not(.ch-dropdown),
       > .ch-dropdown-toggle {
-        border-color: #{colors.get-color($type)};
+        border-color: colors.get-color($type);
       }
 
       &:not(.ch-dropdown) {
         &:hover:focus,
         &:hover,
         &:focus {
-          border-color: #{colors.get-color($type, focus)};
+          border-color: colors.get-color($type, focus);
         }
 
         &:active {
-          border-color: #{colors.get-color($type, active)};
+          border-color: colors.get-color($type, active);
         }
       }
 
       > .ch-overlay.is-visible + .ch-dropdown-toggle {
-        border-color: #{colors.get-color($type, focus)};
+        border-color: colors.get-color($type, focus);
       }
     }
   }
@@ -318,7 +318,7 @@
     }
 
     .ch-select-clear {
-      right: #{$box-height};
+      right: $box-height;
     }
   }
 

@@ -93,7 +93,7 @@
     padding-left: calc(#{icon.get-icon-size(m)} + #{spaces.get-space(s)});
 
     &:empty {
-      padding: #{0};
+      padding: 0;
       width: icon.get-icon-size(m);
       height: 0;
     }
@@ -147,7 +147,7 @@
   // 5. Negative variation
 
   &--negative {
-    color: #{colors.get-color(negative)};
+    color: colors.get-color(negative);
 
     > input[type="checkbox"],
     > input[type="radio"] {

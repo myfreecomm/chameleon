@@ -48,7 +48,7 @@
       .ch-media-actions {
         @include spaces.stack-group(xs);
 
-        margin-top: #{spaces.get-space(s)};
+        margin-top: spaces.get-space(s);
 
         &,
         > * {

@@ -24,7 +24,7 @@
   position: relative;
 
   @if ($type == leading) {
-    padding-left: #{$padding} !important;
+    padding-left: $padding !important;
 
     > .ch-icon:first-child,
     > .ch-toggle-icon,
@@ -34,7 +34,7 @@
   }
 
   @else if ($type == trailing) {
-    padding-right: #{$padding} !important;
+    padding-right: $padding !important;
 
     > .ch-icon:last-child,
     > .ch-toggle-icon,

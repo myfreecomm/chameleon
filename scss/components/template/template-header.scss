@@ -21,10 +21,10 @@
   align-items: center;
   justify-content: space-between;
 
-  height: #{sizes.get-size(1)};
-  padding-right: #{spaces.get-space(l)};
-  padding-left: #{spaces.get-space(l)};
-  background: #{colors.get-color(neutral, 1)};
+  height: sizes.get-size(1);
+  padding-right: spaces.get-space(l);
+  padding-left: spaces.get-space(l);
+  background: colors.get-color(neutral, 1);
 
   &,
   > * {
@@ -41,7 +41,7 @@
     order: 1;
 
     max-width: calc(100% - #{$nav-max-width});
-    padding-right: #{spaces.get-space(s)};
+    padding-right: spaces.get-space(s);
 
     // 2.1. Breadcrumbs item
 
@@ -68,7 +68,7 @@
     align-items: center;
 
     overflow-x: initial;
-    max-width: #{$nav-max-width};
+    max-width: $nav-max-width;
     margin-left: auto;
 
     > .ch-template-header-nav-toggle {
@@ -134,7 +134,7 @@
 
     position: sticky;
     top: 0;
-    z-index: #{depth.get-z-index(2)};
+    z-index: depth.get-z-index(2);
   }
 
   // 3.4. Hidden state
