@@ -1,13 +1,18 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/spaces' as spaces;
+
 .ch-steps-item {
-  @include ch-transition(opacity);
+  @include motion.transition(opacity);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
 
-  padding-left: ch-get-space(xl);
-  min-height: ch-get-space(xl);
+  padding-left: spaces.get-space(xl);
+  min-height: spaces.get-space(xl);
 
   counter-increment: steps;
   opacity: 0.6;
@@ -15,7 +20,7 @@
   // 1. Label
 
   &-label {
-    @include ch-media(from, tablet) {
+    @include breakpoints.media(from, tablet) {
       display: block;
       padding-top: 0;
     }
@@ -23,7 +28,7 @@
     display: none;
     width: max-content;
 
-    padding-left: ch-get-space(s);
+    padding-left: spaces.get-space(s);
   }
 
   // 2. Active item
@@ -44,12 +49,12 @@
     opacity: 1;
 
     > .ch-title {
-      color: ch-get-color(primary);
+      color: colors.get-color(primary);
     }
   }
 
   &.is-active {
-    @include ch-media(from, tablet) {
+    @include breakpoints.media(from, tablet) {
       flex-grow: 0;
     }
   }
@@ -61,14 +66,14 @@
   &:hover:focus,
   &:focus,
   &:hover {
-    color: ch-get-color(primary, focus);
+    color: colors.get-color(primary, focus);
     opacity: 1;
   }
 
   // 4.2. Active interaction
 
   &:active {
-    color: ch-get-color(primary, active);
+    color: colors.get-color(primary, active);
     opacity: 1;
   }
 

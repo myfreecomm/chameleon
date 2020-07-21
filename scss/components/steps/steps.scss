@@ -1,6 +1,9 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/spaces' as spaces;
+
 .ch-steps {
-  @include ch-media(from, tablet) {
-    @include ch-space-inline-group;
+  @include breakpoints.media(from, tablet) {
+    @include spaces.inline-group;
   }
 
   display: flex;
@@ -12,13 +15,13 @@
   overflow-x: auto;
 
   &:not(#{&}--vertical) {
-    @include ch-space-inline-group(left, s);
+    @include spaces.inline-group(left, s);
 
     flex-wrap: nowrap;
   }
 
   &--vertical {
-    @include ch-space-stack-group(s);
+    @include spaces.stack-group(s);
 
     overflow-x: initial;
     padding-bottom: 0;

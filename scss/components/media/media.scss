@@ -1,8 +1,13 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/utils' as utils;
+
 .ch-media {
 
   // 1. Base
 
-  @include ch-space-inline-group(left, s);
+  @include spaces.inline-group(left, s);
 
   align-items: center;
   flex-wrap: nowrap;
@@ -18,13 +23,13 @@
   // 3. Actions
 
   &:not(&--stacked) &-actions {
-    @include ch-space-inline-group(right, xs);
+    @include spaces.inline-group(right, xs);
   }
 
   // 4. Stacked variation
 
   &--stacked {
-    @include ch-media(only, mobile) {
+    @include breakpoints.media(only, mobile) {
       flex-wrap: wrap;
 
       .ch-media-content {
@@ -41,9 +46,9 @@
       }
 
       .ch-media-actions {
-        @include ch-space-stack-group(xs);
+        @include spaces.stack-group(xs);
 
-        margin-top: #{ch-get-space(s)};
+        margin-top: #{spaces.get-space(s)};
 
         &,
         > * {
@@ -51,18 +56,18 @@
         }
 
         > .ch-button.has-leadingIcon {
-          padding-right: ch-calc-box-height();
+          padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
         }
 
         > .ch-button.has-trailingIcon {
-          padding-left: ch-calc-box-height();
+          padding-left: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
         }
       }
     }
 
     .ch-media-actions {
-      @include ch-media(from, tablet) {
-        @include ch-space-inline-group(right, xs);
+      @include breakpoints.media(from, tablet) {
+        @include spaces.inline-group(right, xs);
       }
     }
   }

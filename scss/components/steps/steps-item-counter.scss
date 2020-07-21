@@ -1,10 +1,16 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
 .ch-steps-item {
   // 1. Base
 
   &:before {
-    @include ch-border(box, ch-get-color(border), solid, $ch-border-width);
-    @include ch-text-label;
-    @include ch-transition(unquote('border, background'));
+    @include borders.border(box, colors.get-color(border), solid, borders.$border-width);
+    @include thypography.label;
+    @include motion.transition(unquote('border, background')); // @todo implements
 
     $counter: counter(steps);
 
@@ -16,10 +22,10 @@
     position: absolute;
 
     content: $counter;
-    width: ch-get-space(xl);
-    height: ch-get-space(xl);
+    width: spaces.get-space(xl);
+    height: spaces.get-space(xl);
     background: transparent;
-    border-radius: ch-get-border-radius(circle);
+    border-radius: borders.get-border-radius(circle);
 
     text-align: center;
     vertical-align: middle;
@@ -30,8 +36,8 @@
   &.is-active,
   &.is-visited {
     &:before {
-      color: ch-get-color(primary);
-      border-color: ch-get-color(primary);
+      color: colors.get-color(primary);
+      border-color: colors.get-color(primary);
     }
   }
 
@@ -39,9 +45,9 @@
 
   &.is-completed {
     &:before {
-      color: ch-get-color(text, 1, inverse);
-      border-color: ch-get-color(primary);
-      background: ch-get-color(primary);
+      color: colors.get-color(text, 1, inverse);
+      border-color: colors.get-color(primary);
+      background: colors.get-color(primary);
     }
   }
 
@@ -59,8 +65,8 @@
       &:hover,
       &:focus {
         &:before {
-          color: ch-get-color(primary, focus);
-          border-color: ch-get-color(primary, focus);
+          color: colors.get-color(primary, focus);
+          border-color: colors.get-color(primary, focus);
         }
       }
 
@@ -68,8 +74,8 @@
 
       &:active {
         &:before {
-          color: ch-get-color(primary, active);
-          border-color: ch-get-color(primary, active);
+          color: colors.get-color(primary, active);
+          border-color: colors.get-color(primary, active);
         }
       }
     }
@@ -83,8 +89,8 @@
       &:hover,
       &:focus {
         &:before {
-          background: ch-get-color(primary, focus);
-          border-color: ch-get-color(primary, focus);
+          background: colors.get-color(primary, focus);
+          border-color: colors.get-color(primary, focus);
         }
       }
 
@@ -92,8 +98,8 @@
 
       &:active {
         &:before {
-          background: ch-get-color(primary, active);
-          border-color: ch-get-color(primary, active);
+          background: colors.get-color(primary, active);
+          border-color: colors.get-color(primary, active);
         }
       }
     }
