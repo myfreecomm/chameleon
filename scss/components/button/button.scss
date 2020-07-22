@@ -2,7 +2,7 @@
 @use '../../foundation/borders' as borders;
 @use '../../foundation/thypography' as thypography;
 @use '../../foundation/colors' as colors;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../icon' as icon;
 @use 'mixins' as *;
 
@@ -52,7 +52,7 @@
 
   &:disabled,
   &.is-disabled {
-    @include utils.disabled;
+    @include helpers.disabled;
 
     &:after {
       display: none;

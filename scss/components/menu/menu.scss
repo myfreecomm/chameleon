@@ -1,6 +1,6 @@
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/colors' as colors;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/thypography' as thypography;
 @use '../../foundation/sizes' as sizes;
 @use '../../foundation/motion' as motion;
@@ -40,7 +40,7 @@
     // 1.2. Icon variation
 
     &#{&}--icon {
-      $size: utils.calc-box-height(
+      $size: helpers.calc-box-height(
         $font-size: thypography.get-font-size(2),
         $padding-top: spaces.get-space(s),
         $padding-bottom: spaces.get-space(s)

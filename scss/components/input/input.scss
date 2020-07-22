@@ -1,6 +1,6 @@
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/depth' as depth;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/thypography' as thypography;
 @use '../../foundation/colors' as colors;
 @use '../../foundation/borders' as borders;
@@ -63,7 +63,7 @@ textarea.ch-textarea {
     > input {
       @include icon.has-icon(
         leading,
-        utils.calc-box-height(
+        helpers.calc-box-height(
           thypography.get-font-size(2),
           spaces.get-space(xs),
           spaces.get-space(xs)
@@ -76,7 +76,7 @@ textarea.ch-textarea {
     > input {
       @include icon.has-icon(
         trailing,
-        utils.calc-box-height(
+        helpers.calc-box-height(
           thypography.get-font-size(2),
           spaces.get-space(xs),
           spaces.get-space(xs)

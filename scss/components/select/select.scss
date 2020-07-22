@@ -4,12 +4,12 @@
 @use '../../foundation/depth' as depth;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../icon' as icon;
 @use '../input' as input;
 
 .ch-select {
-  $box-height: utils.calc-box-height(
+  $box-height: helpers.calc-box-height(
     thypography.get-font-size(2),
     spaces.get-space(xs),
     spaces.get-space(xs)
@@ -47,7 +47,7 @@
   }
 
   > .ch-dropdown-toggle {
-    @include thypography.truncate;
+    @include helpers.truncate;
 
     min-height: calc(#{$box-height} + 2 * #{borders.$border-width});
 
@@ -151,7 +151,7 @@
 
       > .ch-card-header > .ch-search,
       > .ch-card-footer > .ch-button {
-        @include utils.fluid;
+        @include helpers.fluid;
 
         display: block;
       }
@@ -205,7 +205,7 @@
   // 5. Blankslate
 
   .ch-blankslate-content {
-    @include utils.fluid;
+    @include helpers.fluid;
     @include spaces.inset;
   }
 
@@ -302,7 +302,7 @@
   }
 
   &--small > .ch-dropdown-toggle {
-    $box-height: utils.calc-box-height(
+    $box-height: helpers.calc-box-height(
       thypography.get-font-size(2),
       spaces.get-space(xxs),
       spaces.get-space(xxs)

@@ -1,5 +1,5 @@
 @use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use 'mixins' as *;
 @use 'variables' as *;
 
@@ -22,15 +22,15 @@
       }
 
       @for $i from 1 through $column {
-        $suffix: utils.generate-variation(($i, $screen), (undefined, mobile));
+        $suffix: helpers.generate-variation(($i, $screen), (undefined, mobile));
         $path: #{&}#{&}#{$suffix};
 
         @at-root #{$path} {
           @include wrapper($i, $gutter);
         }
 
-        $column-suffix: utils.generate-variation(($i, $screen), (1, mobile));
-        $start-suffix: utils.generate-variation((start#{$i}, $screen), (undefined, mobile));
+        $column-suffix: helpers.generate-variation(($i, $screen), (1, mobile));
+        $start-suffix: helpers.generate-variation((start#{$i}, $screen), (undefined, mobile));
 
         > #{&}-column#{$column-suffix} {
           @include column($i);

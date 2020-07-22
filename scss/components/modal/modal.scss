@@ -4,7 +4,7 @@
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/borders' as borders;
 @use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/sizes' as sizes;
 @use '../card' as card;
 @use 'variables' as *;
@@ -117,7 +117,7 @@
     // Modal size variations
 
     @each $size in $modal-widths {
-      $posfix: utils.generate-variation(($size), (m));
+      $posfix: helpers.generate-variation(($size), (m));
       $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
 
       @at-root #{$path} {

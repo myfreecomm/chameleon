@@ -3,7 +3,7 @@
 @use '../../foundation/thypography' as thypography;
 @use '../../foundation/colors' as colors;
 @use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 
 .ch-segmentedControl {
   $support-colors: (brand, primary, negative);
@@ -72,7 +72,7 @@
 
   @each $screen in breakpoints.$screens {
     @include breakpoints.media(from, $screen) {
-      $suffix: utils.generate-variation((horizontal, $screen), (undefined, mobile));
+      $suffix: helpers.generate-variation((horizontal, $screen), (undefined, mobile));
       $path: #{&}#{&}#{$suffix};
 
       @at-root #{$path} {

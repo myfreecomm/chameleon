@@ -1,13 +1,13 @@
 @use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/spaces' as spaces;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/thypography' as thypography;
 
 .ch-dropdown {
   @include breakpoints.media(from, desktop) {
     @each $vertical in (bottom, top) {
       @each $horizontal in (right, left) {
-        $sufix: utils.generate-variation(($vertical, $horizontal), (bottom, right));
+        $sufix: helpers.generate-variation(($vertical, $horizontal), (bottom, right));
 
         // 1. Base
 
@@ -59,7 +59,7 @@
             }
 
             @else if $horizontal == left {
-              $size: utils.calc-box-height(
+              $size: helpers.calc-box-height(
                 thypography.get-font-size(2),
                 spaces.get-space(xxs),
                 spaces.get-space(xxs)

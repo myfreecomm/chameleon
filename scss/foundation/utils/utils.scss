@@ -2,12 +2,11 @@
 @use '../thypography' as thypography;
 @use '../breakpoints' as breakpoints;
 @use '../spaces' as spaces;
-@use 'functions' as *;
-@use 'mixins' as *;
+@use '../helpers' as helpers;
 
 *:disabled,
 *.is-disabled {
-  @include disabled;
+  @include helpers.disabled;
 
   *:disabled,
   *.is-disabled {
@@ -36,20 +35,20 @@
 }
 
 .ch-truncate {
-  @include thypography.truncate;
+  @include helpers.truncate;
 }
 
 .ch-wrap {
-  @include thypography.wrap($important: true);
+  @include helpers.wrap($important: true);
 }
 
 .ch-fluid {
   @each $screen in breakpoints.$screens {
-    $suffix: generate-variation($screen, mobile);
+    $suffix: helpers.generate-variation($screen, mobile);
 
     @include breakpoints.media(from, $screen) {
       @at-root #{&}#{$suffix} {
-        @include fluid;
+        @include helpers.fluid;
       }
     }
   }
@@ -61,7 +60,9 @@
   @each $size in spaces.$sizes {
     @each $type in $types {
       @each $screen in breakpoints.$screens {
-        $sufix: generate-variation(($size, $type, $screen), (m, left, mobile));
+        $sufix: helpers.generate-variation(
+          ($size, $type, $screen), (m, left, mobile)
+        );
 
         @include breakpoints.media(from, $screen) {
           @at-root &#{$sufix} {
@@ -79,12 +80,14 @@
   @each $size in spaces.$sizes {
     @each $type in $types {
       @each $screen in breakpoints.$screens {
-        $sufix: generate-variation(($size, $type, $screen), (m, left, mobile));
+        $sufix: helpers.generate-variation(
+          ($size, $type, $screen), (m, left, mobile)
+        );
 
         @include breakpoints.media(from, $screen) {
           @at-root &#{$sufix} {
             @include spaces.inline-group($type, $size);
-            @include fluid;
+            @include helpers.fluid;
           }
         } // @include breakpoints.media(from, $screen)
       } // @each $screen in breakpoints.$screens
@@ -102,7 +105,9 @@
 
       @if not $invalid-squish and not $invalid-stretch {
         @each $screen in breakpoints.$screens {
-          $sufix: generate-variation(($size, $type, $screen), (m, default, mobile));
+          $sufix: helpers.generate-variation(
+            ($size, $type, $screen), (m, default, mobile)
+          );
 
           @include breakpoints.media(from, $screen) {
             @at-root &#{$sufix} {
@@ -125,7 +130,9 @@
 
       @if not $invalid-squish and not $invalid-stretch {
         @each $screen in breakpoints.$screens {
-          $sufix: generate-variation(($size, $type, $screen), (m, default, mobile));
+          $sufix: helpers.generate-variation(
+            ($size, $type, $screen), (m, default, mobile)
+          );
 
           @include breakpoints.media(from, $screen) {
             @at-root &#{$sufix} {
@@ -141,7 +148,7 @@
 .ch-stack {
   @each $size in spaces.$sizes {
     @each $screen in breakpoints.$screens {
-      $sufix: generate-variation(($size, $screen), (m, mobile));
+      $sufix: helpers.generate-variation(($size, $screen), (m, mobile));
 
       @include breakpoints.media(from, $screen) {
         @at-root &#{$sufix} {
@@ -155,7 +162,7 @@
 .ch-stackGroup {
   @each $size in spaces.$sizes {
     @each $screen in breakpoints.$screens {
-      $sufix: generate-variation(($size, $screen), (m, mobile));
+      $sufix: helpers.generate-variation(($size, $screen), (m, mobile));
 
       @include breakpoints.media(from, $screen) {
         @at-root &#{$sufix} {

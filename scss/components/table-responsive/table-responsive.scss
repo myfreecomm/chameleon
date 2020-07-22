@@ -1,5 +1,5 @@
 @use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/thypography' as thypography;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/sizes' as sizes;
@@ -10,7 +10,7 @@
 
   @include breakpoints.media(to, tablet) {
     $margin-left: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)});
-    $margin-right: utils.calc-box-height(
+    $margin-right: helpers.calc-box-height(
       thypography.get-font-size(2),
       spaces.get-space(xs),
       spaces.get-space(xs)
@@ -44,7 +44,7 @@
     td,
     th,
     .ch-table-cell {
-      @include thypography.truncate;
+      @include helpers.truncate;
 
       max-width: sizes.get-size(2);
     }
@@ -59,7 +59,7 @@
       justify-content: center;
       align-items: center;
 
-      height: utils.calc-box-height(
+      height: helpers.calc-box-height(
         thypography.get-font-size(2),
         spaces.get-space(m),
         spaces.get-space(m)

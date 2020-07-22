@@ -2,6 +2,7 @@
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/borders' as borders;
 @use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
 @use '../icon' as icon;
 
 .ch-tag {
@@ -10,7 +11,7 @@
   // 1. Base
 
   @include thypography.caption;
-  @include thypography.truncate;
+  @include helpers.truncate;
 
   display: inline-block;
   position: relative;

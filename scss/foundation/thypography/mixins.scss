@@ -47,15 +47,3 @@
   font-weight: get-font-weight();
   line-height: get-line-height();
 }
-
-@mixin truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@mixin wrap ($important: false) {
-  $important: if($important, unquote('!important'), unquote(''));
-
-  white-space: normal #{$important};
-}

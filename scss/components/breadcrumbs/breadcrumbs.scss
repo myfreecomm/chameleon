@@ -2,6 +2,7 @@
 @use '../../foundation/colors' as colors;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
+@use '../../foundation/helpers' as helpers;
 
 .ch-breadcrumbs {
   // 1. Base
@@ -52,7 +53,7 @@
     }
 
     @include breakpoints.media(from, tablet) {
-      @include thypography.truncate;
+      @include helpers.truncate;
     }
   }
 }

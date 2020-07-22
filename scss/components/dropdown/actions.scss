@@ -4,7 +4,7 @@
 @use '../../foundation/sizes' as sizes;
 @use '../../foundation/thypography' as thypography;
 @use '../../foundation/colors' as colors;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/motion' as motion;
 @use '../../foundation/depth' as depth;
 @use '../menu' as menu;
@@ -125,7 +125,7 @@
 
         > .ch-menu-item:not(.ch-menu-item--icon),
         > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
-          $box-height: utils.calc-box-height(
+          $box-height: helpers.calc-box-height(
             thypography.get-font-size(),
             spaces.get-space(xxs),
             spaces.get-space(xxs)

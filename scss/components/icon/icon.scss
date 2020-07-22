@@ -1,6 +1,6 @@
 @use '../../foundation/borders' as borders;
 @use '../../foundation/colors' as colors;
-@use '../../foundation/utils' as utils;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/spaces' as spaces;
 @use 'variables' as *;
 @use 'functions' as *;
@@ -22,7 +22,7 @@
   // 3. Size variations
 
   @each $size in $sizes {
-    $posfix: utils.generate-variation(($size), (m));
+    $posfix: helpers.generate-variation(($size), (m));
     $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
 
     @at-root #{$path} {
