@@ -10,7 +10,7 @@
   &:before {
     @include borders.border(box, colors.get-color(border), solid, borders.$border-width);
     @include thypography.label;
-    @include motion.transition(unquote('border, background')); // @todo implements
+    @include motion.transition(unquote('border, background'));
 
     $counter: counter(steps);
 
