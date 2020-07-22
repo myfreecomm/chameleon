@@ -1,22 +1,33 @@
+
+@use '../../foundation/borders' as borders;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/utils' as utils;
+
 .ch-navigationPage {
   // 1. Base
 
-  @include ch-media (to, mobile) {
-    padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(l)});
-    min-height: calc(100vh - #{ch-get-dimension(1)});
+  @include breakpoints.media(to, mobile) {
+    padding-bottom: calc(#{sizes.get-size(1)} + #{spaces.get-space(l)});
+    min-height: calc(100vh - #{sizes.get-size(1)});
   }
 
-  @include ch-media (only, tablet) {
-    padding-top: ch-get-space(l);
-    padding-bottom: ch-get-space(l);
+  @include breakpoints.media(only, tablet) {
+    padding-top: spaces.get-space(l);
+    padding-bottom: spaces.get-space(l);
   }
 
-  @include ch-media (from, tablet) {
-    min-height: calc(100vh - #{ch-get-dimension(1)});
+  @include breakpoints.media(from, tablet) {
+    min-height: calc(100vh - #{sizes.get-size(1)});
   }
 
-  @include ch-media(from, desktop) {
-    @include ch-border(top);
+  @include breakpoints.media(from, desktop) {
+    @include borders.border(top);
   }
 
   display: flex;
@@ -26,23 +37,23 @@
   // 2. Aside
 
   &-aside {
-    @include ch-media(to, tablet) {
-      padding-top: calc(#{ch-get-space(xl)} + 2 * #{ch-get-space(xs)});
+    @include breakpoints.media(to, tablet) {
+      padding-top: calc(#{spaces.get-space(xl)} + 2 * #{spaces.get-space(xs)});
     }
 
-    @include ch-media(from, desktop) {
-      @include ch-transition(left);
+    @include breakpoints.media(from, desktop) {
+      @include motion.transition(left);
 
-      $actions-height: calc(#{ch-get-dimension(2)} + #{ch-get-space(xs)});
+      $actions-height: calc(#{sizes.get-size(2)} + #{spaces.get-space(xs)});
 
       position: fixed;
-      top: calc(#{ch-get-dimension(1)} + #{$ch-border-width});
-      left: ch-get-dimension(1);
-      width: ch-get-dimension(2);
+      top: calc(#{sizes.get-size(1)} + #{borders.$border-width});
+      left: sizes.get-size(1);
+      width: sizes.get-size(2);
 
-      padding-top: ch-get-space(xl);
-      padding-right: ch-get-space(l);
-      padding-left: ch-get-space(l);
+      padding-top: spaces.get-space(xl);
+      padding-right: spaces.get-space(l);
+      padding-left: spaces.get-space(l);
       height: calc(100vh - #{$actions-height});
 
       &:after {
@@ -57,7 +68,7 @@
         content: $empty;
         width: 100%;
         height: calc(100% + #{$actions-height});
-        background: #{ch-get-color(neutral, 2)};
+        background: colors.get-color(neutral, 2);
       }
     }
 
@@ -65,17 +76,17 @@
 
     > .ch-steps,
     > .ch-menu {
-      @include ch-media(to, tablet) {
-        top: ch-get-dimension(1);
+      @include breakpoints.media(to, tablet) {
+        top: sizes.get-size(1);
       }
 
-      @include ch-media(from, tablet) {
-        @include ch-transition(left);
+      @include breakpoints.media(from, tablet) {
+        @include motion.transition(left);
 
-        left: ch-get-dimension(1);
+        left: sizes.get-size(1);
       }
 
-      @include ch-media(from, desktop) {
+      @include breakpoints.media(from, desktop) {
         position: relative;
         top: auto;
         left: auto;
@@ -84,26 +95,26 @@
         background: transparent;
       }
 
-      @include ch-transition(top);
+      @include motion.transition(top);
 
       position: fixed;
       left: 0;
       right: 0;
-      z-index: #{ch-get-z-index(2, 2)};
+      z-index: depth.get-z-index(2, 2);
 
-      background: #{ch-get-color(neutral, 1)};
+      background: colors.get-color(neutral, 1);
     }
 
     > .ch-steps {
-      @include ch-media(to, tablet) {
-        padding-top: ch-get-space(xs);
-        padding-right: ch-get-space(l);
-        padding-bottom: ch-get-space(xs);
-        padding-left: ch-get-space(l);
+      @include breakpoints.media(to, tablet) {
+        padding-top: spaces.get-space(xs);
+        padding-right: spaces.get-space(l);
+        padding-bottom: spaces.get-space(xs);
+        padding-left: spaces.get-space(l);
       }
 
-      @include ch-media(from, desktop) {
-        @include ch-space-stack-group(s);
+      @include breakpoints.media(from, desktop) {
+        @include spaces.stack-group(s);
 
         overflow-x: initial;
 
@@ -123,10 +134,10 @@
   // 3. Content
 
   &-content {
-    @include ch-space-stack;
+    @include spaces.stack;
 
-    @include ch-media(from, desktop) {
-      margin-left: #{ch-get-dimension(2)};
+    @include breakpoints.media(from, desktop) {
+      margin-left: sizes.get-size(2);
       margin-bottom: 0;
     }
 
@@ -136,53 +147,53 @@
     // 3.1. Contained variation
 
     &--contained {
-      max-width: calc(#{$ch-breakpoint-desktop} - #{ch-get-dimension(2)});
+      max-width: calc(#{breakpoints.$desktop-screen} - #{sizes.get-size(2)});
     }
   }
 
   // 4. Actions
 
   &-actions {
-    @include ch-media(only, mobile) {
-      @include ch-space-stack-group(xs);
+    @include breakpoints.media(only, mobile) {
+      @include spaces.stack-group(xs);
 
       > .ch-button.has-leadingIcon {
-        padding-right: ch-calc-box-height();
+        padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
       }
 
       > .ch-button.has-trailingIcon {
-        padding-left: ch-calc-box-height();
+        padding-left: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
       }
     }
 
-    @include ch-media(only, tablet) {
-      @include ch-space-inline-group(right, xs);
+    @include breakpoints.media(only, tablet) {
+      @include spaces.inline-group(right, xs);
 
       > *:not(:last-child) {
         margin-bottom: 0;
       }
     }
 
-    @include ch-media(from, desktop) {
-      @include ch-transition(left);
-      @include ch-space-stack-group(xs);
+    @include breakpoints.media(from, desktop) {
+      @include motion.transition(left);
+      @include spaces.stack-group(xs);
 
       position: fixed;
       bottom: 0;
-      left: ch-get-dimension(1);
-      width: ch-get-dimension(2);
+      left: sizes.get-size(1);
+      width: sizes.get-size(2);
 
-      padding-top: ch-get-space(xs);
-      padding-right: ch-get-space(l);
-      padding-bottom: ch-get-space(xl);
-      padding-left: ch-get-space(l);
+      padding-top: spaces.get-space(xs);
+      padding-right: spaces.get-space(l);
+      padding-bottom: spaces.get-space(xl);
+      padding-left: spaces.get-space(l);
 
       > .ch-button.has-leadingIcon {
-        padding-right: ch-calc-box-height();
+        padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
       }
 
       > .ch-button.has-trailingIcon {
-        padding-left: ch-calc-box-height();
+        padding-left: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
       }
     }
   }
@@ -193,19 +204,19 @@
     .ch-navigationPage-aside {
       > .ch-menu,
       > .ch-steps {
-        @include ch-media(only, tablet) {
-          left: #{ch-get-dimension(2)};
+        @include breakpoints.media(only, tablet) {
+          left: sizes.get-size(2);
         }
       }
 
-      @include ch-media(from, desktop) {
-        left: #{ch-get-dimension(2)};
+      @include breakpoints.media(from, desktop) {
+        left: sizes.get-size(2);
       }
     }
 
     .ch-navigationPage-actions {
-      @include ch-media(from, desktop) {
-        left: #{ch-get-dimension(2)};
+      @include breakpoints.media(from, desktop) {
+        left: sizes.get-size(2);
       }
     }
   }
@@ -215,22 +226,22 @@
   @at-root .ch-template-header.is-sticky.is-hidden + & > #{&}-aside {
     > .ch-menu,
     > .ch-steps {
-      @include ch-media(to, mobile) {
+      @include breakpoints.media(to, mobile) {
         top: 0;
       }
     }
   }
 
   @at-root .ch-template-header.is-sticky + & {
-    @include ch-media(from, desktop) {
+    @include breakpoints.media(from, desktop) {
       border-top-color: transparent;
     }
 
     > .ch-navigationPage-aside {
       > .ch-menu,
       > .ch-steps {
-        @include ch-media(to, tablet) {
-          @include ch-border(bottom);
+        @include breakpoints.media(to, tablet) {
+          @include borders.border(bottom);
         }
       }
     }

@@ -1,3 +1,4 @@
+@use 'access-barrier';
 @use 'alert';
 @use 'avatar';
 @use 'bg';
@@ -23,7 +24,9 @@
 @use 'media';
 @use 'menu';
 @use 'modal';
+@use 'navigation-page';
 @use 'overlay';
+@use 'pagination';
 @use 'search';
 @use 'segmented-control';
 @use 'select';
