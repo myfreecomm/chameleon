@@ -1,9 +1,9 @@
-@use '../../foundation/spaces' as spaces;
-@use '../../foundation/depth' as depth;
-@use '../../foundation/sizes' as sizes;
 @use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/motion' as motion;
 @use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
 
 .ch-flashMessages {
   // 1. Base

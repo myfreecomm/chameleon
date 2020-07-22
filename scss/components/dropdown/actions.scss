@@ -1,15 +1,15 @@
-@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/borders' as borders;
-@use '../../foundation/spaces' as spaces;
-@use '../../foundation/sizes' as sizes;
-@use '../../foundation/thypography' as thypography;
+@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/colors' as colors;
-@use '../../foundation/helpers' as helpers;
-@use '../../foundation/motion' as motion;
 @use '../../foundation/depth' as depth;
-@use '../menu' as menu;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/helpers' as helpers;
 @use '../button' as button;
 @use '../icon' as icon;
+@use '../menu' as menu;
 
 .ch-dropdown.ch-dropdown--actions {
   // 1. For media up to tablet

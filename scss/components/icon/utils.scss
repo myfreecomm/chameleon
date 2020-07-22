@@ -1,6 +1,6 @@
 @use '../../foundation/helpers' as helpers;
-@use '../../foundation/thypography' as thypography;
 @use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
 @use 'mixins' as *;
 
 $_padding: helpers.calc-box-height(

@@ -1,9 +1,9 @@
+@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/colors' as colors;
 @use '../../foundation/motion' as motion;
-@use '../../foundation/thypography' as thypography;
-@use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/spaces' as spaces;
 @use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
 @use '../icon' as icon;
 @use '../menu' as menu;
 

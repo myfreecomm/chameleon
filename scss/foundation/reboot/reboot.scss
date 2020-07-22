@@ -1,5 +1,5 @@
-@use '../thypography' as thypography;
 @use '../colors' as colors;
+@use '../thypography' as thypography;
 
 /* Normalization of HTML elements, manually forked from destyle.css to remove
   styles targeting irrelevant browsers while applying new styles. */

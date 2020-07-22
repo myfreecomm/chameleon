@@ -1,9 +1,9 @@
+@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
-@use '../../foundation/colors' as colors;
-@use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/helpers' as helpers;
 
 .ch-segmentedControl {
   $support-colors: (brand, primary, negative);

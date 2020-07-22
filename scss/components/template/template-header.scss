@@ -1,12 +1,12 @@
-@use '../../foundation/helpers' as helpers;
-@use '../../foundation/thypography' as thypography;
-@use '../../foundation/depth' as depth;
+@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/motion' as motion;
 @use '../../foundation/sizes' as sizes;
 @use '../../foundation/spaces' as spaces;
-@use '../../foundation/colors' as colors;
-@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/thypography' as thypography;
 @use '../icon' as icon;
 
 .ch-template-header {

@@ -1,8 +1,8 @@
 @use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
-@use '../../foundation/helpers' as helpers;
 
 .ch-breadcrumbs {
   // 1. Base

@@ -1,8 +1,8 @@
-@use '../colors' as colors;
-@use '../thypography' as thypography;
 @use '../breakpoints' as breakpoints;
-@use '../spaces' as spaces;
+@use '../colors' as colors;
 @use '../helpers' as helpers;
+@use '../spaces' as spaces;
+@use '../thypography' as thypography;
 
 *:disabled,
 *.is-disabled {

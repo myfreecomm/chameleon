@@ -1,7 +1,7 @@
 @use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/helpers' as helpers;
 @use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
-@use '../../foundation/helpers' as helpers;
 
 .ch-form {
   @include spaces.stack-group(l);

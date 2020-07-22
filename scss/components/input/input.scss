@@ -1,9 +1,9 @@
-@use '../../foundation/spaces' as spaces;
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
 @use '../../foundation/depth' as depth;
 @use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
-@use '../../foundation/colors' as colors;
-@use '../../foundation/borders' as borders;
 @use '../icon' as icon;
 @use 'mixins' as *;
 

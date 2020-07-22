@@ -1,8 +1,8 @@
-@use '../../foundation/motion' as motion;
-@use '../../foundation/depth' as depth;
-@use '../../foundation/sizes' as sizes;
-@use '../../foundation/colors' as colors;
 @use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
 
 .ch-template-nav {
   // 1. Base
