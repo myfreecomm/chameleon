@@ -1,11 +1,10 @@
-@use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/colors' as colors;
-@use '../../foundation/depth' as depth;
 @use '../../foundation/motion' as motion;
+@use '../../foundation/depth' as depth;
 @use '../../foundation/sizes' as sizes;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/breakpoints' as breakpoints;
 
 .ch-template-nav {
-
   // 1. Base
 
   @include motion.transition(unquote('width, height, bottom'));

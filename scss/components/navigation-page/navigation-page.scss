@@ -1,4 +1,3 @@
-
 @use '../../foundation/borders' as borders;
 @use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/colors' as colors;
@@ -57,15 +56,13 @@
       height: calc(100vh - #{$actions-height});
 
       &:after {
-        $empty: '';
-
         display: block;
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
 
-        content: $empty;
+        content: '';
         width: 100%;
         height: calc(100% + #{$actions-height});
         background: colors.get-color(neutral, 2);
@@ -147,7 +144,9 @@
     // 3.1. Contained variation
 
     &--contained {
-      max-width: calc(#{breakpoints.$desktop-screen} - #{sizes.get-size(2)});
+      max-width: calc(
+        #{breakpoints.$desktop-screen} - #{sizes.get-size(2)}
+      );
     }
   }
 
@@ -158,11 +157,19 @@
       @include spaces.stack-group(xs);
 
       > .ch-button.has-leadingIcon {
-        padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+        padding-right: utils.calc-box-height(
+          thypography.get-font-size(2),
+          spaces.get-space(xs),
+          spaces.get-space(xs)
+        );
       }
 
       > .ch-button.has-trailingIcon {
-        padding-left: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+        padding-left: utils.calc-box-height(
+          thypography.get-font-size(2),
+          spaces.get-space(xs),
+          spaces.get-space(xs)
+        );
       }
     }
 
@@ -189,11 +196,19 @@
       padding-left: spaces.get-space(l);
 
       > .ch-button.has-leadingIcon {
-        padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+        padding-right: utils.calc-box-height(
+          thypography.get-font-size(2),
+          spaces.get-space(xs),
+          spaces.get-space(xs)
+        );
       }
 
       > .ch-button.has-trailingIcon {
-        padding-left: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+        padding-left: utils.calc-box-height(
+          thypography.get-font-size(2),
+          spaces.get-space(xs),
+          spaces.get-space(xs)
+        );
       }
     }
   }

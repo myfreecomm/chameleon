@@ -21,6 +21,8 @@
   }
 
   &--contained {
-    max-width: calc(#{breakpoints.$desktop-screen} - #{sizes.get-size(2)} + 2 * #{spaces.get-space(l)});
+    max-width: calc(
+      #{breakpoints.$desktop-screen} - #{sizes.get-size(2)} + 2 * #{spaces.get-space(l)}
+    );
   }
 }

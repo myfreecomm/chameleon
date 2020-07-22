@@ -6,7 +6,6 @@
 @use '../../foundation/thypography' as thypography;
 
 .ch-errorPage {
-
   // 1. Base
 
   display: flex;
@@ -27,7 +26,7 @@
   &-code {
     position: relative;
 
-    font-size: calc(#{thypography.get-font-size()} * 8);
+    font-size: calc(#{thypography.get-font-size(2)} * 8);
     line-height: 1em;
     margin-bottom: 0;
 
@@ -39,7 +38,7 @@
     }
 
     @include breakpoints.media(from, tablet) {
-      font-size: calc(#{thypography.get-font-size()} * 12);
+      font-size: calc(#{thypography.get-font-size(2)} * 12);
     }
   }
 

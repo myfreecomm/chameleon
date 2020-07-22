@@ -1,11 +1,10 @@
-@use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/colors' as colors;
-@use '../../foundation/motion' as motion;
 @use '../../foundation/sizes' as sizes;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/breakpoints' as breakpoints;
 
 .ch-template-nav {
   > .ch-brand {
-
     // 1. Base
 
     position: absolute;

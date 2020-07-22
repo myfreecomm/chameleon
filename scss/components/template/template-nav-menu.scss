@@ -1,25 +1,16 @@
-@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/colors' as colors;
 @use '../../foundation/motion' as motion;
-@use '../../foundation/sizes' as sizes;
-@use '../../foundation/spaces' as spaces;
 @use '../../foundation/thypography' as thypography;
-// @use '../../foundation/borders' as borders;
-// @use '../../foundation/depth' as depth;
-// @use '../../foundation/utils' as utils;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/sizes' as sizes;
 @use '../icon' as icon;
-
-@use 'mixins' as *;
-
-
-// sass-lint:disable no-important
+@use '../menu' as menu;
 
 .ch-template-nav {
-
   // 1. Base
 
   > .ch-menu {
-
     flex: 1;
     overflow-y: overlay;
     overflow-x: hidden;
@@ -74,7 +65,7 @@
     @include breakpoints.media(only, mobile) {
       // 2.1. Base
 
-      @include menu-horizontal;
+      @include menu.horizontal;
 
       width: 80%;
       justify-content: space-around;
@@ -91,7 +82,7 @@
 
       > .ch-menu-item,
       > .ch-menu-submenu > .ch-menu-item {
-        @include spaces.paddingless(true, horizontal);
+        @include spaces.paddingless($important: true, $type: horizontal);
 
         height: sizes.get-size(1);
 
@@ -149,7 +140,9 @@
 
   @include breakpoints.media(from, tablet) {
     .ch-menu-item-label {
-      min-width: calc(#{sizes.get-size(2)} - #{sizes.get-size(1)} - #{spaces.get-space()});
+      min-width: calc(
+        #{sizes.get-size(2)} - #{sizes.get-size(1)} - #{spaces.get-space(m)}
+      );
     }
 
     &:not(:hover):not(:focus):not(.is-expanded):not(.is-hovered) {
