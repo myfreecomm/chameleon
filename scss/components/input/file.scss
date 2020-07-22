@@ -1,5 +1,0 @@
-@use '../../foundation/borders' as borders;
-
-.ch-file {
-  line-height: calc(100% + 2 * #{borders.$border-width});
-}

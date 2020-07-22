@@ -1,10 +1,9 @@
 @use '../../foundation/borders' as borders;
-@use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/colors' as colors;
 @use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/utils' as utils;
-
-// @todo - Review right and bottom borders with a white pixel (@see example to undersand the problem)
 
 .ch-segmentedControl {
   $support-colors: (brand, primary, negative);
@@ -41,7 +40,7 @@
       display: block;
 
       color: colors.get-color(text, 2);
-      font-weight: ch-get-text-weight(bold);
+      font-weight: thypography.get-font-weight(bold);
     
       &:hover:focus,
       &:hover,
@@ -105,8 +104,8 @@
           }
         }
       } // @at-root #{$path}
-    } // @include ch-media(from, $screen)
-  } // @each $screen in $ch-breakpoint-screens
+    } // @include breakpoints.media(from, $screen)
+  } // @each $screen in breakpoints.$screens
 
   // 3. Support variations
 

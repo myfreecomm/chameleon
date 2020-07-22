@@ -1,19 +1,19 @@
+@use '../../foundation/motion' as motion;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
 @use '../../foundation/borders' as borders;
 @use '../../foundation/breakpoints' as breakpoints;
-@use '../../foundation/depth' as depth;
-@use '../../foundation/motion' as motion;
-@use '../../foundation/spaces' as spaces;
-@use '../../foundation/sizes' as sizes;
 @use '../../foundation/utils' as utils;
+@use '../../foundation/sizes' as sizes;
 @use '../card' as card;
 @use 'variables' as *;
 @use 'functions' as *;
 
-
 .ch-modal {
   @include card.wrapper;
   @include motion.transition(unquote('visibility, opacity, transform'));
-  @include depth.shadow(5, top-bottom, rgba(#000, 0.45));
+  @include depth.shadow(5, top-bottom, rgba(colors.$black, 0.45));
   @include spaces.paddingless;
 
   position: relative;
@@ -25,7 +25,7 @@
   max-width: 100%;
   max-height: 100%;
   border: 0;
-  transform: scale(.75);
+  transform: scale(0.75);
 
   &.is-open {
     @include motion.transition(unquote('visibility, opacity, transform'));
@@ -86,7 +86,7 @@
   }
 
   &--aside {
-    @include depth.shadow(5, right-left, rgba(#000, 0.45));
+    @include depth.shadow(5, right-left, rgba(colors.$black, 0.45));
 
     display: flex;
     flex-direction: column;
@@ -116,12 +116,12 @@
 
     // Modal size variations
 
-    @each $size in $ch-modal-sizes {
+    @each $size in $modal-widths {
       $posfix: utils.generate-variation(($size), (m));
       $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
 
       @at-root #{$path} {
-        width: get-size($size);
+        width: get-width($size);
       }
     }
 

@@ -1,10 +1,9 @@
-@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/spaces' as spaces;
-@use '../../foundation/thypography' as thypography;
+@use '../../foundation/breakpoints' as breakpoints;
 @use '../../foundation/utils' as utils;
+@use '../../foundation/thypography' as thypography;
 
 .ch-media {
-
   // 1. Base
 
   @include spaces.inline-group(left, s);
@@ -36,11 +35,9 @@
         margin-right: 0;
 
         &:after {
-          $empty: '';
-
           display: block;
 
-          content: $empty;
+          content: '';
           margin-right: 1px;
         }
       }
@@ -56,11 +53,19 @@
         }
 
         > .ch-button.has-leadingIcon {
-          padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+          padding-right: utils.calc-box-height(
+            thypography.get-font-size(2),
+            spaces.get-space(xs),
+            spaces.get-space(xs)
+          );
         }
 
         > .ch-button.has-trailingIcon {
-          padding-left: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+          padding-left: utils.calc-box-height(
+            thypography.get-font-size(2),
+            spaces.get-space(xs),
+            spaces.get-space(xs)
+          );
         }
       }
     }

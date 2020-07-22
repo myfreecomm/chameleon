@@ -9,6 +9,11 @@
 @use '../input' as input;
 
 .ch-select {
+  $box-height: utils.calc-box-height(
+    thypography.get-font-size(2),
+    spaces.get-space(xs),
+    spaces.get-space(xs)
+  );
 
   // 1. Base
 
@@ -23,27 +28,25 @@
 
   &:not(.ch-dropdown),
   & > .ch-dropdown-toggle {
-    @include input.input;
+    @include input.wrapper;
   }
 
   &:not(.is-readonly) > .ch-dropdown-toggle,
   &:not(.ch-dropdown):not([readonly]):not(.is-readonly):not([multiple]) {
-    $icon-right: calc(#{utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs))} / 2 - #{icon.get-icon-size(m)} / 2);
+    $icon-right: calc(#{$box-height} / 2 - #{icon.get-icon-size(m)} / 2);
 
-    padding-right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+    padding-right: $box-height;
     background-image: url('#{icon.$icon-angle-down}');
     background-repeat: no-repeat;
     background-position: right #{$icon-right} center;
-    background-size: icon.get-icon-size(m) icon.get-icon-size(m);
+    background-size: #{icon.get-icon-size(m)} #{icon.get-icon-size(m)};
 
     &.has-clear {
-      padding-right: calc(#{utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs))} + #{icon.get-icon-size(m)});
+      padding-right: calc(#{$box-height} + #{icon.get-icon-size(m)});
     }
   }
 
   > .ch-dropdown-toggle {
-    $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
-
     @include thypography.truncate;
 
     min-height: calc(#{$box-height} + 2 * #{borders.$border-width});
@@ -79,7 +82,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    right: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xs), spaces.get-space(xs));
+    right: $box-height;
     transform: translateY(-50%);
 
     cursor: pointer;
@@ -299,7 +302,11 @@
   }
 
   &--small > .ch-dropdown-toggle {
-    $box-height: utils.calc-box-height(thypography.get-font-size(2), spaces.get-space(xxs), spaces.get-space(xxs));
+    $box-height: utils.calc-box-height(
+      thypography.get-font-size(2),
+      spaces.get-space(xxs),
+      spaces.get-space(xxs)
+    );
 
     @include spaces.inset(squish, xs);
 

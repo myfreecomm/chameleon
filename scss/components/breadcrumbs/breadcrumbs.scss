@@ -4,7 +4,6 @@
 @use '../../foundation/thypography' as thypography;
 
 .ch-breadcrumbs {
-
   // 1. Base
 
   display: flex;
@@ -17,20 +16,20 @@
     position: relative;
 
     &:not(:last-child) {
+      @include breakpoints.media(from, tablet) {
+        display: block;
+      }
+
       display: none;
 
       color: colors.get-color(text, 2);
       font-weight: thypography.get-font-weight(light);
-      padding-right: spaces.get-space();
+      padding-right: spaces.get-space(m);
 
       &:hover:focus,
       &:hover,
       &:focus {
-        color: color-get-color(text, 1);
-      }
-
-      @include breakpoints.media(from, tablet) {
-        display: block;
+        color: colors.get-color(text, 1);
       }
     }
 

@@ -1,13 +1,12 @@
+@use '../../foundation/depth' as depth;
 @use '../../foundation/borders' as borders;
 @use '../../foundation/colors' as colors;
-@use '../../foundation/depth' as depth;
 @use '../../foundation/spaces' as spaces;
-@use '../../foundation/utils/mixins' as *;
+@use '../../foundation/utils' as utils;
 @use '../icon' as icon;
 
 .ch-checkbox,
 .ch-radio {
-
   // 1. Base
 
   position: relative;
@@ -31,16 +30,14 @@
 
   > input[type="checkbox"],
   > input[type="radio"] {
-    z-index: depth.get-z-index(1, 1);
+    z-index: depth.get-z-index(1);
 
     opacity: 0;
     cursor: pointer;
 
     + label:before,
     + label:after {
-      $empty: '';
-
-      content: $empty;
+      content: '';
     }
 
     // 2.1. Wrapper
@@ -48,7 +45,7 @@
     + label:before {
       @include borders.border;
 
-      border-radius: borders.get-border-radius();
+      border-radius: borders.get-border-radius(1);
       background-color: colors.get-color(neutral, 1);
     }
 
@@ -69,7 +66,7 @@
     // 2.2. Tick
 
     & + label:after {
-      $offset: calc(#{borders.get-border-radius()} + 1px);
+      $offset: calc(#{borders.get-border-radius(1)} + 1px);
       $size: calc(#{icon.get-icon-size(m)} - 2 * #{$offset});
 
       top: $offset;
@@ -107,7 +104,7 @@
       & + label,
       & + label:before,
       & + label:after {
-        @include disabled;
+        @include utils.disabled;
       }
     }
   }
