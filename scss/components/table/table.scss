@@ -1,10 +1,9 @@
+@use '../../foundation/spaces' as spaces;
 @use '../../foundation/borders' as borders;
 @use '../../foundation/colors' as colors;
-@use '../../foundation/spaces' as spaces;
 @use '../icon' as icon;
 
 .ch-table {
-
   // 1. Base
 
   display: table;
@@ -72,13 +71,8 @@
   &-cell,
   td,
   th {
-    $inset-type: stretch;
-    $size: s;
-    $border-rule: top;
-    $border-color: colors.get-color(border);
-
-    @include spaces.inset($inset-type, $size);
-    @include borders.border($border-rule, $border-color);
+    @include spaces.inset(stretch, s);
+    @include borders.border(top, colors.get-color(border));
 
     display: table-cell;
 
