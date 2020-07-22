@@ -7,12 +7,9 @@
     padding-right: #{$padding} !important;
 
     > .ch-icon:last-child,
-    > .ch-toggle-icon {
-      position: absolute;
-      top: 50%;
-      left: auto;
-      right: calc((#{$padding}) / 2);
-      transform: translate(50%, -50%);
+    > .ch-toggle-icon,
+    > .ch-spinner:last-child {
+      @include ch-is-trailing-icon;
     }
   }
 
@@ -20,12 +17,9 @@
     padding-left: #{$padding} !important;
 
     > .ch-icon:first-child,
-    > .ch-toggle-icon {
-      position: absolute;
-      top: 50%;
-      left: calc((#{$padding}) / 2);
-      right: auto;
-      transform: translate(-50%, -50%);
+    > .ch-toggle-icon,
+    > .ch-spinner:first-child {
+      @include ch-is-leading-icon;
     }
   }
 }
