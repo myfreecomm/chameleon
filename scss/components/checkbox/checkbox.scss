@@ -94,8 +94,7 @@
 
   // 4. Disabled and readonly states
 
-  > input[type="checkbox"],
-  > input[type="radio"] {
+  > input {
     &:disabled,
     &.is-disabled {
       & + label,
@@ -106,8 +105,7 @@
     }
   }
 
-  > input[type="checkbox"],
-  > input[type="radio"] {
+  > input {
     &:disabled,
     &.is-disabled,
     &[readonly] {
@@ -119,7 +117,22 @@
       }
 
       + label:before {
-        background: #{ch-get-color(neutral, 2)};
+        background: ch-get-color(neutral, 2);
+      }
+    }
+  }
+
+  @at-root {
+    .is-disabled .ch-checkbox > input + label,
+    .is-disabled .ch-radio > input + label {
+      &:before {
+        background: ch-get-color(neutral, 2);
+      }
+
+      &,
+      &:before,
+      &:after {
+        opacity: 1;
       }
     }
   }

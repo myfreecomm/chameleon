@@ -1,4 +1,6 @@
 .ch-tableResponsive {
+  position: relative;
+
   @include ch-media(to, tablet) {
     $margin-left: calc(#{ch-get-icon-size()} + 2 * #{ch-get-space(s)});
     $margin-right: ch-calc-box-height();
