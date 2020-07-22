@@ -1,3 +1,0 @@
-@mixin ch-shadow ($layer: 2, $direction: top-bottom, $color: rgba($ch-color-navy-light, 0.65)) {
-  box-shadow: ch-get-shadow($layer, $direction, $color);
-}

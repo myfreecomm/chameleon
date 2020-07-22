@@ -1,5 +1,0 @@
-@mixin ch-from-desktop {
-  @media screen and (min-width: $ch-breakpoint-desktop) {
-    @content;
-  }
-}

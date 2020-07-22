@@ -1,6 +1,0 @@
-@mixin ch-grid ($columns-number: $ch-mobile-columns-number, $gutter: m) {
-  display: grid;
-  grid-template-columns: repeat($columns-number, 1fr);
-  grid-column-gap: ch-get-space($gutter);
-  grid-row-gap: ch-get-space($gutter);
-}
