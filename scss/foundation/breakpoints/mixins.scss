@@ -1,4 +1,13 @@
+// *************************************
+//
+// Breakpoints module - Mixins
+//
+// *************************************
+
 @use 'variables' as *;
+
+// ----- _from-desktop ----- //
+// Defines a media query for desktops screen size
 
 @mixin _from-desktop {
   @media screen and (min-width: $desktop-screen) {
@@ -6,11 +15,17 @@
   }
 }
 
+// ----- _from-tablet ----- //
+// Defines a media query for tablets screen size or higher
+
 @mixin _from-tablet {
   @media screen and (min-width: $tablet-screen) {
     @content;
   }
 }
+
+// ----- _only-mobile ----- //
+// Defines a media query for mobiles screen size
 
 @mixin _only-mobile {
   $width: calc(#{$tablet-screen} - 1px);
@@ -20,6 +35,9 @@
   }
 }
 
+// ----- _only-tablet ----- //
+// Defines a media query only for tablets screen size
+
 @mixin _only-tablet {
   $width: calc(#{$desktop-screen} - 1px);
 
@@ -27,6 +45,9 @@
     @content;
   }
 }
+
+// ----- _to-tablet ----- //
+// Defines a media query up to tablets screen size
 
 @mixin _to-tablet {
   $width: calc(#{$desktop-screen} - 1px);
@@ -36,8 +57,17 @@
   }
 }
 
+// ----- media ----- //
+// Defines a media query according to the specified arguments
+//
+// $type
+//   1 - from: from the lower limit of the $screen
+//   2 - to: 0px to the upper limit of the $screen
+//   3 - only: strictly for $screen range
+// $screen - one of the 3 available screen sizes: mobile, tablet and desktop
+
 @mixin media ($type, $screen) {
-  // 1. From
+  // From
 
   @if $type == from {
     @if $screen == mobile {
@@ -57,7 +87,7 @@
     }
   }
 
-  // 2. To
+  // To
 
   @else if $type == to {
     @if $screen == mobile {
@@ -77,7 +107,7 @@
     }
   }
 
-  // 3. Only
+  // Only
 
   @else if $type == only {
     @if $screen == mobile {
