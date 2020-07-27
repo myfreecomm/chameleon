@@ -1,8 +1,20 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../card' as card;
+@use 'functions' as *;
+@use 'variables' as *;
+
 .ch-modal {
-  @include ch-card;
-  @include ch-transition(unquote('visibility, opacity, transform'));
-  @include ch-shadow(5, top-bottom, rgba(#000, 0.45));
-  @include ch-paddingless;
+  @include card.wrapper;
+  @include motion.transition(unquote('visibility, opacity, transform'));
+  @include depth.shadow(5, top-bottom, rgba(colors.$black, 0.45));
+  @include spaces.paddingless;
 
   position: relative;
   display: flex;
@@ -13,10 +25,10 @@
   max-width: 100%;
   max-height: 100%;
   border: 0;
-  transform: scale(.75);
+  transform: scale(0.75);
 
   &.is-open {
-    @include ch-transition(unquote('visibility, opacity, transform'));
+    @include motion.transition(unquote('visibility, opacity, transform'));
 
     visibility: visible;
     opacity: 1;
@@ -24,37 +36,37 @@
   }
 
   > .ch-overlay {
-    @include ch-border-radius(2);
+    @include borders.border-radius(2);
 
     + .ch-modal-header,
     + .ch-modal-content,
     + .ch-modal-footer {
-      padding-top: ch-get-space(l);
+      padding-top: spaces.get-space(l);
     }
   }
 
   & > &-header,
   & > &-content,
   & > &-footer {
-    padding-right: ch-get-space(l);
-    padding-left: ch-get-space(l);
+    padding-right: spaces.get-space(l);
+    padding-left: spaces.get-space(l);
 
     &:only-child {
-      padding-top: ch-get-space(l);
-      padding-bottom: ch-get-space(l);
+      padding-top: spaces.get-space(l);
+      padding-bottom: spaces.get-space(l);
     }
 
     &:last-child {
-      padding-bottom: ch-get-space(l);
+      padding-bottom: spaces.get-space(l);
     }
 
     &:first-child {
-      padding-top: ch-get-space(l);
+      padding-top: spaces.get-space(l);
     }
   }
 
   &-header {
-    @include ch-space-stack(l);
+    @include spaces.stack(l);
 
     display: flex;
 
@@ -69,12 +81,12 @@
     overflow-y: auto;
 
     * + &:not(:last-child) {
-      @include ch-space-stack(l);
+      @include spaces.stack(l);
     }
   }
 
   &--aside {
-    @include ch-shadow(5, right-left, rgba(#000, 0.45));
+    @include depth.shadow(5, right-left, rgba(colors.$black, 0.45));
 
     display: flex;
     flex-direction: column;
@@ -97,19 +109,19 @@
     position: relative;
   }
 
-  @include ch-media(from, tablet) {
+  @include breakpoints.media(from, tablet) {
     &:not(&--aside) {
       height: auto;
     }
 
     // Modal size variations
 
-    @each $size in $ch-modal-sizes {
-      $posfix: ch-generate-variation(($size), (m));
+    @each $size in $modal-widths {
+      $posfix: helpers.generate-variation(($size), (m));
       $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
 
       @at-root #{$path} {
-        width: ch-get-modal-size($size);
+        width: get-width($size);
       }
     }
 
@@ -117,13 +129,13 @@
 
     .ch-template-nav:not(.is-expanded) + .ch-template-content & {
       &--aside {
-        max-width: calc(100% - #{ch-get-dimension(1)});
+        max-width: calc(100% - #{sizes.get-size(1)});
       }
     }
 
     .ch-template-nav.is-expanded + .ch-template-content & {
       &--aside {
-        max-width: calc(100% - #{ch-get-dimension(2)});
+        max-width: calc(100% - #{sizes.get-size(2)});
       }
     }
   }

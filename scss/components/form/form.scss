@@ -1,27 +1,34 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
 .ch-form {
-  @include ch-space-stack-group(l);
+  @include spaces.stack-group(l);
 
   &-actions {
-    @include ch-media(only, mobile) {
-      @include ch-space-stack-group(xs);
+    $box-height: helpers.calc-box-height(
+      thypography.get-font-size(2),
+      spaces.get-space(xs),
+      spaces.get-space(xs)
+    );
+
+    @include breakpoints.media(only, mobile) {
+      @include spaces.stack-group(xs);
 
       > .ch-button.has-leadingIcon {
-        padding-right: ch-calc-box-height();
+        padding-right: $box-height;
       }
 
       > .ch-button.has-trailingIcon {
-        padding-left: ch-calc-box-height();
+        padding-left: $box-height;
       }
     }
 
-    @include ch-media(from, tablet) {
-      @include ch-space-inline-group(right, xs);
+    @include breakpoints.media(from, tablet) {
+      @include spaces.inline-group(right, xs);
     }
 
-    padding-top: #{ch-get-space(s)};
+    padding-top: spaces.get-space(s);
   }
-
-  // &--contained {
-  //   max-width: calc(#{$ch-breakpoint-desktop} - #{ch-get-dimension(2)});
-  // }
 }

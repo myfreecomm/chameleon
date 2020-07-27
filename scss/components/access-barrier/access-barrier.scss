@@ -1,0 +1,56 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../grid' as grid;
+
+.ch-accessBarrier {
+  @include breakpoints.media(from, desktop) {
+    @include grid.wrapper(2);
+  }
+
+  position: relative;
+
+  min-height: 100vh;
+
+  &-main {
+    padding-top: 25vh;
+
+    > .ch-card {
+      position: relative;
+      z-index: depth.get-z-index(1, 2);
+
+      border: 0;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: sizes.get-size(3);
+    }
+
+    > .ch-footer {
+      @include breakpoints.media(from, desktop) {
+        width: 50%;
+      }
+
+      @include spaces.inline-group;
+      @include spaces.inset;
+
+      justify-content: center;
+    }
+  }
+
+  > .ch-bg {
+    @include breakpoints.media(from, desktop) {
+      width: 50%;
+      height: 100vh;
+    }
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: depth.get-z-index(1, 1);
+
+    width: 100%;
+    min-height: 50vh;
+  }
+}

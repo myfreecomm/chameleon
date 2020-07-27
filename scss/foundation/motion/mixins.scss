@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+@mixin transition (
+  $property,
+  $duration: $transition-duration-normal,
+  $delay: $transition-delay
+) {
+  transition: {
+    property: $property;
+    duration: $duration;
+    timing-function: $transition-timing-function;
+    delay: $delay;
+  }
+}

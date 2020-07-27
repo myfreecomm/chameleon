@@ -1,0 +1,89 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
+@mixin leading-icon ($padding) {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  left: calc((#{$padding}) / 2);
+  transform: translate(-50%, -50%);
+}
+
+@mixin trailing-icon ($padding) {
+  position: absolute;
+  top: 50%;
+  right: calc((#{$padding}) / 2);
+  left: auto;
+  transform: translate(50%, -50%);
+}
+
+@mixin has-icon ($type, $padding) {
+  position: relative;
+
+  @if ($type == leading) {
+    padding-left: $padding !important;
+
+    > .ch-icon:first-child,
+    > .ch-toggle-icon,
+    > .ch-spinner:first-child {
+      @include leading-icon($padding);
+    }
+  }
+
+  @else if ($type == trailing) {
+    padding-right: $padding !important;
+
+    > .ch-icon:last-child,
+    > .ch-toggle-icon,
+    > .ch-spinner:last-child {
+      @include trailing-icon($padding);
+    }
+  }
+}
+
+@mixin icon-only ($size) {
+  $box-height: helpers.calc-box-height(
+    thypography.get-font-size(2),
+    spaces.get-space($size),
+    spaces.get-space($size)
+  );
+
+  $size: calc(#{$box-height} + 2 * #{borders.$border-width});
+
+  @include spaces.paddingless(true);
+
+  position: relative;
+
+  width: $size;
+  min-width: $size;
+  min-height: $size;
+
+  > *:not(.ch-icon):not(.ch-avatar) {
+    display: none;
+  }
+
+  > .ch-icon:first-child,
+  > .ch-avatar {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin mask-icon ($image, $option: 'complete') {
+  mask-image: url(#{$image});
+  -webkit-mask-image: url(#{$image});
+  
+  @if ($option != 'only-mask') {
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-color: colors.get-color(text, 2);
+  }
+}

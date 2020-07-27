@@ -1,9 +1,0 @@
-@function ch-get-z-index($layer-index, $number: 1) {
-  $layers: ($ch-layer-1, $ch-layer-2, $ch-layer-3, $ch-layer-4, $ch-layer-5, $ch-layer-6);
-  $layer: nth($layers, $layer-index);
-  $initial-value: nth($layer, 1);
-  $end-value: nth($layer, 2);
-  $z-index: $initial-value + $number;
-
-  @return if($z-index > $end-value, $end-value, $z-index);
-}

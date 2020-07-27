@@ -1,10 +1,17 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../icon' as icon;
+
 .ch-tag {
-  $height: calc(#{ch-get-text-size()} * #{ch-get-text-line-height()});
+  $height: calc(#{thypography.get-font-size()} * #{thypography.get-line-height()});
 
   // 1. Base
 
-  @include ch-text-caption;
-  @include ch-truncate;
+  @include thypography.caption;
+  @include helpers.truncate;
 
   display: inline-block;
   position: relative;
@@ -14,13 +21,13 @@
   height: $height;
   line-height: calc(#{$height} + 1px);
   vertical-align: middle;
-  padding-right: ch-get-space(s);
-  padding-left: ch-get-space(s);
+  padding-right: spaces.get-space(s);
+  padding-left: spaces.get-space(s);
 
   // 2. Close button
 
   &.has-close {
-    padding-right: calc(#{ch-get-space(xxs)} + #{$height});
+    padding-right: calc(#{spaces.get-space(xxs)} + #{$height});
 
     > .ch-tag-close {
       position: absolute;
@@ -30,20 +37,20 @@
   }
 
   > .ch-tag-close {
-    @include ch-mask-icon($ch-icon-times);
-    @include ch-border-radius(circle);
+    @include icon.mask-icon(icon.$icon-times);
+    @include borders.border-radius(circle);
 
     cursor: pointer;
     width: $height;
     height: $height;
     mask-size: calc(#{$height} / 3);
-    background-color: ch-get-color(text, 2);
+    background-color: colors.get-color(text, 2);
 
     &:hover:focus,
     &:hover,
     &:focus,
     &:active {
-      background-color: ch-get-color(text, 1);
+      background-color: colors.get-color(text, 1);
     }
   }
 
@@ -51,7 +58,7 @@
 
   &,
   &:after {
-    @include ch-border-radius(circle);
+    @include borders.border-radius(circle);
   }
 
   &:after {
@@ -64,25 +71,25 @@
     content: '';
     width: 100%;
     height: 100%;
-    background: #{ch-get-color(neutral, 2)};
+    background: colors.get-color(neutral, 2);
   }
 
   // 4. Support variations
 
   @each $variation in (info, warning, positive, negative) {
     &--#{$variation} {
-      color: ch-get-color($variation);
+      color: colors.get-color($variation);
 
       // 4.1. Close button
 
       > .ch-tag-close {
-        background-color: ch-get-color($variation);
+        background-color: colors.get-color($variation);
     
         &:hover:focus,
         &:hover,
         &:focus,
         &:active {
-          background-color: ch-get-color($variation, focus);
+          background-color: colors.get-color($variation, focus);
         }
       }
 
@@ -90,7 +97,7 @@
 
       &:after {
         opacity: 0.15;
-        background: #{ch-get-color($variation)};
+        background: colors.get-color($variation);
       }
     }
   }

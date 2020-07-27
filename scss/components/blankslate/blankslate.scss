@@ -1,5 +1,7 @@
-.ch-blankslate {
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
 
+.ch-blankslate {
   // 1. Base
 
   display: flex;
@@ -12,7 +14,7 @@
   // 2. Content
 
   &-content {
-    @include ch-space-stack-group(xs);
+    @include spaces.stack-group(xs);
 
     text-align: center;
     align-items: center;
@@ -20,7 +22,7 @@
     // 2.1. Image
 
     &-image {
-      width: ch-get-dimension(2);
+      width: sizes.get-size(2);
     }
   }
 }

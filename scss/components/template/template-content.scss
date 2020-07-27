@@ -1,21 +1,28 @@
-.ch-template-content {
-  @include ch-transition(margin-left);
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
 
-  @include ch-media(only, mobile) {
-    @include ch-space-inset(stretch);
+.ch-template-content {
+  @include motion.transition(margin-left);
+
+  @include breakpoints.media(only, mobile) {
+    @include spaces.inset(stretch);
   } 
 
-  @include ch-media(from, tablet) {
-    @include ch-space-inset(stretch, l);
+  @include breakpoints.media(from, tablet) {
+    @include spaces.inset(stretch, l);
   }
 
   @at-root .ch-template-nav ~ .ch-template-header ~ & {
-    @include ch-media(only, mobile) {
-      padding-bottom: calc(#{ch-get-dimension(1)} + #{ch-get-space(m)});
+    @include breakpoints.media(only, mobile) {
+      padding-bottom: calc(#{sizes.get-size(1)} + #{spaces.get-space(m)});
     }
   }
 
   &--contained {
-    max-width: calc(#{$ch-breakpoint-desktop} - #{ch-get-dimension(2)} + 2 * #{ch-get-space(l)});
+    max-width: calc(
+      #{breakpoints.$desktop-screen} - #{sizes.get-size(2)} + 2 * #{spaces.get-space(l)}
+    );
   }
 }

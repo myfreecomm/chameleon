@@ -1,9 +1,20 @@
-// sass-lint:disable no-important
+@use '../../foundation/borders' as borders;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/thypography' as thypography;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/helpers' as helpers;
+@use '../button' as button;
+@use '../icon' as icon;
+@use '../menu' as menu;
 
 .ch-dropdown.ch-dropdown--actions {
   // 1. For media up to tablet
 
-  @include ch-media(to, tablet) {
+  @include breakpoints.media(to, tablet) {
     // 1.1. Card
 
     > .ch-overlay > .ch-card {
@@ -14,14 +25,12 @@
 
       > .ch-menu {
         &:not(:last-child):before {
-          $empty: '';
-
-          @include ch-border(top);
+          @include borders.border(top);
 
           display: block;
 
-          content: $empty;
-          margin: #{ch-get-space(s)};
+          content: '';
+          margin: spaces.get-space(s);
         }
 
         &:not(:last-child) {
@@ -29,16 +38,16 @@
         }
 
         > .ch-menu-item--icon {
-          padding-top: #{ch-get-space(s)} !important;
-          padding-right: #{ch-get-space(xs)} !important;
-          padding-bottom: #{ch-get-space(s)} !important;
-          padding-left: #{ch-get-dimension(1)} !important;
+          padding-top: spaces.get-space(s) !important;
+          padding-right: spaces.get-space(xs) !important;
+          padding-bottom: spaces.get-space(s) !important;
+          padding-left: sizes.get-size(1) !important;
 
           width: 100%;
           min-height: auto;
 
           > .ch-icon {
-            left: calc(#{ch-get-dimension(1)} / 2);
+            left: calc(#{sizes.get-size(1)} / 2);
           }
 
           > .ch-menu-item-label {
@@ -51,7 +60,7 @@
 
   // 2. For media from desktop
 
-  @include ch-media(from, desktop) {
+  @include breakpoints.media(from, desktop) {
     display: inline-flex;
 
     // 2.1. Overlay
@@ -87,50 +96,54 @@
       // 2.1.2. Menu
 
       > .ch-card > .ch-menu:first-child {
-        @include ch-menu-horizontal;
+        @include menu.horizontal;
 
         overflow: auto;
 
         > .ch-menu-item,
         > .ch-menu-submenu > .ch-menu-item {
-          @include ch-ripple-effect(ch-get-color(default));
-          @include ch-border-radius(1);
+          @include button.ripple-effect(colors.get-color(default));
+          @include borders.border-radius(1);
 
-          color: #{ch-get-color(text, 2)};
+          color: colors.get-color(text, 2);
 
           &.has-leadingIcon,
           &.has-trailingIcon,
           &.ch-menu-item--icon {
             > .ch-icon {
-              font-size: #{ch-get-icon-size(s)};
+              font-size: icon.get-icon-size(s);
             }
           }
 
           &:hover:focus,
           &:hover,
           &:focus {
-            color: #{ch-get-color(text, 1)};
+            color: colors.get-color(text, 1);
             background: transparent;
           }
         }
 
         > .ch-menu-item:not(.ch-menu-item--icon),
         > .ch-menu-submenu > .ch-menu-item:not(.ch-menu-item--icon) {
-          $box-height: ch-calc-box-height(ch-get-text-size(), ch-get-space(xxs));
+          $box-height: helpers.calc-box-height(
+            thypography.get-font-size(),
+            spaces.get-space(xxs),
+            spaces.get-space(xxs)
+          );
 
-          @include ch-space-inset(squish, xs);
+          @include spaces.inset(squish, xs);
 
           &.has-leadingIcon {
-            @include ch-has-icon(left, $box-height);
+            @include icon.has-icon(leading, $box-height);
           }
 
           &.has-trailingIcon {
-            @include ch-has-icon(right, $box-height);
+            @include icon.has-icon(trailing, $box-height);
           }
         }
 
         > .ch-menu-item--icon {
-          @include ch-icon-only(xxs);
+          @include icon.icon-only(xxs);
         }
       }
     }
@@ -149,9 +162,7 @@
       }
 
       > .ch-overlay {
-        $none: 0;
-
-        margin: $none;
+        margin: 0;
       }
 
       > .ch-overlay > .ch-card {
@@ -159,11 +170,12 @@
       }
 
       > .ch-overlay > .ch-card > .ch-menu:not(:first-child) {
-        @include ch-shadow(2);
-        @include ch-border-radius(2);
-        @include ch-border;
-        @include ch-transition(
-          unquote('visibility, opacity'), $ch-transition-duration-very-fast
+        @include depth.shadow(2);
+        @include borders.border-radius(2);
+        @include borders.border;
+        @include motion.transition(
+          unquote('visibility, opacity'),
+          motion.$transition-duration-very-fast
         );
 
         position: absolute;
@@ -171,7 +183,7 @@
 
         opacity: 0;
         width: auto;
-        min-width: #{ch-get-dimension(2)};
+        min-width: sizes.get-size(2);
         height: auto;
         overflow-x: hidden;
         overflow-y: auto;
@@ -186,6 +198,6 @@
   }
 
   > .ch-overlay > .ch-card {
-    @include ch-paddingless;
+    @include spaces.paddingless;
   }
 }

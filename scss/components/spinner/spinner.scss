@@ -1,31 +1,32 @@
-.ch-spinner {
-  $size: ch-get-icon-size(m);
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../icon' as icon;
+@use 'mixins' as *;
 
+.ch-spinner {
   // 1. Base
 
   position: relative;
   display: inline-block;
   background-color: transparent;
-  width: $size;
-  height: $size;
-  line-height: $size;
+  width: icon.get-icon-size(m);;
+  height: icon.get-icon-size(m);;
+  line-height: icon.get-icon-size(m);;
   vertical-align: middle;
 
   // 2. Size Variations
 
-  @each $size in $ch-icon-sizes {
+  @each $size in icon.$sizes {
     &--#{$size} {
-      $size: ch-get-icon-size($size);
-
-      width: $size;
-      height: $size;
-      line-height: $size;
+      width: icon.get-icon-size($size);
+      height: icon.get-icon-size($size);
+      line-height: icon.get-icon-size($size);
     }
   }
 
   &:before,
   &:after {
-    @include ch-border-radius(circle);
+    @include borders.border-radius(circle);
 
     content: '';
     position: absolute;
@@ -37,14 +38,14 @@
   }
 
   &:before {
-    @include ch-border(box, ch-get-color(default), solid, 3px);
+    @include borders.border(box, colors.get-color(default), solid, 3px);
     opacity: 0.3;
   }
 
   &:after {
-    @include ch-border(box, transparent, solid, 3px);
-    @include ch-border(top, ch-get-color(default), solid, 3px);
-    @include ch-mixin-spin-effect;
+    @include borders.border(box, transparent, solid, 3px);
+    @include borders.border(top, colors.get-color(default), solid, 3px);
+    @include spin-effect;
   }
 
   // 3. Color Variations
@@ -52,12 +53,13 @@
   @each $type in (brand, primary, positive, warning, negative) {
     &--#{$type} {
       &:before {
-        @include ch-border(box, ch-get-color($type), solid, 3px);
+        @include borders.border(box, colors.get-color($type), solid, 3px);
+
         opacity: 0.3;
       }
 
       &:after {
-        @include ch-border(top, ch-get-color($type), solid, 3px);
+        @include borders.border(top, colors.get-color($type), solid, 3px);
       }
     }
   }
@@ -66,12 +68,13 @@
 
   &--inverse {
     &:before {
-      @include ch-border(box, ch-get-color(neutral, 1), solid, 3px);
+      @include borders.border(box, colors.get-color(neutral, 1), solid, 3px);
+
       opacity: 0.3;
     }
 
     &:after {
-      @include ch-border(top, ch-get-color(neutral, 1), solid, 3px);
+      @include borders.border(top, colors.get-color(neutral, 1), solid, 3px);
     }
   }
 }

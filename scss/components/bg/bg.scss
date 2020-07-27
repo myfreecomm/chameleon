@@ -1,12 +1,11 @@
-// sass-lint:disable no-important
+@use '../../foundation/colors' as colors;
 
 .ch-bg {
-
   // 1. Base
 
   position: relative;
 
-  background-color: #{ch-get-color(brand)};
+  background-color: colors.get-color(brand);
 
   // 2. Image
 
@@ -25,7 +24,7 @@
 
   @each $color in (brand, primary, info, positive, warning, negative) {
     @at-root &--#{$color} {
-      background-color: #{ch-get-color($color)} !important;
+      background-color: colors.get-color($color) !important;
     }
   }
 }

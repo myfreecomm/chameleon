@@ -1,9 +1,13 @@
-.ch-template-nav {
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/sizes' as sizes;
+@use '../icon' as icon;
 
+.ch-template-nav {
   // 1. Mobile toggle
 
   > .ch-template-nav-toggle {
-    @include ch-media(from, tablet) {
+    @include breakpoints.media(from, tablet) {
       display: none;
     }
 
@@ -12,13 +16,13 @@
     align-items: center;
 
     width: 20%;
-    height: #{ch-get-dimension(1)};
+    height: sizes.get-size(1);
 
     > .ch-icon {
-      @include ch-mask-icon($ch-icon-ellipsis);
+      @include icon.mask-icon(icon.$icon-ellipsis);
 
-      height: #{ch-get-icon-size()};
-      background-color: #{ch-get-color(text, 2, inverse)};
+      height: icon.get-icon-size(m);
+      background-color: colors.get-color(text, 2, inverse);
     }
 
     // 1.1. Focus interaction
@@ -27,23 +31,23 @@
     &:hover,
     &:focus {
       > .ch-icon {
-        background-color: #{ch-get-color(text, 1, inverse)};
+        background-color: colors.get-color(text, 1, inverse);
       }
     }
 
     // 2. Tablet toggle
 
     & + .ch-template-nav-toggle {
-      @include ch-media(from, tablet) {
+      @include breakpoints.media(from, tablet) {
         display: flex;
 
-        width: #{ch-get-dimension(1)};
+        width: sizes.get-size(1);
       }
 
       display: none;
 
       > .ch-icon {
-        @include ch-mask-icon($ch-icon-nav-expand, 'only-mask');
+        @include icon.mask-icon(icon.$icon-nav-expand, 'only-mask');
       }
     }
   }
@@ -51,11 +55,11 @@
   // 3. Open state
 
   &.is-open > .ch-template-nav-toggle {
-    @include ch-media(only, mobile) {
+    @include breakpoints.media(only, mobile) {
       margin-left: 80%;
 
       > .ch-icon {
-        @include ch-mask-icon($ch-icon-times, 'only-mask');
+        @include icon.mask-icon(icon.$icon-times, 'only-mask');
       }
     }
   }
@@ -64,6 +68,6 @@
 
   &.is-expanded > .ch-template-nav-toggle + .ch-template-nav-toggle > .ch-icon,
   &.is-open.is-expanded > .ch-template-nav-toggle + .ch-template-nav-toggle > .ch-icon {
-    @include ch-mask-icon($ch-icon-nav-retract, 'only-mask');
+    @include icon.mask-icon(icon.$icon-nav-retract, 'only-mask');
   }
 }

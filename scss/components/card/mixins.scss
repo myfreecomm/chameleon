@@ -1,0 +1,99 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
+
+@mixin wrapper {
+  @include spaces.inset(default, m);
+  @include borders.border(box, colors.get-color(border));
+  @include borders.border-radius(2);
+
+  background: colors.get-color(neutral, 1);
+}
+
+@mixin header {
+  &:not(:last-child) {
+    @include spaces.stack;
+  }
+}
+
+@mixin content {
+  * + &:not(:last-child) {
+    @include spaces.stack;
+  }
+}
+
+@mixin support ($position: left, $color: colors.get-color(border)) {
+  position: relative;
+
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+
+    content: '';
+
+    @if $position == top or $position == left {
+      border-top-left-radius: borders.get-border-radius(2);
+    }
+
+    @if $position == top or $position == right {
+      border-top-right-radius: borders.get-border-radius(2);
+    }
+
+    @if $position == bottom or $position == right {
+      border-bottom-right-radius: borders.get-border-radius(2);
+    }
+
+    @if $position == bottom or $position == left {
+      border-bottom-left-radius: borders.get-border-radius(2);
+    }
+  }
+
+  &:before {
+    background: $color;
+
+    @if $position == top or $position == left {
+      top: calc(-1 * #{borders.$border-width});
+      left: calc(-1 * #{borders.$border-width});
+    }
+
+    @if $position == bottom or $position == right {
+      bottom: calc(-1 * #{borders.$border-width});
+      right: calc(-1 * #{borders.$border-width});
+    }
+
+    @if $position == top or $position == bottom {
+      width: calc(100% + 2 * #{borders.$border-width});
+      height: calc(2 * #{spaces.get-space(xxs)});
+    }
+
+    @if $position == right or $position == left {
+      width: calc(2 * #{spaces.get-space(xxs)});
+      height: calc(100% + 2 * #{borders.$border-width});
+    }
+  }
+
+  &:after {
+    background: colors.get-color(neutral, 1);
+
+    @if $position == top or $position == left {
+      top: 0;
+      left: spaces.get-space(xxs);
+    }
+
+    @if $position == bottom or $position == right {
+      bottom: 0;
+      right: spaces.get-space(xxs);
+    }
+
+    @if $position == top or $position == bottom {
+      width: 100%;
+      height: spaces.get-space(xxs);
+    }
+
+    @if $position == right or $position == left {
+      width: spaces.get-space(xxs);
+      height: 100%;
+    }
+  }
+}

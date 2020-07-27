@@ -1,0 +1,91 @@
+@use '../colors/' as colors;
+@use 'functions' as *;
+@use 'variables' as *;
+
+@mixin border (
+  $rules: box,
+  $color: colors.get-color(border),
+  $style: solid,
+  $width: $border-width
+) {
+  @each $rule in $rules {
+    @if $rule == box {
+      border: $width $style $color;
+    }
+
+    @else if $rule == horizontal {
+      border-left: $width $style $color;
+      border-right: $width $style $color;
+    }
+
+    @else if $rule == vertical {
+      border-top: $width $style $color;
+      border-bottom: $width $style $color;
+    }
+
+    @else if $rule == top {
+      border-top: $width $style $color;
+    }
+
+    @else if $rule == right {
+      border-right: $width $style $color;
+    }
+
+    @else if $rule == bottom {
+      border-bottom: $width $style $color;
+    }
+
+    @else if $rule == left {
+      border-left: $width $style $color;
+    }
+
+    @else if $rule == none {
+      border: 0;
+    }
+
+    @else if $rule == list {
+      & > *:not(:first-child) {
+        border-top: $width $style $color;
+      }
+    }
+  }
+}
+
+@mixin border-radius ($type: 1, $rules: box) {
+  $radius: get-border-radius($type);
+
+  @each $rule in $rules {
+    @if $rule == box {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    @if $rule == top {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+    }
+
+    @if $rule == bottom {
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    @if $rule == top-left {
+      border-top-left-radius: $radius;
+    }
+
+    @if $rule == top-right {
+      border-top-right-radius: $radius;
+    }
+
+    @if $rule == bottom-right {
+      border-bottom-right-radius: $radius;
+    }
+
+    @if $rule == bottom-left {
+      border-bottom-left-radius: $radius;
+    }
+  }
+}

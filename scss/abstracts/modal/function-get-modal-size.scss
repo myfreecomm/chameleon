@@ -1,3 +1,0 @@
-@function ch-get-modal-size ($size: m) {
-  @return unquote("var(--ch-modal-size-#{$size})");
-}

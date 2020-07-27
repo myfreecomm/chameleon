@@ -1,0 +1,62 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
+.ch-errorPage {
+  // 1. Base
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 100vh;
+  text-align: center;
+  background-color: colors.get-color(neutral, 2);
+
+  > *:not(#{&}-code):not(:last-child) {
+    @include spaces.stack(l);
+  }
+
+  // 2. Code
+
+  &-code {
+    position: relative;
+
+    font-size: calc(#{thypography.get-font-size(2)} * 8);
+    line-height: 1em;
+    margin-bottom: 0;
+
+    .ch-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+    }
+
+    @include breakpoints.media(from, tablet) {
+      font-size: calc(#{thypography.get-font-size(2)} * 12);
+    }
+  }
+
+  // 3. Button
+
+  > .ch-button {
+    font-size: thypography.get-font-size(3);
+  }
+
+  // 4. Footer
+
+  > .ch-footer {
+    @include borders.border(top);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: sizes.get-size(1);
+  }
+}

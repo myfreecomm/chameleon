@@ -1,42 +1,53 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
 .ch-avatar {
-  $box-height: ch-calc-box-height(ch-get-text-size(2), ch-get-space(xs));
-  $avatar-width: calc(#{$box-height} + 2 * #{$ch-border-width});
+  $box-height: helpers.calc-box-height(
+    thypography.get-font-size(2),
+    spaces.get-space(xs),
+    spaces.get-space(xs)
+  );
+
+  $avatar-width: calc(#{$box-height} + 2 * #{borders.$border-width});
 
   // 1. Base
 
-  @include ch-border-radius(circle);
+  @include borders.border-radius(circle);
 
   display: block;
   position: relative;
 
-  width: #{$avatar-width};
-  height: #{$avatar-width};
+  width: $avatar-width;
+  height: $avatar-width;
   text-align: center;
-  background: #{ch-get-color(neutral, 2)};
+  background: colors.get-color(neutral, 2);
 
   &,
   &:first-letter {
-    line-height: #{$avatar-width};
+    line-height: $avatar-width;
   }
 
   // 2. Abbreviation
 
   &:before {
-    content: #{attr(title)};
+    content: attr(title);
     font-size: 0;
   }
 
   &:first-letter {
-    color: #{ch-get-color(text, 2)};
-    font-size: #{ch-get-text-size(3)};
-    line-height: #{$avatar-width};
+    color: colors.get-color(text, 2);
+    font-size: thypography.get-font-size(3);
+    line-height: $avatar-width;
   }
 
   // 3. Image
 
   > #{&}-image,
   > img {
-    @include ch-border-radius(circle);
+    @include borders.border-radius(circle);
 
     display: block;
     position: absolute;

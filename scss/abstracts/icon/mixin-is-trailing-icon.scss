@@ -1,7 +1,0 @@
-@mixin ch-is-trailing-icon($padding: ch-calc-box-height()) {
-  position: absolute;
-  top: 50%;
-  left: auto;
-  right: calc((#{$padding}) / 2);
-  transform: translate(50%, -50%);
-}

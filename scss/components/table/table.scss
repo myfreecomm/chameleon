@@ -1,5 +1,9 @@
-.ch-table {
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
+@use '../icon' as icon;
 
+.ch-table {
   // 1. Base
 
   display: table;
@@ -67,13 +71,8 @@
   &-cell,
   td,
   th {
-    $inset-type: stretch;
-    $size: s;
-    $border-rule: top;
-    $border-color: ch-get-color(border);
-
-    @include ch-space-inset($inset-type, $size);
-    @include ch-border($border-rule, $border-color);
+    @include spaces.inset(stretch, s);
+    @include borders.border(top, colors.get-color(border));
 
     display: table-cell;
 
@@ -93,7 +92,7 @@
   // 5.2. Leading variation
 
   .ch-table-cell--leading {
-    $width: calc(#{ch-get-icon-size()} + 2 * #{ch-get-space(s)});
+    $width: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)});
 
     max-width: $width;
     width: $width;

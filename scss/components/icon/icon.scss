@@ -1,5 +1,11 @@
-.ch-icon {
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use 'functions' as *;
+@use 'variables' as *;
 
+.ch-icon {
   // 1. Base
 
   text-align: center;
@@ -7,25 +13,25 @@
   // 2. Circle variation
 
   &--circle {
-    @include ch-border-radius(circle);
+    @include borders.border-radius(circle);
 
-    color: #{ch-get-color(text, 1, inverse)};
-    background-color: #{ch-get-color(default)};
+    color: colors.get-color(text, 1, inverse);
+    background-color: colors.get-color(default);
   }
 
   // 3. Size variations
 
-  @each $size in $ch-icon-sizes {
-    $posfix: ch-generate-variation(($size), (m));
+  @each $size in $sizes {
+    $posfix: helpers.generate-variation(($size), (m));
     $path: if($size != m, #{&}#{&}#{$posfix}, #{&});
 
     @at-root #{$path} {
-      font-size: ch-get-icon-size($size);
-      width: ch-get-icon-size($size);
+      font-size: get-icon-size($size);
+      width: get-icon-size($size);
 
       &.ch-icon--circle {
         $sqrt2: 1.41421356237;
-        $size: calc(#{ch-get-icon-size($size)} * #{$sqrt2} + #{ch-get-space(xxs)});
+        $size: calc(#{get-icon-size($size)} * #{$sqrt2} + #{spaces.get-space(xxs)});
 
         height: $size;
         width: $size;

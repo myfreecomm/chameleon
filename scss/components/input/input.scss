@@ -1,121 +1,108 @@
-/***********************
-STYLES DIRECTLY ON INPUT
-************************/
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../icon' as icon;
+@use 'mixins' as *;
 
 input.ch-input,
 input.ch-file,
 textarea.ch-textarea {
-
   // 1. Base
 
-  @include ch-input;
-
-  // 2. Fluid variation
-  &--fluid {
-    width: 100%;
-  }
+  @include wrapper(s);
 
    // 2. Small variation
 
   &--small {
-    @include ch-input(xs);
+    @include wrapper(xs);
   }
 
-  // 4. Negative variation
+  // 3. Negative variation
 
   &--negative {
-    @include ch-input-negative;
+    @include negative;
   }
 }
-
-/***************************
-STYLES ON INPUT CONTAINER
-**************************/
 
 .ch-input,
 .ch-file {
   // 1. Base
 
   &:not(input) > input {
-    @include ch-input;
+    @include wrapper(s);
   }
 
-  // 2. Fluid variation
-
-  &--fluid,
-  &--fluid:not(input) > input {
-    width: 100%;
-  }
-
-  // 3. Negative variation
+  // 2. Negative variation
 
   &--negative:not(input) > input {
-    @include ch-input-negative;
+    @include negative;
   }
 
-  // 4. Disabled variation
-
-  &.is-disabled:not(input) > input {
-    opacity: 1;
-  }
-
-  // 4. Icons variation
+  // 3. Icons variation
 
   &.has-leadingIcon,
   &.has-trailingIcon {
-    @include ch-paddingless(true);
+    @include spaces.paddingless($important: true);
+
     position: relative;
 
     > .ch-icon,
     > .ch-spinner {
-      z-index: #{ch-get-z-index(1, 1)};
+      z-index: depth.get-z-index(1);
     }
 
     > .ch-icon {
-      font-size: #{ch-get-icon-size(s)};
+      font-size: icon.get-icon-size(s);
     }
   }
 
   &.has-leadingIcon {
     > input {
-      @include ch-has-icon;
-    }
-
-    > .ch-icon:first-child,
-    > .ch-spinner:first-child {
-      @include ch-is-leading-icon;
+      @include icon.has-icon(
+        leading,
+        helpers.calc-box-height(
+          thypography.get-font-size(2),
+          spaces.get-space(xs),
+          spaces.get-space(xs)
+        )
+      );
     }
   }
 
   &.has-trailingIcon {
     > input {
-      @include ch-has-icon(right);
-    }
-
-    > .ch-icon:last-child,
-    > .ch-spinner:last-child {
-      @include ch-is-trailing-icon;
+      @include icon.has-icon(
+        trailing,
+        helpers.calc-box-height(
+          thypography.get-font-size(2),
+          spaces.get-space(xs),
+          spaces.get-space(xs)
+        )
+      );
     }
   }
 
-  // 5. Small variation
+  // 4. Small variation
 
   &--small {
     &:not(input) > input {
-      @include ch-input(xs);
+      @include wrapper(xs);
     }
 
-    // 5.1 Icons variation
+    // 4.1 Icons variation
 
     &.has-leadingIcon,
     &.has-trailingIcon {
       > .ch-icon {
-        font-size: #{ch-get-icon-size(xs)};
+        font-size: icon.get-icon-size(xs);
       }
 
       > .ch-spinner {
-        width: #{ch-get-icon-size(s)};
-        height: #{ch-get-icon-size(s)};
+        width: icon.get-icon-size(s);
+        height: icon.get-icon-size(s);
       }
     }
   }
@@ -125,7 +112,11 @@ STYLES ON INPUT CONTAINER
   @at-root {
     .is-disabled .ch-input,
     .is-readonly .ch-input {
-      background-color: ch-get-color(neutral, 2);
+      background-color: colors.get-color(neutral, 2);
     }
   }
+}
+
+.ch-file {
+  line-height: calc(100% + 2 * #{borders.$border-width});
 }

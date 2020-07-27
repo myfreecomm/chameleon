@@ -1,13 +1,13 @@
-// 1. Base
+@use '../../foundation/thypography' as thypography;
 
 .ch-title {
   $margin-top-for-big-titles: -0.5em;
   $margin-top-for-other-titles: -0.25em;
 
-  @include ch-text-title(3);
+  @include thypography.title(3);
 
   > .ch-title-sub {
-    @include ch-text-subtitle(3);
+    @include thypography.subtitle(3);
 
     display: block;
 
@@ -16,10 +16,10 @@
 
   @for $i from 1 through 6 {
     @at-root #{&}--#{$i}, h#{$i} {
-      @include ch-text-title($i);
+      @include thypography.title($i);
 
       > .ch-title-sub {
-        @include ch-text-subtitle($i);
+        @include thypography.subtitle($i);
 
         display: block;
 

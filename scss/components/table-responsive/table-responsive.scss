@@ -1,0 +1,86 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../icon' as icon;
+
+.ch-tableResponsive {
+  position: relative;
+
+  @include breakpoints.media(to, tablet) {
+    $margin-left: calc(#{icon.get-icon-size(m)} + 2 * #{spaces.get-space(s)});
+    $margin-right: helpers.calc-box-height(
+      thypography.get-font-size(2),
+      spaces.get-space(xs),
+      spaces.get-space(xs)
+    );
+
+    // 1. Base
+
+    position: relative;
+
+    // 2. Has leading
+
+    &.has-leading > &-scroll {
+      margin-left: $margin-left;
+    }
+
+    // 3. Has actions
+
+    &.has-actions > &-scroll {
+      margin-right: $margin-right;
+    }
+
+    // 4. Scroll
+
+    &-scroll {
+      overflow-x: auto;
+      overflow-y: visible;
+    }
+
+    // 5. Table cell
+
+    td,
+    th,
+    .ch-table-cell {
+      @include helpers.truncate;
+
+      max-width: sizes.get-size(2);
+    }
+
+    // 6. Table cell leading and actions
+
+    .ch-table-cell--leading,
+    .ch-table-cell--actions {
+      position: absolute;
+      top: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: helpers.calc-box-height(
+        thypography.get-font-size(2),
+        spaces.get-space(m),
+        spaces.get-space(m)
+      );
+    }
+
+    .ch-table-cell--leading {
+      left: 0;
+
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .ch-table-cell--actions {
+      right: 0;
+
+      width: $margin-right;
+
+      > * {
+        right: 0;
+      }
+    }
+  }
+}

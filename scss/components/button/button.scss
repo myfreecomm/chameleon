@@ -1,31 +1,35 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../icon' as icon;
+@use 'mixins' as *;
+
 .ch-button {
+  $_suport-variations: (brand, primary, negative);
 
   // 1. Base
 
-  $inset-type: squish;
-  $size: s;
-  $border-rule: box;
-  $border-color: ch-get-color(default);
-
-  @include ch-ripple-effect(ch-get-color(neutral, 1));
-  @include ch-space-inset($inset-type, $size);
-  @include ch-border($border-rule, $border-color);
-  @include ch-border-radius(1);
+  @include ripple-effect(colors.get-color(neutral, 1));
+  @include spaces.inset(squish, s);
+  @include borders.border(box, colors.get-color(default));
+  @include borders.border-radius(1);
 
   display: inline-block;
 
   cursor: pointer;
   white-space: nowrap;
-  font-weight: #{ch-get-text-weight(semibold)};
+  font-weight: thypography.get-font-weight(semibold);
   text-align: center;
-  background-color: #{ch-get-color(default)};
+  background-color: colors.get-color(default);
 
   &,
   &:hover:focus,
   &:hover,
   &:focus,
   &:active {
-    color: #{ch-get-color(text, 1, inverse)};
+    color: colors.get-color(text, 1, inverse);
   }
 
   // 1.1. Focus interaction
@@ -33,22 +37,22 @@
   &:hover:focus,
   &:hover,
   &:focus {
-    border-color: #{ch-get-color(default, focus)};
-    background-color: #{ch-get-color(default, focus)};
+    border-color: colors.get-color(default, focus);
+    background-color: colors.get-color(default, focus);
   }
 
   // 1.2. Active interaction
 
   &:active {
-    border-color: #{ch-get-color(default, active)};
-    background-color: #{ch-get-color(default, active)};
+    border-color: colors.get-color(default, active);
+    background-color: colors.get-color(default, active);
   }
 
   // 1.3. Disabled interaction
 
   &:disabled,
   &.is-disabled {
-    @include ch-disabled;
+    @include helpers.disabled;
 
     &:after {
       display: none;
@@ -57,25 +61,25 @@
 
   // 2. Color variations
 
-  @each $type in (brand, primary, negative) {
+  @each $type in $_suport-variations {
     &--#{$type} {
-      border-color: #{ch-get-color($type)};
-      background-color: #{ch-get-color($type)};
+      border-color: colors.get-color($type);
+      background-color: colors.get-color($type);
 
       // 2.1. Focus interaction
 
       &:hover:focus,
       &:hover,
       &:focus {
-        border-color: #{ch-get-color($type, focus)};
-        background-color: #{ch-get-color($type, focus)};
+        border-color: colors.get-color($type, focus);
+        background-color: colors.get-color($type, focus);
       }
 
       // 2.2. Active interaction
 
       &:active {
-        border-color: #{ch-get-color($type, acitve)};
-        background-color: #{ch-get-color($type, active)};
+        border-color: colors.get-color($type, acitve);
+        background-color: colors.get-color($type, active);
       }
     }
   }
@@ -84,7 +88,7 @@
 
   &--outline,
   &--ghost {
-    color: #{ch-get-color(text, 2)};
+    color: colors.get-color(text, 2);
 
     // 3.1. Focus and active interaction
 
@@ -92,7 +96,7 @@
     &:hover,
     &:focus,
     &:active {
-      color: #{ch-get-color(text, 1)};
+      color: colors.get-color(text, 1);
     }
 
     &,
@@ -106,33 +110,33 @@
     // 3.2. Ripple effect
 
     &:after {
-      background: #{ch-get-color(default)};
+      background: colors.get-color(default);
     }
 
     // 3.3. Color variations
 
-    @each $type in (brand, primary, negative) {
+    @each $type in $_suport-variations {
       @at-root &.ch-button--#{$type} {
-        color: #{ch-get-color($type)};
+        color: colors.get-color($type);
 
         // 3.3.1. Focus interaction
 
         &:hover:active,
         &:hover,
         &:focus {
-          color: #{ch-get-color($type, focus)};
+          color: colors.get-color($type, focus);
         }
 
         // 3.3.2. Active interaction
 
         &:active {
-          color: #{ch-get-color($type, active)};
+          color: colors.get-color($type, active);
         }
 
         // 3.3.3. Ripple effect
 
         &:after {
-          background: #{ch-get-color($type)};
+          background: colors.get-color($type);
         }
       }
     }
@@ -141,40 +145,40 @@
   // 4. Outline variation
 
   &--outline {
-    border-color: #{ch-get-color(default)};
+    border-color: colors.get-color(default);
 
     // 4.1. Focus interaction
 
     &:hover:active,
     &:hover,
     &:focus {
-      border-color: #{ch-get-color(default, focus)};
+      border-color: colors.get-color(default, focus);
     }
 
     // 4.2. Active interaction
 
     &:active {
-      border-color: #{ch-get-color(default, active)};
+      border-color: colors.get-color(default, active);
     }
 
     // 4.3. Color variations
 
-    @each $type in (brand, primary, negative) {
+    @each $type in $_suport-variations {
       @at-root &.ch-button--#{$type} {
-        border-color: #{ch-get-color($type)};
+        border-color: colors.get-color($type);
 
         // 4.3.1. Focus interaction
 
         &:hover:active,
         &:hover,
         &:focus {
-          border-color: #{ch-get-color($type, focus)};
+          border-color: colors.get-color($type, focus);
         }
 
         // 4.3.2. Active interaction
 
         &:active {
-          border-color: #{ch-get-color($type, active)};
+          border-color: colors.get-color($type, active);
         }
       }
     }
@@ -193,22 +197,22 @@
 
     // 5.1. Color variations
 
-    @each $type in (brand, primary, negative) {
+    @each $type in $_suport-variations {
       @at-root &.ch-button--#{$type} {
-        color: #{ch-get-color($type)};
+        color: colors.get-color($type);
 
         // 5.1.1. Focus interaction
 
         &:focus:hover,
         &:focus,
         &:hover {
-          color: #{ch-get-color($type, focus)};
+          color: colors.get-color($type, focus);
         }
 
         // 5.1.2. Active interaction
 
         &:active {
-          color: #{ch-get-color($type, active)};
+          color: colors.get-color($type, active);
         }
       }
     }
@@ -217,12 +221,12 @@
   // 6. Small variation
 
   &--small {
-    @include ch-space-inset(squish, xs);
+    @include spaces.inset(squish, xs);
 
     &.has-leadingIcon,
     &.has-trailingIcon {
       > .ch-icon {
-        font-size: #{ch-get-icon-size(s)};
+        font-size: icon.get-icon-size(s);
       }
     }
   }
@@ -234,7 +238,7 @@
   &.has-trailingIcon {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
-      font-size: #{ch-get-icon-size(s)};
+      font-size: icon.get-icon-size(s);
     }
   }
 
@@ -243,21 +247,23 @@
   &.has-trailingIcon.ch-button--small {
     > .ch-icon:first-child,
     > .ch-icon:last-child {
-      font-size: #{ch-get-icon-size(xs)};
+      font-size: icon.get-icon-size(xs);
     }
   }
 
   &--icon:not(.ch-button--small) {
-    @include ch-icon-only(xs);
+    @include icon.icon-only(xs);
   }
 
   &--icon.ch-button--small {
-    @include ch-icon-only(xxs);
+    @include icon.icon-only(xxs);
   }
 
   // 8. Mock Label
 
   &--mockLabel {
-    margin-top: #{ch-get-mock-text-size()};
+    margin-top: calc(
+      #{thypography.get-font-height(2)} + #{spaces.get-space(xxs)}
+    );
   }
 }

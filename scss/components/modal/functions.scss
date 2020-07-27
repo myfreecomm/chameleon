@@ -1,0 +1,3 @@
+@function get-width ($size: m) {
+  @return unquote("var(--ch-modal-width-#{$size})");
+}

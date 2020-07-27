@@ -1,7 +1,0 @@
-@mixin ch-text-caption ($type: '') {
-  color: #{ch-get-color(text, 2, $type)};
-  font-family: #{ch-get-text-font-family()};
-  font-size: #{ch-get-text-size(1)};
-  font-weight: #{ch-get-text-weight()};
-  line-height: #{ch-get-text-line-height()};
-}

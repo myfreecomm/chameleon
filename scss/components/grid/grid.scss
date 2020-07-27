@@ -1,40 +1,45 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/helpers' as helpers;
+@use 'mixins' as *;
+@use 'variables' as *;
+
 .ch-grid {
   width: 100%;
 
   > * {
-    @include ch-grid-column(1);
+    @include column(1);
 
     min-width: 0;
   }
 
-  @each $screen in $ch-breakpoint-screens {
-    @include ch-media(from, $screen) {
-      $columns-number: map-get($ch-columns-number, $screen);
-      $gutter: map-get($ch-columns-gutter, $screen);
+  @each $screen in breakpoints.$screens {
+    @include breakpoints.media(from, $screen) {
+      $column: map-get($columns-number, $screen);
+      $gutter: map-get($columns-gutter, $screen);
 
       @at-root & {
-        @include ch-grid($columns-number, $gutter);
+        @include wrapper($column, $gutter);
       }
 
-      @for $i from 1 through $columns-number {
-        $suffix: ch-generate-variation(($i, $screen), (undefined, mobile));
+      @for $i from 1 through $column {
+        $suffix: helpers.generate-variation(($i, $screen), (undefined, mobile));
         $path: #{&}#{&}#{$suffix};
 
         @at-root #{$path} {
-          @include ch-grid($i, $gutter);
+          @include wrapper($i, $gutter);
         }
 
-        $column-suffix: ch-generate-variation(($i, $screen), (1, mobile));
-        $start-suffix: ch-generate-variation((start#{$i}, $screen), (undefined, mobile));
+        $column-suffix: helpers.generate-variation(($i, $screen), (1, mobile));
+        $start-suffix: helpers.generate-variation((start#{$i}, $screen), (undefined, mobile));
 
         > #{&}-column#{$column-suffix} {
-          @include ch-grid-column($i);
+          @include column($i);
         }
 
         > #{&}-column#{$start-suffix} {
           grid-column-start: $i;
         }
       } // @for $i from 1 through $columns-number
-    } // @include ch-media(from, $screen)
-  } // @each $screen in $ch-breakpoint-screens
+    } // @include breakpoints.media(from, $screen)
+  } // @each $screen in breakpoints.$screens
 }

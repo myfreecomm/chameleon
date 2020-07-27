@@ -1,0 +1,52 @@
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/spaces' as spaces;
+
+@mixin wrapper ($size: s) {
+  $inset-type: squish;
+  $border-rule: box;
+  $border-color: colors.get-color(border);
+
+  @include spaces.inset($inset-type, $size);
+  @include borders.border($border-rule, $border-color);
+  @include borders.border-radius(1);
+
+  background-color: colors.get-color(neutral, 1);
+
+  &:active {
+    border-color: colors.get-color(primary, active);
+  }
+
+  &:focus {
+    border-color: colors.get-color(primary, focus);
+  }
+
+  &:disabled,
+  &.is-disabled,
+  &[readonly] {
+    background-color: colors.get-color(neutral, 2);
+  }
+
+  &::placeholder {
+    color: colors.get-color(text, 2);
+    opacity: .75;
+  }
+}
+
+@mixin negative {
+  border-color: colors.get-color(negative);
+
+  // 4.1. Focus interaction
+
+  &:hover:focus,
+  &:hover,
+  &:focus {
+    border-color: colors.get-color(negative, focus);
+  }
+
+  // 4.2. Active interaction
+
+  &:active {
+    border-color: colors.get-color(negative, active);
+  }
+}

@@ -1,43 +1,58 @@
-.ch-pagination {
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+@use '../icon' as icon;
 
+.ch-pagination {
   // 1. Base
 
-  @include ch-space-inline-group(right, xs);
+  @include spaces.inline-group(right, xs);
 
   vertical-align: middle;
 
   // 2. Item
 
   &-item {
-    $box-size: calc(#{ch-calc-box-height()} + 2 * #{$ch-border-width});
+    $box-size: calc(
+      #{helpers.calc-box-height(
+        thypography.get-font-size(2),
+        spaces.get-space(xs),
+        spaces.get-space(xs)
+      )} + 2 * #{borders.$border-width}
+    );
+
     $icons: (
-      first: $ch-icon-angle-double-left,
-      previous: $ch-icon-angle-left,
-      gap: $ch-icon-ellipsis,
-      next: $ch-icon-angle-right,
-      last: $ch-icon-angle-double-right
+      first: icon.$icon-angle-double-left,
+      previous: icon.$icon-angle-left,
+      gap: icon.$icon-ellipsis,
+      next: icon.$icon-angle-right,
+      last: icon.$icon-angle-double-right
     );
 
     // 2.1. Base
 
-    @include ch-border-radius(1);
-    @include ch-border();
+    @include borders.border-radius(1);
+    @include borders.border();
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    color: ch-get-color(text, 1);
-    padding-right: ch-get-space(xs);
-    padding-left: ch-get-space(xs);
+    color: colors.get-color(text, 1);
+    padding-right: spaces.get-space(xs);
+    padding-left: spaces.get-space(xs);
     height: $box-size;
     max-height: $box-size;
     min-width: $box-size;
     text-align: center;
-    background-color: ch-get-color(neutral, 1);
+    background-color: colors.get-color(neutral, 1);
 
     &:not(#{&}--previous):not(#{&}--next):not(.is-active) {
-      @include ch-media(to, tablet) {
+      @include breakpoints.media(to, tablet) {
         display: none;
       }
     }
@@ -50,17 +65,17 @@
       &:hover,
       &:active {
         color: currentColor;
-        background-color: ch-get-color(neutral, 2);
+        background-color: colors.get-color(neutral, 2);
       }
 
       &:hover:focus,
       &:focus,
       &:hover {
-        border-color: ch-get-color(border, focus);
+        border-color: colors.get-color(border, focus);
       }
   
       &:active {
-        border-color: ch-get-color(border, active);
+        border-color: colors.get-color(border, active);
       }
     }
 
@@ -68,9 +83,9 @@
 
     @each $type, $icon in $icons {
       &--#{$type} > *[class="ch-icon"] {
-        @include ch-mask-icon($icon);
+        @include icon.mask-icon($icon);
 
-        height: ch-get-icon-size(m);
+        height: icon.get-icon-size(m);
       }
     }
 
@@ -80,11 +95,11 @@
       border-color: transparent;
 
       > *[class="ch-icon"] {
-        background: ch-get-color(text, 2);
+        background: colors.get-color(text, 2);
       }
 
       > .ch-icon {
-        color: ch-get-color(text, 2);
+        color: colors.get-color(text, 2);
       }
 
       &:hover:focus,
@@ -92,11 +107,11 @@
       &:hover,
       &:active {
         > *[class="ch-icon"] {
-          background: ch-get-color(text, 1);
+          background: colors.get-color(text, 1);
         }
 
         > .ch-icon {
-          color: ch-get-color(text, 1);
+          color: colors.get-color(text, 1);
         }
       }
     }
@@ -108,9 +123,9 @@
     &.is-active:focus,
     &.is-active:hover,
     &.is-active:active {
-      color: ch-get-color(primary);
-      border-color: ch-get-color(primary);
-      background-color: ch-get-color(neutral, 1);
+      color: colors.get-color(primary);
+      border-color: colors.get-color(primary);
+      background-color: colors.get-color(neutral, 1);
     }
   }
 
@@ -118,18 +133,18 @@
 
   > .ch-field > label,
   > .ch-field > .ch-field-label {
-    font-weight: ch-get-text-weight(regular);
-    margin-right: ch-get-space(xs);
+    font-weight: thypography.get-font-weight(regular);
+    margin-right: spaces.get-space(xs);
   }
 
   .ch-input {
-    width: ch-get-dimension(1);
+    width: sizes.get-size(1);
   }
 
   // 4. Select
 
   > .ch-select {
-    @include ch-media(to, mobile) {
+    @include breakpoints.media(to, mobile) {
       display: none;
     }
   }
@@ -141,11 +156,15 @@
   &--small {
     #{$root}-item {
       $box-size: calc(
-        #{ch-calc-box-height(ch-get-text-size(2), ch-get-space(xxs))} + 2 * #{$ch-border-width}
+        #{helpers.calc-box-height(
+          thypography.get-font-size(2),
+          spaces.get-space(xxs),
+          spaces.get-space(xxs)
+        )} + 2 * #{borders.$border-width}
       );
 
-      padding-right: ch-get-space(xxs);
-      padding-left: ch-get-space(xxs);
+      padding-right: spaces.get-space(xxs);
+      padding-left: spaces.get-space(xxs);
       height: $box-size;
       max-height: $box-size;
       min-width: $box-size;
@@ -156,10 +175,10 @@
 
   > .ch-pagination-item:not(.ch-pagination-item--gap).is-disabled
   > .ch-pagination-item:not(.ch-pagination-item--gap)[disabled] {
-    background-color: ch-get-color(neutral, 2);
+    background-color: colors.get-color(neutral, 2);
   }
 
   @at-root .is-disabled .ch-pagination-item:not(.ch-pagination-item--gap) {
-    background-color: ch-get-color(neutral, 2);
+    background-color: colors.get-color(neutral, 2);
   }
 }

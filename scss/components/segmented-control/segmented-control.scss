@@ -1,0 +1,160 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/borders' as borders;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/helpers' as helpers;
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
+
+.ch-segmentedControl {
+  $support-colors: (brand, primary, negative);
+
+  // 1. Base
+
+  @include borders.border(box, colors.get-color(default));
+  @include borders.border-radius;
+
+  display: inline-block;
+
+  // 2. Options
+
+  &-option {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      @include borders.border(bottom, colors.get-color(default));
+    }
+
+    // 2.1. Input
+
+    > input {
+      position: absolute;
+      visibility: hidden;
+      z-index: -1;
+    }
+
+    // 2.2. Label
+
+    > label {
+      @include spaces.inset(squish, s);
+
+      display: block;
+
+      color: colors.get-color(text, 2);
+      font-weight: thypography.get-font-weight(bold);
+    
+      &:hover:focus,
+      &:hover,
+      &:focus,
+      &:active {
+        color: colors.get-color(text, 1);
+      }
+    }
+
+    // 2.3. Checked interaction
+
+    > input:checked + label {
+      color: colors.get-color(text, 1, inverse);
+      background-color: colors.get-color(default);
+
+      &:hover:focus,
+      &:hover,
+      &:focus {
+        background-color: colors.get-color(default, focus);
+      }
+
+      &:active {
+        background-color: colors.get-color(default, active);
+      }
+    }
+  }
+
+  // 2. Vertical variations
+
+  @each $screen in breakpoints.$screens {
+    @include breakpoints.media(from, $screen) {
+      $suffix: helpers.generate-variation((horizontal, $screen), (undefined, mobile));
+      $path: #{&}#{&}#{$suffix};
+
+      @at-root #{$path} {
+        display: inline-flex;
+
+        overflow-x: auto;
+        max-width: 100%;
+
+        // 2.1. Option
+
+        > .ch-segmentedControl-option {
+          flex: 1;
+
+          white-space: nowrap;
+          text-align: center;
+
+          &:not(:last-child) {
+            @include borders.border(right, colors.get-color(default));
+
+            border-bottom: 0;
+          }
+        }
+
+        // 2.1. Support variations
+
+        @each $type in $support-colors {
+          @at-root #{&}.ch-segmentedControl--#{$type} > .ch-segmentedControl-option {
+            border-right-color: colors.get-color($type);
+          }
+        }
+      } // @at-root #{$path}
+    } // @include breakpoints.media(from, $screen)
+  } // @each $screen in breakpoints.$screens
+
+  // 3. Support variations
+
+  @each $type in $support-colors {
+    @at-root #{&}#{&}--#{$type} {
+      &,
+      & > .ch-segmentedControl-option {
+        border-color: colors.get-color($type);
+      }
+
+      // 3.1. Option
+
+      > .ch-segmentedControl-option {
+        > input:not(:checked) + label {
+          color: colors.get-color($type);
+
+          &:hover:active,
+          &:hover,
+          &:focus {
+            color: colors.get-color($type, focus);
+          }
+
+          &:active {
+            color: colors.get-color($type, active);
+          }
+        }
+
+        // 3.2. Checked interaction
+
+        > input:checked + label {
+          background-color: colors.get-color($type);
+
+          &:hover:focus,
+          &:hover,
+          &:focus {
+            background-color: colors.get-color($type, focus);
+          }
+
+          &:active {
+            background-color: colors.get-color($type, active);
+          }
+        }
+      } // > .ch-segmentedControl-option
+    } // @at-root #{&}#{&}--#{$type}
+  } // @each $type in $support-colors
+
+  // 4. Small variation
+
+  @at-root #{&}#{&}--small > #{&}-option > label {
+    @include spaces.inset(squish, xs);
+  }
+}

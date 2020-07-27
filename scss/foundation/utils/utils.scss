@@ -1,0 +1,178 @@
+@use '../breakpoints' as breakpoints;
+@use '../colors' as colors;
+@use '../helpers' as helpers;
+@use '../spaces' as spaces;
+@use '../thypography' as thypography;
+
+*:disabled,
+*.is-disabled {
+  @include helpers.disabled;
+
+  *:disabled,
+  *.is-disabled {
+    opacity: 1;
+  }
+}
+
+.ch-text {
+  &--left {
+    text-align: left !important;
+  }
+
+  &--right {
+    text-align: right !important;
+  }
+
+  &--center {
+    text-align: center !important;
+  }
+
+  @each $type in colors.$suport-names {
+    &--#{$type} {
+      color: #{colors.get-color($type)} !important;
+    }
+  }
+}
+
+.ch-truncate {
+  @include helpers.truncate;
+}
+
+.ch-wrap {
+  @include helpers.wrap($important: true);
+}
+
+.ch-fluid {
+  @each $screen in breakpoints.$screens {
+    $suffix: helpers.generate-variation($screen, mobile);
+
+    @include breakpoints.media(from, $screen) {
+      @at-root #{&}#{$suffix} {
+        @include helpers.fluid;
+      }
+    }
+  }
+}
+
+.ch-inline {
+  $types: (left, right);
+
+  @each $size in spaces.$sizes {
+    @each $type in $types {
+      @each $screen in breakpoints.$screens {
+        $sufix: helpers.generate-variation(
+          ($size, $type, $screen), (m, left, mobile)
+        );
+
+        @include breakpoints.media(from, $screen) {
+          @at-root &#{$sufix} {
+            @include spaces.inline($type, $size);
+          }
+        } // @include breakpoints.media (from, $screen)
+      } // @each $screen in breakpoints.$screens
+    } // @each $type in $types
+  } // @each $size in spaces.$sizes
+}
+
+.ch-inlineGroup {
+  $types: (left, right);
+
+  @each $size in spaces.$sizes {
+    @each $type in $types {
+      @each $screen in breakpoints.$screens {
+        $sufix: helpers.generate-variation(
+          ($size, $type, $screen), (m, left, mobile)
+        );
+
+        @include breakpoints.media(from, $screen) {
+          @at-root &#{$sufix} {
+            @include spaces.inline-group($type, $size);
+            @include helpers.fluid;
+          }
+        } // @include breakpoints.media(from, $screen)
+      } // @each $screen in breakpoints.$screens
+    } // @each $type in $types
+  } // @each $size in spaces.$sizes
+}
+
+.ch-inset {
+  $types: (default, squish, stretch);
+
+  @each $size in spaces.$sizes {
+    @each $type in $types {
+      $invalid-squish: $type == squish and $size == xxs;
+      $invalid-stretch: $type == stretch and $size == xxl;
+
+      @if not $invalid-squish and not $invalid-stretch {
+        @each $screen in breakpoints.$screens {
+          $sufix: helpers.generate-variation(
+            ($size, $type, $screen), (m, default, mobile)
+          );
+
+          @include breakpoints.media(from, $screen) {
+            @at-root &#{$sufix} {
+              @include spaces.inset($type, $size);
+            }
+          } // @include breakpoints.media (from, $screen)
+        } // @each $screen in breakpoints.$screens
+      } // @if not $invalid-squish and not $invalid-stretch
+    } // @each $type in $types
+  } // @each $size in spaces.$sizes
+}
+
+.ch-insetGroup {
+  $types: (default, squish, stretch);
+
+  @each $size in spaces.$sizes {
+    @each $type in $types {
+      $invalid-squish: $type == squish and $size == xxs;
+      $invalid-stretch: $type == stretch and $size == xxl;
+
+      @if not $invalid-squish and not $invalid-stretch {
+        @each $screen in breakpoints.$screens {
+          $sufix: helpers.generate-variation(
+            ($size, $type, $screen), (m, default, mobile)
+          );
+
+          @include breakpoints.media(from, $screen) {
+            @at-root &#{$sufix} {
+              @include spaces.inset-group($type, $size);
+            }
+          } // @include breakpoints.media (from, $screen)
+        } // @each $screen in breakpoints.$screens
+      } // @if not $invalid-squish and not $invalid-stretch
+    } // @each $type in $types
+  } // @each $size in spaces.$sizes
+}
+
+.ch-stack {
+  @each $size in spaces.$sizes {
+    @each $screen in breakpoints.$screens {
+      $sufix: helpers.generate-variation(($size, $screen), (m, mobile));
+
+      @include breakpoints.media(from, $screen) {
+        @at-root &#{$sufix} {
+          @include spaces.stack($size);
+        }
+      } // @include breakpoints.media (from, $screen)
+    } // @each $screen in breakpoints.$screens
+  } // @each $size in spaces.$sizes
+}
+
+.ch-stackGroup {
+  @each $size in spaces.$sizes {
+    @each $screen in breakpoints.$screens {
+      $sufix: helpers.generate-variation(($size, $screen), (m, mobile));
+
+      @include breakpoints.media(from, $screen) {
+        @at-root &#{$sufix} {
+          @include spaces.stack-group($size);
+        }
+      } // @include breakpoints.media(from, $screen)
+    } // @each $screen in breakpoints.$screens
+  } // @each $size in spaces.$sizes
+}
+
+.ch-paddingless {
+  @include spaces.paddingless($important: true);
+}

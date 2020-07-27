@@ -1,7 +1,0 @@
-@mixin ch-text-code ($type: '') {
-  color: #{ch-get-color(text, 1, $type)};
-  font-family: #{ch-get-text-font-family(code)};
-  font-size: #{ch-get-text-size()};
-  font-weight: #{ch-get-text-weight()};
-  line-height: #{ch-get-text-line-height()};
-}

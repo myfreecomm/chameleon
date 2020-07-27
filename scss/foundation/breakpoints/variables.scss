@@ -1,0 +1,21 @@
+// *************************************
+//
+// Breakpoints module - Variables
+//
+// *************************************
+
+// ----- $screens ----- //
+// List with the name of available screen sizes.
+//
+// 1 - mobile: screens up to 768px width
+// 2 - tablet: screens with width between 769px to 1023px
+// 3 - desktop: screens with width equal to or greater than 1024px
+
+$screens: (mobile, tablet, desktop);
+
+// ----- $tablet-screen and $desktop-screen ----- //
+// Variables for the initial values of the tablet and desktop
+// screen sizes, respectively
+
+$tablet-screen: 769px;
+$desktop-screen: 1024px;

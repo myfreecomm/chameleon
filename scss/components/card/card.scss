@@ -1,19 +1,23 @@
-.ch-card {
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/spaces' as spaces;
+@use 'mixins' as *;
 
+.ch-card {
   // 1. Base
 
-  @include ch-card;
+  @include wrapper;
 
   // 2. Header
 
   &-header {
-    @include ch-card-header;
+    @include header;
   }
 
   // 3. Content
 
   &-content {
-    @include ch-card-content;
+    @include content;
   }
 
   // 4. Paddingless composition
@@ -22,44 +26,45 @@
     > .ch-card-header,
     > .ch-card-content,
     > .ch-card-footer {
-      padding-right: ch-get-space(m);
-      padding-left: ch-get-space(m);
+      padding-right: spaces.get-space(m);
+      padding-left: spaces.get-space(m);
 
       &:only-child {
-        padding-top: ch-get-space(m);
-        padding-bottom: ch-get-space(m);
+        padding-top: spaces.get-space(m);
+        padding-bottom: spaces.get-space(m);
       }
 
       &:last-child {
-        padding-bottom: ch-get-space(m);
+        padding-bottom: spaces.get-space(m);
       }
 
       &:first-child {
-        padding-top: ch-get-space(m);
+        padding-top: spaces.get-space(m);
       }
     }
 
     > * + .ch-card-footer {
-      padding-top: ch-get-space(m);
+      padding-top: spaces.get-space(m);
     }
   }
 
   // 5. Interactive variation
 
   &--interactive {
-    @include ch-shadow;
+    @include depth.shadow(2);
+
     cursor: pointer;
 
     &:focus:hover,
     &:hover,
     &:focus {
-      @include ch-shadow(3);
+      @include depth.shadow(3);
     }
   }
 
   // 6. Active state
 
   &.is-active {
-    border-color: ch-get-color(primary);
+    border-color: colors.get-color(primary);
   }
 }

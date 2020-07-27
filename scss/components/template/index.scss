@@ -1,6 +1,6 @@
-@import './template-content';
-@import './template-header';
-@import './template-nav-brand';
-@import './template-nav-menu';
-@import './template-nav-toggle';
-@import './template-nav';
+@forward 'template-content';
+@forward 'template-header';
+@forward 'template-nav';
+@forward 'template-nav-brand';
+@forward 'template-nav-menu';
+@forward 'template-nav-toggle';

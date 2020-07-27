@@ -1,5 +1,7 @@
-.ch-dview {
+@use '../../foundation/spaces' as spaces;
+@use '../../foundation/thypography' as thypography;
 
+.ch-dview {
   // 1. Base
 
   white-space: normal;
@@ -8,7 +10,7 @@
 
   &-label,
   & > dt {
-    @include ch-text-label;
+    @include thypography.label;
 
     text-transform: uppercase;
   }
@@ -17,7 +19,7 @@
 
   &-value,
   & > dd {
-    @include ch-space-stack;
+    @include spaces.stack;
   }
 
   // 2. Right variation

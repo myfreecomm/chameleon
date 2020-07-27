@@ -1,0 +1,83 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/depth' as depth;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+@use '../../foundation/spaces' as spaces;
+
+.ch-flashMessages {
+  // 1. Base
+
+  @include spaces.paddingless;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: depth.get-z-index(6);
+
+  width: 100%;
+
+  max-width: calc(
+    #{sizes.get-size(3)} + #{spaces.get-space(m)} + #{spaces.get-space(xxl)}
+  );
+
+  max-height: 100vh;
+  overflow-y: auto;
+
+  // 2. Inner
+
+  > #{&}-inner {
+    width: 100%;
+
+    &:not(:empty) {
+      @include breakpoints.media(from, tablet) {
+        padding-left: spaces.get-space(xxl);
+      }
+
+      padding-top: spaces.get-space(m);
+      padding-right: spaces.get-space(m);
+      padding-left: spaces.get-space(m);
+    }
+
+    // 2.1. Alert
+
+    > .ch-alert {
+      @include motion.transition(
+        unquote('max-height, opacity, transform, margin-bottom'),
+        motion.$transition-duration-slow
+      );
+
+      @include depth.shadow(6);
+      @include spaces.paddingless;
+
+      overflow: hidden;
+
+      opacity: 0;
+      max-height: 0;
+      margin-bottom: 0;
+      border-color: transparent;
+      transform: scale(0.95);
+
+      > .ch-alert-header {
+        @include spaces.inset();
+      }
+
+      @each $variation in colors.$suport-names {
+        &--#{$variation} {
+          .ch-media-icon {
+            color: colors.get-color($variation);
+          }
+        }
+      }
+
+      &.is-visible {
+        opacity: 1;
+        max-height: sizes.get-size(2);
+        margin-bottom: spaces.get-space(m);
+        transform: scale(1);
+      }
+    }
+  }
+}

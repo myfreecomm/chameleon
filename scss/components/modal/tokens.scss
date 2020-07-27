@@ -1,0 +1,7 @@
+@use '../../foundation/sizes' as sizes;
+
+:root {
+  --ch-modal-witdh-s: #{sizes.get-size(3)};
+  --ch-modal-width-m: #{sizes.get-size(4)};
+  --ch-modal-width-l: #{sizes.get-size(5)};
+}

@@ -1,31 +1,35 @@
+@use '../../foundation/breakpoints' as breakpoints;
+@use '../../foundation/colors' as colors;
+@use '../../foundation/motion' as motion;
+@use '../../foundation/sizes' as sizes;
+
 .ch-template-nav {
   > .ch-brand {
-
     // 1. Base
 
     position: absolute;
     opacity: 0;
     visibility: hidden;
 
-    height: #{ch-get-dimension(1)};
-    padding-left: #{ch-get-dimension(1)};
+    height: sizes.get-size(1);
+    padding-left: sizes.get-size(1);
 
     // 2. Icon
 
     img,
     .ch-brand-icon {
       top: 50%;
-      left: calc(#{ch-get-dimension(1)} / 2);
+      left: calc(#{sizes.get-size(1)} / 2);
       transform: translate(-50%, -50%);
     }
 
     // 3. Name
 
     .ch-brand-name {
-      @include ch-transition(opacity, $ch-transition-duration-fast);
+      @include motion.transition(opacity, motion.$transition-duration-fast);
 
-      color: #{ch-get-color(text, 1, inverse)};
-      line-height: #{ch-get-dimension(1)};
+      color: colors.get-color(text, 1, inverse);
+      line-height: sizes.get-size(1);
       opacity: 0;
     }
   }
@@ -46,7 +50,7 @@
 
   // 5. From tablet
 
-  @include ch-media(from, tablet) {
+  @include breakpoints.media(from, tablet) {
     > .ch-brand {
       position: relative;
       opacity: 1;

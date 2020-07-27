@@ -1,5 +1,0 @@
-@mixin ch-from-tablet {
-  @media screen and (min-width: $ch-breakpoint-tablet) {
-    @content;
-  }
-}

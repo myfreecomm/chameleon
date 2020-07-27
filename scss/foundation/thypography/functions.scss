@@ -1,0 +1,31 @@
+@use '../spaces' as spaces;
+
+@function get-font-size ($size: 2) {
+  @return unquote("var(--ch-font-size-#{$size})");
+}
+
+@function get-line-height () {
+  @return unquote("var(--ch-line-height)");
+}
+
+@function get-font-height ($font-size) {
+  @return calc(#{get-font-size($font-size)} * #{get-line-height()});
+}
+
+@function get-font-family ($type: default) {
+  @if $type == default {
+    @return unquote("var(--ch-font-family)");
+  }
+
+  @else if $type == brand {
+    @return unquote("var(--ch-font-family-brand)");
+  }
+
+  @else if $type == code {
+    @return unquote("var(--ch-font-family-code)");
+  }
+}
+
+@function get-font-weight ($weight: regular) {
+  @return unquote("var(--ch-font-weight-#{$weight})");
+}

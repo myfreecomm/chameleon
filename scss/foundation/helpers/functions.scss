@@ -1,0 +1,35 @@
+@use '../borders' as borders;
+@use '../thypography' as thypography;
+
+@function generate-variation ($variations, $defaults) {
+  $prefix: unquote('--');
+  $outcome: unquote('');
+  $combinations: zip($variations, $defaults);
+
+  @each $variation, $default in $combinations {
+    @if $variation != $default {
+      @if str-length($outcome) == 0 {
+        $outcome: to-lower-case(inspect($variation));
+      }
+  
+      @else {
+        $first-letter: str-slice($variation, 1, 1);
+        $tail: str-slice($variation, 2);
+  
+        $outcome: $outcome + to-upper-case($first-letter) + to-lower-case($tail);
+      }
+    }
+  }
+
+  @return if($outcome == unquote(''), $outcome, $prefix + $outcome);
+}
+
+@function calc-box-height ($font-size, $padding-top, $padding-bottom, $has-border: false) {
+  $border: if($has-border, 2 * #{borders.$border-width}, 0);
+
+  @return calc(
+    (#{$font-size} * #{thypography.get-line-height()}) +
+    (#{$padding-top} + #{$padding-bottom}) +
+    (#{$border})
+  );
+}
