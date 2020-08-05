@@ -1,6 +1,6 @@
 import { text, radios, boolean } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import { parseToCodeBlock } from '../../.storybook/helpers'
+import { parseToCodeBlock } from '../.storybook/helpers'
 
 export default {
   title: 'Components|Buttons',
