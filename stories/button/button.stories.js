@@ -1,6 +1,5 @@
 import { text, radios } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import docs from './docs.mdx'
 import copyCodeBlock from '@pickra/copy-code-block'
 
 import hljs from 'highlight.js/lib/highlight'
@@ -52,7 +51,7 @@ export default {
   decorators: [withKnobs],
   parameters: {
     docs: {
-      page: docs,
+      page: ''
     }
   }
 }
