@@ -16,9 +16,10 @@ export const Modal = () => {
   const isAside = boolean('Aside', false)
   const visibleClass = visibility ? 'is-visible' : ''
   const asideClass = isAside ? 'ch-modal--aside': ''
+  const openClass = visibility ? 'is-open' : ''
 
-  const overlayClasses = `ch-overlay ${visibleClass}`
-  const modalClasses = `ch-modal is-open ${asideClass}`.trim()
+  const overlayClasses = `ch-overlay ${visibleClass}`.trim()
+  const modalClasses = `ch-modal ${openClass} ${asideClass}`.trim()
 
   const template = `
     <div class="${overlayClasses}">
