@@ -21,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.0",
+    "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/html": "^5.3.19",
     "babel-loader": "^8.1.0",
@@ -33,6 +34,8 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
+    "react": "^16.13.1",
+    "react-is": "^16.13.1",
     "remove-files-webpack-plugin": "^1.4.2",
     "sass-loader": "^7.3.1",
     "standard": "^12.0.1",

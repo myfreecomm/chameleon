@@ -1,9 +1,15 @@
 import { text, radios } from '@storybook/addon-knobs'
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs'
+import docs from './docs.mdx'
 
 export default {
   title: 'Components|Buttons',
-  decorators: [withKnobs]
+  decorators: [withKnobs],
+  parameters: {
+    docs: {
+      page: docs,
+    }
+  }
 }
 
 
@@ -34,7 +40,7 @@ export const Common = () => {
   const classes = `ch-button ${buttonTypes} ${buttonVariations} ${buttonSizes}`.trim()
 
   return `
-    <div>
+    <div style="padding: 2rem">
       <h1 class="ch-title ch-title--1">Buttons</h1>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
       <button class="${classes}">${buttonText}</button>
