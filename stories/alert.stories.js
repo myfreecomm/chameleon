@@ -1,4 +1,4 @@
-import { text, radios, boolean } from '@storybook/addon-knobs'
+import { radios } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
 import { parseToCodeBlock } from '../.storybook/helpers'
 

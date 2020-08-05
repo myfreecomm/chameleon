@@ -21,6 +21,10 @@ const codeBlockOptions = {
       align-items: center;
     }
 
+    .container pre {
+      max-width: 100%;
+    }
+
     .container button {
       position: absolute;
       bottom: -1px;
