@@ -1,9 +1,9 @@
 import { text, radios, boolean } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import { parseToCodeBlock } from '../.storybook/helpers'
+import { insertTemplateOnContainer } from '../.storybook/helpers'
 
 export default {
-  title: 'Components|Buttons',
+  title: 'Components/Buttons',
   decorators: [withKnobs],
   parameters: {
     docs: {
@@ -39,32 +39,22 @@ export const Common = () => {
   const buttonDisabledClass = buttonDisabled ? 'is-disabled' : ''
 
   const classes = `ch-button ${buttonTypes} ${buttonVariations} ${buttonSizes} ${buttonDisabledClass}`.trim()
-
-  return `
-    <div style="padding: 2rem">
-      <h1 class="ch-title ch-title--1">Common</h1>
-
-      <br />
-
-      <button class="${classes}">${buttonText}</button>
-
-      <br /><br />
-
-      ${parseToCodeBlock(`<button class="${classes}">${buttonText}</button>`)}
-
-      <div class="ch-spaceStackGroup">
-        <h3 class="ch-title ch-title--3">Examples</h3>
-        <div class="ch-spaceInlineGroup">
-          <button class="ch-button ch-button--primary">Action</button>
-          <button class="ch-button ch-button--outline">Action</button>
-          <button class="ch-button ch-button--icon ch-button--outline ch-button--negative">
-            <i class="ch-icon fal fa-trash-alt"></i>
-          </button>
-          <button class="ch-button ch-button--ghost ch-button--primary">Action</button>
-        </div>
+  const template = `<button class="${classes}">${buttonText}</button>`
+  const afterHTML = `
+    <div class="ch-spaceStackGroup">
+      <h3 class="ch-title ch-title--3">Examples</h3>
+      <div class="ch-spaceInlineGroup">
+        <button class="ch-button ch-button--primary">Action</button>
+        <button class="ch-button ch-button--outline">Action</button>
+        <button class="ch-button ch-button--icon ch-button--outline ch-button--negative">
+          <i class="ch-icon fal fa-trash-alt"></i>
+        </button>
+        <button class="ch-button ch-button--ghost ch-button--primary">Action</button>
       </div>
     </div>
   `
+
+  return insertTemplateOnContainer(template, 'Common', '', afterHTML)
 }
 
 export const WithIcons = () => {
@@ -81,18 +71,5 @@ export const WithIcons = () => {
       ${hasTrailingIcon ? '<i class="ch-icon fal fa-chevron-down"></i>' : ''}
     </button>
   `
-
-  return `
-    <div style="padding: 2rem">
-      <h1 class="ch-title ch-title--1">With Icons</h1>
-
-      <br />
-
-      ${template}
-
-      <br /><br />
-
-      ${parseToCodeBlock(template)}
-    </div>
-  `
+  return insertTemplateOnContainer(template, 'With Icons')
 }

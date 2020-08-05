@@ -1,8 +1,8 @@
 import { withKnobs } from '@storybook/addon-knobs'
-import { parseToCodeBlock } from '../.storybook/helpers'
+import { insertTemplateOnContainer } from '../.storybook/helpers'
 
 export default {
-  title: 'Components|Avatar',
+  title: 'Components/Avatar',
   decorators: [withKnobs],
   parameters: {
     docs: {
@@ -11,22 +11,10 @@ export default {
   }
 }
 
-export const Default = () => {
+export const Avatar = () => {
   const template = `
     <img class="ch-avatar" src="https://i.pravatar.cc/72" alt="Lorem Ipsum" title="Lorem Ipsum" />
   `
 
-  return `
-    <div style="padding: 2rem">
-      <h1 class="ch-title ch-title--1">Avatar</h1>
-
-      <br />
-
-      ${template}
-
-      <br /><br />
-
-      ${parseToCodeBlock(template)}
-    </div>
-  `
+  return insertTemplateOnContainer(template, 'Avatar')
 }
