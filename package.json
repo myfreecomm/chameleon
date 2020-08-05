@@ -21,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.0",
+    "@pickra/copy-code-block": "^1.2.0",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/html": "^5.3.19",
@@ -29,6 +30,7 @@
     "cssnano": "^4.1.10",
     "docdash": "^1.2.0",
     "file-loader": "^4.3.0",
+    "highlight.js": "^9.13.1",
     "mini-css-extract-plugin": "^0.8.2",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
