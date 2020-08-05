@@ -1,5 +1,5 @@
 import { withKnobs } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../.storybook/helpers'
+import { insertTemplateOnContainer } from '../../.storybook/helpers'
 
 export default {
   title: 'Components/Avatar',
