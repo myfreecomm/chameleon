@@ -1,4 +1,4 @@
-import { text, radios } from '@storybook/addon-knobs'
+import { text, radios, boolean } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
 import { parseToCodeBlock } from '../../.storybook/helpers'
 
@@ -31,17 +31,18 @@ export const Common = () => {
     small: 'ch-button--small',
   }
 
-  const buttonText = text('Texto', 'Submit')
-  const buttonTypes = radios('Tipos', types, '')
-  const buttonVariations = radios('Variações', variations, '')
-  const buttonSizes = radios('Tamanhos', sizes, '')
+  const buttonText = text('Text', 'Submit')
+  const buttonTypes = radios('Types', types, '')
+  const buttonVariations = radios('Styles', variations, '')
+  const buttonSizes = radios('Sizes', sizes, '')
+  const buttonDisabled = boolean('Disabled', false)
+  const buttonDisabledClass = buttonDisabled ? 'is-disabled' : ''
 
-  const classes = `ch-button ${buttonTypes} ${buttonVariations} ${buttonSizes}`.trim()
+  const classes = `ch-button ${buttonTypes} ${buttonVariations} ${buttonSizes} ${buttonDisabledClass}`.trim()
 
   return `
     <div style="padding: 2rem">
-      <h1 class="ch-title ch-title--1">Buttons</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <h1 class="ch-title ch-title--1">Common</h1>
 
       <br />
 
@@ -52,13 +53,46 @@ export const Common = () => {
       ${parseToCodeBlock(`<button class="${classes}">${buttonText}</button>`)}
 
       <div class="ch-spaceStackGroup">
-        <h3 class="ch-title ch-title--3">Exemplos</h3>
+        <h3 class="ch-title ch-title--3">Examples</h3>
         <div class="ch-spaceInlineGroup">
           <button class="ch-button ch-button--primary">Action</button>
           <button class="ch-button ch-button--outline">Action</button>
-          <button class="ch-button ch-button--ghost ch-button--negative">Action</button>
+          <button class="ch-button ch-button--icon ch-button--outline ch-button--negative">
+            <i class="ch-icon fal fa-trash-alt"></i>
+          </button>
+          <button class="ch-button ch-button--ghost ch-button--primary">Action</button>
         </div>
       </div>
+    </div>
+  `
+}
+
+export const WithIcons = () => {
+  const hasLeadingIcon = boolean('Leading Icon', true)
+  const hasTrailingIcon = boolean('Trailing Icon', false)
+  const hasLeadingIconClass = hasLeadingIcon ? 'has-leadingIcon' : ''
+  const hasTrailingIconClass = hasTrailingIcon ? 'has-trailingIcon' : ''
+  const classes = `ch-button ${hasLeadingIconClass} ${hasTrailingIconClass}`.trim()
+
+  const template = `
+    <button class="${classes}">
+      ${hasLeadingIcon ? '<i class="ch-icon fal fa-plus"></i>' : ''}
+      Options
+      ${hasTrailingIcon ? '<i class="ch-icon fal fa-chevron-down"></i>' : ''}
+    </button>
+  `
+
+  return `
+    <div style="padding: 2rem">
+      <h1 class="ch-title ch-title--1">With Icons</h1>
+
+      <br />
+
+      ${template}
+
+      <br /><br />
+
+      ${parseToCodeBlock(template)}
     </div>
   `
 }
