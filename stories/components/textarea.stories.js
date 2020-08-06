@@ -2,7 +2,7 @@ import { withKnobs, boolean, radios } from '@storybook/addon-knobs'
 import { insertTemplateOnContainer } from '../../.storybook/helpers'
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Textarea',
   decorators: [withKnobs],
   parameters: {
     docs: {
@@ -16,7 +16,7 @@ const sizes = {
   small: 'ch-input--small'
 }
 
-export const Simple = () => {
+export const Textarea = () => {
   const disabled = boolean('Disabled', false)
   const readonly = boolean('Readonly', false)
   const sizeClass = radios('Sizes', sizes, '')
@@ -25,23 +25,11 @@ export const Simple = () => {
   const errorClass = hasError ? 'ch-input--negative' : ''
   const fluidClass = fluid ? 'ch-input--fluid' : ''
   const props = `${disabled ? 'disabled' : ''} ${readonly ? 'readonly' : ''}`.trim()
-  const classes = `ch-input ${errorClass} ${sizeClass} ${fluidClass}`.trim()
+  const classes = `ch-textarea ${errorClass} ${sizeClass} ${fluidClass}`.trim()
 
   const template = `
-    <input type="text" placeholder="Insert data" class="${classes}" ${props}>
+    <textarea placeholder="Insert data" class="${classes}" ${props}></textarea>
   `
 
-  return insertTemplateOnContainer(template, 'Simple')
-}
-
-export const WithIcons = () => {
-  const template = `
-    <span class="ch-input has-leadingIcon has-trailingIcon">
-      <i class="ch-icon fal fa-search"></i>
-      <input type="text" placeholder="Insert data" />
-      <i class="ch-spinner"></i>
-    </span>
-  `
-
-  return insertTemplateOnContainer(template, 'With Icons')
+  return insertTemplateOnContainer(template, 'Textarea')
 }
