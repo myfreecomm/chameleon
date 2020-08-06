@@ -1,5 +1,5 @@
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
 
 export default {
   title: 'Components/Input',
@@ -25,7 +25,7 @@ export const Simple = () => {
   const errorClass = hasError ? 'ch-input--negative' : ''
   const fluidClass = fluid ? 'ch-input--fluid' : ''
   const props = `${disabled ? 'disabled' : ''} ${readonly ? 'readonly' : ''}`.trim()
-  const classes = `ch-input ${errorClass} ${sizeClass} ${fluidClass}`.trim()
+  const classes = formatClassNames(`ch-input ${errorClass} ${sizeClass} ${fluidClass}`)
 
   const template = `
     <input type="text" placeholder="Insert data" class="${classes}" ${props}>

@@ -69,3 +69,7 @@ export const insertTemplateOnContainer = (block, name, beforeHTML, afterHTML) =>
     ${ afterHTML ? afterHTML : ''}
   </div>
 `
+
+export const formatClassNames = (str) => {
+  return str.trim().replace(/ +(?= )/g,'');
+}

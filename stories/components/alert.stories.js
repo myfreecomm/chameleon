@@ -1,6 +1,6 @@
 import { radios } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
 
 export default {
   title: 'Components/Alert',
@@ -22,7 +22,7 @@ const variations = {
 
 export const Alert = () => {
   const alertVariations = radios('Variations', variations, '')
-  const classes = `ch-alert ${alertVariations}`.trim()
+  const classes = formatClassNames(`ch-alert ${alertVariations}`)
 
   const template = `
     <div class="${classes}">

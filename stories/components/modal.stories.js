@@ -1,5 +1,5 @@
 import { withKnobs, boolean } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
 
 export default {
   title: 'Components/Modal',
@@ -18,8 +18,8 @@ export const Modal = () => {
   const asideClass = isAside ? 'ch-modal--aside': ''
   const openClass = visibility ? 'is-open' : ''
 
-  const overlayClasses = `ch-overlay ${visibleClass}`.trim()
-  const modalClasses = `ch-modal ${openClass} ${asideClass}`.trim()
+  const overlayClasses = formatClassNames(`ch-overlay ${visibleClass}`)
+  const modalClasses = formatClassNames(`ch-modal ${openClass} ${asideClass}`)
 
   const template = `
     <div class="${overlayClasses}">

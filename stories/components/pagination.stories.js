@@ -1,5 +1,5 @@
 import { withKnobs, radios } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
 
 export default {
   title: 'Components/Pagination',
@@ -18,7 +18,7 @@ const sizes = {
 
 export const Pagination = () => {
   const paginationSizes = radios('Sizes', sizes, '')
-  const classes = `ch-pagination ${paginationSizes}`.trim()
+  const classes = formatClassNames(`ch-pagination ${paginationSizes}`)
 
   const template = `
     <nav class="${classes}">

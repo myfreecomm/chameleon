@@ -1,6 +1,6 @@
 import { text, radios, boolean } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
 
 export default {
   title: 'Components/Buttons',
@@ -38,7 +38,7 @@ export const Common = () => {
   const buttonDisabled = boolean('Disabled', false)
   const buttonDisabledClass = buttonDisabled ? 'is-disabled' : ''
 
-  const classes = `ch-button ${buttonTypes} ${buttonVariations} ${buttonSizes} ${buttonDisabledClass}`.trim()
+  const classes = formatClassNames(`ch-button ${buttonTypes} ${buttonVariations} ${buttonSizes} ${buttonDisabledClass}`)
   const template = `<button class="${classes}">${buttonText}</button>`
   const afterHTML = `
     <div class="ch-spaceStackGroup">
@@ -62,7 +62,7 @@ export const WithIcons = () => {
   const hasTrailingIcon = boolean('Trailing Icon', false)
   const hasLeadingIconClass = hasLeadingIcon ? 'has-leadingIcon' : ''
   const hasTrailingIconClass = hasTrailingIcon ? 'has-trailingIcon' : ''
-  const classes = `ch-button ${hasLeadingIconClass} ${hasTrailingIconClass}`.trim()
+  const classes = formatClassNames(`ch-button ${hasLeadingIconClass} ${hasTrailingIconClass}`)
 
   const template = `
     <button class="${classes}">

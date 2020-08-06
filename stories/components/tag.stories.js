@@ -1,6 +1,6 @@
 import { text, radios } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
 
 export default {
   title: 'Components/Tag',
@@ -23,8 +23,8 @@ export const Tag = () => {
 
   const tagText = text('Text', 'Tag')
   const tagVariations = radios('Variations', variations, '')
-  const classes = `ch-tag ${tagVariations}`.trim()
-  
+  const classes = formatClassNames(`ch-tag ${tagVariations}`)
+
   const afterHTML = `
     <div class="ch-spaceStackGroup">
       <h3 class="ch-title ch-title--3">Examples</h3>
@@ -43,7 +43,7 @@ export const Tag = () => {
         </span>
       </div>
     </div>
-  `  
+  `
 
   const template = `
     <span class="${classes}">${tagText}</span>
