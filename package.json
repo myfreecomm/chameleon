@@ -24,6 +24,7 @@
     "@pickra/copy-code-block": "^1.2.0",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
     "@storybook/html": "^5.3.19",
     "@storybook/theming": "^5.3.19",
     "babel-loader": "^8.1.0",
