@@ -1,26 +1,29 @@
 import { radios } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../../.storybook/helpers'
+import docs from './alert.docs.mdx'
+import html from './sample'
 
 export default {
   title: 'Components/Alert',
   decorators: [withKnobs],
   parameters: {
     docs: {
-      page: ''
+      page: docs
     }
   },
 }
 
-const variations = {
-  default: '',
-  info: 'ch-alert--info',
-  warning: 'ch-alert--warning',
-  negative: 'ch-alert--negative',
-  positive: 'ch-alert--positive'
-}
+export const Alert = () => html
 
-export const Alert = () => {
+export const Playground = () => {
+  const variations = {
+    default: '',
+    info: 'ch-alert--info',
+    warning: 'ch-alert--warning',
+    negative: 'ch-alert--negative',
+    positive: 'ch-alert--positive'
+  }
   const alertVariations = radios('Variations', variations, '')
   const classes = formatClassNames(`ch-alert ${alertVariations}`)
 
@@ -31,5 +34,5 @@ export const Alert = () => {
     </div>
   `
 
-  return insertTemplateOnContainer(template, 'Alert')
+  return insertTemplateOnContainer(template, 'Playground')
 }
