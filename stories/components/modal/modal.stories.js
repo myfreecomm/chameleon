@@ -1,5 +1,6 @@
 import { withKnobs, boolean } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../../.storybook/helpers'
+import html from './modal.sample'
 
 export default {
   title: 'Components/Modal',
@@ -11,7 +12,9 @@ export default {
   }
 }
 
-export const Modal = () => {
+export const Modal = () => html
+
+export const Playground = () => {
   const visibility = boolean('Visibility', true)
   const isAside = boolean('Aside', false)
   const visibleClass = visibility ? 'is-visible' : ''
@@ -45,5 +48,5 @@ export const Modal = () => {
     </div>
   `
 
-  return insertTemplateOnContainer(template, 'Modal')
+  return insertTemplateOnContainer(template)
 }

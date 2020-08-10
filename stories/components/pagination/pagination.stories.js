@@ -1,5 +1,6 @@
 import { withKnobs, radios } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../../.storybook/helpers'
+import html from './pagination.sample'
 
 export default {
   title: 'Components/Pagination',
@@ -16,7 +17,9 @@ const sizes = {
   small: 'ch-pagination--small'
 }
 
-export const Pagination = () => {
+export const Pagination = () => html
+
+export const Playground = () => {
   const paginationSizes = radios('Sizes', sizes, '')
   const classes = formatClassNames(`ch-pagination ${paginationSizes}`)
 
@@ -56,5 +59,5 @@ export const Pagination = () => {
     </nav>
   `
 
-  return insertTemplateOnContainer(template, 'Pagination')
+  return insertTemplateOnContainer(template)
 }
