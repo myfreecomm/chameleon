@@ -1,6 +1,7 @@
 import { select, text } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer } from '../../../.storybook/helpers'
+import { titleHTML } from './title.sample'
 
 export default {
   title: 'Components/Title',
@@ -21,28 +22,21 @@ const sizes = {
   h6: 'ch-title--6',
 }
 
-export const Title = () => {
-  const headingText = text('Title', 'This is a title example')
-  const headingVariation = select('Sizes', sizes, 'ch-title--1')
+export const Title = () => titleHTML
 
-  const tag = Object.keys(sizes).find(key => sizes[key] === headingVariation)
-
-  const template = `<${tag}>${headingText}</${tag}>`
-
-  return insertTemplateOnContainer(template, 'Title')
-}
-
-export const Subtitle = () => {
+export const Playground = () => {
   const headingText = text('Title', 'This is a title example')
   const subHeadingText = text('Subtitle', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, maiores.')
   const headingVariation = select('Sizes', sizes, 'ch-title--1')
 
+  const tag = Object.keys(sizes).find(key => sizes[key] === headingVariation)
+
   const template = `
-    <div class="${headingVariation}">
+    <${tag}>
       ${headingText}
       <div class="ch-title-sub">${subHeadingText}</div>
-    </div>
+    </${tag}>
   `
 
-  return insertTemplateOnContainer(template, 'Subtitle')
+  return insertTemplateOnContainer(template)
 }
