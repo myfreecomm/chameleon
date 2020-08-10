@@ -1,5 +1,6 @@
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../../.storybook/helpers'
+import html from './select.sample'
 
 export default {
   title: 'Components/Select',
@@ -16,7 +17,9 @@ const sizes = {
   small: 'ch-select--small'
 }
 
-export const Select = () => {
+export const Select = () => html
+
+export const Playground = () => {
   const disabled = boolean('Disabled', false)
   const readonly = boolean('Readonly', false)
   const multiple = boolean('Multiple', false)
@@ -35,5 +38,5 @@ export const Select = () => {
     </select>
   `
 
-  return insertTemplateOnContainer(template, 'Select')
+  return insertTemplateOnContainer(template)
 }

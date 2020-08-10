@@ -1,5 +1,6 @@
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../../.storybook/helpers'
+import { html, htmlWithIcons } from './input.sample'
 
 export default {
   title: 'Components/Input',
@@ -16,7 +17,10 @@ const sizes = {
   small: 'ch-input--small'
 }
 
-export const Simple = () => {
+export const Input = () => html
+export const WithIcons = () => htmlWithIcons
+
+export const Playground = () => {
   const disabled = boolean('Disabled', false)
   const readonly = boolean('Readonly', false)
   const sizeClass = radios('Sizes', sizes, '')
@@ -31,17 +35,5 @@ export const Simple = () => {
     <input type="text" placeholder="Insert data" class="${classes}" ${props}>
   `
 
-  return insertTemplateOnContainer(template, 'Simple')
-}
-
-export const WithIcons = () => {
-  const template = `
-    <span class="ch-input has-leadingIcon has-trailingIcon">
-      <i class="ch-icon fal fa-search"></i>
-      <input type="text" placeholder="Insert data" />
-      <i class="ch-spinner"></i>
-    </span>
-  `
-
-  return insertTemplateOnContainer(template, 'With Icons')
+  return insertTemplateOnContainer(template)
 }
