@@ -1,5 +1,6 @@
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer, formatClassNames } from '../../.storybook/helpers'
+import { insertTemplateOnContainer, formatClassNames } from '../../../.storybook/helpers'
+import html from './textarea.sample'
 
 export default {
   title: 'Components/Textarea',
@@ -13,17 +14,20 @@ export default {
 
 const sizes = {
   default: '',
-  small: 'ch-input--small'
+  small: 'ch-textarea--small'
 }
 
-export const Textarea = () => {
+export const Textarea = () => html
+
+
+export const Playground = () => {
   const disabled = boolean('Disabled', false)
   const readonly = boolean('Readonly', false)
   const sizeClass = radios('Sizes', sizes, '')
   const fluid = boolean('Fluid', false)
   const hasError = boolean('With Error', false)
-  const errorClass = hasError ? 'ch-input--negative' : ''
-  const fluidClass = fluid ? 'ch-input--fluid' : ''
+  const errorClass = hasError ? 'ch-textarea--negative' : ''
+  const fluidClass = fluid ? 'ch-textarea--fluid' : ''
   const props = `${disabled ? 'disabled' : ''} ${readonly ? 'readonly' : ''}`.trim()
   const classes = formatClassNames(`ch-textarea ${errorClass} ${sizeClass} ${fluidClass}`)
 
@@ -31,5 +35,5 @@ export const Textarea = () => {
     <textarea placeholder="Insert data" class="${classes}" ${props}></textarea>
   `
 
-  return insertTemplateOnContainer(template, 'Textarea')
+  return insertTemplateOnContainer(template)
 }
