@@ -52,21 +52,13 @@ export const parseToCodeBlock = (block) => {
   return copyCodeBlock(block, codeBlockOptions)
 }
 
-export const insertTemplateOnContainer = (block, name, beforeHTML, afterHTML) => `
+export const insertTemplateOnContainer = (block) => `
   <div style="padding: 2rem">
-    <h1 class="ch-title ch-title--1">${name}</h1>
-
-    ${ beforeHTML ? beforeHTML : ''}
+    <h1 class="ch-title ch-title--1">Playground</h1>
 
     <br />
 
     ${block}
-
-    <br /><br />
-
-    ${parseToCodeBlock(block)}
-
-    ${ afterHTML ? afterHTML : ''}
   </div>
 `
 

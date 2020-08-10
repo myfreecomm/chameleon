@@ -2,7 +2,7 @@ import { radios } from '@storybook/addon-knobs'
 import { withKnobs } from '@storybook/addon-knobs'
 import { insertTemplateOnContainer, formatClassNames } from '../../../.storybook/helpers'
 import docs from './alert.docs.mdx'
-import html from './sample'
+import html from './alert.sample'
 
 export default {
   title: 'Components/Alert',
