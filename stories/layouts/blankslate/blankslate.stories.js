@@ -1,5 +1,6 @@
 import { withKnobs, text } from '@storybook/addon-knobs'
-import { insertTemplateOnContainer } from '../../.storybook/helpers'
+import { insertTemplateOnContainer } from '../../../.storybook/helpers'
+import html from './blankslate.sample'
 
 export default {
   title: 'Layouts/Blankslate',
@@ -11,7 +12,9 @@ export default {
   }
 }
 
-export const Blankslate = () => {
+export const Blankslate = () => html
+
+export const Playground = () => {
   const title = text('Title', 'Adicione filiais')
   const description = text('Description', 'Elas são indispensáveis para garantir que seus documentos fiscais sejam autorizados com sucesso.')
   const buttonText = text('Button label', 'Adicionar')
@@ -34,5 +37,5 @@ export const Blankslate = () => {
     </div>
   `
 
-  return insertTemplateOnContainer(template, 'Blankslate')
+  return insertTemplateOnContainer(template)
 }
