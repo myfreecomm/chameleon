@@ -31,9 +31,7 @@
 
     + label:before,
     + label:after {
-      $empty: '';
-
-      content: $empty;
+      content: '';
     }
 
     // 2.1. Wrapper
@@ -71,13 +69,34 @@
       width: $size;
       height: $size;
     }
-    
+  }
+
+  // 3. Checkbox
+
+  @at-root .ch-checkbox > input[type="checkbox"] {
     &:checked + label:after {
-      background: #{ch-get-color(primary)};
+      @include ch-mask-icon($ch-icon-check 'only-mask', $option: 'complete', $backgroundColor: ch-get-color(text, 1));
     }
   }
 
-  // 3. Label
+  // 4. Radio
+
+  @at-root .ch-radio > input[type="radio"] {
+    + label:before,
+    &:checked + label:after {
+      border-radius: ch-get-border-radius(circle);
+    }
+
+    &:checked + label:before {
+      border-color: ch-get-color(primary, focus);
+    }
+
+    &:checked + label:after {
+      background: ch-get-color(primary);
+    }
+  }
+
+  // 5. Label
 
   > input[type="checkbox"] + label,
   > input[type="radio"] + label {
@@ -92,7 +111,7 @@
     }
   }
 
-  // 4. Disabled and readonly states
+  // 6. Disabled and readonly states
 
   > input {
     &:disabled,
@@ -137,7 +156,7 @@
     }
   }
 
-  // 5. Negative variation
+  // 7. Negative variation
 
   &--negative {
     color: #{ch-get-color(negative)};
@@ -161,15 +180,6 @@
       &:active + label:before {
         border-color: #{ch-get-color(negative, active)};
       }
-    }
-  }
-
-  // 6. Radio
-
-  @at-root .ch-radio > input[type="radio"] {
-    + label:before,
-    &:checked + label:after {
-      border-radius: ch-get-border-radius(circle);
     }
   }
 }
