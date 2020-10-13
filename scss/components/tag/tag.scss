@@ -5,6 +5,7 @@
 
   @include ch-text-caption;
   @include ch-truncate;
+  @include ch-border-radius(circle);
 
   display: inline-block;
   position: relative;
@@ -16,6 +17,7 @@
   vertical-align: middle;
   padding-right: ch-get-space(s);
   padding-left: ch-get-space(s);
+  background-color: ch-get-color(neutral, 2);
 
   // 2. Close button
 
@@ -47,24 +49,8 @@
     }
   }
 
-  // 3. Background
-
-  &,
-  &:after {
-    @include ch-border-radius(circle);
-  }
-
-  &:after {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: #{ch-get-color(neutral, 2)};
+  &.has-border {
+    box-shadow: 0 0 0px 1px currentColor;
   }
 
   // 4. Support variations
@@ -72,25 +58,21 @@
   @each $variation in (info, warning, positive, negative) {
     &--#{$variation} {
       color: ch-get-color($variation);
+      background-image: linear-gradient(90deg, rgba(#fff, 0.85), rgba(#fff, 0.85));
+      background-color: ch-get-color($variation);
+
 
       // 4.1. Close button
 
       > .ch-tag-close {
         background-color: ch-get-color($variation);
-    
+
         &:hover:focus,
         &:hover,
         &:focus,
         &:active {
           background-color: ch-get-color($variation, focus);
         }
-      }
-
-      // 4.2. Background
-
-      &:after {
-        opacity: 0.15;
-        background: #{ch-get-color($variation)};
       }
     }
   }
