@@ -74,8 +74,17 @@
   // 3. Checkbox
 
   @at-root .ch-checkbox > input[type="checkbox"] {
+    &:checked:not([readonly]) + label:before {
+      background-color: ch-get-color(primary);
+      border-color: ch-get-color(primary);
+    }
+
     &:checked + label:after {
-      @include ch-mask-icon($ch-icon-check 'only-mask', $option: 'complete', $backgroundColor: ch-get-color(text, 1));
+      @include ch-mask-icon($ch-icon-check 'only-mask', $option: 'complete', $backgroundColor: ch-get-color(neutral, 1));
+    }
+
+    &[readonly] + label:after {
+      background-color: ch-get-color(text, 1);
     }
   }
 
