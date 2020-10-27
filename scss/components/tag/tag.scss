@@ -18,6 +18,7 @@
   padding-right: ch-get-space(s);
   padding-left: ch-get-space(s);
   background-color: ch-get-color(neutral, 2);
+  box-shadow: 0 0 0px 1px currentColor;
 
   // 2. Close button
 
@@ -49,8 +50,8 @@
     }
   }
 
-  &.has-border {
-    box-shadow: 0 0 0px 1px currentColor;
+  &.is-borderless {
+    box-shadow: none;
   }
 
   // 4. Support variations
