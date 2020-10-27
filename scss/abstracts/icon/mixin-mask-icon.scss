@@ -1,4 +1,4 @@
-@mixin ch-mask-icon ($image, $option: 'complete') {
+@mixin ch-mask-icon ($image, $option: 'complete', $backgroundColor: ch-get-color(text, 2)) {
   mask-image: url(#{$image});
   -webkit-mask-image: url(#{$image});
 
@@ -7,6 +7,6 @@
     -webkit-mask-repeat: no-repeat;
     mask-position: center;
     -webkit-mask-position: center;
-    background-color: #{ch-get-color(text, 2)};
+    background-color: $backgroundColor;
   }
 }

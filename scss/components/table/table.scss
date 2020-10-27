@@ -11,6 +11,7 @@
   &-header,
   thead {
     display: table-header-group;
+    background-color: ch-get-color(neutral, 2);
   }
 
   // 3. Content
@@ -79,6 +80,11 @@
 
     text-align: left;
     vertical-align: middle;
+  }
+
+  th {
+    @include ch-space-inset(default, s);
+    font-weight: ch-get-text-weight(semibold);
   }
 
   // 5.1. Leading, actions and compact variation
